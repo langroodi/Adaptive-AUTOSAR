@@ -1,4 +1,6 @@
 #include <stdint.h>
+#include <vector>
+#include <chrono>
 
 namespace ara
 {
@@ -17,6 +19,19 @@ namespace ara
         {
             kSuccess = 0,
             kNotAvailable = 1
+        };
+
+        class DeterministicClient
+        {
+        public:
+            using TimeStamp = std::chrono::time_point<std::chrono::system_clock>;
+            DeterministicClient() noexcept;
+            ~DeterministicClient();
+            ActivationReturnType WaitForNextActivation() const noexcept;
+            //void RunWorkerPool(Worker &runnableObj, std::vector &container) const noexcept;
+            uint64_t GetRandom() const noexcept;
+            ActivationTimeStampReturnType GetActivationTime(TimeStamp timeStamp) const noexcept;
+            ActivationTimeStampReturnType GetNextActivationTime(TimeStamp timeStamp) const noexcept;
         };
     }
 }

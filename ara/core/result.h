@@ -38,9 +38,47 @@ namespace ara
             T &&Value() &&;
             const E &Error() const &;
             E &&Error() &&;
+            T ValueOr(T &&defaultValue) const &;
+            T ValueOr(T &&defaultValue) &&;
+            const T &ValueOrThrow() const &noexcept(false);
+            T &&ValueOrThrow() &&noexcept(false);
+            template <typename F>
+            T Resolve(F &&f) const;
+            bool operator==(const Result &other);
+            bool operator!=(const Result &other);
 
             static FromValue(const T &t);
             static FromValue(T &&t);
+            static FromError(const E &e);
+            static FromError(E &&e);
+        };
+
+        template <typename E>
+        class Result final
+        {
+        public:
+            using value_type = void;
+            using error_type = E;
+
+            Result() noexcept;
+            Result(const E &e);
+            Result(E &&e);
+            Result(const Result &other);
+            Result(Result &&other) noexcept(
+                std::is_nothrow_move_constructible<E>::value);
+            ~Result();
+            Result &operator=(Result const &other);
+            Result &operator=(Result &&other) noexcept(
+                std::is_nothrow_move_constructible<E>::value &&
+                    std::is_nothrow_move_assignable<E>::value);
+            void Swap(Result &other) noexcept(
+                std::is_nothrow_move_constructible<E>::value &&
+                    std::is_nothrow_move_assignable<E>::value);
+            explicit operator bool() const noexcept;
+            const E &Error() const &;
+            E &&Error() &&;
+
+            static FromValue();
             static FromError(const E &e);
             static FromError(E &&e);
         };

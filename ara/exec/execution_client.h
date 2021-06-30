@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include "../core/result.h"
 
 namespace ara
 {
@@ -15,7 +16,7 @@ namespace ara
         public:
             ExecutionClient() noexcept;
             ~ExecutionClient() noexcept;
-            
+            ara::core::Result<void> ReportExecutionState(ExecutionState state) const noexcept;
         };
     }
 }
