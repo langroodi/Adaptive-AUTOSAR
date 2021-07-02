@@ -22,7 +22,7 @@ namespace ara
             constexpr IdType Id() const noexcept;
             virtual const char *Name() const noexcept = 0;
             virtual const char *Message(CodeType errorCode) const noexcept = 0;
-            //virtual void ThrowAsException (ErrorCode const &errorCode) const noexcept(false) = 0;
+            virtual void ThrowAsException(const ErrorCode &errorCode) const noexcept(false) = 0;
         };
     }
 }
