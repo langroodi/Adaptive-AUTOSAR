@@ -37,7 +37,6 @@ namespace ara
             void ThrowAsException(
                 const ara::core::ErrorCode &errorCode) const noexcept(false) override;
         };
-
     }
 }
 
