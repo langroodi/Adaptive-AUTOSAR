@@ -1,3 +1,6 @@
+#ifndef EXECUTION_CLIENT_H
+#define EXECUTION_CLIENT_H
+
 #include <stdint.h>
 #include "../core/result.h"
 
@@ -20,3 +23,5 @@ namespace ara
         };
     }
 }
+
+#endif

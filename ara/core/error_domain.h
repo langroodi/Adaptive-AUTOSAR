@@ -1,3 +1,6 @@
+#ifndef ERROR_DOMAIN_H
+#define ERROR_DOMAIN_H
+
 #include <stdint.h>
 
 namespace ara
@@ -26,3 +29,5 @@ namespace ara
         };
     }
 }
+
+#endif

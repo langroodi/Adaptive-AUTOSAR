@@ -1,3 +1,6 @@
+#ifndef RESULT_H
+#define RESULT_H
+
 #include "error_code.h"
 #include <type_traits>
 
@@ -84,3 +87,5 @@ namespace ara
         };
     }
 }
+
+#endif

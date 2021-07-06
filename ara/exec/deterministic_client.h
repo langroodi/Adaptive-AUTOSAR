@@ -1,3 +1,6 @@
+#ifndef DETERMINISTIC_CLIENT_H
+#define DETERMINISTIC_CLIENT_H
+
 #include <stdint.h>
 #include <vector>
 #include <chrono>
@@ -35,3 +38,5 @@ namespace ara
         };
     }
 }
+
+#endif

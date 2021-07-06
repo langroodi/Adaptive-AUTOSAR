@@ -1,3 +1,6 @@
+#ifndef ERROR_CODE_H
+#define ERROR_CODE_H
+
 #include "error_domain.h"
 #include <string_view>
 
@@ -20,3 +23,5 @@ namespace ara
         };
     }
 }
+
+#endif

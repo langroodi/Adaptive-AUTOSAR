@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 #include <functional>
+#include "../core/instance_specifier.h"
+#include "../core/result.h"
 
 namespace ara
 {
@@ -35,22 +37,32 @@ namespace ara
 
         enum class MonitorAction
         {
-            kPassed= 0x00,
-            kFailed= 0x01,
-            kPrepassed= 0x02,
-            kPrefailed= 0x03,
-            kFdcThresholdReached= 0x04,
-            kResetTestFailed= 0x05,
-            kFreezeDebouncing= 0x06,
-            kResetDebouncing= 0x07
+            kPassed = 0x00,
+            kFailed = 0x01,
+            kPrepassed = 0x02,
+            kPrefailed = 0x03,
+            kFdcThresholdReached = 0x04,
+            kResetTestFailed = 0x05,
+            kFreezeDebouncing = 0x06,
+            kResetDebouncing = 0x07
         };
 
         class Mointor final
         {
         public:
-        /*Monitor (const ara::core::InstanceSpecifier &specifier, std::function<
-void(InitMonitorReason)> initMonitor, std::function< std::int8_t()>
-getFaultDetectionCounter);*/
+            Mointor(
+                const ara::core::InstanceSpecifier &specifier,
+                std::function<void(InitMonitorReason)> initMonitor,
+                std::function<std::int8_t()> getFaultDetectionCounter);
+            Monitor(
+                const ara::core::InstanceSpecifier &specifier,
+                std::function<void(InitMonitorReason)> initMonitor,
+                CounterBased debouncing);
+            Monitor(
+                const ara::core::InstanceSpecifier &specifier,
+                std::function<void(InitMonitorReason)> initMonitor,
+                TimeBased debouncing);
+            ara::core::Result<void> ReportMonitorAction(MonitorAction action);
         };
     }
 }
