@@ -5,6 +5,7 @@
 #include <future>
 #include "../core/instance_specifier.h"
 #include "../core/result.h"
+#include "../core/optional.h"
 #include "./meta_info.h"
 #include "./cancellation_handler.h"
 
@@ -38,11 +39,11 @@ namespace ara
             ara::core::Result<void> Offer();
             void StopOffer();
             virtual ara::core::Result<LastResetType> GetLastResetCause() = 0;
-            /*virtual std::future<void> RequestReset(
+            virtual std::future<void> RequestReset(
                 ResetRequestType resetType,
                 ara::core::Optional<std::uint8_t> id,
                 const MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;*/
+                CancellationHandler cancellationHandler) = 0;
             virtual void ExecuteReset(MetaInfo metaInfo) = 0;
             virtual std::future<void> EnableRapidShutdown(
                 bool enable,
