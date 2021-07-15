@@ -21,7 +21,8 @@ namespace ara
                 T &&t,
                 const char *indetifier,
                 const char *unit) noexcept(std::is_nothrow_move_constructible<T>::value);
-            ~Argument(std::i) noexcept;
+            ~Argument() noexcept = default;
+            constexpr std::string ToString() const noexcept;
         };
     }
 }
