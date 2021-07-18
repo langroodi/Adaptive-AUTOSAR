@@ -15,14 +15,16 @@ namespace ara
             T mPayload;
             std::string mIdentifier;
             std::string mUnit;
+            const std::string cIdSeperator{": "};
+            const std::string cUnitSeperator{" "};
 
         public:
-            constexpr Argument(
+            Argument(
                 T &&t,
-                const char *indetifier,
-                const char *unit) noexcept(std::is_nothrow_move_constructible<T>::value);
+                const char *indentifier,
+                const char *unit);
             ~Argument() noexcept = default;
-            constexpr std::string ToString() const noexcept;
+            std::string ToString() const;
         };
     }
 }

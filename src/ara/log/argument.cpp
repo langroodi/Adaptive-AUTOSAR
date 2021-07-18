@@ -1,21 +1,27 @@
 #include "argument.h"
-#include <sstream>
 
-template <typename T>
-constexpr Argument::Argument(
-    T &&t,
-    const char *indetifier,
-    const char *unit) : mPlayload(t)
+namespace ara
 {
-    mIdentifier(identifier);
-    mUnit(unit);
-}
+    namespace log
+    {
+        template <typename T>
+        Argument<T>::Argument(
+            T &&t,
+            const char *identifier,
+            const char *unit) : mPayload(t),
+                                mIdentifier(identifier),
+                                mUnit(unit)
+        {
+        }
 
-constexpr std::string Argument::ToString() const
-{
-    std::stringstream _ss;
-    _ss << mIdentifier << ": " << mPayload << " " << mUnit;
-    std::string _result = _ss.str();
+        template <typename T>
+        std::string Argument<T>::ToString() const
+        {
+            std::string _payloadString = std::to_string(mPayload);
+            std::string _result =
+                mIdentifier + cIdSeperator + _payloadString + cUnitSeperator + mUnit;
 
-    return _result;
+            return _result;
+        }
+    }
 }
