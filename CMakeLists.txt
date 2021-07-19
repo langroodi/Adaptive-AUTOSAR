@@ -38,8 +38,8 @@ set(test_ara_log_dir
 add_library(
   ara_log
   ${source_ara_log_dir}/argument.h
-  ${source_ara_log_dir}/argument.cpp
 )
+set_target_properties(ara_log PROPERTIES LINKER_LANGUAGE CXX)
 
 if(build_tests)
   enable_testing()
