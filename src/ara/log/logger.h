@@ -23,14 +23,14 @@ namespace ara
                 T &&arg,
                 const char *name = nullptr,
                 const char *unit = nullptr) noexcept;
-            LogStream LogFatal () const noexcept;
-            LogStream LogError () const noexcept;
-            LogStream LogWarn () const noexcept;
-            LogStream LogInfo () const noexcept;
-            LogStream LogDebug () const noexcept;
-            LogStream LogVerbose () const noexcept;
-            bool IsEnabled (LogLevel logLevel) const noexcept;
-            LogStream WithLevel (LogLevel logLevel) const noexcept;
+            LogStream LogFatal() const noexcept;
+            LogStream LogError() const noexcept;
+            LogStream LogWarn() const noexcept;
+            LogStream LogInfo() const noexcept;
+            LogStream LogDebug() const noexcept;
+            LogStream LogVerbose() const noexcept;
+            bool IsEnabled(LogLevel logLevel) const noexcept;
+            LogStream WithLevel(LogLevel logLevel) const noexcept;
 
             static Logger &CreateLogger(
                 std::string_view ctxId,
