@@ -27,6 +27,7 @@ namespace ara
         {
             return mMetaModelIdentifier != other.mMetaModelIdentifier;
         }
+        
         bool InstanceSpecifier::operator!=(std::string other) const noexcept
         {
             return mMetaModelIdentifier != other;

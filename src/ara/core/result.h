@@ -50,14 +50,14 @@ namespace ara
             bool operator==(const Result &other);
             bool operator!=(const Result &other);
 
-            static FromValue(const T &t);
-            static FromValue(T &&t);
-            static FromError(const E &e);
-            static FromError(E &&e);
+            static Result FromValue(const T &t);
+            static Result FromValue(T &&t);
+            static Result FromError(const E &e);
+            static Result FromError(E &&e);
         };
 
         template <typename E>
-        class Result final
+        class Result<void, E> final
         {
         public:
             using value_type = void;
@@ -81,9 +81,9 @@ namespace ara
             const E &Error() const &;
             E &&Error() &&;
 
-            static FromValue();
-            static FromError(const E &e);
-            static FromError(E &&e);
+            static Result FromValue();
+            static Result FromError(const E &e);
+            static Result FromError(E &&e);
         };
     }
 }

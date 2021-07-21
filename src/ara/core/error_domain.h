@@ -1,18 +1,17 @@
 #ifndef ERROR_DOMAIN_H
 #define ERROR_DOMAIN_H
 
-#include <stdint.h>
+#include <cstdint>
 
 namespace ara
 {
     namespace core
     {
-
         class ErrorDomain
         {
         public:
             using IdType = std::uint64_t;
-            using CodeType = sts::uint32_t;
+            using CodeType = std::uint32_t;
 
             ErrorDomain(const ErrorDomain &) = delete;
             ErrorDomain(ErrorDomain &&) = delete;
@@ -25,7 +24,6 @@ namespace ara
             constexpr IdType Id() const noexcept;
             virtual const char *Name() const noexcept = 0;
             virtual const char *Message(CodeType errorCode) const noexcept = 0;
-            virtual void ThrowAsException(const ErrorCode &errorCode) const noexcept(false) = 0;
         };
     }
 }

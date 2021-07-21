@@ -19,10 +19,7 @@ namespace ara
         {
         private:
             std::string mLogs;
-            constexpr void concat(std::string &&log)
-            {
-                mLogs += log;
-            }
+            void concat(std::string &&log);
 
         public:
             void Flush() noexcept;

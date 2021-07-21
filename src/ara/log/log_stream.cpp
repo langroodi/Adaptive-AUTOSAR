@@ -4,6 +4,11 @@ namespace ara
 {
     namespace log
     {
+        void LogStream::concat(std::string &&log)
+        {
+            mLogs += log;
+        }
+
         void LogStream::Flush() noexcept
         {
             mLogs.clear();
@@ -12,6 +17,8 @@ namespace ara
         LogStream &LogStream::operator<<(const LogStream &value)
         {
             mLogs += value.mLogs;
+
+            return *this;
         }
 
         LogStream &LogStream::operator<<(bool value)
@@ -98,6 +105,8 @@ namespace ara
                 mLogs += "Verbose";
                 break;
             }
+
+            return *this;
         }
 
         LogStream &LogStream::operator<<(const ara::core::ErrorCode &value)

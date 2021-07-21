@@ -27,6 +27,9 @@ option(build_tests "Build all the tests." ON)
 #
 # Directories:
 
+set(source_ara_core_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/core")
+
 set(source_ara_log_dir
   "${CMAKE_SOURCE_DIR}/src/ara/log")
 
@@ -36,10 +39,24 @@ set(test_ara_log_dir
 ########################################################################
 
 add_library(
+  ara_core
+  ${source_ara_core_dir}/error_code.h
+  ${source_ara_core_dir}/error_code.cpp
+  ${source_ara_core_dir}/instance_specifier.h
+  ${source_ara_core_dir}/instance_specifier.cpp
+)
+
+add_library(
   ara_log
   ${source_ara_log_dir}/argument.h
+  ${source_ara_log_dir}/log_stream.h
+  ${source_ara_log_dir}/log_stream.cpp
 )
-set_target_properties(ara_log PROPERTIES LINKER_LANGUAGE CXX)
+
+target_link_libraries(
+  ara_log
+  ara_core
+)
 
 if(build_tests)
   enable_testing()
@@ -47,6 +64,7 @@ if(build_tests)
   add_executable(
     ara_log_test
     ${test_ara_log_dir}/argument_test.cpp
+    ${test_ara_log_dir}/log_stream_test.cpp
   )
 
   target_link_libraries(
