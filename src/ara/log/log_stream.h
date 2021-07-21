@@ -36,21 +36,19 @@ namespace ara
                 return *this;
             }
 
+            LogStream &operator<<(const LogStream &value);
             LogStream &operator<<(bool value);
             LogStream &operator<<(uint8_t value);
             LogStream &operator<<(uint32_t value);
             LogStream &operator<<(float value);
             LogStream &operator<<(const std::string &value);
             LogStream &operator<<(const char *value);
-            LogStream &operator<<(LogStream &out, LogLevel value) noexcept;
-            LogStream &operator<<(
-                LogStream &out,
-                const ara::core::ErrorCode &ec) noexcept;
-            LogStream &operator<<(
-                LogStream &out,
-                const ara::core::InstanceSpecifier &value) noexcept;
+            LogStream &operator<<(LogLevel value);
+            LogStream &operator<<(const ara::core::ErrorCode &value);
+            LogStream &operator<<(const ara::core::InstanceSpecifier &value) noexcept;
             LogStream &operator<<(std::vector<std::uint8_t> data) noexcept;
-            LogStream &WithLocation(std::string file, int line) noexcept;
+            LogStream &WithLocation(std::string file, int line);
+            std::string ToString() const noexcept;
         };
     }
 }
