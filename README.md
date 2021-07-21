@@ -13,11 +13,12 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 
 ## Project Milestones
 
-- [x] CI/CD workflow
+- [x] CI workflow
 - [ ] Doxygen documentation
 - [ ] Hardware integration (i.e., CAN-bus and LIN-bus)
 - [ ] OBD-II and DoIP
-- [ ] Replace STL (e.g., `std::future`) with ARA Core
+- [ ] Replace STL with ARA Core types (e.g.,`std::future` to `ara::core::Future`)
 - [ ] MISRA certified
 - [ ] Dedicated memory allocator
+- [ ] Integration with Volvo [Extended Vehicle](https://developer.volvocars.com/volvo-api/extended-vehicle/) and [Connected Vehicle](https://developer.volvocars.com/volvo-api/connected-vehicle/) APIs
 - [ ] Inter-ECU communication via SOME/IP
