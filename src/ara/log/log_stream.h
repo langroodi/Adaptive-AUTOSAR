@@ -43,7 +43,7 @@ namespace ara
             LogStream &operator<<(LogLevel value);
             LogStream &operator<<(const ara::core::ErrorCode &value);
             LogStream &operator<<(const ara::core::InstanceSpecifier &value) noexcept;
-            LogStream &operator<<(std::vector<std::uint8_t> data) noexcept;
+            LogStream &operator<<(std::vector<std::uint8_t> value);
             LogStream &WithLocation(std::string file, int line);
             std::string ToString() const noexcept;
         };
