@@ -6,16 +6,43 @@ namespace ara
 {
     namespace log
     {
-        TEST(LogStreamTest, ByteInsertionOperator)
+        TEST(LogStreamTest, FlushMethod)
         {
-            uint8_t _byte = 128;
-            LogStream _logStream;
-            _logStream << _byte;
+            const std::string cLevelString = "Log level: ";
+            const LogLevel cLevel = LogLevel::kDebug;
+            LogStream _levelStream;
+            _levelStream << cLevelString << cLevel;
 
-            const std::string _expectedResult = "128";
+            const bool cActive = true;
+            LogStream _activeStream;
+            _activeStream << "; Active: " << cActive;
+
+            LogStream _logStream;
+            _logStream << _levelStream << _activeStream;
+
+            const std::string cExpectedResult =
+                "Log level: Debug; Active: true";
             std::string _actualResult = _logStream.ToString();
 
-            EXPECT_EQ(_expectedResult, _actualResult);
+            EXPECT_EQ(cExpectedResult, _actualResult);
+
+            _logStream.Flush();
+            _actualResult = _logStream.ToString();
+            bool _isEmpty = _actualResult.empty();
+
+            EXPECT_TRUE(_isEmpty);
+        }
+
+        TEST(LogStreamTest, ByteInsertionOperator)
+        {
+            const uint8_t cByte = 128;
+            LogStream _logStream;
+            _logStream << cByte;
+
+            const std::string cExpectedResult = "128";
+            std::string _actualResult = _logStream.ToString();
+
+            EXPECT_EQ(cExpectedResult, _actualResult);
         }
 
         TEST(LogStreamTest, ByteVectorInsertionOperator)
@@ -24,10 +51,10 @@ namespace ara
             LogStream _logStream;
             _logStream << _byteVector;
 
-            const std::string _expectedResult = "0a141e";
+            const std::string cExpectedResult = "0a141e";
             std::string _actualResult = _logStream.ToString();
 
-            EXPECT_EQ(_expectedResult, _actualResult);
+            EXPECT_EQ(cExpectedResult, _actualResult);
         }
     }
 }
