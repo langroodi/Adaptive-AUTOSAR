@@ -10,14 +10,14 @@ namespace ara
         class Logger
         {
         private:
-            std::string_view mContextId;
-            std::string_view mContextDescription;
+            std::string mContextId;
+            std::string mContextDescription;
             LogLevel mContextDefaultLogLevel;
             Logger();
 
         public:
-            ~Logger();
-            ClientState remoteClientState() noexcept;
+            ~Logger() noexcept;
+            ClientState RemoteClientState() const noexcept;
             template <typename T>
             Argument<T> Arg(
                 T &&arg,
@@ -31,11 +31,12 @@ namespace ara
             LogStream LogVerbose() const noexcept;
             bool IsEnabled(LogLevel logLevel) const noexcept;
             LogStream WithLevel(LogLevel logLevel) const noexcept;
+            void Log(const LogStream &logStream) const noexcept;
 
-            static Logger &CreateLogger(
-                std::string_view ctxId,
-                std::string_view ctxDescription,
-                LogLevel ctxDefLogLevel = LogLevel::kWarn) noexcept;
+            static Logger CreateLogger(
+                std::string ctxId,
+                std::string ctxDescription,
+                LogLevel ctxDefLogLevel) noexcept;
         };
     }
 }
