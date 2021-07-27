@@ -26,7 +26,9 @@ namespace ara
                 LogLevel logLevel = LogLevel::kWarn,
                 std::string appDescription = "");
             ~LoggingFramework() noexcept;
-
+            Logger &CreateLogger(
+                std::string ctxId,
+                std::string ctxDescription) noexcept;
             Logger &CreateLogger(
                 std::string ctxId,
                 std::string ctxDescription,

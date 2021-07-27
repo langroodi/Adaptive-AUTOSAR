@@ -4,6 +4,14 @@ namespace ara
 {
     namespace log
     {
+        Logger::Logger(std::string ctxId,
+                       std::string ctxDescription,
+                       LogLevel ctxDefLogLevel) : mContextId{ctxId},
+                                                  mContextDescription{ctxDescription},
+                                                  mContextDefaultLogLevel{ctxDefLogLevel}
+        {
+        }
+
         ClientState Logger::RemoteClientState() const noexcept
         {
             // For now, no client exists for logging modeled messages.
@@ -13,6 +21,30 @@ namespace ara
         bool Logger::IsEnabled(LogLevel logLevel) const noexcept
         {
             bool _result = logLevel <= mContextDefaultLogLevel;
+            return _result;
+        }
+
+        LogStream Logger::WithLevel(LogLevel logLevel) const noexcept
+        {
+            const std::string cContextId = "Context ID:";
+            const std::string cContextDescription = "Context Description:";
+            const std::string cLogLevel = "Log Level:";
+            const std::string cSeperator = ";";
+
+            LogStream _result;
+            _result << cContextId << mContextId << cSeperator;
+            _result << cContextDescription << mContextDescription << cSeperator;
+            _result << cLogLevel << logLevel << cSeperator;
+
+            return _result;
+        }
+
+        Logger Logger::CreateLogger(
+            std::string ctxId,
+            std::string ctxDescription,
+            LogLevel ctxDefLogLevel)
+        {
+            Logger _result(ctxId, ctxDescription, ctxDefLogLevel);
             return _result;
         }
     }
