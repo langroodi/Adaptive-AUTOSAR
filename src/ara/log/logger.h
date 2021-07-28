@@ -18,16 +18,16 @@ namespace ara
                    LogLevel ctxDefLogLevel);
 
         public:
-            ~Logger() noexcept;
+            ~Logger() noexcept = default;
             ClientState RemoteClientState() const noexcept;
-            LogStream LogFatal() const noexcept;
-            LogStream LogError() const noexcept;
-            LogStream LogWarn() const noexcept;
-            LogStream LogInfo() const noexcept;
-            LogStream LogDebug() const noexcept;
-            LogStream LogVerbose() const noexcept;
+            LogStream LogFatal() const;
+            LogStream LogError() const;
+            LogStream LogWarn() const;
+            LogStream LogInfo() const;
+            LogStream LogDebug() const;
+            LogStream LogVerbose() const;
             bool IsEnabled(LogLevel logLevel) const noexcept;
-            LogStream WithLevel(LogLevel logLevel) const noexcept;
+            LogStream WithLevel(LogLevel logLevel) const;
 
             static Logger CreateLogger(
                 std::string ctxId,

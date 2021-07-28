@@ -18,13 +18,49 @@ namespace ara
             return ClientState::kNotConnected;
         }
 
+        LogStream Logger::LogFatal() const
+        {
+            LogStream _result = WithLevel(LogLevel::kFatal);
+            return _result;
+        }
+        
+        LogStream Logger::LogError() const
+        {
+            LogStream _result = WithLevel(LogLevel::kError);
+            return _result;
+        }
+
+        LogStream Logger::LogWarn() const
+        {
+            LogStream _result = WithLevel(LogLevel::kWarn);
+            return _result;
+        }
+
+        LogStream Logger::LogInfo() const
+        {
+            LogStream _result = WithLevel(LogLevel::kInfo);
+            return _result;
+        }
+
+        LogStream Logger::LogDebug() const
+        {
+            LogStream _result = WithLevel(LogLevel::kDebug);
+            return _result;
+        }
+
+        LogStream Logger::LogVerbose() const
+        {
+            LogStream _result = WithLevel(LogLevel::kVerbose);
+            return _result;
+        }
+
         bool Logger::IsEnabled(LogLevel logLevel) const noexcept
         {
             bool _result = logLevel <= mContextDefaultLogLevel;
             return _result;
         }
 
-        LogStream Logger::WithLevel(LogLevel logLevel) const noexcept
+        LogStream Logger::WithLevel(LogLevel logLevel) const
         {
             const std::string cContextId = "Context ID:";
             const std::string cContextDescription = "Context Description:";
