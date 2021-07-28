@@ -18,6 +18,7 @@ namespace ara
                    LogLevel ctxDefLogLevel);
 
         public:
+            Logger() = delete;
             ~Logger() noexcept = default;
             ClientState RemoteClientState() const noexcept;
             LogStream LogFatal() const;

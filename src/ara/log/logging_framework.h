@@ -1,5 +1,9 @@
 #include <stdexcept>
+#include <iostream>
 #include "./logger.h"
+#include "./sink/log_sink.h"
+#include "./sink/console_log_sink.h"
+#include "./sink/file_log_sink.h"
 
 namespace ara
 {
@@ -8,31 +12,37 @@ namespace ara
         class LoggingFramework
         {
         private:
-            std::string mApplicationId;
-            std::string mApplicationDescription;
-            std::string mFilePath;
-            LogMode mLogMode;
+            sink::LogSink* mLogSink;
             LogLevel mDefaultLogLevel;
+            std::vector<Logger> mLoggers;
+
+            LoggingFramework(sink::LogSink* logSink, LogLevel logLevel);
 
         public:
-            LoggingFramework(
+            LoggingFramework() = default;
+            ~LoggingFramework() noexcept;
+            Logger &CreateLogger(
+                std::string ctxId,
+                std::string ctxDescription);
+            Logger &CreateLogger(
+                std::string ctxId,
+                std::string ctxDescription,
+                LogLevel ctxDefLogLevel);
+            void Log(
+                const Logger& logger,
+                LogLevel logLevel,
+                const LogStream& logStream);
+
+           static LoggingFramework Create(
                 std::string appId,
                 LogMode logMode,
                 LogLevel logLevel = LogLevel::kWarn,
                 std::string appDescription = "");
-            LoggingFramework(
+            static LoggingFramework Create(
                 std::string appId,
                 std::string filePath,
                 LogLevel logLevel = LogLevel::kWarn,
-                std::string appDescription = "");
-            ~LoggingFramework() noexcept;
-            Logger &CreateLogger(
-                std::string ctxId,
-                std::string ctxDescription) noexcept;
-            Logger &CreateLogger(
-                std::string ctxId,
-                std::string ctxDescription,
-                LogLevel ctxDefLogLevel) noexcept;
+                std::string appDescription = "");                
         };
     }
 }
