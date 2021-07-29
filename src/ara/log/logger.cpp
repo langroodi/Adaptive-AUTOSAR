@@ -56,7 +56,8 @@ namespace ara
 
         bool Logger::IsEnabled(LogLevel logLevel) const noexcept
         {
-            bool _result = logLevel <= mContextDefaultLogLevel;
+            // Log levels are sorted in descending order
+            bool _result = (logLevel <= mContextDefaultLogLevel);
             return _result;
         }
 

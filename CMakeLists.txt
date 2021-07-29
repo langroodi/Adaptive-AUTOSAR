@@ -51,6 +51,8 @@ add_library(
   ${source_ara_log_dir}/argument.h
   ${source_ara_log_dir}/log_stream.h
   ${source_ara_log_dir}/log_stream.cpp
+  ${source_ara_log_dir}/logger.h
+  ${source_ara_log_dir}/logger.cpp
 )
 
 target_link_libraries(
@@ -65,6 +67,7 @@ if(build_tests)
     ara_log_test
     ${test_ara_log_dir}/argument_test.cpp
     ${test_ara_log_dir}/log_stream_test.cpp
+    ${test_ara_log_dir}/logger_test.cpp
   )
 
   target_link_libraries(
