@@ -11,18 +11,19 @@ namespace ara
         {
         }
 
-        Logger &LoggingFramework::CreateLogger(
+        const Logger &LoggingFramework::CreateLogger(
             std::string ctxId,
             std::string ctxDescription)
         {
             Logger _logger =
                 Logger::CreateLogger(ctxId, ctxDescription, mDefaultLogLevel);
-            mLoggers.push_back(_logger);
+            mLoggers.push_back(std::move(_logger));
+            const Logger &_result = mLoggers.back();
 
-            return _logger;
+            return _result;
         }
 
-        Logger &LoggingFramework::CreateLogger(
+        const Logger &LoggingFramework::CreateLogger(
             std::string ctxId,
             std::string ctxDescription,
             LogLevel ctxDefLogLevel)
@@ -30,9 +31,10 @@ namespace ara
             {
                 Logger _logger =
                     Logger::CreateLogger(ctxId, ctxDescription, ctxDefLogLevel);
-                mLoggers.push_back(_logger);
+                mLoggers.push_back(std::move(_logger));
+                const Logger &_result = mLoggers.back();
 
-                return _logger;
+                return _result;
             }
         }
 
@@ -52,8 +54,8 @@ namespace ara
         LoggingFramework LoggingFramework::Create(
             std::string appId,
             LogMode logMode,
-            LogLevel logLevel = LogLevel::kWarn,
-            std::string appDescription = "")
+            LogLevel logLevel,
+            std::string appDescription)
         {
             if (logMode == LogMode::kFile)
             {
@@ -66,6 +68,8 @@ namespace ara
                 sink::LogSink *_logSink =
                     new sink::ConsoleLogSink(appId, appDescription);
                 LoggingFramework _result(_logSink, logLevel);
+
+                return _result;
             }
             else
             {
@@ -77,12 +81,14 @@ namespace ara
         LoggingFramework LoggingFramework::Create(
             std::string appId,
             std::string filePath,
-            LogLevel logLevel = LogLevel::kWarn,
-            std::string appDescription = "")
+            LogLevel logLevel,
+            std::string appDescription)
         {
             sink::LogSink *_logSink =
                 new sink::FileLogSink(filePath, appId, appDescription);
             LoggingFramework _result(_logSink, logLevel);
+
+            return _result;
         }
 
         LoggingFramework::~LoggingFramework() noexcept

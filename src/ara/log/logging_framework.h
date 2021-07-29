@@ -21,10 +21,10 @@ namespace ara
         public:
             LoggingFramework() = default;
             ~LoggingFramework() noexcept;
-            Logger &CreateLogger(
+            const Logger &CreateLogger(
                 std::string ctxId,
                 std::string ctxDescription);
-            Logger &CreateLogger(
+            const Logger &CreateLogger(
                 std::string ctxId,
                 std::string ctxDescription,
                 LogLevel ctxDefLogLevel);

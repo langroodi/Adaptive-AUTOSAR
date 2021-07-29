@@ -33,6 +33,9 @@ set(source_ara_core_dir
 set(source_ara_log_dir
   "${CMAKE_SOURCE_DIR}/src/ara/log")
 
+set(source_ara_log_sink_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/log/sink")
+
 set(test_ara_log_dir
   "${CMAKE_SOURCE_DIR}/test/ara/log")
 
@@ -53,6 +56,14 @@ add_library(
   ${source_ara_log_dir}/log_stream.cpp
   ${source_ara_log_dir}/logger.h
   ${source_ara_log_dir}/logger.cpp
+  ${source_ara_log_dir}/logging_framework.h
+  ${source_ara_log_dir}/logging_framework.cpp
+  ${source_ara_log_sink_dir}/console_log_sink.h
+  ${source_ara_log_sink_dir}/console_log_sink.cpp
+  ${source_ara_log_sink_dir}/file_log_sink.h
+  ${source_ara_log_sink_dir}/file_log_sink.cpp
+  ${source_ara_log_sink_dir}/log_sink.h
+  ${source_ara_log_sink_dir}/log_sink.cpp
 )
 
 target_link_libraries(
@@ -68,6 +79,7 @@ if(build_tests)
     ${test_ara_log_dir}/argument_test.cpp
     ${test_ara_log_dir}/log_stream_test.cpp
     ${test_ara_log_dir}/logger_test.cpp
+    ${test_ara_log_dir}/logging_framework_test.cpp
   )
 
   target_link_libraries(

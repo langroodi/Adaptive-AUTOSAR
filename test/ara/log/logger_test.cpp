@@ -8,7 +8,7 @@ namespace ara
     {
         TEST(LoggerTest, LogLevelOff)
         {
-            const std::string cCtxId{"CX01"};
+            const std::string cCtxId{"CTX01"};
             const std::string cCtxDescription{"Default Test Context"};
             const LogLevel cLogLevel{LogLevel::kOff};
 
@@ -33,7 +33,7 @@ namespace ara
 
         TEST(LoggerTest, LogLevelVerbose)
         {
-            const std::string cCtxId{"CX01"};
+            const std::string cCtxId{"CTX01"};
             const std::string cCtxDescription{"Default Test Context"};
             const LogLevel cLogLevel{LogLevel::kVerbose};
 
@@ -57,9 +57,9 @@ namespace ara
 
         TEST(LoggerTest, WithLevelFunction)
         {
-            const std::string cCtxId{"CX01"};
+            const std::string cCtxId{"CTX01"};
             const std::string cCtxDescription{"Default Test Context"};
-            const LogLevel cLogLevel{LogLevel::kDebug};
+            const LogLevel cLogLevel{LogLevel::kWarn};
 
             Logger _logger =
                 Logger::CreateLogger(cCtxId, cCtxDescription, cLogLevel);
