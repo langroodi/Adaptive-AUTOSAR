@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include <stdint.h>
 #include <utility>
-
 #include "../../../src/ara/log/argument.h"
 
 namespace ara

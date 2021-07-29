@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include <iostream>
+
 #include "./logger.h"
 #include "./sink/log_sink.h"
 #include "./sink/console_log_sink.h"

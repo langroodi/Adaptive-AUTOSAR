@@ -1,11 +1,8 @@
 #ifndef LOG_STREAM_H
 #define LOG_STREAM_H
 
-#include <string>
-#include <stdint.h>
 #include <vector>
 #include <utility>
-
 #include "../core/error_code.h"
 #include "../core/instance_specifier.h"
 #include "./common.h"

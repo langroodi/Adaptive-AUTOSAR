@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-
 #include "../../../src/ara/log/log_stream.h"
 
 namespace ara
