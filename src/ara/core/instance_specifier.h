@@ -1,5 +1,5 @@
 #ifndef INSTANCE_SPECIFIER_H
-#define INSTNACE_SPECIFIER_H
+#define INSTANCE_SPECIFIER_H
 
 #include <string>
 #include "./result.h"

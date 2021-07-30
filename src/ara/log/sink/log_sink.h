@@ -25,7 +25,7 @@ namespace ara
 
             public:
                 virtual ~LogSink() noexcept;
-                virtual void Log(const LogStream &logStream) = 0;
+                virtual void Log(const LogStream &logStream) const = 0;
             };
         }
     }

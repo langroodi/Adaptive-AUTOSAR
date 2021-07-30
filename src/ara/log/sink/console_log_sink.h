@@ -17,7 +17,7 @@ namespace ara
                 ConsoleLogSink(
                     std::string appId,
                     std::string appDescription);
-                void Log(const LogStream &logStream) override;
+                void Log(const LogStream &logStream) const override;
             };
         }
     }

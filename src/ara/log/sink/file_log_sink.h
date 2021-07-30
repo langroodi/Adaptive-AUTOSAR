@@ -21,7 +21,7 @@ namespace ara
                     std::string appId,
                     std::string appDescription,
                     std::string logFilePath);
-                void Log(const LogStream &logStream) override;
+                void Log(const LogStream &logStream) const override;
             };
         }
     }

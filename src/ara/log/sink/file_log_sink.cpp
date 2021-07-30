@@ -14,7 +14,7 @@ namespace ara
             {
             }
 
-            void FileLogSink::Log(const LogStream &logStream)
+            void FileLogSink::Log(const LogStream &logStream) const
             {
                 const std::string cNewline{"\n"};
 

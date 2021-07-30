@@ -12,14 +12,14 @@ namespace ara
         class LoggingFramework
         {
         private:
-            sink::LogSink* mLogSink;
+            sink::LogSink *mLogSink;
             LogLevel mDefaultLogLevel;
             std::vector<Logger> mLoggers;
 
-            LoggingFramework(sink::LogSink* logSink, LogLevel logLevel);
+            LoggingFramework(sink::LogSink *logSink, LogLevel logLevel);
 
         public:
-            LoggingFramework() = default;
+            LoggingFramework() = delete;
             ~LoggingFramework() noexcept;
             const Logger &CreateLogger(
                 std::string ctxId,
@@ -29,11 +29,11 @@ namespace ara
                 std::string ctxDescription,
                 LogLevel ctxDefLogLevel);
             void Log(
-                const Logger& logger,
+                const Logger &logger,
                 LogLevel logLevel,
-                const LogStream& logStream);
+                const LogStream &logStream);
 
-           static LoggingFramework Create(
+            static LoggingFramework Create(
                 std::string appId,
                 LogMode logMode,
                 LogLevel logLevel = LogLevel::kWarn,
@@ -42,7 +42,7 @@ namespace ara
                 std::string appId,
                 std::string filePath,
                 LogLevel logLevel = LogLevel::kWarn,
-                std::string appDescription = "");                
+                std::string appDescription = "");
         };
     }
 }

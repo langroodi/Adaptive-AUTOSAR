@@ -12,7 +12,7 @@ namespace ara
             {
             }
             
-            void ConsoleLogSink::Log(const LogStream &logStream)
+            void ConsoleLogSink::Log(const LogStream &logStream) const
             {
                 LogStream _appstamp = GetAppstamp();
                 LogStream _timestamp = GetTimestamp();
