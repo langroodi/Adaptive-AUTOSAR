@@ -22,6 +22,7 @@ FetchContent_MakeAvailable(googletest)
 # Options:
 
 option(build_tests "Build all the tests." ON)
+option(gtest_disable_pthreads "Disable uses of pthreads in gtest." OFF)
 
 ########################################################################
 #
