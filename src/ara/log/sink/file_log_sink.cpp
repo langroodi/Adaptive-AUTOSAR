@@ -18,10 +18,10 @@ namespace ara
             {
                 const std::string cNewline{"\n"};
 
-                LogStream _appstamp = GetAppstamp();
                 LogStream _timestamp = GetTimestamp();
-                _appstamp << _timestamp << cWhitespace << logStream;
-                std::string _logString = _appstamp.ToString();
+                LogStream _appstamp = GetAppstamp();
+                _timestamp << cWhitespace << _appstamp  << cWhitespace << logStream;
+                std::string _logString = _timestamp.ToString();
 
                 std::ofstream logFileStream(
                     mLogFilePath, std::ofstream::out | std::ofstream::app);

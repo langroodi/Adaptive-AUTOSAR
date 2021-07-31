@@ -47,7 +47,9 @@ namespace ara
 
             if (_isLevelEnabled)
             {
-                mLogSink->Log(logStream);
+                LogStream _logStreamContex = logger.WithLevel(logLevel);
+                _logStreamContex << logStream;
+                mLogSink->Log(_logStreamContex);
             }
         }
 
