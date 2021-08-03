@@ -7,7 +7,8 @@ project(Adaptive_Platform)
 
 # This AUTOSAR Adaptive Platform requires C++14
 set(CMAKE_CXX_STANDARD 14)
-# dsd dsds 
+# Enable 'rdyamic' switch to export the executable's symbols for debugging
+set(CMAKE_ENABLE_EXPORTS 1)
 # Fetching GoogleTest 1.11.0 for unit testing
 include(FetchContent)
 FetchContent_Declare(
