@@ -10,12 +10,12 @@ addons:
       - doxygen
 
 script:
-  - doxygen doxygen.conf
+  - doxygen doc/doxygen.conf
 
 deploy:
   provider: pages
   skip_cleanup: true
-  local_dir: html
+  local_dir: doc/html
   github_token: $GH_REPO_TOKEN
   on:
     branch: master
