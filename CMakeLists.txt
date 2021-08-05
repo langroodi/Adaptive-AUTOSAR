@@ -80,7 +80,9 @@ add_library(
   ara_sm
   ${source_ara_sm_dir}/states.h
   ${source_ara_sm_dir}/trigger.h
+  ${source_ara_sm_dir}/notifier.h
   ${source_ara_sm_dir}/trigger_in.h
+  ${source_ara_sm_dir}/trigger_out.h
 )
 
 set_target_properties(
@@ -103,6 +105,7 @@ if(build_tests)
     ${test_ara_log_dir}/logger_test.cpp
     ${test_ara_log_dir}/logging_framework_test.cpp
     ${test_ara_sm_dir}/trigger_in_test.cpp
+    ${test_ara_sm_dir}/trigger_out_test.cpp
   )
 
   target_link_libraries(
