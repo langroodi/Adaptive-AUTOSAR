@@ -14,15 +14,13 @@ namespace ara
         class TriggerIn
         {
         private:
-            T mState;
             Trigger<T> mTrigger;
 
         public:
             /// @brief Constructor
-            /// @param T Initial state
+            /// @param T State
             /// @param hanlder Handler to be invoked after state change
-            TriggerIn(T initialState, TriggerHandler<T> handler) : mState{initialState},
-                                                                   mTrigger(mState, handler)
+            TriggerIn(T &state, TriggerHandler<T> handler) : mTrigger(state, handler)
             {
             }
 

@@ -15,11 +15,13 @@ namespace ara
         TEST(SMTriggerInTest, TriggerWrite)
         {
             auto _initialState = FunctionGroupStates::kOff;
-
-            TriggerIn<FunctionGroupStates> _triggerIn(_initialState, OnTriggeredHandler);
-
             auto _newState = FunctionGroupStates::kRunning;
-            EXPECT_NO_THROW(_triggerIn.Trigger().Write(_newState));
+
+            TriggerIn<FunctionGroupStates> _triggerIn(
+                _initialState, OnTriggeredHandler);
+            _triggerIn.Trigger().Write(_newState);
+
+            EXPECT_EQ(_initialState, _newState);
         }
     }
 }
