@@ -1,7 +1,6 @@
 #ifndef TRIGGER_IN_H
 #define TRIGGER_IN_H
 
-#include <utility>
 #include "./trigger.h"
 
 namespace ara
@@ -20,7 +19,7 @@ namespace ara
             /// @brief Constructor
             /// @param T State
             /// @param hanlder Handler to be invoked after state change
-            TriggerIn(T &state, TriggerHandler<T> handler) : mTrigger(state, handler)
+            TriggerIn(T &state, TriggerHandler handler) : mTrigger(state, handler)
             {
             }
 
@@ -32,6 +31,7 @@ namespace ara
             TriggerIn &operator=(TriggerIn &&) = delete;
 
             /// @brief Trigger property getter
+            /// @returns The trigger
             Trigger<T> &Trigger() noexcept
             {
                 return mTrigger;

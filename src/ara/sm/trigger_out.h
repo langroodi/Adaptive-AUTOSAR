@@ -30,6 +30,7 @@ namespace ara
             TriggerOut &operator=(TriggerOut &&) = delete;
 
             /// @brief Notifier property getter
+            /// @returns The notifier
             Notifier<T> &Notifier() noexcept
             {
                 return mNotifier;

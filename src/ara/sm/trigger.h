@@ -7,7 +7,6 @@ namespace ara
 {
     namespace sm
     {
-        template <typename T>
         using TriggerHandler = std::function<void()>;
 
         /// @brief State changing trigger wrapper
@@ -17,13 +16,13 @@ namespace ara
         {
         private:
             T &mState;
-            TriggerHandler<T> mHandler;
+            TriggerHandler mHandler;
 
         public:
             /// @brief Constructor
             /// @param state State
             /// @param handler Handler to be invoked after state change
-            Trigger(T &state, TriggerHandler<T> handler) : mState{state},
+            Trigger(T &state, TriggerHandler handler) : mState{state},
                                                            mHandler{handler}
             {
             }

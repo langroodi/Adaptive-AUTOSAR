@@ -83,6 +83,7 @@ add_library(
   ${source_ara_sm_dir}/notifier.h
   ${source_ara_sm_dir}/trigger_in.h
   ${source_ara_sm_dir}/trigger_out.h
+  ${source_ara_sm_dir}/trigger_inout.h
 )
 
 set_target_properties(
@@ -106,6 +107,7 @@ if(build_tests)
     ${test_ara_log_dir}/logging_framework_test.cpp
     ${test_ara_sm_dir}/trigger_in_test.cpp
     ${test_ara_sm_dir}/trigger_out_test.cpp
+    ${test_ara_sm_dir}/trigger_inout_test.cpp
   )
 
   target_link_libraries(
