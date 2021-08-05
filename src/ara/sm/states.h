@@ -7,12 +7,13 @@ namespace ara
 {
     namespace sm
     {
+        /// @brief Function group state
         enum class FunctionGroupStates : uint8_t
         {
-            kOff = 0,
-            kRunning = 1,
-            kUpdate = 2,
-            kVerify = 3
+            kOff = 0,       ///< State Off
+            kRunning = 1,   ///< State Running
+            kUpdate = 2,    ///< State Updating
+            kVerify = 3     ///< State Update Verifying
         };
     }
 }

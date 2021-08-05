@@ -27,7 +27,7 @@ option(gtest_disable_pthreads "Disable uses of pthreads in gtest." OFF)
 
 ########################################################################
 #
-# Directories:
+# Source Directories:
 
 set(source_ara_core_dir
   "${CMAKE_SOURCE_DIR}/src/ara/core")
@@ -38,8 +38,16 @@ set(source_ara_log_dir
 set(source_ara_log_sink_dir
   "${CMAKE_SOURCE_DIR}/src/ara/log/sink")
 
+set(source_ara_sm_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/sm")
+
+# Test Directories:
+
 set(test_ara_log_dir
   "${CMAKE_SOURCE_DIR}/test/ara/log")
+
+set(test_ara_sm_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/sm")
 
 ########################################################################
 
@@ -68,6 +76,18 @@ add_library(
   ${source_ara_log_sink_dir}/log_sink.cpp
 )
 
+add_library(
+  ara_sm
+  ${source_ara_sm_dir}/states.h
+  ${source_ara_sm_dir}/trigger.h
+  ${source_ara_sm_dir}/trigger_in.h
+)
+
+set_target_properties(
+  ara_sm
+  PROPERTIES LINKER_LANGUAGE CXX
+)
+
 target_link_libraries(
   ara_log
   ara_core
@@ -77,19 +97,21 @@ if(build_tests)
   enable_testing()
 
   add_executable(
-    ara_log_test
+    ara_unit_test
     ${test_ara_log_dir}/argument_test.cpp
     ${test_ara_log_dir}/log_stream_test.cpp
     ${test_ara_log_dir}/logger_test.cpp
     ${test_ara_log_dir}/logging_framework_test.cpp
+    ${test_ara_sm_dir}/trigger_in_test.cpp
   )
 
   target_link_libraries(
-    ara_log_test
+    ara_unit_test
     gtest_main
     ara_log
+    ara_sm
   )
 
   include(GoogleTest)
-  gtest_discover_tests(ara_log_test)
+  gtest_discover_tests(ara_unit_test)
  endif()

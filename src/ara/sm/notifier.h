@@ -12,7 +12,7 @@ namespace ara
         class Notifier
         {
         private:
-            using NotificationHandler = std::function<void<T>>;
+            using NotificationHandler = std::function<void(T)>;
             T mState;
             std::vector<NotificationHandler> mSubsribers;
             
