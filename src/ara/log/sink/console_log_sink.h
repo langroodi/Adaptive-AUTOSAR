@@ -12,11 +12,15 @@ namespace ara
         {
             class ConsoleLogSink : public LogSink
             {
+                /// @brief Constructor
+                /// @param appId Application ID
+                /// @param appDescription Application description
             public:
-                ConsoleLogSink() = delete;
                 ConsoleLogSink(
                     std::string appId,
                     std::string appDescription);
+
+                ConsoleLogSink() = delete;
                 void Log(const LogStream &logStream) const override;
             };
         }

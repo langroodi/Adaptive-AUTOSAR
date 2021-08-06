@@ -17,7 +17,7 @@ namespace ara
 
         public:
             /// @brief Constructor
-            /// @param T State
+            /// @param state State
             TriggerOut(T &state) : mNotifier(state)
             {
             }

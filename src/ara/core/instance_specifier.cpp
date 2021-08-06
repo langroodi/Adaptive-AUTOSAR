@@ -8,11 +8,7 @@ namespace ara
             std::string metaModelIdentifier) : mMetaModelIdentifier{metaModelIdentifier}
         {
         }
-
-        InstanceSpecifier::~InstanceSpecifier() noexcept
-        {
-        }
-
+        
         bool InstanceSpecifier::operator==(const InstanceSpecifier &other) const noexcept
         {
             return mMetaModelIdentifier == other.mMetaModelIdentifier;

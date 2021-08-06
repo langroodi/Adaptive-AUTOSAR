@@ -8,6 +8,8 @@ namespace ara
 {
     namespace log
     {
+        /// @brief A payload (quantity) with an unit wrapper
+        /// @tparam T Payload type
         template <typename T>
         class Argument
         {
@@ -19,10 +21,14 @@ namespace ara
             const std::string cUnitSeperator{" "};
 
         public:
+            /// @brief brief description Constructor
+            /// @param payload Payload value
+            /// @param identifier Payload ID
+            /// @param unit Playload unit
             Argument(
-                T &&t,
+                T &&payload,
                 const char *identifier,
-                const char *unit) : mPayload(t),
+                const char *unit) : mPayload(payload),
                                     mIdentifier(identifier),
                                     mUnit(unit)
             {
@@ -30,6 +36,8 @@ namespace ara
 
             ~Argument() noexcept = default;
             
+            /// @brief Convert the payload to a standard string
+            /// @returns Serialized payload string
             std::string ToString() const
             {
                 std::string _payloadString = std::to_string(mPayload);

@@ -5,6 +5,7 @@
 
 namespace ara
 {
+    /// @brief Adaptive AUTOSAR State Management
     namespace sm
     {
         /// @brief Function group state

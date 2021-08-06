@@ -7,6 +7,7 @@ namespace ara
 {
     namespace sm
     {
+        /// @brief Callback on trigger invocation
         using TriggerHandler = std::function<void()>;
 
         /// @brief State changing trigger wrapper

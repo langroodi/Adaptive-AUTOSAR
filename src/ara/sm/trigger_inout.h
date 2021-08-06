@@ -19,8 +19,8 @@ namespace ara
 
         public:
             /// @brief Constructor
-            /// @param T State
-            /// @param hanlder Handler to be invoked after state change
+            /// @param state State
+            /// @param handler Handler to be invoked after state change
             TriggerInOut(T &state, TriggerHandler handler) : mTrigger(state, handler),
                                                                 mNotifier(state)
             {

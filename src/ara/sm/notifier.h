@@ -8,6 +8,8 @@ namespace ara
 {
     namespace sm
     {
+        /// @brief Callback on notification invocation
+        /// @tparam T Notified new state type
         template <typename T>
         using NotificationHandler = std::function<void(T)>;
 

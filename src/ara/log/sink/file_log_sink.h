@@ -16,11 +16,16 @@ namespace ara
                 std::string mLogFilePath;
 
             public:
-                FileLogSink() = delete;
+                /// @brief Constructor
+                /// @param appId Application ID
+                /// @param appDescription Application description
+                /// @param logFilePath Logging file sink path
                 FileLogSink(
                     std::string appId,
                     std::string appDescription,
                     std::string logFilePath);
+
+                FileLogSink() = delete;
                 void Log(const LogStream &logStream) const override;
             };
         }

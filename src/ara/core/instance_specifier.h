@@ -15,7 +15,7 @@ namespace ara
             
         public:
             explicit InstanceSpecifier(std::string metaModelIdentifier);
-            ~InstanceSpecifier() noexcept;
+            ~InstanceSpecifier() noexcept = default;
             static Result<InstanceSpecifier> Create(std::string metaModelIdentifier);
             bool operator==(const InstanceSpecifier &other) const noexcept;
             bool operator==(std::string other) const noexcept;
