@@ -27,7 +27,7 @@ namespace ara
 
             public:
                 /// @brief Constructor
-                /// @param requestHanlder On request message received handler
+                /// @param requestHandler On request message received handler
                 CommunicationGroupClient(RequestHandler<T> requestHandler) : mRequestHandler{requestHandler}
                 {
                 }
