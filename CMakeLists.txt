@@ -41,6 +41,9 @@ set(source_ara_log_sink_dir
 set(source_ara_sm_dir
   "${CMAKE_SOURCE_DIR}/src/ara/sm")
 
+  set(source_ara_com_cg_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/cg")
+
 # Test Directories:
 
 set(test_ara_log_dir
@@ -77,6 +80,17 @@ add_library(
 )
 
 add_library(
+  ara_com
+  ${source_ara_com_cg_dir}/communication_group_client.h
+  ${source_ara_com_cg_dir}/communication_group_server.h
+)
+
+set_target_properties(
+  ara_com
+  PROPERTIES LINKER_LANGUAGE CXX
+)
+
+add_library(
   ara_sm
   ${source_ara_sm_dir}/states.h
   ${source_ara_sm_dir}/trigger.h
@@ -96,6 +110,11 @@ target_link_libraries(
   ara_core
 )
 
+target_link_libraries(
+  ara_log
+  ara_com
+)
+
 if(build_tests)
   enable_testing()
 
@@ -108,6 +127,7 @@ if(build_tests)
     ${test_ara_sm_dir}/trigger_in_test.cpp
     ${test_ara_sm_dir}/trigger_out_test.cpp
     ${test_ara_sm_dir}/trigger_inout_test.cpp
+    ${test_ara_sm_dir}/power_mode_test.cpp
   )
 
   target_link_libraries(
