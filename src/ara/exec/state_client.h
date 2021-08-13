@@ -2,7 +2,6 @@
 #define STATE_CLIENT_H
 
 #include <string>
-#include <string_view>
 #include "../core/result.h"
 #include <future>
 
@@ -15,26 +14,26 @@ namespace ara
         public:
             using CtorToken = std::string;
 
-            FunctionGroup(CtorToken &&token) noexcept;
+            explicit FunctionGroup(CtorToken &&token) noexcept;
             ~FunctionGroup() noexcept;
             bool operator==(const FunctionGroup &other) const noexcept;
             bool operator!=(const FunctionGroup &other) const noexcept;
 
             static ara::core::Result<CtorToken> Preconstruct(
-                std::string_view metaModelIdentifier) noexcept;
+                std::string metaModelIdentifier) noexcept;
         };
 
         class FunctionGroupState
         {
         public:
             using CtorToken = std::string;
-            FunctionGroupState(CtorToken &&token) noexcept;
+            explicit FunctionGroupState(CtorToken &&token) noexcept;
             ~FunctionGroupState() noexcept;
             bool operator==(const FunctionGroupState &other) const noexcept;
             bool operator!=(const FunctionGroupState &other) const noexcept;
 
             static ara::core::Result<CtorToken> Preconstruct(
-                std::string_view metaModelIdentifier) noexcept;
+                std::string metaModelIdentifier) noexcept;
         };
 
         class StateClient

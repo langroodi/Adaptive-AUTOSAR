@@ -30,7 +30,7 @@ namespace ara
             public:
                 /// @brief Constructor
                 /// @param responseHandler On response message received handler
-                CommunicationGroupServer(ResponseHandler<R> responseHandler) : mResponseHandler{responseHandler}
+                explicit CommunicationGroupServer(ResponseHandler<R> responseHandler) : mResponseHandler{responseHandler}
                 {
                 }
 
