@@ -74,7 +74,7 @@ namespace ara
                 /// @param protocolVersion SOME/IP protocol header version
                 /// @param interfaceVersion Service interface version
                 /// @param messageType SOME/IP message type (request or notification)
-                /// @param sessionID Active/non-active session ID
+                /// @param sessionId Active/non-active session ID
                 SomeIpMessage(std::uint32_t messageId,
                     std::uint16_t clientId,
                     std::uint8_t protocolVersion,
@@ -89,7 +89,7 @@ namespace ara
                 /// @param interfaceVersion Service interface version
                 /// @param messageType SOME/IP message type (response or error)
                 /// @param returnCode Message response/error return code
-                /// @param sessionID Active/non-active session ID
+                /// @param sessionId Active/non-active session ID
                 SomeIpMessage(std::uint32_t messageId,
                     std::uint16_t clientId,
                     std::uint8_t protocolVersion,
