@@ -22,4 +22,4 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 - [ ] MISRA certified
 - [ ] Dedicated memory allocator
 - [ ] Integration with Volvo [Extended Vehicle](https://developer.volvocars.com/volvo-api/extended-vehicle/) and [Connected Vehicle](https://developer.volvocars.com/volvo-api/connected-vehicle/) APIs
-- [ ] Inter-ECU communication via SOME/IP
+- [ ] E2E communication protection
