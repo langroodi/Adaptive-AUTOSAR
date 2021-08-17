@@ -35,7 +35,7 @@ namespace ara
                 LogStream GetTimestamp() const;
 
             public:
-                virtual ~LogSink() noexcept;
+                virtual ~LogSink() noexcept = default;
 
                 /// @brief Log a stream corresponds to the current application
                 /// @param logStream Input log stream

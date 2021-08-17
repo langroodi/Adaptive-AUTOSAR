@@ -34,10 +34,6 @@ namespace ara
 
                 return _result;
             }
-
-            LogSink::~LogSink() noexcept
-            {
-            }
         }
     }
 }
