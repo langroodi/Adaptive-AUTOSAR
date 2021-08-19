@@ -86,8 +86,9 @@ namespace ara
                 void AddSecondOption(option::Option &&secondOption);
 
                 /// @brief Get entity payload
+                /// @param optionIndex Index of the last added option
                 /// @returns Byte array
-                virtual const std::vector<std::uint8_t> &Payload() = 0;
+                virtual const std::vector<std::uint8_t> &Payload(std::uint8_t& optionIndex) = 0;
             };
         }
     }

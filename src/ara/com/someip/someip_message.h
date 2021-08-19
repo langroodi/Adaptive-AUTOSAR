@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdexcept>
 #include <vector>
+#include <limits>
 
 namespace ara
 {
@@ -14,16 +15,16 @@ namespace ara
             /// @brief SOME/IP communication message type
             enum class SomeIpMessageType : std::uint8_t
             {
-                Request = 0x00,             ///!< Request expecting a response
-                RequestNoReturn = 0x01,     ///!< Fire and forget request
-                Notification = 0x02,        ///!< Notification/event callback
-                Response = 0x80,            ///!< Response without any error
-                Error = 0x81,               ///!< Response containing error
-                TpRequest = 0x20,           ///!< Transfer protocol request
-                TpRequestNoReturn = 0x21,   ///!< Transfer protocol fire and forget request
-                TpNotification = 0x22,      ///!< Transfer protocol notification
-                TpResponse = 0xa0,          ///!< Transfer protocol response
-                TpError = 0xa1              ///!< Transfer protocol error
+                Request = 0x00,           ///!< Request expecting a response
+                RequestNoReturn = 0x01,   ///!< Fire and forget request
+                Notification = 0x02,      ///!< Notification/event callback
+                Response = 0x80,          ///!< Response without any error
+                Error = 0x81,             ///!< Response containing error
+                TpRequest = 0x20,         ///!< Transfer protocol request
+                TpRequestNoReturn = 0x21, ///!< Transfer protocol fire and forget request
+                TpNotification = 0x22,    ///!< Transfer protocol notification
+                TpResponse = 0xa0,        ///!< Transfer protocol response
+                TpError = 0xa1            ///!< Transfer protocol error
             };
 
             /// @brief SOME/IP communication message return code
@@ -60,12 +61,12 @@ namespace ara
                 SomeIpReturnCode mReturnCode;
 
                 SomeIpMessage(std::uint32_t messageId,
-                    std::uint16_t clientId,
-                    std::uint16_t sessionId,
-                    std::uint8_t protocolVersion,
-                    std::uint8_t interfaceVersion,
-                    SomeIpMessageType messageType,
-                    SomeIpReturnCode returnCode);
+                              std::uint16_t clientId,
+                              std::uint16_t sessionId,
+                              std::uint8_t protocolVersion,
+                              std::uint8_t interfaceVersion,
+                              SomeIpMessageType messageType,
+                              SomeIpReturnCode returnCode);
 
             protected:
                 /// @brief Constructor for request and notification
@@ -76,12 +77,12 @@ namespace ara
                 /// @param messageType SOME/IP message type (request or notification)
                 /// @param sessionId Active/non-active session ID
                 SomeIpMessage(std::uint32_t messageId,
-                    std::uint16_t clientId,
-                    std::uint8_t protocolVersion,
-                    std::uint8_t interfaceVersion,
-                    SomeIpMessageType messageType,
-                    std::uint16_t sessionId = 1);
-                
+                              std::uint16_t clientId,
+                              std::uint8_t protocolVersion,
+                              std::uint8_t interfaceVersion,
+                              SomeIpMessageType messageType,
+                              std::uint16_t sessionId = 1);
+
                 /// @brief Constructor for response and error
                 /// @param messageId Message ID consisting service and method/event ID
                 /// @param clientId Client ID including ID prefix
@@ -91,13 +92,13 @@ namespace ara
                 /// @param returnCode Message response/error return code
                 /// @param sessionId Active/non-active session ID
                 SomeIpMessage(std::uint32_t messageId,
-                    std::uint16_t clientId,
-                    std::uint8_t protocolVersion,
-                    std::uint8_t interfaceVersion,
-                    SomeIpMessageType messageType,
-                    SomeIpReturnCode returnCode,
-                    std::uint16_t sessionId = 1);
-                
+                              std::uint16_t clientId,
+                              std::uint8_t protocolVersion,
+                              std::uint8_t interfaceVersion,
+                              SomeIpMessageType messageType,
+                              SomeIpReturnCode returnCode,
+                              std::uint16_t sessionId = 1);
+
             public:
                 virtual ~SomeIpMessage() noexcept = default;
 
@@ -107,7 +108,7 @@ namespace ara
 
                 /// @brief Get message length
                 /// @returns Message length including the payload length
-                std::uint32_t Length() noexcept;
+                virtual std::uint32_t Length() const noexcept = 0;
 
                 /// @brief Get client ID
                 /// @returns Client ID including ID prefix
@@ -122,8 +123,9 @@ namespace ara
                 virtual void SetSessionId(std::uint16_t sessionId);
 
                 /// @brief Increment the session ID by one
+                /// @returns True if the session ID is wrappered; otherwise false
                 /// @note In the case of wrapping, session ID will start from 1
-                void IncrementSessionId() noexcept;
+                virtual bool IncrementSessionId() noexcept;
 
                 /// @brief Get protocol version
                 /// @returns SOME/IP protocol header version
@@ -143,7 +145,22 @@ namespace ara
 
                 /// @brief Get message payload
                 /// @returns Byte array
-                virtual const std::vector<std::uint8_t>& Payload() = 0;
+                virtual const std::vector<std::uint8_t> &Payload();
+
+                /// @brief Inject a short value into a byte vector
+                /// @param vector Byte vector
+                /// @param value Short input value
+                static void Inject(std::vector<std::uint8_t> &vector, std::uint16_t value) noexcept;
+
+                /// @brief Inject an integer value into a byte vector
+                /// @param vector Byte vector
+                /// @param value Integer input value
+                static void Inject(std::vector<std::uint8_t> &vector, std::uint32_t value) noexcept;
+
+                /// @brief Concat the second vector into the end of the first vector
+                /// @param vector1 First vector
+                /// @param vector2 Second vector
+                static void Concat(std::vector<std::uint8_t> &vector1, std::vector<std::uint8_t> &&vector2);
             };
         }
     }

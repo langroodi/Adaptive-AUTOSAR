@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <vector>
+#include <utility>
 #include "../someip_message.h"
 #include "../../entry/entry.h"
 
@@ -27,12 +28,11 @@ namespace ara
                     bool mRebooted;
                     std::vector<entry::Entry> mEntries;
 
+                    std::uint32_t getEntriesLength() const noexcept;
+                    std::uint32_t getOptionsLength() const noexcept;
+
                 public:
                     SomeIpSdMessage();
-
-                    virtual void SetSessionId(std::uint16_t sessionId) override;
-
-                    virtual const std::vector<std::uint8_t> &Payload() override;
 
                     /// @brief Get entries
                     /// @returns Exisiting message entries
@@ -41,6 +41,14 @@ namespace ara
                     /// @brief Add an entry
                     /// @param entry Entry to be added
                     void AddEntry(entry::Entry &&entry);
+
+                    virtual std::uint32_t Length() const noexcept override;
+
+                    virtual void SetSessionId(std::uint16_t sessionId) override;
+
+                    virtual bool IncrementSessionId() noexcept override;
+
+                    virtual const std::vector<std::uint8_t> &Payload() override;
                 };
             }
         }
