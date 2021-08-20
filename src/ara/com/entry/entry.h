@@ -34,6 +34,9 @@ namespace ara
                 uint32_t mTTL;
 
             protected:
+                /// @brief Any service major version
+                const std::uint8_t cAnyMajorVersion = 0xff;
+
                 /// @brief Constructor
                 /// @param type Entry type
                 /// @param serviceId Service in interest ID
@@ -43,8 +46,8 @@ namespace ara
                 Entry(EntryType type,
                       std::uint16_t serviceId,
                       std::uint16_t instanceId,
-                      uint32_t ttl,
-                      uint8_t majorVersion = 0xff);
+                      std::uint32_t ttl,
+                      std::uint8_t majorVersion = cAnyMajorVersion) noexcept;
 
             public:
                 virtual ~Entry() noexcept = default;
@@ -88,7 +91,7 @@ namespace ara
                 /// @brief Get entity payload
                 /// @param optionIndex Index of the last added option
                 /// @returns Byte array
-                virtual const std::vector<std::uint8_t> &Payload(std::uint8_t& optionIndex) = 0;
+                virtual const std::vector<std::uint8_t> &Payload(std::uint8_t &optionIndex) = 0;
             };
         }
     }
