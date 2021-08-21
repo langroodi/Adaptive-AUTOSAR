@@ -10,7 +10,7 @@ namespace ara
                                        std::uint16_t serviceId,
                                        std::uint16_t instanceId,
                                        std::uint32_t ttl,
-                                       sts::uint8_t majorVersion,
+                                       std::uint8_t majorVersion,
                                        std::uint32_t minorVersion) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
                                                                               mMinorVersion{minorVersion}
             {
@@ -33,7 +33,7 @@ namespace ara
                 std::uint16_t serviceId,
                 std::uint32_t ttl,
                 std::uint16_t instanceId,
-                sts::uint8_t majorVersion,
+                std::uint8_t majorVersion,
                 std::uint32_t minorVersion) noexcept
             {
                 const EntryType cFindServiceEntry = EntryType::Finding;
@@ -57,7 +57,7 @@ namespace ara
             ServiceEntry ServiceEntry::CreateOfferServiceEntry(
                 std::uint16_t serviceId,
                 std::uint16_t instanceId,
-                sts::uint8_t majorVersion,
+                std::uint8_t majorVersion,
                 std::uint32_t minorVersion) noexcept
             {
                 const EntryType cOfferServiceEntry = EntryType::Offering;
@@ -77,7 +77,7 @@ namespace ara
             ServiceEntry ServiceEntry::CreateStopOfferEntry(
                 std::uint16_t serviceId,
                 std::uint16_t instanceId,
-                sts::uint8_t majorVersion,
+                std::uint8_t majorVersion,
                 std::uint32_t minorVersion) noexcept
             {
                 const EntryType cOfferServiceEntry = EntryType::Offering;
@@ -87,7 +87,7 @@ namespace ara
                     cOfferServiceEntry,
                     serviceId,
                     instanceId,
-                    cOfferServiceTTL,
+                    cStopOfferTTL,
                     majorVersion,
                     minorVersion);
 

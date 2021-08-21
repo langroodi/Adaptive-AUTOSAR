@@ -41,8 +41,11 @@ set(source_ara_log_sink_dir
 set(source_ara_sm_dir
   "${CMAKE_SOURCE_DIR}/src/ara/sm")
 
-  set(source_ara_com_cg_dir
+set(source_ara_com_cg_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/cg")
+
+set(source_ara_com_entry_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/entry")
 
 # Test Directories:
 
@@ -51,6 +54,9 @@ set(test_ara_log_dir
 
 set(test_ara_sm_dir
   "${CMAKE_SOURCE_DIR}/test/ara/sm")
+
+set(test_ara_com_entry_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/com/entry")
 
 ########################################################################
 
@@ -83,6 +89,9 @@ add_library(
   ara_com
   ${source_ara_com_cg_dir}/communication_group_client.h
   ${source_ara_com_cg_dir}/communication_group_server.h
+  ${source_ara_com_entry_dir}/entry.h
+  ${source_ara_com_entry_dir}/eventgroup_entry.h
+  ${source_ara_com_entry_dir}/service_entry.h
 )
 
 set_target_properties(
@@ -128,6 +137,8 @@ if(build_tests)
     ${test_ara_sm_dir}/trigger_out_test.cpp
     ${test_ara_sm_dir}/trigger_inout_test.cpp
     ${test_ara_sm_dir}/power_mode_test.cpp
+    ${test_ara_com_entry_dir}/eventgroup_entry_test.cpp
+    ${test_ara_com_entry_dir}/service_entry_test.cpp
   )
 
   target_link_libraries(

@@ -26,7 +26,7 @@ namespace ara
                                 std::uint16_t serviceId,
                                 std::uint16_t instanceId,
                                 std::uint32_t ttl,
-                                sts::uint8_t majorVersion,
+                                std::uint8_t majorVersion,
                                 std::uint16_t eventgroupId) noexcept;
 
             public:
@@ -34,7 +34,7 @@ namespace ara
 
                 /// @brief Get event-group ID
                 /// @returns Event-group ID for subscription/unsubscription
-                std::uint16_t EvengroupId() const noexcept;
+                std::uint16_t EventgroupId() const noexcept;
 
                 virtual const std::vector<std::uint8_t> &Payload(std::uint8_t &optionIndex) override;
 
@@ -47,8 +47,8 @@ namespace ara
                 static EventgroupEntry CreateSubscribeEventEntry(
                     std::uint16_t serviceId,
                     std::uint16_t instanceId,
-                    sts::uint8_t majorVersion,
-                    std::uint32_t eventgroupId) noexcept;
+                    std::uint8_t majorVersion,
+                    std::uint16_t eventgroupId) noexcept;
 
                 /// @brief Unsubscribe from an event-group entry factory
                 /// @param serviceId Service in interest ID
@@ -59,8 +59,8 @@ namespace ara
                 static EventgroupEntry CreateUnsubscribeEventEntry(
                     std::uint16_t serviceId,
                     std::uint16_t instanceId,
-                    sts::uint8_t majorVersion,
-                    std::uint32_t eventgroupId) noexcept;
+                    std::uint8_t majorVersion,
+                    std::uint16_t eventgroupId) noexcept;
 
                 /// @brief Positive acknowledge of an event-group entry factory
                 /// @param eventgroupEntry Received event-group entry

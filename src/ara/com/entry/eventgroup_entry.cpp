@@ -10,13 +10,13 @@ namespace ara
                                              std::uint16_t serviceId,
                                              std::uint16_t instanceId,
                                              std::uint32_t ttl,
-                                             sts::uint8_t majorVersion,
+                                             std::uint8_t majorVersion,
                                              std::uint16_t eventgroupId) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
                                                                                     mEventgroupId{eventgroupId}
             {
             }
 
-            std::uint16_t EventgroupEntry::EvengroupId() const noexcept
+            std::uint16_t EventgroupEntry::EventgroupId() const noexcept
             {
                 return mEventgroupId;
             }
@@ -36,8 +36,8 @@ namespace ara
             EventgroupEntry EventgroupEntry::CreateSubscribeEventEntry(
                 std::uint16_t serviceId,
                 std::uint16_t instanceId,
-                sts::uint8_t majorVersion,
-                std::uint32_t eventgroupId) noexcept
+                std::uint8_t majorVersion,
+                std::uint16_t eventgroupId) noexcept
             {
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
                 const std::uint32_t cSubscribeEventTTL = 0xffffff;
@@ -56,8 +56,8 @@ namespace ara
             EventgroupEntry EventgroupEntry::CreateUnsubscribeEventEntry(
                 std::uint16_t serviceId,
                 std::uint16_t instanceId,
-                sts::uint8_t majorVersion,
-                std::uint32_t eventgroupId) noexcept
+                std::uint8_t majorVersion,
+                std::uint16_t eventgroupId) noexcept
             {
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
                 const std::uint32_t cUnsubscribeEventTTL = 0x000000;
@@ -66,7 +66,7 @@ namespace ara
                     cSubscribeEventEntry,
                     serviceId,
                     instanceId,
-                    cSubscribeEventTTL,
+                    cUnsubscribeEventTTL,
                     majorVersion,
                     eventgroupId);
 
@@ -80,7 +80,7 @@ namespace ara
 
                 EventgroupEntry _result(
                     cAcknowledgetEntry,
-                    eventgroupEntry.SeriveId(),
+                    eventgroupEntry.ServiceId(),
                     eventgroupEntry.InstanceId(),
                     eventgroupEntry.TTL(),
                     eventgroupEntry.MajorVersion(),
@@ -97,7 +97,7 @@ namespace ara
 
                 EventgroupEntry _result(
                     cAcknowledgetEntry,
-                    eventgroupEntry.SeriveId(),
+                    eventgroupEntry.ServiceId(),
                     eventgroupEntry.InstanceId(),
                     cNackTTL,
                     eventgroupEntry.MajorVersion(),

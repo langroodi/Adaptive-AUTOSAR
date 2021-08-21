@@ -36,7 +36,7 @@ namespace ara
 
             protected:
                 /// @brief Any service major version
-                const std::uint8_t cAnyMajorVersion = 0xff;
+                static const std::uint8_t cAnyMajorVersion = 0xff;
 
                 /// @brief Constructor
                 /// @param type Entry type

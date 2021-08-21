@@ -15,8 +15,8 @@ namespace ara
             class ServiceEntry : public Entry
             {
             private:
-                const std::uint16_t cAnyInstanceId = 0xffff;
-                const std::uint32_t cAnyMinorVersion = 0xffffffff;
+                static const std::uint16_t cAnyInstanceId = 0xffff;
+                static const std::uint32_t cAnyMinorVersion = 0xffffffff;
 
                 std::uint32_t mMinorVersion;
 
@@ -31,7 +31,7 @@ namespace ara
                              std::uint16_t serviceId,
                              std::uint16_t instanceId,
                              std::uint32_t ttl,
-                             sts::uint8_t majorVersion,
+                             std::uint8_t majorVersion,
                              std::uint32_t minorVersion) noexcept;
 
             public:
@@ -54,7 +54,7 @@ namespace ara
                     std::uint16_t serviceId,
                     std::uint32_t ttl,
                     std::uint16_t instanceId = cAnyInstanceId,
-                    sts::uint8_t majorVersion = cAnyMajorVersion,
+                    std::uint8_t majorVersion = cAnyMajorVersion,
                     std::uint32_t minorVersion = cAnyMinorVersion) noexcept;
 
                 /// @brief Offer a service entry factory
@@ -66,7 +66,7 @@ namespace ara
                 static ServiceEntry CreateOfferServiceEntry(
                     std::uint16_t serviceId,
                     std::uint16_t instanceId,
-                    sts::uint8_t majorVersion,
+                    std::uint8_t majorVersion,
                     std::uint32_t minorVersion) noexcept;
 
                 /// @brief Stop offer a service entry factory
@@ -78,7 +78,7 @@ namespace ara
                 static ServiceEntry CreateStopOfferEntry(
                     std::uint16_t serviceId,
                     std::uint16_t instanceId,
-                    sts::uint8_t majorVersion,
+                    std::uint8_t majorVersion,
                     std::uint32_t minorVersion) noexcept;
             };
         }
