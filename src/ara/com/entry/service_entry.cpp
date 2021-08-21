@@ -21,6 +21,14 @@ namespace ara
                 return mMinorVersion;
             }
 
+            const std::vector<std::uint8_t> &ServiceEntry::Payload(std::uint8_t &optionIndex)
+            {
+                std::vector<std::uint8_t> _result = Entry::Payload(optionIndex);
+                someip::SomeIpMessage::Inject(_result, mMinorVersion);
+
+                return _result;
+            }
+
             ServiceEntry ServiceEntry::CreateFindServiceEntry(
                 std::uint16_t serviceId,
                 std::uint32_t ttl,

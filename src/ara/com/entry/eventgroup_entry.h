@@ -36,6 +36,8 @@ namespace ara
                 /// @returns Event-group ID for subscription/unsubscription
                 std::uint16_t EvengroupId() const noexcept;
 
+                virtual const std::vector<std::uint8_t> &Payload(std::uint8_t &optionIndex) override;
+
                 /// @brief Subscribe to an event-group entry factory
                 /// @param serviceId Service in interest ID
                 /// @param instanceId Service in interest instance ID

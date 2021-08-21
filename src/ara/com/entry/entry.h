@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <vector>
 #include "../option/option.h"
+#include "../someip/someip_message.h"
 
 namespace ara
 {
@@ -91,7 +92,7 @@ namespace ara
                 /// @brief Get entity payload
                 /// @param optionIndex Index of the last added option
                 /// @returns Byte array
-                virtual const std::vector<std::uint8_t> &Payload(std::uint8_t &optionIndex) = 0;
+                virtual const std::vector<std::uint8_t> &Payload(std::uint8_t &optionIndex);
             };
         }
     }

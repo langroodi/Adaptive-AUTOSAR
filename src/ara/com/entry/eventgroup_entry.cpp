@@ -21,6 +21,18 @@ namespace ara
                 return mEventgroupId;
             }
 
+            const std::vector<std::uint8_t> &EventgroupEntry::Payload(std::uint8_t &optionIndex)
+            {
+                std::vector<std::uint8_t> _result = Entry::Payload(optionIndex);
+
+                // Enabled Inistal Data Request Flag without any counter
+                const std::uint16_t cEventgroupFlag = 0x0080;
+                someip::SomeIpMessage::Inject(_result, cEventgroupFlag);
+                someip::SomeIpMessage::Inject(_result, mEventgroupId);
+
+                return _result;
+            }
+
             EventgroupEntry EventgroupEntry::CreateSubscribeEventEntry(
                 std::uint16_t serviceId,
                 std::uint16_t instanceId,
