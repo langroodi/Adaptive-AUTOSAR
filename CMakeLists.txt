@@ -44,6 +44,12 @@ set(source_ara_sm_dir
 set(source_ara_com_cg_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/cg")
 
+set(source_ara_com_helper_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/helper")
+
+set(source_ara_com_option_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/option")  
+
 set(source_ara_com_entry_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/entry")
 
@@ -89,9 +95,16 @@ add_library(
   ara_com
   ${source_ara_com_cg_dir}/communication_group_client.h
   ${source_ara_com_cg_dir}/communication_group_server.h
+  ${source_ara_com_helper_dir}/payload_helper.h
+  ${source_ara_com_helper_dir}/payload_helper.cpp
+  ${source_ara_com_option_dir}/option.h
+  ${source_ara_com_option_dir}/option.cpp
   ${source_ara_com_entry_dir}/entry.h
+  ${source_ara_com_entry_dir}/entry.cpp
   ${source_ara_com_entry_dir}/eventgroup_entry.h
+  ${source_ara_com_entry_dir}/eventgroup_entry.cpp
   ${source_ara_com_entry_dir}/service_entry.h
+  ${source_ara_com_entry_dir}/service_entry.cpp
 )
 
 set_target_properties(

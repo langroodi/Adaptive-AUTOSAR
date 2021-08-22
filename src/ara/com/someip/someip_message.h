@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <vector>
 #include <limits>
+#include "../helper/payload_helper.h"
 
 namespace ara
 {
@@ -146,21 +147,6 @@ namespace ara
                 /// @brief Get message payload
                 /// @returns Byte array
                 virtual const std::vector<std::uint8_t> &Payload();
-
-                /// @brief Inject a short value into a byte vector
-                /// @param vector Byte vector
-                /// @param value Short input value
-                static void Inject(std::vector<std::uint8_t> &vector, std::uint16_t value) noexcept;
-
-                /// @brief Inject an integer value into a byte vector
-                /// @param vector Byte vector
-                /// @param value Integer input value
-                static void Inject(std::vector<std::uint8_t> &vector, std::uint32_t value) noexcept;
-
-                /// @brief Concat the second vector into the end of the first vector
-                /// @param vector1 First vector
-                /// @param vector2 Second vector
-                static void Concat(std::vector<std::uint8_t> &vector1, std::vector<std::uint8_t> &&vector2);
             };
         }
     }

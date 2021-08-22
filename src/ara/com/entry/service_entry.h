@@ -15,10 +15,10 @@ namespace ara
             class ServiceEntry : public Entry
             {
             private:
-                static const std::uint16_t cAnyInstanceId = 0xffff;
-                static const std::uint32_t cAnyMinorVersion = 0xffffffff;
+                static const uint16_t cAnyInstanceId = 0xffff;
+                static const uint32_t cAnyMinorVersion = 0xffffffff;
 
-                std::uint32_t mMinorVersion;
+                uint32_t mMinorVersion;
 
                 /// @brief Constructor
                 /// @param type Entry type
@@ -28,20 +28,20 @@ namespace ara
                 /// @param majorVersion Service in interest major version
                 /// @param minorVersion Service in interest minor version
                 ServiceEntry(EntryType type,
-                             std::uint16_t serviceId,
-                             std::uint16_t instanceId,
-                             std::uint32_t ttl,
-                             std::uint8_t majorVersion,
-                             std::uint32_t minorVersion) noexcept;
+                             uint16_t serviceId,
+                             uint16_t instanceId,
+                             uint32_t ttl,
+                             uint8_t majorVersion,
+                             uint32_t minorVersion) noexcept;
 
             public:
                 ServiceEntry() = delete;
 
                 /// @brief Get minor version
                 /// @returns Service minor version
-                std::uint32_t MinorVersion() const noexcept;
+                uint32_t MinorVersion() const noexcept;
 
-                virtual const std::vector<std::uint8_t> &Payload(std::uint8_t &optionIndex) override;
+                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex) override;
 
                 /// @brief Find a service entry factory
                 /// @param serviceId Service in interest ID
@@ -51,11 +51,11 @@ namespace ara
                 /// @param minorVersion Service in interest minor version
                 /// @returns Find service entry
                 static ServiceEntry CreateFindServiceEntry(
-                    std::uint16_t serviceId,
-                    std::uint32_t ttl,
-                    std::uint16_t instanceId = cAnyInstanceId,
-                    std::uint8_t majorVersion = cAnyMajorVersion,
-                    std::uint32_t minorVersion = cAnyMinorVersion) noexcept;
+                    uint16_t serviceId,
+                    uint32_t ttl,
+                    uint16_t instanceId = cAnyInstanceId,
+                    uint8_t majorVersion = cAnyMajorVersion,
+                    uint32_t minorVersion = cAnyMinorVersion);
 
                 /// @brief Offer a service entry factory
                 /// @param serviceId Service in interest ID
@@ -64,10 +64,10 @@ namespace ara
                 /// @param minorVersion Service in interest minor version
                 /// @returns Offer service entry
                 static ServiceEntry CreateOfferServiceEntry(
-                    std::uint16_t serviceId,
-                    std::uint16_t instanceId,
-                    std::uint8_t majorVersion,
-                    std::uint32_t minorVersion) noexcept;
+                    uint16_t serviceId,
+                    uint16_t instanceId,
+                    uint8_t majorVersion,
+                    uint32_t minorVersion) noexcept;
 
                 /// @brief Stop offer a service entry factory
                 /// @param serviceId Service in interest ID
@@ -76,10 +76,10 @@ namespace ara
                 /// @param minorVersion Service in interest minor version
                 /// @returns Stop service offering entry
                 static ServiceEntry CreateStopOfferEntry(
-                    std::uint16_t serviceId,
-                    std::uint16_t instanceId,
-                    std::uint8_t majorVersion,
-                    std::uint32_t minorVersion) noexcept;
+                    uint16_t serviceId,
+                    uint16_t instanceId,
+                    uint8_t majorVersion,
+                    uint32_t minorVersion) noexcept;
             };
         }
     }

@@ -134,49 +134,20 @@ namespace ara
             {
                 std::vector<std::uint8_t> _result;
 
-                Inject(_result, MessageId());
-                Inject(_result, Length());
-                Inject(_result, ClientId());
-                Inject(_result, SessionId());
+                helper::Inject(_result, MessageId());
+                helper::Inject(_result, Length());
+                helper::Inject(_result, ClientId());
+                helper::Inject(_result, SessionId());
                 _result.push_back(ProtocolVersion());
                 _result.push_back(InterfaceVersion());
-                _result.push_back((std::uint8_t)MessageType());
-                _result.push_back((std::uint8_t)ReturnCode());
+
+                std::uint8_t _messageType = static_cast<std::uint8_t>(MessageType());
+                _result.push_back(_messageType);
+
+                std::uint8_t _returnCode = static_cast<std::uint8_t>(ReturnCode());
+                _result.push_back(_returnCode);
 
                 return _result;
-            }
-
-            static void Inject(std::vector<std::uint8_t> &vector, std::uint16_t value) noexcept
-            {
-                std::uint8_t _byte;
-
-                _byte = value >> 8;
-                vector.push_back(_byte);
-
-                _byte = value;
-                vector.push_back(_byte);
-            }
-
-            static void Inject(std::vector<std::uint8_t> &vector, std::uint32_t value) noexcept
-            {
-                std::uint8_t _byte;
-
-                _byte = value >> 24;
-                vector.push_back(_byte);
-
-                _byte = value >> 16;
-                vector.push_back(_byte);
-
-                _byte = value >> 8;
-                vector.push_back(_byte);
-
-                _byte = value;
-                vector.push_back(_byte);
-            }
-
-            static void Concat(std::vector<std::uint8_t> &vector1, std::vector<std::uint8_t> &&vector2)
-            {
-                vector1.insert(vector1.end(), vector2.begin(), vector2.end());
             }
         }
     }

@@ -7,40 +7,40 @@ namespace ara
         namespace entry
         {
             EventgroupEntry::EventgroupEntry(EntryType type,
-                                             std::uint16_t serviceId,
-                                             std::uint16_t instanceId,
-                                             std::uint32_t ttl,
-                                             std::uint8_t majorVersion,
-                                             std::uint16_t eventgroupId) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
+                                             uint16_t serviceId,
+                                             uint16_t instanceId,
+                                             uint32_t ttl,
+                                             uint8_t majorVersion,
+                                             uint16_t eventgroupId) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
                                                                                     mEventgroupId{eventgroupId}
             {
             }
 
-            std::uint16_t EventgroupEntry::EventgroupId() const noexcept
+            uint16_t EventgroupEntry::EventgroupId() const noexcept
             {
                 return mEventgroupId;
             }
 
-            const std::vector<std::uint8_t> &EventgroupEntry::Payload(std::uint8_t &optionIndex)
+            std::vector<uint8_t> EventgroupEntry::Payload(uint8_t &optionIndex)
             {
-                std::vector<std::uint8_t> _result = Entry::Payload(optionIndex);
+                std::vector<uint8_t> _result = Entry::Payload(optionIndex);
 
                 // Enabled Inistal Data Request Flag without any counter
-                const std::uint16_t cEventgroupFlag = 0x0080;
-                someip::SomeIpMessage::Inject(_result, cEventgroupFlag);
-                someip::SomeIpMessage::Inject(_result, mEventgroupId);
+                const uint16_t cEventgroupFlag = 0x0080;
+                helper::Inject(_result, cEventgroupFlag);
+                helper::Inject(_result, mEventgroupId);
 
                 return _result;
             }
 
             EventgroupEntry EventgroupEntry::CreateSubscribeEventEntry(
-                std::uint16_t serviceId,
-                std::uint16_t instanceId,
-                std::uint8_t majorVersion,
-                std::uint16_t eventgroupId) noexcept
+                uint16_t serviceId,
+                uint16_t instanceId,
+                uint8_t majorVersion,
+                uint16_t eventgroupId) noexcept
             {
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
-                const std::uint32_t cSubscribeEventTTL = 0xffffff;
+                const uint32_t cSubscribeEventTTL = 0xffffff;
 
                 EventgroupEntry _result(
                     cSubscribeEventEntry,
@@ -54,13 +54,13 @@ namespace ara
             }
 
             EventgroupEntry EventgroupEntry::CreateUnsubscribeEventEntry(
-                std::uint16_t serviceId,
-                std::uint16_t instanceId,
-                std::uint8_t majorVersion,
-                std::uint16_t eventgroupId) noexcept
+                uint16_t serviceId,
+                uint16_t instanceId,
+                uint8_t majorVersion,
+                uint16_t eventgroupId) noexcept
             {
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
-                const std::uint32_t cUnsubscribeEventTTL = 0x000000;
+                const uint32_t cUnsubscribeEventTTL = 0x000000;
 
                 EventgroupEntry _result(
                     cSubscribeEventEntry,
@@ -93,7 +93,7 @@ namespace ara
                 const EventgroupEntry &eventgroupEntry) noexcept
             {
                 const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
-                const std::uint32_t cNackTTL = 0x000000;
+                const uint32_t cNackTTL = 0x000000;
 
                 EventgroupEntry _result(
                     cAcknowledgetEntry,

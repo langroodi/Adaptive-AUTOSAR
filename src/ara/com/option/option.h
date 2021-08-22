@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <vector>
+#include "../helper/payload_helper.h"
 
 namespace ara
 {
@@ -12,7 +13,7 @@ namespace ara
         namespace option
         {
             /// @brief Entry option type
-            enum class OptionType : std::uint8_t
+            enum class OptionType : uint8_t
             {
                 Configuration = 0x01,  ///!< DNS configuration
                 LoadBalancing = 0x02,  ///!< Service instnace load balancing
@@ -35,15 +36,14 @@ namespace ara
                 /// @brief Constructor
                 /// @param type Option type
                 /// @param discardable Indicates whether the option can be discarded or not
-                Option(OptionType type,
-                       bool discardable);
+                Option(OptionType type, bool discardable);
             
             public:
                 virtual ~Option() noexcept = default;
 
                 /// @brief Get option length
                 /// @returns Option length in bytes
-                std::uint16_t Length();
+                virtual uint16_t Length() = 0;
 
                 /// @brief Get option type
                 /// @returns Option type
@@ -55,7 +55,7 @@ namespace ara
 
                 /// @brief Get option payload
                 /// @returns Byte array
-                virtual const std::vector<std::uint8_t>& Payload() = 0;
+                std::vector<uint8_t> Payload();
             };
         }
     }

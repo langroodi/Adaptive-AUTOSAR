@@ -36,12 +36,12 @@ namespace ara
                     {
                         for (auto firstOption : entry.FirstOptions())
                         {
-                            _result += +firstOption.Length();
+                            _result += +firstOption->Length();
                         }
 
                         for (auto secondOption : entry.SecondOptions())
                         {
-                            _result += cOptionLengthFieldSize + secondOption.Length();
+                            _result += cOptionLengthFieldSize + secondOption->Length();
                         }
                     }
 
@@ -104,13 +104,13 @@ namespace ara
                     {
                         // Both Unicast Support and Explicit Initial Data Control flags are on.
                         const std::uint32_t cRebootedFlag = 0xE000;
-                        SomeIpMessage::Inject(_result, cRebootedFlag);
+                        helper::Inject(_result, cRebootedFlag);
                     }
                     else
                     {
                         // Both Unicast Support and Explicit Initial Data Control flags are on.
                         const std::uint32_t cNotRebootedFlag = 0x6000;
-                        SomeIpMessage::Inject(_result, cNotRebootedFlag);
+                        helper::Inject(_result, cNotRebootedFlag);
                     }
 
                     std::uint8_t _lastOptionIndex = 0;
@@ -119,21 +119,21 @@ namespace ara
                     for (auto entry : Entries())
                     {
                         auto _entryPayload = entry.Payload(_lastOptionIndex);
-                        SomeIpMessage::Concat(
+                        helper::Concat(
                             _entriesPayload, std::move(_entryPayload));
 
                         for (auto firstOption : entry.FirstOptions())
                         {
-                            auto _firstOptionPayload = firstOption.Payload();
-                            SomeIpMessage::Concat(
+                            auto _firstOptionPayload = firstOption->Payload();
+                            helper::Concat(
                                 _optionsPayload, std::move(_firstOptionPayload));
                             ++_lastOptionIndex;
                         }
 
                         for (auto secondOption : entry.SecondOptions())
                         {
-                            auto _secondOptionPayload = secondOption.Payload();
-                            SomeIpMessage::Concat(
+                            auto _secondOptionPayload = secondOption->Payload();
+                            helper::Concat(
                                 _optionsPayload, std::move(_secondOptionPayload));
                             ++_lastOptionIndex;
                         }
@@ -141,13 +141,13 @@ namespace ara
 
                     // Entries length and payloads insertion
                     std::uint32_t _entriesLength = getEntriesLength();
-                    SomeIpMessage::Inject(_result, _entriesLength);
-                    SomeIpMessage::Concat(_result, std::move(_entriesPayload));
+                    helper::Inject(_result, _entriesLength);
+                    helper::Concat(_result, std::move(_entriesPayload));
 
                     // Options length and payloads insertion
                     std::uint32_t _optionsLength = getOptionsLength();
-                    SomeIpMessage::Inject(_result, _optionsLength);
-                    SomeIpMessage::Concat(_result, std::move(_optionsPayload));
+                    helper::Inject(_result, _optionsLength);
+                    helper::Concat(_result, std::move(_optionsPayload));
 
                     return _result;
                 }

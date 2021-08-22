@@ -7,34 +7,34 @@ namespace ara
         namespace entry
         {
             ServiceEntry::ServiceEntry(EntryType type,
-                                       std::uint16_t serviceId,
-                                       std::uint16_t instanceId,
-                                       std::uint32_t ttl,
-                                       std::uint8_t majorVersion,
-                                       std::uint32_t minorVersion) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
+                                       uint16_t serviceId,
+                                       uint16_t instanceId,
+                                       uint32_t ttl,
+                                       uint8_t majorVersion,
+                                       uint32_t minorVersion) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
                                                                               mMinorVersion{minorVersion}
             {
             }
 
-            std::uint32_t ServiceEntry::MinorVersion() const noexcept
+            uint32_t ServiceEntry::MinorVersion() const noexcept
             {
                 return mMinorVersion;
             }
 
-            const std::vector<std::uint8_t> &ServiceEntry::Payload(std::uint8_t &optionIndex)
+            std::vector<uint8_t> ServiceEntry::Payload(uint8_t &optionIndex)
             {
-                std::vector<std::uint8_t> _result = Entry::Payload(optionIndex);
-                someip::SomeIpMessage::Inject(_result, mMinorVersion);
+                std::vector<uint8_t> _result = Entry::Payload(optionIndex);
+                helper::Inject(_result, mMinorVersion);
 
                 return _result;
             }
 
             ServiceEntry ServiceEntry::CreateFindServiceEntry(
-                std::uint16_t serviceId,
-                std::uint32_t ttl,
-                std::uint16_t instanceId,
-                std::uint8_t majorVersion,
-                std::uint32_t minorVersion) noexcept
+                uint16_t serviceId,
+                uint32_t ttl,
+                uint16_t instanceId,
+                uint8_t majorVersion,
+                uint32_t minorVersion)
             {
                 const EntryType cFindServiceEntry = EntryType::Finding;
 
@@ -55,13 +55,13 @@ namespace ara
             }
 
             ServiceEntry ServiceEntry::CreateOfferServiceEntry(
-                std::uint16_t serviceId,
-                std::uint16_t instanceId,
-                std::uint8_t majorVersion,
-                std::uint32_t minorVersion) noexcept
+                uint16_t serviceId,
+                uint16_t instanceId,
+                uint8_t majorVersion,
+                uint32_t minorVersion) noexcept
             {
                 const EntryType cOfferServiceEntry = EntryType::Offering;
-                const std::uint32_t cOfferServiceTTL = 0xffffff;
+                const uint32_t cOfferServiceTTL = 0xffffff;
 
                 ServiceEntry _result(
                     cOfferServiceEntry,
@@ -75,13 +75,13 @@ namespace ara
             }
 
             ServiceEntry ServiceEntry::CreateStopOfferEntry(
-                std::uint16_t serviceId,
-                std::uint16_t instanceId,
-                std::uint8_t majorVersion,
-                std::uint32_t minorVersion) noexcept
+                uint16_t serviceId,
+                uint16_t instanceId,
+                uint8_t majorVersion,
+                uint32_t minorVersion) noexcept
             {
                 const EntryType cOfferServiceEntry = EntryType::Offering;
-                const std::uint32_t cStopOfferTTL = 0x000000;
+                const uint32_t cStopOfferTTL = 0x000000;
 
                 ServiceEntry _result(
                     cOfferServiceEntry,
