@@ -63,13 +63,13 @@ namespace ara
                     uint16_t eventgroupId) noexcept;
 
                 /// @brief Positive acknowledge of an event-group entry factory
-                /// @param eventgroupEntry Received event-group entry
+                /// @param eventgroupEntry Received subscribe event-group entry
                 /// @returns Acknowledge event-group subscription entry
                 static EventgroupEntry CreateAcknowledgeEntry(
                     const EventgroupEntry &eventgroupEntry) noexcept;
 
                 /// @brief Negative acknowledge of an event-group entry factory
-                /// @param eventgroupEntry Received event-group entry
+                /// @param eventgroupEntry Received subscribe event-group entry
                 /// @returns Negative acknowledge event-group subscription entry
                 static EventgroupEntry CreateNegativeAcknowledgeEntry(
                     const EventgroupEntry &eventgroupEntry) noexcept;
