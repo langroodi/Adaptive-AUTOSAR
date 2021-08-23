@@ -90,7 +90,7 @@ namespace ara
                 uint32_t _majorVersion = MajorVersion();
                 _majorVersion <<= cTTLSizeBitLength;
                 _majorVersion |= TTL();
-                _result.push_back(_majorVersion);
+                helper::Inject(_result, _majorVersion);
 
                 return _result;
             }
