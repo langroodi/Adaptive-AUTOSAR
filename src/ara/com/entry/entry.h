@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <vector>
+#include <stdexcept>
 #include "../option/option.h"
 
 namespace ara
@@ -48,6 +49,16 @@ namespace ara
                       uint16_t instanceId,
                       uint32_t ttl,
                       uint8_t majorVersion = cAnyMajorVersion) noexcept;
+
+                /// @brief Validate an option for adding
+                /// @param option Option of interest
+                /// @returns True if the option is valid; otherwise false
+                virtual bool ValidateOption(const option::Option* option) const noexcept;
+
+                /// @brief Indicate whether the entry contains a specific option type or not
+                /// @param optionType Option type of interest
+                /// @returns True if the entry contains the option; otherwise false
+                bool ContainsOption(option::OptionType optionType) const noexcept;
 
             public:
                 virtual ~Entry() noexcept;

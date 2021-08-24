@@ -12,8 +12,58 @@ namespace ara
                                              uint32_t ttl,
                                              uint8_t majorVersion,
                                              uint16_t eventgroupId) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
-                                                                                    mEventgroupId{eventgroupId}
+                                                                               mEventgroupId{eventgroupId}
             {
+            }
+
+            bool EventgroupEntry::isAcknowledge() const noexcept
+            {
+                bool _result =
+                    (Type() == EntryType::Acknowledging) && (TTL() > cNackTTL);
+
+                return _result;
+            }
+
+            bool EventgroupEntry::ValidateOption(
+                const option::Option *option) const noexcept
+            {
+                bool _result = Entry::ValidateOption(option);
+
+                if (_result)
+                {
+                    switch (option->Type())
+                    {
+                    case option::OptionType::IPv4Endpoint:
+                    case option::OptionType::IPv6Endpoint:
+                    {
+                        // Endpoint option is allowed only eventgroup subscription entries.
+                        _result = (Type() == EntryType::Subscribing);
+                        break;
+                    }
+                    case option::OptionType::IPv4Multicast:
+                    case option::OptionType::IPv6Multicast:
+                    {
+                        // Multicast option is not allowed in eventgroup entries expect acknowledgement.
+                        if (isAcknowledge())
+                        {
+                            _result = !ContainsOption(option->Type());
+                        }
+                        else
+                        {
+                            _result = false;
+                        }
+
+                        break;
+                    }
+                    default:
+                    {
+                        _result = false;
+                        break;
+                    }
+                    }
+                }
+
+                return _result;
             }
 
             uint16_t EventgroupEntry::EventgroupId() const noexcept
@@ -93,7 +143,6 @@ namespace ara
                 const EventgroupEntry &eventgroupEntry) noexcept
             {
                 const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
-                const uint32_t cNackTTL = 0x000000;
 
                 EventgroupEntry _result(
                     cAcknowledgetEntry,

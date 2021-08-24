@@ -12,8 +12,21 @@ namespace ara
                                        uint32_t ttl,
                                        uint8_t majorVersion,
                                        uint32_t minorVersion) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
-                                                                              mMinorVersion{minorVersion}
+                                                                         mMinorVersion{minorVersion}
             {
+            }
+
+            bool ServiceEntry::ValidateOption(
+                const option::Option *option) const noexcept
+            {
+                bool _result = Entry::ValidateOption(option);
+
+                // Multicast option is not allowed in service entries.
+                _result &=
+                    (option->Type() == option::OptionType::IPv4Multicast) ||
+                    (option->Type() == option::OptionType::IPv6Multicast);
+
+                return _result;
             }
 
             uint32_t ServiceEntry::MinorVersion() const noexcept

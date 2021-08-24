@@ -2,7 +2,6 @@
 #define SERVICE_ENTRY_H
 
 #include <stdint.h>
-#include <stdexcept>
 #include "./entry.h"
 
 namespace ara
@@ -20,19 +19,16 @@ namespace ara
 
                 uint32_t mMinorVersion;
 
-                /// @brief Constructor
-                /// @param type Entry type
-                /// @param serviceId Service in interest ID
-                /// @param instanceId Service in interest instance ID
-                /// @param ttl Entry time to live
-                /// @param majorVersion Service in interest major version
-                /// @param minorVersion Service in interest minor version
                 ServiceEntry(EntryType type,
                              uint16_t serviceId,
                              uint16_t instanceId,
                              uint32_t ttl,
                              uint8_t majorVersion,
                              uint32_t minorVersion) noexcept;
+
+            protected:
+                virtual bool ValidateOption(
+                    const option::Option *option) const noexcept override;
 
             public:
                 ServiceEntry() = delete;

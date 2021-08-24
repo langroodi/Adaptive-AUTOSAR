@@ -13,21 +13,21 @@ namespace ara
             class EventgroupEntry : public Entry
             {
             private:
+                static const uint32_t cNackTTL = 0x000000;
                 uint16_t mEventgroupId;
 
-                /// @brief Constructor
-                /// @param type Entry type
-                /// @param serviceId Service in interest ID
-                /// @param instanceId Service in interest instance ID
-                /// @param ttl Entry time to live
-                /// @param majorVersion Service in interest major version
-                /// @param eventgroupId Event-group in interest ID
                 EventgroupEntry(EntryType type,
                                 uint16_t serviceId,
                                 uint16_t instanceId,
                                 uint32_t ttl,
                                 uint8_t majorVersion,
                                 uint16_t eventgroupId) noexcept;
+
+                bool isAcknowledge() const noexcept;
+
+            protected:
+                virtual bool ValidateOption(
+                    const option::Option *option) const noexcept override;
 
             public:
                 EventgroupEntry() = delete;
