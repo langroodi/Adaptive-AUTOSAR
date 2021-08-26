@@ -25,6 +25,13 @@ namespace ara
                 IPv6SdEndpoint = 0x26  ///!< Service discovery IPv6 endpoint
             };
 
+            /// @brief OSI layer-4 protocol type
+            enum class Layer4ProtocolType : uint8_t
+            {
+                Tcp = 0x06, ///!< Transmission control protocol
+                Udp = 0x11  ///!< User datagram protocol
+            };
+
             /// @brief Communication message entry abstract option
             class Option
             {
@@ -36,7 +43,7 @@ namespace ara
                 /// @brief Constructor
                 /// @param type Option type
                 /// @param discardable Indicates whether the option can be discarded or not
-                Option(OptionType type, bool discardable);
+                Option(OptionType type, bool discardable) noexcept;
             
             public:
                 virtual ~Option() noexcept = default;
@@ -55,7 +62,7 @@ namespace ara
 
                 /// @brief Get option payload
                 /// @returns Byte array
-                std::vector<uint8_t> Payload();
+                virtual std::vector<uint8_t> Payload();
             };
         }
     }

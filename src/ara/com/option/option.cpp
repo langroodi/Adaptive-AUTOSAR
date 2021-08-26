@@ -6,8 +6,8 @@ namespace ara
     {
         namespace option
         {
-            Option::Option(OptionType type, bool discardable) : mType{type},
-                                                                mDiscardable{discardable}
+            Option::Option(OptionType type, bool discardable) noexcept : mType{type},
+                                                                         mDiscardable{discardable}
             {
             }
 
@@ -24,7 +24,7 @@ namespace ara
             std::vector<uint8_t> Option::Payload()
             {
                 std::vector<uint8_t> _result;
-                
+
                 helper::Inject(_result, Length());
 
                 uint8_t _type = static_cast<uint8_t>(mType);

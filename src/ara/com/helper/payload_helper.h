@@ -14,12 +14,12 @@ namespace ara
             /// @brief Inject a short value into a byte vector
             /// @param vector Byte vector
             /// @param value Short input value
-            void Inject(std::vector<uint8_t> &vector, uint16_t value) noexcept;
+            void Inject(std::vector<uint8_t> &vector, uint16_t value);
 
             /// @brief Inject an integer value into a byte vector
             /// @param vector Byte vector
             /// @param value Integer input value
-            void Inject(std::vector<uint8_t> &vector, uint32_t value) noexcept;
+            void Inject(std::vector<uint8_t> &vector, uint32_t value);
 
             /// @brief Concat the second vector into the end of the first vector
             /// @param vector1 First vector

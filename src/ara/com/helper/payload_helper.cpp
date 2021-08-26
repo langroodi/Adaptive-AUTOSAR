@@ -6,7 +6,7 @@ namespace ara
     {
         namespace helper
         {
-            void Inject(std::vector<uint8_t> &vector, uint16_t value) noexcept
+            void Inject(std::vector<uint8_t> &vector, uint16_t value)
             {
                 uint8_t _byte;
 
@@ -17,7 +17,7 @@ namespace ara
                 vector.push_back(_byte);
             }
 
-            void Inject(std::vector<uint8_t> &vector, uint32_t value) noexcept
+            void Inject(std::vector<uint8_t> &vector, uint32_t value)
             {
                 uint8_t _byte;
 
