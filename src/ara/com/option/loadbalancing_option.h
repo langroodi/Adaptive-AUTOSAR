@@ -23,10 +23,14 @@ namespace ara
                 /// @param discardable Indicates whether the option can be discarded or not
                 /// @param priority Service instance priority
                 /// @param weight Servince instance random selection weight
-                LoadBalancingOption(
+                constexpr LoadBalancingOption(
                     bool discardable,
                     uint16_t priority,
-                    uint16_t weight) noexcept;
+                    uint16_t weight) noexcept : Option(OptionType::LoadBalancing, discardable),
+                                                mPriority{priority},
+                                                mWeight{weight}
+                {
+                }
 
                 virtual uint16_t Length() override;
 

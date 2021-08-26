@@ -6,18 +6,6 @@ namespace ara
     {
         namespace option
         {
-            Ipv4EndpointOption::Ipv4EndpointOption(
-                OptionType type,
-                bool discardable,
-                helper::Ipv4Address ipAddress,
-                Layer4ProtocolType protocol,
-                uint16_t port) noexcept : Option(type, discardable),
-                                          mIpAddress{ipAddress},
-                                          mL4Proto{protocol},
-                                          mPort{port}
-            {
-            }
-
             uint16_t Ipv4EndpointOption::Length()
             {
                 const uint8_t cOptionLength = 9;
@@ -81,7 +69,7 @@ namespace ara
                 const uint8_t cMulticastOctetMax = 239;
 
                 uint8_t _firstOctet = ipAddress.Octets[0];
-                if ((_firstOctet < cMulticastOctetMin) &&
+                if ((_firstOctet < cMulticastOctetMin) ||
                     (_firstOctet > cMulticastOctetMax))
                 {
                     throw std::invalid_argument("IP address is out of range.");

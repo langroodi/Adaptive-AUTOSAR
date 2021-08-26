@@ -67,6 +67,9 @@ set(test_ara_com_entry_dir
 set(test_ara_com_helper_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/helper")
 
+set(test_ara_com_option_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/com/option")  
+
 ########################################################################
 
 add_library(
@@ -110,6 +113,12 @@ add_library(
   ${source_ara_com_entry_dir}/eventgroup_entry.cpp
   ${source_ara_com_entry_dir}/service_entry.h
   ${source_ara_com_entry_dir}/service_entry.cpp
+  ${source_ara_com_option_dir}/option.h
+  ${source_ara_com_option_dir}/option.cpp
+  ${source_ara_com_option_dir}/ipv4_endpoint_option.h
+  ${source_ara_com_option_dir}/ipv4_endpoint_option.cpp
+  ${source_ara_com_option_dir}/loadbalancing_option.h
+  ${source_ara_com_option_dir}/loadbalancing_option.cpp
 )
 
 set_target_properties(
@@ -158,6 +167,8 @@ if(build_tests)
     ${test_ara_com_entry_dir}/eventgroup_entry_test.cpp
     ${test_ara_com_entry_dir}/service_entry_test.cpp
     ${test_ara_com_helper_dir}/ipv4_address_test.cpp
+    ${test_ara_com_option_dir}/ipv4_endpoint_option_test.cpp
+    ${test_ara_com_option_dir}/loadbalancing_option_test.cpp
   )
 
   target_link_libraries(

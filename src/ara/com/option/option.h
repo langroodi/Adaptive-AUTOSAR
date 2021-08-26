@@ -43,8 +43,11 @@ namespace ara
                 /// @brief Constructor
                 /// @param type Option type
                 /// @param discardable Indicates whether the option can be discarded or not
-                Option(OptionType type, bool discardable) noexcept;
-            
+                constexpr Option(OptionType type, bool discardable) noexcept : mType{type},
+                                                                               mDiscardable{discardable}
+                {
+                }
+
             public:
                 virtual ~Option() noexcept = default;
 

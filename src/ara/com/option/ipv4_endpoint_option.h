@@ -1,5 +1,5 @@
 #ifndef IPV4_ENDPOINT_OPTION_H
-#define IPv4_ENDPOINT_OPTION_H
+#define IPV4_ENDPOINT_OPTION_H
 
 #include <stdexcept>
 #include "./option.h"
@@ -22,12 +22,17 @@ namespace ara
                 Layer4ProtocolType mL4Proto;
                 uint16_t mPort;
 
-                Ipv4EndpointOption(
+                constexpr Ipv4EndpointOption(
                     OptionType type,
                     bool discardable,
                     helper::Ipv4Address ipAddress,
                     Layer4ProtocolType protocol,
-                    uint16_t port) noexcept;
+                    uint16_t port) noexcept : Option(type, discardable),
+                                              mIpAddress{ipAddress},
+                                              mL4Proto{protocol},
+                                              mPort{port}
+                {
+                }
 
             public:
                 Ipv4EndpointOption() = delete;

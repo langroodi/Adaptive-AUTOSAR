@@ -6,11 +6,6 @@ namespace ara
     {
         namespace option
         {
-            Option::Option(OptionType type, bool discardable) noexcept : mType{type},
-                                                                         mDiscardable{discardable}
-            {
-            }
-
             OptionType Option::Type() const noexcept
             {
                 return mType;
