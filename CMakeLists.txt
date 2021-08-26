@@ -64,6 +64,9 @@ set(test_ara_sm_dir
 set(test_ara_com_entry_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/entry")
 
+set(test_ara_com_helper_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/com/helper")
+
 ########################################################################
 
 add_library(
@@ -97,6 +100,8 @@ add_library(
   ${source_ara_com_cg_dir}/communication_group_server.h
   ${source_ara_com_helper_dir}/payload_helper.h
   ${source_ara_com_helper_dir}/payload_helper.cpp
+  ${source_ara_com_helper_dir}/ipv4_address.h
+  ${source_ara_com_helper_dir}/ipv4_address.cpp
   ${source_ara_com_option_dir}/option.h
   ${source_ara_com_option_dir}/option.cpp
   ${source_ara_com_entry_dir}/entry.h
@@ -152,6 +157,7 @@ if(build_tests)
     ${test_ara_sm_dir}/power_mode_test.cpp
     ${test_ara_com_entry_dir}/eventgroup_entry_test.cpp
     ${test_ara_com_entry_dir}/service_entry_test.cpp
+    ${test_ara_com_helper_dir}/ipv4_address_test.cpp
   )
 
   target_link_libraries(
