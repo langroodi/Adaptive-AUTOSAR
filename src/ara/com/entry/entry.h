@@ -61,7 +61,7 @@ namespace ara
                 bool ContainsOption(option::OptionType optionType) const noexcept;
 
             public:
-                virtual ~Entry() noexcept;
+                virtual ~Entry() noexcept = default;
 
                 /// @brief Get entry type
                 /// @returns Entry type

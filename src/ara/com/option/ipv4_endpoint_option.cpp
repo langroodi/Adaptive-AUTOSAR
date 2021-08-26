@@ -65,7 +65,7 @@ namespace ara
                 helper::Ipv4Address ipAddress,
                 uint16_t port)
             {
-                const uint8_t cMulticastOctetMin = 244;
+                const uint8_t cMulticastOctetMin = 224;
                 const uint8_t cMulticastOctetMax = 239;
 
                 uint8_t _firstOctet = ipAddress.Octets[0];

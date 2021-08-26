@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <array>
 #include "../../../../src/ara/com/entry/service_entry.h"
+#include "../../../../src/ara/com/option/loadbalancing_option.h"
 
 namespace ara
 {
@@ -100,8 +101,31 @@ namespace ara
                         _actualPayload.begin(),
                         _actualPayload.end(),
                         cExpectedPayload.begin());
-                
+
                 EXPECT_TRUE(_areEqual);
+            }
+
+            TEST(ServiceEntryTest, AddOption)
+            {
+                const uint16_t cServiceId = 0x0001;
+                const uint32_t cTTL = 0x000002;
+                const uint16_t cInstanceId = 0x0003;
+                const uint8_t cMajorVersion = 0x04;
+                const uint32_t cMinorVersion = 0x00000005;
+                const EntryType cType = EntryType::Finding;
+
+                const bool cDiscardable = false;
+                const uint16_t cPriority = 1;
+                const uint16_t cWeight = 2;
+
+                auto _entry =
+                    ServiceEntry::CreateFindServiceEntry(
+                        cServiceId, cTTL, cInstanceId, cMajorVersion, cMinorVersion);
+
+                option::LoadBalancingOption _option(cDiscardable, cPriority, cWeight);
+
+                EXPECT_NO_THROW(_entry.AddFirstOption(&_option));
+                EXPECT_THROW(_entry.AddSecondOption(&_option), std::invalid_argument);
             }
         }
     }

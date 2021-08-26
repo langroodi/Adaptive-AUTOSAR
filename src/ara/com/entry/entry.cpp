@@ -179,19 +179,6 @@ namespace ara
 
                 return _result;
             }
-
-            Entry::~Entry() noexcept
-            {
-                for (auto firstOption : mFirstOptions)
-                {
-                    delete firstOption;
-                }
-
-                for (auto secondOption : mSecondOptions)
-                {
-                    delete secondOption;
-                }
-            }
         }
     }
 }

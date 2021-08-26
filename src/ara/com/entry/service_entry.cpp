@@ -23,8 +23,8 @@ namespace ara
 
                 // Multicast option is not allowed in service entries.
                 _result &=
-                    (option->Type() == option::OptionType::IPv4Multicast) ||
-                    (option->Type() == option::OptionType::IPv6Multicast);
+                    (option->Type() != option::OptionType::IPv4Multicast) &&
+                    (option->Type() != option::OptionType::IPv6Multicast);
 
                 return _result;
             }

@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <array>
 #include "../../../../src/ara/com/entry/eventgroup_entry.h"
+#include "../../../../src/ara/com/option/ipv4_endpoint_option.h"
 
 namespace ara
 {
@@ -125,8 +126,40 @@ namespace ara
                         _actualPayload.begin(),
                         _actualPayload.end(),
                         cExpectedPayload.begin());
-                
+
                 EXPECT_TRUE(_areEqual);
+            }
+
+            TEST(EventgroupEntryTest, AddOption)
+            {
+                const uint16_t cServiceId = 0x0001;
+                const uint16_t cInstanceId = 0x0002;
+                const uint8_t cMajorVersion = 0x03;
+                const uint16_t cEventgroupId = 0x0004;
+
+                const bool cDiscardable = false;
+                const helper::Ipv4Address cIpAddress(224, 0, 0, 0);
+                const uint16_t cPort = 8080;
+
+                auto _subscribeEntry =
+                    EventgroupEntry::CreateSubscribeEventEntry(
+                        cServiceId, cInstanceId, cMajorVersion, cEventgroupId);
+
+                auto _ackEntry =
+                    EventgroupEntry::CreateAcknowledgeEntry(_subscribeEntry);
+
+                auto _option =
+                    option::Ipv4EndpointOption::CreateMulticastEndpoint(
+                        cDiscardable, cIpAddress, cPort);
+
+                EXPECT_THROW(
+                    _subscribeEntry.AddFirstOption(&_option), std::invalid_argument);
+                EXPECT_THROW(
+                    _subscribeEntry.AddSecondOption(&_option), std::invalid_argument);
+                EXPECT_NO_THROW(
+                    _ackEntry.AddFirstOption(&_option));
+                EXPECT_THROW(
+                    _ackEntry.AddSecondOption(&_option), std::invalid_argument);
             }
         }
     }
