@@ -71,7 +71,7 @@ namespace ara
                 return mEventgroupId;
             }
 
-            std::vector<uint8_t> EventgroupEntry::Payload(uint8_t &optionIndex)
+            std::vector<uint8_t> EventgroupEntry::Payload(uint8_t &optionIndex) const
             {
                 std::vector<uint8_t> _result = Entry::Payload(optionIndex);
 

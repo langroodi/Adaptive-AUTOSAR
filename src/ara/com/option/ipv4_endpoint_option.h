@@ -36,21 +36,21 @@ namespace ara
 
             public:
                 Ipv4EndpointOption() = delete;
-                virtual uint16_t Length() override;
+                virtual uint16_t Length() const noexcept override;
 
                 /// @brief Get IP address
                 /// @returns IPv4 address
-                helper::Ipv4Address IpAddress();
+                helper::Ipv4Address IpAddress() const noexcept;
 
                 /// @brief Get protocol
                 /// @returns OSI layer-4 protocol
-                Layer4ProtocolType L4Proto();
+                Layer4ProtocolType L4Proto() const noexcept;
 
                 /// @brief Get port
                 /// @returns Network port number
-                uint16_t Port();
+                uint16_t Port() const noexcept;
 
-                virtual std::vector<uint8_t> Payload() override;
+                virtual std::vector<uint8_t> Payload() const override;
 
                 /// @brief Unitcast endpoint factory
                 /// @param discardable Indicates whether the option can be discarded or not

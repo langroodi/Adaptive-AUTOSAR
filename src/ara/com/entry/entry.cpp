@@ -148,7 +148,7 @@ namespace ara
                 }
             }
 
-            std::vector<uint8_t> Entry::Payload(uint8_t &optionIndex)
+            std::vector<uint8_t> Entry::Payload(uint8_t &optionIndex) const
             {
                 std::vector<uint8_t> _result;
 

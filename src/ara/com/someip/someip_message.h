@@ -67,7 +67,7 @@ namespace ara
                               std::uint8_t protocolVersion,
                               std::uint8_t interfaceVersion,
                               SomeIpMessageType messageType,
-                              SomeIpReturnCode returnCode);
+                              SomeIpReturnCode returnCode) noexcept;
 
             protected:
                 /// @brief Constructor for request and notification

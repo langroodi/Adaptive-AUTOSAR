@@ -102,7 +102,7 @@ namespace ara
                 /// @brief Get entity payload
                 /// @param optionIndex Index of the last added option
                 /// @returns Byte array
-                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex);
+                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex) const;
             };
         }
     }

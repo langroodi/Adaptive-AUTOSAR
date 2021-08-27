@@ -36,7 +36,7 @@ namespace ara
                 /// @returns Event-group ID for subscription/unsubscription
                 uint16_t EventgroupId() const noexcept;
 
-                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex) override;
+                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex) const override;
 
                 /// @brief Subscribe to an event-group entry factory
                 /// @param serviceId Service in interest ID

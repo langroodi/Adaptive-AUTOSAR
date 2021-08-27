@@ -32,17 +32,17 @@ namespace ara
                 {
                 }
 
-                virtual uint16_t Length() override;
+                virtual uint16_t Length() const noexcept override;
 
                 /// @brief Get priority
                 /// @returns Service instance priority
-                uint16_t Priority();
+                uint16_t Priority() const noexcept;
 
                 /// @brief Get weight
                 /// @returns Servince instance random selection weight
-                uint16_t Weight();
+                uint16_t Weight() const noexcept;
 
-                virtual std::vector<uint8_t> Payload() override;
+                virtual std::vector<uint8_t> Payload() const override;
             };
         }
     }

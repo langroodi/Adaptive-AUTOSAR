@@ -37,7 +37,7 @@ namespace ara
                 /// @returns Service minor version
                 uint32_t MinorVersion() const noexcept;
 
-                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex) override;
+                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex) const override;
 
                 /// @brief Find a service entry factory
                 /// @param serviceId Service in interest ID

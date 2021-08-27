@@ -6,28 +6,28 @@ namespace ara
     {
         namespace option
         {
-            uint16_t Ipv4EndpointOption::Length()
+            uint16_t Ipv4EndpointOption::Length() const noexcept
             {
                 const uint8_t cOptionLength = 9;
                 return cOptionLength;
             }
 
-            helper::Ipv4Address Ipv4EndpointOption::IpAddress()
+            helper::Ipv4Address Ipv4EndpointOption::IpAddress() const noexcept
             {
                 return mIpAddress;
             }
 
-            Layer4ProtocolType Ipv4EndpointOption::L4Proto()
+            Layer4ProtocolType Ipv4EndpointOption::L4Proto() const noexcept
             {
                 return mL4Proto;
             }
 
-            uint16_t Ipv4EndpointOption::Port()
+            uint16_t Ipv4EndpointOption::Port() const noexcept
             {
                 return mPort;
             }
 
-            std::vector<uint8_t> Ipv4EndpointOption::Payload()
+            std::vector<uint8_t> Ipv4EndpointOption::Payload() const
             {
                 auto _result = Option::Payload();
 

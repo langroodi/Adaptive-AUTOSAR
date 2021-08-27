@@ -6,23 +6,23 @@ namespace ara
     {
         namespace option
         {
-            uint16_t LoadBalancingOption::Length()
+            uint16_t LoadBalancingOption::Length() const noexcept
             {
                 const uint8_t cOptionLength = 5;
                 return cOptionLength;
             }
 
-            uint16_t LoadBalancingOption::Priority()
+            uint16_t LoadBalancingOption::Priority() const noexcept
             {
                 return mPriority;
             }
 
-            uint16_t LoadBalancingOption::Weight()
+            uint16_t LoadBalancingOption::Weight() const noexcept
             {
                 return mWeight;
             }
 
-            std::vector<uint8_t> LoadBalancingOption::Payload()
+            std::vector<uint8_t> LoadBalancingOption::Payload() const
             {
                 auto _result = Option::Payload();
 

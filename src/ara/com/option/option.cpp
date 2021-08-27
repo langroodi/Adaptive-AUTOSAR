@@ -16,7 +16,7 @@ namespace ara
                 return mDiscardable;
             }
 
-            std::vector<uint8_t> Option::Payload()
+            std::vector<uint8_t> Option::Payload() const
             {
                 std::vector<uint8_t> _result;
 

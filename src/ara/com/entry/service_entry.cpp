@@ -34,7 +34,7 @@ namespace ara
                 return mMinorVersion;
             }
 
-            std::vector<uint8_t> ServiceEntry::Payload(uint8_t &optionIndex)
+            std::vector<uint8_t> ServiceEntry::Payload(uint8_t &optionIndex) const
             {
                 std::vector<uint8_t> _result = Entry::Payload(optionIndex);
                 helper::Inject(_result, mMinorVersion);

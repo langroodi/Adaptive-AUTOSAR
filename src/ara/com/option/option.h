@@ -53,7 +53,7 @@ namespace ara
 
                 /// @brief Get option length
                 /// @returns Option length in bytes
-                virtual uint16_t Length() = 0;
+                virtual uint16_t Length() const noexcept = 0;
 
                 /// @brief Get option type
                 /// @returns Option type
@@ -65,7 +65,7 @@ namespace ara
 
                 /// @brief Get option payload
                 /// @returns Byte array
-                virtual std::vector<uint8_t> Payload();
+                virtual std::vector<uint8_t> Payload() const;
             };
         }
     }

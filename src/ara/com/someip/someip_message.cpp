@@ -13,13 +13,13 @@ namespace ara
                                          std::uint8_t protocolVersion,
                                          std::uint8_t interfaceVersion,
                                          SomeIpMessageType messageType,
-                                         SomeIpReturnCode returnCode) : mMessageId{messageId},
-                                                                        mClientId{clientId},
-                                                                        mSessionId{sessionId},
-                                                                        mProtocolVersion{protocolVersion},
-                                                                        mInterfaceVersion{interfaceVersion},
-                                                                        mMessageType{messageType},
-                                                                        mReturnCode{returnCode}
+                                         SomeIpReturnCode returnCode) noexcept : mMessageId{messageId},
+                                                                                 mClientId{clientId},
+                                                                                 mSessionId{sessionId},
+                                                                                 mProtocolVersion{protocolVersion},
+                                                                                 mInterfaceVersion{interfaceVersion},
+                                                                                 mMessageType{messageType},
+                                                                                 mReturnCode{returnCode}
 
             {
             }
@@ -30,12 +30,12 @@ namespace ara
                                          std::uint8_t interfaceVersion,
                                          SomeIpMessageType messageType,
                                          std::uint16_t sessionId) : SomeIpMessage(messageId,
-                                                                                  clientId,
-                                                                                  sessionId,
-                                                                                  protocolVersion,
-                                                                                  interfaceVersion,
-                                                                                  messageType,
-                                                                                  SomeIpReturnCode::eOK)
+                                                                                           clientId,
+                                                                                           sessionId,
+                                                                                           protocolVersion,
+                                                                                           interfaceVersion,
+                                                                                           messageType,
+                                                                                           SomeIpReturnCode::eOK)
             {
                 if ((messageType != SomeIpMessageType::Request) ||
                     (messageType != SomeIpMessageType::Notification))
