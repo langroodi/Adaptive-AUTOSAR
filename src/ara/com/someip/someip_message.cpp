@@ -7,11 +7,11 @@ namespace ara
         namespace someip
         {
 
-            SomeIpMessage::SomeIpMessage(std::uint32_t messageId,
-                                         std::uint16_t clientId,
-                                         std::uint16_t sessionId,
-                                         std::uint8_t protocolVersion,
-                                         std::uint8_t interfaceVersion,
+            SomeIpMessage::SomeIpMessage(uint32_t messageId,
+                                         uint16_t clientId,
+                                         uint16_t sessionId,
+                                         uint8_t protocolVersion,
+                                         uint8_t interfaceVersion,
                                          SomeIpMessageType messageType,
                                          SomeIpReturnCode returnCode) noexcept : mMessageId{messageId},
                                                                                  mClientId{clientId},
@@ -24,20 +24,20 @@ namespace ara
             {
             }
 
-            SomeIpMessage::SomeIpMessage(std::uint32_t messageId,
-                                         std::uint16_t clientId,
-                                         std::uint8_t protocolVersion,
-                                         std::uint8_t interfaceVersion,
+            SomeIpMessage::SomeIpMessage(uint32_t messageId,
+                                         uint16_t clientId,
+                                         uint8_t protocolVersion,
+                                         uint8_t interfaceVersion,
                                          SomeIpMessageType messageType,
-                                         std::uint16_t sessionId) : SomeIpMessage(messageId,
-                                                                                           clientId,
-                                                                                           sessionId,
-                                                                                           protocolVersion,
-                                                                                           interfaceVersion,
-                                                                                           messageType,
-                                                                                           SomeIpReturnCode::eOK)
+                                         uint16_t sessionId) : SomeIpMessage(messageId,
+                                                                             clientId,
+                                                                             sessionId,
+                                                                             protocolVersion,
+                                                                             interfaceVersion,
+                                                                             messageType,
+                                                                             SomeIpReturnCode::eOK)
             {
-                if ((messageType != SomeIpMessageType::Request) ||
+                if ((messageType != SomeIpMessageType::Request) &&
                     (messageType != SomeIpMessageType::Notification))
                 {
                     // E2E is not supported yet.
@@ -45,19 +45,19 @@ namespace ara
                 }
             }
 
-            SomeIpMessage::SomeIpMessage(std::uint32_t messageId,
-                                         std::uint16_t clientId,
-                                         std::uint8_t protocolVersion,
-                                         std::uint8_t interfaceVersion,
+            SomeIpMessage::SomeIpMessage(uint32_t messageId,
+                                         uint16_t clientId,
+                                         uint8_t protocolVersion,
+                                         uint8_t interfaceVersion,
                                          SomeIpMessageType messageType,
                                          SomeIpReturnCode returnCode,
-                                         std::uint16_t sessionId) : SomeIpMessage(messageId,
-                                                                                  clientId,
-                                                                                  sessionId,
-                                                                                  protocolVersion,
-                                                                                  interfaceVersion,
-                                                                                  messageType,
-                                                                                  returnCode)
+                                         uint16_t sessionId) : SomeIpMessage(messageId,
+                                                                             clientId,
+                                                                             sessionId,
+                                                                             protocolVersion,
+                                                                             interfaceVersion,
+                                                                             messageType,
+                                                                             returnCode)
             {
                 if ((messageType != SomeIpMessageType::Request) ||
                     (messageType != SomeIpMessageType::Notification))
@@ -73,22 +73,22 @@ namespace ara
                 }
             }
 
-            std::uint32_t SomeIpMessage::MessageId() const noexcept
+            uint32_t SomeIpMessage::MessageId() const noexcept
             {
                 return mMessageId;
             }
 
-            std::uint16_t SomeIpMessage::ClientId() const noexcept
+            uint16_t SomeIpMessage::ClientId() const noexcept
             {
                 return mClientId;
             }
 
-            std::uint16_t SomeIpMessage::SessionId() const noexcept
+            uint16_t SomeIpMessage::SessionId() const noexcept
             {
                 return mSessionId;
             }
 
-            void SomeIpMessage::SetSessionId(std::uint16_t sessionId)
+            void SomeIpMessage::SetSessionId(uint16_t sessionId)
             {
                 mSessionId = sessionId;
             }
@@ -110,12 +110,12 @@ namespace ara
                 }
             }
 
-            std::uint8_t SomeIpMessage::ProtocolVersion() const noexcept
+            uint8_t SomeIpMessage::ProtocolVersion() const noexcept
             {
                 return mProtocolVersion;
             }
 
-            std::uint8_t SomeIpMessage::InterfaceVersion() const noexcept
+            uint8_t SomeIpMessage::InterfaceVersion() const noexcept
             {
                 return mInterfaceVersion;
             }
@@ -130,9 +130,9 @@ namespace ara
                 return mReturnCode;
             }
 
-            const std::vector<std::uint8_t> &SomeIpMessage::Payload()
+            std::vector<uint8_t> SomeIpMessage::Payload() const
             {
-                std::vector<std::uint8_t> _result;
+                std::vector<uint8_t> _result;
 
                 helper::Inject(_result, MessageId());
                 helper::Inject(_result, Length());
@@ -141,10 +141,10 @@ namespace ara
                 _result.push_back(ProtocolVersion());
                 _result.push_back(InterfaceVersion());
 
-                std::uint8_t _messageType = static_cast<std::uint8_t>(MessageType());
+                uint8_t _messageType = static_cast<uint8_t>(MessageType());
                 _result.push_back(_messageType);
 
-                std::uint8_t _returnCode = static_cast<std::uint8_t>(ReturnCode());
+                uint8_t _returnCode = static_cast<uint8_t>(ReturnCode());
                 _result.push_back(_returnCode);
 
                 return _result;

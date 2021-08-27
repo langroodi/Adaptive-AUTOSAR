@@ -19,17 +19,17 @@ namespace ara
                 class SomeIpSdMessage : public SomeIpMessage
                 {
                 private:
-                    const std::uint32_t cMessageId = 0xffff8100;
-                    const std::uint16_t cClientId = 0x0000;
-                    const std::uint8_t cProtocolVersion = 0x01;
-                    const std::uint8_t cInterfaceVersion = 0x01;
-                    const SomeIpMessageType cMessageType = SomeIpMessageType::Notification;
+                    static const uint32_t cMessageId = 0xffff8100;
+                    static const uint16_t cClientId = 0x0000;
+                    static const uint8_t cProtocolVersion = 0x01;
+                    static const uint8_t cInterfaceVersion = 0x01;
+                    static const SomeIpMessageType cMessageType = SomeIpMessageType::Notification;
 
                     bool mRebooted;
                     std::vector<entry::Entry> mEntries;
 
-                    std::uint32_t getEntriesLength() const noexcept;
-                    std::uint32_t getOptionsLength() const noexcept;
+                    uint32_t getEntriesLength() const noexcept;
+                    uint32_t getOptionsLength() const noexcept;
 
                 public:
                     SomeIpSdMessage();
@@ -42,13 +42,13 @@ namespace ara
                     /// @param entry Entry to be added
                     void AddEntry(entry::Entry &&entry);
 
-                    virtual std::uint32_t Length() const noexcept override;
+                    virtual uint32_t Length() const noexcept override;
 
-                    virtual void SetSessionId(std::uint16_t sessionId) override;
+                    virtual void SetSessionId(uint16_t sessionId) override;
 
                     virtual bool IncrementSessionId() noexcept override;
 
-                    virtual const std::vector<std::uint8_t> &Payload() override;
+                    virtual std::vector<uint8_t> Payload() const override;
                 };
             }
         }

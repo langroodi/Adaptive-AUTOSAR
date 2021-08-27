@@ -53,6 +53,12 @@ set(source_ara_com_option_dir
 set(source_ara_com_entry_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/entry")
 
+set(source_ara_com_someip_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/someip")
+
+set(source_ara_com_someip_sd_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/someip/sd")
+
 # Test Directories:
 
 set(test_ara_log_dir
@@ -68,7 +74,10 @@ set(test_ara_com_helper_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/helper")
 
 set(test_ara_com_option_dir
-  "${CMAKE_SOURCE_DIR}/test/ara/com/option")  
+  "${CMAKE_SOURCE_DIR}/test/ara/com/option")
+
+set(test_ara_com_someip_sd_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/com/someip/sd")
 
 ########################################################################
 
@@ -119,6 +128,10 @@ add_library(
   ${source_ara_com_option_dir}/ipv4_endpoint_option.cpp
   ${source_ara_com_option_dir}/loadbalancing_option.h
   ${source_ara_com_option_dir}/loadbalancing_option.cpp
+  ${source_ara_com_someip_dir}/someip_message.h
+  ${source_ara_com_someip_dir}/someip_message.cpp
+  ${source_ara_com_someip_sd_dir}/someip_sd_message.h
+  ${source_ara_com_someip_sd_dir}/someip_sd_message.cpp
 )
 
 set_target_properties(
@@ -169,6 +182,7 @@ if(build_tests)
     ${test_ara_com_helper_dir}/ipv4_address_test.cpp
     ${test_ara_com_option_dir}/ipv4_endpoint_option_test.cpp
     ${test_ara_com_option_dir}/loadbalancing_option_test.cpp
+    ${test_ara_com_someip_sd_dir}/someip_sd_message_test.cpp
   )
 
   target_link_libraries(

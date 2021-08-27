@@ -14,7 +14,7 @@ namespace ara
         namespace someip
         {
             /// @brief SOME/IP communication message type
-            enum class SomeIpMessageType : std::uint8_t
+            enum class SomeIpMessageType : uint8_t
             {
                 Request = 0x00,           ///!< Request expecting a response
                 RequestNoReturn = 0x01,   ///!< Fire and forget request
@@ -29,7 +29,7 @@ namespace ara
             };
 
             /// @brief SOME/IP communication message return code
-            enum class SomeIpReturnCode : std::uint8_t
+            enum class SomeIpReturnCode : uint8_t
             {
                 eOK,                    ///!< No error occurred
                 eNotOk,                 ///!< Unspecified error occurred
@@ -53,19 +53,19 @@ namespace ara
             class SomeIpMessage
             {
             private:
-                std::uint32_t mMessageId;
-                std::uint16_t mClientId;
-                std::uint16_t mSessionId;
-                std::uint8_t mProtocolVersion;
-                std::uint8_t mInterfaceVersion;
+                uint32_t mMessageId;
+                uint16_t mClientId;
+                uint16_t mSessionId;
+                uint8_t mProtocolVersion;
+                uint8_t mInterfaceVersion;
                 SomeIpMessageType mMessageType;
                 SomeIpReturnCode mReturnCode;
 
-                SomeIpMessage(std::uint32_t messageId,
-                              std::uint16_t clientId,
-                              std::uint16_t sessionId,
-                              std::uint8_t protocolVersion,
-                              std::uint8_t interfaceVersion,
+                SomeIpMessage(uint32_t messageId,
+                              uint16_t clientId,
+                              uint16_t sessionId,
+                              uint8_t protocolVersion,
+                              uint8_t interfaceVersion,
                               SomeIpMessageType messageType,
                               SomeIpReturnCode returnCode) noexcept;
 
@@ -77,12 +77,12 @@ namespace ara
                 /// @param interfaceVersion Service interface version
                 /// @param messageType SOME/IP message type (request or notification)
                 /// @param sessionId Active/non-active session ID
-                SomeIpMessage(std::uint32_t messageId,
-                              std::uint16_t clientId,
-                              std::uint8_t protocolVersion,
-                              std::uint8_t interfaceVersion,
+                SomeIpMessage(uint32_t messageId,
+                              uint16_t clientId,
+                              uint8_t protocolVersion,
+                              uint8_t interfaceVersion,
                               SomeIpMessageType messageType,
-                              std::uint16_t sessionId = 1);
+                              uint16_t sessionId = 1);
 
                 /// @brief Constructor for response and error
                 /// @param messageId Message ID consisting service and method/event ID
@@ -92,36 +92,36 @@ namespace ara
                 /// @param messageType SOME/IP message type (response or error)
                 /// @param returnCode Message response/error return code
                 /// @param sessionId Active/non-active session ID
-                SomeIpMessage(std::uint32_t messageId,
-                              std::uint16_t clientId,
-                              std::uint8_t protocolVersion,
-                              std::uint8_t interfaceVersion,
+                SomeIpMessage(uint32_t messageId,
+                              uint16_t clientId,
+                              uint8_t protocolVersion,
+                              uint8_t interfaceVersion,
                               SomeIpMessageType messageType,
                               SomeIpReturnCode returnCode,
-                              std::uint16_t sessionId = 1);
+                              uint16_t sessionId = 1);
 
             public:
                 virtual ~SomeIpMessage() noexcept = default;
 
                 /// @brief Get message ID
                 /// @returns Message ID consisting service and method/event ID
-                std::uint32_t MessageId() const noexcept;
+                uint32_t MessageId() const noexcept;
 
                 /// @brief Get message length
                 /// @returns Message length including the payload length
-                virtual std::uint32_t Length() const noexcept = 0;
+                virtual uint32_t Length() const noexcept = 0;
 
                 /// @brief Get client ID
                 /// @returns Client ID including ID prefix
-                std::uint16_t ClientId() const noexcept;
+                uint16_t ClientId() const noexcept;
 
                 /// @brief Get session ID
                 /// @returns Active/non-active session ID
-                std::uint16_t SessionId() const noexcept;
+                uint16_t SessionId() const noexcept;
 
                 /// @brief Set a new session ID
                 /// @param sessionId New session ID
-                virtual void SetSessionId(std::uint16_t sessionId);
+                virtual void SetSessionId(uint16_t sessionId);
 
                 /// @brief Increment the session ID by one
                 /// @returns True if the session ID is wrappered; otherwise false
@@ -130,11 +130,11 @@ namespace ara
 
                 /// @brief Get protocol version
                 /// @returns SOME/IP protocol header version
-                std::uint8_t ProtocolVersion() const noexcept;
+                uint8_t ProtocolVersion() const noexcept;
 
                 /// @brief Get interface version
                 /// @returns Service interface version
-                std::uint8_t InterfaceVersion() const noexcept;
+                uint8_t InterfaceVersion() const noexcept;
 
                 /// @brief Get message type
                 /// @returns SOME/IP message type
@@ -146,7 +146,7 @@ namespace ara
 
                 /// @brief Get message payload
                 /// @returns Byte array
-                virtual const std::vector<std::uint8_t> &Payload();
+                virtual std::vector<uint8_t> Payload() const;
             };
         }
     }
