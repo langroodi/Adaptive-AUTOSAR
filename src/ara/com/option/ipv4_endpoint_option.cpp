@@ -29,7 +29,7 @@ namespace ara
 
             std::vector<uint8_t> Ipv4EndpointOption::Payload() const
             {
-                auto _result = Option::Payload();
+                auto _result = Option::BasePayload();
 
                 helper::Ipv4Address::Inject(_result, mIpAddress);
 

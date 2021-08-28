@@ -29,17 +29,17 @@ namespace ara
 
                 uint32_t SomeIpSdMessage::getOptionsLength() const noexcept
                 {
-                    const uint32_t cOptionLengthFieldSize = 2;
+                    const uint32_t cOptionLengthFieldSize = 3;
                     uint32_t _result = 0;
 
                     for (auto entry : mEntries)
                     {
-                        for (auto firstOption : entry.FirstOptions())
+                        for (auto firstOption : entry->FirstOptions())
                         {
-                            _result += firstOption->Length();
+                            _result += cOptionLengthFieldSize + firstOption->Length();
                         }
 
-                        for (auto secondOption : entry.SecondOptions())
+                        for (auto secondOption : entry->SecondOptions())
                         {
                             _result += cOptionLengthFieldSize + secondOption->Length();
                         }
@@ -48,12 +48,12 @@ namespace ara
                     return _result;
                 }
 
-                const std::vector<entry::Entry> &SomeIpSdMessage::Entries() const noexcept
+                const std::vector<entry::Entry *> &SomeIpSdMessage::Entries() const noexcept
                 {
                     return mEntries;
                 }
 
-                void SomeIpSdMessage::AddEntry(entry::Entry &&entry)
+                void SomeIpSdMessage::AddEntry(entry::Entry *entry)
                 {
                     mEntries.push_back(entry);
                 }
@@ -105,26 +105,26 @@ namespace ara
                     if (mRebooted)
                     {
                         // Both Unicast Support and Explicit Initial Data Control flags are on.
-                        const uint32_t cRebootedFlag = 0xE000;
+                        const uint32_t cRebootedFlag = 0xe0000000;
                         helper::Inject(_result, cRebootedFlag);
                     }
                     else
                     {
                         // Both Unicast Support and Explicit Initial Data Control flags are on.
-                        const uint32_t cNotRebootedFlag = 0x6000;
+                        const uint32_t cNotRebootedFlag = 0x60000000;
                         helper::Inject(_result, cNotRebootedFlag);
                     }
 
                     uint8_t _lastOptionIndex = 0;
                     std::vector<uint8_t> _entriesPayload;
                     std::vector<uint8_t> _optionsPayload;
-                    for (auto entry : Entries())
+                    for (auto entry : mEntries)
                     {
-                        auto _entryPayload = entry.Payload(_lastOptionIndex);
+                        auto _entryPayload = entry->Payload(_lastOptionIndex);
                         helper::Concat(
                             _entriesPayload, std::move(_entryPayload));
 
-                        for (auto firstOption : entry.FirstOptions())
+                        for (auto firstOption : entry->FirstOptions())
                         {
                             auto _firstOptionPayload = firstOption->Payload();
                             helper::Concat(
@@ -132,7 +132,7 @@ namespace ara
                             ++_lastOptionIndex;
                         }
 
-                        for (auto secondOption : entry.SecondOptions())
+                        for (auto secondOption : entry->SecondOptions())
                         {
                             auto _secondOptionPayload = secondOption->Payload();
                             helper::Concat(

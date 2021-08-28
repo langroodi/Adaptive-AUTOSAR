@@ -110,7 +110,7 @@ namespace ara
                 return mTTL;
             }
 
-            std::vector<option::Option *> Entry::FirstOptions() const noexcept
+            const std::vector<option::Option *> &Entry::FirstOptions() const noexcept
             {
                 return mFirstOptions;
             }
@@ -129,7 +129,7 @@ namespace ara
                 }
             }
 
-            std::vector<option::Option *> Entry::SecondOptions() const noexcept
+            const std::vector<option::Option *> &Entry::SecondOptions() const noexcept
             {
                 return mSecondOptions;
             }
@@ -148,7 +148,7 @@ namespace ara
                 }
             }
 
-            std::vector<uint8_t> Entry::Payload(uint8_t &optionIndex) const
+            std::vector<uint8_t> Entry::BasePayload(uint8_t &optionIndex) const
             {
                 std::vector<uint8_t> _result;
 

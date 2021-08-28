@@ -26,7 +26,7 @@ namespace ara
                     static const SomeIpMessageType cMessageType = SomeIpMessageType::Notification;
 
                     bool mRebooted;
-                    std::vector<entry::Entry> mEntries;
+                    std::vector<entry::Entry *> mEntries;
 
                     uint32_t getEntriesLength() const noexcept;
                     uint32_t getOptionsLength() const noexcept;
@@ -36,11 +36,11 @@ namespace ara
 
                     /// @brief Get entries
                     /// @returns Exisiting message entries
-                    const std::vector<entry::Entry> &Entries() const noexcept;
+                    const std::vector<entry::Entry *> &Entries() const noexcept;
 
                     /// @brief Add an entry
                     /// @param entry Entry to be added
-                    void AddEntry(entry::Entry &&entry);
+                    void AddEntry(entry::Entry *entry);
 
                     virtual uint32_t Length() const noexcept override;
 

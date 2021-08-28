@@ -36,7 +36,7 @@ namespace ara
 
             std::vector<uint8_t> ServiceEntry::Payload(uint8_t &optionIndex) const
             {
-                std::vector<uint8_t> _result = Entry::Payload(optionIndex);
+                std::vector<uint8_t> _result = Entry::BasePayload(optionIndex);
                 helper::Inject(_result, mMinorVersion);
 
                 return _result;

@@ -24,7 +24,7 @@ namespace ara
 
             std::vector<uint8_t> LoadBalancingOption::Payload() const
             {
-                auto _result = Option::Payload();
+                auto _result = Option::BasePayload();
 
                 helper::Inject(_result, mPriority);
                 helper::Inject(_result, mWeight);

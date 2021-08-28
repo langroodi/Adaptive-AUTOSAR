@@ -48,6 +48,10 @@ namespace ara
                 {
                 }
 
+                /// @brief Get base option payload
+                /// @returns Byte array
+                std::vector<uint8_t> BasePayload() const;
+
             public:
                 virtual ~Option() noexcept = default;
 
@@ -65,7 +69,7 @@ namespace ara
 
                 /// @brief Get option payload
                 /// @returns Byte array
-                virtual std::vector<uint8_t> Payload() const;
+                virtual std::vector<uint8_t> Payload() const = 0;
             };
         }
     }

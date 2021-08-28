@@ -27,8 +27,8 @@ namespace ara
             {
             private:
                 EntryType mType;
-                std::vector<option::Option*> mFirstOptions;
-                std::vector<option::Option*> mSecondOptions;
+                std::vector<option::Option *> mFirstOptions;
+                std::vector<option::Option *> mSecondOptions;
                 uint16_t mServiceId;
                 uint16_t mInstanceId;
                 uint8_t mMajorVersion;
@@ -53,12 +53,17 @@ namespace ara
                 /// @brief Validate an option for adding
                 /// @param option Option of interest
                 /// @returns True if the option is valid; otherwise false
-                virtual bool ValidateOption(const option::Option* option) const noexcept;
+                virtual bool ValidateOption(const option::Option *option) const noexcept;
 
                 /// @brief Indicate whether the entry contains a specific option type or not
                 /// @param optionType Option type of interest
                 /// @returns True if the entry contains the option; otherwise false
                 bool ContainsOption(option::OptionType optionType) const noexcept;
+
+                /// @brief Get baseentity payload
+                /// @param optionIndex Index of the last added option
+                /// @returns Byte array
+                virtual std::vector<uint8_t> BasePayload(uint8_t &optionIndex) const;
 
             public:
                 virtual ~Entry() noexcept = default;
@@ -85,24 +90,24 @@ namespace ara
 
                 /// @brief Get first (general) options
                 /// @returns Exisiting first options
-                std::vector<option::Option*> FirstOptions() const noexcept;
+                const std::vector<option::Option *> &FirstOptions() const noexcept;
 
                 /// @brief Add a first (general) option
                 /// @param firstOption First option to be added
-                void AddFirstOption(option::Option* firstOption);
+                void AddFirstOption(option::Option *firstOption);
 
                 /// @brief Get second (specific) options
                 /// @returns Exisiting second options
-                std::vector<option::Option*> SecondOptions() const noexcept;
+                const std::vector<option::Option *> &SecondOptions() const noexcept;
 
                 /// @brief Add a second (specific) option
                 /// @param secondOption Second option to be added
-                void AddSecondOption(option::Option* secondOption);
+                void AddSecondOption(option::Option *secondOption);
 
                 /// @brief Get entity payload
                 /// @param optionIndex Index of the last added option
                 /// @returns Byte array
-                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex) const;
+                virtual std::vector<uint8_t> Payload(uint8_t &optionIndex) const = 0;
             };
         }
     }

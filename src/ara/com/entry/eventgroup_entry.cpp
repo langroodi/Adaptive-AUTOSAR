@@ -73,7 +73,7 @@ namespace ara
 
             std::vector<uint8_t> EventgroupEntry::Payload(uint8_t &optionIndex) const
             {
-                std::vector<uint8_t> _result = Entry::Payload(optionIndex);
+                std::vector<uint8_t> _result = Entry::BasePayload(optionIndex);
 
                 // Enabled Inistal Data Request Flag without any counter
                 const uint16_t cEventgroupFlag = 0x0080;
