@@ -1,7 +1,9 @@
 #ifndef SOMEIP_SD_SERVER
 #define SOMEIP_SD_SERVER
 
+#include <queue>
 #include "../../helper/ipv4_address.h"
+#include "./someip_sd_message.h"
 
 namespace ara
 {
@@ -30,19 +32,20 @@ namespace ara
                     static const uint16_t cDefaultSdPort = 30490;
                     static const SdServerState cInitialState = SdServerState::NotReady;
 
-                    uint16_t mServiceId;
-                    uint16_t mInstanceId;
-                    uint8_t mMajorVersion;
-                    uint32_t mMinorVersion;
-                    helper::Ipv4Address mSdIpAddress;
-                    uint16_t mSdPort;
+                    const uint16_t mServiceId;
+                    const uint16_t mInstanceId;
+                    const uint8_t mMajorVersion;
+                    const uint32_t mMinorVersion;
+                    const helper::Ipv4Address mSdIpAddress;
+                    const uint16_t mSdPort;
                     SdServerState mState;
                     bool mServiceAvailable;
                     bool mLinkAvailable;
                     double mInitialDelay;
-                    double mRepetitionBaseDelay;
-                    double mCycleOfferDelay;
-                    uint32_t mRepetitionMax;
+                    const double mRepetitionBaseDelay;
+                    const double mCycleOfferDelay;
+                    uint32_t mRepetitionCounter;
+                    std::queue<SomeIpSdMessage> mMessageBuffer;
 
                 public:
                     SomeIpSdServer() = delete;

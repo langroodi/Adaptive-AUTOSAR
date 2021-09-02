@@ -1,6 +1,6 @@
 #include <stdexcept>
 #include <random>
-#include "./someip_sd_message.h"
+#include "./someip_sd_server.h"
 
 namespace ara
 {
@@ -30,13 +30,12 @@ namespace ara
                                              mSdPort{sdPort},
                                              mState{cInitialState},
                                              mServiceAvailable{serviceAvailable},
-                                             mLinkAvailabe{false},
-                                             mRepetitionDelay{repetitionDelay},
+                                             mLinkAvailable{false},
+                                             mRepetitionBaseDelay{repetitionBaseDelay},
                                              mCycleOfferDelay{cycleOfferDelay},
-                                             mRepetitionMax{repetitionMax},
-
+                                             mRepetitionCounter{repetitionMax}
                 {
-                    if (repetionBaseDelay < 0)
+                    if (repetitionBaseDelay < 0)
                     {
                         throw std::invalid_argument(
                             "Invalid repetition base delay.");
@@ -59,7 +58,7 @@ namespace ara
                     std::default_random_engine _generator;
                     std::uniform_real_distribution<double> _distribution(
                         initialDelayMin, initialDelayMax);
-                    mInitialDelay = _generator(_distribution);
+                    mInitialDelay = _distribution(_generator);
                 }
 
                 void SomeIpSdServer::SetServiceAvailability(bool available) noexcept
