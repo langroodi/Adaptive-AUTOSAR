@@ -11,6 +11,7 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 - Cmake mimimum version: 3.14
 - Clang C++ Compiler: 10.0.0
 - Google Test: v1.11.0
+- [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary under development)
 
 ## Project Milestones
 
