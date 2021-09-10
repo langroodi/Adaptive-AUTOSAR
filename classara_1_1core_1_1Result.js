@@ -1,0 +1,28 @@
+var classara_1_1core_1_1Result =
+[
+    [ "error_type", "classara_1_1core_1_1Result.html#ae4075b56a0084b81172b1a1d00a2f4f9", null ],
+    [ "value_type", "classara_1_1core_1_1Result.html#a61a565d803bd65806fe689fa811e83c7", null ],
+    [ "Result", "classara_1_1core_1_1Result.html#a278ff92bad552c89e310b0af14158f9e", null ],
+    [ "Result", "classara_1_1core_1_1Result.html#aa745ade3aa5dd96b759157c19f82a269", null ],
+    [ "Result", "classara_1_1core_1_1Result.html#a309c9e79d564d9f250b1aa0a30a4f617", null ],
+    [ "Result", "classara_1_1core_1_1Result.html#a23007f1786246b57b18b3d89e73b3337", null ],
+    [ "Result", "classara_1_1core_1_1Result.html#ac297943cf2fd752b73b1f753380ca0fa", null ],
+    [ "Result", "classara_1_1core_1_1Result.html#a7899165dfcda9fc55079829076bc7acc", null ],
+    [ "~Result", "classara_1_1core_1_1Result.html#a17f321e297dcf7a883410c5fe320d188", null ],
+    [ "Error", "classara_1_1core_1_1Result.html#a69b3b4c7e01381968c9c8955ba5e9667", null ],
+    [ "Error", "classara_1_1core_1_1Result.html#a2a32e5eb79abc9f0661cc302f2551c50", null ],
+    [ "HasValue", "classara_1_1core_1_1Result.html#a90e193cb7c0198137d0c38b964cd18c5", null ],
+    [ "operator bool", "classara_1_1core_1_1Result.html#a88945485227813c2c7e3f82dbc0bdc89", null ],
+    [ "operator!=", "classara_1_1core_1_1Result.html#a9fa03d0b1771c9328c909ed1f4e0994f", null ],
+    [ "operator=", "classara_1_1core_1_1Result.html#af008abe97842f8414711b0f49eedc5b2", null ],
+    [ "operator=", "classara_1_1core_1_1Result.html#a73c98909ebcea8b22abd78cadb3ca977", null ],
+    [ "operator==", "classara_1_1core_1_1Result.html#a8d57f4f30a7479e468ab91886148a0a1", null ],
+    [ "Resolve", "classara_1_1core_1_1Result.html#a5ff4b0fa9795622fcaa827ef87ec4df2", null ],
+    [ "Swap", "classara_1_1core_1_1Result.html#a5068a9c75c30e7ba3713e5c868ac0ccc", null ],
+    [ "Value", "classara_1_1core_1_1Result.html#aa3c96fb6ab572ccd4d40bb50fb10edd2", null ],
+    [ "Value", "classara_1_1core_1_1Result.html#a62537612cf53642268b31b905573ff82", null ],
+    [ "ValueOr", "classara_1_1core_1_1Result.html#aa23fc137f697eb9092a675836ee0cfdf", null ],
+    [ "ValueOr", "classara_1_1core_1_1Result.html#ac34cd6ae197b3788bdccd95f23e11e37", null ],
+    [ "ValueOrThrow", "classara_1_1core_1_1Result.html#ad20fe0f158445c3c541fbe022de0cc43", null ],
+    [ "ValueOrThrow", "classara_1_1core_1_1Result.html#a7b8f1d868f546c1263136c86cd23a2e2", null ]
+];
