@@ -78,6 +78,12 @@ namespace ara
                         uint16_t sdPort = cDefaultSdPort,
                         bool serviceAvailable = true);
 
+                    /// @brief Start the service discovery server
+                    void Start();
+
+                    /// @brief Stop the service discovery server
+                    void Stop();
+
                     /// @brief Set the service availability
                     /// @param avaible Indicates whether the service is available or not
                     void SetServiceAvailability(bool available) noexcept;
