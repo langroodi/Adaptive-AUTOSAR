@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getappstamp',['GetAppstamp',['../classara_1_1log_1_1sink_1_1LogSink.html#ac12d41137d3044d276eec1943643de92',1,'ara::log::sink::LogSink']]],
-  ['gettimestamp',['GetTimestamp',['../classara_1_1log_1_1sink_1_1LogSink.html#abb8419f693df0ae2d2e43a0e4f975bd0',1,'ara::log::sink::LogSink']]]
+  ['getappstamp_302',['GetAppstamp',['../classara_1_1log_1_1sink_1_1LogSink.html#aa6da33849ef0e21005f88c589a01bab2',1,'ara::log::sink::LogSink']]],
+  ['gettimestamp_303',['GetTimestamp',['../classara_1_1log_1_1sink_1_1LogSink.html#a8b7aced88e5cef48d8403ffdb308989a',1,'ara::log::sink::LogSink']]]
 ];
