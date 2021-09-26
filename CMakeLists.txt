@@ -21,7 +21,7 @@ FetchContent_Declare(
 # Fetching Async-BSD-Socket-Lib for network abstraction
 FetchContent_Declare(
   Async-BSD-Socket-Lib
-  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/da8c0c0f828b6251cada6915f8b04f501f4128e9.zip
+  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/510bd5e288ac827217191310d18fa93ca3ac0d50.zip
 )
 
 FetchContent_MakeAvailable(googletest Async-BSD-Socket-Lib)
