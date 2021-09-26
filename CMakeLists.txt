@@ -9,14 +9,22 @@ project(Adaptive_Platform)
 set(CMAKE_CXX_STANDARD 14)
 # Enable 'rdyamic' switch to export the executable's symbols for debugging
 set(CMAKE_ENABLE_EXPORTS 1)
-# Fetching GoogleTest 1.11.0 for unit testing
+
 include(FetchContent)
+
+# Fetching GoogleTest 1.11.0 for unit testing
 FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/8d51ffdfab10b3fba636ae69bc03da4b54f8c235.zip
 )
 
-FetchContent_MakeAvailable(googletest)
+# Fetching Async-BSD-Socket-Lib for network abstraction
+FetchContent_Declare(
+  Async-BSD-Socket-Lib
+  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/da8c0c0f828b6251cada6915f8b04f501f4128e9.zip
+)
+
+FetchContent_MakeAvailable(googletest Async-BSD-Socket-Lib)
 
 ########################################################################
 #
@@ -183,11 +191,13 @@ if(build_tests)
     ${test_ara_com_option_dir}/ipv4_endpoint_option_test.cpp
     ${test_ara_com_option_dir}/loadbalancing_option_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_message_test.cpp
+    ${test_ara_com_someip_sd_dir}/network_abstraction_test.cpp
   )
 
   target_link_libraries(
     ara_unit_test
     gtest_main
+    async_bsd_socket_lib
     ara_log
     ara_sm
   )
