@@ -16,10 +16,10 @@ namespace ara
         {
             auto _initialState = FunctionGroupStates::kOff;
             TriggerOut<FunctionGroupStates> _triggerOut(_initialState);
-            _triggerOut.Notifier().Subscribe(OnNotifiedHandler);
+            _triggerOut.GetNotifier().Subscribe(OnNotifiedHandler);
             _initialState = FunctionGroupStates::kRunning;
 
-            EXPECT_NO_THROW(_triggerOut.Notifier().Notify());
+            EXPECT_NO_THROW(_triggerOut.GetNotifier().Notify());
         }
     }
 }

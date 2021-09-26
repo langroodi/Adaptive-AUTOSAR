@@ -24,13 +24,11 @@ namespace ara
                 /// @param octet1 IPv4 second octet
                 /// @param octet2 IPv4 third octet
                 /// @param octet3 IPv4 forth octet
-                constexpr Ipv4Address(
+                Ipv4Address(
                     uint8_t octet0,
                     uint8_t octet1,
                     uint8_t octet2,
-                    uint8_t octet3) noexcept : Octets{octet0, octet1, octet2, octet3}
-                {
-                }
+                    uint8_t octet3) noexcept;
 
                 ~Ipv4Address() noexcept = default;
 
@@ -46,7 +44,7 @@ namespace ara
             /// @param address1 First address to compare
             /// @param address2 Second address to compare
             /// @returns True if both addresses are equal; otherwise false
-            constexpr bool operator==(Ipv4Address address1, Ipv4Address address2)
+            bool operator==(Ipv4Address address1, Ipv4Address address2)
             {
                 bool _result =
                     (address1.Octets[0] == address2.Octets[0]) &&
@@ -61,7 +59,7 @@ namespace ara
             /// @param address1 First address to compare
             /// @param address2 Second address to compare
             /// @returns True if both addresses are not equal; otherwise false
-            constexpr bool operator!=(Ipv4Address address1, Ipv4Address address2)
+            bool operator!=(Ipv4Address address1, Ipv4Address address2)
             {
                 bool _result = !(address1 == address2);
 

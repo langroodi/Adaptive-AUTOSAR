@@ -19,7 +19,7 @@ namespace ara
 
             TriggerIn<FunctionGroupStates> _triggerIn(
                 _initialState, OnTriggeredHandler);
-            _triggerIn.Trigger().Write(_newState);
+            _triggerIn.GetTrigger().Write(_newState);
 
             EXPECT_EQ(_initialState, _newState);
         }

@@ -32,7 +32,7 @@ namespace ara
 
             /// @brief Trigger property getter
             /// @returns The trigger
-            Trigger<T> &Trigger() noexcept
+            Trigger<T> &GetTrigger() noexcept
             {
                 return mTrigger;
             }

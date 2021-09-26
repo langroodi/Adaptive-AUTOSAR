@@ -35,14 +35,14 @@ namespace ara
 
             /// @brief Trigger property getter
             /// @returns The trigger
-            Trigger<T> &Trigger() noexcept
+            Trigger<T> &GetTrigger() noexcept
             {
                 return mTrigger;
             }
 
             /// @brief Notifier property getter
             /// @returns The notifier
-            Notifier<T> &Notifier() noexcept
+            Notifier<T> &GetNotifier() noexcept
             {
                 return mNotifier;
             }

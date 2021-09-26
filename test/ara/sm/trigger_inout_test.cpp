@@ -20,12 +20,12 @@ namespace ara
                         &TriggerInOutTest::OnNotifiedHandler,
                         this,
                         std::placeholders::_1);
-                TriggerIO.Notifier().Subscribe(_handler);
+                TriggerIO.GetNotifier().Subscribe(_handler);
             }
 
             void OnTriggeredHandler()
             {
-                TriggerIO.Notifier().Notify();
+                TriggerIO.GetNotifier().Notify();
             }
 
             void OnNotifiedHandler(FunctionGroupStates newState)
@@ -37,7 +37,7 @@ namespace ara
         TEST_F(TriggerInOutTest, TriggerChain)
         {
             auto _newState = FunctionGroupStates::kRunning;
-            EXPECT_NO_THROW(TriggerIO.Trigger().Write(_newState));
+            EXPECT_NO_THROW(TriggerIO.GetTrigger().Write(_newState));
         }
     }
 }

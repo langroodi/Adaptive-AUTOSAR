@@ -31,7 +31,7 @@ namespace ara
 
             /// @brief Notifier property getter
             /// @returns The notifier
-            Notifier<T> &Notifier() noexcept
+            Notifier<T> &GetNotifier() noexcept
             {
                 return mNotifier;
             }
