@@ -1,0 +1,2 @@
+/usr/bin/llvm-ar-10 qc libara_sm.a 
+/usr/bin/llvm-ranlib-10 libara_sm.a
