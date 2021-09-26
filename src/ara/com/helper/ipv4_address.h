@@ -44,7 +44,7 @@ namespace ara
             /// @param address1 First address to compare
             /// @param address2 Second address to compare
             /// @returns True if both addresses are equal; otherwise false
-            bool operator==(Ipv4Address address1, Ipv4Address address2)
+            inline bool operator==(Ipv4Address address1, Ipv4Address address2)
             {
                 bool _result =
                     (address1.Octets[0] == address2.Octets[0]) &&
@@ -59,7 +59,7 @@ namespace ara
             /// @param address1 First address to compare
             /// @param address2 Second address to compare
             /// @returns True if both addresses are not equal; otherwise false
-            bool operator!=(Ipv4Address address1, Ipv4Address address2)
+            inline bool operator!=(Ipv4Address address1, Ipv4Address address2)
             {
                 bool _result = !(address1 == address2);
 
