@@ -51,6 +51,7 @@ namespace ara
                     /// @param repetitionBaseDelay Repetition phase delay
                     /// @param repetitionMax Maximum message count in the repetition phase
                     /// @param sdPort Service discovery port number
+                    /// @param serviceAvailable Indicates whether the service is available right after construction or not
                     SomeIpSdClient(
                         helper::Ipv4Address sdIpAddress,
                         double initialDelayMin,

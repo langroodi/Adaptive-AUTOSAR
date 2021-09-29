@@ -21,7 +21,7 @@ namespace ara
 
             protected:
                 /// @brief Deactivating the current state before transiting to the next state
-                /// @param parameter-name description
+                /// @param nextState Next state coming after deactivation
                 virtual void Deactivate(T nextState) = 0;
 
                 /// @brief Transit to the next state

@@ -85,7 +85,7 @@ namespace ara
                     void Stop();
 
                     /// @brief Set the service availability
-                    /// @param avaible Indicates whether the service is available or not
+                    /// @param available Indicates whether the service is available or not
                     void SetServiceAvailability(bool available) noexcept;
                 };
             }
