@@ -12,7 +12,9 @@ var annotated_dup =
           [ "ServiceEntry", "classara_1_1com_1_1entry_1_1ServiceEntry.html", "classara_1_1com_1_1entry_1_1ServiceEntry" ]
         ] ],
         [ "helper", "namespaceara_1_1com_1_1helper.html", [
-          [ "Ipv4Address", "structara_1_1com_1_1helper_1_1Ipv4Address.html", "structara_1_1com_1_1helper_1_1Ipv4Address" ]
+          [ "FiniteStateMachine", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", "classara_1_1com_1_1helper_1_1FiniteStateMachine" ],
+          [ "Ipv4Address", "structara_1_1com_1_1helper_1_1Ipv4Address.html", "structara_1_1com_1_1helper_1_1Ipv4Address" ],
+          [ "MachineState", "classara_1_1com_1_1helper_1_1MachineState.html", "classara_1_1com_1_1helper_1_1MachineState" ]
         ] ],
         [ "option", "namespaceara_1_1com_1_1option.html", [
           [ "Ipv4EndpointOption", "classara_1_1com_1_1option_1_1Ipv4EndpointOption.html", "classara_1_1com_1_1option_1_1Ipv4EndpointOption" ],

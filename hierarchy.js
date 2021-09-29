@@ -34,6 +34,7 @@ var hierarchy =
       [ "ara::exec::ExecException", "classara_1_1exec_1_1ExecException.html", null ]
     ] ],
     [ "ara::exec::ExecutionClient", "classara_1_1exec_1_1ExecutionClient.html", null ],
+    [ "ara::com::helper::FiniteStateMachine< T >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ],
     [ "ara::exec::FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", null ],
     [ "ara::exec::FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", null ],
     [ "ara::diag::GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],
@@ -48,6 +49,7 @@ var hierarchy =
       [ "ara::log::sink::FileLogSink", "classara_1_1log_1_1sink_1_1FileLogSink.html", null ]
     ] ],
     [ "ara::log::LogStream", "classara_1_1log_1_1LogStream.html", null ],
+    [ "ara::com::helper::MachineState< T >", "classara_1_1com_1_1helper_1_1MachineState.html", null ],
     [ "ara::diag::MetaInfo", "classara_1_1diag_1_1MetaInfo.html", null ],
     [ "ara::diag::Mointor", "classara_1_1diag_1_1Mointor.html", null ],
     [ "ara::sm::Notifier< T >", "classara_1_1sm_1_1Notifier.html", null ],
