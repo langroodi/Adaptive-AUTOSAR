@@ -29,7 +29,7 @@ namespace ara
 
             public:
                 /// @brief Constructor
-                /// @param state Machine state list
+                /// @param states Machine state list
                 /// @param entrypoint Entrypoint state to initialize the FSM
                 FiniteStateMachine(
                     std::initializer_list<MachineState &&> states, T entrypoint)
