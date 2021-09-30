@@ -14,15 +14,13 @@ namespace ara
                 /// @brief Service discovery client machine state
                 enum class SdClientState
                 {
-                    ServiceNotSeen,       ///!< Client's service not requested and not seen
-                    ServiceSeen,          ///!< Client's service not requsted, but seen
-                    RequestedButNotReady, ///!< Client's service requested, but not ready
-                    ServiceReady,         ///!< Client's service is ready
-                    Stopped,              ///!< Client stopped
-                    InitialWaitPhase,     ///!< Client is in initial waiting phase
-                    InitialWaitTimerSet,  ///!< Client is in initial waiting timer set
-                    RepetitionPhase,      ///!< Client is in repetition phase
-                    RepetitionTimerSet    ///!< Client is in repetition timer set
+                    ServiceNotSeen,       ///!< Service is not requested and not seen
+                    ServiceSeen,          ///!< Service is not requsted, but seen
+                    RequestedButNotReady, ///!< Service requested, but communication is not ready
+                    ServiceReady,         ///!< Service is ready
+                    Stopped,              ///!< Service is stopped
+                    InitialWaitPhase,     ///!< Client service is in initial waiting phase
+                    RepetitionPhase,      ///!< Client service is in repetition phase
                 };
 
                 /// @brief SOME/IP service discovery client
@@ -39,6 +37,7 @@ namespace ara
                     double mInitialDelay;
                     const double mRepetitionBaseDelay;
                     uint32_t mRepetitionCounter;
+                    bool mServiceRequested;
 
                 public:
                     SomeIpSdClient() = delete;
@@ -51,7 +50,7 @@ namespace ara
                     /// @param repetitionBaseDelay Repetition phase delay
                     /// @param repetitionMax Maximum message count in the repetition phase
                     /// @param sdPort Service discovery port number
-                    /// @param serviceAvailable Indicates whether the service is available right after construction or not
+                    /// @param serviceRequested Indicates whether the service is requested right after construction or not
                     SomeIpSdClient(
                         helper::Ipv4Address sdIpAddress,
                         double initialDelayMin,
@@ -59,7 +58,11 @@ namespace ara
                         double repetitionBaseDelay,
                         uint32_t repetitionMax,
                         uint16_t sdPort = cDefaultSdPort,
-                        bool serviceAvailable = true);
+                        bool serviceRequested = true);
+
+                    /// @brief Determine whether the service is requested or not
+                    /// @param requested True, to request the service, and false to stop requesting
+                    void RequestService(bool requested) noexcept;
                 };
             }
         }

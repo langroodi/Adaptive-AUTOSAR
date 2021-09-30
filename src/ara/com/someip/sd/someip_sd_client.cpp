@@ -17,11 +17,12 @@ namespace ara
                     double repetitionBaseDelay,
                     uint32_t repetitionMax,
                     uint16_t sdPort,
-                    bool serviceAvailable) : mSdIpAddress{sdIpAddress},
+                    bool serviceRequested) : mSdIpAddress{sdIpAddress},
                                              mSdPort{sdPort},
                                              mState{cInitialState},
                                              mRepetitionBaseDelay{repetitionBaseDelay},
-                                             mRepetitionCounter{repetitionMax}
+                                             mRepetitionCounter{repetitionMax},
+                                             mServiceRequested{serviceRequested}
                 {
                     if ((initialDelayMin < 0) ||
                         (initialDelayMax < 0) ||
@@ -35,6 +36,11 @@ namespace ara
                     std::uniform_real_distribution<double> _distribution(
                         initialDelayMin, initialDelayMax);
                     mInitialDelay = _distribution(_generator);
+                }
+
+                void SomeIpSdClient::RequestService(bool requested) noexcept
+                {
+                    mServiceRequested = requested;
                 }
             }
         }

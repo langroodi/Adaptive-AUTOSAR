@@ -16,13 +16,10 @@ namespace ara
                 /// @brief Service discovery server machine state
                 enum class SdServerState
                 {
-                    NotReady,            ///!< Server is down
-                    InitialWaitPhase,    ///!< Server is in initial waiting phase
-                    InitialWaitTimerSet, ///!< Server is in initial waiting timer set
-                    RepetitionPhase,     ///!< Server is in repetition phase
-                    RepetitionTimerSet,  ///!< Server is in repetition timer set
-                    MainPhase,           ///!< Server is in main phase
-                    MainTimerSet         ///!< Server is in main timer set
+                    NotReady,         ///!< Server's service is down
+                    InitialWaitPhase, ///!< Server's service is in initial waiting phase
+                    RepetitionPhase,  ///!< Server's service is in repetition phase
+                    MainPhase         ///!< Server's service is in main phase
                 };
 
                 /// @brief SOME/IP service discovery server
@@ -63,7 +60,7 @@ namespace ara
                     /// @param cycleOfferDelay Cycle offer delay in the main phase
                     /// @param repetitionMax Maximum message count in the repetition phase
                     /// @param sdPort Service discovery port number
-                    /// @param serviceAvailable Indicates whether the service is available or not
+                    /// @param serviceAvailable Indicates whether the service is available right after construction or not
                     SomeIpSdServer(
                         uint16_t serviceId,
                         uint16_t instanceId,
