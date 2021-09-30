@@ -107,15 +107,18 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1sd_1_1Som
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abad286956ce7d80f158dea3fa958e6f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abad286956ce7d80f158dea3fa958e6f3">SomeIpSdClient</a> (<a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress, double initialDelayMin, double initialDelayMax, double repetitionBaseDelay, uint32_t repetitionMax, uint16_t sdPort=cDefaultSdPort, bool serviceAvailable=true)</td></tr>
-<tr class="memdesc:abad286956ce7d80f158dea3fa958e6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abad286956ce7d80f158dea3fa958e6f3">More...</a><br /></td></tr>
-<tr class="separator:abad286956ce7d80f158dea3fa958e6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f257aaa5d9ce5512f9d367f0b3bd597"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a0f257aaa5d9ce5512f9d367f0b3bd597">SomeIpSdClient</a> (<a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress, double initialDelayMin, double initialDelayMax, double repetitionBaseDelay, uint32_t repetitionMax, uint16_t sdPort=cDefaultSdPort, bool serviceRequested=true)</td></tr>
+<tr class="memdesc:a0f257aaa5d9ce5512f9d367f0b3bd597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a0f257aaa5d9ce5512f9d367f0b3bd597">More...</a><br /></td></tr>
+<tr class="separator:a0f257aaa5d9ce5512f9d367f0b3bd597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5270fc1e7159d33fda1a309a3d93a533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a5270fc1e7159d33fda1a309a3d93a533">RequestService</a> (bool requested) noexcept</td></tr>
+<tr class="memdesc:a5270fc1e7159d33fda1a309a3d93a533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether the service is requested or not.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a5270fc1e7159d33fda1a309a3d93a533">More...</a><br /></td></tr>
+<tr class="separator:a5270fc1e7159d33fda1a309a3d93a533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SOME/IP service discovery client. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abad286956ce7d80f158dea3fa958e6f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abad286956ce7d80f158dea3fa958e6f3">&#9670;&nbsp;</a></span>SomeIpSdClient()</h2>
+<a id="a0f257aaa5d9ce5512f9d367f0b3bd597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f257aaa5d9ce5512f9d367f0b3bd597">&#9670;&nbsp;</a></span>SomeIpSdClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +163,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>serviceAvailable</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>serviceRequested</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -179,7 +182,42 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">repetitionBaseDelay</td><td>Repetition phase delay </td></tr>
     <tr><td class="paramname">repetitionMax</td><td>Maximum message count in the repetition phase </td></tr>
     <tr><td class="paramname">sdPort</td><td>Service discovery port number </td></tr>
-    <tr><td class="paramname">serviceAvailable</td><td>Indicates whether the service is available right after construction or not </td></tr>
+    <tr><td class="paramname">serviceRequested</td><td>Indicates whether the service is requested right after construction or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5270fc1e7159d33fda1a309a3d93a533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5270fc1e7159d33fda1a309a3d93a533">&#9670;&nbsp;</a></span>RequestService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::com::someip::sd::SomeIpSdClient::RequestService </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>requested</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine whether the service is requested or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requested</td><td>True, to request the service, and false to stop requesting </td></tr>
   </table>
   </dd>
 </dl>
