@@ -39,7 +39,6 @@ namespace ara
                 {
                 }
 
-                MachineState() = delete;
                 virtual ~MachineState() = default;
                 MachineState(const MachineState &) = delete;
                 MachineState &operator=(const MachineState &) = delete;
@@ -53,7 +52,7 @@ namespace ara
 
                 /// @brief Activate the state
                 /// @param previousState Previous state before transiting to this state
-                virtual Activate(T previousState) = 0;
+                virtual void Activate(T previousState) = 0;
 
                 /// @brief Set the transition callback
                 /// @param callback Delegate to be called after the current state deactivation

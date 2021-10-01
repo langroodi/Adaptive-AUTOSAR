@@ -32,7 +32,7 @@ namespace ara
                 /// @param states Machine state list
                 /// @param entrypoint Entrypoint state to initialize the FSM
                 FiniteStateMachine(
-                    std::initializer_list<MachineState &&> states, T entrypoint)
+                    std::initializer_list<MachineState &> states, T entrypoint)
                 {
                     auto _callback =
                         std::bind(

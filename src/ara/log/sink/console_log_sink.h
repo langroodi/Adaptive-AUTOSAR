@@ -12,10 +12,10 @@ namespace ara
         {
             class ConsoleLogSink : public LogSink
             {
+            public:
                 /// @brief Constructor
                 /// @param appId Application ID
                 /// @param appDescription Application description
-            public:
                 ConsoleLogSink(
                     std::string appId,
                     std::string appDescription);
