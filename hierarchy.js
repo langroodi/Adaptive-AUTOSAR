@@ -50,6 +50,9 @@ var hierarchy =
     ] ],
     [ "ara::log::LogStream", "classara_1_1log_1_1LogStream.html", null ],
     [ "ara::com::helper::MachineState< T >", "classara_1_1com_1_1helper_1_1MachineState.html", null ],
+    [ "ara::com::helper::MachineState< SdServerState >", "classara_1_1com_1_1helper_1_1MachineState.html", [
+      [ "ara::com::someip::sd::fsm::NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", null ]
+    ] ],
     [ "ara::diag::MetaInfo", "classara_1_1diag_1_1MetaInfo.html", null ],
     [ "ara::diag::Mointor", "classara_1_1diag_1_1Mointor.html", null ],
     [ "ara::sm::Notifier< T >", "classara_1_1sm_1_1Notifier.html", null ],
