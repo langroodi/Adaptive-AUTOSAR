@@ -55,10 +55,10 @@ namespace ara
                         InitialWaitState(
                             T currentState,
                             T nextState,
-                            int initialDelyMin,
+                            int initialDelayMin,
                             int initialDelayMax) : helper::MachineState<T>(currentState),
                                                    mNextState{nextState},
-                                                   mInitialDelayMin{initialDelyMin},
+                                                   mInitialDelayMin{initialDelayMin},
                                                    mInitialDelayMax{initialDelayMax}
                         {
                         }
