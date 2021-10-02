@@ -34,8 +34,9 @@ namespace ara
                     const uint16_t mSdPort;
                     SdClientState mState;
                     bool mLinkAvailable;
-                    double mInitialDelay;
-                    const double mRepetitionBaseDelay;
+                    const int mInitialDelayMin;
+                    const int mInitialDelayMax;
+                    const int mRepetitionBaseDelay;
                     uint32_t mRepetitionCounter;
                     bool mServiceRequested;
 
@@ -53,9 +54,9 @@ namespace ara
                     /// @param serviceRequested Indicates whether the service is requested right after construction or not
                     SomeIpSdClient(
                         helper::Ipv4Address sdIpAddress,
-                        double initialDelayMin,
-                        double initialDelayMax,
-                        double repetitionBaseDelay,
+                        int initialDelayMin,
+                        int initialDelayMax,
+                        int repetitionBaseDelay,
                         uint32_t repetitionMax,
                         uint16_t sdPort = cDefaultSdPort,
                         bool serviceRequested = true);

@@ -1,5 +1,4 @@
 #include <stdexcept>
-#include <random>
 #include "./someip_sd_server.h"
 
 namespace ara
@@ -16,10 +15,10 @@ namespace ara
                     uint8_t majorVersion,
                     uint32_t minorVersion,
                     helper::Ipv4Address sdIpAddress,
-                    double initialDelayMin,
-                    double initialDelayMax,
-                    double repetitionBaseDelay,
-                    double cycleOfferDelay,
+                    int initialDelayMin,
+                    int initialDelayMax,
+                    int repetitionBaseDelay,
+                    int cycleOfferDelay,
                     uint32_t repetitionMax,
                     uint16_t sdPort,
                     bool serviceAvailable) : mServiceId{serviceId},
@@ -31,6 +30,8 @@ namespace ara
                                              mState{cInitialState},
                                              mServiceAvailable{serviceAvailable},
                                              mLinkAvailable{false},
+                                             mInitialDelayMin{initialDelayMin},
+                                             mInitialDelayMax{initialDelayMax},
                                              mRepetitionBaseDelay{repetitionBaseDelay},
                                              mCycleOfferDelay{cycleOfferDelay},
                                              mRepetitionCounter{repetitionMax}
@@ -54,11 +55,6 @@ namespace ara
                         throw std::invalid_argument(
                             "Invalid initial delay minimum and/or maximum.");
                     }
-
-                    std::default_random_engine _generator;
-                    std::uniform_real_distribution<double> _distribution(
-                        initialDelayMin, initialDelayMax);
-                    mInitialDelay = _distribution(_generator);
                 }
 
                 void SomeIpSdServer::SetServiceAvailability(bool available) noexcept

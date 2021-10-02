@@ -38,9 +38,10 @@ namespace ara
                     SdServerState mState;
                     bool mServiceAvailable;
                     bool mLinkAvailable;
-                    double mInitialDelay;
-                    const double mRepetitionBaseDelay;
-                    const double mCycleOfferDelay;
+                    const int mInitialDelayMin;
+                    const int mInitialDelayMax;
+                    const int mRepetitionBaseDelay;
+                    const int mCycleOfferDelay;
                     uint32_t mRepetitionCounter;
                     std::queue<SomeIpSdMessage> mMessageBuffer;
 
@@ -67,10 +68,10 @@ namespace ara
                         uint8_t majorVersion,
                         uint32_t minorVersion,
                         helper::Ipv4Address sdIpAddress,
-                        double initialDelayMin,
-                        double initialDelayMax,
-                        double repetitionBaseDelay,
-                        double cycleOfferDelay,
+                        int initialDelayMin,
+                        int initialDelayMax,
+                        int repetitionBaseDelay,
+                        int cycleOfferDelay,
                         uint32_t repetitionMax,
                         uint16_t sdPort = cDefaultSdPort,
                         bool serviceAvailable = true);
