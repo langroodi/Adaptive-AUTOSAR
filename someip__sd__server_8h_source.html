@@ -134,44 +134,45 @@ $(document).ready(function(){initNavTree('someip__sd__server_8h_source.html','')
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    SdServerState mState;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keywordtype">bool</span> mServiceAvailable;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <span class="keywordtype">bool</span> mLinkAvailable;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="keywordtype">double</span> mInitialDelay;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">double</span> mRepetitionBaseDelay;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">double</span> mCycleOfferDelay;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    uint32_t mRepetitionCounter;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    std::queue&lt;SomeIpSdMessage&gt; mMessageBuffer;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    ~<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>() noexcept = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        uint16_t serviceId,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        uint16_t instanceId,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        uint8_t majorVersion,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        uint32_t minorVersion,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <span class="keywordtype">double</span> initialDelayMin,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keywordtype">double</span> initialDelayMax,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keywordtype">double</span> repetitionBaseDelay,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordtype">double</span> cycleOfferDelay,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        uint32_t repetitionMax,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        uint16_t sdPort = cDefaultSdPort,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <span class="keywordtype">bool</span> serviceAvailable = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">   79</a></span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">Start</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">   82</a></span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">Stop</a>();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#aa950c0225d02d4f6d6d55f508ab0980f">SetServiceAvailability</a>(<span class="keywordtype">bool</span> available) noexcept;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                };</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mInitialDelayMin;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mInitialDelayMax;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mRepetitionBaseDelay;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mCycleOfferDelay;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    uint32_t mRepetitionCounter;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    std::queue&lt;SomeIpSdMessage&gt; mMessageBuffer;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    ~<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>() noexcept = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        uint16_t serviceId,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        uint16_t instanceId,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        uint8_t majorVersion,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        uint32_t minorVersion,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keywordtype">int</span> initialDelayMin,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keywordtype">int</span> initialDelayMax,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordtype">int</span> repetitionBaseDelay,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keywordtype">int</span> cycleOfferDelay,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        uint32_t repetitionMax,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        uint16_t sdPort = cDefaultSdPort,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <span class="keywordtype">bool</span> serviceAvailable = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">   80</a></span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">Start</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">   83</a></span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">Stop</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#aa950c0225d02d4f6d6d55f508ab0980f">SetServiceAvailability</a>(<span class="keywordtype">bool</span> available) noexcept;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                };</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">ara::com::someip::sd::SomeIpSdServer</a></div><div class="ttdoc">SOME/IP service discovery server.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.h:27</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_aa950c0225d02d4f6d6d55f508ab0980f"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#aa950c0225d02d4f6d6d55f508ab0980f">ara::com::someip::sd::SomeIpSdServer::SetServiceAvailability</a></div><div class="ttdeci">void SetServiceAvailability(bool available) noexcept</div><div class="ttdoc">Set the service availability.</div><div class="ttdef"><b>Definition:</b> someip_sd_service.cpp:64</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_aa950c0225d02d4f6d6d55f508ab0980f"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#aa950c0225d02d4f6d6d55f508ab0980f">ara::com::someip::sd::SomeIpSdServer::SetServiceAvailability</a></div><div class="ttdeci">void SetServiceAvailability(bool available) noexcept</div><div class="ttdoc">Set the service availability.</div><div class="ttdef"><b>Definition:</b> someip_sd_service.cpp:60</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_abca118cd5ba13ce40c920a90352e31ce"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">ara::com::someip::sd::SomeIpSdServer::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop the service discovery server.</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_abd61eac61c75a88669af27595fc3b632"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">ara::com::someip::sd::SomeIpSdServer::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Start the service discovery server.</div></div>
 <div class="ttc" id="astructara_1_1com_1_1helper_1_1Ipv4Address_html"><div class="ttname"><a href="structara_1_1com_1_1helper_1_1Ipv4Address.html">ara::com::helper::Ipv4Address</a></div><div class="ttdoc">IPv4 address wrapper helper.</div><div class="ttdef"><b>Definition:</b> ipv4_address.h:16</div></div>

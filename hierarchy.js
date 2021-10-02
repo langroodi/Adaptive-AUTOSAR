@@ -49,7 +49,9 @@ var hierarchy =
       [ "ara::log::sink::FileLogSink", "classara_1_1log_1_1sink_1_1FileLogSink.html", null ]
     ] ],
     [ "ara::log::LogStream", "classara_1_1log_1_1LogStream.html", null ],
-    [ "ara::com::helper::MachineState< T >", "classara_1_1com_1_1helper_1_1MachineState.html", null ],
+    [ "ara::com::helper::MachineState< T >", "classara_1_1com_1_1helper_1_1MachineState.html", [
+      [ "ara::com::someip::sd::fsm::InitialWaitState< T >", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html", null ]
+    ] ],
     [ "ara::com::helper::MachineState< SdServerState >", "classara_1_1com_1_1helper_1_1MachineState.html", [
       [ "ara::com::someip::sd::fsm::NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", null ]
     ] ],

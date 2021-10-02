@@ -14,6 +14,7 @@ var namespaces_dup =
         [ "someip", null, [
           [ "sd", null, [
             [ "fsm", null, [
+              [ "InitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState" ],
               [ "NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState" ]
             ] ],
             [ "SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient" ],
