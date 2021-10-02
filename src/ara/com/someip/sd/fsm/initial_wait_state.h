@@ -1,8 +1,9 @@
 #ifndef INITIAL_WAIT_STATE_H
 #define INITIAL_WAIT_STATE_H
 
-#include <random>
 #include <future>
+#include <stdexcept>
+#include <random>
 #include <thread>
 #include <chrono>
 #include "../../../helper/machine_state.h"
@@ -27,13 +28,16 @@ namespace ara
                         const T mNextState;
                         const int mInitialDelayMin;
                         const int mInitialDelayMax;
+                        std::future<void> mFuture;
 
                         void setTimer(int initialDelay)
                         {
                             // Sleep for the initali delay and then transit to the next state.
                             auto _delay = std::chrono::seconds(initialDelay);
                             std::this_thread::sleep_for(_delay);
-                            Transit(mNextState);
+                            helper::MachineState<T>::Transit(mNextState);
+                            // Make the future invalid.
+                            mFuture.get();
                         }
 
                     protected:
@@ -64,13 +68,27 @@ namespace ara
 
                         void Activate(T previousState) override
                         {
-                            std::default_random_engine _generator;
-                            std::uniform_real_distribution<int> _distribution(
-                                mInitialDelayMin, mInitialDelayMax);
-                            int _initialDelay = _distribution(_generator);
+                            // Valid future means the timer is not expired yet.
+                            if (mFuture.valid())
+                            {
+                                throw std::logic_error(
+                                    "The state has been already activated");
+                            }
+                            else
+                            {
+                                std::default_random_engine _generator;
+                                std::uniform_int_distribution<int> _distribution(
+                                    mInitialDelayMin, mInitialDelayMax);
+                                int _initialDelay = _distribution(_generator);
 
-                            // Set the timer from a new thread with a random initial delay.
-                            std::async(std::launch::async, setTimer, _initialDelay);
+                                // Set the timer from a new thread with a random initial delay.
+                                mFuture =
+                                    std::async(
+                                        std::launch::async,
+                                        &InitialWaitState<T>::setTimer,
+                                        this,
+                                        _initialDelay);
+                            }
                         }
                     };
                 }

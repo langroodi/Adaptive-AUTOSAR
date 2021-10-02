@@ -149,6 +149,7 @@ add_library(
   ${source_ara_com_someip_sd_dir}/someip_sd_message.cpp
   ${source_ara_com_someip_sd_fsm_dir}/notready_state.h
   ${source_ara_com_someip_sd_fsm_dir}/notready_state.cpp
+  ${source_ara_com_someip_sd_fsm_dir}/initial_wait_state.h
 )
 
 set_target_properties(
