@@ -1,0 +1,60 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_bee11/fast && /usr/bin/make  -f CMakeFiles/cmTC_bee11.dir/build.make CMakeFiles/cmTC_bee11.dir/build
+make[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bee11.dir/src.c.o
+/usr/bin/clang-10 -DCMAKE_HAVE_LIBC_PTHREAD -DcmTC_bee11_EXPORTS   -MD -MT CMakeFiles/cmTC_bee11.dir/src.c.o -MF CMakeFiles/cmTC_bee11.dir/src.c.o.d -o CMakeFiles/cmTC_bee11.dir/src.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_bee11
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bee11.dir/link.txt --verbose=1
+/usr/bin/clang-10 -Wl,--export-dynamic -rdynamic CMakeFiles/cmTC_bee11.dir/src.c.o -o cmTC_bee11 
+/usr/bin/ld: CMakeFiles/cmTC_bee11.dir/src.c.o: in function `main':
+src.c:(.text+0x25): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x31): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x3d): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0x4f): undefined reference to `pthread_join'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_bee11.dir/build.make:100: cmTC_bee11] Error 1
+make[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_bee11/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ff3d8/fast && /usr/bin/make  -f CMakeFiles/cmTC_ff3d8.dir/build.make CMakeFiles/cmTC_ff3d8.dir/build
+make[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ff3d8.dir/CheckFunctionExists.c.o
+/usr/bin/clang-10 -DcmTC_ff3d8_EXPORTS  -DCHECK_FUNCTION_EXISTS=pthread_create -MD -MT CMakeFiles/cmTC_ff3d8.dir/CheckFunctionExists.c.o -MF CMakeFiles/cmTC_ff3d8.dir/CheckFunctionExists.c.o.d -o CMakeFiles/cmTC_ff3d8.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.21/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ff3d8
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ff3d8.dir/link.txt --verbose=1
+/usr/bin/clang-10  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--export-dynamic -rdynamic CMakeFiles/cmTC_ff3d8.dir/CheckFunctionExists.c.o -o cmTC_ff3d8  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_ff3d8.dir/build.make:100: cmTC_ff3d8] Error 1
+make[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_ff3d8/fast] Error 2
+
+
+
