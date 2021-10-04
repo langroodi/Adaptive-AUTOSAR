@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['argument_211',['Argument',['../classara_1_1log_1_1Argument.html',1,'ara::log']]]
+  ['argument_212',['Argument',['../classara_1_1log_1_1Argument.html',1,'ara::log']]]
 ];

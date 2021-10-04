@@ -15,7 +15,8 @@ var namespaces_dup =
           [ "sd", null, [
             [ "fsm", null, [
               [ "InitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState" ],
-              [ "NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState" ]
+              [ "NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState" ],
+              [ "RepetitionState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState" ]
             ] ],
             [ "SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient" ],
             [ "SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage" ],
