@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1sd_1_1fsm
 </div><!--header-->
 <div class="contents">
 
-<p>Server's or client's service initial state.  
+<p>Server's or client's service initial wait state.  
  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="initial__wait__state_8h_source.html">initial_wait_state.h</a>&gt;</code></p>
@@ -117,9 +117,9 @@ Inheritance diagram for ara::com::someip::sd::fsm::InitialWaitState&lt; T &gt;:<
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a64411d3fef1b8a898f710777a49251d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a64411d3fef1b8a898f710777a49251d2">InitialWaitState</a> (T currentState, T nextState, int initialDelayMin, int initialDelayMax)</td></tr>
-<tr class="memdesc:a64411d3fef1b8a898f710777a49251d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a64411d3fef1b8a898f710777a49251d2">More...</a><br /></td></tr>
-<tr class="separator:a64411d3fef1b8a898f710777a49251d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f2aea98fbd004f5114aa52f10578b76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a5f2aea98fbd004f5114aa52f10578b76">InitialWaitState</a> (T currentState, T nextState, int initialDelayMin, int initialDelayMax, std::function&lt; void()&gt; onTimerExpired) noexcept</td></tr>
+<tr class="memdesc:a5f2aea98fbd004f5114aa52f10578b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a5f2aea98fbd004f5114aa52f10578b76">More...</a><br /></td></tr>
+<tr class="separator:a5f2aea98fbd004f5114aa52f10578b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaafa5f8a031d3108661b6b39c648767f"><td class="memItemLeft" align="right" valign="top"><a id="aaafa5f8a031d3108661b6b39c648767f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>InitialWaitState</b> (const <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a> &amp;)=delete</td></tr>
 <tr class="separator:aaafa5f8a031d3108661b6b39c648767f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,7 +160,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
 class ara::com::someip::sd::fsm::InitialWaitState&lt; T &gt;</h3>
 
-<p>Server's or client's service initial state. </p>
+<p>Server's or client's service initial wait state. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Server's or client state enumeration type </td></tr>
@@ -169,8 +169,8 @@ class ara::com::someip::sd::fsm::InitialWaitState&lt; T &gt;</h3>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The state is not copyable </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a64411d3fef1b8a898f710777a49251d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64411d3fef1b8a898f710777a49251d2">&#9670;&nbsp;</a></span>InitialWaitState()</h2>
+<a id="a5f2aea98fbd004f5114aa52f10578b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2aea98fbd004f5114aa52f10578b76">&#9670;&nbsp;</a></span>InitialWaitState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +202,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>initialDelayMax</em>&#160;</td>
+          <td class="paramname"><em>initialDelayMax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>onTimerExpired</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -212,7 +218,7 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -222,8 +228,9 @@ template&lt;typename T &gt; </div>
   <table class="params">
     <tr><td class="paramname">currentState</td><td>Current state at initial wait phase </td></tr>
     <tr><td class="paramname">nextState</td><td>Next state after initial wait phase expiration </td></tr>
-    <tr><td class="paramname">initialDelayMin</td><td>Minimum initial delay in seconds </td></tr>
-    <tr><td class="paramname">initialDelayMax</td><td>Maximum initial delay in seconds </td></tr>
+    <tr><td class="paramname">initialDelayMin</td><td>Minimum initial delay in milliseconds </td></tr>
+    <tr><td class="paramname">initialDelayMax</td><td>Maximum initial delay in milliseconds </td></tr>
+    <tr><td class="paramname">onTimerExpired</td><td>Delegate to be invoked by timer's thread when the timer is expired </td></tr>
   </table>
   </dd>
 </dl>
