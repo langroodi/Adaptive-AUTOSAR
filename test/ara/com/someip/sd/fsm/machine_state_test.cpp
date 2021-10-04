@@ -31,14 +31,19 @@ namespace ara
                             SdServerState::InitialWaitPhase;
                         const SdServerState cNextState =
                             SdServerState::RepetitionPhase;
-                        const int cInitialDelayMin = 1;
-                        const int cInitialDelayMax = 10;
+                        const int cInitialDelayMin = 100;
+                        const int cInitialDelayMax = 200;
+                        const auto cOnTimerExpired = []
+                        {
+                            // Empty callback
+                        };
 
                         InitialWaitState<SdServerState> _machineState(
                             cExpectedState,
                             cNextState,
                             cInitialDelayMin,
-                            cInitialDelayMax);
+                            cInitialDelayMax,
+                            cOnTimerExpired);
 
                         SdServerState _actualState = _machineState.GetState();
 

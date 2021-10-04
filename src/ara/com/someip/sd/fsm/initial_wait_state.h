@@ -18,7 +18,7 @@ namespace ara
             {
                 namespace fsm
                 {
-                    /// @brief Server's or client's service initial state
+                    /// @brief Server's or client's service initial wait state
                     /// @tparam T Server's or client state enumeration type
                     /// @note The state is not copyable
                     template <typename T>
@@ -28,13 +28,18 @@ namespace ara
                         const T mNextState;
                         const int mInitialDelayMin;
                         const int mInitialDelayMax;
+                        const std::function<void()> mOnTimerExpired;
                         std::future<void> mFuture;
 
                         void setTimer(int initialDelay)
                         {
                             // Sleep for the initali delay and then transit to the next state.
-                            auto _delay = std::chrono::seconds(initialDelay);
+                            auto _delay = std::chrono::milliseconds(initialDelay);
                             std::this_thread::sleep_for(_delay);
+
+                            // Invoke the on timer expiration callback
+                            mOnTimerExpired();
+
                             helper::MachineState<T>::Transit(mNextState);
                             // Make the future invalid.
                             mFuture.get();
@@ -50,16 +55,19 @@ namespace ara
                         /// @brief Constructor
                         /// @param currentState Current state at initial wait phase
                         /// @param nextState Next state after initial wait phase expiration
-                        /// @param initialDelayMin Minimum initial delay in seconds
-                        /// @param initialDelayMax Maximum initial delay in seconds
+                        /// @param initialDelayMin Minimum initial delay in milliseconds
+                        /// @param initialDelayMax Maximum initial delay in milliseconds
+                        /// @param onTimerExpired Delegate to be invoked by timer's thread when the timer is expired
                         InitialWaitState(
                             T currentState,
                             T nextState,
                             int initialDelayMin,
-                            int initialDelayMax) : helper::MachineState<T>(currentState),
-                                                   mNextState{nextState},
-                                                   mInitialDelayMin{initialDelayMin},
-                                                   mInitialDelayMax{initialDelayMax}
+                            int initialDelayMax,
+                            std::function<void()> onTimerExpired) noexcept : helper::MachineState<T>(currentState),
+                                                                             mNextState{nextState},
+                                                                             mInitialDelayMin{initialDelayMin},
+                                                                             mInitialDelayMax{initialDelayMax},
+                                                                             mOnTimerExpired{onTimerExpired}
                         {
                         }
 
