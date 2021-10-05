@@ -54,7 +54,7 @@ namespace ara
                         /// @brief Constructor
                         /// @param currentState Current state at initial wait phase
                         /// @param nextState Next state after initial wait phase expiration
-                        /// @param stoppedState Stopped state after put a stop to the service
+                        /// @param stoppedState Default stopped state after put a stop to the service
                         /// @param onTimerExpired Delegate to be invoked by timer's thread when the timer is expired
                         TimerSetState(
                             T currentState,
@@ -96,6 +96,13 @@ namespace ara
                         void ServiceStopped()
                         {
                             Stopped = true;
+                        }
+
+                        /// @brief Set stopped state
+                        /// @param stoppedState New stopped state
+                        void SetStoppedState(T stoppedState) noexcept
+                        {
+                            mStoppedState = stoppedState;
                         }
 
                         /// @brief Join to the timer's thread
