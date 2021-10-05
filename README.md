@@ -9,7 +9,9 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 
 - Cpp Standard: 14
 - Cmake mimimum version: 3.14
-- Clang C++ Compiler: 10.0.0
+- Compiler:
+    - GCC C/C++ Compiler (x86-64 Linux GNU): 9.3.0; or
+    - Clang C/C++ Compiler (x86-64 PC Linux GNU): 10.0.0
 - Google Test: v1.11.0
 - [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary)
 

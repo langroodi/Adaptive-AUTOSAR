@@ -55,11 +55,11 @@ namespace ara
             /// @param logMode Log sink mode
             /// @param logLevel Log severity level
             /// @param appDescription Application description
-            /// @returns A logging framework
+            /// @returns Pointer to created logging framework
             /// @throws std::invalid_argument Throws when file log mode is chosen
             /// @note To create a framework to use a file sink refer to see aslo
             /// @see Create(std::string, std::string, LogLevel, std::string)
-            static LoggingFramework Create(
+            static LoggingFramework *Create(
                 std::string appId,
                 LogMode logMode,
                 LogLevel logLevel = LogLevel::kWarn,
@@ -70,10 +70,10 @@ namespace ara
             /// @param filePath Log file path
             /// @param logLevel Log severity level
             /// @param appDescription Application description
-            /// @returns A logging framework
+            /// @returns Pointer to created logging framework
             /// @note To create a framework for other sinks refer to see also
             /// @see Create(std::string, LogMode, LogLevel, std::string)
-            static LoggingFramework Create(
+            static LoggingFramework *Create(
                 std::string appId,
                 std::string filePath,
                 LogLevel logLevel = LogLevel::kWarn,

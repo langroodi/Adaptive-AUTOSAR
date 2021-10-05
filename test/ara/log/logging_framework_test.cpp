@@ -25,16 +25,18 @@ namespace ara
             const std::string cCtxDescription{"Default Test Context"};
             const LogLevel cLogLevel{LogLevel::kWarn};
 
-            LoggingFramework _loggingFramework =
+            LoggingFramework* _loggingFramework =
                 LoggingFramework::Create(cAppId, cLogMode);
 
            Logger _logger =
-                _loggingFramework.CreateLogger(cCtxId, cCtxDescription);
+                _loggingFramework->CreateLogger(cCtxId, cCtxDescription);
             
             LogStream _logStream;
 
             ASSERT_NO_THROW(
-                _loggingFramework.Log(_logger, cLogLevel, _logStream));
+                _loggingFramework->Log(_logger, cLogLevel, _logStream));
+
+            delete _loggingFramework;
         }
     }
 }

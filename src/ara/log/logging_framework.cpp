@@ -53,7 +53,7 @@ namespace ara
             }
         }
 
-        LoggingFramework LoggingFramework::Create(
+        LoggingFramework *LoggingFramework::Create(
             std::string appId,
             LogMode logMode,
             LogLevel logLevel,
@@ -69,7 +69,8 @@ namespace ara
             {
                 sink::LogSink *_logSink =
                     new sink::ConsoleLogSink(appId, appDescription);
-                LoggingFramework _result(_logSink, logLevel);
+                LoggingFramework *_result =
+                    new LoggingFramework(_logSink, logLevel);
 
                 return _result;
             }
@@ -80,7 +81,7 @@ namespace ara
             }
         }
 
-        LoggingFramework LoggingFramework::Create(
+        LoggingFramework *LoggingFramework::Create(
             std::string appId,
             std::string filePath,
             LogLevel logLevel,
@@ -88,7 +89,8 @@ namespace ara
         {
             sink::LogSink *_logSink =
                 new sink::FileLogSink(filePath, appId, appDescription);
-            LoggingFramework _result(_logSink, logLevel);
+            LoggingFramework *_result =
+                new LoggingFramework(_logSink, logLevel);
 
             return _result;
         }
