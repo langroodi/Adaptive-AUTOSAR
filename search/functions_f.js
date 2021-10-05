@@ -1,11 +1,18 @@
 var searchData=
 [
-  ['tostring_386',['ToString',['../classara_1_1log_1_1Argument.html#af8e498e2089967986ce21e7398edb3e1',1,'ara::log::Argument::ToString()'],['../classara_1_1log_1_1LogStream.html#ab8720260652e399474f8e779bc974351',1,'ara::log::LogStream::ToString()']]],
-  ['transit_387',['Transit',['../classara_1_1com_1_1helper_1_1MachineState.html#aa4dffd60e1b3ba121ca480bfa8f32bb1',1,'ara::com::helper::MachineState']]],
-  ['trigger_388',['Trigger',['../classara_1_1sm_1_1Trigger.html#a0363f5b04abe9cc6bffdac0d3c3aa21f',1,'ara::sm::Trigger']]],
-  ['triggerin_389',['TriggerIn',['../classara_1_1sm_1_1TriggerIn.html#a5420c68bc867c6e6dcb1fcc200654098',1,'ara::sm::TriggerIn']]],
-  ['triggerinout_390',['TriggerInOut',['../classara_1_1sm_1_1TriggerInOut.html#aa8b6bc737b5a8ef2ba331dca7fa52407',1,'ara::sm::TriggerInOut']]],
-  ['triggerout_391',['TriggerOut',['../classara_1_1sm_1_1TriggerOut.html#a0940405fadc0bd5475376637368ca13e',1,'ara::sm::TriggerOut']]],
-  ['ttl_392',['TTL',['../classara_1_1com_1_1entry_1_1Entry.html#a075705f87c458a532adf96d644290c27',1,'ara::com::entry::Entry']]],
-  ['type_393',['Type',['../classara_1_1com_1_1entry_1_1Entry.html#a04cbc058f079ae37e873db0e8aeee376',1,'ara::com::entry::Entry::Type()'],['../classara_1_1com_1_1option_1_1Option.html#ada63a14a0609072da952abc4e75cd0e4',1,'ara::com::option::Option::Type()']]]
+  ['secondoptions_381',['SecondOptions',['../classara_1_1com_1_1entry_1_1Entry.html#aadc60e23de83f43ce3f4294cd20f230f',1,'ara::com::entry::Entry']]],
+  ['serviceactivated_382',['ServiceActivated',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html#a20b7a0f75b11b2252e90b98db0001a3c',1,'ara::com::someip::sd::fsm::NotReadyState']]],
+  ['serviceid_383',['ServiceId',['../classara_1_1com_1_1entry_1_1Entry.html#a498a02847eb03549cb49c3986b075c59',1,'ara::com::entry::Entry']]],
+  ['servicestopped_384',['ServiceStopped',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#aae3522ca768e4278427dd33393aa0471',1,'ara::com::someip::sd::fsm::TimerSetState']]],
+  ['sessionid_385',['SessionId',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#afcc36c5a7f0b238e6d29246a7edc395d',1,'ara::com::someip::SomeIpMessage']]],
+  ['setserviceavailability_386',['SetServiceAvailability',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#aa950c0225d02d4f6d6d55f508ab0980f',1,'ara::com::someip::sd::SomeIpSdServer']]],
+  ['setsessionid_387',['SetSessionId',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a0db58f09e156cdf1f3a9017d9b374a33',1,'ara::com::someip::sd::SomeIpSdMessage::SetSessionId()'],['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a5eb103e2b70bf1c4f3bd901182a64039',1,'ara::com::someip::SomeIpMessage::SetSessionId()']]],
+  ['settimer_388',['SetTimer',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html#a8f09c0c600a6dc01f8ce77e876a35dac',1,'ara::com::someip::sd::fsm::RepetitionState::SetTimer()'],['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#af30184b7fc177870cd77f0af8e0f52fd',1,'ara::com::someip::sd::fsm::TimerSetState::SetTimer()'],['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a86f2451ede33f7837708153c3e8c9fbe',1,'ara::com::someip::sd::fsm::InitialWaitState::SetTimer()']]],
+  ['settransitioncallback_389',['SetTransitionCallback',['../classara_1_1com_1_1helper_1_1MachineState.html#ac015ee890c18c33df64b8eb4c4b449df',1,'ara::com::helper::MachineState']]],
+  ['someipmessage_390',['SomeIpMessage',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#aa14ab945812f522b598becdd6e269400',1,'ara::com::someip::SomeIpMessage::SomeIpMessage(uint32_t messageId, uint16_t clientId, uint8_t protocolVersion, uint8_t interfaceVersion, SomeIpMessageType messageType, uint16_t sessionId=1)'],['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a2317cf28feab8440e0904f9cc3f95347',1,'ara::com::someip::SomeIpMessage::SomeIpMessage(uint32_t messageId, uint16_t clientId, uint8_t protocolVersion, uint8_t interfaceVersion, SomeIpMessageType messageType, SomeIpReturnCode returnCode, uint16_t sessionId=1)']]],
+  ['someipsdclient_391',['SomeIpSdClient',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#af0e3dfd2c80630556b6c3dde6b6cccc9',1,'ara::com::someip::sd::SomeIpSdClient']]],
+  ['someipsdserver_392',['SomeIpSdServer',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a531a524cef756ee6cc4d4dc449bdb291',1,'ara::com::someip::sd::SomeIpSdServer']]],
+  ['start_393',['Start',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632',1,'ara::com::someip::sd::SomeIpSdServer']]],
+  ['stop_394',['Stop',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce',1,'ara::com::someip::sd::SomeIpSdServer']]],
+  ['subscribe_395',['Subscribe',['../classara_1_1sm_1_1Notifier.html#a26fb81e97b2548686b4a7bd91192bcf3',1,'ara::sm::Notifier']]]
 ];

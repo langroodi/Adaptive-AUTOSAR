@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['weight_395',['Weight',['../classara_1_1com_1_1option_1_1LoadBalancingOption.html#a80f8a0830a544b5fc8b736478573ade2',1,'ara::com::option::LoadBalancingOption']]],
-  ['withlevel_396',['WithLevel',['../classara_1_1log_1_1Logger.html#a5d278c539e61194014b5a5dcfff2930a',1,'ara::log::Logger']]],
-  ['withlocation_397',['WithLocation',['../classara_1_1log_1_1LogStream.html#a83bdf1c357a7a03462228454c55a823d',1,'ara::log::LogStream']]],
-  ['write_398',['Write',['../classara_1_1sm_1_1Trigger.html#a13b7b5fc7e8ac7ff0fb789546c25b29d',1,'ara::sm::Trigger']]]
+  ['validateoption_405',['ValidateOption',['../classara_1_1com_1_1entry_1_1Entry.html#aac89ea76b5cbf5136b41fa6d5e00ee0a',1,'ara::com::entry::Entry::ValidateOption()'],['../classara_1_1com_1_1entry_1_1EventgroupEntry.html#a03552101b49cab3a8ae88c262077ae3e',1,'ara::com::entry::EventgroupEntry::ValidateOption()'],['../classara_1_1com_1_1entry_1_1ServiceEntry.html#a763af5bb14f24534589583a993532c13',1,'ara::com::entry::ServiceEntry::ValidateOption()']]]
 ];
