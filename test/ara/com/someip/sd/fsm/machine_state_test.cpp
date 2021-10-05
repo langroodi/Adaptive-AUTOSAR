@@ -32,6 +32,8 @@ namespace ara
                             SdServerState::InitialWaitPhase;
                         const SdServerState cNextState =
                             SdServerState::RepetitionPhase;
+                        const SdServerState cStoppedState =
+                            SdServerState::NotReady;
                         const int cInitialDelayMin = 100;
                         const int cInitialDelayMax = 200;
                         const auto cOnTimerExpired = []
@@ -42,9 +44,10 @@ namespace ara
                         InitialWaitState<SdServerState> _machineState(
                             cExpectedState,
                             cNextState,
+                            cStoppedState,
+                            cOnTimerExpired,
                             cInitialDelayMin,
-                            cInitialDelayMax,
-                            cOnTimerExpired);
+                            cInitialDelayMax);
 
                         SdServerState _actualState = _machineState.GetState();
 
@@ -63,10 +66,12 @@ namespace ara
                             SdServerState::RepetitionPhase;
                         const SdServerState cNextState =
                             SdServerState::MainPhase;
+                        const SdServerState cStoppedState =
+                            SdServerState::NotReady;
                         const int cRepetitionsMax = 2;
                         const int cRepetitionsBaseDelay = 100;
                         uint32_t _counter = 0;
-                        const auto cOnTimerExpired = [&_counter] ()
+                        const auto cOnTimerExpired = [&_counter]()
                         {
                             ++_counter;
                         };
@@ -74,9 +79,10 @@ namespace ara
                         RepetitionState<SdServerState> _machineState(
                             cExpectedState,
                             cNextState,
+                            cStoppedState,
+                            cOnTimerExpired,
                             cRepetitionsMax,
-                            cRepetitionsBaseDelay,
-                            cOnTimerExpired);
+                            cRepetitionsBaseDelay);
 
                         SdServerState _actualState = _machineState.GetState();
 
