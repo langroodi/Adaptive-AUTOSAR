@@ -32,11 +32,6 @@ namespace ara
                             SetTimer();
 
                             helper::MachineState<T>::Transit(mNextState);
-                            // Make the future invalid if it is already valid.
-                            if (mFuture.valid())
-                            {
-                                mFuture.get();
-                            }
                         }
 
                     protected:
@@ -65,11 +60,7 @@ namespace ara
 
                         void Deactivate(T nextState) override
                         {
-                            // If the future is valid, wait until it becomes invalid (the timer expires).
-                            if (mFuture.valid())
-                            {
-                                mFuture.wait();
-                            }
+                            // Nothing to do on deactivation
                         }
 
                     public:
@@ -118,6 +109,15 @@ namespace ara
                         void ServiceStopped()
                         {
                             Stopped = true;
+                        }
+
+                        virtual ~TimerSetState() override
+                        {
+                            // If the future is valid, wait for its result which is avialable after the timer expiration.
+                            if (mFuture.valid())
+                            {
+                                mFuture.wait();
+                            }
                         }
                     };
                 }
