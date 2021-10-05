@@ -3,6 +3,7 @@
 #include "../../../../../../src/ara/com/someip/sd/fsm/initial_wait_state.h"
 #include "../../../../../../src/ara/com/someip/sd/fsm/repetition_state.h"
 #include "../../../../../../src/ara/com/someip/sd/fsm/main_state.h"
+#include "../../../../../../src/ara/com/someip/sd/fsm/stopped_state.h"
 
 namespace ara
 {
@@ -125,6 +126,17 @@ namespace ara
                         _machineState.ServiceStopped();
                         // Finish the test gracefully
                         _machineState.Join();
+                    }
+
+                    TEST(MachineStateTest, StoppedStateConstructor)
+                    {
+                        const SdClientState cExpectedState =
+                            SdClientState::Stopped;
+
+                        StoppedState _machineState;
+                        SdClientState _actualState = _machineState.GetState();
+
+                        EXPECT_EQ(_actualState, cExpectedState);
                     }
                 }
             }

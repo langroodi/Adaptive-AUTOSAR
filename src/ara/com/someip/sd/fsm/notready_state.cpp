@@ -10,7 +10,8 @@ namespace ara
             {
                 namespace fsm
                 {
-                    NotReadyState::NotReadyState() : helper::MachineState<SdServerState>(SdServerState::NotReady)
+                    NotReadyState::NotReadyState() noexcept : helper::MachineState<SdServerState>(
+                                                                  SdServerState::NotReady)
                     {
                     }
 

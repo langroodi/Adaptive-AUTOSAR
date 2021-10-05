@@ -22,7 +22,7 @@ namespace ara
                         void Deactivate(SdServerState nextState) override;
 
                     public:
-                        NotReadyState();
+                        NotReadyState() noexcept;
 
                         NotReadyState(const NotReadyState &) = delete;
                         NotReadyState &operator=(const NotReadyState &) = delete;
