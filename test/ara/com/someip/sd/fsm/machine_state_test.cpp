@@ -56,6 +56,8 @@ namespace ara
                         EXPECT_NO_THROW(_machineState.Activate(cPreviousState));
                         // The second immediate activation should throw
                         EXPECT_THROW(_machineState.Activate(cPreviousState), std::logic_error);
+                        // Finish the test gracefully
+                        _machineState.Join();
                     }
 
                     TEST(MachineStateTest, RepetitionStateConstructor)
@@ -91,9 +93,10 @@ namespace ara
                         EXPECT_NO_THROW(_machineState.Activate(cPreviousState));
                         // The second immediate activation should throw
                         EXPECT_THROW(_machineState.Activate(cPreviousState), std::logic_error);
-
                         // Due to async invocation, the counter value should be less than the maximum repetitions.
                         EXPECT_LT(_counter, cRepetitionsMax);
+                        // Finish the test gracefully
+                        _machineState.Join();
                     }
                 }
             }

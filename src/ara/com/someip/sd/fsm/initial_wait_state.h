@@ -1,6 +1,7 @@
 #ifndef INITIAL_WAIT_STATE_H
 #define INITIAL_WAIT_STATE_H
 
+#include <random>
 #include <thread>
 #include <chrono>
 #include "./timer_set_state.h"
@@ -29,7 +30,10 @@ namespace ara
                         void SetTimer() override
                         {
                             // Generate a random initial delay
-                            int _randomDely = this->GetRandom(mInitialDelayMin, mInitialDelayMax);
+                            std::default_random_engine _generator;
+                            std::uniform_int_distribution<int> _distribution(
+                                mInitialDelayMin, mInitialDelayMax);
+                            int _randomDely = _distribution(_generator);
 
                             // Sleep for the initali delay and then transit to the next state.
                             auto _delay = std::chrono::milliseconds(mInitialDelayMin);
@@ -40,6 +44,11 @@ namespace ara
                                 // Invoke the on timer expiration callback
                                 this->OnTimerExpired();
                             }
+                        }
+
+                        void Deactivate(T nextState) override
+                        {
+                            // Nothing to do on deactivation
                         }
 
                     public:

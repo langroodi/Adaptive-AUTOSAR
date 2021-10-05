@@ -3,7 +3,6 @@
 
 #include <future>
 #include <stdexcept>
-#include <random>
 #include "../../../helper/machine_state.h"
 
 namespace ara
@@ -42,25 +41,6 @@ namespace ara
 
                         /// @brief Set the phase time on state activation
                         virtual void SetTimer() = 0;
-
-                        /// @brief Get a random number
-                        /// @param lowerBound Random number lower bound
-                        /// @param upperBound Random number upper bound
-                        /// @returns Random number within the determined bound
-                        static int GetRandom(int lowerBound, int upperBound)
-                        {
-                            std::default_random_engine _generator;
-                            std::uniform_int_distribution<int> _distribution(
-                                lowerBound, upperBound);
-                            int _result = _distribution(_generator);
-
-                            return _result;
-                        }
-
-                        void Deactivate(T nextState) override
-                        {
-                            // Nothing to do on deactivation
-                        }
 
                     public:
                         /// @brief Constructor
@@ -110,13 +90,19 @@ namespace ara
                             Stopped = true;
                         }
 
-                        virtual ~TimerSetState() override
+                        /// @brief Join to the timer's thread
+                        void Join()
                         {
                             // If the future is valid, block unitl its result becomes avialable after the timer expiration.
                             if (mFuture.valid())
                             {
                                 mFuture.get();
                             }
+                        }
+
+                        virtual ~TimerSetState() override
+                        {
+                            Join();
                         }
                     };
                 }
