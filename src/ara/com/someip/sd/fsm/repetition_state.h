@@ -57,9 +57,9 @@ namespace ara
                         /// @param currentState Current state at repetition phase
                         /// @param nextState Next state after repetition phase expiration
                         /// @param stoppedState Stopped state after put a stop to the service
+                        /// @param onTimerExpired Delegate to be invoked by timer's thread when the timer is expired
                         /// @param repetitionsMax Maximum iteration in repetition phase
                         /// @param repetitionsBaseDelay Repetition iteration delay in milliseconds
-                        /// @param onTimerExpired Delegate to be invoked by timer's thread when the timer is expired
                         RepetitionState(
                             T currentState,
                             T nextState,

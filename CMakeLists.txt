@@ -150,6 +150,8 @@ add_library(
   ${source_ara_com_someip_sd_fsm_dir}/notready_state.cpp
   ${source_ara_com_someip_sd_fsm_dir}/initial_wait_state.h
   ${source_ara_com_someip_sd_fsm_dir}/repetition_state.h
+  ${source_ara_com_someip_sd_fsm_dir}/main_state.h
+  ${source_ara_com_someip_sd_fsm_dir}/main_state.cpp
 )
 
 set_target_properties(

@@ -29,7 +29,15 @@ namespace ara
                         void setTimerBase()
                         {
                             SetTimer();
-                            helper::MachineState<T>::Transit(mNextState);
+                            // Transition to the next state or to the stopped state
+                            if (Stopped)
+                            {
+                                helper::MachineState<T>::Transit(mStoppedState);
+                            }
+                            else
+                            {
+                                helper::MachineState<T>::Transit(mNextState);
+                            }
                         }
 
                     protected:
@@ -102,6 +110,11 @@ namespace ara
 
                         virtual ~TimerSetState() override
                         {
+                            if (!Stopped)
+                            {
+                                // Set a fake stop signal, otherwise the timer loop may never end (e.g., in the main phase).
+                                ServiceStopped();
+                            }
                             Join();
                         }
                     };
