@@ -1,0 +1,1357 @@
+Start testing: Oct 05 12:52 UTC
+----------------------------------------------------------
+1/50 Testing: LogArgumentTest.ToStringAssertions
+1/50 Test: LogArgumentTest.ToStringAssertions
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LogArgumentTest.ToStringAssertions" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LogArgumentTest.ToStringAssertions" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LogArgumentTest.ToStringAssertions
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LogArgumentTest
+[ RUN      ] LogArgumentTest.ToStringAssertions
+[       OK ] LogArgumentTest.ToStringAssertions (0 ms)
+[----------] 1 test from LogArgumentTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LogArgumentTest.ToStringAssertions" end time: Oct 05 12:52 UTC
+"LogArgumentTest.ToStringAssertions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/50 Testing: LogStreamTest.FlushMethod
+2/50 Test: LogStreamTest.FlushMethod
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LogStreamTest.FlushMethod" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LogStreamTest.FlushMethod" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LogStreamTest.FlushMethod
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LogStreamTest
+[ RUN      ] LogStreamTest.FlushMethod
+[       OK ] LogStreamTest.FlushMethod (0 ms)
+[----------] 1 test from LogStreamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LogStreamTest.FlushMethod" end time: Oct 05 12:52 UTC
+"LogStreamTest.FlushMethod" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/50 Testing: LogStreamTest.ByteInsertionOperator
+3/50 Test: LogStreamTest.ByteInsertionOperator
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LogStreamTest.ByteInsertionOperator" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LogStreamTest.ByteInsertionOperator" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LogStreamTest.ByteInsertionOperator
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LogStreamTest
+[ RUN      ] LogStreamTest.ByteInsertionOperator
+[       OK ] LogStreamTest.ByteInsertionOperator (0 ms)
+[----------] 1 test from LogStreamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LogStreamTest.ByteInsertionOperator" end time: Oct 05 12:52 UTC
+"LogStreamTest.ByteInsertionOperator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/50 Testing: LogStreamTest.ByteVectorInsertionOperator
+4/50 Test: LogStreamTest.ByteVectorInsertionOperator
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LogStreamTest.ByteVectorInsertionOperator" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LogStreamTest.ByteVectorInsertionOperator" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LogStreamTest.ByteVectorInsertionOperator
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LogStreamTest
+[ RUN      ] LogStreamTest.ByteVectorInsertionOperator
+[       OK ] LogStreamTest.ByteVectorInsertionOperator (0 ms)
+[----------] 1 test from LogStreamTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LogStreamTest.ByteVectorInsertionOperator" end time: Oct 05 12:52 UTC
+"LogStreamTest.ByteVectorInsertionOperator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/50 Testing: LoggerTest.LogLevelOff
+5/50 Test: LoggerTest.LogLevelOff
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LoggerTest.LogLevelOff" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LoggerTest.LogLevelOff" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LoggerTest.LogLevelOff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LoggerTest
+[ RUN      ] LoggerTest.LogLevelOff
+[       OK ] LoggerTest.LogLevelOff (0 ms)
+[----------] 1 test from LoggerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LoggerTest.LogLevelOff" end time: Oct 05 12:52 UTC
+"LoggerTest.LogLevelOff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/50 Testing: LoggerTest.LogLevelVerbose
+6/50 Test: LoggerTest.LogLevelVerbose
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LoggerTest.LogLevelVerbose" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LoggerTest.LogLevelVerbose" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LoggerTest.LogLevelVerbose
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LoggerTest
+[ RUN      ] LoggerTest.LogLevelVerbose
+[       OK ] LoggerTest.LogLevelVerbose (0 ms)
+[----------] 1 test from LoggerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LoggerTest.LogLevelVerbose" end time: Oct 05 12:52 UTC
+"LoggerTest.LogLevelVerbose" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/50 Testing: LoggerTest.WithLevelFunction
+7/50 Test: LoggerTest.WithLevelFunction
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LoggerTest.WithLevelFunction" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LoggerTest.WithLevelFunction" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LoggerTest.WithLevelFunction
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LoggerTest
+[ RUN      ] LoggerTest.WithLevelFunction
+[       OK ] LoggerTest.WithLevelFunction (0 ms)
+[----------] 1 test from LoggerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LoggerTest.WithLevelFunction" end time: Oct 05 12:52 UTC
+"LoggerTest.WithLevelFunction" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/50 Testing: LoggingFrameworkTest.FactoryException
+8/50 Test: LoggingFrameworkTest.FactoryException
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LoggingFrameworkTest.FactoryException" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LoggingFrameworkTest.FactoryException" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LoggingFrameworkTest.FactoryException
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LoggingFrameworkTest
+[ RUN      ] LoggingFrameworkTest.FactoryException
+[       OK ] LoggingFrameworkTest.FactoryException (0 ms)
+[----------] 1 test from LoggingFrameworkTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LoggingFrameworkTest.FactoryException" end time: Oct 05 12:52 UTC
+"LoggingFrameworkTest.FactoryException" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/50 Testing: LoggingFrameworkTest.LogMethod
+9/50 Test: LoggingFrameworkTest.LogMethod
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LoggingFrameworkTest.LogMethod" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LoggingFrameworkTest.LogMethod" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LoggingFrameworkTest.LogMethod
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LoggingFrameworkTest
+[ RUN      ] LoggingFrameworkTest.LogMethod
+Tue Oct  5 12:52:44 2021
+ APP01 Context ID:CTX01;Context Description:Default Test Context;Log Level:Warning;
+[       OK ] LoggingFrameworkTest.LogMethod (0 ms)
+[----------] 1 test from LoggingFrameworkTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LoggingFrameworkTest.LogMethod" end time: Oct 05 12:52 UTC
+"LoggingFrameworkTest.LogMethod" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/50 Testing: SMTriggerInTest.TriggerWrite
+10/50 Test: SMTriggerInTest.TriggerWrite
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=SMTriggerInTest.TriggerWrite" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"SMTriggerInTest.TriggerWrite" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SMTriggerInTest.TriggerWrite
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SMTriggerInTest
+[ RUN      ] SMTriggerInTest.TriggerWrite
+State changed.
+[       OK ] SMTriggerInTest.TriggerWrite (0 ms)
+[----------] 1 test from SMTriggerInTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SMTriggerInTest.TriggerWrite" end time: Oct 05 12:52 UTC
+"SMTriggerInTest.TriggerWrite" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/50 Testing: SMTriggerOutTest.NotifierSubscribeAndNotify
+11/50 Test: SMTriggerOutTest.NotifierSubscribeAndNotify
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=SMTriggerOutTest.NotifierSubscribeAndNotify" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"SMTriggerOutTest.NotifierSubscribeAndNotify" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SMTriggerOutTest.NotifierSubscribeAndNotify
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SMTriggerOutTest
+[ RUN      ] SMTriggerOutTest.NotifierSubscribeAndNotify
+Notification received.
+[       OK ] SMTriggerOutTest.NotifierSubscribeAndNotify (0 ms)
+[----------] 1 test from SMTriggerOutTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SMTriggerOutTest.NotifierSubscribeAndNotify" end time: Oct 05 12:52 UTC
+"SMTriggerOutTest.NotifierSubscribeAndNotify" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/50 Testing: TriggerInOutTest.TriggerChain
+12/50 Test: TriggerInOutTest.TriggerChain
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=TriggerInOutTest.TriggerChain" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"TriggerInOutTest.TriggerChain" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TriggerInOutTest.TriggerChain
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TriggerInOutTest
+[ RUN      ] TriggerInOutTest.TriggerChain
+[       OK ] TriggerInOutTest.TriggerChain (0 ms)
+[----------] 1 test from TriggerInOutTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TriggerInOutTest.TriggerChain" end time: Oct 05 12:52 UTC
+"TriggerInOutTest.TriggerChain" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/50 Testing: PowerModeTest.RequestResponseChain
+13/50 Test: PowerModeTest.RequestResponseChain
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=PowerModeTest.RequestResponseChain" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"PowerModeTest.RequestResponseChain" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PowerModeTest.RequestResponseChain
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PowerModeTest
+[ RUN      ] PowerModeTest.RequestResponseChain
+[       OK ] PowerModeTest.RequestResponseChain (0 ms)
+[----------] 1 test from PowerModeTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"PowerModeTest.RequestResponseChain" end time: Oct 05 12:52 UTC
+"PowerModeTest.RequestResponseChain" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/50 Testing: EventgroupEntryTest.SubscribeEventFactory
+14/50 Test: EventgroupEntryTest.SubscribeEventFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=EventgroupEntryTest.SubscribeEventFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"EventgroupEntryTest.SubscribeEventFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = EventgroupEntryTest.SubscribeEventFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EventgroupEntryTest
+[ RUN      ] EventgroupEntryTest.SubscribeEventFactory
+[       OK ] EventgroupEntryTest.SubscribeEventFactory (0 ms)
+[----------] 1 test from EventgroupEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventgroupEntryTest.SubscribeEventFactory" end time: Oct 05 12:52 UTC
+"EventgroupEntryTest.SubscribeEventFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/50 Testing: EventgroupEntryTest.UbsubscribeEventFactory
+15/50 Test: EventgroupEntryTest.UbsubscribeEventFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=EventgroupEntryTest.UbsubscribeEventFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"EventgroupEntryTest.UbsubscribeEventFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = EventgroupEntryTest.UbsubscribeEventFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EventgroupEntryTest
+[ RUN      ] EventgroupEntryTest.UbsubscribeEventFactory
+[       OK ] EventgroupEntryTest.UbsubscribeEventFactory (0 ms)
+[----------] 1 test from EventgroupEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventgroupEntryTest.UbsubscribeEventFactory" end time: Oct 05 12:52 UTC
+"EventgroupEntryTest.UbsubscribeEventFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/50 Testing: EventgroupEntryTest.AcknowledgeFactory
+16/50 Test: EventgroupEntryTest.AcknowledgeFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=EventgroupEntryTest.AcknowledgeFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"EventgroupEntryTest.AcknowledgeFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = EventgroupEntryTest.AcknowledgeFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EventgroupEntryTest
+[ RUN      ] EventgroupEntryTest.AcknowledgeFactory
+[       OK ] EventgroupEntryTest.AcknowledgeFactory (0 ms)
+[----------] 1 test from EventgroupEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventgroupEntryTest.AcknowledgeFactory" end time: Oct 05 12:52 UTC
+"EventgroupEntryTest.AcknowledgeFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/50 Testing: EventgroupEntryTest.NegativeAcknowledgeFactory
+17/50 Test: EventgroupEntryTest.NegativeAcknowledgeFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=EventgroupEntryTest.NegativeAcknowledgeFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"EventgroupEntryTest.NegativeAcknowledgeFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = EventgroupEntryTest.NegativeAcknowledgeFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EventgroupEntryTest
+[ RUN      ] EventgroupEntryTest.NegativeAcknowledgeFactory
+[       OK ] EventgroupEntryTest.NegativeAcknowledgeFactory (0 ms)
+[----------] 1 test from EventgroupEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventgroupEntryTest.NegativeAcknowledgeFactory" end time: Oct 05 12:52 UTC
+"EventgroupEntryTest.NegativeAcknowledgeFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/50 Testing: EventgroupEntryTest.PayloadMethod
+18/50 Test: EventgroupEntryTest.PayloadMethod
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=EventgroupEntryTest.PayloadMethod" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"EventgroupEntryTest.PayloadMethod" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = EventgroupEntryTest.PayloadMethod
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EventgroupEntryTest
+[ RUN      ] EventgroupEntryTest.PayloadMethod
+[       OK ] EventgroupEntryTest.PayloadMethod (0 ms)
+[----------] 1 test from EventgroupEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventgroupEntryTest.PayloadMethod" end time: Oct 05 12:52 UTC
+"EventgroupEntryTest.PayloadMethod" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/50 Testing: EventgroupEntryTest.AddOption
+19/50 Test: EventgroupEntryTest.AddOption
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=EventgroupEntryTest.AddOption" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"EventgroupEntryTest.AddOption" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = EventgroupEntryTest.AddOption
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from EventgroupEntryTest
+[ RUN      ] EventgroupEntryTest.AddOption
+[       OK ] EventgroupEntryTest.AddOption (0 ms)
+[----------] 1 test from EventgroupEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventgroupEntryTest.AddOption" end time: Oct 05 12:52 UTC
+"EventgroupEntryTest.AddOption" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/50 Testing: ServiceEntryTest.FindServiceFactory
+20/50 Test: ServiceEntryTest.FindServiceFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=ServiceEntryTest.FindServiceFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"ServiceEntryTest.FindServiceFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ServiceEntryTest.FindServiceFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServiceEntryTest
+[ RUN      ] ServiceEntryTest.FindServiceFactory
+[       OK ] ServiceEntryTest.FindServiceFactory (0 ms)
+[----------] 1 test from ServiceEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ServiceEntryTest.FindServiceFactory" end time: Oct 05 12:52 UTC
+"ServiceEntryTest.FindServiceFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/50 Testing: ServiceEntryTest.OfferServiceFactory
+21/50 Test: ServiceEntryTest.OfferServiceFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=ServiceEntryTest.OfferServiceFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"ServiceEntryTest.OfferServiceFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ServiceEntryTest.OfferServiceFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServiceEntryTest
+[ RUN      ] ServiceEntryTest.OfferServiceFactory
+[       OK ] ServiceEntryTest.OfferServiceFactory (0 ms)
+[----------] 1 test from ServiceEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ServiceEntryTest.OfferServiceFactory" end time: Oct 05 12:52 UTC
+"ServiceEntryTest.OfferServiceFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/50 Testing: ServiceEntryTest.StopOfferFactory
+22/50 Test: ServiceEntryTest.StopOfferFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=ServiceEntryTest.StopOfferFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"ServiceEntryTest.StopOfferFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ServiceEntryTest.StopOfferFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServiceEntryTest
+[ RUN      ] ServiceEntryTest.StopOfferFactory
+[       OK ] ServiceEntryTest.StopOfferFactory (0 ms)
+[----------] 1 test from ServiceEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ServiceEntryTest.StopOfferFactory" end time: Oct 05 12:52 UTC
+"ServiceEntryTest.StopOfferFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/50 Testing: ServiceEntryTest.PayloadMethod
+23/50 Test: ServiceEntryTest.PayloadMethod
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=ServiceEntryTest.PayloadMethod" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"ServiceEntryTest.PayloadMethod" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ServiceEntryTest.PayloadMethod
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServiceEntryTest
+[ RUN      ] ServiceEntryTest.PayloadMethod
+[       OK ] ServiceEntryTest.PayloadMethod (0 ms)
+[----------] 1 test from ServiceEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ServiceEntryTest.PayloadMethod" end time: Oct 05 12:52 UTC
+"ServiceEntryTest.PayloadMethod" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/50 Testing: ServiceEntryTest.AddOption
+24/50 Test: ServiceEntryTest.AddOption
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=ServiceEntryTest.AddOption" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"ServiceEntryTest.AddOption" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ServiceEntryTest.AddOption
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ServiceEntryTest
+[ RUN      ] ServiceEntryTest.AddOption
+[       OK ] ServiceEntryTest.AddOption (0 ms)
+[----------] 1 test from ServiceEntryTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ServiceEntryTest.AddOption" end time: Oct 05 12:52 UTC
+"ServiceEntryTest.AddOption" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/50 Testing: Ipv4AddressTest.Constructor
+25/50 Test: Ipv4AddressTest.Constructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=Ipv4AddressTest.Constructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"Ipv4AddressTest.Constructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Ipv4AddressTest.Constructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Ipv4AddressTest
+[ RUN      ] Ipv4AddressTest.Constructor
+[       OK ] Ipv4AddressTest.Constructor (0 ms)
+[----------] 1 test from Ipv4AddressTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Ipv4AddressTest.Constructor" end time: Oct 05 12:52 UTC
+"Ipv4AddressTest.Constructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/50 Testing: Ipv4EndpointOptionTest.UnitcastFactory
+26/50 Test: Ipv4EndpointOptionTest.UnitcastFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=Ipv4EndpointOptionTest.UnitcastFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"Ipv4EndpointOptionTest.UnitcastFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Ipv4EndpointOptionTest.UnitcastFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Ipv4EndpointOptionTest
+[ RUN      ] Ipv4EndpointOptionTest.UnitcastFactory
+[       OK ] Ipv4EndpointOptionTest.UnitcastFactory (0 ms)
+[----------] 1 test from Ipv4EndpointOptionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Ipv4EndpointOptionTest.UnitcastFactory" end time: Oct 05 12:52 UTC
+"Ipv4EndpointOptionTest.UnitcastFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/50 Testing: Ipv4EndpointOptionTest.MulticastFactory
+27/50 Test: Ipv4EndpointOptionTest.MulticastFactory
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=Ipv4EndpointOptionTest.MulticastFactory" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"Ipv4EndpointOptionTest.MulticastFactory" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Ipv4EndpointOptionTest.MulticastFactory
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Ipv4EndpointOptionTest
+[ RUN      ] Ipv4EndpointOptionTest.MulticastFactory
+[       OK ] Ipv4EndpointOptionTest.MulticastFactory (0 ms)
+[----------] 1 test from Ipv4EndpointOptionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Ipv4EndpointOptionTest.MulticastFactory" end time: Oct 05 12:52 UTC
+"Ipv4EndpointOptionTest.MulticastFactory" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/50 Testing: Ipv4EndpointOptionTest.PayloadMethod
+28/50 Test: Ipv4EndpointOptionTest.PayloadMethod
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=Ipv4EndpointOptionTest.PayloadMethod" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"Ipv4EndpointOptionTest.PayloadMethod" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = Ipv4EndpointOptionTest.PayloadMethod
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Ipv4EndpointOptionTest
+[ RUN      ] Ipv4EndpointOptionTest.PayloadMethod
+[       OK ] Ipv4EndpointOptionTest.PayloadMethod (0 ms)
+[----------] 1 test from Ipv4EndpointOptionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Ipv4EndpointOptionTest.PayloadMethod" end time: Oct 05 12:52 UTC
+"Ipv4EndpointOptionTest.PayloadMethod" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/50 Testing: LoadBalancingOptionTest.Constructor
+29/50 Test: LoadBalancingOptionTest.Constructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LoadBalancingOptionTest.Constructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LoadBalancingOptionTest.Constructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LoadBalancingOptionTest.Constructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LoadBalancingOptionTest
+[ RUN      ] LoadBalancingOptionTest.Constructor
+[       OK ] LoadBalancingOptionTest.Constructor (0 ms)
+[----------] 1 test from LoadBalancingOptionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LoadBalancingOptionTest.Constructor" end time: Oct 05 12:52 UTC
+"LoadBalancingOptionTest.Constructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/50 Testing: LoadBalancingOptionTest.PayloadMethod
+30/50 Test: LoadBalancingOptionTest.PayloadMethod
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=LoadBalancingOptionTest.PayloadMethod" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"LoadBalancingOptionTest.PayloadMethod" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = LoadBalancingOptionTest.PayloadMethod
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LoadBalancingOptionTest
+[ RUN      ] LoadBalancingOptionTest.PayloadMethod
+[       OK ] LoadBalancingOptionTest.PayloadMethod (0 ms)
+[----------] 1 test from LoadBalancingOptionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LoadBalancingOptionTest.PayloadMethod" end time: Oct 05 12:52 UTC
+"LoadBalancingOptionTest.PayloadMethod" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/50 Testing: SomeIpSdMessageTest.Constructor
+31/50 Test: SomeIpSdMessageTest.Constructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=SomeIpSdMessageTest.Constructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"SomeIpSdMessageTest.Constructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SomeIpSdMessageTest.Constructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SomeIpSdMessageTest
+[ RUN      ] SomeIpSdMessageTest.Constructor
+[       OK ] SomeIpSdMessageTest.Constructor (0 ms)
+[----------] 1 test from SomeIpSdMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SomeIpSdMessageTest.Constructor" end time: Oct 05 12:52 UTC
+"SomeIpSdMessageTest.Constructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/50 Testing: SomeIpSdMessageTest.SetInvalidSessionId
+32/50 Test: SomeIpSdMessageTest.SetInvalidSessionId
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=SomeIpSdMessageTest.SetInvalidSessionId" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"SomeIpSdMessageTest.SetInvalidSessionId" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SomeIpSdMessageTest.SetInvalidSessionId
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SomeIpSdMessageTest
+[ RUN      ] SomeIpSdMessageTest.SetInvalidSessionId
+[       OK ] SomeIpSdMessageTest.SetInvalidSessionId (0 ms)
+[----------] 1 test from SomeIpSdMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SomeIpSdMessageTest.SetInvalidSessionId" end time: Oct 05 12:52 UTC
+"SomeIpSdMessageTest.SetInvalidSessionId" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/50 Testing: SomeIpSdMessageTest.SessionIdWrapping
+33/50 Test: SomeIpSdMessageTest.SessionIdWrapping
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=SomeIpSdMessageTest.SessionIdWrapping" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"SomeIpSdMessageTest.SessionIdWrapping" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SomeIpSdMessageTest.SessionIdWrapping
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SomeIpSdMessageTest
+[ RUN      ] SomeIpSdMessageTest.SessionIdWrapping
+[       OK ] SomeIpSdMessageTest.SessionIdWrapping (0 ms)
+[----------] 1 test from SomeIpSdMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SomeIpSdMessageTest.SessionIdWrapping" end time: Oct 05 12:52 UTC
+"SomeIpSdMessageTest.SessionIdWrapping" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/50 Testing: SomeIpSdMessageTest.PayloadMethod
+34/50 Test: SomeIpSdMessageTest.PayloadMethod
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=SomeIpSdMessageTest.PayloadMethod" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"SomeIpSdMessageTest.PayloadMethod" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SomeIpSdMessageTest.PayloadMethod
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SomeIpSdMessageTest
+[ RUN      ] SomeIpSdMessageTest.PayloadMethod
+[       OK ] SomeIpSdMessageTest.PayloadMethod (0 ms)
+[----------] 1 test from SomeIpSdMessageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SomeIpSdMessageTest.PayloadMethod" end time: Oct 05 12:52 UTC
+"SomeIpSdMessageTest.PayloadMethod" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/50 Testing: NetworkAbstractionTest.PollerConstructor
+35/50 Test: NetworkAbstractionTest.PollerConstructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=NetworkAbstractionTest.PollerConstructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"NetworkAbstractionTest.PollerConstructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NetworkAbstractionTest.PollerConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NetworkAbstractionTest
+[ RUN      ] NetworkAbstractionTest.PollerConstructor
+[       OK ] NetworkAbstractionTest.PollerConstructor (0 ms)
+[----------] 1 test from NetworkAbstractionTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NetworkAbstractionTest.PollerConstructor" end time: Oct 05 12:52 UTC
+"NetworkAbstractionTest.PollerConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/50 Testing: MachineStateTest.NotReadyStateContructor
+36/50 Test: MachineStateTest.NotReadyStateContructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=MachineStateTest.NotReadyStateContructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"MachineStateTest.NotReadyStateContructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MachineStateTest.NotReadyStateContructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MachineStateTest
+[ RUN      ] MachineStateTest.NotReadyStateContructor
+[       OK ] MachineStateTest.NotReadyStateContructor (0 ms)
+[----------] 1 test from MachineStateTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MachineStateTest.NotReadyStateContructor" end time: Oct 05 12:52 UTC
+"MachineStateTest.NotReadyStateContructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/50 Testing: MachineStateTest.InitialWaitStateContructor
+37/50 Test: MachineStateTest.InitialWaitStateContructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=MachineStateTest.InitialWaitStateContructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"MachineStateTest.InitialWaitStateContructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MachineStateTest.InitialWaitStateContructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MachineStateTest
+[ RUN      ] MachineStateTest.InitialWaitStateContructor
+[       OK ] MachineStateTest.InitialWaitStateContructor (100 ms)
+[----------] 1 test from MachineStateTest (100 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (100 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"MachineStateTest.InitialWaitStateContructor" end time: Oct 05 12:52 UTC
+"MachineStateTest.InitialWaitStateContructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/50 Testing: MachineStateTest.RepetitionStateConstructor
+38/50 Test: MachineStateTest.RepetitionStateConstructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/ara_unit_test" "--gtest_filter=MachineStateTest.RepetitionStateConstructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build
+"MachineStateTest.RepetitionStateConstructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MachineStateTest.RepetitionStateConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MachineStateTest
+[ RUN      ] MachineStateTest.RepetitionStateConstructor
+[       OK ] MachineStateTest.RepetitionStateConstructor (300 ms)
+[----------] 1 test from MachineStateTest (300 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (300 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.30 sec
+----------------------------------------------------------
+Test Passed.
+"MachineStateTest.RepetitionStateConstructor" end time: Oct 05 12:52 UTC
+"MachineStateTest.RepetitionStateConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/50 Testing: NetworkSocketTest.TcpClientConstructor
+39/50 Test: NetworkSocketTest.TcpClientConstructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=NetworkSocketTest.TcpClientConstructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"NetworkSocketTest.TcpClientConstructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NetworkSocketTest.TcpClientConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NetworkSocketTest
+[ RUN      ] NetworkSocketTest.TcpClientConstructor
+[       OK ] NetworkSocketTest.TcpClientConstructor (0 ms)
+[----------] 1 test from NetworkSocketTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NetworkSocketTest.TcpClientConstructor" end time: Oct 05 12:52 UTC
+"NetworkSocketTest.TcpClientConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/50 Testing: NetworkSocketTest.TcpListenerConstructor
+40/50 Test: NetworkSocketTest.TcpListenerConstructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=NetworkSocketTest.TcpListenerConstructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"NetworkSocketTest.TcpListenerConstructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NetworkSocketTest.TcpListenerConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NetworkSocketTest
+[ RUN      ] NetworkSocketTest.TcpListenerConstructor
+[       OK ] NetworkSocketTest.TcpListenerConstructor (0 ms)
+[----------] 1 test from NetworkSocketTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NetworkSocketTest.TcpListenerConstructor" end time: Oct 05 12:52 UTC
+"NetworkSocketTest.TcpListenerConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/50 Testing: NetworkSocketTest.UdpClientConstructor
+41/50 Test: NetworkSocketTest.UdpClientConstructor
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=NetworkSocketTest.UdpClientConstructor" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"NetworkSocketTest.UdpClientConstructor" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NetworkSocketTest.UdpClientConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NetworkSocketTest
+[ RUN      ] NetworkSocketTest.UdpClientConstructor
+[       OK ] NetworkSocketTest.UdpClientConstructor (0 ms)
+[----------] 1 test from NetworkSocketTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NetworkSocketTest.UdpClientConstructor" end time: Oct 05 12:52 UTC
+"NetworkSocketTest.UdpClientConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/50 Testing: TcpCommunicationTest.Connection
+42/50 Test: TcpCommunicationTest.Connection
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=TcpCommunicationTest.Connection" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"TcpCommunicationTest.Connection" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TcpCommunicationTest.Connection
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TcpCommunicationTest
+[ RUN      ] TcpCommunicationTest.Connection
+[       OK ] TcpCommunicationTest.Connection (0 ms)
+[----------] 1 test from TcpCommunicationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TcpCommunicationTest.Connection" end time: Oct 05 12:52 UTC
+"TcpCommunicationTest.Connection" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/50 Testing: TcpCommunicationTest.ServerSendClientReceive
+43/50 Test: TcpCommunicationTest.ServerSendClientReceive
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=TcpCommunicationTest.ServerSendClientReceive" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"TcpCommunicationTest.ServerSendClientReceive" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TcpCommunicationTest.ServerSendClientReceive
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TcpCommunicationTest
+[ RUN      ] TcpCommunicationTest.ServerSendClientReceive
+[       OK ] TcpCommunicationTest.ServerSendClientReceive (0 ms)
+[----------] 1 test from TcpCommunicationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TcpCommunicationTest.ServerSendClientReceive" end time: Oct 05 12:52 UTC
+"TcpCommunicationTest.ServerSendClientReceive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/50 Testing: TcpCommunicationTest.ClientSendServerReceive
+44/50 Test: TcpCommunicationTest.ClientSendServerReceive
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=TcpCommunicationTest.ClientSendServerReceive" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"TcpCommunicationTest.ClientSendServerReceive" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = TcpCommunicationTest.ClientSendServerReceive
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TcpCommunicationTest
+[ RUN      ] TcpCommunicationTest.ClientSendServerReceive
+[       OK ] TcpCommunicationTest.ClientSendServerReceive (0 ms)
+[----------] 1 test from TcpCommunicationTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TcpCommunicationTest.ClientSendServerReceive" end time: Oct 05 12:52 UTC
+"TcpCommunicationTest.ClientSendServerReceive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/50 Testing: UdpUnicastTest.CheckSetup
+45/50 Test: UdpUnicastTest.CheckSetup
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=UdpUnicastTest.CheckSetup" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"UdpUnicastTest.CheckSetup" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpUnicastTest.CheckSetup
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpUnicastTest
+[ RUN      ] UdpUnicastTest.CheckSetup
+[       OK ] UdpUnicastTest.CheckSetup (0 ms)
+[----------] 1 test from UdpUnicastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpUnicastTest.CheckSetup" end time: Oct 05 12:52 UTC
+"UdpUnicastTest.CheckSetup" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/50 Testing: UdpUnicastTest.Echo
+46/50 Test: UdpUnicastTest.Echo
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=UdpUnicastTest.Echo" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"UdpUnicastTest.Echo" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpUnicastTest.Echo
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpUnicastTest
+[ RUN      ] UdpUnicastTest.Echo
+[       OK ] UdpUnicastTest.Echo (0 ms)
+[----------] 1 test from UdpUnicastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpUnicastTest.Echo" end time: Oct 05 12:52 UTC
+"UdpUnicastTest.Echo" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/50 Testing: UdpMulticastTest.SetupCheck
+47/50 Test: UdpMulticastTest.SetupCheck
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=UdpMulticastTest.SetupCheck" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"UdpMulticastTest.SetupCheck" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpMulticastTest.SetupCheck
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpMulticastTest
+[ RUN      ] UdpMulticastTest.SetupCheck
+[       OK ] UdpMulticastTest.SetupCheck (0 ms)
+[----------] 1 test from UdpMulticastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpMulticastTest.SetupCheck" end time: Oct 05 12:52 UTC
+"UdpMulticastTest.SetupCheck" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/50 Testing: UdpMulticastTest.AliceBobTalk
+48/50 Test: UdpMulticastTest.AliceBobTalk
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=UdpMulticastTest.AliceBobTalk" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"UdpMulticastTest.AliceBobTalk" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpMulticastTest.AliceBobTalk
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpMulticastTest
+[ RUN      ] UdpMulticastTest.AliceBobTalk
+[       OK ] UdpMulticastTest.AliceBobTalk (0 ms)
+[----------] 1 test from UdpMulticastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpMulticastTest.AliceBobTalk" end time: Oct 05 12:52 UTC
+"UdpMulticastTest.AliceBobTalk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/50 Testing: UdpMulticastTest.AliceBobEveTalk
+49/50 Test: UdpMulticastTest.AliceBobEveTalk
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=UdpMulticastTest.AliceBobEveTalk" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"UdpMulticastTest.AliceBobEveTalk" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = UdpMulticastTest.AliceBobEveTalk
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from UdpMulticastTest
+[ RUN      ] UdpMulticastTest.AliceBobEveTalk
+[       OK ] UdpMulticastTest.AliceBobEveTalk (0 ms)
+[----------] 1 test from UdpMulticastTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UdpMulticastTest.AliceBobEveTalk" end time: Oct 05 12:52 UTC
+"UdpMulticastTest.AliceBobEveTalk" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/50 Testing: PollerTest.ServerClientPoll
+50/50 Test: PollerTest.ServerClientPoll
+Command: "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build/async_bsd_socket_lib_test" "--gtest_filter=PollerTest.ServerClientPoll" "--gtest_also_run_disabled_tests"
+Directory: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-build
+"PollerTest.ServerClientPoll" start time: Oct 05 12:52 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PollerTest.ServerClientPoll
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PollerTest
+[ RUN      ] PollerTest.ServerClientPoll
+[       OK ] PollerTest.ServerClientPoll (0 ms)
+[----------] 1 test from PollerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PollerTest.ServerClientPoll" end time: Oct 05 12:52 UTC
+"PollerTest.ServerClientPoll" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 05 12:52 UTC
