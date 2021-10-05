@@ -30,7 +30,6 @@ namespace ara
                         void setTimerBase()
                         {
                             SetTimer();
-
                             helper::MachineState<T>::Transit(mNextState);
                         }
 
@@ -113,10 +112,10 @@ namespace ara
 
                         virtual ~TimerSetState() override
                         {
-                            // If the future is valid, wait for its result which is avialable after the timer expiration.
+                            // If the future is valid, block unitl its result becomes avialable after the timer expiration.
                             if (mFuture.valid())
                             {
-                                mFuture.wait();
+                                mFuture.get();
                             }
                         }
                     };

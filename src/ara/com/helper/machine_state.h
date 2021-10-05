@@ -29,7 +29,10 @@ namespace ara
                 void Transit(T nextState)
                 {
                     Deactivate(nextState);
-                    mTransitionCallback(mState, nextState);
+                    if (mTransitionCallback)
+                    {
+                        mTransitionCallback(mState, nextState);
+                    }
                 }
 
             public:
@@ -57,7 +60,10 @@ namespace ara
                 /// @brief Set the transition callback
                 /// @param callback Delegate to be called after the current state deactivation
                 /// @warning The callback may be invoked via another thread
-                void SetTransitionCallback(std::function<void(T, T)> callback);
+                void SetTransitionCallback(std::function<void(T, T)> callback)
+                {
+                    mTransitionCallback = callback;
+                }
             };
         }
     }
