@@ -1,8 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ac8bd1615a7ce2f01dd4d4b719f5e4c38":[1,0,0,1,5,9],
-"classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ada86b88f508c93b813a27f1c885fb12e":[1,0,0,1,5,13],
-"classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#adbc72a6ee56f76382cb71b68102b1a35":[1,0,0,1,5,4],
 "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#af40d206a7ea02cd73346d05cbc4bc35a":[1,0,0,1,5,2],
 "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#af7bc88db20232dba8a06e10f7eb22843":[1,0,0,1,5,1],
 "classara_1_1diag_1_1CancellationHandler.html":[1,0,0,2,0],
@@ -249,5 +246,8 @@ var NAVTREEINDEX1 =
 "classara_1_1log_1_1LoggingFramework.html#a88fee436182a821f5c40c62ef99b87a7":[1,0,0,4,4,2],
 "classara_1_1log_1_1sink_1_1ConsoleLogSink.html":[1,0,0,4,0,0],
 "classara_1_1log_1_1sink_1_1ConsoleLogSink.html#a279bb8a1bed2c606750dcf2b340501eb":[1,0,0,4,0,0,1],
-"classara_1_1log_1_1sink_1_1ConsoleLogSink.html#aad1a6c317153c15806270ac448cafe18":[1,0,0,4,0,0,0]
+"classara_1_1log_1_1sink_1_1ConsoleLogSink.html#aad1a6c317153c15806270ac448cafe18":[1,0,0,4,0,0,0],
+"classara_1_1log_1_1sink_1_1ConsoleLogSink.html#af2932773ffc2d4b0d07a42f68a8ecd89":[1,0,0,4,0,0,2],
+"classara_1_1log_1_1sink_1_1FileLogSink.html":[1,0,0,4,0,1],
+"classara_1_1log_1_1sink_1_1FileLogSink.html#a66ee7a09be5456f9b31754c45c8cd004":[1,0,0,4,0,1,2]
 };

@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classara_1_1log_1_1sink_1_1ConsoleLogSink.html#af2932773ffc2d4b0d07a42f68a8ecd89":[1,0,0,4,0,0,2],
-"classara_1_1log_1_1sink_1_1FileLogSink.html":[1,0,0,4,0,1],
-"classara_1_1log_1_1sink_1_1FileLogSink.html#a66ee7a09be5456f9b31754c45c8cd004":[1,0,0,4,0,1,2],
 "classara_1_1log_1_1sink_1_1FileLogSink.html#ab3bb3098c3eb38fb69fd5dfca998eedd":[1,0,0,4,0,1,0],
 "classara_1_1log_1_1sink_1_1FileLogSink.html#ae75c7c5b1ccac69329ef6626789cb7cb":[1,0,0,4,0,1,1],
 "classara_1_1log_1_1sink_1_1LogSink.html":[1,0,0,4,0,2],
@@ -249,5 +246,8 @@ var NAVTREEINDEX2 =
 "namespaceara_1_1log.html":[0,0,0,4],
 "namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f":[0,0,0,4,6],
 "namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fa176a473e63c17ccdac91640c67f149bf":[0,0,0,4,6,4],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fa61a920eb4a24199ec6a36dd90f2a30b7":[0,0,0,4,6,3]
+"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fa61a920eb4a24199ec6a36dd90f2a30b7":[0,0,0,4,6,3],
+"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fabb53ce21b7c0b7c8a8f7860a41901d29":[0,0,0,4,6,5],
+"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388facc9ab5e60ac2a9a675ba64bf4bb49dc8":[0,0,0,4,6,0],
+"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fade33f57578d3fe4d260d9280360c1dd9":[0,0,0,4,6,6]
 };
