@@ -98,11 +98,11 @@ namespace ara
                             Stopped = true;
                         }
 
-                        /// @brief Set stopped state
-                        /// @param stoppedState New stopped state
-                        void SetStoppedState(T stoppedState) noexcept
+                        /// @brief Set next state
+                        /// @param nextState New next state
+                        void SetNextState(T nextState) noexcept
                         {
-                            mStoppedState = stoppedState;
+                            mNextState = nextState;
                         }
 
                         /// @brief Join to the timer's thread
