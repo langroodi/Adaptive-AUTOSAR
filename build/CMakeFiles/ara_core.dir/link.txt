@@ -1,0 +1,2 @@
+/usr/bin/ar qc libara_core.a CMakeFiles/ara_core.dir/src/ara/core/error_code.cpp.o CMakeFiles/ara_core.dir/src/ara/core/instance_specifier.cpp.o
+/usr/bin/ranlib libara_core.a
