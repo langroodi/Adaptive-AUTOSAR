@@ -9,7 +9,7 @@ namespace ara
         {
             TEST(TtlTimerTest, Expiration)
             {
-                const int cTtl = 1;
+                const uint32_t cTtl = 1;
 
                 bool _expired = false;
                 TtlTimer _ttlTimer;
@@ -24,7 +24,7 @@ namespace ara
 
             TEST(TtlTimerTest, Set)
             {
-                const int cTtl = 1;
+                const uint32_t cTtl = 1;
 
                 bool _expired = false;
                 TtlTimer _ttlTimer;

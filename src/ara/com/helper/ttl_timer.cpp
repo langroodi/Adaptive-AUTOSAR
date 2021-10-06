@@ -45,7 +45,7 @@ namespace ara
                 mOnExpired = std::function<void()>();
             }
 
-            void TtlTimer::Set(int ttl)
+            void TtlTimer::Set(uint32_t ttl)
             {
                 if (mRunning)
                 {
@@ -60,7 +60,7 @@ namespace ara
                 }
             }
 
-            void TtlTimer::Reset(int ttl)
+            void TtlTimer::Reset(uint32_t ttl)
             {
                 if (mRunning)
                 {

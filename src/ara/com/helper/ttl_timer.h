@@ -22,7 +22,7 @@ namespace ara
                 std::condition_variable mConditionVariable;
                 std::future<void> mFuture;
                 bool mRunning;
-                int mTtl;
+                uint32_t mTtl;
                 std::function<void()> mOnExpired;
 
                 void countdown();
@@ -42,12 +42,12 @@ namespace ara
 
                 /// @brief Set the TTL timer
                 /// @param ttl Time to live in seconds
-                /// @throws std::logic_error Throws when the timer has been set already. Call Reset(int) instead.
-                void Set(int ttl);
+                /// @throws std::logic_error Throws when the timer has been set already. Call Reset(uint32_t) instead.
+                void Set(uint32_t ttl);
 
                 /// @brief Reset the TTL timer
                 /// @param ttl New time to live in seconds
-                void Reset(int ttl);
+                void Reset(uint32_t ttl);
 
                 /// @brief Cancel the timer
                 /// @note The function blocks the caller till the timer stops.
