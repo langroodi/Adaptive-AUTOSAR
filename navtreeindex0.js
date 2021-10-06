@@ -1,14 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[0,0,0],
-"":[0,0,0,0],
-"":[0,0,0,0,4],
-"":[0,0,0,0,4,0],
-"":[0,0,0,1],
-"":[0,0,0,2],
-"":[0,0,0,0,0],
-"":[0,0,0,3],
-"":[0,0,0,4,0],
 "annotated.html":[1,0],
 "classara_1_1com_1_1cg_1_1CommunicationGroupClient.html":[1,0,0,0,0,0],
 "classara_1_1com_1_1cg_1_1CommunicationGroupClient.html#a5ecca0f5233975f9b26ee889e54cbc91":[1,0,0,0,0,0,2],
@@ -249,5 +240,14 @@ var NAVTREEINDEX0 =
 "classara_1_1core_1_1InstanceSpecifier.html#a4d7e1f6bf33165e44cc2eeeda53b922c":[1,0,0,1,2,2],
 "classara_1_1core_1_1InstanceSpecifier.html#a8779facf33ce4c16d520cc40be0175d5":[1,0,0,1,2,7],
 "classara_1_1core_1_1InstanceSpecifier.html#a8a7929880f171192854962be74506bab":[1,0,0,1,2,4],
-"classara_1_1core_1_1InstanceSpecifier.html#aab26f9b2dce48d6863ea31543b7b78ed":[1,0,0,1,2,0]
+"classara_1_1core_1_1InstanceSpecifier.html#aab26f9b2dce48d6863ea31543b7b78ed":[1,0,0,1,2,0],
+"classara_1_1core_1_1InstanceSpecifier.html#ab100315f5cedc138b92e1c199d313e76":[1,0,0,1,2,5],
+"classara_1_1core_1_1InstanceSpecifier.html#ae1cd1d8434e86fd8a4f6848343cee115":[1,0,0,1,2,3],
+"classara_1_1core_1_1Optional.html":[1,0,0,1,3],
+"classara_1_1core_1_1Optional.html#a14413a0c8692f0fbc22923488aa0a43f":[1,0,0,1,3,12],
+"classara_1_1core_1_1Optional.html#a28ead5b296ef23fbc4ce25fb2b9bb70e":[1,0,0,1,3,7],
+"classara_1_1core_1_1Optional.html#a5f4e5aa0412af0ed3d0f2eafe8ce0812":[1,0,0,1,3,0],
+"classara_1_1core_1_1Optional.html#ace51937a135927d68bc6a4589dabbd30":[1,0,0,1,3,1],
+"classara_1_1core_1_1Optional.html#ad6bedb132da77a3789d3afe256c52cf7":[1,0,0,1,3,4],
+"classara_1_1core_1_1Optional.html#adb9203935bea5c84195b410cee4a64db":[1,0,0,1,3,11]
 };
