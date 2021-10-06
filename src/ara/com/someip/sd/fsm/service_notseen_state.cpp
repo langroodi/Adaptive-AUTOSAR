@@ -22,7 +22,7 @@ namespace ara
 
                     void ServiceNotseenState::ServiceRequested()
                     {
-                        Transit(SdClientState::RequestedButNotReady);
+                        Transit(SdClientState::InitialWaitPhase);
                     }
                     
                     void ServiceNotseenState::ServiceOffered()

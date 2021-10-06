@@ -16,7 +16,6 @@ namespace ara
                 {
                     ServiceNotSeen,       ///!< Service is not requested and not seen
                     ServiceSeen,          ///!< Service is not requsted, but seen
-                    RequestedButNotReady, ///!< Service requested, but communication is not ready
                     ServiceReady,         ///!< Service is ready
                     Stopped,              ///!< Service is stopped
                     InitialWaitPhase,     ///!< Client service is in initial waiting phase
