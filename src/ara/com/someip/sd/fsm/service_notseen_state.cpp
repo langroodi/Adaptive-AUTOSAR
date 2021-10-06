@@ -10,8 +10,9 @@ namespace ara
             {
                 namespace fsm
                 {
-                    ServiceNotseenState::ServiceNotseenState() noexcept : helper::MachineState<SdClientState>(
-                                                                              SdClientState::ServiceNotSeen)
+                    ServiceNotseenState::ServiceNotseenState(
+                        helper::TtlTimer *ttlTimer) noexcept : ClientServiceState(SdClientState::ServiceNotSeen,
+                                                                                  ttlTimer)
                     {
                     }
 
@@ -24,9 +25,10 @@ namespace ara
                     {
                         Transit(SdClientState::InitialWaitPhase);
                     }
-                    
-                    void ServiceNotseenState::ServiceOffered()
+
+                    void ServiceNotseenState::ServiceOffered(uint32_t ttl)
                     {
+                        Timer->Set(ttl);
                         Transit(SdClientState::ServiceSeen);
                     }
 

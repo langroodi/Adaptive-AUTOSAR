@@ -1,8 +1,7 @@
 #ifndef SERVICE_NOTSEEN_STATE_H
 #define SERVICE_NOTSEEN_STATE_H
 
-#include "../../../helper/machine_state.h"
-#include "../someip_sd_client.h"
+#include "./client_service_state.h"
 
 namespace ara
 {
@@ -17,14 +16,17 @@ namespace ara
                     /// @brief Client's service state when the service is not seen
                     /// @details The state happens when the client's service is not requested and also the server's service is down.
                     /// @note The state is not copyable
-                    class ServiceNotseenState : public helper::MachineState<SdClientState>
+                    class ServiceNotseenState : public ClientServiceState
                     {
                     protected:
                         void Deactivate(SdClientState nextState) override;
 
                     public:
-                        ServiceNotseenState() noexcept;
+                        /// @brief Constructor
+                        /// @param ttlTimer Finite machine state global TTL timer pointer
+                        ServiceNotseenState(helper::TtlTimer *ttlTimer) noexcept;
 
+                        ServiceNotseenState() = delete;
                         ServiceNotseenState(const ServiceNotseenState &) = delete;
                         ServiceNotseenState &operator=(const ServiceNotseenState &) = delete;
 
@@ -33,8 +35,7 @@ namespace ara
                         /// @brief Inform the state that the client's service is requested
                         void ServiceRequested();
 
-                        /// @brief Inform the state that the service has been offered
-                        void ServiceOffered();
+                        void ServiceOffered(uint32_t ttl) override;
                     };
                 }
             }

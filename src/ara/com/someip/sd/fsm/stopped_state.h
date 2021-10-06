@@ -1,8 +1,7 @@
 #ifndef STOPPED_STATE_H
 #define STOPPED_STATE_H
 
-#include "../../../helper/machine_state.h"
-#include "../someip_sd_client.h"
+#include "./client_service_state.h"
 
 namespace ara
 {
@@ -16,14 +15,17 @@ namespace ara
                 {
                     /// @brief Client state when the service is stopped
                     /// @note The state is not copyable
-                    class StoppedState : public helper::MachineState<SdClientState>
+                    class StoppedState : public ClientServiceState
                     {
                     protected:
                         void Deactivate(SdClientState nextState) override;
 
                     public:
-                        StoppedState() noexcept;
+                        /// @brief Constructor
+                        /// @param ttlTimer Finite machine state global TTL timer pointer
+                        StoppedState(helper::TtlTimer *ttlTimer) noexcept;
 
+                        StoppedState() = delete;
                         StoppedState(const StoppedState &) = delete;
                         StoppedState &operator=(const StoppedState &) = delete;
 
@@ -31,6 +33,8 @@ namespace ara
 
                         /// @brief Inform the state that the client's service is not requested anymore
                         void ServiceNotRequested();
+
+                        void ServiceOffered(uint32_t ttl) override;
                     };
                 }
             }

@@ -135,7 +135,8 @@ namespace ara
                         const SdClientState cExpectedState =
                             SdClientState::Stopped;
 
-                        StoppedState _machineState;
+                        helper::TtlTimer _ttlTimer;
+                        StoppedState _machineState(&_ttlTimer);
                         SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
@@ -146,7 +147,8 @@ namespace ara
                         const SdClientState cExpectedState =
                             SdClientState::ServiceNotSeen;
 
-                        ServiceNotseenState _machineState;
+                        helper::TtlTimer _ttlTimer;
+                        ServiceNotseenState _machineState(&_ttlTimer);
                         SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
@@ -156,7 +158,7 @@ namespace ara
                     {
                         const SdClientState cExpectedState =
                             SdClientState::ServiceReady;
-                        
+
                         helper::TtlTimer _ttlTimer;
                         ServiceReadyState _machineState(&_ttlTimer);
                         SdClientState _actualState = _machineState.GetState();
