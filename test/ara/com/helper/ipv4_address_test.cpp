@@ -14,9 +14,8 @@ namespace ara
                 const uint8_t cThirdOctet = 1;
                 const uint8_t cForthOctet = 255;
 
-                auto _ipAddress =
-                    Ipv4Address(
-                        cFirstOctet, cSecondOctet, cThirdOctet, cForthOctet);
+                Ipv4Address _ipAddress(
+                    cFirstOctet, cSecondOctet, cThirdOctet, cForthOctet);
 
                 EXPECT_EQ(_ipAddress.Octets[0], cFirstOctet);
                 EXPECT_EQ(_ipAddress.Octets[1], cSecondOctet);

@@ -34,6 +34,7 @@ namespace ara
                             std::function<void()> onTimerExpired,
                             int cyclicOfferDelay) noexcept;
 
+                        MainState() = delete;
                         MainState(const MainState &) = delete;
                         MainState &operator=(const MainState &) = delete;
                     };

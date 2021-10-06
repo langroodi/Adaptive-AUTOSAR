@@ -71,6 +71,7 @@ namespace ara
                         {
                         }
 
+                        InitialWaitState() = delete;
                         InitialWaitState(const InitialWaitState &) = delete;
                         InitialWaitState &operator=(const InitialWaitState &) = delete;
                     };

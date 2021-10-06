@@ -73,6 +73,7 @@ namespace ara
                         {
                         }
 
+                        RepetitionState() = delete;
                         RepetitionState(const RepetitionState &) = delete;
                         RepetitionState &operator=(const RepetitionState &) = delete;
                     };

@@ -128,6 +128,8 @@ add_library(
   ${source_ara_com_helper_dir}/ipv4_address.h
   ${source_ara_com_helper_dir}/ipv4_address.cpp
   ${source_ara_com_helper_dir}/machine_state.h
+  ${source_ara_com_helper_dir}/ttl_timer.h
+  ${source_ara_com_helper_dir}/ttl_timer.cpp
   ${source_ara_com_option_dir}/option.h
   ${source_ara_com_option_dir}/option.cpp
   ${source_ara_com_entry_dir}/entry.h
@@ -204,6 +206,7 @@ if(build_tests)
     ${test_ara_com_entry_dir}/eventgroup_entry_test.cpp
     ${test_ara_com_entry_dir}/service_entry_test.cpp
     ${test_ara_com_helper_dir}/ipv4_address_test.cpp
+    ${test_ara_com_helper_dir}/ttl_timer_test.cpp
     ${test_ara_com_option_dir}/ipv4_endpoint_option_test.cpp
     ${test_ara_com_option_dir}/loadbalancing_option_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_message_test.cpp

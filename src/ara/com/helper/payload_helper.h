@@ -9,6 +9,7 @@ namespace ara
     namespace com
     {
         /// @brief Helper functions required for communication classes
+        /// @note The namespace is not part of the official AUTOSAR standard.
         namespace helper
         {
             /// @brief Inject a short value into a byte vector

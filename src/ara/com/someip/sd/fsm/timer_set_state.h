@@ -13,6 +13,8 @@ namespace ara
         {
             namespace sd
             {
+                /// @brief Finite state machine
+                /// @note The namespace is not part of the official AUTOSAR standard.
                 namespace fsm
                 {
                     /// @brief Server's or client's service timer set state
