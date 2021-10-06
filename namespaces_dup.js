@@ -13,15 +13,7 @@ var namespaces_dup =
         [ "option", "namespaceara_1_1com_1_1option.html", "namespaceara_1_1com_1_1option" ],
         [ "someip", null, [
           [ "sd", null, [
-            [ "fsm", null, [
-              [ "InitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState" ],
-              [ "MainState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState" ],
-              [ "NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState" ],
-              [ "RepetitionState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState" ],
-              [ "ServiceNotseenState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState" ],
-              [ "StoppedState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState" ],
-              [ "TimerSetState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState" ]
-            ] ],
+            [ "fsm", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm" ],
             [ "SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient" ],
             [ "SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage" ],
             [ "SomeIpSdServer", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer" ],
