@@ -8,9 +8,8 @@ namespace ara
     {
         namespace helper
         {
-            TtlTimer::TtlTimer(std::function<void()> onExpire) noexcept : mLock(mMutex, std::defer_lock),
-                                                                          mOnExpired{onExpire},
-                                                                          mRunning{false}
+            TtlTimer::TtlTimer() noexcept : mLock(mMutex, std::defer_lock),
+                                            mRunning{false}
             {
             }
 
@@ -28,9 +27,22 @@ namespace ara
                     if (_status == std::cv_status::timeout)
                     {
                         mRunning = false;
-                        mOnExpired();
+                        if (mOnExpired)
+                        {
+                            mOnExpired();
+                        }
                     }
                 }
+            }
+
+            void TtlTimer::SetExpirationCallback(std::function<void()> callback)
+            {
+                mOnExpired = callback;
+            }
+
+            void TtlTimer::ResetExpirationCallback() noexcept
+            {
+                mOnExpired = std::function<void()>();
             }
 
             void TtlTimer::Set(int ttl)

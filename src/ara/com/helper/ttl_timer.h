@@ -17,25 +17,28 @@ namespace ara
             class TtlTimer
             {
             private:
-                const std::function<void()> mOnExpired;
                 std::mutex mMutex;
                 std::unique_lock<std::mutex> mLock;
                 std::condition_variable mConditionVariable;
                 std::future<void> mFuture;
                 bool mRunning;
                 int mTtl;
+                std::function<void()> mOnExpired;
 
                 void countdown();
 
             public:
-                /// @brief Constructor
-                /// @param onExpired Callback to be invoked when the TTL expires
-                TtlTimer(std::function<void()> onExpired) noexcept;
-
-                TtlTimer() = delete;
+                TtlTimer() noexcept;
                 TtlTimer(const TtlTimer &) = delete;
                 TtlTimer &operator=(const TtlTimer &) = delete;
                 ~TtlTimer();
+
+                /// @brief Set a callback to be invoked on the timer's expiration
+                /// @param callback Callback to be invoked on the expiration from the timer's thread
+                void SetExpirationCallback(std::function<void()> callback);
+
+                /// @brief Reset the timer's expiration callback
+                void ResetExpirationCallback() noexcept;
 
                 /// @brief Set the TTL timer
                 /// @param ttl Time to live in seconds

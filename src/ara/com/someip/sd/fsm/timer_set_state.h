@@ -62,10 +62,10 @@ namespace ara
                             T currentState,
                             T nextState,
                             T stoppedState,
-                            std::function<void()> onTimerExpired) noexcept : helper::MachineState<T>(currentState),
-                                                                             mNextState{nextState},
-                                                                             mStoppedState{stoppedState},
-                                                                             OnTimerExpired{onTimerExpired}
+                            std::function<void()> onTimerExpired) : helper::MachineState<T>(currentState),
+                                                                    mNextState{nextState},
+                                                                    mStoppedState{stoppedState},
+                                                                    OnTimerExpired{onTimerExpired}
                         {
                         }
 

@@ -66,10 +66,10 @@ namespace ara
                             T stoppedState,
                             std::function<void()> onTimerExpired,
                             uint32_t repetitionsMax,
-                            int repetitionsBaseDelay) noexcept : TimerSetState<T>(currentState, nextState, stoppedState, onTimerExpired),
-                                                                 mRepetitionsMax{static_cast<int>(repetitionsMax)},
-                                                                 mRepetitionsBaseDelay{repetitionsBaseDelay},
-                                                                 mRun{0}
+                            int repetitionsBaseDelay) : TimerSetState<T>(currentState, nextState, stoppedState, onTimerExpired),
+                                                        mRepetitionsMax{static_cast<int>(repetitionsMax)},
+                                                        mRepetitionsBaseDelay{repetitionsBaseDelay},
+                                                        mRun{0}
                         {
                         }
 

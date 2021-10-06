@@ -12,9 +12,10 @@ namespace ara
                 const int cTtl = 1;
 
                 bool _expired = false;
-                TtlTimer _ttlTimer([&_expired]()
-                                   { _expired = true; });
+                TtlTimer _ttlTimer;
 
+                _ttlTimer.SetExpirationCallback([&_expired]()
+                                                { _expired = true; });
                 _ttlTimer.Set(cTtl);
                 _ttlTimer.Cancel();
 
@@ -26,8 +27,7 @@ namespace ara
                 const int cTtl = 1;
 
                 bool _expired = false;
-                TtlTimer _ttlTimer([&_expired]()
-                                   { _expired = true; });
+                TtlTimer _ttlTimer;
 
                 _ttlTimer.Set(cTtl);
                 // Timer has been already set which makes the following call invalid.

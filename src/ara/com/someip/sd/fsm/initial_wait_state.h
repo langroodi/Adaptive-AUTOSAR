@@ -65,9 +65,9 @@ namespace ara
                             T stoppedState,
                             std::function<void()> onTimerExpired,
                             int initialDelayMin,
-                            int initialDelayMax) noexcept : TimerSetState<T>(currentState, nextState, stoppedState, onTimerExpired),
-                                                            mInitialDelayMin{initialDelayMin},
-                                                            mInitialDelayMax{initialDelayMax}
+                            int initialDelayMax) : TimerSetState<T>(currentState, nextState, stoppedState, onTimerExpired),
+                                                   mInitialDelayMin{initialDelayMin},
+                                                   mInitialDelayMax{initialDelayMax}
                         {
                         }
 

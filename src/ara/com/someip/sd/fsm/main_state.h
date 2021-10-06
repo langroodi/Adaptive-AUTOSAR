@@ -32,7 +32,7 @@ namespace ara
                         /// @param onTimerExpired Delegate to be invoked by timer's thread when the timer is expired
                         MainState(
                             std::function<void()> onTimerExpired,
-                            int cyclicOfferDelay) noexcept;
+                            int cyclicOfferDelay);
 
                         MainState() = delete;
                         MainState(const MainState &) = delete;
