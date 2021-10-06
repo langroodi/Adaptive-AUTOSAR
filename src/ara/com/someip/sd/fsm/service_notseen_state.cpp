@@ -20,6 +20,11 @@ namespace ara
                         // Nothing to do on activation
                     }
 
+                    void ServiceNotseenState::ServiceRequested()
+                    {
+                        Transit(SdClientState::RequestedButNotReady);
+                    }
+                    
                     void ServiceNotseenState::ServiceOffered()
                     {
                         Transit(SdClientState::ServiceSeen);
