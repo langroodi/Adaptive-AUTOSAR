@@ -8,5 +8,6 @@ var classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState =
     [ "Deactivate", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState.html#aa6f520ab570a799f0928c2cc591687bb", null ],
     [ "operator=", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState.html#ad1ec39824c518a3be0b3664b432322db", null ],
     [ "ServiceNotRequested", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState.html#a72964d12f570b413f49391e41c59f06c", null ],
+    [ "ServiceOffered", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState.html#a93fdeff05f3bc3ee55977af25c210dcf", null ],
     [ "ServiceStopped", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState.html#a5d55bf35e9ce6aa4ce1876b4b14ed0eb", null ]
 ];
