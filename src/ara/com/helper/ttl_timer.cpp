@@ -8,9 +8,9 @@ namespace ara
     {
         namespace helper
         {
-            TtlTimer::TtlTimer(std::function<void()> onExpire) : mLock(mMutex, std::defer_lock),
-                                                                 mOnExpired{onExpire},
-                                                                 mRunning{false}
+            TtlTimer::TtlTimer(std::function<void()> onExpire) noexcept : mLock(mMutex, std::defer_lock),
+                                                                          mOnExpired{onExpire},
+                                                                          mRunning{false}
             {
             }
 

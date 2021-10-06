@@ -30,7 +30,7 @@ namespace ara
             public:
                 /// @brief Constructor
                 /// @param onExpired Callback to be invoked when the TTL expires
-                TtlTimer(std::function<void()> onExpired);
+                TtlTimer(std::function<void()> onExpired) noexcept;
 
                 TtlTimer() = delete;
                 TtlTimer(const TtlTimer &) = delete;
