@@ -35,7 +35,7 @@ namespace ara
 
                         void Activate(SdClientState previousState) override;
 
-                        /// @brief Inform the state that the client's service not requested
+                        /// @brief Inform the state that the client's service is requested
                         void ServiceRequested();
 
                         void ServiceOffered(uint32_t ttl) override;
