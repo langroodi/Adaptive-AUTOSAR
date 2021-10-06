@@ -113,51 +113,50 @@ $(document).ready(function(){initNavTree('someip__sd__client_8h_source.html','')
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                    ServiceNotSeen,       </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    ServiceSeen,          </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    RequestedButNotReady, </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    ServiceReady,         </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    Stopped,              </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    InitialWaitPhase,     </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    RepetitionPhase,      </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">   27</a></span>&#160;                <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">SomeIpSdClient</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint16_t cDefaultSdPort = 30490;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> SdClientState cInitialState = SdClientState::ServiceNotSeen;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <span class="keyword">const</span> <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> mSdIpAddress;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    <span class="keyword">const</span> uint16_t mSdPort;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    SdClientState mState;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keywordtype">bool</span> mLinkAvailable;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mInitialDelayMin;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mInitialDelayMax;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mRepetitionBaseDelay;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    uint32_t mRepetitionCounter;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="keywordtype">bool</span> mServiceRequested;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">SomeIpSdClient</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    ~<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">SomeIpSdClient</a>() noexcept = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">SomeIpSdClient</a>(</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        <span class="keywordtype">int</span> initialDelayMin,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        <span class="keywordtype">int</span> initialDelayMax,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        <span class="keywordtype">int</span> repetitionBaseDelay,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        uint32_t repetitionMax,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        uint16_t sdPort = cDefaultSdPort,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        <span class="keywordtype">bool</span> serviceRequested = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a5270fc1e7159d33fda1a309a3d93a533">RequestService</a>(<span class="keywordtype">bool</span> requested) noexcept;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                };</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">ara::com::someip::sd::SomeIpSdClient</a></div><div class="ttdoc">SOME/IP service discovery client.</div><div class="ttdef"><b>Definition:</b> someip_sd_client.h:28</div></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    ServiceReady,         </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    Stopped,              </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    InitialWaitPhase,     </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    RepetitionPhase,      </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">   26</a></span>&#160;                <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">SomeIpSdClient</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint16_t cDefaultSdPort = 30490;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> SdClientState cInitialState = SdClientState::ServiceNotSeen;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    <span class="keyword">const</span> <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> mSdIpAddress;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <span class="keyword">const</span> uint16_t mSdPort;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    SdClientState mState;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keywordtype">bool</span> mLinkAvailable;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mInitialDelayMin;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mInitialDelayMax;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> mRepetitionBaseDelay;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    uint32_t mRepetitionCounter;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <span class="keywordtype">bool</span> mServiceRequested;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">SomeIpSdClient</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    ~<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">SomeIpSdClient</a>() noexcept = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">SomeIpSdClient</a>(</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordtype">int</span> initialDelayMin,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        <span class="keywordtype">int</span> initialDelayMax,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        <span class="keywordtype">int</span> repetitionBaseDelay,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        uint32_t repetitionMax,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        uint16_t sdPort = cDefaultSdPort,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        <span class="keywordtype">bool</span> serviceRequested = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a5270fc1e7159d33fda1a309a3d93a533">RequestService</a>(<span class="keywordtype">bool</span> requested) noexcept;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                };</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html">ara::com::someip::sd::SomeIpSdClient</a></div><div class="ttdoc">SOME/IP service discovery client.</div><div class="ttdef"><b>Definition:</b> someip_sd_client.h:27</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient_html_a5270fc1e7159d33fda1a309a3d93a533"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a5270fc1e7159d33fda1a309a3d93a533">ara::com::someip::sd::SomeIpSdClient::RequestService</a></div><div class="ttdeci">void RequestService(bool requested) noexcept</div><div class="ttdoc">Determine whether the service is requested or not.</div><div class="ttdef"><b>Definition:</b> someip_sd_client.cpp:37</div></div>
 <div class="ttc" id="astructara_1_1com_1_1helper_1_1Ipv4Address_html"><div class="ttname"><a href="structara_1_1com_1_1helper_1_1Ipv4Address.html">ara::com::helper::Ipv4Address</a></div><div class="ttdoc">IPv4 address wrapper helper.</div><div class="ttdef"><b>Definition:</b> ipv4_address.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -1,5 +1,15 @@
 var NAVTREEINDEX2 =
 {
+"classara_1_1log_1_1LoggingFramework.html#a06440a9305a19273c1127432814b01aa":[1,0,0,4,4,4],
+"classara_1_1log_1_1LoggingFramework.html#a0e4446ea147d214630a1fe85e0c84331":[1,0,0,4,4,0],
+"classara_1_1log_1_1LoggingFramework.html#a19e6212fde3c4d33f687a73e4acb90d1":[1,0,0,4,4,3],
+"classara_1_1log_1_1LoggingFramework.html#a61da16b414c123b62c853549d96fc8c5":[1,0,0,4,4,1],
+"classara_1_1log_1_1LoggingFramework.html#a88fee436182a821f5c40c62ef99b87a7":[1,0,0,4,4,2],
+"classara_1_1log_1_1sink_1_1ConsoleLogSink.html":[1,0,0,4,0,0],
+"classara_1_1log_1_1sink_1_1ConsoleLogSink.html#a279bb8a1bed2c606750dcf2b340501eb":[1,0,0,4,0,0,1],
+"classara_1_1log_1_1sink_1_1ConsoleLogSink.html#aad1a6c317153c15806270ac448cafe18":[1,0,0,4,0,0,0],
+"classara_1_1log_1_1sink_1_1ConsoleLogSink.html#af2932773ffc2d4b0d07a42f68a8ecd89":[1,0,0,4,0,0,2],
+"classara_1_1log_1_1sink_1_1FileLogSink.html":[1,0,0,4,0,1],
 "classara_1_1log_1_1sink_1_1FileLogSink.html#a66ee7a09be5456f9b31754c45c8cd004":[1,0,0,4,0,1,2],
 "classara_1_1log_1_1sink_1_1FileLogSink.html#ab3bb3098c3eb38fb69fd5dfca998eedd":[1,0,0,4,0,1,0],
 "classara_1_1log_1_1sink_1_1FileLogSink.html#ae75c7c5b1ccac69329ef6626789cb7cb":[1,0,0,4,0,1,1],
@@ -239,15 +249,5 @@ var NAVTREEINDEX2 =
 "namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a3e34996498407f1d53a73ae380432925":[0,0,0,0,3,4,5],
 "namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a5fb96ac8b4e030b4e88bd71b95460d02":[0,0,0,0,3,4,1],
 "namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a81c1a695ea69a1e4f0b9e73a23756756":[0,0,0,0,3,4,4],
-"namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0aa3ab9cde00a363d773cd437a68dda194":[0,0,0,0,3,4,6],
-"namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0acc59ff8ac1d5a920bcd32d97d47d9850":[0,0,0,0,3,4,7],
-"namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c":[0,0,0,0,3,3],
-"namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34ca30b7fdeebc36988717d0e274cc2e7520":[0,0,0,0,3,3,0],
-"namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34ca81baba40274ccb30f9fdfa2c73cf0482":[0,0,0,0,3,3,1],
-"namespaceara_1_1log.html":[0,0,0,4],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f":[0,0,0,4,6],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fa176a473e63c17ccdac91640c67f149bf":[0,0,0,4,6,4],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fa61a920eb4a24199ec6a36dd90f2a30b7":[0,0,0,4,6,3],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fabb53ce21b7c0b7c8a8f7860a41901d29":[0,0,0,4,6,5],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388facc9ab5e60ac2a9a675ba64bf4bb49dc8":[0,0,0,4,6,0]
+"namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0aa3ab9cde00a363d773cd437a68dda194":[0,0,0,0,3,4,6]
 };
