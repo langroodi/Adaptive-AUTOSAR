@@ -4,6 +4,7 @@
 #include "../../../../../../src/ara/com/someip/sd/fsm/repetition_state.h"
 #include "../../../../../../src/ara/com/someip/sd/fsm/main_state.h"
 #include "../../../../../../src/ara/com/someip/sd/fsm/stopped_state.h"
+#include "../../../../../../src/ara/com/someip/sd/fsm/service_notseen_state.h"
 
 namespace ara
 {
@@ -134,6 +135,17 @@ namespace ara
                             SdClientState::Stopped;
 
                         StoppedState _machineState;
+                        SdClientState _actualState = _machineState.GetState();
+
+                        EXPECT_EQ(_actualState, cExpectedState);
+                    }
+
+                    TEST(MachineStateTest, ServiceNotseenStateConstructor)
+                    {
+                        const SdClientState cExpectedState =
+                            SdClientState::ServiceNotSeen;
+
+                        ServiceNotseenState _machineState;
                         SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
