@@ -162,6 +162,8 @@ add_library(
   ${source_ara_com_someip_sd_fsm_dir}/service_notseen_state.cpp
   ${source_ara_com_someip_sd_fsm_dir}/service_ready_state.h
   ${source_ara_com_someip_sd_fsm_dir}/service_ready_state.cpp
+  ${source_ara_com_someip_sd_fsm_dir}/service_seen_state.h
+  ${source_ara_com_someip_sd_fsm_dir}/service_seen_state.cpp
 )
 
 set_target_properties(
