@@ -99,47 +99,48 @@ $(document).ready(function(){initNavTree('service__notseen__state_8h_source.html
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SERVICE_NOTSEEN_STATE_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SERVICE_NOTSEEN_STATE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../../helper/machine_state.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../someip_sd_client.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>ara</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>com</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">namespace </span>someip</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">namespace </span>sd</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keyword">namespace </span>fsm</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">   20</a></span>&#160;                    <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a> : <span class="keyword">public</span> <a class="code" href="classara_1_1com_1_1helper_1_1MachineState.html">helper::MachineState</a>&lt;SdClientState&gt;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                        <span class="keywordtype">void</span> Deactivate(SdClientState nextState) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a>() noexcept;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        <span class="keywordtype">void</span> Activate(SdClientState previousState) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./client_service_state.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>ara</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>com</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">namespace </span>someip</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keyword">namespace </span>sd</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <span class="keyword">namespace </span>fsm</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">   19</a></span>&#160;                    <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a> : <span class="keyword">public</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientServiceState.html">ClientServiceState</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        <span class="keywordtype">void</span> Deactivate(SdClientState nextState) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a>(<a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">helper::TtlTimer</a> *ttlTimer) noexcept;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ServiceNotseenState</a> &amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a72db58fde953b4ee158c2e148b147252">ServiceRequested</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a9edd58d77cafbf8b611f5a56ac1cbe11">ServiceOffered</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassara_1_1com_1_1helper_1_1MachineState_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1MachineState.html">ara::com::helper::MachineState</a></div><div class="ttdoc">Machine state abstract class.</div><div class="ttdef"><b>Definition:</b> machine_state.h:17</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ara::com::someip::sd::fsm::ServiceNotseenState</a></div><div class="ttdoc">Client's service state when the service is not seen.</div><div class="ttdef"><b>Definition:</b> service_notseen_state.h:21</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState_html_a72db58fde953b4ee158c2e148b147252"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a72db58fde953b4ee158c2e148b147252">ara::com::someip::sd::fsm::ServiceNotseenState::ServiceRequested</a></div><div class="ttdeci">void ServiceRequested()</div><div class="ttdoc">Inform the state that the client's service is requested.</div><div class="ttdef"><b>Definition:</b> service_notseen_state.cpp:23</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState_html_a9edd58d77cafbf8b611f5a56ac1cbe11"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a9edd58d77cafbf8b611f5a56ac1cbe11">ara::com::someip::sd::fsm::ServiceNotseenState::ServiceOffered</a></div><div class="ttdeci">void ServiceOffered()</div><div class="ttdoc">Inform the state that the service has been offered.</div><div class="ttdef"><b>Definition:</b> service_notseen_state.cpp:28</div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        <span class="keywordtype">void</span> Activate(SdClientState previousState) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a72db58fde953b4ee158c2e148b147252">ServiceRequested</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a8e328eb5518a606aae534f93eae168e1">ServiceOffered</a>(uint32_t ttl) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html">ara::com::helper::TtlTimer</a></div><div class="ttdoc">Time To Live countdown timer.</div><div class="ttdef"><b>Definition:</b> ttl_timer.h:18</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientServiceState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientServiceState.html">ara::com::someip::sd::fsm::ClientServiceState</a></div><div class="ttdoc">Abstract client's service state.</div><div class="ttdef"><b>Definition:</b> client_service_state.h:22</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html">ara::com::someip::sd::fsm::ServiceNotseenState</a></div><div class="ttdoc">Client's service state when the service is not seen.</div><div class="ttdef"><b>Definition:</b> service_notseen_state.h:20</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState_html_a72db58fde953b4ee158c2e148b147252"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a72db58fde953b4ee158c2e148b147252">ara::com::someip::sd::fsm::ServiceNotseenState::ServiceRequested</a></div><div class="ttdeci">void ServiceRequested()</div><div class="ttdoc">Inform the state that the client's service is requested.</div><div class="ttdef"><b>Definition:</b> service_notseen_state.cpp:24</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState_html_a8e328eb5518a606aae534f93eae168e1"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a8e328eb5518a606aae534f93eae168e1">ara::com::someip::sd::fsm::ServiceNotseenState::ServiceOffered</a></div><div class="ttdeci">void ServiceOffered(uint32_t ttl) override</div><div class="ttdoc">Inform the state that the service is offered.</div><div class="ttdef"><b>Definition:</b> service_notseen_state.cpp:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
