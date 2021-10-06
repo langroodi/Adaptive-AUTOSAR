@@ -148,6 +148,8 @@ add_library(
   ${source_ara_com_someip_dir}/someip_message.cpp
   ${source_ara_com_someip_sd_dir}/someip_sd_message.h
   ${source_ara_com_someip_sd_dir}/someip_sd_message.cpp
+  ${source_ara_com_someip_sd_fsm_dir}/timer_set_state.h
+  ${source_ara_com_someip_sd_fsm_dir}/client_service_state.h
   ${source_ara_com_someip_sd_fsm_dir}/notready_state.h
   ${source_ara_com_someip_sd_fsm_dir}/notready_state.cpp
   ${source_ara_com_someip_sd_fsm_dir}/initial_wait_state.h

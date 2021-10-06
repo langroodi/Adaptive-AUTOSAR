@@ -1,9 +1,7 @@
 #ifndef SERVICE_READY_STATE_H
 #define SERVICE_READY_STATE_H
 
-#include "../../../helper/machine_state.h"
-#include "../../../helper/ttl_timer.h"
-#include "../someip_sd_client.h"
+#include "./client_service_state.h"
 
 namespace ara
 {
@@ -17,10 +15,9 @@ namespace ara
                 {
                     /// @brief Client's state when the service is requested and also up
                     /// @note The state is not copyable.
-                    class ServiceReadyState : public helper::MachineState<SdClientState>
+                    class ServiceReadyState : public ClientServiceState
                     {
                     private:
-                        helper::TtlTimer *const mTtlTimer;
                         void onTimerExpired();
 
                     protected:
@@ -40,6 +37,8 @@ namespace ara
 
                         /// @brief Inform the state that the client's service is not requested anymore
                         void ServiceNotRequested();
+
+                        void ServiceOffered(uint32_t ttl) override;
 
                         /// @brief Inform the state that the service has been stopped
                         void ServiceStopped();

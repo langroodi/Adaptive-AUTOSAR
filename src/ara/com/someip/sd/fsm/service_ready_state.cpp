@@ -11,8 +11,9 @@ namespace ara
                 namespace fsm
                 {
                     ServiceReadyState::ServiceReadyState(
-                        helper::TtlTimer *ttlTimer) noexcept : helper::MachineState<SdClientState>(SdClientState::ServiceReady),
-                                                               mTtlTimer{ttlTimer}
+                        helper::TtlTimer *ttlTimer) noexcept : ClientServiceState(SdClientState::ServiceReady,
+                                                                                  ttlTimer)
+
                     {
                     }
 
@@ -25,7 +26,7 @@ namespace ara
                     {
                         auto _callback =
                             std::bind(&ServiceReadyState::onTimerExpired, this);
-                        mTtlTimer->SetExpirationCallback(_callback);
+                        Timer->SetExpirationCallback(_callback);
                     }
 
                     void ServiceReadyState::ServiceNotRequested()
@@ -33,20 +34,25 @@ namespace ara
                         Transit(SdClientState::ServiceSeen);
                     }
 
+                    void ServiceReadyState::ServiceOffered(uint32_t ttl)
+                    {
+                        Timer->Reset(ttl);
+                    }
+
                     void ServiceReadyState::ServiceStopped()
                     {
-                        mTtlTimer->Cancel();
+                        Timer->Cancel();
                         Transit(SdClientState::Stopped);
                     }
 
                     void ServiceReadyState::Deactivate(SdClientState nextState)
                     {
-                        mTtlTimer->ResetExpirationCallback();
+                        Timer->ResetExpirationCallback();
                     }
 
                     ServiceReadyState::~ServiceReadyState()
                     {
-                        mTtlTimer->ResetExpirationCallback();
+                        Timer->ResetExpirationCallback();
                     }
                 }
             }
