@@ -113,39 +113,43 @@ $(document).ready(function(){initNavTree('ttl__timer_8h_source.html',''); initRe
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1helper_1_1TtlTimer.html">   17</a></span>&#160;            <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keyword">const</span> std::function&lt;void()&gt; mOnExpired;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                std::mutex mMutex;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                std::unique_lock&lt;std::mutex&gt; mLock;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                std::condition_variable mConditionVariable;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                std::future&lt;void&gt; mFuture;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordtype">bool</span> mRunning;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordtype">int</span> mTtl;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                std::mutex mMutex;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                std::unique_lock&lt;std::mutex&gt; mLock;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                std::condition_variable mConditionVariable;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                std::future&lt;void&gt; mFuture;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordtype">bool</span> mRunning;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordtype">int</span> mTtl;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                std::function&lt;void()&gt; mOnExpired;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordtype">void</span> countdown();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; onExpired) noexcept;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                ~<a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a>() noexcept;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                ~<a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a86e8fe41b930356abd2c9d4b669dbf9d">SetExpirationCallback</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; callback);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a8c96f8519ac2b1bf23d20628d2b097f2">Set</a>(<span class="keywordtype">int</span> ttl);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a8c586666f5c7c78ec90a67c691e6507b">Reset</a>(<span class="keywordtype">int</span> ttl);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a25f0b24c8290c38670cac12218d344c1">Cancel</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            };</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a6798251191276990aaccc3df8cd13854">ResetExpirationCallback</a>() noexcept;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a8c96f8519ac2b1bf23d20628d2b097f2">Set</a>(<span class="keywordtype">int</span> ttl);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a8c586666f5c7c78ec90a67c691e6507b">Reset</a>(<span class="keywordtype">int</span> ttl);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a25f0b24c8290c38670cac12218d344c1">Cancel</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html">ara::com::helper::TtlTimer</a></div><div class="ttdoc">Time To Live countdown timer.</div><div class="ttdef"><b>Definition:</b> ttl_timer.h:18</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html_a25f0b24c8290c38670cac12218d344c1"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a25f0b24c8290c38670cac12218d344c1">ara::com::helper::TtlTimer::Cancel</a></div><div class="ttdeci">void Cancel()</div><div class="ttdoc">Cancel the timer.</div><div class="ttdef"><b>Definition:</b> ttl_timer.cpp:64</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html_a8c586666f5c7c78ec90a67c691e6507b"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a8c586666f5c7c78ec90a67c691e6507b">ara::com::helper::TtlTimer::Reset</a></div><div class="ttdeci">void Reset(int ttl)</div><div class="ttdoc">Reset the TTL timer.</div><div class="ttdef"><b>Definition:</b> ttl_timer.cpp:51</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html_a8c96f8519ac2b1bf23d20628d2b097f2"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a8c96f8519ac2b1bf23d20628d2b097f2">ara::com::helper::TtlTimer::Set</a></div><div class="ttdeci">void Set(int ttl)</div><div class="ttdoc">Set the TTL timer.</div><div class="ttdef"><b>Definition:</b> ttl_timer.cpp:36</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html_a25f0b24c8290c38670cac12218d344c1"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a25f0b24c8290c38670cac12218d344c1">ara::com::helper::TtlTimer::Cancel</a></div><div class="ttdeci">void Cancel()</div><div class="ttdoc">Cancel the timer.</div><div class="ttdef"><b>Definition:</b> ttl_timer.cpp:76</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html_a6798251191276990aaccc3df8cd13854"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a6798251191276990aaccc3df8cd13854">ara::com::helper::TtlTimer::ResetExpirationCallback</a></div><div class="ttdeci">void ResetExpirationCallback() noexcept</div><div class="ttdoc">Reset the timer's expiration callback.</div><div class="ttdef"><b>Definition:</b> ttl_timer.cpp:43</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html_a86e8fe41b930356abd2c9d4b669dbf9d"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a86e8fe41b930356abd2c9d4b669dbf9d">ara::com::helper::TtlTimer::SetExpirationCallback</a></div><div class="ttdeci">void SetExpirationCallback(std::function&lt; void()&gt; callback)</div><div class="ttdoc">Set a callback to be invoked on the timer's expiration.</div><div class="ttdef"><b>Definition:</b> ttl_timer.cpp:38</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html_a8c586666f5c7c78ec90a67c691e6507b"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a8c586666f5c7c78ec90a67c691e6507b">ara::com::helper::TtlTimer::Reset</a></div><div class="ttdeci">void Reset(int ttl)</div><div class="ttdoc">Reset the TTL timer.</div><div class="ttdef"><b>Definition:</b> ttl_timer.cpp:63</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1helper_1_1TtlTimer_html_a8c96f8519ac2b1bf23d20628d2b097f2"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a8c96f8519ac2b1bf23d20628d2b097f2">ara::com::helper::TtlTimer::Set</a></div><div class="ttdeci">void Set(int ttl)</div><div class="ttdoc">Set the TTL timer.</div><div class="ttdef"><b>Definition:</b> ttl_timer.cpp:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

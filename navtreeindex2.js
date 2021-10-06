@@ -1,13 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classara_1_1log_1_1Logger.html#a071d1ab6f040fc37c25fc6bd995e2188":[1,0,0,4,3,3],
-"classara_1_1log_1_1Logger.html#a150fdaaaea673f167bf356d427897dcf":[1,0,0,4,3,1],
-"classara_1_1log_1_1Logger.html#a417ffb0af09b92533363f46c3419d72c":[1,0,0,4,3,0],
-"classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d":[1,0,0,4,3,2],
-"classara_1_1log_1_1Logger.html#a59c1e35e0d653ede25635377e71d9aa3":[1,0,0,4,3,4],
-"classara_1_1log_1_1Logger.html#a5d278c539e61194014b5a5dcfff2930a":[1,0,0,4,3,10],
-"classara_1_1log_1_1Logger.html#a739cfb7b5651cbc9acf1adb05f35fe9e":[1,0,0,4,3,5],
-"classara_1_1log_1_1Logger.html#a8dee997a0f1b241811dc82bcf5c8ef52":[1,0,0,4,3,9],
 "classara_1_1log_1_1Logger.html#abbd76ffa2b2a42228a4eabaca13f4b52":[1,0,0,4,3,7],
 "classara_1_1log_1_1Logger.html#afeab65f8cf3faa42c04e6d9ab6afe292":[1,0,0,4,3,6],
 "classara_1_1log_1_1LoggingFramework.html":[1,0,0,4,4],
@@ -249,5 +241,13 @@ var NAVTREEINDEX2 =
 "namespaceara_1_1com_1_1helper.html":[0,0,0,0,2],
 "namespaceara_1_1com_1_1helper.html#a044e415426ec167e5745a2d592924838":[0,0,0,0,2,4],
 "namespaceara_1_1com_1_1helper.html#a3f2c94e886987be347382160f5701e6f":[0,0,0,0,2,6],
-"namespaceara_1_1com_1_1helper.html#a5a2498fade7c5196c42e3023252eb941":[0,0,0,0,2,5]
+"namespaceara_1_1com_1_1helper.html#a5a2498fade7c5196c42e3023252eb941":[0,0,0,0,2,5],
+"namespaceara_1_1com_1_1helper.html#a99495cb7b4aa18974d6d5a68d6aa168a":[0,0,0,0,2,8],
+"namespaceara_1_1com_1_1helper.html#ad1379c0b83dd58e596947b1dd6ce2a37":[0,0,0,0,2,7],
+"namespaceara_1_1com_1_1option.html":[0,0,0,0,3],
+"namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0":[0,0,0,0,3,4],
+"namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a04b446236b9b61298c62828ac55d2555":[0,0,0,0,3,4,3],
+"namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a08004d807e1fdb48b89eb0c45c72a240":[0,0,0,0,3,4,2],
+"namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a254f642527b45bc260048e30704edb39":[0,0,0,0,3,4,0],
+"namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a3e34996498407f1d53a73ae380432925":[0,0,0,0,3,4,5]
 };
