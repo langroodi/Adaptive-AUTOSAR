@@ -59,6 +59,7 @@ var hierarchy =
       [ "ara::com::someip::sd::fsm::ClientServiceState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientServiceState.html", [
         [ "ara::com::someip::sd::fsm::ServiceNotseenState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html", null ],
         [ "ara::com::someip::sd::fsm::ServiceReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState.html", null ],
+        [ "ara::com::someip::sd::fsm::ServiceSeenState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceSeenState.html", null ],
         [ "ara::com::someip::sd::fsm::StoppedState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html", null ]
       ] ]
     ] ],
