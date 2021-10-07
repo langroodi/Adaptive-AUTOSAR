@@ -99,48 +99,49 @@ $(document).ready(function(){initNavTree('main__state_8h_source.html',''); initR
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MAIN_STATE_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MAIN_STATE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../someip_sd_server.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./timer_set_state.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>ara</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>com</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">namespace </span>someip</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">namespace </span>sd</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keyword">namespace </span>fsm</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">   19</a></span>&#160;                    <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a> : <span class="keyword">public</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html">TimerSetState</a>&lt;SdServerState&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                        <span class="keyword">const</span> std::chrono::milliseconds mCyclicOfferDelay;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html#a604e237917e63f3514b93cc27928c607">SetTimer</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                        <span class="keywordtype">void</span> Deactivate(SdServerState nextState) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a>(</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            std::function&lt;<span class="keywordtype">void</span>()&gt; onTimerExpired,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                            <span class="keywordtype">int</span> cyclicOfferDelay);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    };</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">ara::com::someip::sd::fsm::MainState</a></div><div class="ttdoc">Server's main state.</div><div class="ttdef"><b>Definition:</b> main_state.h:20</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./timer_set_state.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>ara</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>com</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">namespace </span>someip</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <span class="keyword">namespace </span>sd</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <span class="keyword">namespace </span>fsm</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">   18</a></span>&#160;                    <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a> : <span class="keyword">public</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html">TimerSetState</a>&lt;helper::SdServerState&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                        <span class="keyword">const</span> std::chrono::milliseconds mCyclicOfferDelay;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                        <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html#a604e237917e63f3514b93cc27928c607">SetTimer</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html#a822136834a5528b7917cd54cef4f524c">Deactivate</a>(<a class="code" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a> nextState) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a>(</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                            std::function&lt;<span class="keywordtype">void</span>()&gt; onTimerExpired,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            <span class="keywordtype">int</span> cyclicOfferDelay);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">MainState</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">ara::com::someip::sd::fsm::MainState</a></div><div class="ttdoc">Server's main state.</div><div class="ttdef"><b>Definition:</b> main_state.h:19</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState_html_a604e237917e63f3514b93cc27928c607"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html#a604e237917e63f3514b93cc27928c607">ara::com::someip::sd::fsm::MainState::SetTimer</a></div><div class="ttdeci">void SetTimer() override</div><div class="ttdoc">Set the phase time on state activation.</div><div class="ttdef"><b>Definition:</b> main_state.cpp:25</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState_html_a822136834a5528b7917cd54cef4f524c"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html#a822136834a5528b7917cd54cef4f524c">ara::com::someip::sd::fsm::MainState::Deactivate</a></div><div class="ttdeci">void Deactivate(helper::SdServerState nextState) override</div><div class="ttdoc">Deactivating the current state before transiting to the next state.</div><div class="ttdef"><b>Definition:</b> main_state.cpp:36</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html">ara::com::someip::sd::fsm::TimerSetState</a></div><div class="ttdoc">Server's or client's service timer set state.</div><div class="ttdef"><b>Definition:</b> timer_set_state.h:25</div></div>
+<div class="ttc" id="anamespaceara_1_1com_1_1helper_html_acf1d9945823fc0d57836df192794405b"><div class="ttname"><a href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">ara::com::helper::SdServerState</a></div><div class="ttdeci">SdServerState</div><div class="ttdoc">Service discovery server machine state.</div><div class="ttdef"><b>Definition:</b> machine_state.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -107,15 +107,18 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1helper_1_1FiniteSta
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae58dae71b866093a141ba1f6aa8ee470"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#ae58dae71b866093a141ba1f6aa8ee470">FiniteStateMachine</a> (std::initializer_list&lt; <a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html">MachineState</a> &amp; &gt; states, T entrypoint)</td></tr>
-<tr class="memdesc:ae58dae71b866093a141ba1f6aa8ee470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#ae58dae71b866093a141ba1f6aa8ee470">More...</a><br /></td></tr>
-<tr class="separator:ae58dae71b866093a141ba1f6aa8ee470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd9239684e25e1e05b896b6a64837e14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#abd9239684e25e1e05b896b6a64837e14">FiniteStateMachine</a> (std::initializer_list&lt; <a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html">MachineState</a>&lt; T &gt; * &gt; states, T entrypoint)</td></tr>
+<tr class="memdesc:abd9239684e25e1e05b896b6a64837e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#abd9239684e25e1e05b896b6a64837e14">More...</a><br /></td></tr>
+<tr class="separator:abd9239684e25e1e05b896b6a64837e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a096865fcca1ee5374eb11a7210908768"><td class="memItemLeft" align="right" valign="top"><a id="a096865fcca1ee5374eb11a7210908768"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FiniteStateMachine</b> (const <a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">FiniteStateMachine</a> &amp;)=delete</td></tr>
 <tr class="separator:a096865fcca1ee5374eb11a7210908768"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e9496f15f3e1be6de6b2abebaf7aa7f"><td class="memItemLeft" align="right" valign="top"><a id="a8e9496f15f3e1be6de6b2abebaf7aa7f"></a>
 <a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">FiniteStateMachine</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">FiniteStateMachine</a> &amp;)=delete</td></tr>
 <tr class="separator:a8e9496f15f3e1be6de6b2abebaf7aa7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc253f218ce7ae02b7b47231eb8dd55"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a9fc253f218ce7ae02b7b47231eb8dd55">GetState</a> () const noexcept</td></tr>
+<tr class="memdesc:a9fc253f218ce7ae02b7b47231eb8dd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the FSM current state.  <a href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a9fc253f218ce7ae02b7b47231eb8dd55">More...</a><br /></td></tr>
+<tr class="separator:a9fc253f218ce7ae02b7b47231eb8dd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -130,8 +133,8 @@ class ara::com::helper::FiniteStateMachine&lt; T &gt;</h3>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>FSM controller is not copyable </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae58dae71b866093a141ba1f6aa8ee470"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae58dae71b866093a141ba1f6aa8ee470">&#9670;&nbsp;</a></span>FiniteStateMachine()</h2>
+<a id="abd9239684e25e1e05b896b6a64837e14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd9239684e25e1e05b896b6a64837e14">&#9670;&nbsp;</a></span>FiniteStateMachine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,7 +147,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">ara::com::helper::FiniteStateMachine</a>&lt; T &gt;::<a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">FiniteStateMachine</a> </td>
           <td>(</td>
-          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html">MachineState</a> &amp; &gt;&#160;</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html">MachineState</a>&lt; T &gt; * &gt;&#160;</td>
           <td class="paramname"><em>states</em>, </td>
         </tr>
         <tr>
@@ -174,6 +177,37 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9fc253f218ce7ae02b7b47231eb8dd55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc253f218ce7ae02b7b47231eb8dd55">&#9670;&nbsp;</a></span>GetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">ara::com::helper::FiniteStateMachine</a>&lt; T &gt;::GetState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the FSM current state. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current state enumeration </dd></dl>
 
 </div>
 </div>

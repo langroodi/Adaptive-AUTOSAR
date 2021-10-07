@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('namespaceara_1_1com_1_1helper.html',''
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ara::com::helper Namespace Reference</div>  </div>
@@ -118,6 +119,16 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time To Live countdown timer.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:acf1d9945823fc0d57836df192794405b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">SdServerState</a> { <b>NotReady</b>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405baefaf006a6329e7714acf0931a743c91e">InitialWaitPhase</a>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405ba59bc007205190ff3122bdbd2e9672f77">RepetitionPhase</a>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405ba9a149a5ca1439d5d35d63c41cf47f785">MainPhase</a>
+ }</td></tr>
+<tr class="memdesc:acf1d9945823fc0d57836df192794405b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service discovery server machine state.  <a href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">More...</a><br /></td></tr>
+<tr class="separator:acf1d9945823fc0d57836df192794405b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a99495cb7b4aa18974d6d5a68d6aa168a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1com_1_1helper.html#a99495cb7b4aa18974d6d5a68d6aa168a">operator==</a> (<a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address1, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address2)</td></tr>
@@ -139,7 +150,41 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions required for communication classes. </p>
 <dl class="section note"><dt>Note</dt><dd>The namespace is not part of the official AUTOSAR standard. </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="acf1d9945823fc0d57836df192794405b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1d9945823fc0d57836df192794405b">&#9670;&nbsp;</a></span>SdServerState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">ara::com::helper::SdServerState</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Service discovery server machine state. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acf1d9945823fc0d57836df192794405baefaf006a6329e7714acf0931a743c91e"></a>InitialWaitPhase&#160;</td><td class="fielddoc"><p>!&lt; Server's service is down </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf1d9945823fc0d57836df192794405ba59bc007205190ff3122bdbd2e9672f77"></a>RepetitionPhase&#160;</td><td class="fielddoc"><p>!&lt; Server's service is in initial waiting phase </p>
+</td></tr>
+<tr><td class="fieldname"><a id="acf1d9945823fc0d57836df192794405ba9a149a5ca1439d5d35d63c41cf47f785"></a>MainPhase&#160;</td><td class="fielddoc"><p>!&lt; Server's service is in repetition phase </p>
+<p>!&lt; Server's service is in main phase </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="a044e415426ec167e5745a2d592924838"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a044e415426ec167e5745a2d592924838">&#9670;&nbsp;</a></span>Concat()</h2>
 

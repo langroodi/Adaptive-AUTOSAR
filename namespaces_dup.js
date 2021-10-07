@@ -24,12 +24,6 @@ var namespaces_dup =
               [ "Stopped", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8bac23e2b09ebe6bf4cb5e2a9abe85c0be2", null ],
               [ "InitialWaitPhase", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8baefaf006a6329e7714acf0931a743c91e", null ],
               [ "RepetitionPhase", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8ba59bc007205190ff3122bdbd2e9672f77", null ]
-            ] ],
-            [ "SdServerState", "someip__sd__server_8h.html#ab15840b14e429cd2789f10bd53038fd0", [
-              [ "NotReady", "someip__sd__server_8h.html#ab15840b14e429cd2789f10bd53038fd0add353567e8118a2b8df4e822e59084ab", null ],
-              [ "InitialWaitPhase", "someip__sd__server_8h.html#ab15840b14e429cd2789f10bd53038fd0aefaf006a6329e7714acf0931a743c91e", null ],
-              [ "RepetitionPhase", "someip__sd__server_8h.html#ab15840b14e429cd2789f10bd53038fd0a59bc007205190ff3122bdbd2e9672f77", null ],
-              [ "MainPhase", "someip__sd__server_8h.html#ab15840b14e429cd2789f10bd53038fd0a9a149a5ca1439d5d35d63c41cf47f785", null ]
             ] ]
           ] ],
           [ "SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", "classara_1_1com_1_1someip_1_1SomeIpMessage" ],
