@@ -9,6 +9,15 @@ namespace ara
     {
         namespace helper
         {
+            /// @brief Service discovery server machine state
+            enum class SdServerState
+            {
+                NotReady,         ///!< Server's service is down
+                InitialWaitPhase, ///!< Server's service is in initial waiting phase
+                RepetitionPhase,  ///!< Server's service is in repetition phase
+                MainPhase         ///!< Server's service is in main phase
+            };
+
             /// @brief Machine state abstract class
             /// @tparam T State enumeration type
             /// @note A machine state is not copyable

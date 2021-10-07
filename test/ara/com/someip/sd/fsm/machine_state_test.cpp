@@ -20,25 +20,25 @@ namespace ara
                 {
                     TEST(MachineStateTest, NotReadyStateContructor)
                     {
-                        const SdServerState cExpectedState =
-                            SdServerState::NotReady;
+                        const helper::SdServerState cExpectedState =
+                            helper::SdServerState::NotReady;
 
                         NotReadyState _machineState;
-                        SdServerState _actualState = _machineState.GetState();
+                        helper::SdServerState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
                     }
 
                     TEST(MachineStateTest, InitialWaitStateContructor)
                     {
-                        const SdServerState cPreviousState =
-                            SdServerState::NotReady;
-                        const SdServerState cExpectedState =
-                            SdServerState::InitialWaitPhase;
-                        const SdServerState cNextState =
-                            SdServerState::RepetitionPhase;
-                        const SdServerState cStoppedState =
-                            SdServerState::NotReady;
+                        const helper::SdServerState cPreviousState =
+                            helper::SdServerState::NotReady;
+                        const helper::SdServerState cExpectedState =
+                            helper::SdServerState::InitialWaitPhase;
+                        const helper::SdServerState cNextState =
+                            helper::SdServerState::RepetitionPhase;
+                        const helper::SdServerState cStoppedState =
+                            helper::SdServerState::NotReady;
                         const int cInitialDelayMin = 100;
                         const int cInitialDelayMax = 200;
                         const auto cOnTimerExpired = []
@@ -46,7 +46,7 @@ namespace ara
                             // Empty callback
                         };
 
-                        InitialWaitState<SdServerState> _machineState(
+                        InitialWaitState<helper::SdServerState> _machineState(
                             cExpectedState,
                             cNextState,
                             cStoppedState,
@@ -54,7 +54,7 @@ namespace ara
                             cInitialDelayMin,
                             cInitialDelayMax);
 
-                        SdServerState _actualState = _machineState.GetState();
+                        helper::SdServerState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
 
@@ -67,14 +67,14 @@ namespace ara
 
                     TEST(MachineStateTest, RepetitionStateConstructor)
                     {
-                        const SdServerState cPreviousState =
-                            SdServerState::InitialWaitPhase;
-                        const SdServerState cExpectedState =
-                            SdServerState::RepetitionPhase;
-                        const SdServerState cNextState =
-                            SdServerState::MainPhase;
-                        const SdServerState cStoppedState =
-                            SdServerState::NotReady;
+                        const helper::SdServerState cPreviousState =
+                            helper::SdServerState::InitialWaitPhase;
+                        const helper::SdServerState cExpectedState =
+                            helper::SdServerState::RepetitionPhase;
+                        const helper::SdServerState cNextState =
+                            helper::SdServerState::MainPhase;
+                        const helper::SdServerState cStoppedState =
+                            helper::SdServerState::NotReady;
                         const int cRepetitionsMax = 2;
                         const int cRepetitionsBaseDelay = 100;
                         uint32_t _counter = 0;
@@ -83,7 +83,7 @@ namespace ara
                             ++_counter;
                         };
 
-                        RepetitionState<SdServerState> _machineState(
+                        RepetitionState<helper::SdServerState> _machineState(
                             cExpectedState,
                             cNextState,
                             cStoppedState,
@@ -91,7 +91,7 @@ namespace ara
                             cRepetitionsMax,
                             cRepetitionsBaseDelay);
 
-                        SdServerState _actualState = _machineState.GetState();
+                        helper::SdServerState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
 
@@ -106,10 +106,10 @@ namespace ara
 
                     TEST(MachineStateTest, MainStateConstructor)
                     {
-                        const SdServerState cPreviousState =
-                            SdServerState::RepetitionPhase;
-                        const SdServerState cExpectedState =
-                            SdServerState::MainPhase;
+                        const helper::SdServerState cPreviousState =
+                            helper::SdServerState::RepetitionPhase;
+                        const helper::SdServerState cExpectedState =
+                            helper::SdServerState::MainPhase;
                         const int cCyclicOfferDelay = 100;
                         const auto cOnTimerExpired = []()
                         {
@@ -118,7 +118,7 @@ namespace ara
 
                         MainState _machineState(cOnTimerExpired, cCyclicOfferDelay);
 
-                        SdServerState _actualState = _machineState.GetState();
+                        helper::SdServerState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
 

@@ -10,22 +10,22 @@ namespace ara
             {
                 namespace fsm
                 {
-                    NotReadyState::NotReadyState() noexcept : helper::MachineState<SdServerState>(
-                                                                  SdServerState::NotReady)
+                    NotReadyState::NotReadyState() noexcept : helper::MachineState<helper::SdServerState>(
+                                                                  helper::SdServerState::NotReady)
                     {
                     }
 
-                    void NotReadyState::Activate(SdServerState previousState)
+                    void NotReadyState::Activate(helper::SdServerState previousState)
                     {
                         // Nothing to do on activation.
                     }
 
                     void NotReadyState::ServiceActivated()
                     {
-                        Transit(SdServerState::InitialWaitPhase);
+                        Transit(helper::SdServerState::InitialWaitPhase);
                     }
 
-                    void NotReadyState::Deactivate(SdServerState nextState)
+                    void NotReadyState::Deactivate(helper::SdServerState nextState)
                     {
                         // Nothing to do on deactivation.
                     }

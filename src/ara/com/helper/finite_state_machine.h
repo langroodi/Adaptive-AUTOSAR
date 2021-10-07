@@ -19,12 +19,13 @@ namespace ara
             class FiniteStateMachine
             {
             private:
-                std::map<T, MachineState> mStates;
+                std::map<T, MachineState<T> *> mStates;
+                T mCurrentState;
 
                 void transit(T previousState, T nextState)
                 {
-                    MachineState _nextMachineState = mStates.at(nextState);
-                    _nextMachineState.Activate(previousState);
+                    auto _nextMachineState = mStates.at(nextState);
+                    _nextMachineState->Activate(previousState);
                 }
 
             public:
@@ -32,7 +33,7 @@ namespace ara
                 /// @param states Machine state list
                 /// @param entrypoint Entrypoint state to initialize the FSM
                 FiniteStateMachine(
-                    std::initializer_list<MachineState &> states, T entrypoint)
+                    std::initializer_list<MachineState<T> *> states, T entrypoint)
                 {
                     auto _callback =
                         std::bind(
@@ -43,19 +44,26 @@ namespace ara
 
                     for (auto state : states)
                     {
-                        mStates.insert(state.GetState(), state);
-                        state.SetTransitionCallback(_callback);
+                        mStates.insert(state->GetState(), state);
+                        state->SetTransitionCallback(_callback);
                     }
 
-                    MachineState _initialState = mStates.at(entrypoint);
+                    auto _initialState = mStates.at(entrypoint);
                     // At entrypoint the previous state and the next state are the same.
-                    _initialState.Activate(entrypoint);
+                    _initialState->Activate(entrypoint);
                 }
 
                 FiniteStateMachine() = delete;
                 ~FiniteStateMachine() = default;
                 FiniteStateMachine(const FiniteStateMachine &) = delete;
                 FiniteStateMachine &operator=(const FiniteStateMachine &) = delete;
+
+                /// @brief Get the FSM current state
+                /// @returns Current state enumeration
+                T GetState() const noexcept
+                {
+                    return mCurrentState;
+                }
             };
         }
     }

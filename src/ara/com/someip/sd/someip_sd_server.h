@@ -3,7 +3,12 @@
 
 #include <queue>
 #include "../../helper/ipv4_address.h"
+#include "../../helper/finite_state_machine.h"
 #include "./someip_sd_message.h"
+#include "./fsm/notready_state.h"
+#include "./fsm/initial_wait_state.h"
+#include "./fsm/repetition_state.h"
+#include "./fsm/main_state.h"
 
 namespace ara
 {
@@ -13,21 +18,12 @@ namespace ara
         {
             namespace sd
             {
-                /// @brief Service discovery server machine state
-                enum class SdServerState
-                {
-                    NotReady,         ///!< Server's service is down
-                    InitialWaitPhase, ///!< Server's service is in initial waiting phase
-                    RepetitionPhase,  ///!< Server's service is in repetition phase
-                    MainPhase         ///!< Server's service is in main phase
-                };
-
                 /// @brief SOME/IP service discovery server
                 class SomeIpSdServer
                 {
                 private:
                     static const uint16_t cDefaultSdPort = 30490;
-                    static const SdServerState cInitialState = SdServerState::NotReady;
+                    static const helper::SdServerState cInitialState = helper::SdServerState::NotReady;
 
                     const uint16_t mServiceId;
                     const uint16_t mInstanceId;
@@ -35,15 +31,14 @@ namespace ara
                     const uint32_t mMinorVersion;
                     const helper::Ipv4Address mSdIpAddress;
                     const uint16_t mSdPort;
-                    SdServerState mState;
-                    bool mServiceAvailable;
-                    bool mLinkAvailable;
-                    const int mInitialDelayMin;
-                    const int mInitialDelayMax;
-                    const int mRepetitionBaseDelay;
-                    const int mCycleOfferDelay;
-                    uint32_t mRepetitionCounter;
                     std::queue<SomeIpSdMessage> mMessageBuffer;
+                    helper::FiniteStateMachine<helper::SdServerState> mFiniteStateMachine;
+                    fsm::NotReadyState mNotReadyState;
+                    fsm::InitialWaitState<helper::SdServerState> mInitialWaitState;
+                    fsm::RepetitionState<helper::SdServerState> mRepetitionState;
+                    fsm::MainState mMainState;
+
+                    void sendOffer();
 
                 public:
                     SomeIpSdServer() = delete;

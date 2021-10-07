@@ -1,7 +1,6 @@
 #ifndef MAIN_STATE_H
 #define MAIN_STATE_H
 
-#include "../someip_sd_server.h"
 #include "./timer_set_state.h"
 
 namespace ara
@@ -16,7 +15,7 @@ namespace ara
                 {
                     /// @brief Server's main state
                     /// @note The state is not copyable
-                    class MainState : public TimerSetState<SdServerState>
+                    class MainState : public TimerSetState<helper::SdServerState>
                     {
                     private:
                         const std::chrono::milliseconds mCyclicOfferDelay;
@@ -24,7 +23,7 @@ namespace ara
                     protected:
                         void SetTimer() override;
 
-                        void Deactivate(SdServerState nextState) override;
+                        void Deactivate(helper::SdServerState nextState) override;
 
                     public:
                         /// @brief Constructor
