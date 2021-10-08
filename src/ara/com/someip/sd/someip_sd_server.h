@@ -23,7 +23,6 @@ namespace ara
                 {
                 private:
                     static const uint16_t cDefaultSdPort = 30490;
-                    static const helper::SdServerState cInitialState = helper::SdServerState::NotReady;
 
                     const uint16_t mServiceId;
                     const uint16_t mInstanceId;

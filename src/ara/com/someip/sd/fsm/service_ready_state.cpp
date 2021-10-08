@@ -11,7 +11,7 @@ namespace ara
                 namespace fsm
                 {
                     ServiceReadyState::ServiceReadyState(
-                        helper::TtlTimer *ttlTimer) noexcept : ClientServiceState(SdClientState::ServiceReady,
+                        helper::TtlTimer *ttlTimer) noexcept : ClientServiceState(helper::SdClientState::ServiceReady,
                                                                                   ttlTimer)
 
                     {
@@ -19,10 +19,10 @@ namespace ara
 
                     void ServiceReadyState::onTimerExpired()
                     {
-                        Transit(SdClientState::InitialWaitPhase);
+                        Transit(helper::SdClientState::InitialWaitPhase);
                     }
 
-                    void ServiceReadyState::Activate(SdClientState previousState)
+                    void ServiceReadyState::Activate(helper::SdClientState previousState)
                     {
                         auto _callback =
                             std::bind(&ServiceReadyState::onTimerExpired, this);
@@ -31,7 +31,7 @@ namespace ara
 
                     void ServiceReadyState::ServiceNotRequested()
                     {
-                        Transit(SdClientState::ServiceSeen);
+                        Transit(helper::SdClientState::ServiceSeen);
                     }
 
                     void ServiceReadyState::ServiceOffered(uint32_t ttl)
@@ -42,10 +42,10 @@ namespace ara
                     void ServiceReadyState::ServiceStopped()
                     {
                         Timer->Cancel();
-                        Transit(SdClientState::Stopped);
+                        Transit(helper::SdClientState::Stopped);
                     }
 
-                    void ServiceReadyState::Deactivate(SdClientState nextState)
+                    void ServiceReadyState::Deactivate(helper::SdClientState nextState)
                     {
                         Timer->ResetExpirationCallback();
                     }

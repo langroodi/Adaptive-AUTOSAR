@@ -29,16 +29,16 @@ namespace ara
                                              mSdPort{sdPort},
                                              mNotReadyState(),
                                              mInitialWaitState(
-                                                 SdServerState::InitialWaitPhase,
-                                                 SdServerState::RepetitionPhase,
-                                                 SdServerState::NotReady,
+                                                 helper::SdServerState::InitialWaitPhase,
+                                                 helper::SdServerState::RepetitionPhase,
+                                                 helper::SdServerState::NotReady,
                                                  std::bind(SomeIpSdServer::sendOffer, this),
                                                  initialDelayMin,
                                                  initialDelayMax),
                                              mRepetitionState(
-                                                 SdServerState::RepetitionPhase,
-                                                 SdServerState::MainPhase,
-                                                 SdServerState::NotReady,
+                                                 helper::SdServerState::RepetitionPhase,
+                                                 helper::SdServerState::MainPhase,
+                                                 helper::SdServerState::NotReady,
                                                  std::bind(SomeIpSdServer::sendOffer, this),
                                                  repetitionMax,
                                                  repetitionBaseDelay),
@@ -46,8 +46,11 @@ namespace ara
                                                  std::bind(SomeIpSdServer::sendOffer, this),
                                                  cycleOfferDelay),
                                              mFiniteStateMachine(
-                                                 {&mNotReadyState, &mInitialWaitState, &mRepetitionState, &mMainState},
-                                                 serviceAvailable ? SdServerState::InitialWaitPhase : SdServerState::NotReady)
+                                                 {&mNotReadyState,
+                                                  &mInitialWaitState,
+                                                  &mRepetitionState,
+                                                  &mMainState},
+                                                 serviceAvailable ? helper::SdServerState::InitialWaitPhase : helper::SdServerState::NotReady)
 
                 {
                     if (repetitionBaseDelay < 0)
@@ -78,9 +81,9 @@ namespace ara
 
                 void SomeIpSdServer::SetServiceAvailability(bool available) noexcept
                 {
-                    SdServerState _state = mFiniteStateMachine.GetState();
+                    helper::SdServerState _state = mFiniteStateMachine.GetState();
 
-                    if (available && _state == SdServerState::NotReady)
+                    if (available && _state == helper::SdServerState::NotReady)
                     {
                         mNotReadyState.ServiceActivated();
                     }
@@ -88,14 +91,14 @@ namespace ara
                     {
                         switch (_state)
                         {
-                        case SdServerState::InitialWaitPhase:
+                        case helper::SdServerState::InitialWaitPhase:
                             mInitialWaitState.ServiceStopped();
                             break;
-                        case SdServerState::RepetitionPhase:
+                        case helper::SdServerState::RepetitionPhase:
                             mRepetitionState.ServiceStopped();
                             break;
 
-                        case SdServerState::MainPhase:
+                        case helper::SdServerState::MainPhase:
                             mMainState.ServiceStopped();
                             break;
                         }

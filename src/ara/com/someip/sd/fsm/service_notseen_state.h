@@ -19,7 +19,7 @@ namespace ara
                     class ServiceNotseenState : public ClientServiceState
                     {
                     protected:
-                        void Deactivate(SdClientState nextState) override;
+                        void Deactivate(helper::SdClientState nextState) override;
 
                     public:
                         /// @brief Constructor
@@ -30,7 +30,7 @@ namespace ara
                         ServiceNotseenState(const ServiceNotseenState &) = delete;
                         ServiceNotseenState &operator=(const ServiceNotseenState &) = delete;
 
-                        void Activate(SdClientState previousState) override;
+                        void Activate(helper::SdClientState previousState) override;
 
                         /// @brief Inform the state that the client's service is requested
                         void ServiceRequested();

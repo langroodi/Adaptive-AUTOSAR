@@ -2,6 +2,14 @@
 #define SOMEIP_SD_CLIENT
 
 #include "../../helper/ipv4_address.h"
+#include "../../helper/ttl_timer.h"
+#include "../../helper/finite_state_machine.h"
+#include "./fsm/service_notseen_state.h"
+#include "./fsm/service_seen_state.h"
+#include "./fsm/initial_wait_state.h"
+#include "./fsm/repetition_state.h"
+#include "./fsm/service_ready_state.h"
+#include "./fsm/stopped_state.h"
 
 namespace ara
 {
@@ -11,33 +19,25 @@ namespace ara
         {
             namespace sd
             {
-                /// @brief Service discovery client machine state
-                enum class SdClientState
-                {
-                    ServiceNotSeen,       ///!< Service is not requested and not seen
-                    ServiceSeen,          ///!< Service is not requsted, but seen
-                    ServiceReady,         ///!< Service is ready
-                    Stopped,              ///!< Service is stopped
-                    InitialWaitPhase,     ///!< Client service is in initial waiting phase
-                    RepetitionPhase,      ///!< Client service is in repetition phase
-                };
-
                 /// @brief SOME/IP service discovery client
                 class SomeIpSdClient
                 {
                 private:
                     static const uint16_t cDefaultSdPort = 30490;
-                    static const SdClientState cInitialState = SdClientState::ServiceNotSeen;
 
                     const helper::Ipv4Address mSdIpAddress;
                     const uint16_t mSdPort;
-                    SdClientState mState;
-                    bool mLinkAvailable;
-                    const int mInitialDelayMin;
-                    const int mInitialDelayMax;
-                    const int mRepetitionBaseDelay;
-                    uint32_t mRepetitionCounter;
-                    bool mServiceRequested;
+
+                    helper::TtlTimer mTtlTimer;
+                    fsm::ServiceNotseenState mServiceNotseenState;
+                    fsm::ServiceSeenState mServiceSeenState;
+                    fsm::InitialWaitState<helper::SdClientState> mInitialWaitState;
+                    fsm::RepetitionState<helper::SdClientState> mRepetitionState;
+                    fsm::ServiceReadyState mServiceReadyState;
+                    fsm::StoppedState mStoppedState;
+                    helper::FiniteStateMachine<helper::SdClientState> mFiniteStateMachine;
+
+                    void sendFind();
 
                 public:
                     SomeIpSdClient() = delete;

@@ -3,7 +3,6 @@
 
 #include "../../../helper/machine_state.h"
 #include "../../../helper/ttl_timer.h"
-#include "../someip_sd_client.h"
 
 namespace ara
 {
@@ -18,7 +17,7 @@ namespace ara
                     /// @brief Abstract client's service state
                     /// @details The class forces its children to react on service offering.
                     /// @note The state is not copyable
-                    class ClientServiceState : public helper::MachineState<SdClientState>
+                    class ClientServiceState : public helper::MachineState<helper::SdClientState>
                     {
                     protected:
                         /// @brief Timer to handle service offer entry TTL
@@ -29,8 +28,8 @@ namespace ara
                         /// @param state Current client state
                         /// @param timer Finite machine state global TTL timer pointer
                         ClientServiceState(
-                            SdClientState state,
-                            helper::TtlTimer *timer) : helper::MachineState<SdClientState>(state),
+                            helper::SdClientState state,
+                            helper::TtlTimer *timer) : helper::MachineState<helper::SdClientState>(state),
                                                        Timer{timer}
                         {
                         }

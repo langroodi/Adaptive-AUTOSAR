@@ -21,7 +21,7 @@ namespace ara
                         void onTimerExpired();
 
                     protected:
-                        void Deactivate(SdClientState nextState) override;
+                        void Deactivate(helper::SdClientState nextState) override;
 
                     public:
                         /// @brief Constructor
@@ -33,7 +33,7 @@ namespace ara
                         ServiceSeenState &operator=(const ServiceSeenState &) = delete;
                         ~ServiceSeenState() override;
 
-                        void Activate(SdClientState previousState) override;
+                        void Activate(helper::SdClientState previousState) override;
 
                         /// @brief Inform the state that the client's service is requested
                         void ServiceRequested();

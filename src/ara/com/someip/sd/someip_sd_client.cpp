@@ -18,12 +18,33 @@ namespace ara
                     uint16_t sdPort,
                     bool serviceRequested) : mSdIpAddress{sdIpAddress},
                                              mSdPort{sdPort},
-                                             mState{cInitialState},
-                                             mInitialDelayMin{initialDelayMin},
-                                             mInitialDelayMax{initialDelayMax},
-                                             mRepetitionBaseDelay{repetitionBaseDelay},
-                                             mRepetitionCounter{repetitionMax},
-                                             mServiceRequested{serviceRequested}
+                                             mTtlTimer(),
+                                             mServiceNotseenState(&mTtlTimer),
+                                             mServiceSeenState(&mTtlTimer),
+                                             mInitialWaitState(
+                                                 helper::SdClientState::InitialWaitPhase,
+                                                 helper::SdClientState::RepetitionPhase,
+                                                 helper::SdClientState::Stopped,
+                                                 std::bind(SomeIpSdClient::sendFind, this),
+                                                 initialDelayMin,
+                                                 initialDelayMax),
+                                             mRepetitionState(
+                                                 helper::SdClientState::RepetitionPhase,
+                                                 helper::SdClientState::Stopped,
+                                                 helper::SdClientState::Stopped,
+                                                 std::bind(SomeIpSdClient::sendFind, this),
+                                                 repetitionMax,
+                                                 repetitionBaseDelay),
+                                             mServiceReadyState(&mTtlTimer),
+                                             mStoppedState(&mTtlTimer),
+                                             mFiniteStateMachine(
+                                                 {&mServiceNotseenState,
+                                                  &mServiceSeenState,
+                                                  &mInitialWaitState,
+                                                  &mRepetitionState,
+                                                  &mServiceReadyState,
+                                                  &mStoppedState},
+                                                 serviceRequested ? helper::SdClientState::InitialWaitPhase : helper::SdClientState::ServiceNotSeen)
                 {
                     if ((initialDelayMin < 0) ||
                         (initialDelayMax < 0) ||
@@ -34,9 +55,43 @@ namespace ara
                     }
                 }
 
+                void SomeIpSdClient::sendFind()
+                {
+                    /// @todo Link with the network abstraction layer
+                }
+
                 void SomeIpSdClient::RequestService(bool requested) noexcept
                 {
-                    mServiceRequested = requested;
+                    helper::SdClientState _state = mFiniteStateMachine.GetState();
+
+                    if (requested)
+                    {
+                        switch (_state)
+                        {
+                        case helper::SdClientState::ServiceNotSeen:
+                            mServiceNotseenState.ServiceRequested();
+                            break;
+                        case helper::SdClientState::ServiceSeen:
+                            mServiceSeenState.ServiceRequested();
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        switch (_state)
+                        {
+                        case helper::SdClientState::InitialWaitPhase:
+                        case helper::SdClientState::RepetitionPhase:
+                            mTtlTimer.Cancel();
+                            break;
+                        case helper::SdClientState::ServiceReady:
+                            mServiceReadyState.ServiceNotRequested();
+                            break;
+                        case helper::SdClientState::Stopped:
+                            mStoppedState.ServiceNotRequested();
+                            break;
+                        }
+                    }
                 }
             }
         }

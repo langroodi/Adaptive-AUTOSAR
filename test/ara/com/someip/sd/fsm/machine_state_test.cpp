@@ -133,48 +133,48 @@ namespace ara
 
                     TEST(MachineStateTest, StoppedStateConstructor)
                     {
-                        const SdClientState cExpectedState =
-                            SdClientState::Stopped;
+                        const helper::SdClientState cExpectedState =
+                            helper::SdClientState::Stopped;
 
                         helper::TtlTimer _ttlTimer;
                         StoppedState _machineState(&_ttlTimer);
-                        SdClientState _actualState = _machineState.GetState();
+                        helper::SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
                     }
 
                     TEST(MachineStateTest, ServiceNotseenStateConstructor)
                     {
-                        const SdClientState cExpectedState =
-                            SdClientState::ServiceNotSeen;
+                        const helper::SdClientState cExpectedState =
+                            helper::SdClientState::ServiceNotSeen;
 
                         helper::TtlTimer _ttlTimer;
                         ServiceNotseenState _machineState(&_ttlTimer);
-                        SdClientState _actualState = _machineState.GetState();
+                        helper::SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
                     }
 
                     TEST(MachineStateTest, ServiceReadyStateConstructor)
                     {
-                        const SdClientState cExpectedState =
-                            SdClientState::ServiceReady;
+                        const helper::SdClientState cExpectedState =
+                            helper::SdClientState::ServiceReady;
 
                         helper::TtlTimer _ttlTimer;
                         ServiceReadyState _machineState(&_ttlTimer);
-                        SdClientState _actualState = _machineState.GetState();
+                        helper::SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
                     }
 
                     TEST(MachineStateTest, ServiceSeenStateConstructor)
                     {
-                        const SdClientState cExpectedState =
-                            SdClientState::ServiceSeen;
+                        const helper::SdClientState cExpectedState =
+                            helper::SdClientState::ServiceSeen;
 
                         helper::TtlTimer _ttlTimer;
                         ServiceSeenState _machineState(&_ttlTimer);
-                        SdClientState _actualState = _machineState.GetState();
+                        helper::SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
                     }

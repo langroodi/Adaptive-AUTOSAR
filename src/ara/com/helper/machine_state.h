@@ -18,6 +18,17 @@ namespace ara
                 MainPhase         ///!< Server's service is in main phase
             };
 
+            /// @brief Service discovery client machine state
+            enum class SdClientState
+            {
+                ServiceNotSeen,   ///!< Service is not requested and not seen
+                ServiceSeen,      ///!< Service is not requsted, but seen
+                ServiceReady,     ///!< Service is ready
+                Stopped,          ///!< Service is stopped
+                InitialWaitPhase, ///!< Client service is in initial waiting phase
+                RepetitionPhase,  ///!< Client service is in repetition phase
+            };
+
             /// @brief Machine state abstract class
             /// @tparam T State enumeration type
             /// @note A machine state is not copyable
