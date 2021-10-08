@@ -16,15 +16,7 @@ var namespaces_dup =
             [ "fsm", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm" ],
             [ "SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient" ],
             [ "SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage" ],
-            [ "SomeIpSdServer", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer" ],
-            [ "SdClientState", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8b", [
-              [ "ServiceNotSeen", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8ba3f5199c8755bcf0ff99281322ee275ab", null ],
-              [ "ServiceSeen", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8ba504626caffeb7d3df52279c8ab5cb762", null ],
-              [ "ServiceReady", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8bac9a5248c2aa6a434ce1a4da00750feb3", null ],
-              [ "Stopped", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8bac23e2b09ebe6bf4cb5e2a9abe85c0be2", null ],
-              [ "InitialWaitPhase", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8baefaf006a6329e7714acf0931a743c91e", null ],
-              [ "RepetitionPhase", "someip__sd__client_8h.html#a02f0c4e5a0ddce068d1be308ade5ea8ba59bc007205190ff3122bdbd2e9672f77", null ]
-            ] ]
+            [ "SomeIpSdServer", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer" ]
           ] ],
           [ "SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", "classara_1_1com_1_1someip_1_1SomeIpMessage" ],
           [ "SomeIpMessageType", "someip__message_8h.html#a56e989a5238c93367e2216ee95ac0f4c", [

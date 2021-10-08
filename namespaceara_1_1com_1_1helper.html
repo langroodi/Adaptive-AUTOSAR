@@ -128,6 +128,18 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:acf1d9945823fc0d57836df192794405b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service discovery server machine state.  <a href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">More...</a><br /></td></tr>
 <tr class="separator:acf1d9945823fc0d57836df192794405b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa18074d1e734fef153bcb6fab0fd1e20"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20">SdClientState</a> { <br />
+&#160;&#160;<b>ServiceNotSeen</b>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20a504626caffeb7d3df52279c8ab5cb762">ServiceSeen</a>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20ac9a5248c2aa6a434ce1a4da00750feb3">ServiceReady</a>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20ac23e2b09ebe6bf4cb5e2a9abe85c0be2">Stopped</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20aefaf006a6329e7714acf0931a743c91e">InitialWaitPhase</a>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20a59bc007205190ff3122bdbd2e9672f77">RepetitionPhase</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:aa18074d1e734fef153bcb6fab0fd1e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service discovery client machine state.  <a href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20">More...</a><br /></td></tr>
+<tr class="separator:aa18074d1e734fef153bcb6fab0fd1e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -151,6 +163,42 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Helper functions required for communication classes. </p>
 <dl class="section note"><dt>Note</dt><dd>The namespace is not part of the official AUTOSAR standard. </dd></dl>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="aa18074d1e734fef153bcb6fab0fd1e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa18074d1e734fef153bcb6fab0fd1e20">&#9670;&nbsp;</a></span>SdClientState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20">ara::com::helper::SdClientState</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Service discovery client machine state. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa18074d1e734fef153bcb6fab0fd1e20a504626caffeb7d3df52279c8ab5cb762"></a>ServiceSeen&#160;</td><td class="fielddoc"><p>!&lt; Service is not requested and not seen </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa18074d1e734fef153bcb6fab0fd1e20ac9a5248c2aa6a434ce1a4da00750feb3"></a>ServiceReady&#160;</td><td class="fielddoc"><p>!&lt; Service is not requsted, but seen </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa18074d1e734fef153bcb6fab0fd1e20ac23e2b09ebe6bf4cb5e2a9abe85c0be2"></a>Stopped&#160;</td><td class="fielddoc"><p>!&lt; Service is ready </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa18074d1e734fef153bcb6fab0fd1e20aefaf006a6329e7714acf0931a743c91e"></a>InitialWaitPhase&#160;</td><td class="fielddoc"><p>!&lt; Service is stopped </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa18074d1e734fef153bcb6fab0fd1e20a59bc007205190ff3122bdbd2e9672f77"></a>RepetitionPhase&#160;</td><td class="fielddoc"><p>!&lt; Client service is in initial waiting phase </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="acf1d9945823fc0d57836df192794405b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf1d9945823fc0d57836df192794405b">&#9670;&nbsp;</a></span>SdServerState</h2>
 
