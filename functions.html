@@ -249,6 +249,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>GetAppstamp()
 : <a class="el" href="classara_1_1log_1_1sink_1_1LogSink.html#aa6da33849ef0e21005f88c589a01bab2">ara::log::sink::LogSink</a>
 </li>
+<li>GetMachineState()
+: <a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a4bd5c94df4d7a909358e1ace8ee4b0a0">ara::com::helper::FiniteStateMachine&lt; T &gt;</a>
+</li>
 <li>GetNotifier()
 : <a class="el" href="classara_1_1sm_1_1TriggerInOut.html#ae20c774d11c2d841db94a5b95283ae54">ara::sm::TriggerInOut&lt; T &gt;</a>
 , <a class="el" href="classara_1_1sm_1_1TriggerOut.html#a77f40a6958a9c4c5aed61b553ef8d743">ara::sm::TriggerOut&lt; T &gt;</a>
@@ -435,9 +438,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>RepetitionState()
 : <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html#a5fc523556d2288532690afdfb886c7dd">ara::com::someip::sd::fsm::RepetitionState&lt; T &gt;</a>
 </li>
-<li>RequestService()
-: <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a5270fc1e7159d33fda1a309a3d93a533">ara::com::someip::sd::SomeIpSdClient</a>
-</li>
 <li>Reset()
 : <a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4757e83ed69036a40e19a9b71977d83c">ara::com::helper::TtlTimer</a>
 </li>
@@ -505,9 +505,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>SetNextState()
 : <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a9b52a24dbf9936361b4cc3a8aff811bf">ara::com::someip::sd::fsm::TimerSetState&lt; T &gt;</a>
 </li>
-<li>SetServiceAvailability()
-: <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#aa950c0225d02d4f6d6d55f508ab0980f">ara::com::someip::sd::SomeIpSdServer</a>
-</li>
 <li>SetSessionId()
 : <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a0db58f09e156cdf1f3a9017d9b374a33">ara::com::someip::sd::SomeIpSdMessage</a>
 , <a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html#a5eb103e2b70bf1c4f3bd901182a64039">ara::com::someip::SomeIpMessage</a>
@@ -522,7 +519,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html#ac015ee890c18c33df64b8eb4c4b449df">ara::com::helper::MachineState&lt; T &gt;</a>
 </li>
 <li>SomeIpMessage()
-: <a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html#aa14ab945812f522b598becdd6e269400">ara::com::someip::SomeIpMessage</a>
+: <a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html#a2317cf28feab8440e0904f9cc3f95347">ara::com::someip::SomeIpMessage</a>
 </li>
 <li>SomeIpSdClient()
 : <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#af0e3dfd2c80630556b6c3dde6b6cccc9">ara::com::someip::sd::SomeIpSdClient</a>
@@ -531,10 +528,12 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a531a524cef756ee6cc4d4dc449bdb291">ara::com::someip::sd::SomeIpSdServer</a>
 </li>
 <li>Start()
-: <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">ara::com::someip::sd::SomeIpSdServer</a>
+: <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a9419e0d8d240f78778c982af3e37524e">ara::com::someip::sd::SomeIpSdClient</a>
+, <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">ara::com::someip::sd::SomeIpSdServer</a>
 </li>
 <li>Stop()
-: <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">ara::com::someip::sd::SomeIpSdServer</a>
+: <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a196d699a6b01f952a12832d8286517e0">ara::com::someip::sd::SomeIpSdClient</a>
+, <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">ara::com::someip::sd::SomeIpSdServer</a>
 </li>
 <li>Stopped
 : <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a781ff450f09a0abe03a45258c3899983">ara::com::someip::sd::fsm::TimerSetState&lt; T &gt;</a>
