@@ -71,16 +71,21 @@ namespace ara
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
-                uint32_t minorVersion) noexcept
+                uint32_t minorVersion,
+                uint32_t ttl)
             {
                 const EntryType cOfferServiceEntry = EntryType::Offering;
-                const uint32_t cOfferServiceTTL = 0xffffff;
+
+                if (ttl == 0)
+                {
+                    throw std::invalid_argument("TTL cannot be zero.");
+                }
 
                 ServiceEntry _result(
                     cOfferServiceEntry,
                     serviceId,
                     instanceId,
-                    cOfferServiceTTL,
+                    ttl,
                     majorVersion,
                     minorVersion);
 

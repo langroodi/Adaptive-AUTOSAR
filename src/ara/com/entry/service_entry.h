@@ -14,6 +14,7 @@ namespace ara
             class ServiceEntry : public Entry
             {
             private:
+                static const uint32_t cInfiniteTtl = 0xffffff;
                 static const uint16_t cAnyInstanceId = 0xffff;
                 static const uint32_t cAnyMinorVersion = 0xffffffff;
 
@@ -48,7 +49,7 @@ namespace ara
                 /// @returns Find service entry
                 static ServiceEntry CreateFindServiceEntry(
                     uint16_t serviceId,
-                    uint32_t ttl,
+                    uint32_t ttl = cInfiniteTtl,
                     uint16_t instanceId = cAnyInstanceId,
                     uint8_t majorVersion = cAnyMajorVersion,
                     uint32_t minorVersion = cAnyMinorVersion);
@@ -63,7 +64,8 @@ namespace ara
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
-                    uint32_t minorVersion) noexcept;
+                    uint32_t minorVersion,
+                    uint32_t ttl = cInfiniteTtl);
 
                 /// @brief Stop offer a service entry factory
                 /// @param serviceId Service in interest ID
