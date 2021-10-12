@@ -107,9 +107,9 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1sd_1_1Som
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af0e3dfd2c80630556b6c3dde6b6cccc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#af0e3dfd2c80630556b6c3dde6b6cccc9">SomeIpSdClient</a> (<a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay, uint32_t repetitionMax, uint16_t sdPort=cDefaultSdPort, bool serviceRequested=true)</td></tr>
-<tr class="memdesc:af0e3dfd2c80630556b6c3dde6b6cccc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#af0e3dfd2c80630556b6c3dde6b6cccc9">More...</a><br /></td></tr>
-<tr class="separator:af0e3dfd2c80630556b6c3dde6b6cccc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bd07d46fe9eb6dc3e4ab9a83d6c75e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a1bd07d46fe9eb6dc3e4ab9a83d6c75e3">SomeIpSdClient</a> (uint16_t serviceId, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay, uint32_t repetitionMax, uint16_t sdPort=cDefaultSdPort, bool serviceRequested=true)</td></tr>
+<tr class="memdesc:a1bd07d46fe9eb6dc3e4ab9a83d6c75e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a1bd07d46fe9eb6dc3e4ab9a83d6c75e3">More...</a><br /></td></tr>
+<tr class="separator:a1bd07d46fe9eb6dc3e4ab9a83d6c75e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9419e0d8d240f78778c982af3e37524e"><td class="memItemLeft" align="right" valign="top"><a id="a9419e0d8d240f78778c982af3e37524e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a9419e0d8d240f78778c982af3e37524e">Start</a> ()</td></tr>
 <tr class="memdesc:a9419e0d8d240f78778c982af3e37524e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start requesting the service. <br /></td></tr>
@@ -122,8 +122,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SOME/IP service discovery client. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af0e3dfd2c80630556b6c3dde6b6cccc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0e3dfd2c80630556b6c3dde6b6cccc9">&#9670;&nbsp;</a></span>SomeIpSdClient()</h2>
+<a id="a1bd07d46fe9eb6dc3e4ab9a83d6c75e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bd07d46fe9eb6dc3e4ab9a83d6c75e3">&#9670;&nbsp;</a></span>SomeIpSdClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,6 +131,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">ara::com::someip::sd::SomeIpSdClient::SomeIpSdClient </td>
           <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>serviceId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a>&#160;</td>
           <td class="paramname"><em>sdIpAddress</em>, </td>
         </tr>
@@ -181,6 +187,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">serviceId</td><td>Server's service ID </td></tr>
     <tr><td class="paramname">sdIpAddress</td><td>Service discovery IP Address </td></tr>
     <tr><td class="paramname">initialDelayMin</td><td>Minimum initial delay </td></tr>
     <tr><td class="paramname">initialDelayMax</td><td>Maximum initial delay </td></tr>
