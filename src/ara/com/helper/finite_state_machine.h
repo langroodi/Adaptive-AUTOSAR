@@ -26,6 +26,7 @@ namespace ara
                 {
                     auto _nextMachineState = mStates.at(nextState);
                     _nextMachineState->Activate(previousState);
+                    mCurrentState = nextState;
                 }
 
             public:
@@ -51,6 +52,7 @@ namespace ara
                     auto _initialState = mStates.at(entrypoint);
                     // At entrypoint the previous state and the next state are the same.
                     _initialState->Activate(entrypoint);
+                    mCurrentState = entrypoint;
                 }
 
                 FiniteStateMachine() = delete;
@@ -63,6 +65,13 @@ namespace ara
                 T GetState() const noexcept
                 {
                     return mCurrentState;
+                }
+
+                /// @brief Get the current machine state object
+                /// @returns Machine state object pointer
+                MachineState<T> *GetMachineState() const
+                {
+                    return mStates.at(mCurrentState);
                 }
             };
         }

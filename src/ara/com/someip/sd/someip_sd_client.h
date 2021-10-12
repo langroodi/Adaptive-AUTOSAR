@@ -38,6 +38,8 @@ namespace ara
                     helper::FiniteStateMachine<helper::SdClientState> mFiniteStateMachine;
 
                     void sendFind();
+                    void onServiceOffered(uint32_t ttl);
+                    void onServiceOfferStopped();
 
                 public:
                     SomeIpSdClient() = delete;
@@ -60,9 +62,11 @@ namespace ara
                         uint16_t sdPort = cDefaultSdPort,
                         bool serviceRequested = true);
 
-                    /// @brief Determine whether the service is requested or not
-                    /// @param requested True, to request the service, and false to stop requesting
-                    void RequestService(bool requested) noexcept;
+                    /// @brief Start requesting the service
+                    void Start();
+
+                    /// @brief Stop requesting the service
+                    void Stop();
                 };
             }
         }

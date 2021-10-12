@@ -79,29 +79,31 @@ namespace ara
                     /// @todo Link with the network abstraction layer
                 }
 
-                void SomeIpSdServer::SetServiceAvailability(bool available) noexcept
+                void SomeIpSdServer::Start()
                 {
                     helper::SdServerState _state = mFiniteStateMachine.GetState();
 
-                    if (available && _state == helper::SdServerState::NotReady)
+                    if (_state == helper::SdServerState::NotReady)
                     {
                         mNotReadyState.ServiceActivated();
                     }
-                    else if (!available)
-                    {
-                        switch (_state)
-                        {
-                        case helper::SdServerState::InitialWaitPhase:
-                            mInitialWaitState.ServiceStopped();
-                            break;
-                        case helper::SdServerState::RepetitionPhase:
-                            mRepetitionState.ServiceStopped();
-                            break;
+                }
 
-                        case helper::SdServerState::MainPhase:
-                            mMainState.ServiceStopped();
-                            break;
-                        }
+                void SomeIpSdServer::Stop()
+                {
+                    helper::SdServerState _state = mFiniteStateMachine.GetState();
+
+                    switch (_state)
+                    {
+                    case helper::SdServerState::InitialWaitPhase:
+                        mInitialWaitState.ServiceStopped();
+                        break;
+                    case helper::SdServerState::RepetitionPhase:
+                        mRepetitionState.ServiceStopped();
+                        break;
+                    case helper::SdServerState::MainPhase:
+                        mMainState.ServiceStopped();
+                        break;
                     }
                 }
             }

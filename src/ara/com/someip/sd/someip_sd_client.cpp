@@ -60,37 +60,63 @@ namespace ara
                     /// @todo Link with the network abstraction layer
                 }
 
-                void SomeIpSdClient::RequestService(bool requested) noexcept
+                void SomeIpSdClient::onServiceOffered(uint32_t ttl)
+                {
+                    auto _machineState = mFiniteStateMachine.GetMachineState();
+                    auto _clientServiceState =
+                        dynamic_cast<fsm::ClientServiceState *>(_machineState);
+
+                    _clientServiceState->ServiceOffered(ttl);
+                }
+
+                void SomeIpSdClient::onServiceOfferStopped()
                 {
                     helper::SdClientState _state = mFiniteStateMachine.GetState();
 
-                    if (requested)
+                    switch (_state)
                     {
-                        switch (_state)
-                        {
-                        case helper::SdClientState::ServiceNotSeen:
-                            mServiceNotseenState.ServiceRequested();
-                            break;
-                        case helper::SdClientState::ServiceSeen:
-                            mServiceSeenState.ServiceRequested();
-                            break;
-                        }
+                    case helper::SdClientState::ServiceSeen:
+                        mServiceSeenState.ServiceStopped();
+                        break;
+                    case helper::SdClientState::ServiceReady:
+                        mServiceReadyState.ServiceStopped();
+                        break;
+                    case helper::SdClientState::RepetitionPhase:
+                        mServiceReadyState.ServiceStopped();
+                        break;
                     }
-                    else
+                }
+
+                void SomeIpSdClient::Start()
+                {
+                    helper::SdClientState _state = mFiniteStateMachine.GetState();
+
+                    switch (_state)
                     {
-                        switch (_state)
-                        {
-                        case helper::SdClientState::InitialWaitPhase:
-                        case helper::SdClientState::RepetitionPhase:
-                            mTtlTimer.Cancel();
-                            break;
-                        case helper::SdClientState::ServiceReady:
-                            mServiceReadyState.ServiceNotRequested();
-                            break;
-                        case helper::SdClientState::Stopped:
-                            mStoppedState.ServiceNotRequested();
-                            break;
-                        }
+                    case helper::SdClientState::ServiceNotSeen:
+                        mServiceNotseenState.ServiceRequested();
+                        break;
+                    case helper::SdClientState::ServiceSeen:
+                        mServiceSeenState.ServiceRequested();
+                        break;
+                    }
+                }
+
+                void SomeIpSdClient::Stop()
+                {
+                    helper::SdClientState _state = mFiniteStateMachine.GetState();
+                    switch (_state)
+                    {
+                    case helper::SdClientState::InitialWaitPhase:
+                    case helper::SdClientState::RepetitionPhase:
+                        mTtlTimer.Cancel();
+                        break;
+                    case helper::SdClientState::ServiceReady:
+                        mServiceReadyState.ServiceNotRequested();
+                        break;
+                    case helper::SdClientState::Stopped:
+                        mStoppedState.ServiceNotRequested();
+                        break;
                     }
                 }
             }

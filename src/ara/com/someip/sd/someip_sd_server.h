@@ -75,10 +75,6 @@ namespace ara
 
                     /// @brief Stop the service discovery server
                     void Stop();
-
-                    /// @brief Set the service availability
-                    /// @param available Indicates whether the service is available or not
-                    void SetServiceAvailability(bool available) noexcept;
                 };
             }
         }
