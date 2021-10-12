@@ -25,6 +25,7 @@ namespace ara
                 private:
                     static const uint16_t cDefaultSdPort = 30490;
 
+                    const uint16_t mServiceId;
                     const helper::Ipv4Address mSdIpAddress;
                     const uint16_t mSdPort;
 
@@ -46,6 +47,7 @@ namespace ara
                     ~SomeIpSdClient() noexcept = default;
 
                     /// @brief Constructor
+                    /// @param serviceId Server's service ID
                     /// @param sdIpAddress Service discovery IP Address
                     /// @param initialDelayMin Minimum initial delay
                     /// @param initialDelayMax Maximum initial delay
@@ -54,6 +56,7 @@ namespace ara
                     /// @param sdPort Service discovery port number
                     /// @param serviceRequested Indicates whether the service is requested right after construction or not
                     SomeIpSdClient(
+                        uint16_t serviceId,
                         helper::Ipv4Address sdIpAddress,
                         int initialDelayMin,
                         int initialDelayMax,

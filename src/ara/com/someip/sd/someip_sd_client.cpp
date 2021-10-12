@@ -10,13 +10,15 @@ namespace ara
             namespace sd
             {
                 SomeIpSdClient::SomeIpSdClient(
+                    uint16_t serviceId,
                     helper::Ipv4Address sdIpAddress,
                     int initialDelayMin,
                     int initialDelayMax,
                     int repetitionBaseDelay,
                     uint32_t repetitionMax,
                     uint16_t sdPort,
-                    bool serviceRequested) : mSdIpAddress{sdIpAddress},
+                    bool serviceRequested) : mServiceId{serviceId},
+                                             mSdIpAddress{sdIpAddress},
                                              mSdPort{sdPort},
                                              mTtlTimer(),
                                              mServiceNotseenState(&mTtlTimer),
