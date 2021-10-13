@@ -17,8 +17,7 @@ namespace ara
                     int repetitionBaseDelay,
                     uint32_t repetitionMax,
                     uint16_t sdPort,
-                    bool serviceRequested) : mServiceId{serviceId},
-                                             mSdIpAddress{sdIpAddress},
+                    bool serviceRequested) : mSdIpAddress{sdIpAddress},
                                              mSdPort{sdPort},
                                              mTtlTimer(),
                                              mServiceNotseenState(&mTtlTimer),
@@ -46,7 +45,8 @@ namespace ara
                                                   &mRepetitionState,
                                                   &mServiceReadyState,
                                                   &mStoppedState},
-                                                 serviceRequested ? helper::SdClientState::InitialWaitPhase : helper::SdClientState::ServiceNotSeen)
+                                                 serviceRequested ? helper::SdClientState::InitialWaitPhase : helper::SdClientState::ServiceNotSeen),
+                                             mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)}
                 {
                     if ((initialDelayMin < 0) ||
                         (initialDelayMax < 0) ||
@@ -55,10 +55,14 @@ namespace ara
                         throw std::invalid_argument(
                             "Invalid initial delay minimum and/or maximum.");
                     }
+
+                    mSdMessage.AddEntry(&mFindServiceEntry);
                 }
 
                 void SomeIpSdClient::sendFind()
                 {
+
+                    mSdMessage.IncrementSessionId();
                     /// @todo Link with the network abstraction layer
                 }
 

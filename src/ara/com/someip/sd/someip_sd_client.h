@@ -4,12 +4,14 @@
 #include "../../helper/ipv4_address.h"
 #include "../../helper/ttl_timer.h"
 #include "../../helper/finite_state_machine.h"
+#include "../../entry/service_entry.h"
 #include "./fsm/service_notseen_state.h"
 #include "./fsm/service_seen_state.h"
 #include "./fsm/initial_wait_state.h"
 #include "./fsm/repetition_state.h"
 #include "./fsm/service_ready_state.h"
 #include "./fsm/stopped_state.h"
+#include "./someip_sd_message.h"
 
 namespace ara
 {
@@ -25,7 +27,6 @@ namespace ara
                 private:
                     static const uint16_t cDefaultSdPort = 30490;
 
-                    const uint16_t mServiceId;
                     const helper::Ipv4Address mSdIpAddress;
                     const uint16_t mSdPort;
 
@@ -37,6 +38,8 @@ namespace ara
                     fsm::ServiceReadyState mServiceReadyState;
                     fsm::StoppedState mStoppedState;
                     helper::FiniteStateMachine<helper::SdClientState> mFiniteStateMachine;
+                    entry::ServiceEntry mFindServiceEntry;
+                    SomeIpSdMessage mSdMessage;
 
                     void sendFind();
                     void onServiceOffered(uint32_t ttl);
