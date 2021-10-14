@@ -39,7 +39,7 @@ namespace ara
                     fsm::StoppedState mStoppedState;
                     helper::FiniteStateMachine<helper::SdClientState> mFiniteStateMachine;
                     entry::ServiceEntry mFindServiceEntry;
-                    SomeIpSdMessage mSdMessage;
+                    SomeIpSdMessage mFindServieMessage;
 
                     void sendFind();
                     void onServiceOffered(uint32_t ttl);

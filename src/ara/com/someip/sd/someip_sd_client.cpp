@@ -56,13 +56,12 @@ namespace ara
                             "Invalid initial delay minimum and/or maximum.");
                     }
 
-                    mSdMessage.AddEntry(&mFindServiceEntry);
+                    mFindServieMessage.AddEntry(&mFindServiceEntry);
                 }
 
                 void SomeIpSdClient::sendFind()
                 {
-
-                    mSdMessage.IncrementSessionId();
+                    mFindServieMessage.IncrementSessionId();
                     /// @todo Link with the network abstraction layer
                 }
 

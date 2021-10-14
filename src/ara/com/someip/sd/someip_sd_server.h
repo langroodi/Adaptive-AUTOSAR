@@ -4,11 +4,13 @@
 #include <queue>
 #include "../../helper/ipv4_address.h"
 #include "../../helper/finite_state_machine.h"
-#include "./someip_sd_message.h"
+#include "../../entry/service_entry.h"
+#include "../../option/ipv4_endpoint_option.h"
 #include "./fsm/notready_state.h"
 #include "./fsm/initial_wait_state.h"
 #include "./fsm/repetition_state.h"
 #include "./fsm/main_state.h"
+#include "./someip_sd_message.h"
 
 namespace ara
 {
@@ -24,18 +26,20 @@ namespace ara
                 private:
                     static const uint16_t cDefaultSdPort = 30490;
 
-                    const uint16_t mServiceId;
-                    const uint16_t mInstanceId;
-                    const uint8_t mMajorVersion;
-                    const uint32_t mMinorVersion;
                     const helper::Ipv4Address mSdIpAddress;
                     const uint16_t mSdPort;
+
                     std::queue<SomeIpSdMessage> mMessageBuffer;
                     helper::FiniteStateMachine<helper::SdServerState> mFiniteStateMachine;
                     fsm::NotReadyState mNotReadyState;
                     fsm::InitialWaitState<helper::SdServerState> mInitialWaitState;
                     fsm::RepetitionState<helper::SdServerState> mRepetitionState;
                     fsm::MainState mMainState;
+                    SomeIpSdMessage mOfferServiceMessage;
+                    SomeIpSdMessage mStopOfferMessage;
+                    entry::ServiceEntry mOfferServiceEntry;
+                    entry::ServiceEntry mStopOfferEntry;
+                    option::Ipv4EndpointOption mEndpointOption;
 
                     void sendOffer();
 
@@ -49,6 +53,8 @@ namespace ara
                     /// @param majorVersion Service major version
                     /// @param minorVersion Service minor version
                     /// @param sdIpAddress Service discovery IP Address
+                    /// @param ipAddress Service unicast endpoint IP Address
+                    /// @param port Service unicast endpoint TCP port number
                     /// @param initialDelayMin Minimum initial delay
                     /// @param initialDelayMax Maximum initial delay
                     /// @param repetitionBaseDelay Repetition phase delay
@@ -62,6 +68,8 @@ namespace ara
                         uint8_t majorVersion,
                         uint32_t minorVersion,
                         helper::Ipv4Address sdIpAddress,
+                        helper::Ipv4Address ipAddress,
+                        uint16_t port,
                         int initialDelayMin,
                         int initialDelayMax,
                         int repetitionBaseDelay,

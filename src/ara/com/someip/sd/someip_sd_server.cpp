@@ -15,17 +15,15 @@ namespace ara
                     uint8_t majorVersion,
                     uint32_t minorVersion,
                     helper::Ipv4Address sdIpAddress,
+                    helper::Ipv4Address ipAddress,
+                    uint16_t port,
                     int initialDelayMin,
                     int initialDelayMax,
                     int repetitionBaseDelay,
                     int cycleOfferDelay,
                     uint32_t repetitionMax,
                     uint16_t sdPort,
-                    bool serviceAvailable) : mServiceId{serviceId},
-                                             mInstanceId{instanceId},
-                                             mMajorVersion{majorVersion},
-                                             mMinorVersion{minorVersion},
-                                             mSdIpAddress{sdIpAddress},
+                    bool serviceAvailable) : mSdIpAddress{sdIpAddress},
                                              mSdPort{sdPort},
                                              mNotReadyState(),
                                              mInitialWaitState(
@@ -50,7 +48,25 @@ namespace ara
                                                   &mInitialWaitState,
                                                   &mRepetitionState,
                                                   &mMainState},
-                                                 serviceAvailable ? helper::SdServerState::InitialWaitPhase : helper::SdServerState::NotReady)
+                                                 serviceAvailable ? helper::SdServerState::InitialWaitPhase : helper::SdServerState::NotReady),
+                                             mOfferServiceEntry{
+                                                 entry::ServiceEntry::CreateOfferServiceEntry(
+                                                     serviceId,
+                                                     instanceId,
+                                                     majorVersion,
+                                                     minorVersion)},
+                                             mStopOfferEntry{
+                                                 entry::ServiceEntry::CreateStopOfferEntry(
+                                                     serviceId,
+                                                     instanceId,
+                                                     majorVersion,
+                                                     minorVersion)},
+                                             mEndpointOption{
+                                                 option::Ipv4EndpointOption::CreateUnitcastEndpoint(
+                                                     false,
+                                                     ipAddress,
+                                                     option::Layer4ProtocolType::Tcp,
+                                                     port)}
 
                 {
                     if (repetitionBaseDelay < 0)
@@ -72,10 +88,17 @@ namespace ara
                         throw std::invalid_argument(
                             "Invalid initial delay minimum and/or maximum.");
                     }
+
+                    mOfferServiceEntry.AddFirstOption(&mEndpointOption);
+                    mOfferServiceMessage.AddEntry(&mOfferServiceEntry);
+
+                    mStopOfferEntry.AddFirstOption(&mEndpointOption);
+                    mStopOfferMessage.AddEntry(&mStopOfferEntry);
                 }
 
                 void SomeIpSdServer::sendOffer()
                 {
+                    mOfferServiceMessage.IncrementSessionId();
                     /// @todo Link with the network abstraction layer
                 }
 
