@@ -107,9 +107,9 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1sd_1_1Som
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a531a524cef756ee6cc4d4dc449bdb291"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a531a524cef756ee6cc4d4dc449bdb291">SomeIpSdServer</a> (uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint32_t minorVersion, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay, int cycleOfferDelay, uint32_t repetitionMax, uint16_t sdPort=cDefaultSdPort, bool serviceAvailable=true)</td></tr>
-<tr class="memdesc:a531a524cef756ee6cc4d4dc449bdb291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a531a524cef756ee6cc4d4dc449bdb291">More...</a><br /></td></tr>
-<tr class="separator:a531a524cef756ee6cc4d4dc449bdb291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababfafebf37ac6f9356b5586856c8edd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ababfafebf37ac6f9356b5586856c8edd">SomeIpSdServer</a> (uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint32_t minorVersion, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> sdIpAddress, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, uint16_t port, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay, int cycleOfferDelay, uint32_t repetitionMax, uint16_t sdPort=cDefaultSdPort, bool serviceAvailable=true)</td></tr>
+<tr class="memdesc:ababfafebf37ac6f9356b5586856c8edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ababfafebf37ac6f9356b5586856c8edd">More...</a><br /></td></tr>
+<tr class="separator:ababfafebf37ac6f9356b5586856c8edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd61eac61c75a88669af27595fc3b632"><td class="memItemLeft" align="right" valign="top"><a id="abd61eac61c75a88669af27595fc3b632"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">Start</a> ()</td></tr>
 <tr class="memdesc:abd61eac61c75a88669af27595fc3b632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the service discovery server. <br /></td></tr>
@@ -122,8 +122,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SOME/IP service discovery server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a531a524cef756ee6cc4d4dc449bdb291"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a531a524cef756ee6cc4d4dc449bdb291">&#9670;&nbsp;</a></span>SomeIpSdServer()</h2>
+<a id="ababfafebf37ac6f9356b5586856c8edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababfafebf37ac6f9356b5586856c8edd">&#9670;&nbsp;</a></span>SomeIpSdServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,6 +157,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td></td>
           <td class="paramtype"><a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a>&#160;</td>
           <td class="paramname"><em>sdIpAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a>&#160;</td>
+          <td class="paramname"><em>ipAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -216,6 +228,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
     <tr><td class="paramname">majorVersion</td><td>Service major version </td></tr>
     <tr><td class="paramname">minorVersion</td><td>Service minor version </td></tr>
     <tr><td class="paramname">sdIpAddress</td><td>Service discovery IP Address </td></tr>
+    <tr><td class="paramname">ipAddress</td><td>Service unicast endpoint IP Address </td></tr>
+    <tr><td class="paramname">port</td><td>Service unicast endpoint TCP port number </td></tr>
     <tr><td class="paramname">initialDelayMin</td><td>Minimum initial delay </td></tr>
     <tr><td class="paramname">initialDelayMax</td><td>Maximum initial delay </td></tr>
     <tr><td class="paramname">repetitionBaseDelay</td><td>Repetition phase delay </td></tr>
