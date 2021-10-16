@@ -10,7 +10,7 @@ var searchData=
   ['instanceid_92',['InstanceId',['../classara_1_1com_1_1entry_1_1Entry.html#a4566ea830dd123a7a53e3bb0fa5fcc57',1,'ara::com::entry::Entry']]],
   ['instancespecifier_93',['InstanceSpecifier',['../classara_1_1core_1_1InstanceSpecifier.html',1,'ara::core']]],
   ['interfaceversion_94',['InterfaceVersion',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a7260e0844d612244b77cbce9a0bcad60',1,'ara::com::someip::SomeIpMessage']]],
-  ['ipaddress_95',['IpAddress',['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a254677dbfe729c5be5fddc26ca38233f',1,'ara::com::option::Ipv4EndpointOption']]],
+  ['ipaddress_95',['IpAddress',['../classara_1_1com_1_1helper_1_1NetworkLayer.html#a66c6fb2f8332dea79b6a8e18988caaff',1,'ara::com::helper::NetworkLayer::IpAddress()'],['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a254677dbfe729c5be5fddc26ca38233f',1,'ara::com::option::Ipv4EndpointOption::IpAddress()']]],
   ['ipv4address_96',['Ipv4Address',['../structara_1_1com_1_1helper_1_1Ipv4Address.html',1,'ara::com::helper::Ipv4Address'],['../structara_1_1com_1_1helper_1_1Ipv4Address.html#aecbf13142f21f4902495ba2c1fd7d8f2',1,'ara::com::helper::Ipv4Address::Ipv4Address()']]],
   ['ipv4endpoint_97',['IPv4Endpoint',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a08004d807e1fdb48b89eb0c45c72a240',1,'ara::com::option']]],
   ['ipv4endpointoption_98',['Ipv4EndpointOption',['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html',1,'ara::com::option']]],
