@@ -78,6 +78,7 @@ var hierarchy =
     [ "ara::diag::MetaInfo", "classara_1_1diag_1_1MetaInfo.html", null ],
     [ "ara::diag::Mointor", "classara_1_1diag_1_1Mointor.html", null ],
     [ "ara::com::helper::NetworkLayer< T >", "classara_1_1com_1_1helper_1_1NetworkLayer.html", null ],
+    [ "ara::com::helper::NetworkLayer< ara::com::someip::sd::SomeIpSdMessage >", "classara_1_1com_1_1helper_1_1NetworkLayer.html", null ],
     [ "ara::sm::Notifier< T >", "classara_1_1sm_1_1Notifier.html", null ],
     [ "ara::diag::OperationCycle", "classara_1_1diag_1_1OperationCycle.html", null ],
     [ "ara::diag::OperationOutput", "structara_1_1diag_1_1OperationOutput.html", null ],
