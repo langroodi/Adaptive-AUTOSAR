@@ -24,12 +24,19 @@ namespace ara
 
                     void MainState::SetTimer()
                     {
-                        while (!this->Stopped)
+                        while (true)
                         {
                             std::this_thread::sleep_for(mCyclicOfferDelay);
 
-                            // Invoke the on timer expiration callback
-                            this->OnTimerExpired();
+                            if (this->Stopped)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                // Invoke the on timer expiration callback
+                                this->OnTimerExpired();
+                            }
                         }
                     }
 

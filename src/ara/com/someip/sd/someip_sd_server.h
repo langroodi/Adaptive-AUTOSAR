@@ -4,6 +4,7 @@
 #include <queue>
 #include "../../helper/ipv4_address.h"
 #include "../../helper/finite_state_machine.h"
+#include "../../helper/network_layer.h"
 #include "../../entry/service_entry.h"
 #include "../../option/ipv4_endpoint_option.h"
 #include "./fsm/notready_state.h"
@@ -24,11 +25,7 @@ namespace ara
                 class SomeIpSdServer
                 {
                 private:
-                    static const uint16_t cDefaultSdPort = 30490;
-
-                    const helper::Ipv4Address mSdIpAddress;
-                    const uint16_t mSdPort;
-
+                    helper::NetworkLayer<SomeIpSdMessage> *mNetworkLayer;
                     std::queue<SomeIpSdMessage> mMessageBuffer;
                     helper::FiniteStateMachine<helper::SdServerState> mFiniteStateMachine;
                     fsm::NotReadyState mNotReadyState;
@@ -42,17 +39,22 @@ namespace ara
                     option::Ipv4EndpointOption mEndpointOption;
 
                     void sendOffer();
+                    bool matchOfferingService(const SomeIpSdMessage &message) const;
+                    void receiveFind(SomeIpSdMessage &&message);
+                    void onServiceStopped(
+                        helper::SdServerState currentState,
+                        helper::SdServerState nextState);
 
                 public:
                     SomeIpSdServer() = delete;
                     ~SomeIpSdServer() noexcept = default;
 
                     /// @brief Constructor
+                    /// @param networkLayer Network communication abstraction layer
                     /// @param serviceId Service ID
                     /// @param instanceId Service instance ID
                     /// @param majorVersion Service major version
                     /// @param minorVersion Service minor version
-                    /// @param sdIpAddress Service discovery IP Address
                     /// @param ipAddress Service unicast endpoint IP Address
                     /// @param port Service unicast endpoint TCP port number
                     /// @param initialDelayMin Minimum initial delay
@@ -60,14 +62,13 @@ namespace ara
                     /// @param repetitionBaseDelay Repetition phase delay
                     /// @param cycleOfferDelay Cycle offer delay in the main phase
                     /// @param repetitionMax Maximum message count in the repetition phase
-                    /// @param sdPort Service discovery port number
                     /// @param serviceAvailable Indicates whether the service is available right after construction or not
                     SomeIpSdServer(
+                        helper::NetworkLayer<SomeIpSdMessage> *networkLayer,
                         uint16_t serviceId,
                         uint16_t instanceId,
                         uint8_t majorVersion,
                         uint32_t minorVersion,
-                        helper::Ipv4Address sdIpAddress,
                         helper::Ipv4Address ipAddress,
                         uint16_t port,
                         int initialDelayMin,
@@ -75,7 +76,6 @@ namespace ara
                         int repetitionBaseDelay,
                         int cycleOfferDelay,
                         uint32_t repetitionMax,
-                        uint16_t sdPort = cDefaultSdPort,
                         bool serviceAvailable = true);
 
                     /// @brief Start the service discovery server

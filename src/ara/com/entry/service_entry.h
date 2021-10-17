@@ -15,8 +15,6 @@ namespace ara
             {
             private:
                 static const uint32_t cInfiniteTtl = 0xffffff;
-                static const uint16_t cAnyInstanceId = 0xffff;
-                static const uint32_t cAnyMinorVersion = 0xffffffff;
 
                 uint32_t mMinorVersion;
 
@@ -32,6 +30,11 @@ namespace ara
                     const option::Option *option) const noexcept override;
 
             public:
+                /// @brief Any service instance ID
+                static const uint16_t cAnyInstanceId = 0xffff;
+                /// @brief Any service minor version
+                static const uint32_t cAnyMinorVersion = 0xffffffff;
+
                 ServiceEntry() = delete;
 
                 /// @brief Get minor version

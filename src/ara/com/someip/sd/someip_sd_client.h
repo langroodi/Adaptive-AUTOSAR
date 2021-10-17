@@ -4,6 +4,7 @@
 #include "../../helper/ipv4_address.h"
 #include "../../helper/ttl_timer.h"
 #include "../../helper/finite_state_machine.h"
+#include "../../helper/network_layer.h"
 #include "../../entry/service_entry.h"
 #include "./fsm/service_notseen_state.h"
 #include "./fsm/service_seen_state.h"
@@ -25,11 +26,7 @@ namespace ara
                 class SomeIpSdClient
                 {
                 private:
-                    static const uint16_t cDefaultSdPort = 30490;
-
-                    const helper::Ipv4Address mSdIpAddress;
-                    const uint16_t mSdPort;
-
+                    helper::NetworkLayer<SomeIpSdMessage> *mNetworkLayer;
                     helper::TtlTimer mTtlTimer;
                     fsm::ServiceNotseenState mServiceNotseenState;
                     fsm::ServiceSeenState mServiceSeenState;
@@ -42,30 +39,31 @@ namespace ara
                     SomeIpSdMessage mFindServieMessage;
 
                     void sendFind();
+                    bool matchRequestedService(
+                        const SomeIpSdMessage &message, uint32_t &ttl) const;
                     void onServiceOffered(uint32_t ttl);
                     void onServiceOfferStopped();
+                    void receiveSdMessage(SomeIpSdMessage &&message);
 
                 public:
                     SomeIpSdClient() = delete;
                     ~SomeIpSdClient() noexcept = default;
 
                     /// @brief Constructor
+                    /// @param networkLayer Network communication abstraction layer
                     /// @param serviceId Server's service ID
-                    /// @param sdIpAddress Service discovery IP Address
                     /// @param initialDelayMin Minimum initial delay
                     /// @param initialDelayMax Maximum initial delay
                     /// @param repetitionBaseDelay Repetition phase delay
                     /// @param repetitionMax Maximum message count in the repetition phase
-                    /// @param sdPort Service discovery port number
                     /// @param serviceRequested Indicates whether the service is requested right after construction or not
                     SomeIpSdClient(
+                        helper::NetworkLayer<SomeIpSdMessage> *networkLayer,
                         uint16_t serviceId,
-                        helper::Ipv4Address sdIpAddress,
                         int initialDelayMin,
                         int initialDelayMax,
                         int repetitionBaseDelay,
                         uint32_t repetitionMax,
-                        uint16_t sdPort = cDefaultSdPort,
                         bool serviceRequested = true);
 
                     /// @brief Start requesting the service

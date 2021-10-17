@@ -10,11 +10,11 @@ namespace ara
             namespace sd
             {
                 SomeIpSdServer::SomeIpSdServer(
+                    helper::NetworkLayer<SomeIpSdMessage> *networkLayer,
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
                     uint32_t minorVersion,
-                    helper::Ipv4Address sdIpAddress,
                     helper::Ipv4Address ipAddress,
                     uint16_t port,
                     int initialDelayMin,
@@ -22,9 +22,7 @@ namespace ara
                     int repetitionBaseDelay,
                     int cycleOfferDelay,
                     uint32_t repetitionMax,
-                    uint16_t sdPort,
-                    bool serviceAvailable) : mSdIpAddress{sdIpAddress},
-                                             mSdPort{sdPort},
+                    bool serviceAvailable) : mNetworkLayer{networkLayer},
                                              mNotReadyState(),
                                              mInitialWaitState(
                                                  helper::SdServerState::InitialWaitPhase,
@@ -94,12 +92,83 @@ namespace ara
 
                     mStopOfferEntry.AddFirstOption(&mEndpointOption);
                     mStopOfferMessage.AddEntry(&mStopOfferEntry);
+
+                    auto _receiver =
+                        std::bind(
+                            SomeIpSdServer::receiveFind,
+                            this,
+                            std::placeholders::_1);
+                    mNetworkLayer->SetReceiver(_receiver);
+
+                    auto _onServiceStopped =
+                        std::bind(
+                            SomeIpSdServer::onServiceStopped,
+                            this, std::placeholders::_1, std::placeholders::_2);
+                    mInitialWaitState.SetTransitionCallback(_onServiceStopped);
+                    mRepetitionState.SetTransitionCallback(_onServiceStopped);
+                    mMainState.SetTransitionCallback(_onServiceStopped);
+                }
+
+                bool SomeIpSdServer::matchOfferingService(const SomeIpSdMessage &message) const
+                {
+                    // Iterate over all the message entry to search for the first Service Finding entry
+                    for (auto _entry : message.Entries())
+                    {
+                        if (_entry->Type() == entry::EntryType::Finding)
+                        {
+                            if (auto _serviceEnty = dynamic_cast<entry::ServiceEntry *>(_entry))
+                            {
+                                // Compare service ID, instance ID, major version and minor version
+                                bool _result =
+                                    (_serviceEnty->ServiceId() == mOfferServiceEntry.ServiceId()) &&
+                                    (_serviceEnty->InstanceId() == entry::ServiceEntry::cAnyInstanceId ||
+                                     _serviceEnty->InstanceId() == mOfferServiceEntry.InstanceId()) &&
+                                    (_serviceEnty->MajorVersion() == entry::Entry::cAnyMajorVersion ||
+                                     _serviceEnty->MajorVersion() == mOfferServiceEntry.MajorVersion()) &&
+                                    (_serviceEnty->MinorVersion() == entry::ServiceEntry::cAnyMinorVersion ||
+                                     _serviceEnty->MinorVersion() == mOfferServiceEntry.MinorVersion());
+
+                                return _result;
+                            }
+                        }
+                    }
+
+                    return false;
                 }
 
                 void SomeIpSdServer::sendOffer()
                 {
-                    mOfferServiceMessage.IncrementSessionId();
-                    /// @todo Link with the network abstraction layer
+                    if (!mMessageBuffer.empty())
+                    {
+                        SomeIpSdMessage _message = mMessageBuffer.front();
+
+                        bool _matches = matchOfferingService(_message);
+                        // Send the offer if the finding matches the service
+                        if (_matches)
+                        {
+                            mNetworkLayer->Send(mOfferServiceMessage);
+                            mOfferServiceMessage.IncrementSessionId();
+                        }
+
+                        // Remove the message from the buffer after the processing
+                        mMessageBuffer.pop();
+                    }
+                }
+
+                void SomeIpSdServer::receiveFind(SomeIpSdMessage &&message)
+                {
+                    mMessageBuffer.push(message);
+                }
+
+                void SomeIpSdServer::onServiceStopped(
+                    helper::SdServerState currentState,
+                    helper::SdServerState nextState)
+                {
+                    if (nextState == helper::SdServerState::NotReady)
+                    {
+                        mNetworkLayer->Send(mStopOfferMessage);
+                        mStopOfferMessage.IncrementSessionId();
+                    }
                 }
 
                 void SomeIpSdServer::Start()

@@ -10,15 +10,13 @@ namespace ara
             namespace sd
             {
                 SomeIpSdClient::SomeIpSdClient(
+                    helper::NetworkLayer<SomeIpSdMessage> *networkLayer,
                     uint16_t serviceId,
-                    helper::Ipv4Address sdIpAddress,
                     int initialDelayMin,
                     int initialDelayMax,
                     int repetitionBaseDelay,
                     uint32_t repetitionMax,
-                    uint16_t sdPort,
-                    bool serviceRequested) : mSdIpAddress{sdIpAddress},
-                                             mSdPort{sdPort},
+                    bool serviceRequested) : mNetworkLayer{networkLayer},
                                              mTtlTimer(),
                                              mServiceNotseenState(&mTtlTimer),
                                              mServiceSeenState(&mTtlTimer),
@@ -57,12 +55,52 @@ namespace ara
                     }
 
                     mFindServieMessage.AddEntry(&mFindServiceEntry);
+
+                    auto _receiver =
+                        std::bind(
+                            SomeIpSdClient::receiveSdMessage,
+                            this,
+                            std::placeholders::_1);
+                    mNetworkLayer->SetReceiver(_receiver);
                 }
 
                 void SomeIpSdClient::sendFind()
                 {
+                    mNetworkLayer->Send(mFindServieMessage);
                     mFindServieMessage.IncrementSessionId();
-                    /// @todo Link with the network abstraction layer
+                }
+
+                bool SomeIpSdClient::matchRequestedService(
+                    const SomeIpSdMessage &message, uint32_t &ttl) const
+                {
+                    // Iterate over all the message entry to search for the first Service Offering entry
+                    for (auto _entry : message.Entries())
+                    {
+                        if (_entry->Type() == entry::EntryType::Offering)
+                        {
+                            if (auto _serviceEnty = dynamic_cast<entry::ServiceEntry *>(_entry))
+                            {
+                                // Compare service ID, instance ID, major version and minor version
+                                bool _result =
+                                    (_serviceEnty->ServiceId() == mFindServiceEntry.ServiceId()) &&
+                                    (mFindServiceEntry.InstanceId() == entry::ServiceEntry::cAnyInstanceId ||
+                                     _serviceEnty->InstanceId() == mFindServiceEntry.InstanceId()) &&
+                                    (mFindServiceEntry.MajorVersion() == entry::Entry::cAnyMajorVersion ||
+                                     _serviceEnty->MajorVersion() == mFindServiceEntry.MajorVersion()) &&
+                                    (mFindServiceEntry.MinorVersion() == entry::ServiceEntry::cAnyMinorVersion ||
+                                     _serviceEnty->MinorVersion() == mFindServiceEntry.MinorVersion());
+
+                                if (_result)
+                                {
+                                    ttl = _serviceEnty->TTL();
+                                }
+
+                                return _result;
+                            }
+                        }
+                    }
+
+                    return false;
                 }
 
                 void SomeIpSdClient::onServiceOffered(uint32_t ttl)
@@ -89,6 +127,24 @@ namespace ara
                     case helper::SdClientState::RepetitionPhase:
                         mServiceReadyState.ServiceStopped();
                         break;
+                    }
+                }
+
+                void SomeIpSdClient::receiveSdMessage(SomeIpSdMessage &&message)
+                {
+                    uint32_t _ttl;
+                    bool _matches = matchRequestedService(message, _ttl);
+                    if (_matches)
+                    {
+                        // TTL determines the Offering or Stop Offering message
+                        if (_ttl > 0)
+                        {
+                            onServiceOffered(_ttl);
+                        }
+                        else
+                        {
+                            onServiceOfferStopped();
+                        }
                     }
                 }
 

@@ -35,9 +35,6 @@ namespace ara
                 uint32_t mTTL;
 
             protected:
-                /// @brief Any service major version
-                static const uint8_t cAnyMajorVersion = 0xff;
-
                 /// @brief Constructor
                 /// @param type Entry type
                 /// @param serviceId Service in interest ID
@@ -66,6 +63,9 @@ namespace ara
                 virtual std::vector<uint8_t> BasePayload(uint8_t &optionIndex) const;
 
             public:
+                /// @brief Any service major version
+                static const uint8_t cAnyMajorVersion = 0xff;
+
                 virtual ~Entry() noexcept = default;
 
                 /// @brief Get entry type
