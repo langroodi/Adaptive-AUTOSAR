@@ -38,14 +38,14 @@ namespace ara
                 {
                     auto _callback =
                         std::bind(
-                            &transit,
+                            &FiniteStateMachine::transit,
                             this,
                             std::placeholders::_1,
                             std::placeholders::_2);
 
                     for (auto state : states)
                     {
-                        mStates.insert(state->GetState(), state);
+                        mStates.emplace(state->GetState(), state);
                         state->SetTransitionCallback(_callback);
                     }
 

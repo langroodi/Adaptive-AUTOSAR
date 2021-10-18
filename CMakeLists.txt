@@ -149,6 +149,10 @@ add_library(
   ${source_ara_com_someip_dir}/someip_message.cpp
   ${source_ara_com_someip_sd_dir}/someip_sd_message.h
   ${source_ara_com_someip_sd_dir}/someip_sd_message.cpp
+  ${source_ara_com_someip_sd_dir}/someip_sd_server.h
+  ${source_ara_com_someip_sd_dir}/someip_sd_server.cpp
+  ${source_ara_com_someip_sd_dir}/someip_sd_client.h
+  ${source_ara_com_someip_sd_dir}/someip_sd_client.cpp
   ${source_ara_com_someip_sd_fsm_dir}/timer_set_state.h
   ${source_ara_com_someip_sd_fsm_dir}/client_service_state.h
   ${source_ara_com_someip_sd_fsm_dir}/notready_state.h

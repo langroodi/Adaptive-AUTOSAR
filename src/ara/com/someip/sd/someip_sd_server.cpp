@@ -28,18 +28,18 @@ namespace ara
                                                  helper::SdServerState::InitialWaitPhase,
                                                  helper::SdServerState::RepetitionPhase,
                                                  helper::SdServerState::NotReady,
-                                                 std::bind(SomeIpSdServer::sendOffer, this),
+                                                 std::bind(&SomeIpSdServer::sendOffer, this),
                                                  initialDelayMin,
                                                  initialDelayMax),
                                              mRepetitionState(
                                                  helper::SdServerState::RepetitionPhase,
                                                  helper::SdServerState::MainPhase,
                                                  helper::SdServerState::NotReady,
-                                                 std::bind(SomeIpSdServer::sendOffer, this),
+                                                 std::bind(&SomeIpSdServer::sendOffer, this),
                                                  repetitionMax,
                                                  repetitionBaseDelay),
                                              mMainState(
-                                                 std::bind(SomeIpSdServer::sendOffer, this),
+                                                 std::bind(&SomeIpSdServer::sendOffer, this),
                                                  cycleOfferDelay),
                                              mFiniteStateMachine(
                                                  {&mNotReadyState,
@@ -95,14 +95,14 @@ namespace ara
 
                     auto _receiver =
                         std::bind(
-                            SomeIpSdServer::receiveFind,
+                            &SomeIpSdServer::receiveFind,
                             this,
                             std::placeholders::_1);
                     mNetworkLayer->SetReceiver(_receiver);
 
                     auto _onServiceStopped =
                         std::bind(
-                            SomeIpSdServer::onServiceStopped,
+                            &SomeIpSdServer::onServiceStopped,
                             this, std::placeholders::_1, std::placeholders::_2);
                     mInitialWaitState.SetTransitionCallback(_onServiceStopped);
                     mRepetitionState.SetTransitionCallback(_onServiceStopped);

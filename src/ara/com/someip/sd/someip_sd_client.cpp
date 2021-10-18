@@ -24,14 +24,14 @@ namespace ara
                                                  helper::SdClientState::InitialWaitPhase,
                                                  helper::SdClientState::RepetitionPhase,
                                                  helper::SdClientState::Stopped,
-                                                 std::bind(SomeIpSdClient::sendFind, this),
+                                                 std::bind(&SomeIpSdClient::sendFind, this),
                                                  initialDelayMin,
                                                  initialDelayMax),
                                              mRepetitionState(
                                                  helper::SdClientState::RepetitionPhase,
                                                  helper::SdClientState::Stopped,
                                                  helper::SdClientState::Stopped,
-                                                 std::bind(SomeIpSdClient::sendFind, this),
+                                                 std::bind(&SomeIpSdClient::sendFind, this),
                                                  repetitionMax,
                                                  repetitionBaseDelay),
                                              mServiceReadyState(&mTtlTimer),
@@ -58,7 +58,7 @@ namespace ara
 
                     auto _receiver =
                         std::bind(
-                            SomeIpSdClient::receiveSdMessage,
+                            &SomeIpSdClient::receiveSdMessage,
                             this,
                             std::placeholders::_1);
                     mNetworkLayer->SetReceiver(_receiver);
