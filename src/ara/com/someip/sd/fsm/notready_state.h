@@ -17,12 +17,18 @@ namespace ara
                     /// @note The state is not copyable
                     class NotReadyState : public helper::MachineState<helper::SdServerState>
                     {
+                    private:
+                        const std::function<void()> mOnServiceStopped;
+
                     protected:
                         void Deactivate(helper::SdServerState nextState) override;
 
                     public:
-                        NotReadyState() noexcept;
+                        /// @brief Constructor
+                        /// @param onServiceStopped Callback to be invoked when the service is stopped
+                        NotReadyState(std::function<void()> onServiceStopped);
 
+                        NotReadyState() = delete;
                         NotReadyState(const NotReadyState &) = delete;
                         NotReadyState &operator=(const NotReadyState &) = delete;
 

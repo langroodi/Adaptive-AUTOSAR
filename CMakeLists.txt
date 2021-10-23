@@ -127,7 +127,9 @@ add_library(
   ${source_ara_com_helper_dir}/payload_helper.cpp
   ${source_ara_com_helper_dir}/ipv4_address.h
   ${source_ara_com_helper_dir}/ipv4_address.cpp
+  ${source_ara_com_helper_dir}/abstract_state_machine.h
   ${source_ara_com_helper_dir}/machine_state.h
+  ${source_ara_com_helper_dir}/finite_state_machine.h
   ${source_ara_com_helper_dir}/ttl_timer.h
   ${source_ara_com_helper_dir}/ttl_timer.cpp
   ${source_ara_com_helper_dir}/network_layer.h
@@ -169,11 +171,6 @@ add_library(
   ${source_ara_com_someip_sd_fsm_dir}/service_ready_state.cpp
   ${source_ara_com_someip_sd_fsm_dir}/service_seen_state.h
   ${source_ara_com_someip_sd_fsm_dir}/service_seen_state.cpp
-)
-
-set_target_properties(
-  ara_com
-  PROPERTIES LINKER_LANGUAGE CXX
 )
 
 add_library(
@@ -223,6 +220,7 @@ if(build_tests)
     ${test_ara_com_option_dir}/loadbalancing_option_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_message_test.cpp
     ${test_ara_com_someip_sd_dir}/network_abstraction_test.cpp
+    ${test_ara_com_someip_sd_dir}/someip_sd_test.cpp
     ${test_ara_com_someip_sd_fsm_dir}/machine_state_test.cpp
   )
 

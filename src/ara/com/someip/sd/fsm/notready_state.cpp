@@ -10,14 +10,20 @@ namespace ara
             {
                 namespace fsm
                 {
-                    NotReadyState::NotReadyState() noexcept : helper::MachineState<helper::SdServerState>(
-                                                                  helper::SdServerState::NotReady)
+                    NotReadyState::NotReadyState(std::function<void()> onServiceStopped) : helper::MachineState<helper::SdServerState>(
+                                                                                               helper::SdServerState::NotReady),
+                                                                                           mOnServiceStopped(onServiceStopped)
                     {
                     }
 
                     void NotReadyState::Activate(helper::SdServerState previousState)
                     {
-                        // Nothing to do on activation.
+                        // If the state activate not as the entrypoint, it means the service has been stopped.
+                        // At entrypoint the current state and the previous state are the same.
+                        if (previousState != helper::SdServerState::NotReady)
+                        {
+                            mOnServiceStopped();
+                        }
                     }
 
                     void NotReadyState::ServiceActivated()

@@ -41,9 +41,7 @@ namespace ara
                     void sendOffer();
                     bool matchOfferingService(const SomeIpSdMessage &message) const;
                     void receiveFind(SomeIpSdMessage &&message);
-                    void onServiceStopped(
-                        helper::SdServerState currentState,
-                        helper::SdServerState nextState);
+                    void onServiceStopped();
 
                 public:
                     SomeIpSdServer() = delete;

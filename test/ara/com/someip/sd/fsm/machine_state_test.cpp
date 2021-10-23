@@ -23,7 +23,7 @@ namespace ara
                         const helper::SdServerState cExpectedState =
                             helper::SdServerState::NotReady;
 
-                        NotReadyState _machineState;
+                        NotReadyState _machineState(nullptr);
                         helper::SdServerState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);

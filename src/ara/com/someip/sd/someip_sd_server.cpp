@@ -23,7 +23,8 @@ namespace ara
                     int cycleOfferDelay,
                     uint32_t repetitionMax,
                     bool serviceAvailable) : mNetworkLayer{networkLayer},
-                                             mNotReadyState(),
+                                             mNotReadyState(
+                                                 std::bind(&SomeIpSdServer::onServiceStopped, this)),
                                              mInitialWaitState(
                                                  helper::SdServerState::InitialWaitPhase,
                                                  helper::SdServerState::RepetitionPhase,
@@ -41,12 +42,7 @@ namespace ara
                                              mMainState(
                                                  std::bind(&SomeIpSdServer::sendOffer, this),
                                                  cycleOfferDelay),
-                                             mFiniteStateMachine(
-                                                 {&mNotReadyState,
-                                                  &mInitialWaitState,
-                                                  &mRepetitionState,
-                                                  &mMainState},
-                                                 serviceAvailable ? helper::SdServerState::InitialWaitPhase : helper::SdServerState::NotReady),
+                                             mFiniteStateMachine(),
                                              mOfferServiceEntry{
                                                  entry::ServiceEntry::CreateOfferServiceEntry(
                                                      serviceId,
@@ -65,7 +61,6 @@ namespace ara
                                                      ipAddress,
                                                      option::Layer4ProtocolType::Tcp,
                                                      port)}
-
                 {
                     if (repetitionBaseDelay < 0)
                     {
@@ -81,11 +76,17 @@ namespace ara
 
                     if ((initialDelayMin < 0) ||
                         (initialDelayMax < 0) ||
-                        (initialDelayMin < initialDelayMax))
+                        (initialDelayMin > initialDelayMax))
                     {
                         throw std::invalid_argument(
                             "Invalid initial delay minimum and/or maximum.");
                     }
+
+                    mFiniteStateMachine.Initialize({&mNotReadyState,
+                                                    &mInitialWaitState,
+                                                    &mRepetitionState,
+                                                    &mMainState},
+                                                   serviceAvailable ? helper::SdServerState::InitialWaitPhase : helper::SdServerState::NotReady);
 
                     mOfferServiceEntry.AddFirstOption(&mEndpointOption);
                     mOfferServiceMessage.AddEntry(&mOfferServiceEntry);
@@ -99,14 +100,6 @@ namespace ara
                             this,
                             std::placeholders::_1);
                     mNetworkLayer->SetReceiver(_receiver);
-
-                    auto _onServiceStopped =
-                        std::bind(
-                            &SomeIpSdServer::onServiceStopped,
-                            this, std::placeholders::_1, std::placeholders::_2);
-                    mInitialWaitState.SetTransitionCallback(_onServiceStopped);
-                    mRepetitionState.SetTransitionCallback(_onServiceStopped);
-                    mMainState.SetTransitionCallback(_onServiceStopped);
                 }
 
                 bool SomeIpSdServer::matchOfferingService(const SomeIpSdMessage &message) const
@@ -160,15 +153,10 @@ namespace ara
                     mMessageBuffer.push(message);
                 }
 
-                void SomeIpSdServer::onServiceStopped(
-                    helper::SdServerState currentState,
-                    helper::SdServerState nextState)
+                void SomeIpSdServer::onServiceStopped()
                 {
-                    if (nextState == helper::SdServerState::NotReady)
-                    {
-                        mNetworkLayer->Send(mStopOfferMessage);
-                        mStopOfferMessage.IncrementSessionId();
-                    }
+                    mNetworkLayer->Send(mStopOfferMessage);
+                    mStopOfferMessage.IncrementSessionId();
                 }
 
                 void SomeIpSdServer::Start()

@@ -36,23 +36,25 @@ namespace ara
                                                  repetitionBaseDelay),
                                              mServiceReadyState(&mTtlTimer),
                                              mStoppedState(&mTtlTimer),
-                                             mFiniteStateMachine(
-                                                 {&mServiceNotseenState,
-                                                  &mServiceSeenState,
-                                                  &mInitialWaitState,
-                                                  &mRepetitionState,
-                                                  &mServiceReadyState,
-                                                  &mStoppedState},
-                                                 serviceRequested ? helper::SdClientState::InitialWaitPhase : helper::SdClientState::ServiceNotSeen),
+                                             mFiniteStateMachine(),
                                              mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)}
                 {
                     if ((initialDelayMin < 0) ||
                         (initialDelayMax < 0) ||
-                        (initialDelayMin < initialDelayMax))
+                        (initialDelayMin > initialDelayMax))
                     {
                         throw std::invalid_argument(
                             "Invalid initial delay minimum and/or maximum.");
                     }
+
+                    mFiniteStateMachine.Initialize(
+                        {&mServiceNotseenState,
+                         &mServiceSeenState,
+                         &mInitialWaitState,
+                         &mRepetitionState,
+                         &mServiceReadyState,
+                         &mStoppedState},
+                        serviceRequested ? helper::SdClientState::InitialWaitPhase : helper::SdClientState::ServiceNotSeen);
 
                     mFindServieMessage.AddEntry(&mFindServiceEntry);
 

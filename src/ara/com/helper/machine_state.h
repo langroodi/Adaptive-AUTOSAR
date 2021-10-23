@@ -2,6 +2,7 @@
 #define MACHINE_STATE_H
 
 #include <functional>
+#include "./abstract_state_machine.h"
 
 namespace ara
 {
@@ -38,6 +39,7 @@ namespace ara
             private:
                 const T mState;
                 std::function<void(T, T)> mTransitionCallback;
+                AbstractStateMachine<T> *mFiniteStateMachine;
 
             protected:
                 /// @brief Deactivating the current state before transiting to the next state
@@ -49,9 +51,9 @@ namespace ara
                 void Transit(T nextState)
                 {
                     Deactivate(nextState);
-                    if (mTransitionCallback)
+                    if (mFiniteStateMachine)
                     {
-                        mTransitionCallback(mState, nextState);
+                        //mFiniteStateMachine->Transit(mState, nextState);
                     }
                 }
 
@@ -77,12 +79,11 @@ namespace ara
                 /// @param previousState Previous state before transiting to this state
                 virtual void Activate(T previousState) = 0;
 
-                /// @brief Set the transition callback
-                /// @param callback Delegate to be called after the current state deactivation
-                /// @warning The callback may be invoked via another thread
-                void SetTransitionCallback(std::function<void(T, T)> callback)
+                /// @brief Register the state to a finite state machine (FSM)
+                /// @param finiteStateMachine Finite state machine that contains the state
+                void Register(AbstractStateMachine<T> *finiteStateMachine) noexcept
                 {
-                    mTransitionCallback = callback;
+                    mFiniteStateMachine = finiteStateMachine;
                 }
             };
         }

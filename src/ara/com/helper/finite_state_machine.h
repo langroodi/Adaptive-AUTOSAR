@@ -16,37 +16,27 @@ namespace ara
             /// @tparam T State enumeration type
             /// @note FSM controller is not copyable
             template <typename T>
-            class FiniteStateMachine
+            class FiniteStateMachine : public AbstractStateMachine<T>
             {
             private:
                 std::map<T, MachineState<T> *> mStates;
                 T mCurrentState;
 
-                void transit(T previousState, T nextState)
-                {
-                    auto _nextMachineState = mStates.at(nextState);
-                    _nextMachineState->Activate(previousState);
-                    mCurrentState = nextState;
-                }
-
             public:
-                /// @brief Constructor
+                FiniteStateMachine() = default;
+                ~FiniteStateMachine() = default;
+                FiniteStateMachine(const FiniteStateMachine &) = delete;
+                FiniteStateMachine &operator=(const FiniteStateMachine &) = delete;
+
+                /// @brief Initalize the FSM
                 /// @param states Machine state list
                 /// @param entrypoint Entrypoint state to initialize the FSM
-                FiniteStateMachine(
-                    std::initializer_list<MachineState<T> *> states, T entrypoint)
+                void Initialize(std::initializer_list<MachineState<T> *> states, T entrypoint)
                 {
-                    auto _callback =
-                        std::bind(
-                            &FiniteStateMachine::transit,
-                            this,
-                            std::placeholders::_1,
-                            std::placeholders::_2);
-
                     for (auto state : states)
                     {
                         mStates.emplace(state->GetState(), state);
-                        state->SetTransitionCallback(_callback);
+                        state->Register(this);
                     }
 
                     auto _initialState = mStates.at(entrypoint);
@@ -54,11 +44,6 @@ namespace ara
                     _initialState->Activate(entrypoint);
                     mCurrentState = entrypoint;
                 }
-
-                FiniteStateMachine() = delete;
-                ~FiniteStateMachine() = default;
-                FiniteStateMachine(const FiniteStateMachine &) = delete;
-                FiniteStateMachine &operator=(const FiniteStateMachine &) = delete;
 
                 /// @brief Get the FSM current state
                 /// @returns Current state enumeration
@@ -72,6 +57,13 @@ namespace ara
                 MachineState<T> *GetMachineState() const
                 {
                     return mStates.at(mCurrentState);
+                }
+
+                void Transit(T previousState, T nextState) override
+                {
+                    auto _nextMachineState = mStates.at(nextState);
+                    _nextMachineState->Activate(previousState);
+                    mCurrentState = nextState;
                 }
             };
         }
