@@ -136,9 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab8cf6b19e104daca27b4c3021b4a0953"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html#ab8cf6b19e104daca27b4c3021b4a0953">Activate</a> (T previousState)=0</td></tr>
 <tr class="memdesc:ab8cf6b19e104daca27b4c3021b4a0953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate the state.  <a href="classara_1_1com_1_1helper_1_1MachineState.html#ab8cf6b19e104daca27b4c3021b4a0953">More...</a><br /></td></tr>
 <tr class="separator:ab8cf6b19e104daca27b4c3021b4a0953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac015ee890c18c33df64b8eb4c4b449df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html#ac015ee890c18c33df64b8eb4c4b449df">SetTransitionCallback</a> (std::function&lt; void(T, T)&gt; callback)</td></tr>
-<tr class="memdesc:ac015ee890c18c33df64b8eb4c4b449df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the transition callback.  <a href="classara_1_1com_1_1helper_1_1MachineState.html#ac015ee890c18c33df64b8eb4c4b449df">More...</a><br /></td></tr>
-<tr class="separator:ac015ee890c18c33df64b8eb4c4b449df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d11ecab6fd63af570979e634d619951"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html#a7d11ecab6fd63af570979e634d619951">Register</a> (<a class="el" href="classara_1_1com_1_1helper_1_1AbstractStateMachine.html">AbstractStateMachine</a>&lt; T &gt; *finiteStateMachine) noexcept</td></tr>
+<tr class="memdesc:a7d11ecab6fd63af570979e634d619951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register the state to a finite state machine (FSM)  <a href="classara_1_1com_1_1helper_1_1MachineState.html#a7d11ecab6fd63af570979e634d619951">More...</a><br /></td></tr>
+<tr class="separator:a7d11ecab6fd63af570979e634d619951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -305,8 +305,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ac015ee890c18c33df64b8eb4c4b449df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac015ee890c18c33df64b8eb4c4b449df">&#9670;&nbsp;</a></span>SetTransitionCallback()</h2>
+<a id="a7d11ecab6fd63af570979e634d619951"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d11ecab6fd63af570979e634d619951">&#9670;&nbsp;</a></span>Register()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -317,28 +317,27 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html">ara::com::helper::MachineState</a>&lt; T &gt;::SetTransitionCallback </td>
+          <td class="memname">void <a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html">ara::com::helper::MachineState</a>&lt; T &gt;::Register </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; void(T, T)&gt;&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classara_1_1com_1_1helper_1_1AbstractStateMachine.html">AbstractStateMachine</a>&lt; T &gt; *&#160;</td>
+          <td class="paramname"><em>finiteStateMachine</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the transition callback. </p>
+<p>Register the state to a finite state machine (FSM) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">callback</td><td>Delegate to be called after the current state deactivation </td></tr>
+    <tr><td class="paramname">finiteStateMachine</td><td>Finite state machine that contains the state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section warning"><dt>Warning</dt><dd>The callback may be invoked via another thread </dd></dl>
 
 </div>
 </div>

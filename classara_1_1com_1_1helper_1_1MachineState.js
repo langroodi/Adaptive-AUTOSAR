@@ -7,6 +7,6 @@ var classara_1_1com_1_1helper_1_1MachineState =
     [ "Deactivate", "classara_1_1com_1_1helper_1_1MachineState.html#a270d70b243a5d20d2a55fab630d6b401", null ],
     [ "GetState", "classara_1_1com_1_1helper_1_1MachineState.html#a3a298e73b9863244e21ed83bb719f1c9", null ],
     [ "operator=", "classara_1_1com_1_1helper_1_1MachineState.html#ae446208b2b27cc33e75b3dce14d3583c", null ],
-    [ "SetTransitionCallback", "classara_1_1com_1_1helper_1_1MachineState.html#ac015ee890c18c33df64b8eb4c4b449df", null ],
+    [ "Register", "classara_1_1com_1_1helper_1_1MachineState.html#a7d11ecab6fd63af570979e634d619951", null ],
     [ "Transit", "classara_1_1com_1_1helper_1_1MachineState.html#aa4dffd60e1b3ba121ca480bfa8f32bb1", null ]
 ];
