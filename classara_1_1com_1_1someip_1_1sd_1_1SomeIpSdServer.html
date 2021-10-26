@@ -107,9 +107,9 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1sd_1_1Som
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2acb8d37f65ab38a1b5ea5017bef7785"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a2acb8d37f65ab38a1b5ea5017bef7785">SomeIpSdServer</a> (<a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer</a>&lt; <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &gt; *networkLayer, uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint32_t minorVersion, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, uint16_t port, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay, int cycleOfferDelay, uint32_t repetitionMax, bool serviceAvailable=true)</td></tr>
-<tr class="memdesc:a2acb8d37f65ab38a1b5ea5017bef7785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a2acb8d37f65ab38a1b5ea5017bef7785">More...</a><br /></td></tr>
-<tr class="separator:a2acb8d37f65ab38a1b5ea5017bef7785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78592e14fe85863c4fcc143c5c899eee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a78592e14fe85863c4fcc143c5c899eee">SomeIpSdServer</a> (<a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer</a>&lt; <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &gt; *networkLayer, uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint32_t minorVersion, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, uint16_t port, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay, int cycleOfferDelay, uint32_t repetitionMax)</td></tr>
+<tr class="memdesc:a78592e14fe85863c4fcc143c5c899eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a78592e14fe85863c4fcc143c5c899eee">More...</a><br /></td></tr>
+<tr class="separator:a78592e14fe85863c4fcc143c5c899eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd61eac61c75a88669af27595fc3b632"><td class="memItemLeft" align="right" valign="top"><a id="abd61eac61c75a88669af27595fc3b632"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">Start</a> ()</td></tr>
 <tr class="memdesc:abd61eac61c75a88669af27595fc3b632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the service discovery server. <br /></td></tr>
@@ -122,8 +122,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SOME/IP service discovery server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2acb8d37f65ab38a1b5ea5017bef7785"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2acb8d37f65ab38a1b5ea5017bef7785">&#9670;&nbsp;</a></span>SomeIpSdServer()</h2>
+<a id="a78592e14fe85863c4fcc143c5c899eee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78592e14fe85863c4fcc143c5c899eee">&#9670;&nbsp;</a></span>SomeIpSdServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,13 +198,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>repetitionMax</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>serviceAvailable</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>repetitionMax</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -229,7 +223,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
     <tr><td class="paramname">repetitionBaseDelay</td><td>Repetition phase delay </td></tr>
     <tr><td class="paramname">cycleOfferDelay</td><td>Cycle offer delay in the main phase </td></tr>
     <tr><td class="paramname">repetitionMax</td><td>Maximum message count in the repetition phase </td></tr>
-    <tr><td class="paramname">serviceAvailable</td><td>Indicates whether the service is available right after construction or not </td></tr>
   </table>
   </dd>
 </dl>
