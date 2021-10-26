@@ -62,6 +62,7 @@ namespace ara
                 /// @param instanceId Service in interest instance ID
                 /// @param majorVersion Service in interest major version
                 /// @param minorVersion Service in interest minor version
+                /// @param ttl Service offering lifetime
                 /// @returns Offer service entry
                 static ServiceEntry CreateOfferServiceEntry(
                     uint16_t serviceId,
