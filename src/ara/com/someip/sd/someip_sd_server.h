@@ -60,7 +60,6 @@ namespace ara
                     /// @param repetitionBaseDelay Repetition phase delay
                     /// @param cycleOfferDelay Cycle offer delay in the main phase
                     /// @param repetitionMax Maximum message count in the repetition phase
-                    /// @param serviceAvailable Indicates whether the service is available right after construction or not
                     SomeIpSdServer(
                         helper::NetworkLayer<SomeIpSdMessage> *networkLayer,
                         uint16_t serviceId,
@@ -73,8 +72,7 @@ namespace ara
                         int initialDelayMax,
                         int repetitionBaseDelay,
                         int cycleOfferDelay,
-                        uint32_t repetitionMax,
-                        bool serviceAvailable = true);
+                        uint32_t repetitionMax);
 
                     /// @brief Start the service discovery server
                     void Start();

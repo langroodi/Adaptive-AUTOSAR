@@ -56,15 +56,13 @@ namespace ara
                     /// @param initialDelayMax Maximum initial delay
                     /// @param repetitionBaseDelay Repetition phase delay
                     /// @param repetitionMax Maximum message count in the repetition phase
-                    /// @param serviceRequested Indicates whether the service is requested right after construction or not
                     SomeIpSdClient(
                         helper::NetworkLayer<SomeIpSdMessage> *networkLayer,
                         uint16_t serviceId,
                         int initialDelayMin,
                         int initialDelayMax,
                         int repetitionBaseDelay,
-                        uint32_t repetitionMax,
-                        bool serviceRequested = true);
+                        uint32_t repetitionMax);
 
                     /// @brief Start requesting the service
                     void Start();

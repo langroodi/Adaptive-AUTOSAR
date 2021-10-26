@@ -15,8 +15,7 @@ namespace ara
                     int initialDelayMin,
                     int initialDelayMax,
                     int repetitionBaseDelay,
-                    uint32_t repetitionMax,
-                    bool serviceRequested) : mNetworkLayer{networkLayer},
+                    uint32_t repetitionMax) : mNetworkLayer{networkLayer},
                                              mTtlTimer(),
                                              mServiceNotseenState(&mTtlTimer),
                                              mServiceSeenState(&mTtlTimer),
@@ -54,7 +53,7 @@ namespace ara
                          &mRepetitionState,
                          &mServiceReadyState,
                          &mStoppedState},
-                        serviceRequested ? helper::SdClientState::InitialWaitPhase : helper::SdClientState::ServiceNotSeen);
+                        helper::SdClientState::ServiceNotSeen);
 
                     mFindServieMessage.AddEntry(&mFindServiceEntry);
 

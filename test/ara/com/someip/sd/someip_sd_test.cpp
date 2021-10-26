@@ -47,16 +47,14 @@ namespace ara
                                          cInitialDelayMax,
                                          cRepetitionBaseDelay,
                                          cCycleOfferDelay,
-                                         cRepetitionMax,
-                                         false),
+                                         cRepetitionMax),
                                      Client(
                                          &mNetworkLayer,
                                          cServiceId,
                                          cInitialDelayMin,
                                          cInitialDelayMax,
                                          cRepetitionBaseDelay,
-                                         cRepetitionMax,
-                                         false)
+                                         cRepetitionMax)
                     {
                     }
                 };

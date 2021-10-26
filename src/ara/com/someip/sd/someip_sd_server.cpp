@@ -21,46 +21,45 @@ namespace ara
                     int initialDelayMax,
                     int repetitionBaseDelay,
                     int cycleOfferDelay,
-                    uint32_t repetitionMax,
-                    bool serviceAvailable) : mNetworkLayer{networkLayer},
-                                             mNotReadyState(
-                                                 std::bind(&SomeIpSdServer::onServiceStopped, this)),
-                                             mInitialWaitState(
-                                                 helper::SdServerState::InitialWaitPhase,
-                                                 helper::SdServerState::RepetitionPhase,
-                                                 helper::SdServerState::NotReady,
-                                                 std::bind(&SomeIpSdServer::sendOffer, this),
-                                                 initialDelayMin,
-                                                 initialDelayMax),
-                                             mRepetitionState(
-                                                 helper::SdServerState::RepetitionPhase,
-                                                 helper::SdServerState::MainPhase,
-                                                 helper::SdServerState::NotReady,
-                                                 std::bind(&SomeIpSdServer::sendOffer, this),
-                                                 repetitionMax,
-                                                 repetitionBaseDelay),
-                                             mMainState(
-                                                 std::bind(&SomeIpSdServer::sendOffer, this),
-                                                 cycleOfferDelay),
-                                             mFiniteStateMachine(),
-                                             mOfferServiceEntry{
-                                                 entry::ServiceEntry::CreateOfferServiceEntry(
-                                                     serviceId,
-                                                     instanceId,
-                                                     majorVersion,
-                                                     minorVersion)},
-                                             mStopOfferEntry{
-                                                 entry::ServiceEntry::CreateStopOfferEntry(
-                                                     serviceId,
-                                                     instanceId,
-                                                     majorVersion,
-                                                     minorVersion)},
-                                             mEndpointOption{
-                                                 option::Ipv4EndpointOption::CreateUnitcastEndpoint(
-                                                     false,
-                                                     ipAddress,
-                                                     option::Layer4ProtocolType::Tcp,
-                                                     port)}
+                    uint32_t repetitionMax) : mNetworkLayer{networkLayer},
+                                              mNotReadyState(
+                                                  std::bind(&SomeIpSdServer::onServiceStopped, this)),
+                                              mInitialWaitState(
+                                                  helper::SdServerState::InitialWaitPhase,
+                                                  helper::SdServerState::RepetitionPhase,
+                                                  helper::SdServerState::NotReady,
+                                                  std::bind(&SomeIpSdServer::sendOffer, this),
+                                                  initialDelayMin,
+                                                  initialDelayMax),
+                                              mRepetitionState(
+                                                  helper::SdServerState::RepetitionPhase,
+                                                  helper::SdServerState::MainPhase,
+                                                  helper::SdServerState::NotReady,
+                                                  std::bind(&SomeIpSdServer::sendOffer, this),
+                                                  repetitionMax,
+                                                  repetitionBaseDelay),
+                                              mMainState(
+                                                  std::bind(&SomeIpSdServer::sendOffer, this),
+                                                  cycleOfferDelay),
+                                              mFiniteStateMachine(),
+                                              mOfferServiceEntry{
+                                                  entry::ServiceEntry::CreateOfferServiceEntry(
+                                                      serviceId,
+                                                      instanceId,
+                                                      majorVersion,
+                                                      minorVersion)},
+                                              mStopOfferEntry{
+                                                  entry::ServiceEntry::CreateStopOfferEntry(
+                                                      serviceId,
+                                                      instanceId,
+                                                      majorVersion,
+                                                      minorVersion)},
+                                              mEndpointOption{
+                                                  option::Ipv4EndpointOption::CreateUnitcastEndpoint(
+                                                      false,
+                                                      ipAddress,
+                                                      option::Layer4ProtocolType::Tcp,
+                                                      port)}
                 {
                     if (repetitionBaseDelay < 0)
                     {
@@ -86,7 +85,7 @@ namespace ara
                                                     &mInitialWaitState,
                                                     &mRepetitionState,
                                                     &mMainState},
-                                                   serviceAvailable ? helper::SdServerState::InitialWaitPhase : helper::SdServerState::NotReady);
+                                                   helper::SdServerState::NotReady);
 
                     mOfferServiceEntry.AddFirstOption(&mEndpointOption);
                     mOfferServiceMessage.AddEntry(&mOfferServiceEntry);
