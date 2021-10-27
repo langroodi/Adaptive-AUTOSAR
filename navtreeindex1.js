@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"classara_1_1core_1_1ErrorDomain.html#ac39e84c91c859532a70f61673c6e67ba":[1,0,0,1,1,2],
+"classara_1_1core_1_1ErrorDomain.html#acdbf3c5d9765d92382885f4a2dcca4ef":[1,0,0,1,1,9],
 "classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82":[1,0,0,1,1,4],
 "classara_1_1core_1_1ErrorDomain.html#ae8fdd9be6d2983685c04e73eea1f4bdf":[1,0,0,1,1,12],
 "classara_1_1core_1_1ErrorDomain.html#aeacfb65d0e2200acab3de7747d8bcc5e":[1,0,0,1,1,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "classara_1_1exec_1_1ExceErrorDomain.html#a5016beb9883911be7ca291ca32142cf0":[1,0,0,3,2,2],
 "classara_1_1exec_1_1ExceErrorDomain.html#ae298a74377b5517b8b7d34cb6e8cfd7b":[1,0,0,3,2,0],
 "classara_1_1exec_1_1ExceErrorDomain.html#af501d58914f4f3f3f5c504b82fb60aa2":[1,0,0,3,2,1],
-"classara_1_1exec_1_1ExceErrorDomain.html#afecfc4b793d15c8e9c596fd16abb8e3e":[1,0,0,3,2,3],
-"classara_1_1exec_1_1ExecException.html":[1,0,0,3,1],
-"classara_1_1exec_1_1ExecException.html#a6d7c34fd9df5b40cea0870221659363a":[1,0,0,3,1,0]
+"classara_1_1exec_1_1ExceErrorDomain.html#afecfc4b793d15c8e9c596fd16abb8e3e":[1,0,0,3,2,3]
 };
