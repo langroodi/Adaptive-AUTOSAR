@@ -168,6 +168,11 @@ namespace ara
                     }
                 }
 
+                helper::SdServerState SomeIpSdServer::GetState() const noexcept
+                {
+                    return mFiniteStateMachine.GetState();
+                }
+
                 void SomeIpSdServer::Stop()
                 {
                     helper::SdServerState _state = mFiniteStateMachine.GetState();
@@ -184,6 +189,11 @@ namespace ara
                         mMainState.ServiceStopped();
                         break;
                     }
+                }
+
+                SomeIpSdServer::~SomeIpSdServer()
+                {
+                    Stop();
                 }
             }
         }

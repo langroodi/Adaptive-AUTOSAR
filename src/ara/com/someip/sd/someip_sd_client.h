@@ -47,7 +47,7 @@ namespace ara
 
                 public:
                     SomeIpSdClient() = delete;
-                    ~SomeIpSdClient() noexcept = default;
+                    ~SomeIpSdClient();
 
                     /// @brief Constructor
                     /// @param networkLayer Network communication abstraction layer
@@ -65,9 +65,15 @@ namespace ara
                         uint32_t repetitionMax);
 
                     /// @brief Start requesting the service
+                    /// @note It is safe to recall the function if the service has been already requested.
                     void Start();
 
+                    /// @brief Get the current client state
+                    /// @returns Client machine state
+                    helper::SdClientState GetState() const noexcept;
+
                     /// @brief Stop requesting the service
+                    /// @note It is safe to recall the function if requesting the service has been already stopped.
                     void Stop();
                 };
             }

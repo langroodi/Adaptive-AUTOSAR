@@ -53,14 +53,15 @@ namespace ara
                     Deactivate(nextState);
                     if (mFiniteStateMachine)
                     {
-                        //mFiniteStateMachine->Transit(mState, nextState);
+                        mFiniteStateMachine->Transit(mState, nextState);
                     }
                 }
 
             public:
                 /// @brief Constructor
                 /// @param state Machine state enumeration
-                MachineState(T state) noexcept : mState{state}
+                MachineState(T state) noexcept : mState{state},
+                                                 mFiniteStateMachine{nullptr}
                 {
                 }
 

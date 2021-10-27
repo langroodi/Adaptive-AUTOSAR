@@ -164,6 +164,11 @@ namespace ara
                     }
                 }
 
+                helper::SdClientState SomeIpSdClient::GetState() const noexcept
+                {
+                    return mFiniteStateMachine.GetState();
+                }
+
                 void SomeIpSdClient::Stop()
                 {
                     helper::SdClientState _state = mFiniteStateMachine.GetState();
@@ -180,6 +185,11 @@ namespace ara
                         mStoppedState.ServiceNotRequested();
                         break;
                     }
+                }
+
+                SomeIpSdClient::~SomeIpSdClient()
+                {
+                    Stop();
                 }
             }
         }

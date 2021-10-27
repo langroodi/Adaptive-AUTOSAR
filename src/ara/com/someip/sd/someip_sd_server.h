@@ -45,7 +45,7 @@ namespace ara
 
                 public:
                     SomeIpSdServer() = delete;
-                    ~SomeIpSdServer() noexcept = default;
+                    ~SomeIpSdServer();
 
                     /// @brief Constructor
                     /// @param networkLayer Network communication abstraction layer
@@ -75,9 +75,15 @@ namespace ara
                         uint32_t repetitionMax);
 
                     /// @brief Start the service discovery server
+                    /// @note It is safe to recall the function if the service has been already started.
                     void Start();
 
+                    /// @brief Get the current server state
+                    /// @returns Server machine state
+                    helper::SdServerState GetState() const noexcept;
+
                     /// @brief Stop the service discovery server
+                    /// @note It is safe to recall the function if the service has been already stopped.
                     void Stop();
                 };
             }
