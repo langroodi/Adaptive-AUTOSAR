@@ -99,86 +99,91 @@ $(document).ready(function(){initNavTree('someip__sd__server_8h_source.html','')
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SOMEIP_SD_SERVER</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SOMEIP_SD_SERVER</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../../helper/ipv4_address.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../../helper/finite_state_machine.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../../helper/network_layer.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../../entry/service_entry.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../../option/ipv4_endpoint_option.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;./fsm/notready_state.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;./fsm/initial_wait_state.h&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;./fsm/repetition_state.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;./fsm/main_state.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;./someip_sd_message.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>ara</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">namespace </span>com</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">namespace </span>someip</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">namespace </span>sd</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            {</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">   25</a></span>&#160;                <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <a class="code" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer&lt;SomeIpSdMessage&gt;</a> *mNetworkLayer;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    std::queue&lt;SomeIpSdMessage&gt; mMessageBuffer;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <a class="code" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">helper::FiniteStateMachine&lt;helper::SdServerState&gt;</a> mFiniteStateMachine;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html">fsm::NotReadyState</a> mNotReadyState;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">fsm::InitialWaitState&lt;helper::SdServerState&gt;</a> mInitialWaitState;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">fsm::RepetitionState&lt;helper::SdServerState&gt;</a> mRepetitionState;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">fsm::MainState</a> mMainState;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> mOfferServiceMessage;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> mStopOfferMessage;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <a class="code" href="classara_1_1com_1_1entry_1_1ServiceEntry.html">entry::ServiceEntry</a> mOfferServiceEntry;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <a class="code" href="classara_1_1com_1_1entry_1_1ServiceEntry.html">entry::ServiceEntry</a> mStopOfferEntry;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <a class="code" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">option::Ipv4EndpointOption</a> mEndpointOption;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="keywordtype">void</span> sendOffer();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordtype">bool</span> matchOfferingService(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &amp;message) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keywordtype">void</span> receiveFind(<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &amp;&amp;message);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="keywordtype">void</span> onServiceStopped();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    ~<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>(</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        <a class="code" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer&lt;SomeIpSdMessage&gt;</a> *networkLayer,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        uint16_t serviceId,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        uint16_t instanceId,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        uint8_t majorVersion,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        uint32_t minorVersion,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        uint16_t port,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keywordtype">int</span> initialDelayMin,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        <span class="keywordtype">int</span> initialDelayMax,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordtype">int</span> repetitionBaseDelay,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keywordtype">int</span> cycleOfferDelay,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        uint32_t repetitionMax);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">Start</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    <a class="code" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ac278e239197cbc100da748882b0e895a">GetState</a>() <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">Stop</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                };</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;future&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../../helper/ipv4_address.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../../helper/finite_state_machine.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../../helper/network_layer.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../../entry/service_entry.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../../option/ipv4_endpoint_option.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;./fsm/notready_state.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;./fsm/initial_wait_state.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;./fsm/repetition_state.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;./fsm/main_state.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;./someip_sd_message.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>ara</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">namespace </span>com</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">namespace </span>someip</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">namespace </span>sd</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            {</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">   26</a></span>&#160;                <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    std::future&lt;void&gt; mFuture;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <a class="code" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer&lt;SomeIpSdMessage&gt;</a> *mNetworkLayer;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    std::queue&lt;SomeIpSdMessage&gt; mMessageBuffer;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    <a class="code" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">helper::FiniteStateMachine&lt;helper::SdServerState&gt;</a> mFiniteStateMachine;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html">fsm::NotReadyState</a> mNotReadyState;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">fsm::InitialWaitState&lt;helper::SdServerState&gt;</a> mInitialWaitState;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">fsm::RepetitionState&lt;helper::SdServerState&gt;</a> mRepetitionState;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">fsm::MainState</a> mMainState;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> mOfferServiceMessage;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> mStopOfferMessage;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <a class="code" href="classara_1_1com_1_1entry_1_1ServiceEntry.html">entry::ServiceEntry</a> mOfferServiceEntry;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <a class="code" href="classara_1_1com_1_1entry_1_1ServiceEntry.html">entry::ServiceEntry</a> mStopOfferEntry;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <a class="code" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">option::Ipv4EndpointOption</a> mEndpointOption;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keywordtype">void</span> sendOffer();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="keywordtype">bool</span> matchOfferingService(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &amp;message) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keywordtype">void</span> receiveFind(<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &amp;&amp;message);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keywordtype">void</span> onServiceStopped();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    ~<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">SomeIpSdServer</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        <a class="code" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer&lt;SomeIpSdMessage&gt;</a> *networkLayer,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        uint16_t serviceId,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        uint16_t instanceId,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        uint8_t majorVersion,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        uint32_t minorVersion,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        uint16_t port,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordtype">int</span> initialDelayMin,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <span class="keywordtype">int</span> initialDelayMax,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <span class="keywordtype">int</span> repetitionBaseDelay,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <span class="keywordtype">int</span> cycleOfferDelay,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        uint32_t repetitionMax);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">Start</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <a class="code" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ac278e239197cbc100da748882b0e895a">GetState</a>() <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a020c528b09bfda94886f49967d0930b3">Join</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">Stop</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                };</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1entry_1_1ServiceEntry_html"><div class="ttname"><a href="classara_1_1com_1_1entry_1_1ServiceEntry.html">ara::com::entry::ServiceEntry</a></div><div class="ttdoc">Entry to find and offer a service.</div><div class="ttdef"><b>Definition:</b> service_entry.h:15</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1FiniteStateMachine_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">ara::com::helper::FiniteStateMachine&lt; helper::SdServerState &gt;</a></div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1NetworkLayer_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1NetworkLayer.html">ara::com::helper::NetworkLayer</a></div><div class="ttdoc">Network communication abstraction layer.</div><div class="ttdef"><b>Definition:</b> network_layer.h:16</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1option_1_1Ipv4EndpointOption_html"><div class="ttname"><a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">ara::com::option::Ipv4EndpointOption</a></div><div class="ttdoc">IPv4 endpoint option for both generic and service discovery purposes.</div><div class="ttdef"><b>Definition:</b> ipv4_endpoint_option.h:16</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">ara::com::someip::sd::SomeIpSdMessage</a></div><div class="ttdoc">SOME/IP service discovery message.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.h:20</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">ara::com::someip::sd::SomeIpSdServer</a></div><div class="ttdoc">SOME/IP service discovery server.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.h:26</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_abca118cd5ba13ce40c920a90352e31ce"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">ara::com::someip::sd::SomeIpSdServer::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop the service discovery server.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.cpp:176</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html">ara::com::someip::sd::SomeIpSdServer</a></div><div class="ttdoc">SOME/IP service discovery server.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.h:27</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_a020c528b09bfda94886f49967d0930b3"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a020c528b09bfda94886f49967d0930b3">ara::com::someip::sd::SomeIpSdServer::Join</a></div><div class="ttdeci">void Join()</div><div class="ttdoc">Join to the timer's thread.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.cpp:189</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_abca118cd5ba13ce40c920a90352e31ce"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">ara::com::someip::sd::SomeIpSdServer::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop the service discovery server.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.cpp:198</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_abd61eac61c75a88669af27595fc3b632"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">ara::com::someip::sd::SomeIpSdServer::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Start the service discovery server.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.cpp:161</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_ac278e239197cbc100da748882b0e895a"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ac278e239197cbc100da748882b0e895a">ara::com::someip::sd::SomeIpSdServer::GetState</a></div><div class="ttdeci">helper::SdServerState GetState() const noexcept</div><div class="ttdoc">Get the current server state.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.cpp:171</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer_html_ac278e239197cbc100da748882b0e895a"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ac278e239197cbc100da748882b0e895a">ara::com::someip::sd::SomeIpSdServer::GetState</a></div><div class="ttdeci">helper::SdServerState GetState() const noexcept</div><div class="ttdoc">Get the current server state.</div><div class="ttdef"><b>Definition:</b> someip_sd_server.cpp:184</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">ara::com::someip::sd::fsm::InitialWaitState&lt; helper::SdServerState &gt;</a></div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html">ara::com::someip::sd::fsm::MainState</a></div><div class="ttdoc">Server's main state.</div><div class="ttdef"><b>Definition:</b> main_state.h:19</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html">ara::com::someip::sd::fsm::NotReadyState</a></div><div class="ttdoc">Machine state when the server's service is down or stopped.</div><div class="ttdef"><b>Definition:</b> notready_state.h:19</div></div>
