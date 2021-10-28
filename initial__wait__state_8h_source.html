@@ -157,19 +157,25 @@ $(document).ready(function(){initNavTree('initial__wait__state_8h_source.html','
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                   mInitialDelayMin{initialDelayMin},</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                   mInitialDelayMax{initialDelayMax}</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    };</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                            <span class="keywordflow">if</span> ((initialDelayMin &lt; 0) ||</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                (initialDelayMax &lt; 0) ||</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                (initialDelayMin &gt; initialDelayMax))</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                            {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid initial delay minimum and/or maximum.&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">InitialWaitState</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">ara::com::someip::sd::fsm::InitialWaitState</a></div><div class="ttdoc">Server's or client's service initial wait state.</div><div class="ttdef"><b>Definition:</b> initial_wait_state.h:24</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState_html_a10700f3e327f6cb32d15ae1f76d6589c"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a10700f3e327f6cb32d15ae1f76d6589c">ara::com::someip::sd::fsm::InitialWaitState::InitialWaitState</a></div><div class="ttdeci">InitialWaitState(T currentState, T nextState, T stoppedState, std::function&lt; void()&gt; onTimerExpired, int initialDelayMin, int initialDelayMax)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> initial_wait_state.h:62</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState_html_a86f2451ede33f7837708153c3e8c9fbe"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a86f2451ede33f7837708153c3e8c9fbe">ara::com::someip::sd::fsm::InitialWaitState::SetTimer</a></div><div class="ttdeci">void SetTimer() override</div><div class="ttdoc">Set the phase time on state activation.</div><div class="ttdef"><b>Definition:</b> initial_wait_state.h:30</div></div>

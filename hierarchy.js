@@ -1,8 +1,6 @@
 var hierarchy =
 [
     [ "ara::com::helper::AbstractStateMachine< T >", "classara_1_1com_1_1helper_1_1AbstractStateMachine.html", [
-      [ "ara::com::helper::FiniteStateMachine< helper::SdServerState >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ],
-      [ "ara::com::helper::FiniteStateMachine< helper::SdClientState >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ],
       [ "ara::com::helper::FiniteStateMachine< T >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ]
     ] ],
     [ "ara::log::Argument< T >", "classara_1_1log_1_1Argument.html", null ],
@@ -97,8 +95,13 @@ var hierarchy =
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [
       [ "ara::com::someip::sd::SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", null ]
     ] ],
-    [ "ara::com::someip::sd::SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html", null ],
-    [ "ara::com::someip::sd::SomeIpSdServer", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html", null ],
+    [ "ara::com::someip::sd::SomeIpSdAgent< T >", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html", null ],
+    [ "ara::com::someip::sd::SomeIpSdAgent< helper::SdClientState >", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html", [
+      [ "ara::com::someip::sd::SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html", null ]
+    ] ],
+    [ "ara::com::someip::sd::SomeIpSdAgent< helper::SdServerState >", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html", [
+      [ "ara::com::someip::sd::SomeIpSdServer", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html", null ]
+    ] ],
     [ "ara::exec::StateClient", "classara_1_1exec_1_1StateClient.html", null ],
     [ "ara::diag::TimeBased", "structara_1_1diag_1_1TimeBased.html", null ],
     [ "ara::sm::Trigger< T >", "classara_1_1sm_1_1Trigger.html", null ],

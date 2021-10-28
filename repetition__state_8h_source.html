@@ -159,19 +159,23 @@ $(document).ready(function(){initNavTree('repetition__state_8h_source.html','');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                        mRepetitionsBaseDelay{repetitionsBaseDelay},</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                        mRun{0}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    };</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                            <span class="keywordflow">if</span> (repetitionsBaseDelay &lt; 0)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                            {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid repetition base delay.&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">RepetitionState</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    };</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html">ara::com::someip::sd::fsm::RepetitionState</a></div><div class="ttdoc">Server's or client's service repetition state.</div><div class="ttdef"><b>Definition:</b> repetition_state.h:24</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState_html_a5fc523556d2288532690afdfb886c7dd"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html#a5fc523556d2288532690afdfb886c7dd">ara::com::someip::sd::fsm::RepetitionState::RepetitionState</a></div><div class="ttdeci">RepetitionState(T currentState, T nextState, T stoppedState, std::function&lt; void()&gt; onTimerExpired, uint32_t repetitionsMax, int repetitionsBaseDelay)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> repetition_state.h:63</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState_html_a8f09c0c600a6dc01f8ce77e876a35dac"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html#a8f09c0c600a6dc01f8ce77e876a35dac">ara::com::someip::sd::fsm::RepetitionState::SetTimer</a></div><div class="ttdeci">void SetTimer() override</div><div class="ttdoc">Set the phase time on state activation.</div><div class="ttdef"><b>Definition:</b> repetition_state.h:31</div></div>

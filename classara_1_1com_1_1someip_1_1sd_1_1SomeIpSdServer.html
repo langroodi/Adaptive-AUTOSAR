@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1sd_1_1Som
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ara::com::someip::sd::SomeIpSdServer Class Reference</div>  </div>
@@ -104,26 +105,64 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1sd_1_1Som
  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="someip__sd__server_8h_source.html">someip_sd_server.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ara::com::someip::sd::SomeIpSdServer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.png" usemap="#ara::com::someip::sd::SomeIpSdServer_map" alt=""/>
+  <map id="ara::com::someip::sd::SomeIpSdServer_map" name="ara::com::someip::sd::SomeIpSdServer_map">
+<area href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html" alt="ara::com::someip::sd::SomeIpSdAgent&lt; helper::SdServerState &gt;" shape="rect" coords="0,0,367,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a78592e14fe85863c4fcc143c5c899eee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a78592e14fe85863c4fcc143c5c899eee">SomeIpSdServer</a> (<a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer</a>&lt; <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &gt; *networkLayer, uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint32_t minorVersion, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, uint16_t port, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay, int cycleOfferDelay, uint32_t repetitionMax)</td></tr>
 <tr class="memdesc:a78592e14fe85863c4fcc143c5c899eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a78592e14fe85863c4fcc143c5c899eee">More...</a><br /></td></tr>
 <tr class="separator:a78592e14fe85863c4fcc143c5c899eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd61eac61c75a88669af27595fc3b632"><td class="memItemLeft" align="right" valign="top"><a id="abd61eac61c75a88669af27595fc3b632"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abd61eac61c75a88669af27595fc3b632">Start</a> ()</td></tr>
-<tr class="memdesc:abd61eac61c75a88669af27595fc3b632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the service discovery server. <br /></td></tr>
-<tr class="separator:abd61eac61c75a88669af27595fc3b632"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac278e239197cbc100da748882b0e895a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ac278e239197cbc100da748882b0e895a">GetState</a> () const noexcept</td></tr>
-<tr class="memdesc:ac278e239197cbc100da748882b0e895a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current server state.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ac278e239197cbc100da748882b0e895a">More...</a><br /></td></tr>
-<tr class="separator:ac278e239197cbc100da748882b0e895a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a020c528b09bfda94886f49967d0930b3"><td class="memItemLeft" align="right" valign="top"><a id="a020c528b09bfda94886f49967d0930b3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a020c528b09bfda94886f49967d0930b3">Join</a> ()</td></tr>
-<tr class="memdesc:a020c528b09bfda94886f49967d0930b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join to the timer's thread. <br /></td></tr>
-<tr class="separator:a020c528b09bfda94886f49967d0930b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca118cd5ba13ce40c920a90352e31ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">Stop</a> ()</td></tr>
-<tr class="memdesc:abca118cd5ba13ce40c920a90352e31ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the service discovery server.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#abca118cd5ba13ce40c920a90352e31ce">More...</a><br /></td></tr>
-<tr class="separator:abca118cd5ba13ce40c920a90352e31ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html">ara::com::someip::sd::SomeIpSdAgent&lt; helper::SdServerState &gt;</a></td></tr>
+<tr class="memitem:a6f172934743f9ef1d6419ff8dadac68b inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a6f172934743f9ef1d6419ff8dadac68b">SomeIpSdAgent</a> (<a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer</a>&lt; <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &gt; *networkLayer)</td></tr>
+<tr class="memdesc:a6f172934743f9ef1d6419ff8dadac68b inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a6f172934743f9ef1d6419ff8dadac68b">More...</a><br /></td></tr>
+<tr class="separator:a6f172934743f9ef1d6419ff8dadac68b inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2301772d426cf97eeb456b6748c31d inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top"><a id="afa2301772d426cf97eeb456b6748c31d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#afa2301772d426cf97eeb456b6748c31d">Start</a> ()</td></tr>
+<tr class="memdesc:afa2301772d426cf97eeb456b6748c31d inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the service discovery agent. <br /></td></tr>
+<tr class="separator:afa2301772d426cf97eeb456b6748c31d inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4846674ca962facd2f182f277236b476 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a4846674ca962facd2f182f277236b476">GetState</a> () const noexcept</td></tr>
+<tr class="memdesc:a4846674ca962facd2f182f277236b476 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current server state.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a4846674ca962facd2f182f277236b476">More...</a><br /></td></tr>
+<tr class="separator:a4846674ca962facd2f182f277236b476 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a173c9eaee8d4b3d7c5620a428f891938 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top"><a id="a173c9eaee8d4b3d7c5620a428f891938"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a173c9eaee8d4b3d7c5620a428f891938">Join</a> ()</td></tr>
+<tr class="memdesc:a173c9eaee8d4b3d7c5620a428f891938 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join to the timer's thread. <br /></td></tr>
+<tr class="separator:a173c9eaee8d4b3d7c5620a428f891938 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbba8a63d4ca009fe5769208d3c86312 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#abbba8a63d4ca009fe5769208d3c86312">Stop</a> ()</td></tr>
+<tr class="memdesc:abbba8a63d4ca009fe5769208d3c86312 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the service discovery agent.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#abbba8a63d4ca009fe5769208d3c86312">More...</a><br /></td></tr>
+<tr class="separator:abbba8a63d4ca009fe5769208d3c86312 inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ac964f2c190d90bc80fe68f881de13849"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ac964f2c190d90bc80fe68f881de13849">StartAgent</a> (<a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a> state) override</td></tr>
+<tr class="memdesc:ac964f2c190d90bc80fe68f881de13849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the service discovery agent.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#ac964f2c190d90bc80fe68f881de13849">More...</a><br /></td></tr>
+<tr class="separator:ac964f2c190d90bc80fe68f881de13849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a606d82840375001ef2dbc2b79c038f87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a606d82840375001ef2dbc2b79c038f87">StopAgent</a> (<a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a> state) override</td></tr>
+<tr class="memdesc:a606d82840375001ef2dbc2b79c038f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the service discovery agent.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a606d82840375001ef2dbc2b79c038f87">More...</a><br /></td></tr>
+<tr class="separator:a606d82840375001ef2dbc2b79c038f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html">ara::com::someip::sd::SomeIpSdAgent&lt; helper::SdServerState &gt;</a></td></tr>
+<tr class="memitem:accfadf42a49cbccdf1845e19d5c64ccd inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top"><a id="accfadf42a49cbccdf1845e19d5c64ccd"></a>
+<a class="el" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">helper::FiniteStateMachine</a>&lt; <a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#accfadf42a49cbccdf1845e19d5c64ccd">StateMachine</a></td></tr>
+<tr class="memdesc:accfadf42a49cbccdf1845e19d5c64ccd inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agent's FSM. <br /></td></tr>
+<tr class="separator:accfadf42a49cbccdf1845e19d5c64ccd inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741719442598ad45ebe426886693653e inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top"><a id="a741719442598ad45ebe426886693653e"></a>
+std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a741719442598ad45ebe426886693653e">Future</a></td></tr>
+<tr class="memdesc:a741719442598ad45ebe426886693653e inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agent running state future object. <br /></td></tr>
+<tr class="separator:a741719442598ad45ebe426886693653e inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76c0270f5b9c8fed9bdc68f7023ee63 inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top"><a id="af76c0270f5b9c8fed9bdc68f7023ee63"></a>
+<a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer</a>&lt; <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#af76c0270f5b9c8fed9bdc68f7023ee63">CommunicationLayer</a></td></tr>
+<tr class="memdesc:af76c0270f5b9c8fed9bdc68f7023ee63 inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Network communication abstraction layer. <br /></td></tr>
+<tr class="separator:af76c0270f5b9c8fed9bdc68f7023ee63 inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SOME/IP service discovery server. </p>
@@ -236,8 +275,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac278e239197cbc100da748882b0e895a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac278e239197cbc100da748882b0e895a">&#9670;&nbsp;</a></span>GetState()</h2>
+<a id="ac964f2c190d90bc80fe68f881de13849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac964f2c190d90bc80fe68f881de13849">&#9670;&nbsp;</a></span>StartAgent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,41 +285,65 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a> ara::com::someip::sd::SomeIpSdServer::GetState </td>
+          <td class="memname">void ara::com::someip::sd::SomeIpSdServer::StartAgent </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the current server state. </p>
-<dl class="section return"><dt>Returns</dt><dd>Server machine state </dd></dl>
+<p>Start the service discovery agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Current FSM state before start </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a63370868bd1d13b636f378034f1e92d5">ara::com::someip::sd::SomeIpSdAgent&lt; helper::SdServerState &gt;</a>.</p>
 
 </div>
 </div>
-<a id="abca118cd5ba13ce40c920a90352e31ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abca118cd5ba13ce40c920a90352e31ce">&#9670;&nbsp;</a></span>Stop()</h2>
+<a id="a606d82840375001ef2dbc2b79c038f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a606d82840375001ef2dbc2b79c038f87">&#9670;&nbsp;</a></span>StopAgent()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ara::com::someip::sd::SomeIpSdServer::Stop </td>
+          <td class="memname">void ara::com::someip::sd::SomeIpSdServer::StopAgent </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405b">helper::SdServerState</a>&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Stop the service discovery server. </p>
-<dl class="section note"><dt>Note</dt><dd>It is safe to recall the function if the service has been already stopped. </dd></dl>
+<p>Stop the service discovery agent. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Current FSM state before stop </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a118ec52c7c8ee5eb88707d51f7fc37fb">ara::com::someip::sd::SomeIpSdAgent&lt; helper::SdServerState &gt;</a>.</p>
 
 </div>
 </div>

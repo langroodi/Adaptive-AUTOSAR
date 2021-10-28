@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['join_109',['Join',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html#a020c528b09bfda94886f49967d0930b3',1,'ara::com::someip::sd::SomeIpSdServer']]]
+  ['join_109',['Join',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a173c9eaee8d4b3d7c5620a428f891938',1,'ara::com::someip::sd::SomeIpSdAgent']]]
 ];
