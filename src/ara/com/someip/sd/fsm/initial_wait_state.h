@@ -69,6 +69,12 @@ namespace ara
                                                    mInitialDelayMin{initialDelayMin},
                                                    mInitialDelayMax{initialDelayMax}
                         {
+                            if ((initialDelayMin < 0) ||
+                                (initialDelayMax < 0) ||
+                                (initialDelayMin > initialDelayMax))
+                            {
+                                throw std::invalid_argument("Invalid initial delay minimum and/or maximum.");
+                            }
                         }
 
                         InitialWaitState() = delete;

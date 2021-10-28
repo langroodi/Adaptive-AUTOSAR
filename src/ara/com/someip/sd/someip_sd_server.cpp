@@ -21,7 +21,7 @@ namespace ara
                     int initialDelayMax,
                     int repetitionBaseDelay,
                     int cycleOfferDelay,
-                    uint32_t repetitionMax) : mNetworkLayer{networkLayer},
+                    uint32_t repetitionMax) : SomeIpSdAgent<helper::SdServerState>(networkLayer),
                                               mNotReadyState(
                                                   std::bind(&SomeIpSdServer::onServiceStopped, this)),
                                               mInitialWaitState(
@@ -41,7 +41,6 @@ namespace ara
                                               mMainState(
                                                   std::bind(&SomeIpSdServer::sendOffer, this),
                                                   cycleOfferDelay),
-                                              mFiniteStateMachine(),
                                               mOfferServiceEntry{
                                                   entry::ServiceEntry::CreateOfferServiceEntry(
                                                       serviceId,
@@ -61,27 +60,7 @@ namespace ara
                                                       option::Layer4ProtocolType::Tcp,
                                                       port)}
                 {
-                    if (repetitionBaseDelay < 0)
-                    {
-                        throw std::invalid_argument(
-                            "Invalid repetition base delay.");
-                    }
-
-                    if (cycleOfferDelay < 0)
-                    {
-                        throw std::invalid_argument(
-                            "Invalid cyclic offer delay.");
-                    }
-
-                    if ((initialDelayMin < 0) ||
-                        (initialDelayMax < 0) ||
-                        (initialDelayMin > initialDelayMax))
-                    {
-                        throw std::invalid_argument(
-                            "Invalid initial delay minimum and/or maximum.");
-                    }
-
-                    mFiniteStateMachine.Initialize({&mNotReadyState,
+                    this->StateMachine.Initialize({&mNotReadyState,
                                                     &mInitialWaitState,
                                                     &mRepetitionState,
                                                     &mMainState},
@@ -98,7 +77,7 @@ namespace ara
                             &SomeIpSdServer::receiveFind,
                             this,
                             std::placeholders::_1);
-                    mNetworkLayer->SetReceiver(_receiver);
+                    this->CommunicationLayer->SetReceiver(_receiver);
                 }
 
                 bool SomeIpSdServer::matchOfferingService(const SomeIpSdMessage &message) const
@@ -138,7 +117,7 @@ namespace ara
                         // Send the offer if the finding matches the service
                         if (_matches)
                         {
-                            mNetworkLayer->Send(mOfferServiceMessage);
+                            this->CommunicationLayer->Send(mOfferServiceMessage);
                             mOfferServiceMessage.IncrementSessionId();
                         }
 
@@ -154,52 +133,26 @@ namespace ara
 
                 void SomeIpSdServer::onServiceStopped()
                 {
-                    mNetworkLayer->Send(mStopOfferMessage);
+                    this->CommunicationLayer->Send(mStopOfferMessage);
                     mStopOfferMessage.IncrementSessionId();
                 }
 
-                void SomeIpSdServer::Start()
+                void SomeIpSdServer::StartAgent(helper::SdServerState state)
                 {
-                    // Valid future means the timer is not expired yet.
-                    if (mFuture.valid())
+                    if (state == helper::SdServerState::NotReady)
                     {
-                        throw std::logic_error(
-                            "The state has been already activated.");
-                    }
-                    else
-                    {
-                        helper::SdServerState _state = mFiniteStateMachine.GetState();
-                        if (_state == helper::SdServerState::NotReady)
-                        {
-                            // Set the timer from a new thread with a random initial delay.
-                            mFuture =
-                                std::async(
-                                    std::launch::async,
-                                    &fsm::NotReadyState::ServiceActivated,
-                                    &mNotReadyState);
-                        }
+                        // Set the timer from a new thread with a random initial delay.
+                        this->Future =
+                            std::async(
+                                std::launch::async,
+                                &fsm::NotReadyState::ServiceActivated,
+                                &mNotReadyState);
                     }
                 }
 
-                helper::SdServerState SomeIpSdServer::GetState() const noexcept
+                void SomeIpSdServer::StopAgent(helper::SdServerState state)
                 {
-                    return mFiniteStateMachine.GetState();
-                }
-
-                void SomeIpSdServer::Join()
-                {
-                    // If the future is valid, block unitl its result becomes avialable after the timer expiration.
-                    if (mFuture.valid())
-                    {
-                        mFuture.get();
-                    }
-                }
-
-                void SomeIpSdServer::Stop()
-                {
-                    helper::SdServerState _state = mFiniteStateMachine.GetState();
-
-                    switch (_state)
+                    switch (state)
                     {
                     case helper::SdServerState::InitialWaitPhase:
                         mInitialWaitState.ServiceStopped();

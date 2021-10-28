@@ -15,7 +15,7 @@ namespace ara
                     int initialDelayMin,
                     int initialDelayMax,
                     int repetitionBaseDelay,
-                    uint32_t repetitionMax) : mNetworkLayer{networkLayer},
+                    uint32_t repetitionMax) : SomeIpSdAgent<helper::SdClientState>(networkLayer),
                                              mTtlTimer(),
                                              mServiceNotseenState(&mTtlTimer),
                                              mServiceSeenState(&mTtlTimer),
@@ -35,18 +35,9 @@ namespace ara
                                                  repetitionBaseDelay),
                                              mServiceReadyState(&mTtlTimer),
                                              mStoppedState(&mTtlTimer),
-                                             mFiniteStateMachine(),
                                              mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)}
                 {
-                    if ((initialDelayMin < 0) ||
-                        (initialDelayMax < 0) ||
-                        (initialDelayMin > initialDelayMax))
-                    {
-                        throw std::invalid_argument(
-                            "Invalid initial delay minimum and/or maximum.");
-                    }
-
-                    mFiniteStateMachine.Initialize(
+                    this->StateMachine.Initialize(
                         {&mServiceNotseenState,
                          &mServiceSeenState,
                          &mInitialWaitState,
@@ -62,12 +53,12 @@ namespace ara
                             &SomeIpSdClient::receiveSdMessage,
                             this,
                             std::placeholders::_1);
-                    mNetworkLayer->SetReceiver(_receiver);
+                    this->CommunicationLayer->SetReceiver(_receiver);
                 }
 
                 void SomeIpSdClient::sendFind()
                 {
-                    mNetworkLayer->Send(mFindServieMessage);
+                    this->CommunicationLayer->Send(mFindServieMessage);
                     mFindServieMessage.IncrementSessionId();
                 }
 
@@ -106,7 +97,7 @@ namespace ara
 
                 void SomeIpSdClient::onServiceOffered(uint32_t ttl)
                 {
-                    auto _machineState = mFiniteStateMachine.GetMachineState();
+                    auto _machineState = this->StateMachine.GetMachineState();
                     auto _clientServiceState =
                         dynamic_cast<fsm::ClientServiceState *>(_machineState);
 
@@ -115,7 +106,7 @@ namespace ara
 
                 void SomeIpSdClient::onServiceOfferStopped()
                 {
-                    helper::SdClientState _state = mFiniteStateMachine.GetState();
+                    helper::SdClientState _state = GetState();
 
                     switch (_state)
                     {
@@ -149,11 +140,9 @@ namespace ara
                     }
                 }
 
-                void SomeIpSdClient::Start()
+                void SomeIpSdClient::StartAgent(helper::SdClientState state)
                 {
-                    helper::SdClientState _state = mFiniteStateMachine.GetState();
-
-                    switch (_state)
+                    switch (state)
                     {
                     case helper::SdClientState::ServiceNotSeen:
                         mServiceNotseenState.ServiceRequested();
@@ -164,15 +153,9 @@ namespace ara
                     }
                 }
 
-                helper::SdClientState SomeIpSdClient::GetState() const noexcept
+                void SomeIpSdClient::StopAgent(helper::SdClientState state)
                 {
-                    return mFiniteStateMachine.GetState();
-                }
-
-                void SomeIpSdClient::Stop()
-                {
-                    helper::SdClientState _state = mFiniteStateMachine.GetState();
-                    switch (_state)
+                    switch (state)
                     {
                     case helper::SdClientState::InitialWaitPhase:
                     case helper::SdClientState::RepetitionPhase:
@@ -190,6 +173,7 @@ namespace ara
                 SomeIpSdClient::~SomeIpSdClient()
                 {
                     Stop();
+                    Join();
                 }
             }
         }

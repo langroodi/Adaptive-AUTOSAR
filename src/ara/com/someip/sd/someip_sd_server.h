@@ -1,18 +1,15 @@
 #ifndef SOMEIP_SD_SERVER
 #define SOMEIP_SD_SERVER
 
-#include <future>
 #include <queue>
 #include "../../helper/ipv4_address.h"
-#include "../../helper/finite_state_machine.h"
-#include "../../helper/network_layer.h"
 #include "../../entry/service_entry.h"
 #include "../../option/ipv4_endpoint_option.h"
 #include "./fsm/notready_state.h"
 #include "./fsm/initial_wait_state.h"
 #include "./fsm/repetition_state.h"
 #include "./fsm/main_state.h"
-#include "./someip_sd_message.h"
+#include "./someip_sd_agent.h"
 
 namespace ara
 {
@@ -23,13 +20,10 @@ namespace ara
             namespace sd
             {
                 /// @brief SOME/IP service discovery server
-                class SomeIpSdServer
+                class SomeIpSdServer : public SomeIpSdAgent<helper::SdServerState>
                 {
                 private:
-                    std::future<void> mFuture;
-                    helper::NetworkLayer<SomeIpSdMessage> *mNetworkLayer;
                     std::queue<SomeIpSdMessage> mMessageBuffer;
-                    helper::FiniteStateMachine<helper::SdServerState> mFiniteStateMachine;
                     fsm::NotReadyState mNotReadyState;
                     fsm::InitialWaitState<helper::SdServerState> mInitialWaitState;
                     fsm::RepetitionState<helper::SdServerState> mRepetitionState;
@@ -45,9 +39,12 @@ namespace ara
                     void receiveFind(SomeIpSdMessage &&message);
                     void onServiceStopped();
 
+                protected:
+                    void StartAgent(helper::SdServerState state) override;
+                    void StopAgent(helper::SdServerState state) override;
+
                 public:
                     SomeIpSdServer() = delete;
-                    ~SomeIpSdServer();
 
                     /// @brief Constructor
                     /// @param networkLayer Network communication abstraction layer
@@ -76,19 +73,7 @@ namespace ara
                         int cycleOfferDelay,
                         uint32_t repetitionMax);
 
-                    /// @brief Start the service discovery server
-                    void Start();
-
-                    /// @brief Get the current server state
-                    /// @returns Server machine state
-                    helper::SdServerState GetState() const noexcept;
-
-                    /// @brief Join to the timer's thread
-                    void Join();
-
-                    /// @brief Stop the service discovery server
-                    /// @note It is safe to recall the function if the service has been already stopped.
-                    void Stop();
+                    ~SomeIpSdServer() override;
                 };
             }
         }

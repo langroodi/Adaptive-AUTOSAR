@@ -20,6 +20,10 @@ namespace ara
                                                                                      onTimerExpired),
                                                 mCyclicOfferDelay{cyclicOfferDelay}
                     {
+                        if (cyclicOfferDelay < 0)
+                        {
+                            throw std::invalid_argument("Invalid cyclic offer delay.");
+                        }
                     }
 
                     void MainState::SetTimer()

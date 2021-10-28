@@ -149,6 +149,7 @@ add_library(
   ${source_ara_com_option_dir}/loadbalancing_option.cpp
   ${source_ara_com_someip_dir}/someip_message.h
   ${source_ara_com_someip_dir}/someip_message.cpp
+  ${source_ara_com_someip_sd_dir}/someip_sd_agent.h
   ${source_ara_com_someip_sd_dir}/someip_sd_message.h
   ${source_ara_com_someip_sd_dir}/someip_sd_message.cpp
   ${source_ara_com_someip_sd_dir}/someip_sd_server.h

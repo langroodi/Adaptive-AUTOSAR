@@ -71,6 +71,10 @@ namespace ara
                                                         mRepetitionsBaseDelay{repetitionsBaseDelay},
                                                         mRun{0}
                         {
+                            if (repetitionsBaseDelay < 0)
+                            {
+                                throw std::invalid_argument("Invalid repetition base delay.");
+                            }
                         }
 
                         RepetitionState() = delete;

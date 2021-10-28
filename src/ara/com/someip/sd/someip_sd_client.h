@@ -3,8 +3,6 @@
 
 #include "../../helper/ipv4_address.h"
 #include "../../helper/ttl_timer.h"
-#include "../../helper/finite_state_machine.h"
-#include "../../helper/network_layer.h"
 #include "../../entry/service_entry.h"
 #include "./fsm/service_notseen_state.h"
 #include "./fsm/service_seen_state.h"
@@ -12,7 +10,7 @@
 #include "./fsm/repetition_state.h"
 #include "./fsm/service_ready_state.h"
 #include "./fsm/stopped_state.h"
-#include "./someip_sd_message.h"
+#include "./someip_sd_agent.h"
 
 namespace ara
 {
@@ -23,10 +21,9 @@ namespace ara
             namespace sd
             {
                 /// @brief SOME/IP service discovery client
-                class SomeIpSdClient
+                class SomeIpSdClient : public SomeIpSdAgent<helper::SdClientState>
                 {
                 private:
-                    helper::NetworkLayer<SomeIpSdMessage> *mNetworkLayer;
                     helper::TtlTimer mTtlTimer;
                     fsm::ServiceNotseenState mServiceNotseenState;
                     fsm::ServiceSeenState mServiceSeenState;
@@ -34,7 +31,6 @@ namespace ara
                     fsm::RepetitionState<helper::SdClientState> mRepetitionState;
                     fsm::ServiceReadyState mServiceReadyState;
                     fsm::StoppedState mStoppedState;
-                    helper::FiniteStateMachine<helper::SdClientState> mFiniteStateMachine;
                     entry::ServiceEntry mFindServiceEntry;
                     SomeIpSdMessage mFindServieMessage;
 
@@ -45,10 +41,13 @@ namespace ara
                     void onServiceOfferStopped();
                     void receiveSdMessage(SomeIpSdMessage &&message);
 
+                protected:
+                    void StartAgent(helper::SdClientState state) override;
+                    void StopAgent(helper::SdClientState state) override;
+
                 public:
                     SomeIpSdClient() = delete;
-                    ~SomeIpSdClient();
-
+                    
                     /// @brief Constructor
                     /// @param networkLayer Network communication abstraction layer
                     /// @param serviceId Server's service ID
@@ -64,17 +63,7 @@ namespace ara
                         int repetitionBaseDelay,
                         uint32_t repetitionMax);
 
-                    /// @brief Start requesting the service
-                    /// @note It is safe to recall the function if the service has been already requested.
-                    void Start();
-
-                    /// @brief Get the current client state
-                    /// @returns Client machine state
-                    helper::SdClientState GetState() const noexcept;
-
-                    /// @brief Stop requesting the service
-                    /// @note It is safe to recall the function if requesting the service has been already stopped.
-                    void Stop();
+                    ~SomeIpSdClient() override;
                 };
             }
         }
