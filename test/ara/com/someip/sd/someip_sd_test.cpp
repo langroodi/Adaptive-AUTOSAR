@@ -59,15 +59,14 @@ namespace ara
                     }
                 };
 
-                TEST_F(SomeIpSdTest, PreInitialization)
+                TEST_F(SomeIpSdTest, ServerStart)
                 {
                     const helper::SdServerState cServerStoppedState =
                         helper::SdServerState::NotReady;
-                    const helper::SdClientState cClientStoppedState =
-                        helper::SdClientState::ServiceNotSeen;
 
                     EXPECT_EQ(Server.GetState(), cServerStoppedState);
-                    EXPECT_EQ(Client.GetState(), cClientStoppedState);
+                    EXPECT_NO_THROW(Server.Start());
+                    EXPECT_THROW(Server.Start(), std::logic_error);
                 }
             }
         }

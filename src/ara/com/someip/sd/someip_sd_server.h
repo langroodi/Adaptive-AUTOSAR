@@ -1,6 +1,7 @@
 #ifndef SOMEIP_SD_SERVER
 #define SOMEIP_SD_SERVER
 
+#include <future>
 #include <queue>
 #include "../../helper/ipv4_address.h"
 #include "../../helper/finite_state_machine.h"
@@ -25,6 +26,7 @@ namespace ara
                 class SomeIpSdServer
                 {
                 private:
+                    std::future<void> mFuture;
                     helper::NetworkLayer<SomeIpSdMessage> *mNetworkLayer;
                     std::queue<SomeIpSdMessage> mMessageBuffer;
                     helper::FiniteStateMachine<helper::SdServerState> mFiniteStateMachine;
@@ -75,12 +77,14 @@ namespace ara
                         uint32_t repetitionMax);
 
                     /// @brief Start the service discovery server
-                    /// @note It is safe to recall the function if the service has been already started.
                     void Start();
 
                     /// @brief Get the current server state
                     /// @returns Server machine state
                     helper::SdServerState GetState() const noexcept;
+
+                    /// @brief Join to the timer's thread
+                    void Join();
 
                     /// @brief Stop the service discovery server
                     /// @note It is safe to recall the function if the service has been already stopped.

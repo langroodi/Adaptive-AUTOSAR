@@ -1,7 +1,6 @@
 #ifndef TIMER_SET_STATE_H
 #define TIMER_SET_STATE_H
 
-#include <future>
 #include <stdexcept>
 #include "../../../helper/machine_state.h"
 
@@ -26,7 +25,6 @@ namespace ara
                     private:
                         const T mNextState;
                         const T mStoppedState;
-                        std::future<void> mFuture;
 
                         void setTimerBase()
                         {
@@ -74,23 +72,11 @@ namespace ara
 
                         void Activate(T previousState) override
                         {
-                            // Valid future means the timer is not expired yet.
-                            if (mFuture.valid())
-                            {
-                                throw std::logic_error(
-                                    "The state has been already activated");
-                            }
-                            else
+                            if (Stopped)
                             {
                                 // Reset 'service stopped' flag
                                 Stopped = false;
-
-                                // Set the timer from a new thread with a random initial delay.
-                                mFuture =
-                                    std::async(
-                                        std::launch::async,
-                                        &TimerSetState<T>::setTimerBase,
-                                        this);
+                                setTimerBase();
                             }
                         }
 
@@ -107,16 +93,6 @@ namespace ara
                             mNextState = nextState;
                         }
 
-                        /// @brief Join to the timer's thread
-                        void Join()
-                        {
-                            // If the future is valid, block unitl its result becomes avialable after the timer expiration.
-                            if (mFuture.valid())
-                            {
-                                mFuture.get();
-                            }
-                        }
-
                         virtual ~TimerSetState() override
                         {
                             if (!Stopped)
@@ -124,7 +100,6 @@ namespace ara
                                 // Set a fake stop signal, otherwise the timer loop may never end (e.g., in the main phase).
                                 ServiceStopped();
                             }
-                            Join();
                         }
                     };
                 }

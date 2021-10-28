@@ -59,10 +59,6 @@ namespace ara
                         EXPECT_EQ(_actualState, cExpectedState);
 
                         EXPECT_NO_THROW(_machineState.Activate(cPreviousState));
-                        // The second immediate activation should throw
-                        EXPECT_THROW(_machineState.Activate(cPreviousState), std::logic_error);
-                        // Finish the test gracefully
-                        _machineState.Join();
                     }
 
                     TEST(MachineStateTest, RepetitionStateConstructor)
@@ -96,12 +92,9 @@ namespace ara
                         EXPECT_EQ(_actualState, cExpectedState);
 
                         EXPECT_NO_THROW(_machineState.Activate(cPreviousState));
-                        // The second immediate activation should throw
-                        EXPECT_THROW(_machineState.Activate(cPreviousState), std::logic_error);
-                        // Due to async invocation, the counter value should be less than the maximum repetitions.
-                        EXPECT_LT(_counter, cRepetitionsMax);
+                        // Due to blocking invocation, the counter value should be equal to the maximum repetitions.
+                        EXPECT_EQ(_counter, cRepetitionsMax);
                         // Finish the test gracefully
-                        _machineState.Join();
                     }
 
                     TEST(MachineStateTest, MainStateConstructor)
@@ -121,14 +114,6 @@ namespace ara
                         helper::SdServerState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
-
-                        EXPECT_NO_THROW(_machineState.Activate(cPreviousState));
-                        // The second immediate activation should throw
-                        EXPECT_THROW(_machineState.Activate(cPreviousState), std::logic_error);
-                        // Stop the service, otherwise FSM never get out of the main phase
-                        _machineState.ServiceStopped();
-                        // Finish the test gracefully
-                        _machineState.Join();
                     }
 
                     TEST(MachineStateTest, StoppedStateConstructor)

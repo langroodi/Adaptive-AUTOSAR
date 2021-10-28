@@ -160,17 +160,39 @@ namespace ara
 
                 void SomeIpSdServer::Start()
                 {
-                    helper::SdServerState _state = mFiniteStateMachine.GetState();
-
-                    if (_state == helper::SdServerState::NotReady)
+                    // Valid future means the timer is not expired yet.
+                    if (mFuture.valid())
                     {
-                        mNotReadyState.ServiceActivated();
+                        throw std::logic_error(
+                            "The state has been already activated.");
+                    }
+                    else
+                    {
+                        helper::SdServerState _state = mFiniteStateMachine.GetState();
+                        if (_state == helper::SdServerState::NotReady)
+                        {
+                            // Set the timer from a new thread with a random initial delay.
+                            mFuture =
+                                std::async(
+                                    std::launch::async,
+                                    &fsm::NotReadyState::ServiceActivated,
+                                    &mNotReadyState);
+                        }
                     }
                 }
 
                 helper::SdServerState SomeIpSdServer::GetState() const noexcept
                 {
                     return mFiniteStateMachine.GetState();
+                }
+
+                void SomeIpSdServer::Join()
+                {
+                    // If the future is valid, block unitl its result becomes avialable after the timer expiration.
+                    if (mFuture.valid())
+                    {
+                        mFuture.get();
+                    }
                 }
 
                 void SomeIpSdServer::Stop()
@@ -194,6 +216,7 @@ namespace ara
                 SomeIpSdServer::~SomeIpSdServer()
                 {
                     Stop();
+                    Join();
                 }
             }
         }
