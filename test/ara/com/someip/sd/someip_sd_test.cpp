@@ -68,6 +68,16 @@ namespace ara
                     EXPECT_NO_THROW(Server.Start());
                     EXPECT_THROW(Server.Start(), std::logic_error);
                 }
+
+                TEST_F(SomeIpSdTest, ClientStart)
+                {
+                    const helper::SdClientState cClientStoppedState =
+                        helper::SdClientState::ServiceNotSeen;
+
+                    EXPECT_EQ(Client.GetState(), cClientStoppedState);
+                    EXPECT_NO_THROW(Client.Start());
+                    EXPECT_THROW(Client.Start(), std::logic_error);
+                }
             }
         }
     }

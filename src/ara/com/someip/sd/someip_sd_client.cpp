@@ -16,26 +16,26 @@ namespace ara
                     int initialDelayMax,
                     int repetitionBaseDelay,
                     uint32_t repetitionMax) : SomeIpSdAgent<helper::SdClientState>(networkLayer),
-                                             mTtlTimer(),
-                                             mServiceNotseenState(&mTtlTimer),
-                                             mServiceSeenState(&mTtlTimer),
-                                             mInitialWaitState(
-                                                 helper::SdClientState::InitialWaitPhase,
-                                                 helper::SdClientState::RepetitionPhase,
-                                                 helper::SdClientState::Stopped,
-                                                 std::bind(&SomeIpSdClient::sendFind, this),
-                                                 initialDelayMin,
-                                                 initialDelayMax),
-                                             mRepetitionState(
-                                                 helper::SdClientState::RepetitionPhase,
-                                                 helper::SdClientState::Stopped,
-                                                 helper::SdClientState::Stopped,
-                                                 std::bind(&SomeIpSdClient::sendFind, this),
-                                                 repetitionMax,
-                                                 repetitionBaseDelay),
-                                             mServiceReadyState(&mTtlTimer),
-                                             mStoppedState(&mTtlTimer),
-                                             mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)}
+                                              mTtlTimer(),
+                                              mServiceNotseenState(&mTtlTimer),
+                                              mServiceSeenState(&mTtlTimer),
+                                              mInitialWaitState(
+                                                  helper::SdClientState::InitialWaitPhase,
+                                                  helper::SdClientState::RepetitionPhase,
+                                                  helper::SdClientState::Stopped,
+                                                  std::bind(&SomeIpSdClient::sendFind, this),
+                                                  initialDelayMin,
+                                                  initialDelayMax),
+                                              mRepetitionState(
+                                                  helper::SdClientState::RepetitionPhase,
+                                                  helper::SdClientState::Stopped,
+                                                  helper::SdClientState::Stopped,
+                                                  std::bind(&SomeIpSdClient::sendFind, this),
+                                                  repetitionMax,
+                                                  repetitionBaseDelay),
+                                              mServiceReadyState(&mTtlTimer),
+                                              mStoppedState(&mTtlTimer),
+                                              mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)}
                 {
                     this->StateMachine.Initialize(
                         {&mServiceNotseenState,
@@ -145,10 +145,18 @@ namespace ara
                     switch (state)
                     {
                     case helper::SdClientState::ServiceNotSeen:
-                        mServiceNotseenState.ServiceRequested();
+                        this->Future =
+                            std::async(
+                                std::launch::async,
+                                &fsm::ServiceNotseenState::ServiceRequested,
+                                &mServiceNotseenState);
                         break;
                     case helper::SdClientState::ServiceSeen:
-                        mServiceSeenState.ServiceRequested();
+                        this->Future =
+                            std::async(
+                                std::launch::async,
+                                &fsm::ServiceSeenState::ServiceRequested,
+                                &mServiceSeenState);
                         break;
                     }
                 }
