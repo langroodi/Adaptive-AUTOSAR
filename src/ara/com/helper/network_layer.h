@@ -1,7 +1,9 @@
 #ifndef NETWORK_LAYER_H
 #define NETWORK_LAYER_H
 
+#include <vector>
 #include <functional>
+#include <type_traits>
 
 namespace ara
 {
@@ -14,9 +16,26 @@ namespace ara
             template <typename T>
             class NetworkLayer
             {
+                static_assert(
+                    std::is_copy_assignable<T>::value,
+                    "The template argument is not copy assignable.");
+
+            private:
+                std::vector<std::function<void(T)>> mReceiverCallbacks;
+
             protected:
-                /// @brief Message receiver callaback
-                std::function<void(T &&)> ReceiverCallback;
+                /// @brief Fire all the set receiver callaback
+                /// @param message Received message
+                void FireReceiverCallbacks(T &&message)
+                {
+                    // Copy the received message
+                    T _receivedMessage = message;
+
+                    for (auto callback : mReceiverCallbacks)
+                    {
+                        callback(_receivedMessage);
+                    }
+                }
 
             public:
                 NetworkLayer() noexcept = default;
@@ -28,9 +47,9 @@ namespace ara
 
                 /// @brief Set a receiver callback
                 /// @param receiver Receiver callback to be called when a message has been received
-                void SetReceiver(std::function<void(T &&)> receiver)
+                void SetReceiver(std::function<void(T)> receiver)
                 {
-                    ReceiverCallback = receiver;
+                    mReceiverCallbacks.push_back(receiver);
                 }
             };
         }

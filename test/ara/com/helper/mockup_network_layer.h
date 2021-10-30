@@ -21,7 +21,7 @@ namespace ara
                     // Copy the received message
                     T _receivedMessage = message;
                     // In the mockup network layer, the message is direcly forwarded to the receiver callback.
-                    this->ReceiverCallback(std::move(_receivedMessage));
+                    this->FireReceiverCallbacks(std::move(_receivedMessage));
                 }
             };
         }
