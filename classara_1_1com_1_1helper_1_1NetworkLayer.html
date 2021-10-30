@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1helper_1_1NetworkLa
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classara_1_1com_1_1helper_1_1NetworkLayer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ara::com::helper::NetworkLayer&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -111,16 +111,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa18ecc3935ca13064a36d480ce94aaac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html#aa18ecc3935ca13064a36d480ce94aaac">Send</a> (const T &amp;message)=0</td></tr>
 <tr class="memdesc:aa18ecc3935ca13064a36d480ce94aaac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message through the network.  <a href="classara_1_1com_1_1helper_1_1NetworkLayer.html#aa18ecc3935ca13064a36d480ce94aaac">More...</a><br /></td></tr>
 <tr class="separator:aa18ecc3935ca13064a36d480ce94aaac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c72ebc199470a4fe9f53f3d2cde7a41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html#a9c72ebc199470a4fe9f53f3d2cde7a41">SetReceiver</a> (std::function&lt; void(T &amp;&amp;)&gt; receiver)</td></tr>
-<tr class="memdesc:a9c72ebc199470a4fe9f53f3d2cde7a41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a receiver callback.  <a href="classara_1_1com_1_1helper_1_1NetworkLayer.html#a9c72ebc199470a4fe9f53f3d2cde7a41">More...</a><br /></td></tr>
-<tr class="separator:a9c72ebc199470a4fe9f53f3d2cde7a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4dbc268b79020e44ed6dc32c452c6ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html#ab4dbc268b79020e44ed6dc32c452c6ad">SetReceiver</a> (std::function&lt; void(T)&gt; receiver)</td></tr>
+<tr class="memdesc:ab4dbc268b79020e44ed6dc32c452c6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a receiver callback.  <a href="classara_1_1com_1_1helper_1_1NetworkLayer.html#ab4dbc268b79020e44ed6dc32c452c6ad">More...</a><br /></td></tr>
+<tr class="separator:ab4dbc268b79020e44ed6dc32c452c6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a59974b0e89d64cec74ca131082637137"><td class="memItemLeft" align="right" valign="top"><a id="a59974b0e89d64cec74ca131082637137"></a>
-std::function&lt; void(T &amp;&amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html#a59974b0e89d64cec74ca131082637137">ReceiverCallback</a></td></tr>
-<tr class="memdesc:a59974b0e89d64cec74ca131082637137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message receiver callaback. <br /></td></tr>
-<tr class="separator:a59974b0e89d64cec74ca131082637137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a7efbbb333c66d84be1ec6394c101a792"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html#a7efbbb333c66d84be1ec6394c101a792">FireReceiverCallbacks</a> (T &amp;&amp;message)</td></tr>
+<tr class="memdesc:a7efbbb333c66d84be1ec6394c101a792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire all the set receiver callaback.  <a href="classara_1_1com_1_1helper_1_1NetworkLayer.html#a7efbbb333c66d84be1ec6394c101a792">More...</a><br /></td></tr>
+<tr class="separator:a7efbbb333c66d84be1ec6394c101a792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -134,6 +133,42 @@ class ara::com::helper::NetworkLayer&lt; T &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7efbbb333c66d84be1ec6394c101a792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7efbbb333c66d84be1ec6394c101a792">&#9670;&nbsp;</a></span>FireReceiverCallbacks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">ara::com::helper::NetworkLayer</a>&lt; T &gt;::FireReceiverCallbacks </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fire all the set receiver callaback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Received message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa18ecc3935ca13064a36d480ce94aaac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa18ecc3935ca13064a36d480ce94aaac">&#9670;&nbsp;</a></span>Send()</h2>
 
@@ -170,8 +205,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a9c72ebc199470a4fe9f53f3d2cde7a41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c72ebc199470a4fe9f53f3d2cde7a41">&#9670;&nbsp;</a></span>SetReceiver()</h2>
+<a id="ab4dbc268b79020e44ed6dc32c452c6ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4dbc268b79020e44ed6dc32c452c6ad">&#9670;&nbsp;</a></span>SetReceiver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +219,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">ara::com::helper::NetworkLayer</a>&lt; T &gt;::SetReceiver </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; void(T &amp;&amp;)&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; void(T)&gt;&#160;</td>
           <td class="paramname"><em>receiver</em></td><td>)</td>
           <td></td>
         </tr>
