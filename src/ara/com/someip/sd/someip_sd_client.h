@@ -33,6 +33,12 @@ namespace ara
                     fsm::StoppedState mStoppedState;
                     entry::ServiceEntry mFindServiceEntry;
                     SomeIpSdMessage mFindServieMessage;
+                    std::mutex mOfferingMutex;
+                    std::unique_lock<std::mutex> mOfferingLock;
+                    std::condition_variable mOfferingConditionVariable;
+                    std::mutex mStopOfferingMutex;
+                    std::unique_lock<std::mutex> mStopOfferingLock;
+                    std::condition_variable mStopOfferingConditionVariable;
 
                     void sendFind();
                     bool matchRequestedService(
@@ -47,7 +53,7 @@ namespace ara
 
                 public:
                     SomeIpSdClient() = delete;
-                    
+
                     /// @brief Constructor
                     /// @param networkLayer Network communication abstraction layer
                     /// @param serviceId Server's service ID
@@ -62,6 +68,16 @@ namespace ara
                         int initialDelayMax,
                         int repetitionBaseDelay,
                         uint32_t repetitionMax);
+
+                    /// @brief Try to wait unitl the server offers the service
+                    /// @param timeout Waiting timeout in seconds
+                    /// @returns True, if the service is offered before the timeout; otherwise false
+                    bool TryWaitUntiServiceOffered(uint32_t timeout);
+
+                    /// @brief Try to wait unitl the server stops offering the service
+                    /// @param timeout Waiting timeout in seconds
+                    /// @returns True, if the service offering is stopped before the timeout; otherwise false
+                    bool TryWaitUntiServiceOfferStopped(uint32_t timeout);
 
                     ~SomeIpSdClient() override;
                 };

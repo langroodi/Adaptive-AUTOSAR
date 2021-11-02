@@ -35,7 +35,9 @@ namespace ara
                                                   repetitionBaseDelay),
                                               mServiceReadyState(&mTtlTimer),
                                               mStoppedState(&mTtlTimer),
-                                              mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)}
+                                              mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)},
+                                              mOfferingLock(mOfferingMutex, std::defer_lock),
+                                              mStopOfferingLock(mStopOfferingMutex, std::defer_lock)
                 {
                     this->StateMachine.Initialize(
                         {&mServiceNotseenState,
@@ -102,6 +104,7 @@ namespace ara
                         dynamic_cast<fsm::ClientServiceState *>(_machineState);
 
                     _clientServiceState->ServiceOffered(ttl);
+                    mOfferingConditionVariable.notify_one();
                 }
 
                 void SomeIpSdClient::onServiceOfferStopped()
@@ -112,12 +115,15 @@ namespace ara
                     {
                     case helper::SdClientState::ServiceSeen:
                         mServiceSeenState.ServiceStopped();
+                        mStopOfferingConditionVariable.notify_one();
                         break;
                     case helper::SdClientState::ServiceReady:
                         mServiceReadyState.ServiceStopped();
+                        mStopOfferingConditionVariable.notify_one();
                         break;
                     case helper::SdClientState::RepetitionPhase:
                         mServiceReadyState.ServiceStopped();
+                        mStopOfferingConditionVariable.notify_one();
                         break;
                     }
                 }
@@ -176,6 +182,30 @@ namespace ara
                         mStoppedState.ServiceNotRequested();
                         break;
                     }
+                }
+
+                bool SomeIpSdClient::TryWaitUntiServiceOffered(uint32_t timeout)
+                {
+                    mOfferingLock.lock();
+                    std::cv_status _status =
+                        mOfferingConditionVariable.wait_for(
+                            mOfferingLock, std::chrono::seconds(timeout));
+                    mOfferingLock.unlock();
+                    bool _result = _status != std::cv_status::timeout;
+
+                    return _result;
+                }
+
+                bool SomeIpSdClient::TryWaitUntiServiceOfferStopped(uint32_t timeout)
+                {
+                    mStopOfferingLock.lock();
+                    std::cv_status _status =
+                        mStopOfferingConditionVariable.wait_for(
+                            mStopOfferingLock, std::chrono::seconds(timeout));
+                    mStopOfferingLock.unlock();
+                    bool _result = _status != std::cv_status::timeout;
+
+                    return _result;
                 }
 
                 SomeIpSdClient::~SomeIpSdClient()
