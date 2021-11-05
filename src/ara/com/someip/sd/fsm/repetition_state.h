@@ -36,7 +36,7 @@ namespace ara
                                 auto _delay = std::chrono::milliseconds(_doubledDelay);
                                 std::this_thread::sleep_for(_delay);
 
-                                if (this->Stopped)
+                                if (this->Stopped || this->Interrupted)
                                 {
                                     break;
                                 }
@@ -66,7 +66,8 @@ namespace ara
                             T stoppedState,
                             std::function<void()> onTimerExpired,
                             uint32_t repetitionsMax,
-                            int repetitionsBaseDelay) : TimerSetState<T>(currentState, nextState, stoppedState, onTimerExpired),
+                            int repetitionsBaseDelay) : helper::MachineState<T>(currentState),
+                                                        TimerSetState<T>(nextState, stoppedState, onTimerExpired),
                                                         mRepetitionsMax{static_cast<int>(repetitionsMax)},
                                                         mRepetitionsBaseDelay{repetitionsBaseDelay},
                                                         mRun{0}

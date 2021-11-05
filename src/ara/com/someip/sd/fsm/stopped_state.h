@@ -17,6 +17,9 @@ namespace ara
                     /// @note The state is not copyable
                     class StoppedState : public ClientServiceState
                     {
+                    private:
+                        helper::TtlTimer *mTimer;
+
                     protected:
                         void Deactivate(helper::SdClientState nextState) override;
 

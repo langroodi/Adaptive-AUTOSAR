@@ -18,6 +18,8 @@ namespace ara
                     class ServiceSeenState : public ClientServiceState
                     {
                     private:
+                        helper::TtlTimer *mTimer;
+
                         void onTimerExpired();
 
                     protected:

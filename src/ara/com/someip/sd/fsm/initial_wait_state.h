@@ -39,7 +39,7 @@ namespace ara
                             auto _delay = std::chrono::milliseconds(mInitialDelayMin);
                             std::this_thread::sleep_for(_delay);
 
-                            if (!this->Stopped)
+                            if (!this->Stopped || this->Interrupted)
                             {
                                 // Invoke the on timer expiration callback
                                 this->OnTimerExpired();
@@ -65,7 +65,8 @@ namespace ara
                             T stoppedState,
                             std::function<void()> onTimerExpired,
                             int initialDelayMin,
-                            int initialDelayMax) : TimerSetState<T>(currentState, nextState, stoppedState, onTimerExpired),
+                            int initialDelayMax) : helper::MachineState<T>(currentState),
+                                                   TimerSetState<T>(nextState, stoppedState, onTimerExpired),
                                                    mInitialDelayMin{initialDelayMin},
                                                    mInitialDelayMax{initialDelayMax}
                         {

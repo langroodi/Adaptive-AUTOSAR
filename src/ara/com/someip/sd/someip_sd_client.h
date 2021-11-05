@@ -6,8 +6,8 @@
 #include "../../entry/service_entry.h"
 #include "./fsm/service_notseen_state.h"
 #include "./fsm/service_seen_state.h"
-#include "./fsm/initial_wait_state.h"
-#include "./fsm/repetition_state.h"
+#include "./fsm/client_initial_wait_state.h"
+#include "./fsm/client_repetition_state.h"
 #include "./fsm/service_ready_state.h"
 #include "./fsm/stopped_state.h"
 #include "./someip_sd_agent.h"
@@ -27,8 +27,8 @@ namespace ara
                     helper::TtlTimer mTtlTimer;
                     fsm::ServiceNotseenState mServiceNotseenState;
                     fsm::ServiceSeenState mServiceSeenState;
-                    fsm::InitialWaitState<helper::SdClientState> mInitialWaitState;
-                    fsm::RepetitionState<helper::SdClientState> mRepetitionState;
+                    fsm::ClientInitialWaitState mInitialWaitState;
+                    fsm::ClientRepetitionState mRepetitionState;
                     fsm::ServiceReadyState mServiceReadyState;
                     fsm::StoppedState mStoppedState;
                     entry::ServiceEntry mFindServiceEntry;

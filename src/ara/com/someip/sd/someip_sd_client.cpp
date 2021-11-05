@@ -20,16 +20,10 @@ namespace ara
                                               mServiceNotseenState(&mTtlTimer),
                                               mServiceSeenState(&mTtlTimer),
                                               mInitialWaitState(
-                                                  helper::SdClientState::InitialWaitPhase,
-                                                  helper::SdClientState::RepetitionPhase,
-                                                  helper::SdClientState::Stopped,
                                                   std::bind(&SomeIpSdClient::sendFind, this),
                                                   initialDelayMin,
                                                   initialDelayMax),
                                               mRepetitionState(
-                                                  helper::SdClientState::RepetitionPhase,
-                                                  helper::SdClientState::Stopped,
-                                                  helper::SdClientState::Stopped,
                                                   std::bind(&SomeIpSdClient::sendFind, this),
                                                   repetitionMax,
                                                   repetitionBaseDelay),
@@ -100,10 +94,14 @@ namespace ara
                 void SomeIpSdClient::onServiceOffered(uint32_t ttl)
                 {
                     auto _machineState = this->StateMachine.GetMachineState();
+
                     auto _clientServiceState =
                         dynamic_cast<fsm::ClientServiceState *>(_machineState);
+                    if (_clientServiceState)
+                    {
+                        _clientServiceState->ServiceOffered(ttl);
+                    }
 
-                    _clientServiceState->ServiceOffered(ttl);
                     mOfferingConditionVariable.notify_one();
                 }
 
@@ -186,24 +184,48 @@ namespace ara
 
                 bool SomeIpSdClient::TryWaitUntiServiceOffered(uint32_t timeout)
                 {
-                    mOfferingLock.lock();
-                    std::cv_status _status =
-                        mOfferingConditionVariable.wait_for(
-                            mOfferingLock, std::chrono::seconds(timeout));
-                    mOfferingLock.unlock();
-                    bool _result = _status != std::cv_status::timeout;
+                    bool _result;
+                    helper::SdClientState _state = GetState();
+
+                    if (_state == helper::SdClientState::ServiceReady ||
+                        _state == helper::SdClientState::ServiceSeen)
+                    {
+                        // The service has been already offered, so the function should return immediately.
+                        _result = true;
+                    }
+                    else
+                    {
+                        mOfferingLock.lock();
+                        std::cv_status _status =
+                            mOfferingConditionVariable.wait_for(
+                                mOfferingLock, std::chrono::seconds(timeout));
+                        mOfferingLock.unlock();
+                        _result = _status != std::cv_status::timeout;
+                    }
 
                     return _result;
                 }
 
                 bool SomeIpSdClient::TryWaitUntiServiceOfferStopped(uint32_t timeout)
                 {
-                    mStopOfferingLock.lock();
-                    std::cv_status _status =
-                        mStopOfferingConditionVariable.wait_for(
-                            mStopOfferingLock, std::chrono::seconds(timeout));
-                    mStopOfferingLock.unlock();
-                    bool _result = _status != std::cv_status::timeout;
+                    bool _result;
+                    helper::SdClientState _state = GetState();
+
+                    if (_state == helper::SdClientState::Stopped ||
+                        _state == helper::SdClientState::ServiceNotSeen)
+                    {
+                        // Offering the service has been already stopped, so the function should return immediately.
+                        _result = true;
+                    }
+                    else
+                    {
+                        mStopOfferingLock.lock();
+                        std::cv_status _status =
+                            mStopOfferingConditionVariable.wait_for(
+                                mStopOfferingLock, std::chrono::seconds(timeout));
+                        mStopOfferingLock.unlock();
+                        _result = _status != std::cv_status::timeout;
+                    }
 
                     return _result;
                 }

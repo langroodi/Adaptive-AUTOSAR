@@ -11,9 +11,8 @@ namespace ara
                 namespace fsm
                 {
                     ServiceSeenState::ServiceSeenState(
-                        helper::TtlTimer *ttlTimer) noexcept : ClientServiceState(helper::SdClientState::ServiceSeen,
-                                                                                  ttlTimer)
-
+                        helper::TtlTimer *ttlTimer) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceSeen),
+                                                               mTimer{ttlTimer}
                     {
                     }
 
@@ -26,7 +25,7 @@ namespace ara
                     {
                         auto _callback =
                             std::bind(&ServiceSeenState::onTimerExpired, this);
-                        Timer->SetExpirationCallback(_callback);
+                        mTimer->SetExpirationCallback(_callback);
                     }
 
                     void ServiceSeenState::ServiceRequested()
@@ -36,23 +35,23 @@ namespace ara
 
                     void ServiceSeenState::ServiceOffered(uint32_t ttl)
                     {
-                        Timer->Reset(ttl);
+                        mTimer->Reset(ttl);
                     }
 
                     void ServiceSeenState::ServiceStopped()
                     {
-                        Timer->Cancel();
+                        mTimer->Cancel();
                         Transit(helper::SdClientState::ServiceNotSeen);
                     }
 
                     void ServiceSeenState::Deactivate(helper::SdClientState nextState)
                     {
-                        Timer->ResetExpirationCallback();
+                        mTimer->ResetExpirationCallback();
                     }
 
                     ServiceSeenState::~ServiceSeenState()
                     {
-                        Timer->ResetExpirationCallback();
+                        mTimer->ResetExpirationCallback();
                     }
                 }
             }

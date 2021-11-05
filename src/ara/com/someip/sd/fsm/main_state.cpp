@@ -14,10 +14,11 @@ namespace ara
                 {
                     MainState::MainState(
                         std::function<void()> onTimerExpired,
-                        int cyclicOfferDelay) : TimerSetState<helper::SdServerState>(helper::SdServerState::MainPhase,
-                                                                                     helper::SdServerState::MainPhase,
-                                                                                     helper::SdServerState::NotReady,
-                                                                                     onTimerExpired),
+                        int cyclicOfferDelay) : helper::MachineState<helper::SdServerState>(helper::SdServerState::MainPhase),
+                                                TimerSetState<helper::SdServerState>(
+                                                    helper::SdServerState::MainPhase,
+                                                    helper::SdServerState::NotReady,
+                                                    onTimerExpired),
                                                 mCyclicOfferDelay{cyclicOfferDelay}
                     {
                         if (cyclicOfferDelay < 0)

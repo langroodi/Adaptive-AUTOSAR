@@ -11,8 +11,8 @@ namespace ara
                 namespace fsm
                 {
                     StoppedState::StoppedState(
-                        helper::TtlTimer *ttlTimer) noexcept : ClientServiceState(helper::SdClientState::Stopped,
-                                                                                  ttlTimer)
+                        helper::TtlTimer *ttlTimer) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::Stopped),
+                        mTimer{ttlTimer}
                     {
                     }
 
@@ -28,7 +28,7 @@ namespace ara
 
                     void StoppedState::ServiceOffered(uint32_t ttl)
                     {
-                        Timer->Reset(ttl);
+                        mTimer->Reset(ttl);
                         Transit(helper::SdClientState::ServiceReady);
                     }
 
