@@ -27,6 +27,7 @@ namespace ara
                     {
                         // Reset the next state in case that it was modified during the last service offering.
                         SetNextState(helper::SdClientState::Stopped);
+                        TimerSetState::Activate(previousState);
                     }
                     
                     void ClientRepetitionState::ServiceOffered(uint32_t ttl)
