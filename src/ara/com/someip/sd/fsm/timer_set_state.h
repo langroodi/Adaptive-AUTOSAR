@@ -30,13 +30,18 @@ namespace ara
                         std::mutex mMutex;
                         std::unique_lock<std::mutex> mLock;
                         std::condition_variable mConditionVariable;
-                        bool mStopped;
+                        
+                        bool stopped()
+                        {
+                            // If the the lock is not owned, it means the service is stopped.
+                            return !mLock;
+                        }
 
                         void setTimerBase()
                         {
                             SetTimer();
                             // Transition to the next state or to the stopped state
-                            if (mStopped)
+                            if (stopped())
                             {
                                 helper::MachineState<T>::Transit(mStoppedState);
                             }
@@ -96,8 +101,7 @@ namespace ara
                             std::function<void()> onTimerExpired) : mNextState{nextState},
                                                                     mStoppedState{stoppedState},
                                                                     OnTimerExpired{onTimerExpired},
-                                                                    mLock(mMutex, std::defer_lock),
-                                                                    mStopped{true}
+                                                                    mLock(mMutex, std::defer_lock)
                         {
                         }
 
@@ -107,10 +111,8 @@ namespace ara
 
                         virtual void Activate(T previousState) override
                         {
-                            if (mStopped)
+                            if (stopped())
                             {
-                                // Reset 'service stopped' flag
-                                mStopped = false;
                                 setTimerBase();
                             }
                         }
@@ -118,7 +120,6 @@ namespace ara
                         /// @brief Inform the state that the server's service is stopped
                         void ServiceStopped() noexcept
                         {
-                            mStopped = true;
                             mConditionVariable.notify_one();
                         }
 
@@ -131,7 +132,7 @@ namespace ara
 
                         virtual ~TimerSetState() override
                         {
-                            if (!mStopped)
+                            if (!stopped())
                             {
                                 // Set a fake stop signal, otherwise the timer loop may never end (e.g., in the main phase).
                                 ServiceStopped();
