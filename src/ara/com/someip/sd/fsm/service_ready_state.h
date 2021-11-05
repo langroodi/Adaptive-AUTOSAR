@@ -18,8 +18,6 @@ namespace ara
                     class ServiceReadyState : public ClientServiceState
                     {
                     private:
-                        helper::TtlTimer *mTimer;
-
                         void onTimerExpired();
 
                     protected:

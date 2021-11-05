@@ -57,7 +57,6 @@ namespace ara
                     }
                 }
 
-            public:
                 /// @brief Constructor
                 /// @param state Machine state enumeration
                 MachineState(T state) noexcept : mState{state},
@@ -65,6 +64,7 @@ namespace ara
                 {
                 }
 
+            public:
                 virtual ~MachineState() = default;
                 MachineState(const MachineState &) = delete;
                 MachineState &operator=(const MachineState &) = delete;

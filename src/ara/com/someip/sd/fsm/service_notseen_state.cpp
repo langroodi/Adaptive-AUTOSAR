@@ -12,7 +12,7 @@ namespace ara
                 {
                     ServiceNotseenState::ServiceNotseenState(
                         helper::TtlTimer *ttlTimer) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceNotSeen),
-                                                               mTimer{ttlTimer}
+                                                               ClientServiceState(ttlTimer)
                     {
                     }
 
@@ -28,7 +28,7 @@ namespace ara
 
                     void ServiceNotseenState::ServiceOffered(uint32_t ttl)
                     {
-                        mTimer->Set(ttl);
+                        Timer->Set(ttl);
                         Transit(helper::SdClientState::ServiceSeen);
                     }
 

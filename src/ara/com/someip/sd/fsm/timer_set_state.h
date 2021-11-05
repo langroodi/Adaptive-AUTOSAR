@@ -53,7 +53,6 @@ namespace ara
                         /// @brief Set the phase time on state activation
                         virtual void SetTimer() = 0;
 
-                    public:
                         /// @brief Constructor
                         /// @param nextState Next state after initial wait phase expiration
                         /// @param stoppedState Default stopped state after put a stop to the service
@@ -68,6 +67,7 @@ namespace ara
                         {
                         }
 
+                    public:
                         TimerSetState(const TimerSetState &) = delete;
                         TimerSetState &operator=(const TimerSetState &) = delete;
 

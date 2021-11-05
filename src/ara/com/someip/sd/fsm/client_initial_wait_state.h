@@ -22,10 +22,12 @@ namespace ara
 
                     public:
                         /// @brief Constructor
+                        /// @param ttlTimer Finite machine state global TTL timer pointer
                         /// @param onTimerExpired Delegate to be invoked by timer's thread when the timer is expired
                         /// @param initialDelayMin Minimum initial delay in milliseconds
                         /// @param initialDelayMax Maximum initial delay in milliseconds
                         ClientInitialWaitState(
+                            helper::TtlTimer *ttlTimer,
                             std::function<void()> onTimerExpired,
                             int initialDelayMin,
                             int initialDelayMax);

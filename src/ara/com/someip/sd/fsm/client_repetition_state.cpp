@@ -11,9 +11,11 @@ namespace ara
                 namespace fsm
                 {
                     ClientRepetitionState::ClientRepetitionState(
+                        helper::TtlTimer *ttlTimer,
                         std::function<void()> onTimerExpired,
                         uint32_t repetitionsMax,
                         int repetitionsBaseDelay) : MachineState<helper::SdClientState>(helper::SdClientState::RepetitionPhase),
+                                                    ClientServiceState(ttlTimer),
                                                     RepetitionState<helper::SdClientState>(helper::SdClientState::RepetitionPhase,
                                                                                            helper::SdClientState::Stopped,
                                                                                            helper::SdClientState::Stopped,
@@ -34,6 +36,7 @@ namespace ara
                     {
                         // Instead of going to stopped state after interruption, transit to the service ready state.
                         SetNextState(helper::SdClientState::ServiceReady);
+                        Timer->Reset(ttl);
                         Interrupt();
                     }
                 }

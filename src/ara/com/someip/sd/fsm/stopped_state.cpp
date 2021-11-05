@@ -12,7 +12,7 @@ namespace ara
                 {
                     StoppedState::StoppedState(
                         helper::TtlTimer *ttlTimer) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::Stopped),
-                        mTimer{ttlTimer}
+                        ClientServiceState(ttlTimer)
                     {
                     }
 
@@ -28,7 +28,7 @@ namespace ara
 
                     void StoppedState::ServiceOffered(uint32_t ttl)
                     {
-                        mTimer->Reset(ttl);
+                        Timer->Reset(ttl);
                         Transit(helper::SdClientState::ServiceReady);
                     }
 

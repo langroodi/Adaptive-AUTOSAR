@@ -22,10 +22,12 @@ namespace ara
 
                     public:
                         /// @brief Constructor
+                        /// @param ttlTimer Finite machine state global TTL timer pointer
                         /// @param onTimerExpired Delegate to be invoked by timer's thread when the timer is expired
                         /// @param repetitionsMax Maximum iteration in repetition phase
                         /// @param repetitionsBaseDelay Repetition iteration delay in milliseconds
                         ClientRepetitionState(
+                            helper::TtlTimer *ttlTimer,
                             std::function<void()> onTimerExpired,
                             uint32_t repetitionsMax,
                             int repetitionsBaseDelay);

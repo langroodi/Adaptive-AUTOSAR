@@ -20,10 +20,12 @@ namespace ara
                                               mServiceNotseenState(&mTtlTimer),
                                               mServiceSeenState(&mTtlTimer),
                                               mInitialWaitState(
+                                                  &mTtlTimer,
                                                   std::bind(&SomeIpSdClient::sendFind, this),
                                                   initialDelayMin,
                                                   initialDelayMax),
                                               mRepetitionState(
+                                                  &mTtlTimer,
                                                   std::bind(&SomeIpSdClient::sendFind, this),
                                                   repetitionMax,
                                                   repetitionBaseDelay),
@@ -100,9 +102,8 @@ namespace ara
                     if (_clientServiceState)
                     {
                         _clientServiceState->ServiceOffered(ttl);
+                        mOfferingConditionVariable.notify_one();
                     }
-
-                    mOfferingConditionVariable.notify_one();
                 }
 
                 void SomeIpSdClient::onServiceOfferStopped()

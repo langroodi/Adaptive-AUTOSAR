@@ -19,8 +19,17 @@ namespace ara
                     /// @note The state is not copyable
                     class ClientServiceState : virtual public helper::MachineState<helper::SdClientState>
                     {
+                    protected:
+                        /// @brief Timer to handle service offer entry TTL
+                        helper::TtlTimer *const Timer;
+
+                        /// @brief Constructor
+                        /// @param timer Finite machine state global TTL timer pointer
+                        ClientServiceState(helper::TtlTimer *timer) : Timer{timer}
+                        {
+                        }
+
                     public:
-                        ClientServiceState() noexcept = default;
                         ClientServiceState(const ClientServiceState &) = delete;
                         ClientServiceState &operator=(const ClientServiceState &) = delete;
                         virtual ~ClientServiceState() override = default;
