@@ -32,8 +32,9 @@ namespace ara
 
                     void ClientInitialWaitState::ServiceOffered(uint32_t ttl)
                     {
-                        // Instead of going to repetition state after timer expiration, transit to the service ready state.
+                        // Instead of going to repetition state after interruption, transit to the service ready state.
                         SetNextState(helper::SdClientState::ServiceReady);
+                        Interrupt();
                     }
                 }
             }

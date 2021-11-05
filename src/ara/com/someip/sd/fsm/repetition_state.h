@@ -26,16 +26,8 @@ namespace ara
                         const int mRepetitionsMax;
                         const int mRepetitionsBaseDelay;
                         uint32_t mRun;
-                        bool mInterrupted;
 
                     protected:
-                        /// @brief Interrupt the timer
-                        /// @remark If the timer is interrupted, it should transit to the next state.
-                        void Interrupt() noexcept
-                        {
-                            mInterrupted = true;
-                        }
-
                         void SetTimer() override
                         {
                             while (mRun < mRepetitionsMax)
@@ -44,7 +36,7 @@ namespace ara
                                 auto _delay = std::chrono::milliseconds(_doubledDelay);
                                 std::this_thread::sleep_for(_delay);
 
-                                if (this->Stopped || this->mInterrupted)
+                                if (this->Stopped || this->Interrupted)
                                 {
                                     break;
                                 }
@@ -57,8 +49,7 @@ namespace ara
 
                         void Deactivate(T nextState) override
                         {
-                            // Reset interruption flag.
-                            mInterrupted = false;
+                            // Nothing to do on deactivation
                         }
 
                     public:
@@ -79,8 +70,7 @@ namespace ara
                                                         TimerSetState<T>(nextState, stoppedState, onTimerExpired),
                                                         mRepetitionsMax{static_cast<int>(repetitionsMax)},
                                                         mRepetitionsBaseDelay{repetitionsBaseDelay},
-                                                        mRun{0},
-                                                        mInterrupted{false}
+                                                        mRun{0}
                         {
                             if (repetitionsBaseDelay < 0)
                             {

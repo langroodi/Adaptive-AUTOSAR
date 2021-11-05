@@ -44,6 +44,9 @@ namespace ara
                         /// @brief Inidicates whether the server's service stopped or not
                         bool Stopped;
 
+                        /// @brief Inidicates whether the timer is interrupted or not
+                        bool Interrupted;
+
                         /// @brief Delegate which is invoked by timer's thread when the timer is expired
                         const std::function<void()> OnTimerExpired;
 
@@ -60,7 +63,8 @@ namespace ara
                             T stoppedState,
                             std::function<void()> onTimerExpired) : mNextState{nextState},
                                                                     mStoppedState{stoppedState},
-                                                                    OnTimerExpired{onTimerExpired}
+                                                                    OnTimerExpired{onTimerExpired},
+                                                                    Interrupted{false}
                         {
                         }
 
@@ -69,6 +73,9 @@ namespace ara
 
                         virtual void Activate(T previousState) override
                         {
+                            // Reset 'timer interrupted' flag
+                            Interrupted = false;
+
                             if (Stopped)
                             {
                                 // Reset 'service stopped' flag
@@ -81,6 +88,13 @@ namespace ara
                         void ServiceStopped() noexcept
                         {
                             Stopped = true;
+                        }
+
+                        /// @brief Interrupt the timer
+                        /// @remark If the timer is interrupted, it should transit to the next state.
+                        void Interrupt() noexcept
+                        {
+                            Interrupted = true;
                         }
 
                         /// @brief Set next state
