@@ -25,7 +25,7 @@ namespace ara
                     private:
                         const int mInitialDelayMin;
                         const int mInitialDelayMax;
-                        
+
                     protected:
                         void SetTimer() override
                         {

@@ -97,7 +97,7 @@ namespace ara
                                                                     mStoppedState{stoppedState},
                                                                     OnTimerExpired{onTimerExpired},
                                                                     mLock(mMutex, std::defer_lock),
-                                                                    mStopped{false}
+                                                                    mStopped{true}
                         {
                         }
 
