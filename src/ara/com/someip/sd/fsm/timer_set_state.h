@@ -1,6 +1,8 @@
 #ifndef TIMER_SET_STATE_H
 #define TIMER_SET_STATE_H
 
+#include <mutex>
+#include <condition_variable>
 #include <stdexcept>
 #include "../../../helper/machine_state.h"
 
@@ -25,13 +27,16 @@ namespace ara
                     private:
                         const T mStoppedState;
                         T mNextState;
-                        bool mInterrupted;
+                        std::mutex mMutex;
+                        std::unique_lock<std::mutex> mLock;
+                        std::condition_variable mConditionVariable;
+                        bool mStopped;
 
                         void setTimerBase()
                         {
                             SetTimer();
                             // Transition to the next state or to the stopped state
-                            if (Stopped)
+                            if (mStopped)
                             {
                                 helper::MachineState<T>::Transit(mStoppedState);
                             }
@@ -42,20 +47,37 @@ namespace ara
                         }
 
                     protected:
-                        /// @brief Inidicates whether the server's service stopped or not
-                        bool Stopped;
-
-                        /// @brief Inidicates whether the timer is interrupted or not
-                        bool Interrupted() const noexcept
+                        /// @brief Wait for certian period of time
+                        /// @param durtation Waiting duration
+                        /// @returns True if waiting is interrupted; otherwise false if timeout occurs
+                        bool WaitFor(std::chrono::milliseconds duration)
                         {
-                            return mInterrupted;
+                            mLock.lock();
+                            std::cv_status _status =
+                                mConditionVariable.wait_for(
+                                    mLock, duration);
+                            mLock.unlock();
+                            bool _result = _status != std::cv_status::timeout;
+
+                            return _result;
+                        }
+
+                        /// @brief Wait for certian period of time
+                        /// @param durtation Waiting duration in milliseconds
+                        /// @returns True if waiting is interrupted; otherwise false if timeout occurs
+                        bool WaitFor(int duration)
+                        {
+                            auto _milliseconds = std::chrono::milliseconds(duration);
+                            bool _result = WaitFor(_milliseconds);
+
+                            return _result;
                         }
 
                         /// @brief Interrupt the timer
                         /// @remark If the timer is interrupted, it should transit to the next state.
                         void Interrupt() noexcept
                         {
-                            mInterrupted = true;
+                            mConditionVariable.notify_one();
                         }
 
                         /// @brief Delegate which is invoked by timer's thread when the timer is expired
@@ -74,7 +96,8 @@ namespace ara
                             std::function<void()> onTimerExpired) : mNextState{nextState},
                                                                     mStoppedState{stoppedState},
                                                                     OnTimerExpired{onTimerExpired},
-                                                                    mInterrupted{false}
+                                                                    mLock(mMutex, std::defer_lock),
+                                                                    mStopped{false}
                         {
                         }
 
@@ -84,13 +107,10 @@ namespace ara
 
                         virtual void Activate(T previousState) override
                         {
-                            // Reset 'timer interrupted' flag
-                            mInterrupted = false;
-
-                            if (Stopped)
+                            if (mStopped)
                             {
                                 // Reset 'service stopped' flag
-                                Stopped = false;
+                                mStopped = false;
                                 setTimerBase();
                             }
                         }
@@ -98,7 +118,8 @@ namespace ara
                         /// @brief Inform the state that the server's service is stopped
                         void ServiceStopped() noexcept
                         {
-                            Stopped = true;
+                            mStopped = true;
+                            mConditionVariable.notify_one();
                         }
 
                         /// @brief Set next state
@@ -110,7 +131,7 @@ namespace ara
 
                         virtual ~TimerSetState() override
                         {
-                            if (!Stopped)
+                            if (!mStopped)
                             {
                                 // Set a fake stop signal, otherwise the timer loop may never end (e.g., in the main phase).
                                 ServiceStopped();

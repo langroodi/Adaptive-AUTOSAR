@@ -32,8 +32,9 @@ namespace ara
                         while (true)
                         {
                             std::this_thread::sleep_for(mCyclicOfferDelay);
+                            bool _interrupted = this->WaitFor(mCyclicOfferDelay);
 
-                            if (this->Stopped)
+                            if (_interrupted)
                             {
                                 break;
                             }

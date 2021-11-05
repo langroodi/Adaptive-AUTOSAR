@@ -25,7 +25,7 @@ namespace ara
                     private:
                         const int mInitialDelayMin;
                         const int mInitialDelayMax;
-
+                        
                     protected:
                         void SetTimer() override
                         {
@@ -37,9 +37,9 @@ namespace ara
 
                             // Sleep for the initali delay and then transit to the next state.
                             auto _delay = std::chrono::milliseconds(mInitialDelayMin);
-                            std::this_thread::sleep_for(_delay);
+                            bool _interrupted = this->WaitFor(_delay);
 
-                            if (!this->Stopped && !this->Interrupted())
+                            if (!_interrupted)
                             {
                                 // Invoke the on timer expiration callback
                                 this->OnTimerExpired();

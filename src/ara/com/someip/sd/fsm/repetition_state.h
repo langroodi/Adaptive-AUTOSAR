@@ -34,9 +34,9 @@ namespace ara
                             {
                                 int _doubledDelay = std::pow(2, mRun) * mRepetitionsBaseDelay;
                                 auto _delay = std::chrono::milliseconds(_doubledDelay);
-                                std::this_thread::sleep_for(_delay);
+                                bool _interrupted = this->WaitFor(_delay);
 
-                                if (this->Stopped || this->Interrupted())
+                                if (_interrupted)
                                 {
                                     break;
                                 }
