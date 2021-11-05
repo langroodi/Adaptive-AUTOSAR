@@ -36,7 +36,7 @@ namespace ara
                                 auto _delay = std::chrono::milliseconds(_doubledDelay);
                                 std::this_thread::sleep_for(_delay);
 
-                                if (this->Stopped || this->Interrupted)
+                                if (this->Stopped || this->Interrupted())
                                 {
                                     break;
                                 }

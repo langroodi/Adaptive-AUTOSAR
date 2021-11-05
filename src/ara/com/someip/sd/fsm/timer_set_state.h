@@ -23,8 +23,9 @@ namespace ara
                     class TimerSetState : virtual public helper::MachineState<T>
                     {
                     private:
-                        T mNextState;
                         const T mStoppedState;
+                        T mNextState;
+                        bool mInterrupted;
 
                         void setTimerBase()
                         {
@@ -45,7 +46,17 @@ namespace ara
                         bool Stopped;
 
                         /// @brief Inidicates whether the timer is interrupted or not
-                        bool Interrupted;
+                        bool Interrupted() const noexcept
+                        {
+                            return mInterrupted;
+                        }
+
+                        /// @brief Interrupt the timer
+                        /// @remark If the timer is interrupted, it should transit to the next state.
+                        void Interrupt() noexcept
+                        {
+                            mInterrupted = true;
+                        }
 
                         /// @brief Delegate which is invoked by timer's thread when the timer is expired
                         const std::function<void()> OnTimerExpired;
@@ -63,7 +74,7 @@ namespace ara
                             std::function<void()> onTimerExpired) : mNextState{nextState},
                                                                     mStoppedState{stoppedState},
                                                                     OnTimerExpired{onTimerExpired},
-                                                                    Interrupted{false}
+                                                                    mInterrupted{false}
                         {
                         }
 
@@ -74,7 +85,7 @@ namespace ara
                         virtual void Activate(T previousState) override
                         {
                             // Reset 'timer interrupted' flag
-                            Interrupted = false;
+                            mInterrupted = false;
 
                             if (Stopped)
                             {
@@ -88,13 +99,6 @@ namespace ara
                         void ServiceStopped() noexcept
                         {
                             Stopped = true;
-                        }
-
-                        /// @brief Interrupt the timer
-                        /// @remark If the timer is interrupted, it should transit to the next state.
-                        void Interrupt() noexcept
-                        {
-                            Interrupted = true;
                         }
 
                         /// @brief Set next state
