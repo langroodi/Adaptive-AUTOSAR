@@ -1,5 +1,7 @@
 var namespaceara_1_1com_1_1someip_1_1sd_1_1fsm =
 [
+    [ "ClientInitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState" ],
+    [ "ClientRepetitionState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientRepetitionState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientRepetitionState" ],
     [ "ClientServiceState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientServiceState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientServiceState" ],
     [ "InitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState" ],
     [ "MainState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1MainState" ],
