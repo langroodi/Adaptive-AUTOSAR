@@ -68,7 +68,6 @@ namespace ara
                     EXPECT_EQ(Server.GetState(), cServerStoppedState);
                     EXPECT_NO_THROW(Server.Start());
                     EXPECT_THROW(Server.Start(), std::logic_error);
-                    EXPECT_NO_THROW(Server.Stop());
                 }
 
                 TEST_F(SomeIpSdTest, ClientStart)
@@ -79,7 +78,6 @@ namespace ara
                     EXPECT_EQ(Client.GetState(), cClientStoppedState);
                     EXPECT_NO_THROW(Client.Start());
                     EXPECT_THROW(Client.Start(), std::logic_error);
-                    EXPECT_NO_THROW(Client.Stop());
                 }
 
                 TEST_F(SomeIpSdTest, StartScenario)
@@ -90,10 +88,10 @@ namespace ara
                     int _duration =
                         // Initial wait phase delay
                         (cInitialDelayMax +
-                         // Summation of all the repetition phase delays
-                         cRepetitionBaseDelay * (std::pow(2, cRepetitionMax) - 1) +
-                         // Main main first cycle delay
-                         cCycleOfferDelay) *
+                        // Summation of all the repetition phase delays
+                        cRepetitionBaseDelay * (std::pow(2, cRepetitionMax) - 1) +
+                        // Main main first cycle delay
+                        cCycleOfferDelay) *
                         // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
                         2;
 
