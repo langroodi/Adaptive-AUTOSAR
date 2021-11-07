@@ -1,8 +1,6 @@
 #ifndef TIMER_SET_STATE_H
 #define TIMER_SET_STATE_H
 
-#include <mutex>
-#include <condition_variable>
 #include <stdexcept>
 #include "../../../helper/machine_state.h"
 
@@ -27,10 +25,8 @@ namespace ara
                     private:
                         const T mStoppedState;
                         T mNextState;
-                        std::mutex mMutex;
-                        std::unique_lock<std::mutex> mLock;
-                        std::condition_variable mConditionVariable;
                         bool mStopped;
+                        bool mInterrupted;
 
                         void setTimerBase()
                         {
@@ -52,12 +48,8 @@ namespace ara
                         /// @returns True if waiting is interrupted; otherwise false if timeout occurs
                         bool WaitFor(std::chrono::milliseconds duration)
                         {
-                            mLock.lock();
-                            std::cv_status _status =
-                                mConditionVariable.wait_for(
-                                    mLock, duration);
-                            mLock.unlock();
-                            bool _result = _status != std::cv_status::timeout;
+                            std::this_thread::sleep_for(duration);
+                            bool _result = mStopped || mInterrupted;
 
                             return _result;
                         }
@@ -77,7 +69,7 @@ namespace ara
                         /// @remark If the timer is interrupted, it should transit to the next state.
                         void Interrupt() noexcept
                         {
-                            mConditionVariable.notify_one();
+                            mInterrupted = true;
                         }
 
                         /// @brief Delegate which is invoked by timer's thread when the timer is expired
@@ -96,8 +88,8 @@ namespace ara
                             std::function<void()> onTimerExpired) : mNextState{nextState},
                                                                     mStoppedState{stoppedState},
                                                                     OnTimerExpired{onTimerExpired},
-                                                                    mLock(mMutex, std::defer_lock),
-                                                                    mStopped{true}
+                                                                    mStopped{true},
+                                                                    mInterrupted{false}
                         {
                         }
 
@@ -107,6 +99,9 @@ namespace ara
 
                         virtual void Activate(T previousState) override
                         {
+                            // Reset 'service interrupted' flag
+                            mInterrupted = false;
+
                             if (mStopped)
                             {
                                 // Reset 'service stopped' flag
@@ -119,7 +114,6 @@ namespace ara
                         void ServiceStopped() noexcept
                         {
                             mStopped = true;
-                            mConditionVariable.notify_one();
                         }
 
                         /// @brief Set next state

@@ -61,10 +61,10 @@ namespace ara
                                                       port)}
                 {
                     this->StateMachine.Initialize({&mNotReadyState,
-                                                    &mInitialWaitState,
-                                                    &mRepetitionState,
-                                                    &mMainState},
-                                                   helper::SdServerState::NotReady);
+                                                   &mInitialWaitState,
+                                                   &mRepetitionState,
+                                                   &mMainState},
+                                                  helper::SdServerState::NotReady);
 
                     mOfferServiceEntry.AddFirstOption(&mEndpointOption);
                     mOfferServiceMessage.AddEntry(&mOfferServiceEntry);
@@ -152,18 +152,9 @@ namespace ara
 
                 void SomeIpSdServer::StopAgent(helper::SdServerState state)
                 {
-                    switch (state)
-                    {
-                    case helper::SdServerState::InitialWaitPhase:
-                        mInitialWaitState.ServiceStopped();
-                        break;
-                    case helper::SdServerState::RepetitionPhase:
-                        mRepetitionState.ServiceStopped();
-                        break;
-                    case helper::SdServerState::MainPhase:
-                        mMainState.ServiceStopped();
-                        break;
-                    }
+                    mInitialWaitState.ServiceStopped();
+                    mRepetitionState.ServiceStopped();
+                    mMainState.ServiceStopped();
                 }
 
                 SomeIpSdServer::~SomeIpSdServer()

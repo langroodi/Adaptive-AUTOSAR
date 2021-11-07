@@ -87,10 +87,7 @@ namespace ara
                         StopAgent(_state);
                     }
 
-                    virtual ~SomeIpSdAgent()
-                    {
-                        Join();
-                    }
+                    virtual ~SomeIpSdAgent() = default;
                 };
             }
         }

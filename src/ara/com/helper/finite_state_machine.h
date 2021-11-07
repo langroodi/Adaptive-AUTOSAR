@@ -62,8 +62,8 @@ namespace ara
                 void Transit(T previousState, T nextState) override
                 {
                     auto _nextMachineState = mStates.at(nextState);
-                    _nextMachineState->Activate(previousState);
                     mCurrentState = nextState;
+                    _nextMachineState->Activate(previousState);
                 }
             };
         }
