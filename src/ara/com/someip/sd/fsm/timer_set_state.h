@@ -44,7 +44,7 @@ namespace ara
 
                     protected:
                         /// @brief Wait for certian period of time
-                        /// @param durtation Waiting duration
+                        /// @param duration Waiting duration
                         /// @returns True if waiting is interrupted; otherwise false if timeout occurs
                         bool WaitFor(std::chrono::milliseconds duration)
                         {
@@ -55,7 +55,7 @@ namespace ara
                         }
 
                         /// @brief Wait for certian period of time
-                        /// @param durtation Waiting duration in milliseconds
+                        /// @param duration Waiting duration in milliseconds
                         /// @returns True if waiting is interrupted; otherwise false if timeout occurs
                         bool WaitFor(int duration)
                         {
