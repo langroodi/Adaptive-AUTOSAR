@@ -23,8 +23,6 @@ namespace ara
                     protected:
                         void SetTimer() override;
 
-                        void Deactivate(helper::SdServerState nextState) override;
-
                     public:
                         /// @brief Constructor
                         /// @param cyclicOfferDelay Interval in milliseconds to offer the service

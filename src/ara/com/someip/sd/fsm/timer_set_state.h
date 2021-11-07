@@ -88,9 +88,17 @@ namespace ara
                             std::function<void()> onTimerExpired) : mNextState{nextState},
                                                                     mStoppedState{stoppedState},
                                                                     OnTimerExpired{onTimerExpired},
-                                                                    mStopped{true},
+                                                                    mStopped{false},
                                                                     mInterrupted{false}
                         {
+                        }
+
+                        void Deactivate(T nextState) override
+                        {
+                            // Reset 'service interrupted' flag
+                            mInterrupted = false;
+                            // Reset 'service stopped' flag
+                            mStopped = false;
                         }
 
                     public:
@@ -99,13 +107,9 @@ namespace ara
 
                         virtual void Activate(T previousState) override
                         {
-                            // Reset 'service interrupted' flag
-                            mInterrupted = false;
 
-                            if (mStopped)
+                            if (!mStopped)
                             {
-                                // Reset 'service stopped' flag
-                                mStopped = false;
                                 setTimerBase();
                             }
                         }

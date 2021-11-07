@@ -16,7 +16,7 @@ namespace ara
                         std::function<void()> onTimerExpired,
                         int cyclicOfferDelay) : helper::MachineState<helper::SdServerState>(helper::SdServerState::MainPhase),
                                                 TimerSetState<helper::SdServerState>(
-                                                    helper::SdServerState::MainPhase,
+                                                    helper::SdServerState::NotReady,
                                                     helper::SdServerState::NotReady,
                                                     onTimerExpired),
                                                 mCyclicOfferDelay{cyclicOfferDelay}
@@ -43,11 +43,6 @@ namespace ara
                                 this->OnTimerExpired();
                             }
                         }
-                    }
-
-                    void MainState::Deactivate(helper::SdServerState nextState)
-                    {
-                        // Nothing to do on deactivation
                     }
                 }
             }

@@ -47,11 +47,6 @@ namespace ara
                             }
                         }
 
-                        void Deactivate(T nextState) override
-                        {
-                            // Nothing to do on deactivation
-                        }
-
                     public:
                         /// @brief Constructor
                         /// @param currentState Current state at repetition phase
