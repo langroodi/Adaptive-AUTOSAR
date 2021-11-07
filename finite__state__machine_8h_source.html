@@ -149,8 +149,8 @@ $(document).ready(function(){initNavTree('finite__state__machine_8h_source.html'
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a0acd279f581eea67989c9024035ef2d9">   62</a></span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a0acd279f581eea67989c9024035ef2d9">Transit</a>(T previousState, T nextState)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">                </span>{</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keyword">auto</span> _nextMachineState = mStates.at(nextState);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    _nextMachineState-&gt;Activate(previousState);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    mCurrentState = nextState;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    mCurrentState = nextState;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    _nextMachineState-&gt;Activate(previousState);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            };</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
