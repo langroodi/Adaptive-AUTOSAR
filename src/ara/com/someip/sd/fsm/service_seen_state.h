@@ -18,6 +18,8 @@ namespace ara
                     class ServiceSeenState : public ClientServiceState
                     {
                     private:
+                        std::condition_variable *mConditionVariable;
+
                         void onTimerExpired();
 
                     protected:
@@ -26,7 +28,10 @@ namespace ara
                     public:
                         /// @brief Constructor
                         /// @param ttlTimer Finite machine state global TTL timer pointer
-                        ServiceSeenState(helper::TtlTimer *ttlTimer) noexcept;
+                        /// @param conditionVariable Condition variable to be notified when the state activated
+                        ServiceSeenState(
+                            helper::TtlTimer *ttlTimer,
+                            std::condition_variable *conditionVariable) noexcept;
 
                         ServiceSeenState() = delete;
                         ServiceSeenState(const ServiceSeenState &) = delete;

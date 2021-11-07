@@ -11,8 +11,10 @@ namespace ara
                 namespace fsm
                 {
                     ServiceReadyState::ServiceReadyState(
-                        helper::TtlTimer *ttlTimer) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceReady),
-                        ClientServiceState(ttlTimer)
+                        helper::TtlTimer *ttlTimer,
+                        std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceReady),
+                        ClientServiceState(ttlTimer),
+                        mConditionVariable{conditionVariable}
                     {
                     }
 
@@ -23,6 +25,7 @@ namespace ara
 
                     void ServiceReadyState::Activate(helper::SdClientState previousState)
                     {
+                        mConditionVariable->notify_one();
                         auto _callback =
                             std::bind(&ServiceReadyState::onTimerExpired, this);
                         Timer->SetExpirationCallback(_callback);

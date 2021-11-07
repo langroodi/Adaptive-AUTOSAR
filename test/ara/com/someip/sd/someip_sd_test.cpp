@@ -21,15 +21,16 @@ namespace ara
                     static const uint32_t cMinorVersion = 0;
                     static const uint16_t cPort = 8080;
                     static const int cInitialDelayMin = 100;
-                    static const int cInitialDelayMax = 200;
-                    static const int cRepetitionBaseDelay = 200;
-                    static const int cCycleOfferDelay = 100;
-                    static const uint32_t cRepetitionMax = 2;
 
                     helper::MockupNetworkLayer<SomeIpSdMessage> mNetworkLayer;
                     helper::Ipv4Address mLocalhost;
 
                 protected:
+                    static const int cInitialDelayMax = 200;
+                    static const int cRepetitionBaseDelay = 200;
+                    static const uint32_t cRepetitionMax = 2;
+                    static const int cCycleOfferDelay = 100;
+
                     SomeIpSdServer Server;
                     SomeIpSdClient Client;
 
@@ -77,6 +78,28 @@ namespace ara
                     EXPECT_EQ(Client.GetState(), cClientStoppedState);
                     EXPECT_NO_THROW(Client.Start());
                     EXPECT_THROW(Client.Start(), std::logic_error);
+                }
+
+                TEST_F(SomeIpSdTest, StartScenario)
+                {
+                    const helper::SdClientState cServiceReadyState =
+                        helper::SdClientState::ServiceReady;
+
+                    int _duration =
+                        // Initial wait phase delay
+                        (cInitialDelayMax +
+                        // Summation of all the repetition phase delays
+                        cRepetitionBaseDelay * (std::pow(2, cRepetitionMax) - 1) +
+                        // Main main first cycle delay
+                        cCycleOfferDelay) *
+                        // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
+                        2;
+
+                    Server.Start();
+                    Client.Start();
+                    Client.TryWaitUntiServiceOffered(_duration);
+
+                    EXPECT_EQ(Client.GetState(), cServiceReadyState);
                 }
             }
         }

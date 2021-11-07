@@ -18,7 +18,7 @@ namespace ara
                     uint32_t repetitionMax) : SomeIpSdAgent<helper::SdClientState>(networkLayer),
                                               mTtlTimer(),
                                               mServiceNotseenState(&mTtlTimer),
-                                              mServiceSeenState(&mTtlTimer),
+                                              mServiceSeenState(&mTtlTimer, &mOfferingConditionVariable),
                                               mInitialWaitState(
                                                   &mTtlTimer,
                                                   std::bind(&SomeIpSdClient::sendFind, this),
@@ -29,11 +29,12 @@ namespace ara
                                                   std::bind(&SomeIpSdClient::sendFind, this),
                                                   repetitionMax,
                                                   repetitionBaseDelay),
-                                              mServiceReadyState(&mTtlTimer),
+                                              mServiceReadyState(&mTtlTimer, &mOfferingConditionVariable),
                                               mStoppedState(&mTtlTimer),
                                               mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)},
                                               mOfferingLock(mOfferingMutex, std::defer_lock),
-                                              mStopOfferingLock(mStopOfferingMutex, std::defer_lock)
+                                              mStopOfferingLock(mStopOfferingMutex, std::defer_lock),
+                                              mValidNotify{true}
                 {
                     this->StateMachine.Initialize(
                         {&mServiceNotseenState,
@@ -102,7 +103,6 @@ namespace ara
                     if (_clientServiceState)
                     {
                         _clientServiceState->ServiceOffered(ttl);
-                        mOfferingConditionVariable.notify_one();
                     }
                 }
 
@@ -183,7 +183,7 @@ namespace ara
                     }
                 }
 
-                bool SomeIpSdClient::TryWaitUntiServiceOffered(uint32_t timeout)
+                bool SomeIpSdClient::TryWaitUntiServiceOffered(int duration)
                 {
                     bool _result;
                     helper::SdClientState _state = GetState();
@@ -199,15 +199,15 @@ namespace ara
                         mOfferingLock.lock();
                         std::cv_status _status =
                             mOfferingConditionVariable.wait_for(
-                                mOfferingLock, std::chrono::seconds(timeout));
+                                mOfferingLock, std::chrono::milliseconds(duration));
                         mOfferingLock.unlock();
-                        _result = _status != std::cv_status::timeout;
+                        _result = mValidNotify && (_status != std::cv_status::timeout);
                     }
 
                     return _result;
                 }
 
-                bool SomeIpSdClient::TryWaitUntiServiceOfferStopped(uint32_t timeout)
+                bool SomeIpSdClient::TryWaitUntiServiceOfferStopped(int duration)
                 {
                     bool _result;
                     helper::SdClientState _state = GetState();
@@ -223,9 +223,9 @@ namespace ara
                         mStopOfferingLock.lock();
                         std::cv_status _status =
                             mStopOfferingConditionVariable.wait_for(
-                                mStopOfferingLock, std::chrono::seconds(timeout));
+                                mStopOfferingLock, std::chrono::milliseconds(duration));
                         mStopOfferingLock.unlock();
-                        _result = _status != std::cv_status::timeout;
+                        _result = mValidNotify && (_status != std::cv_status::timeout);
                     }
 
                     return _result;
@@ -233,6 +233,12 @@ namespace ara
 
                 SomeIpSdClient::~SomeIpSdClient()
                 {
+                    // Condition variable notifications are not valid anymore during destruction.
+                    mValidNotify = false;
+                    // Release the threads waiting for the condition variables before desctruction.
+                    mOfferingConditionVariable.notify_one();
+                    mStopOfferingConditionVariable.notify_one();
+
                     Stop();
                     Join();
                 }

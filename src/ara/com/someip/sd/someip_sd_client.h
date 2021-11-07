@@ -39,6 +39,7 @@ namespace ara
                     std::mutex mStopOfferingMutex;
                     std::unique_lock<std::mutex> mStopOfferingLock;
                     std::condition_variable mStopOfferingConditionVariable;
+                    bool mValidNotify;
 
                     void sendFind();
                     bool matchRequestedService(
@@ -70,14 +71,14 @@ namespace ara
                         uint32_t repetitionMax);
 
                     /// @brief Try to wait unitl the server offers the service
-                    /// @param timeout Waiting timeout in seconds
+                    /// @param duration Waiting timeout in milliseconds
                     /// @returns True, if the service is offered before the timeout; otherwise false
-                    bool TryWaitUntiServiceOffered(uint32_t timeout);
+                    bool TryWaitUntiServiceOffered(int duration);
 
                     /// @brief Try to wait unitl the server stops offering the service
-                    /// @param timeout Waiting timeout in seconds
+                    /// @param duration Waiting timeout in milliseconds
                     /// @returns True, if the service offering is stopped before the timeout; otherwise false
-                    bool TryWaitUntiServiceOfferStopped(uint32_t timeout);
+                    bool TryWaitUntiServiceOfferStopped(int duration);
 
                     ~SomeIpSdClient() override;
                 };
