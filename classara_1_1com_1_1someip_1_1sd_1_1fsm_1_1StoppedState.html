@@ -118,9 +118,9 @@ Inheritance diagram for ara::com::someip::sd::fsm::StoppedState:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4cdb615ca0e65a4e38388263ae138f5d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html#a4cdb615ca0e65a4e38388263ae138f5d">StoppedState</a> (<a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html">helper::TtlTimer</a> *ttlTimer) noexcept</td></tr>
-<tr class="memdesc:a4cdb615ca0e65a4e38388263ae138f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html#a4cdb615ca0e65a4e38388263ae138f5d">More...</a><br /></td></tr>
-<tr class="separator:a4cdb615ca0e65a4e38388263ae138f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b8dfff85ed18799a16be40a57e4001"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html#a54b8dfff85ed18799a16be40a57e4001">StoppedState</a> (<a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html">helper::TtlTimer</a> *ttlTimer, std::condition_variable *conditionVariable) noexcept</td></tr>
+<tr class="memdesc:a54b8dfff85ed18799a16be40a57e4001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html#a54b8dfff85ed18799a16be40a57e4001">More...</a><br /></td></tr>
+<tr class="separator:a54b8dfff85ed18799a16be40a57e4001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b34e096ba5fd8c4742254d41cafeffe"><td class="memItemLeft" align="right" valign="top"><a id="a2b34e096ba5fd8c4742254d41cafeffe"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>StoppedState</b> (const <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html">StoppedState</a> &amp;)=delete</td></tr>
 <tr class="separator:a2b34e096ba5fd8c4742254d41cafeffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,8 +187,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Client state when the service is stopped. </p>
 <dl class="section note"><dt>Note</dt><dd>The state is not copyable </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4cdb615ca0e65a4e38388263ae138f5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cdb615ca0e65a4e38388263ae138f5d">&#9670;&nbsp;</a></span>StoppedState()</h2>
+<a id="a54b8dfff85ed18799a16be40a57e4001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b8dfff85ed18799a16be40a57e4001">&#9670;&nbsp;</a></span>StoppedState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,8 +200,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">ara::com::someip::sd::fsm::StoppedState::StoppedState </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html">helper::TtlTimer</a> *&#160;</td>
-          <td class="paramname"><em>ttlTimer</em></td><td>)</td>
+          <td class="paramname"><em>ttlTimer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::condition_variable *&#160;</td>
+          <td class="paramname"><em>conditionVariable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -215,6 +225,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ttlTimer</td><td>Finite machine state global TTL timer pointer </td></tr>
+    <tr><td class="paramname">conditionVariable</td><td>Condition variable to be notified when the state activated </td></tr>
   </table>
   </dd>
 </dl>
