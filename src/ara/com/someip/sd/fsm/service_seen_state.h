@@ -1,5 +1,5 @@
 #ifndef SERVICE_SEEN_STATE_H
-#define SERVIEC_SEEN_STATE_H
+#define SERVICE_SEEN_STATE_H
 
 #include "./client_service_state.h"
 
