@@ -21,15 +21,16 @@ namespace ara
                     static const uint32_t cMinorVersion = 0;
                     static const uint16_t cPort = 8080;
                     static const int cInitialDelayMin = 100;
+                    static const int cInitialDelayMax = 200;
+                    static const int cRepetitionBaseDelay = 200;
+                    static const uint32_t cRepetitionMax = 2;
+                    static const int cCycleOfferDelay = 100;
 
                     helper::MockupNetworkLayer<SomeIpSdMessage> mNetworkLayer;
                     helper::Ipv4Address mLocalhost;
 
                 protected:
-                    static const int cInitialDelayMax = 200;
-                    static const int cRepetitionBaseDelay = 200;
-                    static const uint32_t cRepetitionMax = 2;
-                    static const int cCycleOfferDelay = 100;
+                    int OfferWaitDuration;
 
                     SomeIpSdServer Server;
                     SomeIpSdClient Client;
@@ -55,7 +56,16 @@ namespace ara
                                          cInitialDelayMin,
                                          cInitialDelayMax,
                                          cRepetitionBaseDelay,
-                                         cRepetitionMax)
+                                         cRepetitionMax),
+                                     OfferWaitDuration{static_cast<int>(
+                                         // Initial wait phase delay
+                                         (cInitialDelayMax +
+                                          // Summation of all the repetition phase delays
+                                          cRepetitionBaseDelay * (std::pow(2, cRepetitionMax) - 1) +
+                                          // Main main first cycle delay
+                                          cCycleOfferDelay) *
+                                         // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
+                                         2)}
                     {
                     }
                 };
@@ -85,21 +95,24 @@ namespace ara
                     const helper::SdClientState cServiceReadyState =
                         helper::SdClientState::ServiceReady;
 
-                    int _duration =
-                        // Initial wait phase delay
-                        (cInitialDelayMax +
-                        // Summation of all the repetition phase delays
-                        cRepetitionBaseDelay * (std::pow(2, cRepetitionMax) - 1) +
-                        // Main main first cycle delay
-                        cCycleOfferDelay) *
-                        // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
-                        2;
+                    Server.Start();
+                    Client.Start();
+                    Client.TryWaitUntiServiceOffered(OfferWaitDuration);
+
+                    EXPECT_EQ(Client.GetState(), cServiceReadyState);
+                }
+
+                TEST_F(SomeIpSdTest, ClientStopScenario)
+                {
+                    const helper::SdClientState cServiceSeenState =
+                        helper::SdClientState::ServiceSeen;
 
                     Server.Start();
                     Client.Start();
-                    Client.TryWaitUntiServiceOffered(_duration);
+                    Client.TryWaitUntiServiceOffered(OfferWaitDuration);
+                    Client.Stop();
 
-                    EXPECT_EQ(Client.GetState(), cServiceReadyState);
+                    EXPECT_EQ(Client.GetState(), cServiceSeenState);
                 }
             }
         }
