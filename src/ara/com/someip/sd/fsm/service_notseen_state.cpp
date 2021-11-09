@@ -11,14 +11,17 @@ namespace ara
                 namespace fsm
                 {
                     ServiceNotseenState::ServiceNotseenState(
-                        helper::TtlTimer *ttlTimer) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceNotSeen),
-                                                               ClientServiceState(ttlTimer)
+                        helper::TtlTimer *ttlTimer,
+                        std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceNotSeen),
+                                                                               ClientServiceState(ttlTimer),
+                                                                               mConditionVariable{conditionVariable}
+
                     {
                     }
 
                     void ServiceNotseenState::Activate(helper::SdClientState previousState)
                     {
-                        // Nothing to do on activation
+                        mConditionVariable->notify_one();
                     }
 
                     void ServiceNotseenState::ServiceRequested()

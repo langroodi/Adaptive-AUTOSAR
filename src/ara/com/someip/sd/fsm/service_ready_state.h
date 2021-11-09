@@ -18,7 +18,7 @@ namespace ara
                     class ServiceReadyState : public ClientServiceState
                     {
                     private:
-                        std::condition_variable *mConditionVariable;
+                        std::condition_variable * const mConditionVariable;
                         
                         void onTimerExpired();
 

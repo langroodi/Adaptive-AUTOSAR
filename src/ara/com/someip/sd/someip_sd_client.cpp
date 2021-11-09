@@ -17,7 +17,7 @@ namespace ara
                     int repetitionBaseDelay,
                     uint32_t repetitionMax) : SomeIpSdAgent<helper::SdClientState>(networkLayer),
                                               mTtlTimer(),
-                                              mServiceNotseenState(&mTtlTimer),
+                                              mServiceNotseenState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mServiceSeenState(&mTtlTimer, &mOfferingConditionVariable),
                                               mInitialWaitState(
                                                   &mTtlTimer,
@@ -30,7 +30,7 @@ namespace ara
                                                   repetitionMax,
                                                   repetitionBaseDelay),
                                               mServiceReadyState(&mTtlTimer, &mOfferingConditionVariable),
-                                              mStoppedState(&mTtlTimer),
+                                              mStoppedState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)},
                                               mOfferingLock(mOfferingMutex, std::defer_lock),
                                               mStopOfferingLock(mStopOfferingMutex, std::defer_lock),

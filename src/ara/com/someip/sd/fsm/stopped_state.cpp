@@ -11,8 +11,10 @@ namespace ara
                 namespace fsm
                 {
                     StoppedState::StoppedState(
-                        helper::TtlTimer *ttlTimer) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::Stopped),
-                        ClientServiceState(ttlTimer)
+                        helper::TtlTimer *ttlTimer,
+                        std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::Stopped),
+                                                                               ClientServiceState(ttlTimer),
+                                                                               mConditionVariable{conditionVariable}
                     {
                     }
 

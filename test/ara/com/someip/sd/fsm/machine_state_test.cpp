@@ -122,7 +122,8 @@ namespace ara
                             helper::SdClientState::Stopped;
 
                         helper::TtlTimer _ttlTimer;
-                        StoppedState _machineState(&_ttlTimer);
+                        std::condition_variable _conditionVariable;
+                        StoppedState _machineState(&_ttlTimer, &_conditionVariable);
                         helper::SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);
@@ -134,7 +135,8 @@ namespace ara
                             helper::SdClientState::ServiceNotSeen;
 
                         helper::TtlTimer _ttlTimer;
-                        ServiceNotseenState _machineState(&_ttlTimer);
+                        std::condition_variable _conditionVariable;
+                        ServiceNotseenState _machineState(&_ttlTimer, &_conditionVariable);
                         helper::SdClientState _actualState = _machineState.GetState();
 
                         EXPECT_EQ(_actualState, cExpectedState);

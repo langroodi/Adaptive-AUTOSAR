@@ -18,13 +18,19 @@ namespace ara
                     /// @note The state is not copyable
                     class ServiceNotseenState : public ClientServiceState
                     {
+                    private:
+                        std::condition_variable *const mConditionVariable;
+
                     protected:
                         void Deactivate(helper::SdClientState nextState) override;
 
                     public:
                         /// @brief Constructor
                         /// @param ttlTimer Finite machine state global TTL timer pointer
-                        ServiceNotseenState(helper::TtlTimer *ttlTimer) noexcept;
+                        /// @param conditionVariable Condition variable to be notified when the state activated
+                        ServiceNotseenState(
+                            helper::TtlTimer *ttlTimer,
+                            std::condition_variable *conditionVariable) noexcept;
 
                         ServiceNotseenState() = delete;
                         ServiceNotseenState(const ServiceNotseenState &) = delete;
