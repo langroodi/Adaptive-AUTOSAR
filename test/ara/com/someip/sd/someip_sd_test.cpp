@@ -30,7 +30,8 @@ namespace ara
                     helper::Ipv4Address mLocalhost;
 
                 protected:
-                    int OfferWaitDuration;
+                    const int OfferWaitDuration;
+                    const int OfferStopWaitDuration;
 
                     SomeIpSdServer Server;
                     SomeIpSdClient Client;
@@ -64,6 +65,11 @@ namespace ara
                                           cRepetitionBaseDelay * (std::pow(2, cRepetitionMax) - 1) +
                                           // Main main first cycle delay
                                           cCycleOfferDelay) *
+                                         // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
+                                         2)},
+                                     OfferStopWaitDuration{static_cast<int>(
+                                         // Main main first cycle delay
+                                         cCycleOfferDelay *
                                          // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
                                          2)}
                     {
@@ -113,6 +119,20 @@ namespace ara
                     Client.Stop();
 
                     EXPECT_EQ(Client.GetState(), cServiceSeenState);
+                }
+
+                TEST_F(SomeIpSdTest, ServerStopScenario)
+                {
+                    const helper::SdClientState cServiceStoppedState =
+                        helper::SdClientState::Stopped;
+
+                    Server.Start();
+                    Client.Start();
+                    Client.TryWaitUntiServiceOffered(OfferWaitDuration);
+                    Server.Stop();
+                    Client.TryWaitUntiServiceOfferStopped(OfferStopWaitDuration);
+
+                    EXPECT_EQ(Client.GetState(), cServiceStoppedState);
                 }
             }
         }
