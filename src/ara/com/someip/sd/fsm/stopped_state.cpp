@@ -20,7 +20,7 @@ namespace ara
 
                     void StoppedState::Activate(helper::SdClientState previousState)
                     {
-                        // Nothing to do on activation
+                        mConditionVariable->notify_one();
                     }
 
                     void StoppedState::ServiceNotRequested()

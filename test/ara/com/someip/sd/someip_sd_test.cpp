@@ -70,8 +70,8 @@ namespace ara
                                      OfferStopWaitDuration{static_cast<int>(
                                          // Main main first cycle delay
                                          cCycleOfferDelay *
-                                         // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
-                                         2)}
+                                         // Apply maximum Nyquist–Shannon margin (make the duration ten times longer)
+                                         10)}
                     {
                     }
                 };
