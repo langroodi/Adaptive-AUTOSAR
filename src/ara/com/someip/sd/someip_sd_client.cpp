@@ -114,15 +114,15 @@ namespace ara
                     {
                     case helper::SdClientState::ServiceSeen:
                         mServiceSeenState.ServiceStopped();
-                        mStopOfferingConditionVariable.notify_one();
                         break;
                     case helper::SdClientState::ServiceReady:
                         mServiceReadyState.ServiceStopped();
-                        mStopOfferingConditionVariable.notify_one();
+                        break;
+                    case helper::SdClientState::InitialWaitPhase:
+                        mInitialWaitState.ServiceStopped();
                         break;
                     case helper::SdClientState::RepetitionPhase:
-                        mServiceReadyState.ServiceStopped();
-                        mStopOfferingConditionVariable.notify_one();
+                        mRepetitionState.ServiceStopped();
                         break;
                     }
                 }
