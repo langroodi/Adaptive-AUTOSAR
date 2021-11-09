@@ -134,6 +134,21 @@ namespace ara
 
                     EXPECT_EQ(Client.GetState(), cServiceStoppedState);
                 }
+
+                TEST_F(SomeIpSdTest, StopScenario)
+                {
+                    const helper::SdClientState cServiceNotSeen =
+                        helper::SdClientState::ServiceNotSeen;
+
+                    Server.Start();
+                    Client.Start();
+                    Client.TryWaitUntiServiceOffered(OfferWaitDuration);
+                    Client.Stop();
+                    Server.Stop();
+                    Client.TryWaitUntiServiceOfferStopped(OfferStopWaitDuration);
+
+                    EXPECT_EQ(Client.GetState(), cServiceNotSeen);
+                }
             }
         }
     }
