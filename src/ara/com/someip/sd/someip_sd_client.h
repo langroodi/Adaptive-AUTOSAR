@@ -31,7 +31,7 @@ namespace ara
                     fsm::ClientRepetitionState mRepetitionState;
                     fsm::ServiceReadyState mServiceReadyState;
                     fsm::StoppedState mStoppedState;
-                    entry::ServiceEntry mFindServiceEntry;
+                    std::shared_ptr<entry::ServiceEntry> mFindServiceEntry;
                     SomeIpSdMessage mFindServieMessage;
                     std::mutex mOfferingMutex;
                     std::unique_lock<std::mutex> mOfferingLock;

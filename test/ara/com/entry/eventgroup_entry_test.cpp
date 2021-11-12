@@ -153,13 +153,13 @@ namespace ara
                         cDiscardable, cIpAddress, cPort);
 
                 EXPECT_THROW(
-                    _subscribeEntry.AddFirstOption(&_option), std::invalid_argument);
+                    _subscribeEntry.AddFirstOption(_option), std::invalid_argument);
                 EXPECT_THROW(
-                    _subscribeEntry.AddSecondOption(&_option), std::invalid_argument);
+                    _subscribeEntry.AddSecondOption(_option), std::invalid_argument);
                 EXPECT_NO_THROW(
-                    _ackEntry.AddFirstOption(&_option));
+                    _ackEntry.AddFirstOption(_option));
                 EXPECT_THROW(
-                    _ackEntry.AddSecondOption(&_option), std::invalid_argument);
+                    _ackEntry.AddSecondOption(_option), std::invalid_argument);
             }
         }
     }

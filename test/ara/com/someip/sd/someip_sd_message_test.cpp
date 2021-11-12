@@ -71,17 +71,18 @@ namespace ara
                         entry::ServiceEntry::CreateOfferServiceEntry(
                             cServiceId, cInstanceId, cMajorVersion, cMinorVersion);
 
-                    option::LoadBalancingOption _firstOption(
-                        cFirstDiscardable, cPriority, cWeight);
-                    _entry.AddFirstOption(&_firstOption);
+                    std::shared_ptr<option::LoadBalancingOption> _firstOption =
+                        std::make_shared<option::LoadBalancingOption>(
+                            cFirstDiscardable, cPriority, cWeight);
+                    _entry->AddFirstOption(_firstOption);
 
                     auto _secondOption =
                         option::Ipv4EndpointOption::CreateUnitcastEndpoint(
                             cSecondDiscardable, cIpAddress, cProtocol, cPort);
-                    _entry.AddSecondOption(&_secondOption);
+                    _entry->AddSecondOption(_secondOption);
 
                     SomeIpSdMessage _message;
-                    _message.AddEntry(&_entry);
+                    _message.AddEntry(_entry);
 
                     const size_t cPayloadSize = 64;
                     const std::array<uint8_t, cPayloadSize> cExpectedPayload =

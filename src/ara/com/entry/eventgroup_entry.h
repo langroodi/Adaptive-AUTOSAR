@@ -27,7 +27,7 @@ namespace ara
 
             protected:
                 virtual bool ValidateOption(
-                    const option::Option *option) const noexcept override;
+                    std::shared_ptr<const option::Option> option) const noexcept override;
 
             public:
                 EventgroupEntry() = delete;

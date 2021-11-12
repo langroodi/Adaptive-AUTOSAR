@@ -48,12 +48,12 @@ namespace ara
                     return _result;
                 }
 
-                const std::vector<entry::Entry *> &SomeIpSdMessage::Entries() const noexcept
+                const std::vector<std::shared_ptr<entry::Entry>> &SomeIpSdMessage::Entries() const noexcept
                 {
                     return mEntries;
                 }
 
-                void SomeIpSdMessage::AddEntry(entry::Entry *entry)
+                void SomeIpSdMessage::AddEntry(std::shared_ptr<entry::Entry> entry)
                 {
                     mEntries.push_back(entry);
                 }

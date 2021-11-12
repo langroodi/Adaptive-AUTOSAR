@@ -27,7 +27,7 @@ namespace ara
 
             protected:
                 virtual bool ValidateOption(
-                    const option::Option *option) const noexcept override;
+                    std::shared_ptr<const option::Option> option) const noexcept override;
 
             public:
                 /// @brief Any service instance ID
@@ -50,7 +50,7 @@ namespace ara
                 /// @param majorVersion Service in interest major version
                 /// @param minorVersion Service in interest minor version
                 /// @returns Find service entry
-                static ServiceEntry CreateFindServiceEntry(
+                static std::shared_ptr<ServiceEntry> CreateFindServiceEntry(
                     uint16_t serviceId,
                     uint32_t ttl = cInfiniteTtl,
                     uint16_t instanceId = cAnyInstanceId,
@@ -64,7 +64,7 @@ namespace ara
                 /// @param minorVersion Service in interest minor version
                 /// @param ttl Service offering lifetime
                 /// @returns Offer service entry
-                static ServiceEntry CreateOfferServiceEntry(
+                static std::shared_ptr<ServiceEntry> CreateOfferServiceEntry(
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
@@ -77,7 +77,7 @@ namespace ara
                 /// @param majorVersion Service in interest major version
                 /// @param minorVersion Service in interest minor version
                 /// @returns Stop service offering entry
-                static ServiceEntry CreateStopOfferEntry(
+                static std::shared_ptr<ServiceEntry> CreateStopOfferEntry(
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,

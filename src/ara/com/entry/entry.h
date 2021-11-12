@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <vector>
+#include <memory>
 #include <stdexcept>
 #include "../option/option.h"
 
@@ -27,8 +28,8 @@ namespace ara
             {
             private:
                 EntryType mType;
-                std::vector<option::Option *> mFirstOptions;
-                std::vector<option::Option *> mSecondOptions;
+                std::vector<std::shared_ptr<option::Option>> mFirstOptions;
+                std::vector<std::shared_ptr<option::Option>> mSecondOptions;
                 uint16_t mServiceId;
                 uint16_t mInstanceId;
                 uint8_t mMajorVersion;
@@ -50,7 +51,7 @@ namespace ara
                 /// @brief Validate an option for adding
                 /// @param option Option of interest
                 /// @returns True if the option is valid; otherwise false
-                virtual bool ValidateOption(const option::Option *option) const noexcept;
+                virtual bool ValidateOption(std::shared_ptr<const option::Option> option) const noexcept;
 
                 /// @brief Indicate whether the entry contains a specific option type or not
                 /// @param optionType Option type of interest
@@ -90,19 +91,19 @@ namespace ara
 
                 /// @brief Get first (general) options
                 /// @returns Exisiting first options
-                const std::vector<option::Option *> &FirstOptions() const noexcept;
+                const std::vector<std::shared_ptr<option::Option>> &FirstOptions() const noexcept;
 
                 /// @brief Add a first (general) option
                 /// @param firstOption First option to be added
-                void AddFirstOption(option::Option *firstOption);
+                void AddFirstOption(std::shared_ptr<option::Option> firstOption);
 
                 /// @brief Get second (specific) options
                 /// @returns Exisiting second options
-                const std::vector<option::Option *> &SecondOptions() const noexcept;
+                const std::vector<std::shared_ptr<option::Option>> &SecondOptions() const noexcept;
 
                 /// @brief Add a second (specific) option
                 /// @param secondOption Second option to be added
-                void AddSecondOption(option::Option *secondOption);
+                void AddSecondOption(std::shared_ptr<option::Option> secondOption);
 
                 /// @brief Get entity payload
                 /// @param optionIndex Index of the last added option

@@ -25,7 +25,7 @@ namespace ara
             }
 
             bool EventgroupEntry::ValidateOption(
-                const option::Option *option) const noexcept
+                std::shared_ptr<const option::Option> option) const noexcept
             {
                 bool _result = Entry::ValidateOption(option);
 

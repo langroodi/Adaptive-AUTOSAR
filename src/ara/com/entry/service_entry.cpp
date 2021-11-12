@@ -17,7 +17,7 @@ namespace ara
             }
 
             bool ServiceEntry::ValidateOption(
-                const option::Option *option) const noexcept
+                std::shared_ptr<const option::Option> option) const noexcept
             {
                 bool _result = Entry::ValidateOption(option);
 
@@ -42,7 +42,7 @@ namespace ara
                 return _result;
             }
 
-            ServiceEntry ServiceEntry::CreateFindServiceEntry(
+            std::shared_ptr<ServiceEntry> ServiceEntry::CreateFindServiceEntry(
                 uint16_t serviceId,
                 uint32_t ttl,
                 uint16_t instanceId,
@@ -56,18 +56,19 @@ namespace ara
                     throw std::invalid_argument("TTL cannot be zero.");
                 }
 
-                ServiceEntry _result(
-                    cFindServiceEntry,
-                    serviceId,
-                    instanceId,
-                    ttl,
-                    majorVersion,
-                    minorVersion);
+                std::shared_ptr<ServiceEntry> _result(
+                    new ServiceEntry(
+                        cFindServiceEntry,
+                        serviceId,
+                        instanceId,
+                        ttl,
+                        majorVersion,
+                        minorVersion));
 
                 return _result;
             }
 
-            ServiceEntry ServiceEntry::CreateOfferServiceEntry(
+            std::shared_ptr<ServiceEntry> ServiceEntry::CreateOfferServiceEntry(
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
@@ -81,18 +82,19 @@ namespace ara
                     throw std::invalid_argument("TTL cannot be zero.");
                 }
 
-                ServiceEntry _result(
-                    cOfferServiceEntry,
-                    serviceId,
-                    instanceId,
-                    ttl,
-                    majorVersion,
-                    minorVersion);
+                std::shared_ptr<ServiceEntry> _result(
+                    new ServiceEntry(
+                        cOfferServiceEntry,
+                        serviceId,
+                        instanceId,
+                        ttl,
+                        majorVersion,
+                        minorVersion));
 
                 return _result;
             }
 
-            ServiceEntry ServiceEntry::CreateStopOfferEntry(
+            std::shared_ptr<ServiceEntry> ServiceEntry::CreateStopOfferEntry(
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
@@ -101,13 +103,14 @@ namespace ara
                 const EntryType cOfferServiceEntry = EntryType::Offering;
                 const uint32_t cStopOfferTTL = 0x000000;
 
-                ServiceEntry _result(
-                    cOfferServiceEntry,
-                    serviceId,
-                    instanceId,
-                    cStopOfferTTL,
-                    majorVersion,
-                    minorVersion);
+                std::shared_ptr<ServiceEntry> _result(
+                    new ServiceEntry(
+                        cOfferServiceEntry,
+                        serviceId,
+                        instanceId,
+                        cStopOfferTTL,
+                        majorVersion,
+                        minorVersion));
 
                 return _result;
             }

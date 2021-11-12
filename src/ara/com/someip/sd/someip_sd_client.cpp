@@ -45,7 +45,7 @@ namespace ara
                          &mStoppedState},
                         helper::SdClientState::ServiceNotSeen);
 
-                    mFindServieMessage.AddEntry(&mFindServiceEntry);
+                    mFindServieMessage.AddEntry(mFindServiceEntry);
 
                     auto _receiver =
                         std::bind(
@@ -69,17 +69,17 @@ namespace ara
                     {
                         if (_entry->Type() == entry::EntryType::Offering)
                         {
-                            if (auto _serviceEnty = dynamic_cast<entry::ServiceEntry *>(_entry))
+                            if (auto _serviceEnty = std::dynamic_pointer_cast<entry::ServiceEntry>(_entry))
                             {
                                 // Compare service ID, instance ID, major version and minor version
                                 bool _result =
-                                    (_serviceEnty->ServiceId() == mFindServiceEntry.ServiceId()) &&
-                                    (mFindServiceEntry.InstanceId() == entry::ServiceEntry::cAnyInstanceId ||
-                                     _serviceEnty->InstanceId() == mFindServiceEntry.InstanceId()) &&
-                                    (mFindServiceEntry.MajorVersion() == entry::Entry::cAnyMajorVersion ||
-                                     _serviceEnty->MajorVersion() == mFindServiceEntry.MajorVersion()) &&
-                                    (mFindServiceEntry.MinorVersion() == entry::ServiceEntry::cAnyMinorVersion ||
-                                     _serviceEnty->MinorVersion() == mFindServiceEntry.MinorVersion());
+                                    (_serviceEnty->ServiceId() == mFindServiceEntry->ServiceId()) &&
+                                    (mFindServiceEntry->InstanceId() == entry::ServiceEntry::cAnyInstanceId ||
+                                     _serviceEnty->InstanceId() == mFindServiceEntry->InstanceId()) &&
+                                    (mFindServiceEntry->MajorVersion() == entry::Entry::cAnyMajorVersion ||
+                                     _serviceEnty->MajorVersion() == mFindServiceEntry->MajorVersion()) &&
+                                    (mFindServiceEntry->MinorVersion() == entry::ServiceEntry::cAnyMinorVersion ||
+                                     _serviceEnty->MinorVersion() == mFindServiceEntry->MinorVersion());
 
                                 if (_result)
                                 {

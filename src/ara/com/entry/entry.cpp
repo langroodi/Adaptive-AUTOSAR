@@ -18,7 +18,7 @@ namespace ara
             {
             }
 
-            bool Entry::ValidateOption(const option::Option *option) const noexcept
+            bool Entry::ValidateOption(std::shared_ptr<const option::Option> option) const noexcept
             {
                 bool _result;
 
@@ -110,12 +110,12 @@ namespace ara
                 return mTTL;
             }
 
-            const std::vector<option::Option *> &Entry::FirstOptions() const noexcept
+            const std::vector<std::shared_ptr<option::Option>> &Entry::FirstOptions() const noexcept
             {
                 return mFirstOptions;
             }
 
-            void Entry::AddFirstOption(option::Option *firstOption)
+            void Entry::AddFirstOption(std::shared_ptr<option::Option> firstOption)
             {
                 bool _valid = ValidateOption(firstOption);
 
@@ -129,12 +129,12 @@ namespace ara
                 }
             }
 
-            const std::vector<option::Option *> &Entry::SecondOptions() const noexcept
+            const std::vector<std::shared_ptr<option::Option>> &Entry::SecondOptions() const noexcept
             {
                 return mSecondOptions;
             }
 
-            void Entry::AddSecondOption(option::Option *secondOption)
+            void Entry::AddSecondOption(std::shared_ptr<option::Option> secondOption)
             {
                 bool _valid = ValidateOption(secondOption);
 

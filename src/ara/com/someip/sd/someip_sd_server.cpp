@@ -66,11 +66,11 @@ namespace ara
                                                    &mMainState},
                                                   helper::SdServerState::NotReady);
 
-                    mOfferServiceEntry.AddFirstOption(&mEndpointOption);
-                    mOfferServiceMessage.AddEntry(&mOfferServiceEntry);
+                    mOfferServiceEntry->AddFirstOption(mEndpointOption);
+                    mOfferServiceMessage.AddEntry(mOfferServiceEntry);
 
-                    mStopOfferEntry.AddFirstOption(&mEndpointOption);
-                    mStopOfferMessage.AddEntry(&mStopOfferEntry);
+                    mStopOfferEntry->AddFirstOption(mEndpointOption);
+                    mStopOfferMessage.AddEntry(mStopOfferEntry);
 
                     auto _receiver =
                         std::bind(
@@ -87,17 +87,17 @@ namespace ara
                     {
                         if (_entry->Type() == entry::EntryType::Finding)
                         {
-                            if (auto _serviceEnty = dynamic_cast<entry::ServiceEntry *>(_entry))
+                            if (auto _serviceEnty = std::dynamic_pointer_cast<entry::ServiceEntry>(_entry))
                             {
                                 // Compare service ID, instance ID, major version and minor version
                                 bool _result =
-                                    (_serviceEnty->ServiceId() == mOfferServiceEntry.ServiceId()) &&
+                                    (_serviceEnty->ServiceId() == mOfferServiceEntry->ServiceId()) &&
                                     (_serviceEnty->InstanceId() == entry::ServiceEntry::cAnyInstanceId ||
-                                     _serviceEnty->InstanceId() == mOfferServiceEntry.InstanceId()) &&
+                                     _serviceEnty->InstanceId() == mOfferServiceEntry->InstanceId()) &&
                                     (_serviceEnty->MajorVersion() == entry::Entry::cAnyMajorVersion ||
-                                     _serviceEnty->MajorVersion() == mOfferServiceEntry.MajorVersion()) &&
+                                     _serviceEnty->MajorVersion() == mOfferServiceEntry->MajorVersion()) &&
                                     (_serviceEnty->MinorVersion() == entry::ServiceEntry::cAnyMinorVersion ||
-                                     _serviceEnty->MinorVersion() == mOfferServiceEntry.MinorVersion());
+                                     _serviceEnty->MinorVersion() == mOfferServiceEntry->MinorVersion());
 
                                 return _result;
                             }

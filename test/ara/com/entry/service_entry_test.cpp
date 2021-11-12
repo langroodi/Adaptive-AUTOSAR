@@ -23,12 +23,12 @@ namespace ara
                     ServiceEntry::CreateFindServiceEntry(
                         cServiceId, cTTL, cInstanceId, cMajorVersion, cMinorVersion);
 
-                EXPECT_EQ(_entry.ServiceId(), cServiceId);
-                EXPECT_EQ(_entry.TTL(), cTTL);
-                EXPECT_EQ(_entry.InstanceId(), cInstanceId);
-                EXPECT_EQ(_entry.MajorVersion(), cMajorVersion);
-                EXPECT_EQ(_entry.MinorVersion(), cMinorVersion);
-                EXPECT_EQ(_entry.Type(), cType);
+                EXPECT_EQ(_entry->ServiceId(), cServiceId);
+                EXPECT_EQ(_entry->TTL(), cTTL);
+                EXPECT_EQ(_entry->InstanceId(), cInstanceId);
+                EXPECT_EQ(_entry->MajorVersion(), cMajorVersion);
+                EXPECT_EQ(_entry->MinorVersion(), cMinorVersion);
+                EXPECT_EQ(_entry->Type(), cType);
             }
 
             TEST(ServiceEntryTest, OfferServiceFactory)
@@ -44,12 +44,12 @@ namespace ara
                     ServiceEntry::CreateOfferServiceEntry(
                         cServiceId, cInstanceId, cMajorVersion, cMinorVersion);
 
-                EXPECT_EQ(_entry.ServiceId(), cServiceId);
-                EXPECT_EQ(_entry.InstanceId(), cInstanceId);
-                EXPECT_EQ(_entry.MajorVersion(), cMajorVersion);
-                EXPECT_EQ(_entry.MinorVersion(), cMinorVersion);
-                EXPECT_EQ(_entry.Type(), cType);
-                EXPECT_GT(_entry.TTL(), cTTL);
+                EXPECT_EQ(_entry->ServiceId(), cServiceId);
+                EXPECT_EQ(_entry->InstanceId(), cInstanceId);
+                EXPECT_EQ(_entry->MajorVersion(), cMajorVersion);
+                EXPECT_EQ(_entry->MinorVersion(), cMinorVersion);
+                EXPECT_EQ(_entry->Type(), cType);
+                EXPECT_GT(_entry->TTL(), cTTL);
             }
 
             TEST(ServiceEntryTest, StopOfferFactory)
@@ -65,12 +65,12 @@ namespace ara
                     ServiceEntry::CreateStopOfferEntry(
                         cServiceId, cInstanceId, cMajorVersion, cMinorVersion);
 
-                EXPECT_EQ(_entry.ServiceId(), cServiceId);
-                EXPECT_EQ(_entry.InstanceId(), cInstanceId);
-                EXPECT_EQ(_entry.MajorVersion(), cMajorVersion);
-                EXPECT_EQ(_entry.MinorVersion(), cMinorVersion);
-                EXPECT_EQ(_entry.Type(), cType);
-                EXPECT_EQ(_entry.TTL(), cTTL);
+                EXPECT_EQ(_entry->ServiceId(), cServiceId);
+                EXPECT_EQ(_entry->InstanceId(), cInstanceId);
+                EXPECT_EQ(_entry->MajorVersion(), cMajorVersion);
+                EXPECT_EQ(_entry->MinorVersion(), cMinorVersion);
+                EXPECT_EQ(_entry->Type(), cType);
+                EXPECT_EQ(_entry->TTL(), cTTL);
             }
 
             TEST(ServiceEntryTest, PayloadMethod)
@@ -94,7 +94,7 @@ namespace ara
                      0x87, 0x65, 0x43, 0x21};
 
                 uint8_t _optionIndex = 0;
-                auto _actualPayload = _entry.Payload(_optionIndex);
+                auto _actualPayload = _entry->Payload(_optionIndex);
 
                 bool _areEqual =
                     std::equal(
@@ -122,10 +122,12 @@ namespace ara
                     ServiceEntry::CreateFindServiceEntry(
                         cServiceId, cTTL, cInstanceId, cMajorVersion, cMinorVersion);
 
-                option::LoadBalancingOption _option(cDiscardable, cPriority, cWeight);
+                std::shared_ptr<option::LoadBalancingOption> _option =
+                    std::make_shared<option::LoadBalancingOption>(
+                        cDiscardable, cPriority, cWeight);
 
-                EXPECT_NO_THROW(_entry.AddFirstOption(&_option));
-                EXPECT_THROW(_entry.AddSecondOption(&_option), std::invalid_argument);
+                EXPECT_NO_THROW(_entry->AddFirstOption(_option));
+                EXPECT_THROW(_entry->AddSecondOption(_option), std::invalid_argument);
             }
         }
     }

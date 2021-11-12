@@ -21,11 +21,11 @@ namespace ara
                     Ipv4EndpointOption::CreateUnitcastEndpoint(
                         cDiscardable, cIpAddress, cProtocol, cPort);
 
-                EXPECT_EQ(_option.Discardable(), cDiscardable);
-                EXPECT_EQ(_option.IpAddress(), cIpAddress);
-                EXPECT_EQ(_option.L4Proto(), cProtocol);
-                EXPECT_EQ(_option.Port(), cPort);
-                EXPECT_EQ(_option.Type(), cType);
+                EXPECT_EQ(_option->Discardable(), cDiscardable);
+                EXPECT_EQ(_option->IpAddress(), cIpAddress);
+                EXPECT_EQ(_option->L4Proto(), cProtocol);
+                EXPECT_EQ(_option->Port(), cPort);
+                EXPECT_EQ(_option->Type(), cType);
             }
 
             TEST(Ipv4EndpointOptionTest, MulticastFactory)
@@ -54,7 +54,7 @@ namespace ara
                      0xc0, 0xa8, 0x01, 0xfe,
                      0x00, 0x11, 0x77, 0x1a};
 
-                auto _actualPayload = _option.Payload();
+                auto _actualPayload = _option->Payload();
 
                 bool _areEqual =
                     std::equal(
