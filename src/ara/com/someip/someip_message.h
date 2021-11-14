@@ -100,6 +100,13 @@ namespace ara
                               SomeIpReturnCode returnCode,
                               uint16_t sessionId = 1);
 
+                /// @brief Deserialize a SOME/IP message payload
+                /// @param message SOME/IP message to be filled by deserializing the payload
+                /// @param payload Serialized SOME/IP message payload byte array
+                static void Deserialize(
+                    SomeIpMessage *message,
+                    const std::vector<uint8_t> &payload);
+
             public:
                 virtual ~SomeIpMessage() noexcept = default;
 

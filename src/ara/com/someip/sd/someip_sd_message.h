@@ -47,6 +47,11 @@ namespace ara
                     virtual bool IncrementSessionId() noexcept override;
 
                     virtual std::vector<uint8_t> Payload() const override;
+
+                    /// @brief Deserialize a SOME/IP SD message payload
+                    /// @param payload Serialized SOME/IP message payload byte array
+                    /// @returns SOME/IP SD message filled by deserializing the payload
+                    static SomeIpSdMessage Deserialize(const std::vector<uint8_t> &payload);
                 };
             }
         }

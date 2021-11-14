@@ -73,6 +73,28 @@ namespace ara
                 }
             }
 
+            void SomeIpMessage::Deserialize(
+                SomeIpMessage *message,
+                const std::vector<uint8_t> &payload)
+            {
+                // Set the offset at the beginning of the payload
+                std::size_t _offset = 0;
+
+                message->mMessageId = helper::ExtractInteger(payload, _offset);
+
+                // Apply the message length offset
+                _offset += 4;
+
+                message->mClientId = helper::ExtractShort(payload, _offset);
+                message->mSessionId = helper::ExtractShort(payload, _offset);
+                message->mProtocolVersion = payload[_offset++];
+                message->mInterfaceVersion = payload[_offset++];
+                message->mMessageType =
+                    static_cast<SomeIpMessageType>(payload[_offset++]);
+                message->mReturnCode =
+                    static_cast<SomeIpReturnCode>(payload[_offset]);
+            }
+
             uint32_t SomeIpMessage::MessageId() const noexcept
             {
                 return mMessageId;

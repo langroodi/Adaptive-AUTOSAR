@@ -153,6 +153,15 @@ namespace ara
 
                     return _result;
                 }
+
+                SomeIpSdMessage SomeIpSdMessage::Deserialize(
+                    const std::vector<uint8_t> &payload)
+                {
+                    SomeIpSdMessage _result;
+                    SomeIpMessage::Deserialize(&_result, payload);
+
+                    return _result;
+                }
             }
         }
     }

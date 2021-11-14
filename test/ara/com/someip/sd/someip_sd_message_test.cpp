@@ -120,6 +120,42 @@ namespace ara
 
                     EXPECT_TRUE(_areEqual);
                 }
+
+                TEST(SomeIpSdMessageTest, NoEntryDeserialization)
+                {
+                    SomeIpSdMessage _originalMessage;
+                    auto _payload = _originalMessage.Payload();
+                    auto _deserializedMessage =
+                        SomeIpSdMessage::Deserialize(_payload);
+
+                    EXPECT_EQ(
+                        _originalMessage.MessageId(),
+                        _deserializedMessage.MessageId());
+
+                    EXPECT_EQ(
+                        _originalMessage.ClientId(),
+                        _deserializedMessage.ClientId());
+
+                    EXPECT_EQ(
+                        _originalMessage.SessionId(),
+                        _deserializedMessage.SessionId());
+
+                    EXPECT_EQ(
+                        _originalMessage.ProtocolVersion(),
+                        _deserializedMessage.ProtocolVersion());
+
+                    EXPECT_EQ(
+                        _originalMessage.InterfaceVersion(),
+                        _deserializedMessage.InterfaceVersion());
+
+                    EXPECT_EQ(
+                        _originalMessage.MessageType(),
+                        _deserializedMessage.MessageType());
+
+                    EXPECT_EQ(
+                        _originalMessage.ReturnCode(),
+                        _deserializedMessage.ReturnCode());
+                }
             }
         }
     }
