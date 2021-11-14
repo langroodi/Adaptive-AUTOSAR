@@ -113,12 +113,20 @@ $(document).ready(function(){initNavTree('payload__helper_8h_source.html',''); i
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="namespaceara_1_1com_1_1helper.html#a5a2498fade7c5196c42e3023252eb941">Inject</a>(std::vector&lt;uint8_t&gt; &amp;vector, uint32_t value);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="namespaceara_1_1com_1_1helper.html#a044e415426ec167e5745a2d592924838">Concat</a>(std::vector&lt;uint8_t&gt; &amp;vector1, std::vector&lt;uint8_t&gt; &amp;&amp;vector2);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            uint16_t <a class="code" href="namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb">ExtractShort</a>(</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;vector, std::size_t &amp;offset);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            uint32_t <a class="code" href="namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7">ExtractInteger</a>(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;vector, std::size_t &amp;offset);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="anamespaceara_1_1com_1_1helper_html_a044e415426ec167e5745a2d592924838"><div class="ttname"><a href="namespaceara_1_1com_1_1helper.html#a044e415426ec167e5745a2d592924838">ara::com::helper::Concat</a></div><div class="ttdeci">void Concat(std::vector&lt; uint8_t &gt; &amp;vector1, std::vector&lt; uint8_t &gt; &amp;&amp;vector2)</div><div class="ttdoc">Concat the second vector into the end of the first vector.</div><div class="ttdef"><b>Definition:</b> payload_helper.cpp:37</div></div>
 <div class="ttc" id="anamespaceara_1_1com_1_1helper_html_a5a2498fade7c5196c42e3023252eb941"><div class="ttname"><a href="namespaceara_1_1com_1_1helper.html#a5a2498fade7c5196c42e3023252eb941">ara::com::helper::Inject</a></div><div class="ttdeci">void Inject(std::vector&lt; uint8_t &gt; &amp;vector, uint16_t value)</div><div class="ttdoc">Inject a short value into a byte vector.</div><div class="ttdef"><b>Definition:</b> payload_helper.cpp:9</div></div>
+<div class="ttc" id="anamespaceara_1_1com_1_1helper_html_aa12394e5c50bea2501342e09c1526fdb"><div class="ttname"><a href="namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb">ara::com::helper::ExtractShort</a></div><div class="ttdeci">uint16_t ExtractShort(const std::vector&lt; uint8_t &gt; &amp;vector, std::size_t &amp;offset)</div><div class="ttdoc">Extract a short value from a byte vector.</div><div class="ttdef"><b>Definition:</b> payload_helper.cpp:42</div></div>
+<div class="ttc" id="anamespaceara_1_1com_1_1helper_html_aa27a7bec10719b8b7f1a14b539887ec7"><div class="ttname"><a href="namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7">ara::com::helper::ExtractInteger</a></div><div class="ttdeci">uint32_t ExtractInteger(const std::vector&lt; uint8_t &gt; &amp;vector, std::size_t &amp;offset)</div><div class="ttdoc">Extract an integer value from a byte vector.</div><div class="ttdef"><b>Definition:</b> payload_helper.cpp:52</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

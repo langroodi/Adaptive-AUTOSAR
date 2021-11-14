@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1SomeIpMes
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classara_1_1com_1_1someip_1_1SomeIpMessage-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ara::com::someip::SomeIpMessage Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -159,6 +160,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2317cf28feab8440e0904f9cc3f95347"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html#a2317cf28feab8440e0904f9cc3f95347">SomeIpMessage</a> (uint32_t messageId, uint16_t clientId, uint8_t protocolVersion, uint8_t interfaceVersion, SomeIpMessageType messageType, SomeIpReturnCode returnCode, uint16_t sessionId=1)</td></tr>
 <tr class="memdesc:a2317cf28feab8440e0904f9cc3f95347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for response and error.  <a href="classara_1_1com_1_1someip_1_1SomeIpMessage.html#a2317cf28feab8440e0904f9cc3f95347">More...</a><br /></td></tr>
 <tr class="separator:a2317cf28feab8440e0904f9cc3f95347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:abb22c4910b5200fc976ee6b35f205b8a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html#abb22c4910b5200fc976ee6b35f205b8a">Deserialize</a> (<a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html">SomeIpMessage</a> *message, const std::vector&lt; uint8_t &gt; &amp;payload)</td></tr>
+<tr class="memdesc:abb22c4910b5200fc976ee6b35f205b8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a SOME/IP message payload.  <a href="classara_1_1com_1_1someip_1_1SomeIpMessage.html#abb22c4910b5200fc976ee6b35f205b8a">More...</a><br /></td></tr>
+<tr class="separator:abb22c4910b5200fc976ee6b35f205b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SOME/IP Abstract Message. </p>
@@ -342,6 +349,51 @@ Protected Member Functions</h2></td></tr>
 
 <p>Get client ID. </p>
 <dl class="section return"><dt>Returns</dt><dd>Client ID including ID prefix </dd></dl>
+
+</div>
+</div>
+<a id="abb22c4910b5200fc976ee6b35f205b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb22c4910b5200fc976ee6b35f205b8a">&#9670;&nbsp;</a></span>Deserialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::com::someip::SomeIpMessage::Deserialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html">SomeIpMessage</a> *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>payload</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deserialize a SOME/IP message payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>SOME/IP message to be filled by deserializing the payload </td></tr>
+    <tr><td class="paramname">payload</td><td>Serialized SOME/IP message payload byte array </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

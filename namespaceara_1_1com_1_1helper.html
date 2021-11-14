@@ -164,6 +164,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a044e415426ec167e5745a2d592924838"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1com_1_1helper.html#a044e415426ec167e5745a2d592924838">Concat</a> (std::vector&lt; uint8_t &gt; &amp;vector1, std::vector&lt; uint8_t &gt; &amp;&amp;vector2)</td></tr>
 <tr class="memdesc:a044e415426ec167e5745a2d592924838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concat the second vector into the end of the first vector.  <a href="namespaceara_1_1com_1_1helper.html#a044e415426ec167e5745a2d592924838">More...</a><br /></td></tr>
 <tr class="separator:a044e415426ec167e5745a2d592924838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa12394e5c50bea2501342e09c1526fdb"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb">ExtractShort</a> (const std::vector&lt; uint8_t &gt; &amp;vector, std::size_t &amp;offset)</td></tr>
+<tr class="memdesc:aa12394e5c50bea2501342e09c1526fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a short value from a byte vector.  <a href="namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb">More...</a><br /></td></tr>
+<tr class="separator:aa12394e5c50bea2501342e09c1526fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa27a7bec10719b8b7f1a14b539887ec7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7">ExtractInteger</a> (const std::vector&lt; uint8_t &gt; &amp;vector, std::size_t &amp;offset)</td></tr>
+<tr class="memdesc:aa27a7bec10719b8b7f1a14b539887ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract an integer value from a byte vector.  <a href="namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7">More...</a><br /></td></tr>
+<tr class="separator:aa27a7bec10719b8b7f1a14b539887ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions required for communication classes. </p>
@@ -273,6 +279,82 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aa27a7bec10719b8b7f1a14b539887ec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa27a7bec10719b8b7f1a14b539887ec7">&#9670;&nbsp;</a></span>ExtractInteger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ara::com::helper::ExtractInteger </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extract an integer value from a byte vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>Byte vector </td></tr>
+    <tr><td class="paramname">offset</td><td>Extract offset at the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Extracted integer value </dd></dl>
+
+</div>
+</div>
+<a id="aa12394e5c50bea2501342e09c1526fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa12394e5c50bea2501342e09c1526fdb">&#9670;&nbsp;</a></span>ExtractShort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ara::com::helper::ExtractShort </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extract a short value from a byte vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>Byte vector </td></tr>
+    <tr><td class="paramname">offset</td><td>Extract offset at the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Extracted short value </dd></dl>
 
 </div>
 </div>

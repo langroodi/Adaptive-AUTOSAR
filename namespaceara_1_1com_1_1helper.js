@@ -21,6 +21,8 @@ var namespaceara_1_1com_1_1helper =
       [ "MainPhase", "namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405ba9a149a5ca1439d5d35d63c41cf47f785", null ]
     ] ],
     [ "Concat", "namespaceara_1_1com_1_1helper.html#a044e415426ec167e5745a2d592924838", null ],
+    [ "ExtractInteger", "namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7", null ],
+    [ "ExtractShort", "namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb", null ],
     [ "Inject", "namespaceara_1_1com_1_1helper.html#a5a2498fade7c5196c42e3023252eb941", null ],
     [ "Inject", "namespaceara_1_1com_1_1helper.html#a3f2c94e886987be347382160f5701e6f", null ],
     [ "operator!=", "namespaceara_1_1com_1_1helper.html#ad1379c0b83dd58e596947b1dd6ce2a37", null ],
