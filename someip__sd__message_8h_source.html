@@ -99,64 +99,61 @@ $(document).ready(function(){initNavTree('someip__sd__message_8h_source.html',''
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SOMEIP_SD_MESSAGE_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SOMEIP_SD_MESSAGE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../someip_message.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../../entry/entry.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>ara</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">namespace </span>com</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">namespace </span>someip</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">namespace </span>sd</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            {</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">   19</a></span>&#160;                <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> : <span class="keyword">public</span> <a class="code" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html">SomeIpMessage</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t cMessageId = 0xffff8100;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint16_t cClientId = 0x0000;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t cProtocolVersion = 0x01;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t cInterfaceVersion = 0x01;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> SomeIpMessageType cMessageType = SomeIpMessageType::Notification;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keywordtype">bool</span> mRebooted;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    std::vector&lt;entry::Entry *&gt; mEntries;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    uint32_t getEntriesLength() <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    uint32_t getOptionsLength() <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <span class="keyword">const</span> std::vector&lt;entry::Entry *&gt; &amp;<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a3d3b76a574c56e87fc8740fc51023aa3">Entries</a>() <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a610550ed5a9b3e9ba0dcc62352a0b212">AddEntry</a>(<a class="code" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> *entry);</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../someip_message.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../../entry/entry.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>ara</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">namespace </span>com</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">namespace </span>someip</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">namespace </span>sd</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">   17</a></span>&#160;                <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> : <span class="keyword">public</span> <a class="code" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html">SomeIpMessage</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t cMessageId = 0xffff8100;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint16_t cClientId = 0x0000;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t cProtocolVersion = 0x01;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t cInterfaceVersion = 0x01;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keyword">static</span> <span class="keyword">const</span> SomeIpMessageType cMessageType = SomeIpMessageType::Notification;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    <span class="keywordtype">bool</span> mRebooted;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    std::vector&lt;std::shared_ptr&lt;entry::Entry&gt;&gt; mEntries;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    uint32_t getEntriesLength() <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    uint32_t getOptionsLength() <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;entry::Entry&gt;&gt; &amp;<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#abae4a47392de62673eed6a3f14758107">Entries</a>() <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#ac46361c471c0a692a9c35b5438a29334">AddEntry</a>(std::shared_ptr&lt;entry::Entry&gt; entry);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    <span class="keyword">virtual</span> uint32_t <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a2fecb7707047c120d7e074c9de8e47b1">Length</a>() <span class="keyword">const</span> noexcept <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keyword">virtual</span> uint32_t <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a2fecb7707047c120d7e074c9de8e47b1">Length</a>() <span class="keyword">const</span> noexcept <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a0db58f09e156cdf1f3a9017d9b374a33">SetSessionId</a>(uint16_t sessionId) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a0db58f09e156cdf1f3a9017d9b374a33">SetSessionId</a>(uint16_t sessionId) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a80622d7379a3927c7ce37d9e74aa54d8">IncrementSessionId</a>() noexcept <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a80622d7379a3927c7ce37d9e74aa54d8">IncrementSessionId</a>() noexcept <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <span class="keyword">virtual</span> std::vector&lt;uint8_t&gt; <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a5cfbfd8d192f057d289da6a752caaab5">Payload</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                };</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassara_1_1com_1_1entry_1_1Entry_html"><div class="ttname"><a href="classara_1_1com_1_1entry_1_1Entry.html">ara::com::entry::Entry</a></div><div class="ttdoc">Communication message abstract entry.</div><div class="ttdef"><b>Definition:</b> entry.h:27</div></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="keyword">virtual</span> std::vector&lt;uint8_t&gt; <a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a5cfbfd8d192f057d289da6a752caaab5">Payload</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1SomeIpMessage_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1SomeIpMessage.html">ara::com::someip::SomeIpMessage</a></div><div class="ttdoc">SOME/IP Abstract Message.</div><div class="ttdef"><b>Definition:</b> someip_message.h:54</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">ara::com::someip::sd::SomeIpSdMessage</a></div><div class="ttdoc">SOME/IP service discovery message.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.h:20</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">ara::com::someip::sd::SomeIpSdMessage</a></div><div class="ttdoc">SOME/IP service discovery message.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.h:18</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html_a0db58f09e156cdf1f3a9017d9b374a33"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a0db58f09e156cdf1f3a9017d9b374a33">ara::com::someip::sd::SomeIpSdMessage::SetSessionId</a></div><div class="ttdeci">virtual void SetSessionId(uint16_t sessionId) override</div><div class="ttdoc">Set a new session ID.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.cpp:80</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html_a2fecb7707047c120d7e074c9de8e47b1"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a2fecb7707047c120d7e074c9de8e47b1">ara::com::someip::sd::SomeIpSdMessage::Length</a></div><div class="ttdeci">virtual uint32_t Length() const noexcept override</div><div class="ttdoc">Get message length.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.cpp:61</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html_a3d3b76a574c56e87fc8740fc51023aa3"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a3d3b76a574c56e87fc8740fc51023aa3">ara::com::someip::sd::SomeIpSdMessage::Entries</a></div><div class="ttdeci">const std::vector&lt; entry::Entry * &gt; &amp; Entries() const noexcept</div><div class="ttdoc">Get entries.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.cpp:51</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html_a5cfbfd8d192f057d289da6a752caaab5"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a5cfbfd8d192f057d289da6a752caaab5">ara::com::someip::sd::SomeIpSdMessage::Payload</a></div><div class="ttdeci">virtual std::vector&lt; uint8_t &gt; Payload() const override</div><div class="ttdoc">Get message payload.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.cpp:100</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html_a610550ed5a9b3e9ba0dcc62352a0b212"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a610550ed5a9b3e9ba0dcc62352a0b212">ara::com::someip::sd::SomeIpSdMessage::AddEntry</a></div><div class="ttdeci">void AddEntry(entry::Entry *entry)</div><div class="ttdoc">Add an entry.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.cpp:56</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html_a80622d7379a3927c7ce37d9e74aa54d8"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a80622d7379a3927c7ce37d9e74aa54d8">ara::com::someip::sd::SomeIpSdMessage::IncrementSessionId</a></div><div class="ttdeci">virtual bool IncrementSessionId() noexcept override</div><div class="ttdoc">Increment the session ID by one.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.cpp:91</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html_abae4a47392de62673eed6a3f14758107"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#abae4a47392de62673eed6a3f14758107">ara::com::someip::sd::SomeIpSdMessage::Entries</a></div><div class="ttdeci">const std::vector&lt; std::shared_ptr&lt; entry::Entry &gt; &gt; &amp; Entries() const noexcept</div><div class="ttdoc">Get entries.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.cpp:51</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage_html_ac46361c471c0a692a9c35b5438a29334"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#ac46361c471c0a692a9c35b5438a29334">ara::com::someip::sd::SomeIpSdMessage::AddEntry</a></div><div class="ttdeci">void AddEntry(std::shared_ptr&lt; entry::Entry &gt; entry)</div><div class="ttdoc">Add an entry.</div><div class="ttdef"><b>Definition:</b> someip_sd_message.cpp:56</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
