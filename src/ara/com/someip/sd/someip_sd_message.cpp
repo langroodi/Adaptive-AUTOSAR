@@ -105,13 +105,11 @@ namespace ara
                     if (mRebooted)
                     {
                         // Both Unicast Support and Explicit Initial Data Control flags are on.
-                        const uint32_t cRebootedFlag = 0xe0000000;
                         helper::Inject(_result, cRebootedFlag);
                     }
                     else
                     {
                         // Both Unicast Support and Explicit Initial Data Control flags are on.
-                        const uint32_t cNotRebootedFlag = 0x60000000;
                         helper::Inject(_result, cNotRebootedFlag);
                     }
 
@@ -159,6 +157,23 @@ namespace ara
                 {
                     SomeIpSdMessage _result;
                     SomeIpMessage::Deserialize(&_result, payload);
+
+                    std::size_t _someIpSdPduOffset = 16;
+                    uint32_t _rebootFlag =
+                        helper::ExtractInteger(payload, _someIpSdPduOffset);
+                    if (_rebootFlag == cRebootedFlag)
+                    {
+                        _result.mRebooted = true;
+                    }
+                    else if (_rebootFlag == cNotRebootedFlag)
+                    {
+                        _result.mRebooted = false;
+                    }
+                    else
+                    {
+                        throw std::out_of_range(
+                            "The serialized reboot flag is out of range.");
+                    }
 
                     return _result;
                 }

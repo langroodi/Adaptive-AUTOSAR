@@ -156,6 +156,20 @@ namespace ara
                         _originalMessage.ReturnCode(),
                         _deserializedMessage.ReturnCode());
                 }
+
+                TEST(SomeIpSdMessageTest, RebootFlagDeserialization)
+                {
+                    SomeIpSdMessage _originalMessage;
+                    auto _payload = _originalMessage.Payload();
+
+                    const std::size_t cSomeIpSdPduOffset = 16;
+                    const uint8_t cInvalidByte = 0xff;
+                    // Violate the reboot flag
+                    _payload.at(cSomeIpSdPduOffset) = cInvalidByte;
+
+                    EXPECT_THROW(
+                        SomeIpSdMessage::Deserialize(_payload), std::out_of_range);
+                }
             }
         }
     }
