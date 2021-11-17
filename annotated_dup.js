@@ -22,7 +22,8 @@ var annotated_dup =
         [ "option", "namespaceara_1_1com_1_1option.html", [
           [ "Ipv4EndpointOption", "classara_1_1com_1_1option_1_1Ipv4EndpointOption.html", "classara_1_1com_1_1option_1_1Ipv4EndpointOption" ],
           [ "LoadBalancingOption", "classara_1_1com_1_1option_1_1LoadBalancingOption.html", "classara_1_1com_1_1option_1_1LoadBalancingOption" ],
-          [ "Option", "classara_1_1com_1_1option_1_1Option.html", "classara_1_1com_1_1option_1_1Option" ]
+          [ "Option", "classara_1_1com_1_1option_1_1Option.html", "classara_1_1com_1_1option_1_1Option" ],
+          [ "OptionDeserializer", "classara_1_1com_1_1option_1_1OptionDeserializer.html", null ]
         ] ],
         [ "someip", null, [
           [ "sd", null, [

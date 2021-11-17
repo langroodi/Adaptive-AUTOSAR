@@ -118,6 +118,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae0762a66e3d9c6a45e6767f821f14a72"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html#ae0762a66e3d9c6a45e6767f821f14a72">Inject</a> (std::vector&lt; uint8_t &gt; &amp;vector, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> ipAddress)</td></tr>
 <tr class="memdesc:ae0762a66e3d9c6a45e6767f821f14a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inject an IP address into a byte vector.  <a href="structara_1_1com_1_1helper_1_1Ipv4Address.html#ae0762a66e3d9c6a45e6767f821f14a72">More...</a><br /></td></tr>
 <tr class="separator:ae0762a66e3d9c6a45e6767f821f14a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a65971dd9576508bf7a065942ba31ba"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba">Extract</a> (const std::vector&lt; uint8_t &gt; &amp;vector, std::size_t &amp;offset)</td></tr>
+<tr class="memdesc:a5a65971dd9576508bf7a065942ba31ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract an IPv4 address from a byte vector.  <a href="structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba">More...</a><br /></td></tr>
+<tr class="separator:a5a65971dd9576508bf7a065942ba31ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -189,6 +192,52 @@ std::array&lt; uint8_t, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5a65971dd9576508bf7a065942ba31ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a65971dd9576508bf7a065942ba31ba">&#9670;&nbsp;</a></span>Extract()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> ara::com::helper::Ipv4Address::Extract </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extract an IPv4 address from a byte vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>Byte vector </td></tr>
+    <tr><td class="paramname">offset</td><td>Extract offset at the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Extracted IPv4 address </dd></dl>
+
+</div>
+</div>
 <a id="ae0762a66e3d9c6a45e6767f821f14a72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae0762a66e3d9c6a45e6767f821f14a72">&#9670;&nbsp;</a></span>Inject()</h2>
 

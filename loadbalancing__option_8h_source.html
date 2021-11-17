@@ -99,49 +99,56 @@ $(document).ready(function(){initNavTree('loadbalancing__option_8h_source.html',
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LOADBALANCING_OPTION_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LOADBALANCING_OPTION_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;./option.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>ara</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>com</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">namespace </span>option</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">   13</a></span>&#160;            <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">LoadBalancingOption</a> : <span class="keyword">public</span> <a class="code" href="classara_1_1com_1_1option_1_1Option.html">Option</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                uint16_t mPriority;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                uint16_t mWeight;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">LoadBalancingOption</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a89a055418496ba45dc6379db02d3b55c">   26</a></span>&#160;                constexpr <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a89a055418496ba45dc6379db02d3b55c">LoadBalancingOption</a>(</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="keywordtype">bool</span> discardable,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    uint16_t priority,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    uint16_t weight) noexcept : <a class="code" href="classara_1_1com_1_1option_1_1Option.html#a1ac2878ed597708978c2ed1baa7a04c2">Option</a>(<a class="code" href="namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a5fb96ac8b4e030b4e88bd71b95460d02">OptionType::LoadBalancing</a>, discardable),</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                mPriority{priority},</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                mWeight{weight}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keyword">virtual</span> uint16_t <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#aa57d91844d15b32c3db55c3fd051face">Length</a>() const noexcept override;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                uint16_t <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#ae71e23b3d8c046560f015216ef247630">Priority</a>() const noexcept;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                uint16_t <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a80f8a0830a544b5fc8b736478573ade2">Weight</a>() const noexcept;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                virtual std::vector&lt;uint8_t&gt; <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a6225908c991acd1f62602a419a1cc17a">Payload</a>() const override;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">ara::com::option::LoadBalancingOption</a></div><div class="ttdoc">Service load balancing option.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.h:14</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;./option.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>ara</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>com</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">namespace </span>option</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">   14</a></span>&#160;            <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">LoadBalancingOption</a> : <span class="keyword">public</span> <a class="code" href="classara_1_1com_1_1option_1_1Option.html">Option</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                uint16_t mPriority;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                uint16_t mWeight;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">LoadBalancingOption</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a89a055418496ba45dc6379db02d3b55c">   27</a></span>&#160;                constexpr <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a89a055418496ba45dc6379db02d3b55c">LoadBalancingOption</a>(</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keywordtype">bool</span> discardable,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    uint16_t priority,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    uint16_t weight) noexcept : <a class="code" href="classara_1_1com_1_1option_1_1Option.html#a1ac2878ed597708978c2ed1baa7a04c2">Option</a>(<a class="code" href="namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a5fb96ac8b4e030b4e88bd71b95460d02">OptionType::LoadBalancing</a>, discardable),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                mPriority{priority},</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                mWeight{weight}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keyword">virtual</span> uint16_t <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#aa57d91844d15b32c3db55c3fd051face">Length</a>() const noexcept override;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                uint16_t <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#ae71e23b3d8c046560f015216ef247630">Priority</a>() const noexcept;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                uint16_t <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a80f8a0830a544b5fc8b736478573ade2">Weight</a>() const noexcept;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                virtual std::vector&lt;uint8_t&gt; <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a6225908c991acd1f62602a419a1cc17a">Payload</a>() const override;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                static std::shared_ptr&lt;LoadBalancingOption&gt; <a class="code" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a1eab8bf0764d0c87784ec1fdbdf0bdc4">Deserialize</a>(</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    const std::vector&lt;uint8_t&gt; &amp;payload,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    std::<span class="keywordtype">size_t</span> &amp;offset,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="keywordtype">bool</span> discardable);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            };</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">ara::com::option::LoadBalancingOption</a></div><div class="ttdoc">Service load balancing option.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.h:15</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html_a1eab8bf0764d0c87784ec1fdbdf0bdc4"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a1eab8bf0764d0c87784ec1fdbdf0bdc4">ara::com::option::LoadBalancingOption::Deserialize</a></div><div class="ttdeci">static std::shared_ptr&lt; LoadBalancingOption &gt; Deserialize(const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset, bool discardable)</div><div class="ttdoc">Deserialize an option payload.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.cpp:35</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html_a6225908c991acd1f62602a419a1cc17a"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a6225908c991acd1f62602a419a1cc17a">ara::com::option::LoadBalancingOption::Payload</a></div><div class="ttdeci">virtual std::vector&lt; uint8_t &gt; Payload() const override</div><div class="ttdoc">Get option payload.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.cpp:25</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html_a80f8a0830a544b5fc8b736478573ade2"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a80f8a0830a544b5fc8b736478573ade2">ara::com::option::LoadBalancingOption::Weight</a></div><div class="ttdeci">uint16_t Weight() const noexcept</div><div class="ttdoc">Get weight.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.cpp:20</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html_a89a055418496ba45dc6379db02d3b55c"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a89a055418496ba45dc6379db02d3b55c">ara::com::option::LoadBalancingOption::LoadBalancingOption</a></div><div class="ttdeci">constexpr LoadBalancingOption(bool discardable, uint16_t priority, uint16_t weight) noexcept</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.h:26</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html_a89a055418496ba45dc6379db02d3b55c"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a89a055418496ba45dc6379db02d3b55c">ara::com::option::LoadBalancingOption::LoadBalancingOption</a></div><div class="ttdeci">constexpr LoadBalancingOption(bool discardable, uint16_t priority, uint16_t weight) noexcept</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.h:27</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html_aa57d91844d15b32c3db55c3fd051face"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#aa57d91844d15b32c3db55c3fd051face">ara::com::option::LoadBalancingOption::Length</a></div><div class="ttdeci">virtual uint16_t Length() const noexcept override</div><div class="ttdoc">Get option length.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.cpp:9</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1option_1_1LoadBalancingOption_html_ae71e23b3d8c046560f015216ef247630"><div class="ttname"><a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#ae71e23b3d8c046560f015216ef247630">ara::com::option::LoadBalancingOption::Priority</a></div><div class="ttdeci">uint16_t Priority() const noexcept</div><div class="ttdoc">Get priority.</div><div class="ttdef"><b>Definition:</b> loadbalancing_option.cpp:15</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1option_1_1Option_html"><div class="ttname"><a href="classara_1_1com_1_1option_1_1Option.html">ara::com::option::Option</a></div><div class="ttdoc">Communication message entry abstract option.</div><div class="ttdef"><b>Definition:</b> option.h:37</div></div>

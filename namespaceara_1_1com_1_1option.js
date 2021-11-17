@@ -3,6 +3,7 @@ var namespaceara_1_1com_1_1option =
     [ "Ipv4EndpointOption", "classara_1_1com_1_1option_1_1Ipv4EndpointOption.html", "classara_1_1com_1_1option_1_1Ipv4EndpointOption" ],
     [ "LoadBalancingOption", "classara_1_1com_1_1option_1_1LoadBalancingOption.html", "classara_1_1com_1_1option_1_1LoadBalancingOption" ],
     [ "Option", "classara_1_1com_1_1option_1_1Option.html", "classara_1_1com_1_1option_1_1Option" ],
+    [ "OptionDeserializer", "classara_1_1com_1_1option_1_1OptionDeserializer.html", null ],
     [ "Layer4ProtocolType", "namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c", [
       [ "Tcp", "namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34ca30b7fdeebc36988717d0e274cc2e7520", null ],
       [ "Udp", "namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34ca81baba40274ccb30f9fdfa2c73cf0482", null ]

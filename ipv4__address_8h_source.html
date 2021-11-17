@@ -126,32 +126,37 @@ $(document).ready(function(){initNavTree('ipv4__address_8h_source.html',''); ini
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                static <span class="keywordtype">void</span> <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html#ae0762a66e3d9c6a45e6767f821f14a72">Inject</a>(</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    std::vector&lt;uint8_t&gt; &amp;vector,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> ipAddress);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            };</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="namespaceara_1_1com_1_1helper.html#a99495cb7b4aa18974d6d5a68d6aa168a">   47</a></span>&#160;            inline <span class="keywordtype">bool</span> operator==(<a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address1, <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address2)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordtype">bool</span> _result =</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    (address1.Octets[0] == address2.Octets[0]) &amp;&amp;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    (address1.Octets[1] == address2.Octets[1]) &amp;&amp;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    (address1.Octets[2] == address2.Octets[2]) &amp;&amp;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    (address1.Octets[3] == address2.Octets[3]);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">return</span> _result;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespaceara_1_1com_1_1helper.html#ad1379c0b83dd58e596947b1dd6ce2a37">   62</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceara_1_1com_1_1helper.html#ad1379c0b83dd58e596947b1dd6ce2a37">operator!=</a>(<a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address1, <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address2)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordtype">bool</span> _result = !(address1 == address2);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                static <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba">Extract</a>(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    const std::vector&lt;uint8_t&gt; &amp;vector,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    std::<span class="keywordtype">size_t</span> &amp;offset);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespaceara_1_1com_1_1helper.html#a99495cb7b4aa18974d6d5a68d6aa168a">   55</a></span>&#160;            inline <span class="keywordtype">bool</span> operator==(<a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address1, <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address2)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">bool</span> _result =</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    (address1.Octets[0] == address2.Octets[0]) &amp;&amp;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    (address1.Octets[1] == address2.Octets[1]) &amp;&amp;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    (address1.Octets[2] == address2.Octets[2]) &amp;&amp;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    (address1.Octets[3] == address2.Octets[3]);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">return</span> _result;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">return</span> _result;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceara_1_1com_1_1helper_html_ad1379c0b83dd58e596947b1dd6ce2a37"><div class="ttname"><a href="namespaceara_1_1com_1_1helper.html#ad1379c0b83dd58e596947b1dd6ce2a37">ara::com::helper::operator!=</a></div><div class="ttdeci">bool operator!=(Ipv4Address address1, Ipv4Address address2)</div><div class="ttdoc">Ipv4Address inequality operator override.</div><div class="ttdef"><b>Definition:</b> ipv4_address.h:62</div></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="namespaceara_1_1com_1_1helper.html#ad1379c0b83dd58e596947b1dd6ce2a37">   70</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceara_1_1com_1_1helper.html#ad1379c0b83dd58e596947b1dd6ce2a37">operator!=</a>(<a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address1, <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">Ipv4Address</a> address2)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">bool</span> _result = !(address1 == address2);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">return</span> _result;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespaceara_1_1com_1_1helper_html_ad1379c0b83dd58e596947b1dd6ce2a37"><div class="ttname"><a href="namespaceara_1_1com_1_1helper.html#ad1379c0b83dd58e596947b1dd6ce2a37">ara::com::helper::operator!=</a></div><div class="ttdeci">bool operator!=(Ipv4Address address1, Ipv4Address address2)</div><div class="ttdoc">Ipv4Address inequality operator override.</div><div class="ttdef"><b>Definition:</b> ipv4_address.h:70</div></div>
 <div class="ttc" id="astructara_1_1com_1_1helper_1_1Ipv4Address_html"><div class="ttname"><a href="structara_1_1com_1_1helper_1_1Ipv4Address.html">ara::com::helper::Ipv4Address</a></div><div class="ttdoc">IPv4 address wrapper helper.</div><div class="ttdef"><b>Definition:</b> ipv4_address.h:16</div></div>
+<div class="ttc" id="astructara_1_1com_1_1helper_1_1Ipv4Address_html_a5a65971dd9576508bf7a065942ba31ba"><div class="ttname"><a href="structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba">ara::com::helper::Ipv4Address::Extract</a></div><div class="ttdeci">static Ipv4Address Extract(const std::vector&lt; uint8_t &gt; &amp;vector, std::size_t &amp;offset)</div><div class="ttdoc">Extract an IPv4 address from a byte vector.</div><div class="ttdef"><b>Definition:</b> ipv4_address.cpp:27</div></div>
 <div class="ttc" id="astructara_1_1com_1_1helper_1_1Ipv4Address_html_aa2b35815a3f439a8823888a39099cacb"><div class="ttname"><a href="structara_1_1com_1_1helper_1_1Ipv4Address.html#aa2b35815a3f439a8823888a39099cacb">ara::com::helper::Ipv4Address::Octets</a></div><div class="ttdeci">std::array&lt; uint8_t, 4 &gt; Octets</div><div class="ttdoc">IPv4 address octets.</div><div class="ttdef"><b>Definition:</b> ipv4_address.h:18</div></div>
 <div class="ttc" id="astructara_1_1com_1_1helper_1_1Ipv4Address_html_ae0762a66e3d9c6a45e6767f821f14a72"><div class="ttname"><a href="structara_1_1com_1_1helper_1_1Ipv4Address.html#ae0762a66e3d9c6a45e6767f821f14a72">ara::com::helper::Ipv4Address::Inject</a></div><div class="ttdeci">static void Inject(std::vector&lt; uint8_t &gt; &amp;vector, Ipv4Address ipAddress)</div><div class="ttdoc">Inject an IP address into a byte vector.</div><div class="ttdef"><b>Definition:</b> ipv4_address.cpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
