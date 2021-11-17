@@ -43,8 +43,8 @@ namespace ara
                 const std::vector<uint8_t> &vector, std::size_t &offset)
             {
                 uint16_t _result =
-                    vector[offset++] << 8 |
-                    vector[offset++];
+                    vector.at(offset++) << 8 |
+                    vector.at(offset++);
 
                 return _result;
             }
@@ -53,10 +53,10 @@ namespace ara
                 const std::vector<uint8_t> &vector, std::size_t &offset)
             {
                 uint32_t _result =
-                    vector[offset++] << 24 |
-                    vector[offset++] << 16 |
-                    vector[offset++] << 8 |
-                    vector[offset++];
+                    vector.at(offset++) << 24 |
+                    vector.at(offset++) << 16 |
+                    vector.at(offset++) << 8 |
+                    vector.at(offset++);
 
                 return _result;
             }

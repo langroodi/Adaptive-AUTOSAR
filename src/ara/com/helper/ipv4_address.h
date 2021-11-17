@@ -38,6 +38,14 @@ namespace ara
                 static void Inject(
                     std::vector<uint8_t> &vector,
                     Ipv4Address ipAddress);
+
+                /// @brief Extract an IPv4 address from a byte vector
+                /// @param vector Byte vector
+                /// @param offset Extract offset at the vector
+                /// @returns Extracted IPv4 address
+                static Ipv4Address Extract(
+                    const std::vector<uint8_t> &vector,
+                    std::size_t &offset);
             };
 
             /// @brief Ipv4Address equality operator override

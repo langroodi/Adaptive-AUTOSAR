@@ -133,8 +133,6 @@ add_library(
   ${source_ara_com_helper_dir}/ttl_timer.h
   ${source_ara_com_helper_dir}/ttl_timer.cpp
   ${source_ara_com_helper_dir}/network_layer.h
-  ${source_ara_com_option_dir}/option.h
-  ${source_ara_com_option_dir}/option.cpp
   ${source_ara_com_entry_dir}/entry.h
   ${source_ara_com_entry_dir}/entry.cpp
   ${source_ara_com_entry_dir}/eventgroup_entry.h
@@ -147,6 +145,8 @@ add_library(
   ${source_ara_com_option_dir}/ipv4_endpoint_option.cpp
   ${source_ara_com_option_dir}/loadbalancing_option.h
   ${source_ara_com_option_dir}/loadbalancing_option.cpp
+  ${source_ara_com_option_dir}/option_deserializer.h
+  ${source_ara_com_option_dir}/option_deserializer.cpp
   ${source_ara_com_someip_dir}/someip_message.h
   ${source_ara_com_someip_dir}/someip_message.cpp
   ${source_ara_com_someip_sd_dir}/someip_sd_agent.h

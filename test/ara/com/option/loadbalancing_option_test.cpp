@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <algorithm>
 #include <array>
-#include "../../../../src/ara/com/option/loadbalancing_option.h"
+#include "../../../../src/ara/com/option/option_deserializer.h"
 
 namespace ara
 {
@@ -47,6 +47,41 @@ namespace ara
                         cExpectedPayload.begin());
 
                 EXPECT_TRUE(_areEqual);
+            }
+
+            TEST(LoadBalancingOptionTest, Deserializing)
+            {
+                const bool cDiscardable = false;
+                const uint16_t cPriority = 1;
+                const uint16_t cWeight = 2;
+
+                LoadBalancingOption _originalOption(
+                    cDiscardable, cPriority, cWeight);
+
+                auto _payload = _originalOption.Payload();
+                std::size_t _offset = 0;
+                auto _deserializedOptionBase =
+                    OptionDeserializer::Deserialize(_payload, _offset);
+
+                auto _deserializedOption =
+                    std::dynamic_pointer_cast<LoadBalancingOption>(
+                        _deserializedOptionBase);
+
+                EXPECT_EQ(
+                    _originalOption.Type(),
+                    _deserializedOption->Type());
+
+                EXPECT_EQ(
+                    _originalOption.Discardable(),
+                    _deserializedOption->Discardable());
+
+                EXPECT_EQ(
+                    _originalOption.Priority(),
+                    _deserializedOption->Priority());
+
+                EXPECT_EQ(
+                    _originalOption.Weight(),
+                    _deserializedOption->Weight());
             }
         }
     }

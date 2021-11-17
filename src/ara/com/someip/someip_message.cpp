@@ -82,7 +82,7 @@ namespace ara
 
                 message->mMessageId = helper::ExtractInteger(payload, _offset);
 
-                // Apply the message length offset
+                // Apply the message length field offset
                 _offset += 4;
 
                 message->mClientId = helper::ExtractShort(payload, _offset);

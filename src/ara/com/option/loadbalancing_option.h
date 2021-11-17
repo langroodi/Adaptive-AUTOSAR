@@ -1,6 +1,7 @@
 #ifndef LOADBALANCING_OPTION_H
 #define LOADBALANCING_OPTION_H
 
+#include <memory>
 #include "./option.h"
 
 namespace ara
@@ -43,6 +44,16 @@ namespace ara
                 uint16_t Weight() const noexcept;
 
                 virtual std::vector<uint8_t> Payload() const override;
+
+                /// @brief Deserialize an option payload
+                /// @param payload Serialized option payload byte array
+                /// @param offset Deserializing offset in the payload
+                /// @param discardable Indicates whether the option can be discarded or not
+                /// @returns Shared pointer to the option which is created while deserializing
+                static std::shared_ptr<LoadBalancingOption> Deserialize(
+                    const std::vector<uint8_t> &payload,
+                    std::size_t &offset,
+                    bool discardable);
             };
         }
     }

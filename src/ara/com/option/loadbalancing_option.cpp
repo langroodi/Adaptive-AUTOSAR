@@ -31,6 +31,20 @@ namespace ara
 
                 return _result;
             }
+
+            std::shared_ptr<LoadBalancingOption> LoadBalancingOption::Deserialize(
+                const std::vector<uint8_t> &payload,
+                std::size_t &offset,
+                bool discardable)
+            {
+                uint16_t _priority = helper::ExtractShort(payload, offset);
+                uint16_t _weight = helper::ExtractShort(payload, offset);
+                auto _result =
+                    std::make_shared<LoadBalancingOption>(
+                        discardable, _priority, _weight);
+
+                return _result;
+            }
         }
     }
 }

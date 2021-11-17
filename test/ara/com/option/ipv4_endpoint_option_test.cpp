@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <algorithm>
 #include <array>
-#include "../../../../src/ara/com/option/ipv4_endpoint_option.h"
+#include "../../../../src/ara/com/option/option_deserializer.h"
 
 namespace ara
 {
@@ -63,6 +63,48 @@ namespace ara
                         cExpectedPayload.begin());
 
                 EXPECT_TRUE(_areEqual);
+            }
+
+            TEST(Ipv4EndpointOptionTest, Deserializing)
+            {
+                const bool cDiscardable = true;
+                const helper::Ipv4Address cIpAddress(127, 0, 0, 1);
+                const Layer4ProtocolType cProtocol = Layer4ProtocolType::Tcp;
+                const uint16_t cPort = 8080;
+                const OptionType cType = OptionType::IPv4Endpoint;
+
+                auto _originalOption =
+                    Ipv4EndpointOption::CreateUnitcastEndpoint(
+                        cDiscardable, cIpAddress, cProtocol, cPort);
+
+                auto _payload = _originalOption->Payload();
+                std::size_t _offset = 0;
+                auto _deserializedOptionBase =
+                    OptionDeserializer::Deserialize(_payload, _offset);
+
+                auto _deserializedOption =
+                    std::dynamic_pointer_cast<Ipv4EndpointOption>(
+                        _deserializedOptionBase);
+
+                EXPECT_EQ(
+                    _originalOption->Type(),
+                    _deserializedOption->Type());
+
+                EXPECT_EQ(
+                    _originalOption->Discardable(),
+                    _deserializedOption->Discardable());
+
+                EXPECT_EQ(
+                    _originalOption->IpAddress(),
+                    _deserializedOption->IpAddress());
+
+                EXPECT_EQ(
+                    _originalOption->L4Proto(),
+                    _deserializedOption->L4Proto());
+
+                EXPECT_EQ(
+                    _originalOption->Port(),
+                    _deserializedOption->Port());
             }
         }
     }

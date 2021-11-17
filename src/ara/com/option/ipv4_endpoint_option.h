@@ -86,6 +86,19 @@ namespace ara
                     helper::Ipv4Address ipAddress,
                     Layer4ProtocolType protocol = cDefaultSdProtocol,
                     uint16_t port = cDefaultSdPort) noexcept;
+
+                /// @brief Deserialize an option payload
+                /// @param payload Serialized option payload byte array
+                /// @param offset Deserializing offset in the payload
+                /// @param type IPv4 endpoint option type
+                /// @param discardable Indicates whether the option can be discarded or not
+                /// @returns Shared pointer to the option which is created while deserializing
+                /// @throws std::out_of_range Throws when the option type is not an IPv4 endpoint
+                static std::shared_ptr<Ipv4EndpointOption> Deserialize(
+                    const std::vector<uint8_t> &payload,
+                    std::size_t &offset,
+                    OptionType type,
+                    bool discardable);
             };
         }
     }
