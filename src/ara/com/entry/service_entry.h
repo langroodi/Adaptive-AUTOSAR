@@ -82,6 +82,25 @@ namespace ara
                     uint16_t instanceId,
                     uint8_t majorVersion,
                     uint32_t minorVersion) noexcept;
+
+                /// @brief Deserialize a entry payload
+                /// @param payload Serialized entry payload byte array
+                /// @param offset Deserializing offset in the payload
+                /// @param type Entry type
+                /// @param serviceId Service in interest ID
+                /// @param instanceId Service in interest instance ID
+                /// @param ttl Entry time to live
+                /// @param majorVersion Service in interest major version
+                /// @returns Shared pointer to the entry which is created while deserializing
+                /// @throws std::out_of_range Throws when the entry type is not a service entry
+                static std::shared_ptr<ServiceEntry> Deserialize(
+                    const std::vector<uint8_t> &payload,
+                    std::size_t &offset,
+                    EntryType type,
+                    uint16_t serviceId,
+                    uint16_t instanceId,
+                    uint32_t ttl,
+                    uint8_t majorVersion);
             };
         }
     }

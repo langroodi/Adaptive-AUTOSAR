@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <algorithm>
 #include <array>
-#include "../../../../src/ara/com/entry/eventgroup_entry.h"
+#include "../../../../src/ara/com/entry/entry_deserializer.h"
 #include "../../../../src/ara/com/option/ipv4_endpoint_option.h"
 
 namespace ara
@@ -23,12 +23,12 @@ namespace ara
                     EventgroupEntry::CreateSubscribeEventEntry(
                         cServiceId, cInstanceId, cMajorVersion, cEventgroupId);
 
-                EXPECT_EQ(_entry.ServiceId(), cServiceId);
-                EXPECT_EQ(_entry.InstanceId(), cInstanceId);
-                EXPECT_EQ(_entry.MajorVersion(), cMajorVersion);
-                EXPECT_EQ(_entry.EventgroupId(), cEventgroupId);
-                EXPECT_EQ(_entry.Type(), cType);
-                EXPECT_GT(_entry.TTL(), cTTL);
+                EXPECT_EQ(_entry->ServiceId(), cServiceId);
+                EXPECT_EQ(_entry->InstanceId(), cInstanceId);
+                EXPECT_EQ(_entry->MajorVersion(), cMajorVersion);
+                EXPECT_EQ(_entry->EventgroupId(), cEventgroupId);
+                EXPECT_EQ(_entry->Type(), cType);
+                EXPECT_GT(_entry->TTL(), cTTL);
             }
 
             TEST(EventgroupEntryTest, UbsubscribeEventFactory)
@@ -44,12 +44,12 @@ namespace ara
                     EventgroupEntry::CreateUnsubscribeEventEntry(
                         cServiceId, cInstanceId, cMajorVersion, cEventgroupId);
 
-                EXPECT_EQ(_entry.ServiceId(), cServiceId);
-                EXPECT_EQ(_entry.InstanceId(), cInstanceId);
-                EXPECT_EQ(_entry.MajorVersion(), cMajorVersion);
-                EXPECT_EQ(_entry.EventgroupId(), cEventgroupId);
-                EXPECT_EQ(_entry.Type(), cType);
-                EXPECT_EQ(_entry.TTL(), cTTL);
+                EXPECT_EQ(_entry->ServiceId(), cServiceId);
+                EXPECT_EQ(_entry->InstanceId(), cInstanceId);
+                EXPECT_EQ(_entry->MajorVersion(), cMajorVersion);
+                EXPECT_EQ(_entry->EventgroupId(), cEventgroupId);
+                EXPECT_EQ(_entry->Type(), cType);
+                EXPECT_EQ(_entry->TTL(), cTTL);
             }
 
             TEST(EventgroupEntryTest, AcknowledgeFactory)
@@ -67,12 +67,12 @@ namespace ara
                 auto _ackEntry =
                     EventgroupEntry::CreateAcknowledgeEntry(_subscribeEntry);
 
-                EXPECT_EQ(_ackEntry.ServiceId(), _subscribeEntry.ServiceId());
-                EXPECT_EQ(_ackEntry.InstanceId(), _subscribeEntry.InstanceId());
-                EXPECT_EQ(_ackEntry.MajorVersion(), _subscribeEntry.MajorVersion());
-                EXPECT_EQ(_ackEntry.EventgroupId(), _subscribeEntry.EventgroupId());
-                EXPECT_EQ(_ackEntry.TTL(), _subscribeEntry.TTL());
-                EXPECT_EQ(_ackEntry.Type(), cType);
+                EXPECT_EQ(_ackEntry->ServiceId(), _subscribeEntry->ServiceId());
+                EXPECT_EQ(_ackEntry->InstanceId(), _subscribeEntry->InstanceId());
+                EXPECT_EQ(_ackEntry->MajorVersion(), _subscribeEntry->MajorVersion());
+                EXPECT_EQ(_ackEntry->EventgroupId(), _subscribeEntry->EventgroupId());
+                EXPECT_EQ(_ackEntry->TTL(), _subscribeEntry->TTL());
+                EXPECT_EQ(_ackEntry->Type(), cType);
             }
 
             TEST(EventgroupEntryTest, NegativeAcknowledgeFactory)
@@ -91,12 +91,12 @@ namespace ara
                 auto _nackEntry =
                     EventgroupEntry::CreateNegativeAcknowledgeEntry(_subscribeEntry);
 
-                EXPECT_EQ(_nackEntry.ServiceId(), _subscribeEntry.ServiceId());
-                EXPECT_EQ(_nackEntry.InstanceId(), _subscribeEntry.InstanceId());
-                EXPECT_EQ(_nackEntry.MajorVersion(), _subscribeEntry.MajorVersion());
-                EXPECT_EQ(_nackEntry.EventgroupId(), _subscribeEntry.EventgroupId());
-                EXPECT_EQ(_nackEntry.TTL(), cTTL);
-                EXPECT_EQ(_nackEntry.Type(), cType);
+                EXPECT_EQ(_nackEntry->ServiceId(), _subscribeEntry->ServiceId());
+                EXPECT_EQ(_nackEntry->InstanceId(), _subscribeEntry->InstanceId());
+                EXPECT_EQ(_nackEntry->MajorVersion(), _subscribeEntry->MajorVersion());
+                EXPECT_EQ(_nackEntry->EventgroupId(), _subscribeEntry->EventgroupId());
+                EXPECT_EQ(_nackEntry->TTL(), cTTL);
+                EXPECT_EQ(_nackEntry->Type(), cType);
             }
 
             TEST(EventgroupEntryTest, PayloadMethod)
@@ -119,7 +119,7 @@ namespace ara
                      0x00, 0x80, 0xab, 0xcd};
 
                 uint8_t _optionIndex = 0;
-                auto _actualPayload = _entry.Payload(_optionIndex);
+                auto _actualPayload = _entry->Payload(_optionIndex);
 
                 bool _areEqual =
                     std::equal(
@@ -153,13 +153,55 @@ namespace ara
                         cDiscardable, cIpAddress, cPort);
 
                 EXPECT_THROW(
-                    _subscribeEntry.AddFirstOption(_option), std::invalid_argument);
+                    _subscribeEntry->AddFirstOption(_option), std::invalid_argument);
                 EXPECT_THROW(
-                    _subscribeEntry.AddSecondOption(_option), std::invalid_argument);
+                    _subscribeEntry->AddSecondOption(_option), std::invalid_argument);
                 EXPECT_NO_THROW(
-                    _ackEntry.AddFirstOption(_option));
+                    _ackEntry->AddFirstOption(_option));
                 EXPECT_THROW(
-                    _ackEntry.AddSecondOption(_option), std::invalid_argument);
+                    _ackEntry->AddSecondOption(_option), std::invalid_argument);
+            }
+
+            TEST(EventgroupEntryTest, Deserializing)
+            {
+                const uint16_t cServiceId = 0x0001;
+                const uint16_t cInstanceId = 0x0002;
+                const uint8_t cMajorVersion = 0x03;
+                const uint16_t cEventgroupId = 0x0004;
+
+                auto _originalEntry =
+                    EventgroupEntry::CreateSubscribeEventEntry(
+                        cServiceId, cInstanceId, cMajorVersion, cEventgroupId);
+
+                uint8_t _optionIndex = 0;
+                std::size_t _offset = 0;
+                auto _payload = _originalEntry->Payload(_optionIndex);
+                auto _deserializedEntryBase =
+                    EntryDeserializer::Deserialize(_payload, _offset);
+
+                auto _deserializedEntry =
+                    std::dynamic_pointer_cast<EventgroupEntry>(
+                        _deserializedEntryBase);
+
+                EXPECT_EQ(
+                    _originalEntry->Type(),
+                    _deserializedEntry->Type());
+
+                EXPECT_EQ(
+                    _originalEntry->ServiceId(),
+                    _deserializedEntry->ServiceId());
+
+                EXPECT_EQ(
+                    _originalEntry->InstanceId(),
+                    _deserializedEntry->InstanceId());
+
+                EXPECT_EQ(
+                    _originalEntry->MajorVersion(),
+                    _deserializedEntry->MajorVersion());
+
+                EXPECT_EQ(
+                    _originalEntry->EventgroupId(),
+                    _deserializedEntry->EventgroupId());
             }
         }
     }

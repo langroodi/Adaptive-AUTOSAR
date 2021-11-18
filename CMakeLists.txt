@@ -139,6 +139,8 @@ add_library(
   ${source_ara_com_entry_dir}/eventgroup_entry.cpp
   ${source_ara_com_entry_dir}/service_entry.h
   ${source_ara_com_entry_dir}/service_entry.cpp
+  ${source_ara_com_entry_dir}/entry_deserializer.h
+  ${source_ara_com_entry_dir}/entry_deserializer.cpp
   ${source_ara_com_option_dir}/option.h
   ${source_ara_com_option_dir}/option.cpp
   ${source_ara_com_option_dir}/ipv4_endpoint_option.h

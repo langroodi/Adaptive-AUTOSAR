@@ -114,6 +114,43 @@ namespace ara
 
                 return _result;
             }
+
+            std::shared_ptr<ServiceEntry> ServiceEntry::Deserialize(
+                const std::vector<uint8_t> &payload,
+                std::size_t &offset,
+                EntryType type,
+                uint16_t serviceId,
+                uint16_t instanceId,
+                uint32_t ttl,
+                uint8_t majorVersion)
+            {
+                uint32_t _minorVersion = helper::ExtractInteger(payload, offset);
+
+                switch (type)
+                {
+                case EntryType::Finding:
+                    return CreateFindServiceEntry(
+                        serviceId, ttl, instanceId, majorVersion, _minorVersion);
+
+                case EntryType::Offering:
+                {
+                    if (ttl > 0)
+                    {
+                        return CreateOfferServiceEntry(
+                            serviceId, instanceId, majorVersion, _minorVersion, ttl);
+                    }
+                    else
+                    {
+                        return CreateStopOfferEntry(
+                            serviceId, instanceId, majorVersion, _minorVersion);
+                    }
+                }
+
+                default:
+                    throw std::out_of_range(
+                        "The entry type does not belong to service entry series.");
+                }
+            }
         }
     }
 }

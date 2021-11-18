@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <algorithm>
 #include <array>
-#include "../../../../src/ara/com/entry/service_entry.h"
+#include "../../../../src/ara/com/entry/entry_deserializer.h"
 #include "../../../../src/ara/com/option/loadbalancing_option.h"
 
 namespace ara
@@ -128,6 +128,53 @@ namespace ara
 
                 EXPECT_NO_THROW(_entry->AddFirstOption(_option));
                 EXPECT_THROW(_entry->AddSecondOption(_option), std::invalid_argument);
+            }
+
+            TEST(ServiceEntryTest, Deserializing)
+            {
+                const uint16_t cServiceId = 0x0001;
+                const uint32_t cTTL = 0x000002;
+                const uint16_t cInstanceId = 0x0003;
+                const uint8_t cMajorVersion = 0x04;
+                const uint32_t cMinorVersion = 0x00000005;
+
+                auto _originalEntry =
+                    ServiceEntry::CreateFindServiceEntry(
+                        cServiceId, cTTL, cInstanceId, cMajorVersion, cMinorVersion);
+
+                uint8_t _optionIndex = 0;
+                std::size_t _offset = 0;
+                auto _payload = _originalEntry->Payload(_optionIndex);
+                auto _deserializedEntryBase =
+                    EntryDeserializer::Deserialize(_payload, _offset);
+
+                auto _deserializedEntry =
+                    std::dynamic_pointer_cast<ServiceEntry>(
+                        _deserializedEntryBase);
+
+                EXPECT_EQ(
+                    _originalEntry->Type(),
+                    _deserializedEntry->Type());
+
+                EXPECT_EQ(
+                    _originalEntry->ServiceId(),
+                    _deserializedEntry->ServiceId());
+
+                EXPECT_EQ(
+                    _originalEntry->InstanceId(),
+                    _deserializedEntry->InstanceId());
+
+                EXPECT_EQ(
+                    _originalEntry->MajorVersion(),
+                    _deserializedEntry->MajorVersion());
+
+                EXPECT_EQ(
+                    _originalEntry->TTL(),
+                    _deserializedEntry->TTL());
+
+                EXPECT_EQ(
+                    _originalEntry->MinorVersion(),
+                    _deserializedEntry->MinorVersion());
             }
         }
     }

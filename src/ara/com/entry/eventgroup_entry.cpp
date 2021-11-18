@@ -83,7 +83,7 @@ namespace ara
                 return _result;
             }
 
-            EventgroupEntry EventgroupEntry::CreateSubscribeEventEntry(
+            std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateSubscribeEventEntry(
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
@@ -92,67 +92,120 @@ namespace ara
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
                 const uint32_t cSubscribeEventTTL = 0xffffff;
 
-                EventgroupEntry _result(
-                    cSubscribeEventEntry,
-                    serviceId,
-                    instanceId,
-                    cSubscribeEventTTL,
-                    majorVersion,
-                    eventgroupId);
+                std::shared_ptr<EventgroupEntry> _result(
+                    new EventgroupEntry(
+                        cSubscribeEventEntry,
+                        serviceId,
+                        instanceId,
+                        cSubscribeEventTTL,
+                        majorVersion,
+                        eventgroupId));
 
                 return _result;
             }
 
-            EventgroupEntry EventgroupEntry::CreateUnsubscribeEventEntry(
+            std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateUnsubscribeEventEntry(
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
                 uint16_t eventgroupId) noexcept
             {
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
-                const uint32_t cUnsubscribeEventTTL = 0x000000;
 
-                EventgroupEntry _result(
-                    cSubscribeEventEntry,
-                    serviceId,
-                    instanceId,
-                    cUnsubscribeEventTTL,
-                    majorVersion,
-                    eventgroupId);
-
-                return _result;
-            }
-
-            EventgroupEntry EventgroupEntry::CreateAcknowledgeEntry(
-                const EventgroupEntry &eventgroupEntry) noexcept
-            {
-                const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
-
-                EventgroupEntry _result(
-                    cAcknowledgetEntry,
-                    eventgroupEntry.ServiceId(),
-                    eventgroupEntry.InstanceId(),
-                    eventgroupEntry.TTL(),
-                    eventgroupEntry.MajorVersion(),
-                    eventgroupEntry.EventgroupId());
+                std::shared_ptr<EventgroupEntry> _result(
+                    new EventgroupEntry(
+                        cSubscribeEventEntry,
+                        serviceId,
+                        instanceId,
+                        cUnsubscribeEventTTL,
+                        majorVersion,
+                        eventgroupId));
 
                 return _result;
             }
 
-            EventgroupEntry EventgroupEntry::CreateNegativeAcknowledgeEntry(
-                const EventgroupEntry &eventgroupEntry) noexcept
+            std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateAcknowledgeEntry(
+                std::shared_ptr<EventgroupEntry> eventgroupEntry) noexcept
             {
                 const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
 
-                EventgroupEntry _result(
-                    cAcknowledgetEntry,
-                    eventgroupEntry.ServiceId(),
-                    eventgroupEntry.InstanceId(),
-                    cNackTTL,
-                    eventgroupEntry.MajorVersion(),
-                    eventgroupEntry.EventgroupId());
+                std::shared_ptr<EventgroupEntry> _result(
+                    new EventgroupEntry(
+                        cAcknowledgetEntry,
+                        eventgroupEntry->ServiceId(),
+                        eventgroupEntry->InstanceId(),
+                        eventgroupEntry->TTL(),
+                        eventgroupEntry->MajorVersion(),
+                        eventgroupEntry->EventgroupId()));
 
                 return _result;
+            }
+
+            std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateNegativeAcknowledgeEntry(
+                std::shared_ptr<EventgroupEntry> eventgroupEntry) noexcept
+            {
+                const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
+
+                std::shared_ptr<EventgroupEntry> _result(
+                    new EventgroupEntry(
+                        cAcknowledgetEntry,
+                        eventgroupEntry->ServiceId(),
+                        eventgroupEntry->InstanceId(),
+                        cNackTTL,
+                        eventgroupEntry->MajorVersion(),
+                        eventgroupEntry->EventgroupId()));
+
+                return _result;
+            }
+
+            std::shared_ptr<EventgroupEntry> EventgroupEntry::Deserialize(
+                const std::vector<uint8_t> &payload,
+                std::size_t &offset,
+                EntryType type,
+                uint16_t serviceId,
+                uint16_t instanceId,
+                uint32_t ttl,
+                uint8_t majorVersion)
+            {
+                // Apply the event group flag field
+                offset += 2;
+
+                uint16_t _eventgroupId = helper::ExtractShort(payload, offset);
+
+                switch (type)
+                {
+                case EntryType::Subscribing:
+                {
+                    if (ttl > cUnsubscribeEventTTL)
+                    {
+                        return CreateSubscribeEventEntry(
+                            serviceId, instanceId, majorVersion, _eventgroupId);
+                    }
+                    else
+                    {
+                        return CreateUnsubscribeEventEntry(
+                            serviceId, instanceId, majorVersion, _eventgroupId);
+                    }
+                }
+
+                case EntryType::Acknowledging:
+                {
+                    std::shared_ptr<EventgroupEntry> _result(
+                        new EventgroupEntry(
+                            type,
+                            serviceId,
+                            instanceId,
+                            ttl,
+                            majorVersion,
+                            _eventgroupId));
+
+                    return _result;
+                }
+
+                default:
+                    throw std::out_of_range(
+                        "The entry type does not belong to service entry series.");
+                }
             }
         }
     }
