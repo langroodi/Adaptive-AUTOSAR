@@ -22,6 +22,7 @@ var hierarchy =
       [ "ara::com::entry::EventgroupEntry", "classara_1_1com_1_1entry_1_1EventgroupEntry.html", null ],
       [ "ara::com::entry::ServiceEntry", "classara_1_1com_1_1entry_1_1ServiceEntry.html", null ]
     ] ],
+    [ "ara::com::entry::EntryDeserializer", "classara_1_1com_1_1entry_1_1EntryDeserializer.html", null ],
     [ "ara::core::ErrorCode", "classara_1_1core_1_1ErrorCode.html", null ],
     [ "ara::core::ErrorDomain", "classara_1_1core_1_1ErrorDomain.html", [
       [ "ara::diag::DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", null ],

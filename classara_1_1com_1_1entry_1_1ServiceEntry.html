@@ -165,6 +165,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac454c1b68353b93c4751023d7999feb0"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1ServiceEntry.html">ServiceEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1ServiceEntry.html#ac454c1b68353b93c4751023d7999feb0">CreateStopOfferEntry</a> (uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint32_t minorVersion) noexcept</td></tr>
 <tr class="memdesc:ac454c1b68353b93c4751023d7999feb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop offer a service entry factory.  <a href="classara_1_1com_1_1entry_1_1ServiceEntry.html#ac454c1b68353b93c4751023d7999feb0">More...</a><br /></td></tr>
 <tr class="separator:ac454c1b68353b93c4751023d7999feb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa57b93d94d58e5991c9dadcf0e17b59c"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1ServiceEntry.html">ServiceEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1ServiceEntry.html#aa57b93d94d58e5991c9dadcf0e17b59c">Deserialize</a> (const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset, <a class="el" href="namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171e">EntryType</a> type, uint16_t serviceId, uint16_t instanceId, uint32_t ttl, uint8_t majorVersion)</td></tr>
+<tr class="memdesc:aa57b93d94d58e5991c9dadcf0e17b59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a entry payload.  <a href="classara_1_1com_1_1entry_1_1ServiceEntry.html#aa57b93d94d58e5991c9dadcf0e17b59c">More...</a><br /></td></tr>
+<tr class="separator:aa57b93d94d58e5991c9dadcf0e17b59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -392,6 +395,93 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Stop service offering entry </dd></dl>
+
+</div>
+</div>
+<a id="aa57b93d94d58e5991c9dadcf0e17b59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57b93d94d58e5991c9dadcf0e17b59c">&#9670;&nbsp;</a></span>Deserialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1ServiceEntry.html">ServiceEntry</a> &gt; ara::com::entry::ServiceEntry::Deserialize </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>payload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171e">EntryType</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>serviceId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>instanceId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ttl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>majorVersion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deserialize a entry payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">payload</td><td>Serialized entry payload byte array </td></tr>
+    <tr><td class="paramname">offset</td><td>Deserializing offset in the payload </td></tr>
+    <tr><td class="paramname">type</td><td><a class="el" href="classara_1_1com_1_1entry_1_1Entry.html" title="Communication message abstract entry.">Entry</a> type </td></tr>
+    <tr><td class="paramname">serviceId</td><td>Service in interest ID </td></tr>
+    <tr><td class="paramname">instanceId</td><td>Service in interest instance ID </td></tr>
+    <tr><td class="paramname">ttl</td><td><a class="el" href="classara_1_1com_1_1entry_1_1Entry.html" title="Communication message abstract entry.">Entry</a> time to live </td></tr>
+    <tr><td class="paramname">majorVersion</td><td>Service in interest major version </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the entry which is created while deserializing </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>Throws when the entry type is not a service entry </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
