@@ -1,4 +1,6 @@
 #include "./someip_sd_message.h"
+#include "../../entry/entry_deserializer.h"
+#include "../../option/option_deserializer.h"
 
 namespace ara
 {
@@ -158,9 +160,10 @@ namespace ara
                     SomeIpSdMessage _result;
                     SomeIpMessage::Deserialize(&_result, payload);
 
-                    std::size_t _someIpSdPduOffset = 16;
+                    const std::size_t cSomeIpSdPduOffset = 16;
+                    std::size_t _entryOffset = cSomeIpSdPduOffset;
                     uint32_t _rebootFlag =
-                        helper::ExtractInteger(payload, _someIpSdPduOffset);
+                        helper::ExtractInteger(payload, _entryOffset);
                     if (_rebootFlag == cRebootedFlag)
                     {
                         _result.mRebooted = true;
@@ -173,6 +176,40 @@ namespace ara
                     {
                         throw std::out_of_range(
                             "The serialized reboot flag is out of range.");
+                    }
+
+                    uint32_t _entriesLength =
+                        helper::ExtractInteger(payload, _entryOffset);
+                    uint32_t _entryOffsetMax = _entryOffset + _entriesLength;
+
+                    const std::size_t cOptionsLengthFieldSize = 4;
+                    std::size_t _optionOffset =
+                        _entryOffset + _entriesLength + cOptionsLengthFieldSize;
+
+                    while (_entryOffset < _entryOffsetMax)
+                    {
+                        entry::EntryDeserializer _entryDeserializer(payload, _entryOffset);
+                        auto _entry = _entryDeserializer.DeserializedEntry();
+
+                        for (int i = 0; i < _entryDeserializer.NumberOfFirstOptions(); i++)
+                        {
+                            auto _option =
+                                option::OptionDeserializer::Deserialize(
+                                    payload, _optionOffset);
+                            
+                            _entry->AddFirstOption(_option);
+                        }
+
+                        for (int i = 0; i < _entryDeserializer.NumberOfSecondOptions(); i++)
+                        {
+                            auto _option =
+                                option::OptionDeserializer::Deserialize(
+                                    payload, _optionOffset);
+                            
+                            _entry->AddSecondOption(_option);
+                        }
+
+                        _result.AddEntry(_entry);
                     }
 
                     return _result;

@@ -66,6 +66,8 @@ namespace ara
             public:
                 /// @brief Any service major version
                 static const uint8_t cAnyMajorVersion = 0xff;
+                /// @brief Option number field bit size
+                static const uint8_t cOptionSizeBitLength = 4;
 
                 virtual ~Entry() noexcept = default;
 

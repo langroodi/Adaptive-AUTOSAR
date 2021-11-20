@@ -163,7 +163,6 @@ namespace ara
                 uint8_t _secondOptionsSize = SecondOptions().size();
                 optionIndex += _secondOptionsSize;
 
-                const uint8_t cOptionSizeBitLength = 4;
                 _firstOptionsSize <<= cOptionSizeBitLength;
                 _firstOptionsSize |= _secondOptionsSize;
                 _result.push_back(_firstOptionsSize);

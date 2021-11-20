@@ -145,12 +145,11 @@ namespace ara
                 uint8_t _optionIndex = 0;
                 std::size_t _offset = 0;
                 auto _payload = _originalEntry->Payload(_optionIndex);
-                auto _deserializedEntryBase =
-                    EntryDeserializer::Deserialize(_payload, _offset);
+                EntryDeserializer _entryDeserializer(_payload, _offset);
 
                 auto _deserializedEntry =
                     std::dynamic_pointer_cast<ServiceEntry>(
-                        _deserializedEntryBase);
+                        _entryDeserializer.DeserializedEntry());
 
                 EXPECT_EQ(
                     _originalEntry->Type(),
