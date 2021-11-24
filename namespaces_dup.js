@@ -12,6 +12,13 @@ var namespaces_dup =
         [ "helper", "namespaceara_1_1com_1_1helper.html", "namespaceara_1_1com_1_1helper" ],
         [ "option", "namespaceara_1_1com_1_1option.html", "namespaceara_1_1com_1_1option" ],
         [ "someip", null, [
+          [ "pubsub", null, [
+            [ "fsm", null, [
+              [ "NotSubscribedState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState" ],
+              [ "ServiceDownState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState" ],
+              [ "SubscribedState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState" ]
+            ] ]
+          ] ],
           [ "sd", null, [
             [ "fsm", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm" ],
             [ "SomeIpSdAgent", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent" ],

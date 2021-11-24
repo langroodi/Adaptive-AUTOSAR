@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['udp_594',['Udp',['../namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34ca81baba40274ccb30f9fdfa2c73cf0482',1,'ara::com::option']]]
+  ['serviceready_610',['ServiceReady',['../namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20ac9a5248c2aa6a434ce1a4da00750feb3',1,'ara::com::helper']]],
+  ['serviceseen_611',['ServiceSeen',['../namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20a504626caffeb7d3df52279c8ab5cb762',1,'ara::com::helper']]],
+  ['stopped_612',['Stopped',['../namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20ac23e2b09ebe6bf4cb5e2a9abe85c0be2',1,'ara::com::helper']]],
+  ['subscribed_613',['Subscribed',['../namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43a808c7457c768423c5651cbf676d9f6d7',1,'ara::com::helper']]],
+  ['subscribing_614',['Subscribing',['../namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171eaae54f8374e019ce8a7d61c839bd307b8',1,'ara::com::entry']]]
 ];

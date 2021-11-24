@@ -6,6 +6,11 @@ var namespaceara_1_1com_1_1helper =
     [ "MachineState", "classara_1_1com_1_1helper_1_1MachineState.html", "classara_1_1com_1_1helper_1_1MachineState" ],
     [ "NetworkLayer", "classara_1_1com_1_1helper_1_1NetworkLayer.html", "classara_1_1com_1_1helper_1_1NetworkLayer" ],
     [ "TtlTimer", "classara_1_1com_1_1helper_1_1TtlTimer.html", "classara_1_1com_1_1helper_1_1TtlTimer" ],
+    [ "PubSubState", "namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43", [
+      [ "ServiceDown", "namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43abfeafee81f829283a0785251914069dc", null ],
+      [ "NotSubscribed", "namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43a4c71dcd035e22768e561976817a8ae0f", null ],
+      [ "Subscribed", "namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43a808c7457c768423c5651cbf676d9f6d7", null ]
+    ] ],
     [ "SdClientState", "namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20", [
       [ "ServiceNotSeen", "namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20a3f5199c8755bcf0ff99281322ee275ab", null ],
       [ "ServiceSeen", "namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20a504626caffeb7d3df52279c8ab5cb762", null ],

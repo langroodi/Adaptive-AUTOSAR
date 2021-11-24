@@ -27,6 +27,13 @@ var annotated_dup =
           [ "OptionDeserializer", "classara_1_1com_1_1option_1_1OptionDeserializer.html", null ]
         ] ],
         [ "someip", null, [
+          [ "pubsub", null, [
+            [ "fsm", null, [
+              [ "NotSubscribedState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState" ],
+              [ "ServiceDownState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState" ],
+              [ "SubscribedState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState" ]
+            ] ]
+          ] ],
           [ "sd", null, [
             [ "fsm", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html", [
               [ "ClientInitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState" ],

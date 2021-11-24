@@ -146,6 +146,12 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:aa18074d1e734fef153bcb6fab0fd1e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service discovery client machine state.  <a href="namespaceara_1_1com_1_1helper.html#aa18074d1e734fef153bcb6fab0fd1e20">More...</a><br /></td></tr>
 <tr class="separator:aa18074d1e734fef153bcb6fab0fd1e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5deceed07efed82dc2f600b8515de43"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43">PubSubState</a> { <b>ServiceDown</b>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43a4c71dcd035e22768e561976817a8ae0f">NotSubscribed</a>
+, <a class="el" href="namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43a808c7457c768423c5651cbf676d9f6d7">Subscribed</a>
+ }</td></tr>
+<tr class="memdesc:ad5deceed07efed82dc2f600b8515de43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publish-subscribe server machine state.  <a href="namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43">More...</a><br /></td></tr>
+<tr class="separator:ad5deceed07efed82dc2f600b8515de43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -175,6 +181,37 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Helper functions required for communication classes. </p>
 <dl class="section note"><dt>Note</dt><dd>The namespace is not part of the official AUTOSAR standard. </dd></dl>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ad5deceed07efed82dc2f600b8515de43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5deceed07efed82dc2f600b8515de43">&#9670;&nbsp;</a></span>PubSubState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43">ara::com::helper::PubSubState</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publish-subscribe server machine state. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad5deceed07efed82dc2f600b8515de43a4c71dcd035e22768e561976817a8ae0f"></a>NotSubscribed&#160;</td><td class="fielddoc"><p>!&lt; Service server is down </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad5deceed07efed82dc2f600b8515de43a808c7457c768423c5651cbf676d9f6d7"></a>Subscribed&#160;</td><td class="fielddoc"><p>!&lt; Service server is up, but there is no subscriber </p>
+<p>!&lt; Service server is up, and there is at least a subscriber </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="aa18074d1e734fef153bcb6fab0fd1e20"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa18074d1e734fef153bcb6fab0fd1e20">&#9670;&nbsp;</a></span>SdClientState</h2>
 
@@ -206,6 +243,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="aa18074d1e734fef153bcb6fab0fd1e20aefaf006a6329e7714acf0931a743c91e"></a>InitialWaitPhase&#160;</td><td class="fielddoc"><p>!&lt; Service is stopped </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aa18074d1e734fef153bcb6fab0fd1e20a59bc007205190ff3122bdbd2e9672f77"></a>RepetitionPhase&#160;</td><td class="fielddoc"><p>!&lt; Client service is in initial waiting phase </p>
+<p>!&lt; Client service is in repetition phase </p>
 </td></tr>
 </table>
 

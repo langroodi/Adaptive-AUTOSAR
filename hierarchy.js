@@ -64,6 +64,11 @@ var hierarchy =
         [ "ara::com::someip::sd::fsm::RepetitionState< T >", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html", null ]
       ] ]
     ] ],
+    [ "ara::com::helper::MachineState< helper::PubSubState >", "classara_1_1com_1_1helper_1_1MachineState.html", [
+      [ "ara::com::someip::pubsub::fsm::NotSubscribedState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState.html", null ],
+      [ "ara::com::someip::pubsub::fsm::ServiceDownState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState.html", null ],
+      [ "ara::com::someip::pubsub::fsm::SubscribedState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html", null ]
+    ] ],
     [ "ara::com::helper::MachineState< helper::SdClientState >", "classara_1_1com_1_1helper_1_1MachineState.html", [
       [ "ara::com::someip::sd::fsm::ClientServiceState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientServiceState.html", [
         [ "ara::com::someip::sd::fsm::ClientInitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState.html", null ],
