@@ -107,7 +107,6 @@ namespace ara
 
                         virtual void Activate(T previousState) override
                         {
-
                             if (!mStopped)
                             {
                                 setTimerBase();

@@ -27,7 +27,15 @@ namespace ara
                 ServiceReady,     ///!< Service is ready
                 Stopped,          ///!< Service is stopped
                 InitialWaitPhase, ///!< Client service is in initial waiting phase
-                RepetitionPhase,  ///!< Client service is in repetition phase
+                RepetitionPhase   ///!< Client service is in repetition phase
+            };
+
+            /// @brief Publish-subscribe server machine state
+            enum class PubSubState
+            {
+                ServiceDown,    ///!< Service server is down
+                NotSubscribed,  ///!< Service server is up, but there is no subscriber
+                Subscribed      ///!< Service server is up, and there is at least a subscriber
             };
 
             /// @brief Machine state abstract class

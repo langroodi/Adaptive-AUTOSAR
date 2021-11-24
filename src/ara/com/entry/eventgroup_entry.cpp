@@ -75,7 +75,7 @@ namespace ara
             {
                 std::vector<uint8_t> _result = Entry::BasePayload(optionIndex);
 
-                // Enabled Inistal Data Request Flag without any counter
+                // Enabled Initial Data Requested Flag without any counter
                 const uint16_t cEventgroupFlag = 0x0080;
                 helper::Inject(_result, cEventgroupFlag);
                 helper::Inject(_result, mEventgroupId);
