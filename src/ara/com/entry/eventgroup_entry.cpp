@@ -11,9 +11,16 @@ namespace ara
                                              uint16_t instanceId,
                                              uint32_t ttl,
                                              uint8_t majorVersion,
-                                             uint16_t eventgroupId) noexcept : Entry(type, serviceId, instanceId, ttl, majorVersion),
-                                                                               mEventgroupId{eventgroupId}
+                                             uint8_t counter,
+                                             uint16_t eventgroupId) : Entry(type, serviceId, instanceId, ttl, majorVersion),
+                                                                      mCounter{counter},
+                                                                      mEventgroupId{eventgroupId}
             {
+                const uint8_t cCounterMax = 0x0f;
+                if (counter > cCounterMax)
+                {
+                    throw std::out_of_range("The counter is out of range.");
+                }
             }
 
             bool EventgroupEntry::isAcknowledge() const noexcept
@@ -66,6 +73,11 @@ namespace ara
                 return _result;
             }
 
+            uint8_t EventgroupEntry::Counter() const noexcept
+            {
+                return mCounter;
+            }
+
             uint16_t EventgroupEntry::EventgroupId() const noexcept
             {
                 return mEventgroupId;
@@ -75,9 +87,9 @@ namespace ara
             {
                 std::vector<uint8_t> _result = Entry::BasePayload(optionIndex);
 
-                // Enabled Initial Data Requested Flag without any counter
-                const uint16_t cEventgroupFlag = 0x0080;
-                helper::Inject(_result, cEventgroupFlag);
+                // Disabled Initial Data Requested Flag with the counter
+                uint16_t _eventgroupFlag = static_cast<uint16_t>(mCounter);
+                helper::Inject(_result, _eventgroupFlag);
                 helper::Inject(_result, mEventgroupId);
 
                 return _result;
@@ -87,7 +99,8 @@ namespace ara
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
-                uint16_t eventgroupId) noexcept
+                uint8_t counter,
+                uint16_t eventgroupId)
             {
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
                 const uint32_t cSubscribeEventTTL = 0xffffff;
@@ -99,6 +112,7 @@ namespace ara
                         instanceId,
                         cSubscribeEventTTL,
                         majorVersion,
+                        counter,
                         eventgroupId));
 
                 return _result;
@@ -108,7 +122,8 @@ namespace ara
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
-                uint16_t eventgroupId) noexcept
+                uint8_t counter,
+                uint16_t eventgroupId)
             {
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
 
@@ -119,13 +134,14 @@ namespace ara
                         instanceId,
                         cUnsubscribeEventTTL,
                         majorVersion,
+                        counter,
                         eventgroupId));
 
                 return _result;
             }
 
             std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateAcknowledgeEntry(
-                std::shared_ptr<EventgroupEntry> eventgroupEntry) noexcept
+                std::shared_ptr<EventgroupEntry> eventgroupEntry)
             {
                 const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
 
@@ -136,13 +152,14 @@ namespace ara
                         eventgroupEntry->InstanceId(),
                         eventgroupEntry->TTL(),
                         eventgroupEntry->MajorVersion(),
+                        eventgroupEntry->Counter(),
                         eventgroupEntry->EventgroupId()));
 
                 return _result;
             }
 
             std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateNegativeAcknowledgeEntry(
-                std::shared_ptr<EventgroupEntry> eventgroupEntry) noexcept
+                std::shared_ptr<EventgroupEntry> eventgroupEntry)
             {
                 const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
 
@@ -153,6 +170,7 @@ namespace ara
                         eventgroupEntry->InstanceId(),
                         cNackTTL,
                         eventgroupEntry->MajorVersion(),
+                        eventgroupEntry->Counter(),
                         eventgroupEntry->EventgroupId()));
 
                 return _result;
@@ -167,9 +185,10 @@ namespace ara
                 uint32_t ttl,
                 uint8_t majorVersion)
             {
-                // Apply the event group flag field
-                offset += 2;
+                // Apply the reserved byte offset
+                offset++;
 
+                uint8_t _counter = payload.at(offset++);
                 uint16_t _eventgroupId = helper::ExtractShort(payload, offset);
 
                 switch (type)
@@ -179,12 +198,12 @@ namespace ara
                     if (ttl > cUnsubscribeEventTTL)
                     {
                         return CreateSubscribeEventEntry(
-                            serviceId, instanceId, majorVersion, _eventgroupId);
+                            serviceId, instanceId, majorVersion, _counter, _eventgroupId);
                     }
                     else
                     {
                         return CreateUnsubscribeEventEntry(
-                            serviceId, instanceId, majorVersion, _eventgroupId);
+                            serviceId, instanceId, majorVersion, _counter, _eventgroupId);
                     }
                 }
 
@@ -197,6 +216,7 @@ namespace ara
                             instanceId,
                             ttl,
                             majorVersion,
+                            _counter,
                             _eventgroupId));
 
                     return _result;
