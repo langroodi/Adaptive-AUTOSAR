@@ -118,6 +118,9 @@ Inheritance diagram for ara::com::entry::EventgroupEntry:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a2272eeb0b0169aa9779b711bd41d154f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a2272eeb0b0169aa9779b711bd41d154f">Counter</a> () const noexcept</td></tr>
+<tr class="memdesc:a2272eeb0b0169aa9779b711bd41d154f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the subscriber counter.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a2272eeb0b0169aa9779b711bd41d154f">More...</a><br /></td></tr>
+<tr class="separator:a2272eeb0b0169aa9779b711bd41d154f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700028675f87f32255064ce9de66c725"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a700028675f87f32255064ce9de66c725">EventgroupId</a> () const noexcept</td></tr>
 <tr class="memdesc:a700028675f87f32255064ce9de66c725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get event-group ID.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a700028675f87f32255064ce9de66c725">More...</a><br /></td></tr>
 <tr class="separator:a700028675f87f32255064ce9de66c725"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,18 +158,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab7b394d6c90c4304695936fae3a957f7"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#ab7b394d6c90c4304695936fae3a957f7">CreateSubscribeEventEntry</a> (uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint16_t eventgroupId) noexcept</td></tr>
-<tr class="memdesc:ab7b394d6c90c4304695936fae3a957f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to an event-group entry factory.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#ab7b394d6c90c4304695936fae3a957f7">More...</a><br /></td></tr>
-<tr class="separator:ab7b394d6c90c4304695936fae3a957f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e816aff79222e1772c2fee799c1adcc"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a6e816aff79222e1772c2fee799c1adcc">CreateUnsubscribeEventEntry</a> (uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint16_t eventgroupId) noexcept</td></tr>
-<tr class="memdesc:a6e816aff79222e1772c2fee799c1adcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe from an event-group entry factory.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a6e816aff79222e1772c2fee799c1adcc">More...</a><br /></td></tr>
-<tr class="separator:a6e816aff79222e1772c2fee799c1adcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e48d5a51e2ab06ba761ce6a015f37e3"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a8e48d5a51e2ab06ba761ce6a015f37e3">CreateAcknowledgeEntry</a> (std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt; eventgroupEntry) noexcept</td></tr>
-<tr class="memdesc:a8e48d5a51e2ab06ba761ce6a015f37e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positive acknowledge of an event-group entry factory.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a8e48d5a51e2ab06ba761ce6a015f37e3">More...</a><br /></td></tr>
-<tr class="separator:a8e48d5a51e2ab06ba761ce6a015f37e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30e017cf65aa7d3c1d05537e5896cc3d"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a30e017cf65aa7d3c1d05537e5896cc3d">CreateNegativeAcknowledgeEntry</a> (std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt; eventgroupEntry) noexcept</td></tr>
-<tr class="memdesc:a30e017cf65aa7d3c1d05537e5896cc3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negative acknowledge of an event-group entry factory.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a30e017cf65aa7d3c1d05537e5896cc3d">More...</a><br /></td></tr>
-<tr class="separator:a30e017cf65aa7d3c1d05537e5896cc3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade785585a1932737fd8ad3b107cb2971"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#ade785585a1932737fd8ad3b107cb2971">CreateSubscribeEventEntry</a> (uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint8_t counter, uint16_t eventgroupId)</td></tr>
+<tr class="memdesc:ade785585a1932737fd8ad3b107cb2971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to an event-group entry factory.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#ade785585a1932737fd8ad3b107cb2971">More...</a><br /></td></tr>
+<tr class="separator:ade785585a1932737fd8ad3b107cb2971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78f512a0f1440611ffe51abb668a770"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#af78f512a0f1440611ffe51abb668a770">CreateUnsubscribeEventEntry</a> (uint16_t serviceId, uint16_t instanceId, uint8_t majorVersion, uint8_t counter, uint16_t eventgroupId)</td></tr>
+<tr class="memdesc:af78f512a0f1440611ffe51abb668a770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe from an event-group entry factory.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#af78f512a0f1440611ffe51abb668a770">More...</a><br /></td></tr>
+<tr class="separator:af78f512a0f1440611ffe51abb668a770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d5d1af81e5ef9ebdf7dfbde3d65008a"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a1d5d1af81e5ef9ebdf7dfbde3d65008a">CreateAcknowledgeEntry</a> (std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt; eventgroupEntry)</td></tr>
+<tr class="memdesc:a1d5d1af81e5ef9ebdf7dfbde3d65008a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positive acknowledge of an event-group entry factory.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a1d5d1af81e5ef9ebdf7dfbde3d65008a">More...</a><br /></td></tr>
+<tr class="separator:a1d5d1af81e5ef9ebdf7dfbde3d65008a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b53f72c56dfa5668e9e3c4d90ab335"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a69b53f72c56dfa5668e9e3c4d90ab335">CreateNegativeAcknowledgeEntry</a> (std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt; eventgroupEntry)</td></tr>
+<tr class="memdesc:a69b53f72c56dfa5668e9e3c4d90ab335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negative acknowledge of an event-group entry factory.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#a69b53f72c56dfa5668e9e3c4d90ab335">More...</a><br /></td></tr>
+<tr class="separator:a69b53f72c56dfa5668e9e3c4d90ab335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbc6922f5a95a8ad1ca4423fc7f410e0"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html">EventgroupEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#afbc6922f5a95a8ad1ca4423fc7f410e0">Deserialize</a> (const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset, <a class="el" href="namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171e">EntryType</a> type, uint16_t serviceId, uint16_t instanceId, uint32_t ttl, uint8_t majorVersion)</td></tr>
 <tr class="memdesc:afbc6922f5a95a8ad1ca4423fc7f410e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a entry payload.  <a href="classara_1_1com_1_1entry_1_1EventgroupEntry.html#afbc6922f5a95a8ad1ca4423fc7f410e0">More...</a><br /></td></tr>
 <tr class="separator:afbc6922f5a95a8ad1ca4423fc7f410e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,8 +205,36 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classara_1_1com_1_1entry_1_1Entry.html" title="Communication message abstract entry.">Entry</a> to subscribe/unsubscribe to/from an event-group. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8e48d5a51e2ab06ba761ce6a015f37e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e48d5a51e2ab06ba761ce6a015f37e3">&#9670;&nbsp;</a></span>CreateAcknowledgeEntry()</h2>
+<a id="a2272eeb0b0169aa9779b711bd41d154f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2272eeb0b0169aa9779b711bd41d154f">&#9670;&nbsp;</a></span>Counter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ara::com::entry::EventgroupEntry::Counter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the subscriber counter. </p>
+<dl class="section return"><dt>Returns</dt><dd>A 4-bit unsinged integer wrapped as a byte </dd></dl>
+
+</div>
+</div>
+<a id="a1d5d1af81e5ef9ebdf7dfbde3d65008a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d5d1af81e5ef9ebdf7dfbde3d65008a">&#9670;&nbsp;</a></span>CreateAcknowledgeEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,7 +252,7 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -237,8 +268,8 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 </div>
 </div>
-<a id="a30e017cf65aa7d3c1d05537e5896cc3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30e017cf65aa7d3c1d05537e5896cc3d">&#9670;&nbsp;</a></span>CreateNegativeAcknowledgeEntry()</h2>
+<a id="a69b53f72c56dfa5668e9e3c4d90ab335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b53f72c56dfa5668e9e3c4d90ab335">&#9670;&nbsp;</a></span>CreateNegativeAcknowledgeEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +287,7 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -272,8 +303,8 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 </div>
 </div>
-<a id="ab7b394d6c90c4304695936fae3a957f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7b394d6c90c4304695936fae3a957f7">&#9670;&nbsp;</a></span>CreateSubscribeEventEntry()</h2>
+<a id="ade785585a1932737fd8ad3b107cb2971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade785585a1932737fd8ad3b107cb2971">&#9670;&nbsp;</a></span>CreateSubscribeEventEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -302,6 +333,12 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>counter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>eventgroupId</em>&#160;</td>
         </tr>
@@ -313,7 +350,7 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -324,16 +361,23 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
     <tr><td class="paramname">serviceId</td><td>Service in interest ID </td></tr>
     <tr><td class="paramname">instanceId</td><td>Service in interest instance ID </td></tr>
     <tr><td class="paramname">majorVersion</td><td>Service in interest major version </td></tr>
+    <tr><td class="paramname">counter</td><td>Counter to distinguish between subscribers </td></tr>
     <tr><td class="paramname">eventgroupId</td><td>Event-group in interest ID </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Subscribe event-group entry </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>Throws if counter is greater than 4 bits </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a6e816aff79222e1772c2fee799c1adcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e816aff79222e1772c2fee799c1adcc">&#9670;&nbsp;</a></span>CreateUnsubscribeEventEntry()</h2>
+<a id="af78f512a0f1440611ffe51abb668a770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78f512a0f1440611ffe51abb668a770">&#9670;&nbsp;</a></span>CreateUnsubscribeEventEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -362,6 +406,12 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>counter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>eventgroupId</em>&#160;</td>
         </tr>
@@ -373,7 +423,7 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -384,11 +434,18 @@ static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class
     <tr><td class="paramname">serviceId</td><td>Service in interest ID </td></tr>
     <tr><td class="paramname">instanceId</td><td>Service in interest instance ID </td></tr>
     <tr><td class="paramname">majorVersion</td><td>Service in interest major version </td></tr>
+    <tr><td class="paramname">counter</td><td>Counter to distinguish between subscribers </td></tr>
     <tr><td class="paramname">eventgroupId</td><td>Event-group in interest ID </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unsubscribe event-group entry </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>Throws if counter is greater than 4 bits </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
