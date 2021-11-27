@@ -31,13 +31,13 @@ namespace ara
                         helper::NetworkLayer<sd::SomeIpSdMessage> *networkLayer,
                         uint8_t counter);
 
-                    /// @brief Try to subscribe to an event-group
+                    /// @brief Subscribe to an event-group
                     /// @param serviceId Service in interest ID
                     /// @param instanceId Service in interest instance ID
                     /// @param majorVersion Service in interest major version
                     /// @param eventgroupId Event-group in interest ID
-                    /// @returns True if the server accept the subscription by sending ACK; otherwise false
-                    bool TrySubscribe(
+                    /// @returns Server response which can be subscription ACK or NACK
+                    sd::SomeIpSdMessage Subscribe(
                         uint16_t serviceId,
                         uint16_t instanceId,
                         uint8_t majorVersion,
