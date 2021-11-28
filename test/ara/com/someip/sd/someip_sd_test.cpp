@@ -1,7 +1,6 @@
 #include <gtest/gtest.h>
 #include "../../../../../src/ara/com/someip/sd/someip_sd_server.h"
 #include "../../../../../src/ara/com/someip/sd/someip_sd_client.h"
-#include "../../../../../src/ara/com/someip/sd/someip_sd_message.h"
 #include "../../helper/mockup_network_layer.h"
 
 namespace ara
