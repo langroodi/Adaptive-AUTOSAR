@@ -32,7 +32,8 @@ var annotated_dup =
               [ "NotSubscribedState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState" ],
               [ "ServiceDownState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState" ],
               [ "SubscribedState", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html", "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState" ]
-            ] ]
+            ] ],
+            [ "SomeIpPubSubClient", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient.html", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient" ]
           ] ],
           [ "sd", null, [
             [ "fsm", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html", [

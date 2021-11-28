@@ -108,6 +108,7 @@ var hierarchy =
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [
       [ "ara::com::someip::sd::SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", null ]
     ] ],
+    [ "ara::com::someip::pubsub::SomeIpPubSubClient", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient.html", null ],
     [ "ara::com::someip::sd::SomeIpSdAgent< T >", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html", null ],
     [ "ara::com::someip::sd::SomeIpSdAgent< helper::SdClientState >", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html", [
       [ "ara::com::someip::sd::SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html", null ]
