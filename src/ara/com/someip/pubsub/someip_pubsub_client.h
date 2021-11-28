@@ -1,6 +1,9 @@
 #ifndef SOMEIP_PUBSUB_CLIENT
 #define SOMEIP_PUBSUB_CLIENT
 
+#include <queue>
+#include <mutex>
+#include <condition_variable>
 #include "../../entry/eventgroup_entry.h"
 #include "../../helper/network_layer.h"
 #include "../sd/someip_sd_message.h"
@@ -17,8 +20,15 @@ namespace ara
                 class SomeIpPubSubClient
                 {
                 private:
+                    std::queue<sd::SomeIpSdMessage> mMessageBuffer;
+                    std::mutex mSubscriptionMutex;
+                    std::unique_lock<std::mutex> mSubscriptionLock;
+                    std::condition_variable mSubscriptionConditionVariable;
                     helper::NetworkLayer<sd::SomeIpSdMessage> *mCommunicationLayer;
                     uint8_t mCounter;
+                    bool mValidNotify;
+
+                    void onMessageReceived(sd::SomeIpSdMessage &&message);
 
                 public:
                     SomeIpPubSubClient() = delete;
@@ -36,8 +46,7 @@ namespace ara
                     /// @param instanceId Service in interest instance ID
                     /// @param majorVersion Service in interest major version
                     /// @param eventgroupId Event-group in interest ID
-                    /// @returns Server response which can be subscription ACK or NACK
-                    sd::SomeIpSdMessage Subscribe(
+                    void Subscribe(
                         uint16_t serviceId,
                         uint16_t instanceId,
                         uint8_t majorVersion,
@@ -53,6 +62,14 @@ namespace ara
                         uint16_t instanceId,
                         uint8_t majorVersion,
                         uint16_t eventgroupId);
+
+                    /// @brief Try to wait unitl the server processes a subscription request
+                    /// @param duration Waiting timeout in milliseconds
+                    /// @param message The first processed subscription message in the buffer
+                    /// @returns True, if the service offering is stopped before the timeout; otherwise false
+                    bool TryGetProcessedSubscription(
+                        int duration,
+                        sd::SomeIpSdMessage &message);
                 };
             }
         }

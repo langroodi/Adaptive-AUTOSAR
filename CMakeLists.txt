@@ -69,7 +69,10 @@ set(source_ara_com_someip_sd_dir
 set(source_ara_com_someip_sd_fsm_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/someip/sd/fsm")
 
-  set(source_ara_com_someip_pubsub_fsm_dir
+set(source_ara_com_someip_pubsub_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/someip/pubsub")
+
+set(source_ara_com_someip_pubsub_fsm_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/someip/pubsub/fsm")
 
 # Test Directories:
@@ -88,6 +91,9 @@ set(test_ara_com_helper_dir
 
 set(test_ara_com_option_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/option")
+
+set(test_ara_com_someip_pubsub_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/com/someip/pubsub")
 
 set(test_ara_com_someip_pubsub_fsm_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/someip/pubsub/fsm")
@@ -157,6 +163,8 @@ add_library(
   ${source_ara_com_option_dir}/option_deserializer.cpp
   ${source_ara_com_someip_dir}/someip_message.h
   ${source_ara_com_someip_dir}/someip_message.cpp
+  ${source_ara_com_someip_pubsub_dir}/someip_pubsub_client.h
+  ${source_ara_com_someip_pubsub_dir}/someip_pubsub_client.cpp
   ${source_ara_com_someip_pubsub_fsm_dir}/service_down_state.h
   ${source_ara_com_someip_pubsub_fsm_dir}/service_down_state.cpp
   ${source_ara_com_someip_pubsub_fsm_dir}/notsubscribed_state.h
@@ -237,6 +245,7 @@ if(build_tests)
     ${test_ara_com_helper_dir}/mockup_network_layer.h
     ${test_ara_com_option_dir}/ipv4_endpoint_option_test.cpp
     ${test_ara_com_option_dir}/loadbalancing_option_test.cpp
+    ${test_ara_com_someip_pubsub_dir}/someip_pubsub_test.cpp
     ${test_ara_com_someip_pubsub_fsm_dir}/pubsub_state_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_message_test.cpp
     ${test_ara_com_someip_sd_dir}/network_abstraction_test.cpp

@@ -235,7 +235,7 @@ namespace ara
                 {
                     // Condition variable notifications are not valid anymore during destruction.
                     mValidNotify = false;
-                    // Release the threads waiting for the condition variables before desctruction.
+                    // Release the threads waiting for the condition variables before desctruction
                     mOfferingConditionVariable.notify_one();
                     mStopOfferingConditionVariable.notify_one();
 
