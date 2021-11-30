@@ -20,7 +20,7 @@ namespace ara
                         void Deactivate(helper::PubSubState nextState) override;
 
                     public:
-                        ServiceDownState();
+                        ServiceDownState() noexcept;
 
                         ServiceDownState(const ServiceDownState &) = delete;
                         ServiceDownState &operator=(const ServiceDownState &) = delete;

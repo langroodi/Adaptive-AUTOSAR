@@ -10,7 +10,7 @@ namespace ara
             {
                 namespace fsm
                 {
-                    NotSubscribedState::NotSubscribedState() : helper::MachineState<helper::PubSubState>(helper::PubSubState::NotSubscribed)
+                    NotSubscribedState::NotSubscribedState() noexcept : helper::MachineState<helper::PubSubState>(helper::PubSubState::NotSubscribed)
                     {
                     }
 

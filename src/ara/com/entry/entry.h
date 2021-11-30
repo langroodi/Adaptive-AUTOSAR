@@ -64,6 +64,8 @@ namespace ara
                 virtual std::vector<uint8_t> BasePayload(uint8_t &optionIndex) const;
 
             public:
+                /// @brief Any service instance ID
+                static const uint16_t cAnyInstanceId = 0xffff;
                 /// @brief Any service major version
                 static const uint8_t cAnyMajorVersion = 0xff;
                 /// @brief Option number field bit size

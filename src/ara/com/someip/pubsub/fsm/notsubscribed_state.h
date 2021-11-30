@@ -20,7 +20,7 @@ namespace ara
                         void Deactivate(helper::PubSubState nextState) override;
 
                     public:
-                        NotSubscribedState();
+                        NotSubscribedState() noexcept;
 
                         NotSubscribedState(const NotSubscribedState &) = delete;
                         NotSubscribedState &operator=(const NotSubscribedState &) = delete;

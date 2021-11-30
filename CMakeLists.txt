@@ -163,6 +163,8 @@ add_library(
   ${source_ara_com_option_dir}/option_deserializer.cpp
   ${source_ara_com_someip_dir}/someip_message.h
   ${source_ara_com_someip_dir}/someip_message.cpp
+  ${source_ara_com_someip_pubsub_dir}/someip_pubsub_server.h
+  ${source_ara_com_someip_pubsub_dir}/someip_pubsub_server.cpp
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_client.h
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_client.cpp
   ${source_ara_com_someip_pubsub_fsm_dir}/service_down_state.h

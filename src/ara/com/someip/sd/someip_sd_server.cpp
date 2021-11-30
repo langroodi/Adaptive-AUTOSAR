@@ -89,10 +89,10 @@ namespace ara
                         {
                             if (auto _serviceEnty = std::dynamic_pointer_cast<entry::ServiceEntry>(_entry))
                             {
-                                // Compare service ID, instance ID, major version and minor version
+                                // Compare service ID, instance ID, major version, and minor version
                                 bool _result =
                                     (_serviceEnty->ServiceId() == mOfferServiceEntry->ServiceId()) &&
-                                    (_serviceEnty->InstanceId() == entry::ServiceEntry::cAnyInstanceId ||
+                                    (_serviceEnty->InstanceId() == entry::Entry::cAnyInstanceId ||
                                      _serviceEnty->InstanceId() == mOfferServiceEntry->InstanceId()) &&
                                     (_serviceEnty->MajorVersion() == entry::Entry::cAnyMajorVersion ||
                                      _serviceEnty->MajorVersion() == mOfferServiceEntry->MajorVersion()) &&

@@ -24,7 +24,7 @@ namespace ara
 
                     public:
                         /// @brief Default constructor
-                        SubscribedState();
+                        SubscribedState() noexcept;
 
                         SubscribedState(const SubscribedState &) = delete;
                         SubscribedState &operator=(const SubscribedState &) = delete;

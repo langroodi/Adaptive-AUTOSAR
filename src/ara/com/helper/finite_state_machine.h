@@ -23,8 +23,8 @@ namespace ara
                 T mCurrentState;
 
             public:
-                FiniteStateMachine() = default;
-                ~FiniteStateMachine() = default;
+                FiniteStateMachine() noexcept = default;
+                ~FiniteStateMachine() noexcept = default;
                 FiniteStateMachine(const FiniteStateMachine &) = delete;
                 FiniteStateMachine &operator=(const FiniteStateMachine &) = delete;
 

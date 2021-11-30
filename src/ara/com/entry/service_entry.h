@@ -30,8 +30,6 @@ namespace ara
                     std::shared_ptr<const option::Option> option) const noexcept override;
 
             public:
-                /// @brief Any service instance ID
-                static const uint16_t cAnyInstanceId = 0xffff;
                 /// @brief Any service minor version
                 static const uint32_t cAnyMinorVersion = 0xffffffff;
 

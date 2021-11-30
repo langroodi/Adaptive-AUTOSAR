@@ -10,7 +10,7 @@ namespace ara
             {
                 namespace fsm
                 {
-                    ServiceDownState::ServiceDownState() : helper::MachineState<helper::PubSubState>(helper::PubSubState::ServiceDown)
+                    ServiceDownState::ServiceDownState() noexcept : helper::MachineState<helper::PubSubState>(helper::PubSubState::ServiceDown)
                     {
                     }
 
@@ -18,7 +18,7 @@ namespace ara
                     {
                         // Nothing to do on activation
                     }
-                    
+
                     void ServiceDownState::Started()
                     {
                         Transit(helper::PubSubState::NotSubscribed);

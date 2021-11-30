@@ -41,8 +41,7 @@ namespace ara
                     /// @brief Constructor
                     /// @param networkLayer Network communication abstraction layer
                     SomeIpSdAgent(
-                        helper::NetworkLayer<SomeIpSdMessage> *networkLayer) : StateMachine(),
-                                                                               CommunicationLayer{networkLayer}
+                        helper::NetworkLayer<SomeIpSdMessage> *networkLayer) : CommunicationLayer{networkLayer}
                     {
                     }
 
@@ -87,7 +86,7 @@ namespace ara
                         StopAgent(_state);
                     }
 
-                    virtual ~SomeIpSdAgent() = default;
+                    virtual ~SomeIpSdAgent() noexcept = default;
                 };
             }
         }
