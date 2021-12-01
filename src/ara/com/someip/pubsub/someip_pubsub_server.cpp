@@ -56,10 +56,20 @@ namespace ara
                                      _eventgroupEntry->MajorVersion() == mMajorVersion) &&
                                     (_eventgroupEntry->EventgroupId() == mEventgroupId))
                                 {
-                                    // Process the entry if it a subscription rather than a unsubscription
+
                                     if (_eventgroupEntry->TTL() > 0)
                                     {
+                                        // Subscription
                                         processEntry(_eventgroupEntry);
+                                    }
+                                    else
+                                    {
+                                        // Unsubscription
+                                        helper::PubSubState _state = GetState();
+                                        if (_state == helper::PubSubState::Subscribed)
+                                        {
+                                            mSubscribedState.Unsubscribed();
+                                        }
                                     }
 
                                     return;
@@ -74,6 +84,15 @@ namespace ara
                     sd::SomeIpSdMessage _acknowledgeMessage;
 
                     helper::PubSubState _state = GetState();
+                    if (_state == helper::PubSubState::NotSubscribed)
+                    {
+                        mNotSubscribedState.Subscribed();
+                    }
+                    else if (_state == helper::PubSubState::Subscribed)
+                    {
+                        mSubscribedState.Subscribed();
+                    }
+
                     // Acknowledge the subscription if the service is up
                     auto _acknowledgeEntry =
                         _state == helper::PubSubState::ServiceDown ? entry::EventgroupEntry::CreateNegativeAcknowledgeEntry(
