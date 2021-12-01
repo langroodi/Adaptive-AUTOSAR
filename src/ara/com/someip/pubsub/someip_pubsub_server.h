@@ -4,6 +4,7 @@
 #include "../../helper/finite_state_machine.h"
 #include "../../helper/network_layer.h"
 #include "../sd/someip_sd_message.h"
+#include "../../entry/eventgroup_entry.h"
 #include "../../option/ipv4_endpoint_option.h"
 #include "./fsm/service_down_state.h"
 #include "./fsm/notsubscribed_state.h"

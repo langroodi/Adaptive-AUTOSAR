@@ -35,8 +35,7 @@ namespace ara
                     SomeIpSdServer Server;
                     SomeIpSdClient Client;
 
-                    SomeIpSdTest() : mNetworkLayer(),
-                                     mLocalhost(127, 0, 0, 1),
+                    SomeIpSdTest() : mLocalhost(127, 0, 0, 1),
                                      Server(
                                          &mNetworkLayer,
                                          cServiceId,
