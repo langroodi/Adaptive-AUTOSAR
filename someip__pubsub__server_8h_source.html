@@ -102,67 +102,68 @@ $(document).ready(function(){initNavTree('someip__pubsub__server_8h_source.html'
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../../helper/finite_state_machine.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../../helper/network_layer.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../sd/someip_sd_message.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../../option/ipv4_endpoint_option.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;./fsm/service_down_state.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;./fsm/notsubscribed_state.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;./fsm/subscribed_state.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>ara</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">namespace </span>com</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">namespace </span>someip</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">namespace </span>pubsub</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">   21</a></span>&#160;                <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">SomeIpPubSubServer</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <a class="code" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">helper::FiniteStateMachine&lt;helper::PubSubState&gt;</a> mStateMachine;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    <a class="code" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer&lt;sd::SomeIpSdMessage&gt;</a> *mCommunicationLayer;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    <span class="keyword">const</span> uint16_t mServiceId;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="keyword">const</span> uint16_t mInstanceId;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keyword">const</span> uint8_t mMajorVersion;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <span class="keyword">const</span> uint16_t mEventgroupId;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState.html">fsm::ServiceDownState</a> mServiceDownState;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState.html">fsm::NotSubscribedState</a> mNotSubscribedState;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html">fsm::SubscribedState</a> mSubscribedState;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    std::shared_ptr&lt;option::Ipv4EndpointOption&gt; mEndpointOption;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keywordtype">void</span> onMessageReceived(<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">sd::SomeIpSdMessage</a> &amp;&amp;message);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keywordtype">void</span> processEntry(std::shared_ptr&lt;entry::EventgroupEntry&gt; entry);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">SomeIpPubSubServer</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    ~<a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">SomeIpPubSubServer</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">SomeIpPubSubServer</a>(</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        <a class="code" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer&lt;sd::SomeIpSdMessage&gt;</a> *networkLayer,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        uint16_t serviceId,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        uint16_t instanceId,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        uint8_t majorVersion,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        uint16_t eventgroupId,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        uint16_t port);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#aa0fab342d77e751f0ca963ddcd06fd5a">Start</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <a class="code" href="namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43">helper::PubSubState</a> <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a2f2e39ca5ac0393957e26ab0c7cbb7d7">GetState</a>() <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a14d653ac3eaf0b2c2c3aadc92a379505">Stop</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../../entry/eventgroup_entry.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../../option/ipv4_endpoint_option.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;./fsm/service_down_state.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;./fsm/notsubscribed_state.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;./fsm/subscribed_state.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>ara</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">namespace </span>com</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">namespace </span>someip</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">namespace </span>pubsub</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">   22</a></span>&#160;                <span class="keyword">class </span><a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">SomeIpPubSubServer</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    <a class="code" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">helper::FiniteStateMachine&lt;helper::PubSubState&gt;</a> mStateMachine;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    <a class="code" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer&lt;sd::SomeIpSdMessage&gt;</a> *mCommunicationLayer;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="keyword">const</span> uint16_t mServiceId;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    <span class="keyword">const</span> uint16_t mInstanceId;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <span class="keyword">const</span> uint8_t mMajorVersion;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                    <span class="keyword">const</span> uint16_t mEventgroupId;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState.html">fsm::ServiceDownState</a> mServiceDownState;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState.html">fsm::NotSubscribedState</a> mNotSubscribedState;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html">fsm::SubscribedState</a> mSubscribedState;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    std::shared_ptr&lt;option::Ipv4EndpointOption&gt; mEndpointOption;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keywordtype">void</span> onMessageReceived(<a class="code" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">sd::SomeIpSdMessage</a> &amp;&amp;message);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keywordtype">void</span> processEntry(std::shared_ptr&lt;entry::EventgroupEntry&gt; entry);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">SomeIpPubSubServer</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    ~<a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">SomeIpPubSubServer</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">SomeIpPubSubServer</a>(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <a class="code" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer&lt;sd::SomeIpSdMessage&gt;</a> *networkLayer,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        uint16_t serviceId,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        uint16_t instanceId,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        uint8_t majorVersion,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        uint16_t eventgroupId,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        <a class="code" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        uint16_t port);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#aa0fab342d77e751f0ca963ddcd06fd5a">Start</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <a class="code" href="namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43">helper::PubSubState</a> <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a2f2e39ca5ac0393957e26ab0c7cbb7d7">GetState</a>() <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a14d653ac3eaf0b2c2c3aadc92a379505">Stop</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1FiniteStateMachine_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">ara::com::helper::FiniteStateMachine&lt; helper::PubSubState &gt;</a></div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1NetworkLayer_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1NetworkLayer.html">ara::com::helper::NetworkLayer</a></div><div class="ttdoc">Network communication abstraction layer.</div><div class="ttdef"><b>Definition:</b> network_layer.h:18</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">ara::com::someip::pubsub::SomeIpPubSubServer</a></div><div class="ttdoc">SOME/IP publish/subscribe server.</div><div class="ttdef"><b>Definition:</b> someip_pubsub_server.h:22</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer_html_a14d653ac3eaf0b2c2c3aadc92a379505"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a14d653ac3eaf0b2c2c3aadc92a379505">ara::com::someip::pubsub::SomeIpPubSubServer::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop the server.</div><div class="ttdef"><b>Definition:</b> someip_pubsub_server.cpp:102</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer_html_a2f2e39ca5ac0393957e26ab0c7cbb7d7"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a2f2e39ca5ac0393957e26ab0c7cbb7d7">ara::com::someip::pubsub::SomeIpPubSubServer::GetState</a></div><div class="ttdeci">helper::PubSubState GetState() const noexcept</div><div class="ttdoc">Get the current server state.</div><div class="ttdef"><b>Definition:</b> someip_pubsub_server.cpp:97</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer_html_aa0fab342d77e751f0ca963ddcd06fd5a"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#aa0fab342d77e751f0ca963ddcd06fd5a">ara::com::someip::pubsub::SomeIpPubSubServer::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Start the server.</div><div class="ttdef"><b>Definition:</b> someip_pubsub_server.cpp:88</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html">ara::com::someip::pubsub::SomeIpPubSubServer</a></div><div class="ttdoc">SOME/IP publish/subscribe server.</div><div class="ttdef"><b>Definition:</b> someip_pubsub_server.h:23</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer_html_a14d653ac3eaf0b2c2c3aadc92a379505"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a14d653ac3eaf0b2c2c3aadc92a379505">ara::com::someip::pubsub::SomeIpPubSubServer::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop the server.</div><div class="ttdef"><b>Definition:</b> someip_pubsub_server.cpp:121</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer_html_a2f2e39ca5ac0393957e26ab0c7cbb7d7"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a2f2e39ca5ac0393957e26ab0c7cbb7d7">ara::com::someip::pubsub::SomeIpPubSubServer::GetState</a></div><div class="ttdeci">helper::PubSubState GetState() const noexcept</div><div class="ttdoc">Get the current server state.</div><div class="ttdef"><b>Definition:</b> someip_pubsub_server.cpp:116</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer_html_aa0fab342d77e751f0ca963ddcd06fd5a"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#aa0fab342d77e751f0ca963ddcd06fd5a">ara::com::someip::pubsub::SomeIpPubSubServer::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Start the server.</div><div class="ttdef"><b>Definition:</b> someip_pubsub_server.cpp:107</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1NotSubscribedState.html">ara::com::someip::pubsub::fsm::NotSubscribedState</a></div><div class="ttdoc">Machine state in which the service is up but has no subscriber.</div><div class="ttdef"><b>Definition:</b> notsubscribed_state.h:18</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1ServiceDownState.html">ara::com::someip::pubsub::fsm::ServiceDownState</a></div><div class="ttdoc">Machine state in which the service is down.</div><div class="ttdef"><b>Definition:</b> service_down_state.h:18</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html">ara::com::someip::pubsub::fsm::SubscribedState</a></div><div class="ttdoc">Machine state in which the service is up and it has at least a subscriber.</div><div class="ttdef"><b>Definition:</b> subscribed_state.h:18</div></div>
