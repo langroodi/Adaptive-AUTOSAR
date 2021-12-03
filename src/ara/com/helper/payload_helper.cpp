@@ -42,9 +42,10 @@ namespace ara
             uint16_t ExtractShort(
                 const std::vector<uint8_t> &vector, std::size_t &offset)
             {
-                uint16_t _result =
-                    vector.at(offset++) << 8 |
-                    vector.at(offset++);
+                uint16_t _result = vector.at(offset) << 8;
+                ++offset;
+                _result |= vector.at(offset);
+                ++offset;
 
                 return _result;
             }
@@ -52,11 +53,14 @@ namespace ara
             uint32_t ExtractInteger(
                 const std::vector<uint8_t> &vector, std::size_t &offset)
             {
-                uint32_t _result =
-                    vector.at(offset++) << 24 |
-                    vector.at(offset++) << 16 |
-                    vector.at(offset++) << 8 |
-                    vector.at(offset++);
+                uint32_t _result = vector.at(offset) << 24;
+                ++offset;
+                _result |= vector.at(offset) << 16;
+                ++offset;
+                _result |= vector.at(offset) << 8;
+                ++offset;
+                _result |= vector.at(offset);
+                ++offset;
 
                 return _result;
             }
