@@ -29,8 +29,7 @@ namespace ara
                     helper::Ipv4Address mLocalhost;
 
                 protected:
-                    const int OfferWaitDuration;
-                    const int OfferStopWaitDuration;
+                    const int WaitDuration;
 
                     SomeIpSdServer Server;
                     SomeIpSdClient Client;
@@ -56,7 +55,7 @@ namespace ara
                                          cInitialDelayMax,
                                          cRepetitionBaseDelay,
                                          cRepetitionMax),
-                                     OfferWaitDuration{static_cast<int>(
+                                     WaitDuration{static_cast<int>(
                                          // Initial wait phase delay
                                          (cInitialDelayMax +
                                           // Summation of all the repetition phase delays
@@ -64,12 +63,7 @@ namespace ara
                                           // Main main first cycle delay
                                           cCycleOfferDelay) *
                                          // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
-                                         2)},
-                                     OfferStopWaitDuration{static_cast<int>(
-                                         // Main main first cycle delay
-                                         cCycleOfferDelay *
-                                         // Apply maximum Nyquist–Shannon margin (make the duration ten times longer)
-                                         10)}
+                                         2)}
                     {
                     }
                 };
@@ -101,7 +95,7 @@ namespace ara
 
                     Server.Start();
                     Client.Start();
-                    Client.TryWaitUntiServiceOffered(OfferWaitDuration);
+                    Client.TryWaitUntiServiceOffered(WaitDuration);
 
                     EXPECT_EQ(Client.GetState(), cServiceReadyState);
                 }
@@ -113,7 +107,7 @@ namespace ara
 
                     Server.Start();
                     Client.Start();
-                    Client.TryWaitUntiServiceOffered(OfferWaitDuration);
+                    Client.TryWaitUntiServiceOffered(WaitDuration);
                     Client.Stop();
 
                     EXPECT_EQ(Client.GetState(), cServiceSeenState);
@@ -126,9 +120,9 @@ namespace ara
 
                     Server.Start();
                     Client.Start();
-                    Client.TryWaitUntiServiceOffered(OfferWaitDuration);
+                    Client.TryWaitUntiServiceOffered(WaitDuration);
                     Server.Stop();
-                    Client.TryWaitUntiServiceOfferStopped(OfferStopWaitDuration);
+                    Client.TryWaitUntiServiceOfferStopped(WaitDuration);
 
                     EXPECT_EQ(Client.GetState(), cServiceStoppedState);
                 }
@@ -140,10 +134,10 @@ namespace ara
 
                     Server.Start();
                     Client.Start();
-                    Client.TryWaitUntiServiceOffered(OfferWaitDuration);
+                    Client.TryWaitUntiServiceOffered(WaitDuration);
                     Client.Stop();
                     Server.Stop();
-                    Client.TryWaitUntiServiceOfferStopped(OfferStopWaitDuration);
+                    Client.TryWaitUntiServiceOfferStopped(WaitDuration);
 
                     EXPECT_EQ(Client.GetState(), cServiceNotSeen);
                 }
