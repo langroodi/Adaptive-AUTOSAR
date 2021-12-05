@@ -19,6 +19,8 @@ namespace ara
                     {
                     private:
                         std::condition_variable * const mConditionVariable;
+                        bool mActivated;
+                        bool mRequested;
                         
                         void onTimerExpired();
 

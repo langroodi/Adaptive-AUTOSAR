@@ -14,18 +14,36 @@ namespace ara
                         helper::TtlTimer *ttlTimer,
                         std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::Stopped),
                                                                                ClientServiceState(ttlTimer),
-                                                                               mConditionVariable{conditionVariable}
+                                                                               mConditionVariable{conditionVariable},
+                                                                               mActivated{false},
+                                                                               mRequested{true}
                     {
                     }
 
                     void StoppedState::Activate(helper::SdClientState previousState)
                     {
+                        mActivated = true;
+
+                        // Notify the condition variable that the service is not offered yet
                         mConditionVariable->notify_one();
+
+                        if (!mRequested)
+                        {
+                            Transit(helper::SdClientState::ServiceNotSeen);
+                        }
                     }
 
                     void StoppedState::ServiceNotRequested()
                     {
-                        Transit(helper::SdClientState::ServiceNotSeen);
+                        if (mActivated)
+                        {
+                            Transit(helper::SdClientState::ServiceNotSeen);
+                        }
+                        else
+                        {
+                            // Reset the requested flag
+                            mRequested = false;
+                        }
                     }
 
                     void StoppedState::ServiceOffered(uint32_t ttl)
@@ -36,7 +54,9 @@ namespace ara
 
                     void StoppedState::Deactivate(helper::SdClientState nextState)
                     {
-                        // Nothig to do on deactivation
+                        // Set the requested to default
+                        mRequested = true;
+                        mActivated = false;
                     }
                 };
             }

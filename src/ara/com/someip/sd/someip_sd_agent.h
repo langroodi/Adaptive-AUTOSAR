@@ -35,7 +35,7 @@ namespace ara
 
                     /// @brief Stop the service discovery agent
                     /// @param state Current FSM state before stop
-                    virtual void StopAgent(T state) = 0;
+                    virtual void StopAgent() = 0;
 
                 public:
                     /// @brief Constructor
@@ -82,8 +82,7 @@ namespace ara
                     /// @note It is safe to recall the function if the agent has been already stopped.
                     void Stop()
                     {
-                        T _state = GetState();
-                        StopAgent(_state);
+                        StopAgent();
                     }
 
                     virtual ~SomeIpSdAgent() noexcept = default;

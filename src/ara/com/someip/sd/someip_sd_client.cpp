@@ -16,7 +16,6 @@ namespace ara
                     int initialDelayMax,
                     int repetitionBaseDelay,
                     uint32_t repetitionMax) : SomeIpSdAgent<helper::SdClientState>(networkLayer),
-                                              mTtlTimer(),
                                               mServiceNotseenState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mServiceSeenState(&mTtlTimer, &mOfferingConditionVariable),
                                               mInitialWaitState(
@@ -166,21 +165,11 @@ namespace ara
                     }
                 }
 
-                void SomeIpSdClient::StopAgent(helper::SdClientState state)
+                void SomeIpSdClient::StopAgent()
                 {
-                    switch (state)
-                    {
-                    case helper::SdClientState::InitialWaitPhase:
-                    case helper::SdClientState::RepetitionPhase:
-                        mTtlTimer.Cancel();
-                        break;
-                    case helper::SdClientState::ServiceReady:
-                        mServiceReadyState.ServiceNotRequested();
-                        break;
-                    case helper::SdClientState::Stopped:
-                        mStoppedState.ServiceNotRequested();
-                        break;
-                    }
+                    mTtlTimer.Cancel();
+                    mServiceReadyState.ServiceNotRequested();
+                    mStoppedState.ServiceNotRequested();
                 }
 
                 bool SomeIpSdClient::TryWaitUntiServiceOffered(int duration)

@@ -150,7 +150,7 @@ namespace ara
                     }
                 }
 
-                void SomeIpSdServer::StopAgent(helper::SdServerState state)
+                void SomeIpSdServer::StopAgent()
                 {
                     mInitialWaitState.ServiceStopped();
                     mRepetitionState.ServiceStopped();

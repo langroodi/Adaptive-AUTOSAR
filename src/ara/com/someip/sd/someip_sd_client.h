@@ -50,7 +50,7 @@ namespace ara
 
                 protected:
                     void StartAgent(helper::SdClientState state) override;
-                    void StopAgent(helper::SdClientState state) override;
+                    void StopAgent() override;
 
                 public:
                     SomeIpSdClient() = delete;

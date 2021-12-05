@@ -41,7 +41,7 @@ namespace ara
 
                 protected:
                     void StartAgent(helper::SdServerState state) override;
-                    void StopAgent(helper::SdServerState state) override;
+                    void StopAgent() override;
 
                 public:
                     SomeIpSdServer() = delete;
