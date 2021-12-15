@@ -227,6 +227,7 @@ add_library(
   ara_exec
   ${source_ara_exec_dir}/worker_thread.h
   ${source_ara_exec_dir}/worker_thread.cpp
+  ${source_ara_exec_dir}/worker_runnable.h
 )
 
 set_target_properties(
@@ -271,6 +272,7 @@ if(build_tests)
     ${test_ara_com_someip_sd_dir}/someip_sd_test.cpp
     ${test_ara_com_someip_sd_fsm_dir}/machine_state_test.cpp
     ${test_ara_exec_dir}/worker_thread_test.cpp
+    ${test_ara_exec_dir}/worker_runnable_test.cpp
   )
 
   target_link_libraries(
