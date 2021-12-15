@@ -75,6 +75,9 @@ set(source_ara_com_someip_pubsub_dir
 set(source_ara_com_someip_pubsub_fsm_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/someip/pubsub/fsm")
 
+set(source_ara_exec_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/exec")
+
 # Test Directories:
 
 set(test_ara_log_dir
@@ -103,6 +106,9 @@ set(test_ara_com_someip_sd_dir
 
 set(test_ara_com_someip_sd_fsm_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/someip/sd/fsm")
+
+set(test_ara_exec_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/exec")
 
 ########################################################################
 
@@ -217,6 +223,17 @@ set_target_properties(
   PROPERTIES LINKER_LANGUAGE CXX
 )
 
+add_library(
+  ara_exec
+  ${source_ara_exec_dir}/worker_thread.h
+  ${source_ara_exec_dir}/worker_thread.cpp
+)
+
+set_target_properties(
+  ara_exec
+  PROPERTIES LINKER_LANGUAGE CXX
+)
+
 target_link_libraries(
   ara_log
   ara_core
@@ -253,6 +270,7 @@ if(build_tests)
     ${test_ara_com_someip_sd_dir}/network_abstraction_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_test.cpp
     ${test_ara_com_someip_sd_fsm_dir}/machine_state_test.cpp
+    ${test_ara_exec_dir}/worker_thread_test.cpp
   )
 
   target_link_libraries(
@@ -261,6 +279,7 @@ if(build_tests)
     async_bsd_socket_lib
     ara_log
     ara_sm
+    ara_exec
   )
 
   include(GoogleTest)
