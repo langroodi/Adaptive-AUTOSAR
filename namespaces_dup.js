@@ -283,6 +283,7 @@ var namespaces_dup =
         [ "FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", "classara_1_1exec_1_1FunctionGroup" ],
         [ "FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", "classara_1_1exec_1_1FunctionGroupState" ],
         [ "StateClient", "classara_1_1exec_1_1StateClient.html", "classara_1_1exec_1_1StateClient" ],
+        [ "WorkerRunnable", "classara_1_1exec_1_1WorkerRunnable.html", "classara_1_1exec_1_1WorkerRunnable" ],
         [ "WorkerThread", "classara_1_1exec_1_1WorkerThread.html", "classara_1_1exec_1_1WorkerThread" ],
         [ "ActivationReturnType", "deterministic__client_8h.html#ab2bd2ca70e096b765f839a1dd7349396", [
           [ "kRegisterService", "deterministic__client_8h.html#ab2bd2ca70e096b765f839a1dd7349396a591bba8c1ee303b9204d4c6167a7790f", null ],
