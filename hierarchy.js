@@ -126,5 +126,6 @@ var hierarchy =
     [ "ara::sm::TriggerOut< T >", "classara_1_1sm_1_1TriggerOut.html", null ],
     [ "ara::com::helper::TtlTimer", "classara_1_1com_1_1helper_1_1TtlTimer.html", null ],
     [ "ara::diag::UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", null ],
-    [ "ara::diag::UploadService", "classara_1_1diag_1_1UploadService.html", null ]
+    [ "ara::diag::UploadService", "classara_1_1diag_1_1UploadService.html", null ],
+    [ "ara::exec::WorkerThread", "classara_1_1exec_1_1WorkerThread.html", null ]
 ];

@@ -107,7 +107,8 @@ var annotated_dup =
         [ "ExecutionClient", "classara_1_1exec_1_1ExecutionClient.html", "classara_1_1exec_1_1ExecutionClient" ],
         [ "FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", "classara_1_1exec_1_1FunctionGroup" ],
         [ "FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", "classara_1_1exec_1_1FunctionGroupState" ],
-        [ "StateClient", "classara_1_1exec_1_1StateClient.html", "classara_1_1exec_1_1StateClient" ]
+        [ "StateClient", "classara_1_1exec_1_1StateClient.html", "classara_1_1exec_1_1StateClient" ],
+        [ "WorkerThread", "classara_1_1exec_1_1WorkerThread.html", "classara_1_1exec_1_1WorkerThread" ]
       ] ],
       [ "log", "namespaceara_1_1log.html", [
         [ "sink", null, [

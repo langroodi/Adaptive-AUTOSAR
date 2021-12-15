@@ -1,0 +1,2 @@
+/usr/bin/ar qc libara_exec.a CMakeFiles/ara_exec.dir/src/ara/exec/worker_thread.cpp.o
+/usr/bin/ranlib libara_exec.a
