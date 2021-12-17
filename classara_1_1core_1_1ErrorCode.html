@@ -99,38 +99,170 @@ $(document).ready(function(){initNavTree('classara_1_1core_1_1ErrorCode.html',''
 <div class="title">ara::core::ErrorCode Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A wrapper around the raw error code in a specific <a class="el" href="classara_1_1core_1_1ErrorDomain.html" title="A class that defines the domain of an ErrorCode to avoid code interferences.">ErrorDomain</a>.  
+ <a href="classara_1_1core_1_1ErrorCode.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="error__code_8h_source.html">error_code.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a279224d355bbd62042abebb365ec7566"><td class="memTemplParams" colspan="2"><a id="a279224d355bbd62042abebb365ec7566"></a>
-template&lt;typename EnumT &gt; </td></tr>
-<tr class="memitem:a279224d355bbd62042abebb365ec7566"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ErrorCode</b> (EnumT e) noexcept</td></tr>
-<tr class="separator:a279224d355bbd62042abebb365ec7566"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b4af254409a1208569fe7a201a58442"><td class="memItemLeft" align="right" valign="top"><a id="a9b4af254409a1208569fe7a201a58442"></a>
-constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>ErrorCode</b> (<a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> value, <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> const &amp;domain) noexcept</td></tr>
-<tr class="separator:a9b4af254409a1208569fe7a201a58442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bfb28af1c00fac9664644813f5db2c2"><td class="memItemLeft" align="right" valign="top"><a id="a5bfb28af1c00fac9664644813f5db2c2"></a>
-constexpr <a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Value</b> () const noexcept</td></tr>
+<tr class="memitem:a41ffa41fe948e434fc03029ce3cd6fc1"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorCode.html#a41ffa41fe948e434fc03029ce3cd6fc1">ErrorCode</a> (<a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> value, const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;domain) noexcept</td></tr>
+<tr class="memdesc:a41ffa41fe948e434fc03029ce3cd6fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1core_1_1ErrorCode.html#a41ffa41fe948e434fc03029ce3cd6fc1">More...</a><br /></td></tr>
+<tr class="separator:a41ffa41fe948e434fc03029ce3cd6fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bfb28af1c00fac9664644813f5db2c2"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorCode.html#a5bfb28af1c00fac9664644813f5db2c2">Value</a> () const noexcept</td></tr>
+<tr class="memdesc:a5bfb28af1c00fac9664644813f5db2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error code value.  <a href="classara_1_1core_1_1ErrorCode.html#a5bfb28af1c00fac9664644813f5db2c2">More...</a><br /></td></tr>
 <tr class="separator:a5bfb28af1c00fac9664644813f5db2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45fd2466b0419d71d48f7a89fafefc15"><td class="memItemLeft" align="right" valign="top"><a id="a45fd2466b0419d71d48f7a89fafefc15"></a>
-constexpr <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Domain</b> () const noexcept</td></tr>
+<tr class="memitem:a45fd2466b0419d71d48f7a89fafefc15"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15">Domain</a> () const noexcept</td></tr>
+<tr class="memdesc:a45fd2466b0419d71d48f7a89fafefc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error code domain.  <a href="classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15">More...</a><br /></td></tr>
 <tr class="separator:a45fd2466b0419d71d48f7a89fafefc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c707129aafab916be731a5c632ff2f0"><td class="memItemLeft" align="right" valign="top"><a id="a5c707129aafab916be731a5c632ff2f0"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>Message</b> () const noexcept</td></tr>
+<tr class="memitem:a5c707129aafab916be731a5c632ff2f0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorCode.html#a5c707129aafab916be731a5c632ff2f0">Message</a> () const noexcept</td></tr>
+<tr class="memdesc:a5c707129aafab916be731a5c632ff2f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error message.  <a href="classara_1_1core_1_1ErrorCode.html#a5c707129aafab916be731a5c632ff2f0">More...</a><br /></td></tr>
 <tr class="separator:a5c707129aafab916be731a5c632ff2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07f1e98e1f5cd0bd8568f6716944d339"><td class="memItemLeft" align="right" valign="top"><a id="a07f1e98e1f5cd0bd8568f6716944d339"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ThrowAsException</b> () const noexcept(false)</td></tr>
-<tr class="separator:a07f1e98e1f5cd0bd8568f6716944d339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8fb7af9bf186e18208b0d31a46f4736"><td class="memItemLeft" align="right" valign="top"><a id="ad8fb7af9bf186e18208b0d31a46f4736"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorCode.html#ad8fb7af9bf186e18208b0d31a46f4736">ThrowAsException</a> () const</td></tr>
+<tr class="memdesc:ad8fb7af9bf186e18208b0d31a46f4736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw the error as an exception. <br /></td></tr>
+<tr class="separator:ad8fb7af9bf186e18208b0d31a46f4736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73312b40584ea62424f5abe9fc1939c8"><td class="memItemLeft" align="right" valign="top"><a id="a73312b40584ea62424f5abe9fc1939c8"></a>
 constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a> &amp;other) noexcept</td></tr>
 <tr class="separator:a73312b40584ea62424f5abe9fc1939c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a398435503e4d42a8512f685f6299cb98"><td class="memItemLeft" align="right" valign="top"><a id="a398435503e4d42a8512f685f6299cb98"></a>
 constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a> &amp;other) noexcept</td></tr>
 <tr class="separator:a398435503e4d42a8512f685f6299cb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb26880d4b11951019278e13729bae53"><td class="memItemLeft" align="right" valign="top"><a id="acb26880d4b11951019278e13729bae53"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> () const</td></tr>
-<tr class="separator:acb26880d4b11951019278e13729bae53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A wrapper around the raw error code in a specific <a class="el" href="classara_1_1core_1_1ErrorDomain.html" title="A class that defines the domain of an ErrorCode to avoid code interferences.">ErrorDomain</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a41ffa41fe948e434fc03029ce3cd6fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ffa41fe948e434fc03029ce3cd6fc1">&#9670;&nbsp;</a></span>ErrorCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr ara::core::ErrorCode::ErrorCode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Error code value </td></tr>
+    <tr><td class="paramname">domain</td><td>Error code domain </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a45fd2466b0419d71d48f7a89fafefc15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45fd2466b0419d71d48f7a89fafefc15">&#9670;&nbsp;</a></span>Domain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> const&amp; ara::core::ErrorCode::Domain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get error code domain. </p>
+<dl class="section return"><dt>Returns</dt><dd>Error domain which the error code belongs to </dd></dl>
+
+</div>
+</div>
+<a id="a5c707129aafab916be731a5c632ff2f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c707129aafab916be731a5c632ff2f0">&#9670;&nbsp;</a></span>Message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ara::core::ErrorCode::Message </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get error message. </p>
+<dl class="section return"><dt>Returns</dt><dd>Error code corresponding message in the defined domain </dd></dl>
+
+</div>
+</div>
+<a id="a5bfb28af1c00fac9664644813f5db2c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bfb28af1c00fac9664644813f5db2c2">&#9670;&nbsp;</a></span>Value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> ara::core::ErrorCode::Value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get error code value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Raw error code value </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -12,6 +12,7 @@ var searchData=
   ['diagudsnrcerrordomain_64',['DiagUdsNrcErrorDomain',['../classara_1_1diag_1_1DiagUdsNrcErrorDomain.html',1,'ara::diag']]],
   ['diagudsnrcexception_65',['DiagUdsNrcException',['../classara_1_1diag_1_1DiagUdsNrcException.html',1,'ara::diag']]],
   ['discardable_66',['Discardable',['../classara_1_1com_1_1option_1_1Option.html#ae4b72476201240a6f3d02396bb249c82',1,'ara::com::option::Option']]],
-  ['downloadservice_67',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
-  ['dtcinformation_68',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
+  ['domain_67',['Domain',['../classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15',1,'ara::core::ErrorCode']]],
+  ['downloadservice_68',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
+  ['dtcinformation_69',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
 ];
