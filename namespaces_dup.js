@@ -61,14 +61,7 @@ var namespaces_dup =
           ] ]
         ] ]
       ] ],
-      [ "core", null, [
-        [ "ErrorCode", "classara_1_1core_1_1ErrorCode.html", "classara_1_1core_1_1ErrorCode" ],
-        [ "ErrorDomain", "classara_1_1core_1_1ErrorDomain.html", "classara_1_1core_1_1ErrorDomain" ],
-        [ "InstanceSpecifier", "classara_1_1core_1_1InstanceSpecifier.html", "classara_1_1core_1_1InstanceSpecifier" ],
-        [ "Optional", "classara_1_1core_1_1Optional.html", "classara_1_1core_1_1Optional" ],
-        [ "Result", "classara_1_1core_1_1Result.html", "classara_1_1core_1_1Result" ],
-        [ "Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", "classara_1_1core_1_1Result_3_01void_00_01E_01_4" ]
-      ] ],
+      [ "core", "namespaceara_1_1core.html", "namespaceara_1_1core" ],
       [ "diag", null, [
         [ "CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", "classara_1_1diag_1_1CancellationHandler" ],
         [ "ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],

@@ -111,8 +111,8 @@ $(document).ready(function(){initNavTree('error__code_8h_source.html',''); initR
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> EnumT&gt;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a>(EnumT e) noexcept;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a>(ErrorDomain::CodeType value, <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> <span class="keyword">const</span> &amp;domain) noexcept;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            constexpr ErrorDomain::CodeType Value() <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a>(<a class="code" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> value, <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> <span class="keyword">const</span> &amp;domain) noexcept;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            constexpr <a class="code" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> Value() <span class="keyword">const</span> noexcept;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> <span class="keyword">const</span> &amp;Domain() <span class="keyword">const</span> noexcept;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            std::string Message() <span class="keyword">const</span> noexcept;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordtype">void</span> ThrowAsException() <span class="keyword">const</span> noexcept(<span class="keyword">false</span>);</div>
@@ -125,7 +125,8 @@ $(document).ready(function(){initNavTree('error__code_8h_source.html',''); initR
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a></div><div class="ttdef"><b>Definition:</b> error_code.h:12</div></div>
-<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></div><div class="ttdef"><b>Definition:</b> error_domain.h:11</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></div><div class="ttdoc">A class that defines the domain of an ErrorCode to avoid code interferences.</div><div class="ttdef"><b>Definition:</b> error_domain.h:18</div></div>
+<div class="ttc" id="anamespaceara_1_1core_html_ae7c7a32c7051ffa5a7b819da2ff2d44a"><div class="ttname"><a href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">ara::core::CodeType</a></div><div class="ttdeci">uint32_t CodeType</div><div class="ttdoc">Alias type of the error code.</div><div class="ttdef"><b>Definition:</b> error_domain.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

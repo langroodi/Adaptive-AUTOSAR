@@ -129,19 +129,21 @@ $(document).ready(function(){initNavTree('error__code__domain_8h_source.html',''
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classara_1_1exec_1_1ExceErrorDomain.html">ExceErrorDomain</a>() noexcept;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *Name() <span class="keyword">const</span> noexcept <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *Message(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                ara::core::ErrorDomain::CodeType errorCode) <span class="keyword">const</span> noexcept <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1ExceErrorDomain.html#a5016beb9883911be7ca291ca32142cf0">   34</a></span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classara_1_1exec_1_1ExceErrorDomain.html#a5016beb9883911be7ca291ca32142cf0">Name</a>() const noexcept override;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            const <span class="keywordtype">char</span> *Message(</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                ara::core::<a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a>::CodeType errorCode) const noexcept override;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordtype">void</span> ThrowAsException(</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a> &amp;errorCode) <span class="keyword">const</span> noexcept(<span class="keyword">false</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                const ara::core::ErrorCode &amp;errorCode) const noexcept(false) override;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        };</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a></div><div class="ttdef"><b>Definition:</b> error_code.h:12</div></div>
-<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></div><div class="ttdef"><b>Definition:</b> error_domain.h:11</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></div><div class="ttdoc">A class that defines the domain of an ErrorCode to avoid code interferences.</div><div class="ttdef"><b>Definition:</b> error_domain.h:18</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html_ad925cb5f4a7516b26231e2929c1c7a82"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ara::core::ErrorDomain::ErrorDomain</a></div><div class="ttdeci">constexpr ErrorDomain(IdType id) noexcept</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> error_domain.h:25</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1ExceErrorDomain_html"><div class="ttname"><a href="classara_1_1exec_1_1ExceErrorDomain.html">ara::exec::ExceErrorDomain</a></div><div class="ttdef"><b>Definition:</b> error_code_domain.h:31</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1ExceErrorDomain_html_a5016beb9883911be7ca291ca32142cf0"><div class="ttname"><a href="classara_1_1exec_1_1ExceErrorDomain.html#a5016beb9883911be7ca291ca32142cf0">ara::exec::ExceErrorDomain::Name</a></div><div class="ttdeci">const char * Name() const noexcept override</div><div class="ttdoc">Get the domain's name.</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1ExecException_html"><div class="ttname"><a href="classara_1_1exec_1_1ExecException.html">ara::exec::ExecException</a></div><div class="ttdef"><b>Definition:</b> error_code_domain.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

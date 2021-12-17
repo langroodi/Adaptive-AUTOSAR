@@ -99,35 +99,62 @@ $(document).ready(function(){initNavTree('error__domain_8h_source.html',''); ini
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ERROR_DOMAIN_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ERROR_DOMAIN_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>ara</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">namespace </span>core</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorDomain.html">   10</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keyword">using</span> IdType = std::uint64_t;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">using</span> CodeType = std::uint32_t;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">namespace </span>core</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">   12</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a> = uint64_t;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">   14</a></span>&#160;        <span class="keyword">using</span> <a class="code" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> = uint32_t;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a>(<a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">explicit</span> constexpr <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a>(IdType <span class="keywordtype">id</span>) noexcept;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            ~<a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;operator=(<a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            constexpr <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;other) <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            constexpr <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;other) <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            constexpr IdType Id() <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *Name() <span class="keyword">const</span> noexcept = 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *Message(CodeType errorCode) <span class="keyword">const</span> noexcept = 0;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        };</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorDomain.html">   17</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a> mId;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">   25</a></span>&#160;            <span class="keyword">explicit</span> constexpr <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a>(<a class="code" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a> <span class="keywordtype">id</span>) noexcept : mId{<span class="keywordtype">id</span>}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ~<a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a>() noexcept = default;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></div><div class="ttdef"><b>Definition:</b> error_domain.h:11</div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a>(const <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> &amp;) = delete;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a>(<a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> &amp;&amp;) = delete;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> &amp;operator=(const <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> &amp;) = delete;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> &amp;operator=(<a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> &amp;&amp;) = delete;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            constexpr <span class="keywordtype">bool</span> operator==(const <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> &amp;other) const noexcept</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordflow">return</span> mId == other.mId;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            constexpr <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> &amp;other) <span class="keyword">const</span> noexcept</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span> mId != other.mId;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552">   48</a></span>&#160;            constexpr <a class="code" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a> <a class="code" href="classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552">Id</a>() const noexcept</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">return</span> mId;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorDomain.html#a25f212bdcac9d907f4d45f80a52ae0f1">   55</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classara_1_1core_1_1ErrorDomain.html#a25f212bdcac9d907f4d45f80a52ae0f1">Name</a>() const noexcept = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorDomain.html#a0462ea87f5b76d097bb3ba749073eecd">   60</a></span>&#160;            virtual const <span class="keywordtype">char</span> *<a class="code" href="classara_1_1core_1_1ErrorDomain.html#a0462ea87f5b76d097bb3ba749073eecd">Message</a>(<a class="code" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> errorCode) const noexcept = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></div><div class="ttdoc">A class that defines the domain of an ErrorCode to avoid code interferences.</div><div class="ttdef"><b>Definition:</b> error_domain.h:18</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html_a0462ea87f5b76d097bb3ba749073eecd"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html#a0462ea87f5b76d097bb3ba749073eecd">ara::core::ErrorDomain::Message</a></div><div class="ttdeci">virtual const char * Message(CodeType errorCode) const noexcept=0</div><div class="ttdoc">Get error message of a specific error code.</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html_a25f212bdcac9d907f4d45f80a52ae0f1"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html#a25f212bdcac9d907f4d45f80a52ae0f1">ara::core::ErrorDomain::Name</a></div><div class="ttdeci">virtual const char * Name() const noexcept=0</div><div class="ttdoc">Get the domain's name.</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html_a7ee36496ab0a52ea706b4c2f474c6552"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552">ara::core::ErrorDomain::Id</a></div><div class="ttdeci">constexpr IdType Id() const noexcept</div><div class="ttdoc">Get the domain ID.</div><div class="ttdef"><b>Definition:</b> error_domain.h:48</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html_ad925cb5f4a7516b26231e2929c1c7a82"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ara::core::ErrorDomain::ErrorDomain</a></div><div class="ttdeci">constexpr ErrorDomain(IdType id) noexcept</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> error_domain.h:25</div></div>
+<div class="ttc" id="anamespaceara_1_1core_html_a8f8464a308204769325ac6ac87c2185f"><div class="ttname"><a href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">ara::core::IdType</a></div><div class="ttdeci">uint64_t IdType</div><div class="ttdoc">Alias type of the domain ID.</div><div class="ttdef"><b>Definition:</b> error_domain.h:12</div></div>
+<div class="ttc" id="anamespaceara_1_1core_html_ae7c7a32c7051ffa5a7b819da2ff2d44a"><div class="ttname"><a href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">ara::core::CodeType</a></div><div class="ttdeci">uint32_t CodeType</div><div class="ttdoc">Alias type of the error code.</div><div class="ttdef"><b>Definition:</b> error_domain.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

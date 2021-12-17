@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notificationhandler_585',['NotificationHandler',['../namespaceara_1_1sm.html#ad1a2b42e6183cddc534d4cba9fd58970',1,'ara::sm']]]
+  ['codetype_594',['CodeType',['../namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a',1,'ara::core']]]
 ];

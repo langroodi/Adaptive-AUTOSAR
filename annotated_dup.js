@@ -59,7 +59,7 @@ var annotated_dup =
           [ "SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", "classara_1_1com_1_1someip_1_1SomeIpMessage" ]
         ] ]
       ] ],
-      [ "core", null, [
+      [ "core", "namespaceara_1_1core.html", [
         [ "ErrorCode", "classara_1_1core_1_1ErrorCode.html", "classara_1_1core_1_1ErrorCode" ],
         [ "ErrorDomain", "classara_1_1core_1_1ErrorDomain.html", "classara_1_1core_1_1ErrorDomain" ],
         [ "InstanceSpecifier", "classara_1_1core_1_1InstanceSpecifier.html", "classara_1_1core_1_1InstanceSpecifier" ],

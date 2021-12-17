@@ -93,13 +93,17 @@ $(document).ready(function(){initNavTree('classara_1_1core_1_1ErrorDomain.html',
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classara_1_1core_1_1ErrorDomain-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ara::core::ErrorDomain Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class that defines the domain of an <a class="el" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a> to avoid code interferences.  
+ <a href="classara_1_1core_1_1ErrorDomain.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="error__domain_8h_source.html">error_domain.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ara::core::ErrorDomain:</div>
 <div class="dyncontent">
@@ -114,26 +118,17 @@ Inheritance diagram for ara::core::ErrorDomain:</div>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:aeacfb65d0e2200acab3de7747d8bcc5e"><td class="memItemLeft" align="right" valign="top"><a id="aeacfb65d0e2200acab3de7747d8bcc5e"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>IdType</b> = std::uint64_t</td></tr>
-<tr class="separator:aeacfb65d0e2200acab3de7747d8bcc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc986e2946c7d5ef7edf1f2dbd7d47d1"><td class="memItemLeft" align="right" valign="top"><a id="abc986e2946c7d5ef7edf1f2dbd7d47d1"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>CodeType</b> = std::uint32_t</td></tr>
-<tr class="separator:abc986e2946c7d5ef7edf1f2dbd7d47d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ad925cb5f4a7516b26231e2929c1c7a82"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> (<a class="el" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a> id) noexcept</td></tr>
+<tr class="memdesc:ad925cb5f4a7516b26231e2929c1c7a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">More...</a><br /></td></tr>
+<tr class="separator:ad925cb5f4a7516b26231e2929c1c7a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39e84c91c859532a70f61673c6e67ba"><td class="memItemLeft" align="right" valign="top"><a id="ac39e84c91c859532a70f61673c6e67ba"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ErrorDomain</b> (const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;)=delete</td></tr>
 <tr class="separator:ac39e84c91c859532a70f61673c6e67ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a412f2f67f811ec95923cdbe3b2edff1c"><td class="memItemLeft" align="right" valign="top"><a id="a412f2f67f811ec95923cdbe3b2edff1c"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ErrorDomain</b> (<a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a412f2f67f811ec95923cdbe3b2edff1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad925cb5f4a7516b26231e2929c1c7a82"><td class="memItemLeft" align="right" valign="top"><a id="ad925cb5f4a7516b26231e2929c1c7a82"></a>
-constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>ErrorDomain</b> (IdType id) noexcept</td></tr>
-<tr class="separator:ad925cb5f4a7516b26231e2929c1c7a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2756714f3a52a907698ae26e7f9aeafd"><td class="memItemLeft" align="right" valign="top"><a id="a2756714f3a52a907698ae26e7f9aeafd"></a>
 <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;)=delete</td></tr>
 <tr class="separator:a2756714f3a52a907698ae26e7f9aeafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,22 +141,153 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==<
 <tr class="memitem:acdbf3c5d9765d92382885f4a2dcca4ef"><td class="memItemLeft" align="right" valign="top"><a id="acdbf3c5d9765d92382885f4a2dcca4ef"></a>
 constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;other) const noexcept</td></tr>
 <tr class="separator:acdbf3c5d9765d92382885f4a2dcca4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee36496ab0a52ea706b4c2f474c6552"><td class="memItemLeft" align="right" valign="top"><a id="a7ee36496ab0a52ea706b4c2f474c6552"></a>
-constexpr IdType&#160;</td><td class="memItemRight" valign="bottom"><b>Id</b> () const noexcept</td></tr>
+<tr class="memitem:a7ee36496ab0a52ea706b4c2f474c6552"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552">Id</a> () const noexcept</td></tr>
+<tr class="memdesc:a7ee36496ab0a52ea706b4c2f474c6552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the domain ID.  <a href="classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552">More...</a><br /></td></tr>
 <tr class="separator:a7ee36496ab0a52ea706b4c2f474c6552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25f212bdcac9d907f4d45f80a52ae0f1"><td class="memItemLeft" align="right" valign="top"><a id="a25f212bdcac9d907f4d45f80a52ae0f1"></a>
-virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>Name</b> () const noexcept=0</td></tr>
+<tr class="memitem:a25f212bdcac9d907f4d45f80a52ae0f1"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a25f212bdcac9d907f4d45f80a52ae0f1">Name</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a25f212bdcac9d907f4d45f80a52ae0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the domain's name.  <a href="classara_1_1core_1_1ErrorDomain.html#a25f212bdcac9d907f4d45f80a52ae0f1">More...</a><br /></td></tr>
 <tr class="separator:a25f212bdcac9d907f4d45f80a52ae0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0462ea87f5b76d097bb3ba749073eecd"><td class="memItemLeft" align="right" valign="top"><a id="a0462ea87f5b76d097bb3ba749073eecd"></a>
-virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>Message</b> (CodeType errorCode) const noexcept=0</td></tr>
+<tr class="memitem:a0462ea87f5b76d097bb3ba749073eecd"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a0462ea87f5b76d097bb3ba749073eecd">Message</a> (<a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> errorCode) const noexcept=0</td></tr>
+<tr class="memdesc:a0462ea87f5b76d097bb3ba749073eecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error message of a specific error code.  <a href="classara_1_1core_1_1ErrorDomain.html#a0462ea87f5b76d097bb3ba749073eecd">More...</a><br /></td></tr>
 <tr class="separator:a0462ea87f5b76d097bb3ba749073eecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class that defines the domain of an <a class="el" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a> to avoid code interferences. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad925cb5f4a7516b26231e2929c1c7a82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad925cb5f4a7516b26231e2929c1c7a82">&#9670;&nbsp;</a></span>ErrorDomain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr ara::core::ErrorDomain::ErrorDomain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Error domain ID </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7ee36496ab0a52ea706b4c2f474c6552"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ee36496ab0a52ea706b4c2f474c6552">&#9670;&nbsp;</a></span>Id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a> ara::core::ErrorDomain::Id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the domain ID. </p>
+<dl class="section return"><dt>Returns</dt><dd>Error domain ID </dd></dl>
+
+</div>
+</div>
+<a id="a0462ea87f5b76d097bb3ba749073eecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0462ea87f5b76d097bb3ba749073eecd">&#9670;&nbsp;</a></span>Message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* ara::core::ErrorDomain::Message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a>&#160;</td>
+          <td class="paramname"><em>errorCode</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get error message of a specific error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errorCode</td><td>Error code of interest </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error code message in this domain </dd></dl>
+
+</div>
+</div>
+<a id="a25f212bdcac9d907f4d45f80a52ae0f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f212bdcac9d907f4d45f80a52ae0f1">&#9670;&nbsp;</a></span>Name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* ara::core::ErrorDomain::Name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the domain's name. </p>
+<dl class="section return"><dt>Returns</dt><dd>Error domain name </dd></dl>
+
+<p>Implemented in <a class="el" href="classara_1_1exec_1_1ExceErrorDomain.html#a5016beb9883911be7ca291ca32142cf0">ara::exec::ExceErrorDomain</a>, <a class="el" href="classara_1_1diag_1_1DiagUdsNrcErrorDomain.html#a401ae395f68d9d1de9241b9f35f0cf97">ara::diag::DiagUdsNrcErrorDomain</a>, <a class="el" href="classara_1_1diag_1_1DiagReportingErrorDomain.html#a01e5c26c6ffbe135abfb7f9396fcaf92">ara::diag::DiagReportingErrorDomain</a>, <a class="el" href="classara_1_1diag_1_1DiagOfferErrorDomain.html#aceb0b472f87b971dcdbe8dd6ad5ac734">ara::diag::DiagOfferErrorDomain</a>, and <a class="el" href="classara_1_1diag_1_1DiagErrorDomain.html#a983b63f6154b9250d9ce52eb252ca554">ara::diag::DiagErrorDomain</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>ara</b></li><li class="navelem"><b>core</b></li><li class="navelem"><a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a></li>
+    <li class="navelem"><b>ara</b></li><li class="navelem"><a class="el" href="namespaceara_1_1core.html">core</a></li><li class="navelem"><a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
