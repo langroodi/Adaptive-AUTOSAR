@@ -16,12 +16,13 @@ namespace ara
 
         TEST_F(WorkerRunnableTest, RandomNumberAssignment)
         {
-            uint64_t _element = 0;
+            const uint64_t cInitialValue = 0;
+            uint64_t _element = cInitialValue;
             WorkerThread _workerThread;
 
             Run(_element, _workerThread);
 
-            EXPECT_GT(_element, 0);
+            EXPECT_GT(_element, cInitialValue);
         }
     }
 }

@@ -110,6 +110,9 @@ set(test_ara_com_someip_sd_fsm_dir
 set(test_ara_exec_dir
   "${CMAKE_SOURCE_DIR}/test/ara/exec")
 
+set(test_ara_core_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/core")
+
 ########################################################################
 
 add_library(
@@ -238,10 +241,6 @@ set_target_properties(
 target_link_libraries(
   ara_log
   ara_core
-)
-
-target_link_libraries(
-  ara_log
   ara_com
 )
 
@@ -273,6 +272,7 @@ if(build_tests)
     ${test_ara_com_someip_sd_fsm_dir}/machine_state_test.cpp
     ${test_ara_exec_dir}/worker_thread_test.cpp
     ${test_ara_exec_dir}/worker_runnable_test.cpp
+    ${test_ara_core_dir}/error_domain_test.cpp
   )
 
   target_link_libraries(

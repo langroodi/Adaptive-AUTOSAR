@@ -13,8 +13,8 @@ namespace ara
         public:
             template <typename EnumT>
             constexpr ErrorCode(EnumT e) noexcept;
-            constexpr ErrorCode(ErrorDomain::CodeType value, ErrorDomain const &domain) noexcept;
-            constexpr ErrorDomain::CodeType Value() const noexcept;
+            constexpr ErrorCode(CodeType value, ErrorDomain const &domain) noexcept;
+            constexpr CodeType Value() const noexcept;
             constexpr ErrorDomain const &Domain() const noexcept;
             std::string Message() const noexcept;
             void ThrowAsException() const noexcept(false);

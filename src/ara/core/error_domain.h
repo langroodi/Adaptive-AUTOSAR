@@ -1,28 +1,62 @@
 #ifndef ERROR_DOMAIN_H
 #define ERROR_DOMAIN_H
 
-#include <cstdint>
+#include <stdint.h>
 
 namespace ara
 {
+    /// @brief ARA basic core types namespace
     namespace core
     {
+        /// @brief Alias type of the domain ID
+        using IdType = uint64_t;
+        /// @brief Alias type of the error code
+        using CodeType = uint32_t;
+
+        /// @brief A class that defines the domain of an ErrorCode to avoid code interferences
         class ErrorDomain
         {
+        private:
+            IdType mId;
+
         public:
-            using IdType = std::uint64_t;
-            using CodeType = std::uint32_t;
+            /// @brief Constructor
+            /// @param id Error domain ID
+            explicit constexpr ErrorDomain(IdType id) noexcept : mId{id}
+            {
+            }
+
+            ~ErrorDomain() noexcept = default;
 
             ErrorDomain(const ErrorDomain &) = delete;
             ErrorDomain(ErrorDomain &&) = delete;
-            explicit constexpr ErrorDomain(IdType id) noexcept;
-            ~ErrorDomain() = default;
             ErrorDomain &operator=(const ErrorDomain &) = delete;
             ErrorDomain &operator=(ErrorDomain &&) = delete;
-            constexpr bool operator==(const ErrorDomain &other) const noexcept;
-            constexpr bool operator!=(const ErrorDomain &other) const noexcept;
-            constexpr IdType Id() const noexcept;
+
+            constexpr bool operator==(const ErrorDomain &other) const noexcept
+            {
+                return mId == other.mId;
+            }
+
+            constexpr bool operator!=(const ErrorDomain &other) const noexcept
+            {
+                return mId != other.mId;
+            }
+
+            /// @brief Get the domain ID
+            /// @returns Error domain ID
+            constexpr IdType Id() const noexcept
+            {
+                return mId;
+            }
+
+            /// @brief Get the domain's name
+            /// @returns Error domain name
             virtual const char *Name() const noexcept = 0;
+
+            /// @brief Get error message of a specific error code
+            /// @param errorCode Error code of interest
+            /// @returns Error code message in this domain
             virtual const char *Message(CodeType errorCode) const noexcept = 0;
         };
     }
