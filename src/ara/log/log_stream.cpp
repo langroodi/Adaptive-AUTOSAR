@@ -113,7 +113,7 @@ namespace ara
 
         LogStream &LogStream::operator<<(const ara::core::ErrorCode &value)
         {
-            std::string _valueString = value.ToString();
+            std::string _valueString = value.Message();
             concat(std::move(_valueString));
 
             return *this;

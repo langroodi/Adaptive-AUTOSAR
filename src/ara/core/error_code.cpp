@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "./error_code.h"
 
 namespace ara
@@ -6,15 +7,14 @@ namespace ara
     {
         std::string ErrorCode::Message() const noexcept
         {
-            std::string _result;
+            std::string _result(mDomain.Message(mValue));
             return _result;
         }
 
-        std::string ErrorCode::ToString() const
+        void ErrorCode::ThrowAsException() const
         {
-            std::string _result = Message();
-
-            return _result;
+            std::runtime_error _exception{Message()};
+            throw _exception;
         }
     }
 }

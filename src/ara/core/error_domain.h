@@ -14,6 +14,7 @@ namespace ara
         using CodeType = uint32_t;
 
         /// @brief A class that defines the domain of an ErrorCode to avoid code interferences
+        /// @note The class is literal type and it is recommended that derived classes be literal type as well.
         class ErrorDomain
         {
         private:

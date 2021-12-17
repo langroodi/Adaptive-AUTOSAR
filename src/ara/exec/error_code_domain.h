@@ -9,7 +9,7 @@ namespace ara
 {
     namespace exec
     {
-        enum class ExecErrc : ara::core::ErrorDomain::CodeType
+        enum class ExecErrc : ara::core::CodeType
         {
             kGeneralError = 1,
             kInvalidArguments = 2,
@@ -33,9 +33,7 @@ namespace ara
             ExceErrorDomain() noexcept;
             const char *Name() const noexcept override;
             const char *Message(
-                ara::core::ErrorDomain::CodeType errorCode) const noexcept override;
-            void ThrowAsException(
-                const ara::core::ErrorCode &errorCode) const noexcept(false) override;
+                ara::core::CodeType errorCode) const noexcept override;
         };
     }
 }
