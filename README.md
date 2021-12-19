@@ -15,6 +15,10 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 - Google Test: v1.11.0
 - [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary)
 
+## Documentation
+
+Please refer to [the project GitHub pages](https://langroodi.github.io/Adaptive-AUTOSAR/) powered by Doxygen.
+
 ## Contribution
 
 Please refer to [the contributing page](https://github.com/langroodi/Adaptive-AUTOSAR/blob/master/CONTRIBUTING.md).
