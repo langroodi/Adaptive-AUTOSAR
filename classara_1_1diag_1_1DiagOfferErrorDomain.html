@@ -114,8 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aceb0b472f87b971dcdbe8dd6ad5ac734"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DiagOfferErrorDomain.html#aceb0b472f87b971dcdbe8dd6ad5ac734">Name</a> () const noexcept override</td></tr>
 <tr class="memdesc:aceb0b472f87b971dcdbe8dd6ad5ac734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the domain's name.  <a href="classara_1_1diag_1_1DiagOfferErrorDomain.html#aceb0b472f87b971dcdbe8dd6ad5ac734">More...</a><br /></td></tr>
 <tr class="separator:aceb0b472f87b971dcdbe8dd6ad5ac734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22804b5dc1d5260d5157fc81ddbccc30"><td class="memItemLeft" align="right" valign="top"><a id="a22804b5dc1d5260d5157fc81ddbccc30"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>Message</b> (ara::core::ErrorDomain::CodeType errorCode) const noexcept override</td></tr>
+<tr class="memitem:a22804b5dc1d5260d5157fc81ddbccc30"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DiagOfferErrorDomain.html#a22804b5dc1d5260d5157fc81ddbccc30">Message</a> (<a class="el" href="classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752">ara::core::ErrorDomain::CodeType</a> errorCode) const noexcept override</td></tr>
+<tr class="memdesc:a22804b5dc1d5260d5157fc81ddbccc30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error message of a specific error code.  <a href="classara_1_1diag_1_1DiagOfferErrorDomain.html#a22804b5dc1d5260d5157fc81ddbccc30">More...</a><br /></td></tr>
 <tr class="separator:a22804b5dc1d5260d5157fc81ddbccc30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35e4fc39e18f613b47643c7773af5cdc"><td class="memItemLeft" align="right" valign="top"><a id="a35e4fc39e18f613b47643c7773af5cdc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ThrowAsException</b> (const <a class="el" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a> &amp;errorCode) const noexcept(false) override</td></tr>
@@ -124,7 +124,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ThrowAsException</b> 
 constexpr <a class="el" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MakeErrorCode</b> (DiagOfferErrc code) noexcept</td></tr>
 <tr class="separator:a128097fed1d662ae8abc7a241b380f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classara_1_1core_1_1ErrorDomain"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1core_1_1ErrorDomain')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></td></tr>
-<tr class="memitem:ad925cb5f4a7516b26231e2929c1c7a82 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> (<a class="el" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a> id) noexcept</td></tr>
+<tr class="memitem:ad925cb5f4a7516b26231e2929c1c7a82 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> (<a class="el" href="classara_1_1core_1_1ErrorDomain.html#a2293fffefc45549aa2d0e4d88d7b5e9d">IdType</a> id) noexcept</td></tr>
 <tr class="memdesc:ad925cb5f4a7516b26231e2929c1c7a82 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">More...</a><br /></td></tr>
 <tr class="separator:ad925cb5f4a7516b26231e2929c1c7a82 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac39e84c91c859532a70f61673c6e67ba inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top"><a id="ac39e84c91c859532a70f61673c6e67ba"></a>
@@ -145,14 +145,60 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==<
 <tr class="memitem:acdbf3c5d9765d92382885f4a2dcca4ef inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top"><a id="acdbf3c5d9765d92382885f4a2dcca4ef"></a>
 constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;other) const noexcept</td></tr>
 <tr class="separator:acdbf3c5d9765d92382885f4a2dcca4ef inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ee36496ab0a52ea706b4c2f474c6552 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespaceara_1_1core.html#a8f8464a308204769325ac6ac87c2185f">IdType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552">Id</a> () const noexcept</td></tr>
+<tr class="memitem:a7ee36496ab0a52ea706b4c2f474c6552 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classara_1_1core_1_1ErrorDomain.html#a2293fffefc45549aa2d0e4d88d7b5e9d">IdType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552">Id</a> () const noexcept</td></tr>
 <tr class="memdesc:a7ee36496ab0a52ea706b4c2f474c6552 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the domain ID.  <a href="classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552">More...</a><br /></td></tr>
 <tr class="separator:a7ee36496ab0a52ea706b4c2f474c6552 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0462ea87f5b76d097bb3ba749073eecd inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a0462ea87f5b76d097bb3ba749073eecd">Message</a> (<a class="el" href="namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a">CodeType</a> errorCode) const noexcept=0</td></tr>
-<tr class="memdesc:a0462ea87f5b76d097bb3ba749073eecd inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error message of a specific error code.  <a href="classara_1_1core_1_1ErrorDomain.html#a0462ea87f5b76d097bb3ba749073eecd">More...</a><br /></td></tr>
-<tr class="separator:a0462ea87f5b76d097bb3ba749073eecd inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classara_1_1core_1_1ErrorDomain"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classara_1_1core_1_1ErrorDomain')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></td></tr>
+<tr class="memitem:a2293fffefc45549aa2d0e4d88d7b5e9d inherit pub_types_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top"><a id="a2293fffefc45549aa2d0e4d88d7b5e9d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a2293fffefc45549aa2d0e4d88d7b5e9d">IdType</a> = uint64_t</td></tr>
+<tr class="memdesc:a2293fffefc45549aa2d0e4d88d7b5e9d inherit pub_types_classara_1_1core_1_1ErrorDomain"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias type of the domain ID. <br /></td></tr>
+<tr class="separator:a2293fffefc45549aa2d0e4d88d7b5e9d inherit pub_types_classara_1_1core_1_1ErrorDomain"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a858bd680c1af572fa31fcfb6cf5f4752 inherit pub_types_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top"><a id="a858bd680c1af572fa31fcfb6cf5f4752"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752">CodeType</a> = uint32_t</td></tr>
+<tr class="memdesc:a858bd680c1af572fa31fcfb6cf5f4752 inherit pub_types_classara_1_1core_1_1ErrorDomain"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias type of the error code. <br /></td></tr>
+<tr class="separator:a858bd680c1af572fa31fcfb6cf5f4752 inherit pub_types_classara_1_1core_1_1ErrorDomain"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a22804b5dc1d5260d5157fc81ddbccc30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22804b5dc1d5260d5157fc81ddbccc30">&#9670;&nbsp;</a></span>Message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ara::diag::DiagOfferErrorDomain::Message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752">ara::core::ErrorDomain::CodeType</a>&#160;</td>
+          <td class="paramname"><em>errorCode</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get error message of a specific error code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errorCode</td><td>Error code of interest </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error code message in this domain </dd></dl>
+
+<p>Implements <a class="el" href="classara_1_1core_1_1ErrorDomain.html#a0462ea87f5b76d097bb3ba749073eecd">ara::core::ErrorDomain</a>.</p>
+
+</div>
+</div>
 <a id="aceb0b472f87b971dcdbe8dd6ad5ac734"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aceb0b472f87b971dcdbe8dd6ad5ac734">&#9670;&nbsp;</a></span>Name()</h2>
 

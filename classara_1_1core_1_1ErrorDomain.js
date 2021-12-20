@@ -1,5 +1,7 @@
 var classara_1_1core_1_1ErrorDomain =
 [
+    [ "CodeType", "classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752", null ],
+    [ "IdType", "classara_1_1core_1_1ErrorDomain.html#a2293fffefc45549aa2d0e4d88d7b5e9d", null ],
     [ "ErrorDomain", "classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82", null ],
     [ "~ErrorDomain", "classara_1_1core_1_1ErrorDomain.html#adeb6d427969785e10975d856e1dca8ff", null ],
     [ "ErrorDomain", "classara_1_1core_1_1ErrorDomain.html#ac39e84c91c859532a70f61673c6e67ba", null ],

@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Adaptive AUTOSAR", "index.html", [
+    [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -41,7 +42,8 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ]
       ] ]
     ] ]
   ] ]
@@ -49,10 +51,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html#a8f09c0c600a6dc01f8ce77e876a35dac",
-"classara_1_1diag_1_1GenericRoutine.html#a933ad70decb09ece74f8fe4475751150",
-"diag__error__domain_8h.html#ac220d018fcb159ae701b819608c8bd43ac519a15fe33fc79971a01105b410480a",
+"annotated.html",
+"classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState.html",
+"classara_1_1diag_1_1GenericRoutine.html#a9fb5c43e96e1ddfaf7940bb72fba2c3c",
+"diag__error__domain_8h.html#ac220d018fcb159ae701b819608c8bd43acac1b5c4cfe5d9f22804f7c3f698fc6e",
 "service__validation_8h.html#a0cf47d053511a5b63cfae9f5706b6619"
 ];
 

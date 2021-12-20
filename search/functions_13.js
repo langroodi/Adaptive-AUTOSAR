@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['waitfor_584',['WaitFor',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a3362ecab527ba25add8743ed2feb82b0',1,'ara::com::someip::sd::fsm::TimerSetState::WaitFor(std::chrono::milliseconds duration)'],['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a4a626f1ad7b74877f42d1c3e8f975bce',1,'ara::com::someip::sd::fsm::TimerSetState::WaitFor(int duration)']]],
-  ['weight_585',['Weight',['../classara_1_1com_1_1option_1_1LoadBalancingOption.html#a80f8a0830a544b5fc8b736478573ade2',1,'ara::com::option::LoadBalancingOption']]],
-  ['withlevel_586',['WithLevel',['../classara_1_1log_1_1Logger.html#a5d278c539e61194014b5a5dcfff2930a',1,'ara::log::Logger']]],
-  ['withlocation_587',['WithLocation',['../classara_1_1log_1_1LogStream.html#a83bdf1c357a7a03462228454c55a823d',1,'ara::log::LogStream']]],
-  ['write_588',['Write',['../classara_1_1sm_1_1Trigger.html#a13b7b5fc7e8ac7ff0fb789546c25b29d',1,'ara::sm::Trigger']]]
+  ['validateoption_613',['ValidateOption',['../classara_1_1com_1_1entry_1_1Entry.html#ae48d5236e304a9f0c9ffb4c3209b54ef',1,'ara::com::entry::Entry::ValidateOption()'],['../classara_1_1com_1_1entry_1_1EventgroupEntry.html#a1e5aa6d1bfdbccea7ae912752ef060a9',1,'ara::com::entry::EventgroupEntry::ValidateOption()'],['../classara_1_1com_1_1entry_1_1ServiceEntry.html#a292e22a7b89fc0b2504bea0e9dac6358',1,'ara::com::entry::ServiceEntry::ValidateOption()']]],
+  ['value_614',['Value',['../classara_1_1core_1_1ErrorCode.html#aa435db6ffa2946b126183f1df8f3301d',1,'ara::core::ErrorCode::Value()'],['../classara_1_1core_1_1Result.html#aa3c96fb6ab572ccd4d40bb50fb10edd2',1,'ara::core::Result::Value() const &amp;'],['../classara_1_1core_1_1Result.html#a993979b4b42e055f7b4faa9f3c8b914e',1,'ara::core::Result::Value() &amp;&amp;']]],
+  ['valueor_615',['ValueOr',['../classara_1_1core_1_1Result.html#a425fe4293f35288267a083eac9df7b34',1,'ara::core::Result::ValueOr(U &amp;&amp;defaultValue) const &amp;'],['../classara_1_1core_1_1Result.html#afeb713f139110dbacd8931efeb0ea66a',1,'ara::core::Result::ValueOr(U &amp;&amp;defaultValue) &amp;&amp;']]],
+  ['valueorthrow_616',['ValueOrThrow',['../classara_1_1core_1_1Result.html#ad20fe0f158445c3c541fbe022de0cc43',1,'ara::core::Result::ValueOrThrow() const &amp;noexcept(false)'],['../classara_1_1core_1_1Result.html#ab756febc87c33c7010f8bc37c79a57c6',1,'ara::core::Result::ValueOrThrow() &amp;&amp;noexcept(false)']]]
 ];

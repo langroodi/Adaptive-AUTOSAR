@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['codetype_601',['CodeType',['../namespaceara_1_1core.html#ae7c7a32c7051ffa5a7b819da2ff2d44a',1,'ara::core']]]
+  ['codetype_634',['CodeType',['../classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752',1,'ara::core::ErrorDomain']]]
 ];
