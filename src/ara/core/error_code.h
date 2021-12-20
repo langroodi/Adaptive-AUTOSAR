@@ -12,7 +12,7 @@ namespace ara
         class ErrorCode final
         {
         private:
-            CodeType mValue;
+            ErrorDomain::CodeType mValue;
             const ErrorDomain &mDomain;
 
         public:
@@ -20,7 +20,7 @@ namespace ara
             /// @param value Error code value
             /// @param domain Error code domain
             constexpr ErrorCode(
-                CodeType value,
+                ErrorDomain::CodeType value,
                 const ErrorDomain &domain) noexcept : mValue{value}, mDomain{domain}
             {
             }
@@ -29,7 +29,7 @@ namespace ara
 
             /// @brief Get error code value
             /// @returns Raw error code value
-            constexpr CodeType Value() const noexcept
+            constexpr ErrorDomain::CodeType Value() const noexcept
             {
                 return mValue;
             }

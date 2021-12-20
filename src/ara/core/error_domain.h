@@ -8,15 +8,16 @@ namespace ara
     /// @brief ARA basic core types namespace
     namespace core
     {
-        /// @brief Alias type of the domain ID
-        using IdType = uint64_t;
-        /// @brief Alias type of the error code
-        using CodeType = uint32_t;
-
         /// @brief A class that defines the domain of an ErrorCode to avoid code interferences
         /// @note The class is literal type and it is recommended that derived classes be literal type as well.
         class ErrorDomain
         {
+        public:
+            /// @brief Alias type of the domain ID
+            using IdType = uint64_t;
+            /// @brief Alias type of the error code
+            using CodeType = uint32_t;
+
         private:
             IdType mId;
 

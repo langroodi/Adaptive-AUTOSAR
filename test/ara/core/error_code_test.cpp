@@ -25,7 +25,7 @@ namespace ara
 
         TEST(ErrorCodeTest, Constructor)
         {
-            const CodeType cRawErrorCode = 1;
+            const ErrorDomain::CodeType cRawErrorCode = 1;
             DummyErrorDomain _errorDomain;
             ErrorCode _errorCode{cRawErrorCode, _errorDomain};
 
@@ -34,7 +34,7 @@ namespace ara
 
         TEST(ErrorCodeTest, ThrowMethod)
         {
-            const CodeType cRawErrorCode = 1;
+            const ErrorDomain::CodeType cRawErrorCode = 1;
             DummyErrorDomain _errorDomain;
             ErrorCode _errorCode{cRawErrorCode, _errorDomain};
 
@@ -43,8 +43,8 @@ namespace ara
 
         TEST(ErrorCodeTest, Equality)
         {
-            const CodeType cRawErrorCode1 = 1;
-            const CodeType cRawErrorCode2 = 2;
+            const ErrorDomain::CodeType cRawErrorCode1 = 1;
+            const ErrorDomain::CodeType cRawErrorCode2 = 2;
             DummyErrorDomain _errorDomain;
 
             ErrorCode _errorCode0{cRawErrorCode1, _errorDomain};

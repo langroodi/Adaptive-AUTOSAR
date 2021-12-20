@@ -26,7 +26,7 @@ namespace ara
             }
         };
 
-        const IdType ErrorDomainTest::cTestDomainId;
+        const ErrorDomain::IdType ErrorDomainTest::cTestDomainId;
 
         TEST_F(ErrorDomainTest, Constructor)
         {
