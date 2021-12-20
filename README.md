@@ -1,7 +1,7 @@
 # Adaptive-AUTOSAR
 ![example workflow](https://github.com/langroodi/Adaptive-AUTOSAR/actions/workflows/cmake.yml/badge.svg)
 
-Adaptive AUTOSAR is a simulated _Adaptive Platform_ enviroment over Linux defined by [AUTOSAR](https://www.autosar.org/standards/adaptive-platform/). The goal of this project is to implement the interfaces defined by the standard for educational purposes.
+Adaptive AUTOSAR is a simulated _Adaptive Platform_ enviroment over Linux defined by [AUTOSAR](https://www.autosar.org/standards/adaptive-platform/). The goal of this project is to implement the interfaces defined by the standard for educational purposes. For more information, please refer to [the project Wiki](https://github.com/langroodi/Adaptive-AUTOSAR/wiki).
 
 ## Dependecies
 
@@ -15,14 +15,10 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 - Google Test: v1.11.0
 - [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary)
 
-## Project Milestones
+## Documentation
 
-- [x] CI workflow
-- [x] Doxygen documentation
-- [ ] Hardware integration (i.e., CAN-bus and LIN-bus)
-- [ ] OBD-II and DoIP
-- [ ] Replace STL with ARA Core types (e.g.,`std::future` to `ara::core::Future`)
-- [ ] MISRA certified
-- [ ] Dedicated memory allocator
-- [ ] Integration with Volvo [Extended Vehicle](https://developer.volvocars.com/volvo-api/extended-vehicle/) and [Connected Vehicle](https://developer.volvocars.com/volvo-api/connected-vehicle/) APIs
-- [ ] E2E communication protection
+Please refer to [the project GitHub pages](https://langroodi.github.io/Adaptive-AUTOSAR/) powered by Doxygen.
+
+## Contribution
+
+Please refer to [the contributing page](https://github.com/langroodi/Adaptive-AUTOSAR/blob/master/CONTRIBUTING.md).
