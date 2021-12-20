@@ -152,8 +152,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a36d40985b89bafca5abd3153c1990889"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a36d40985b89bafca5abd3153c1990889">EmplaceError</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a36d40985b89bafca5abd3153c1990889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new error from the give argument(s) and assign it to the instance error.  <a href="classara_1_1core_1_1Result.html#a36d40985b89bafca5abd3153c1990889">More...</a><br /></td></tr>
 <tr class="separator:a36d40985b89bafca5abd3153c1990889"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5068a9c75c30e7ba3713e5c868ac0ccc"><td class="memItemLeft" align="right" valign="top"><a id="a5068a9c75c30e7ba3713e5c868ac0ccc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Swap</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_constructible&lt; E &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
+<tr class="memitem:a5068a9c75c30e7ba3713e5c868ac0ccc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a5068a9c75c30e7ba3713e5c868ac0ccc">Swap</a> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_constructible&lt; E &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
+<tr class="memdesc:a5068a9c75c30e7ba3713e5c868ac0ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the current instance with another one.  <a href="classara_1_1core_1_1Result.html#a5068a9c75c30e7ba3713e5c868ac0ccc">More...</a><br /></td></tr>
 <tr class="separator:a5068a9c75c30e7ba3713e5c868ac0ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90e193cb7c0198137d0c38b964cd18c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a90e193cb7c0198137d0c38b964cd18c5">HasValue</a> () const noexcept</td></tr>
 <tr class="memdesc:a90e193cb7c0198137d0c38b964cd18c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the instance has a value or not.  <a href="classara_1_1core_1_1Result.html#a90e193cb7c0198137d0c38b964cd18c5">More...</a><br /></td></tr>
@@ -167,17 +167,29 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Swap</b> (<a class="e
 <tr class="memitem:adfe04c48a9e8dd1ddb7ecc90aa54f3ef"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#adfe04c48a9e8dd1ddb7ecc90aa54f3ef">operator-&gt;</a> () const</td></tr>
 <tr class="separator:adfe04c48a9e8dd1ddb7ecc90aa54f3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3c96fb6ab572ccd4d40bb50fb10edd2"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#aa3c96fb6ab572ccd4d40bb50fb10edd2">Value</a> () const &amp;</td></tr>
-<tr class="memdesc:aa3c96fb6ab572ccd4d40bb50fb10edd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> possible value.  <a href="classara_1_1core_1_1Result.html#aa3c96fb6ab572ccd4d40bb50fb10edd2">More...</a><br /></td></tr>
+<tr class="memdesc:aa3c96fb6ab572ccd4d40bb50fb10edd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get instance possible value.  <a href="classara_1_1core_1_1Result.html#aa3c96fb6ab572ccd4d40bb50fb10edd2">More...</a><br /></td></tr>
 <tr class="separator:aa3c96fb6ab572ccd4d40bb50fb10edd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a993979b4b42e055f7b4faa9f3c8b914e"><td class="memItemLeft" align="right" valign="top">T &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a993979b4b42e055f7b4faa9f3c8b914e">Value</a> () &amp;&amp;</td></tr>
-<tr class="memdesc:a993979b4b42e055f7b4faa9f3c8b914e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> possible value.  <a href="classara_1_1core_1_1Result.html#a993979b4b42e055f7b4faa9f3c8b914e">More...</a><br /></td></tr>
+<tr class="memdesc:a993979b4b42e055f7b4faa9f3c8b914e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get instance possible value.  <a href="classara_1_1core_1_1Result.html#a993979b4b42e055f7b4faa9f3c8b914e">More...</a><br /></td></tr>
 <tr class="separator:a993979b4b42e055f7b4faa9f3c8b914e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69b3b4c7e01381968c9c8955ba5e9667"><td class="memItemLeft" align="right" valign="top">const E &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a69b3b4c7e01381968c9c8955ba5e9667">Error</a> () const &amp;</td></tr>
-<tr class="memdesc:a69b3b4c7e01381968c9c8955ba5e9667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> possible error.  <a href="classara_1_1core_1_1Result.html#a69b3b4c7e01381968c9c8955ba5e9667">More...</a><br /></td></tr>
+<tr class="memdesc:a69b3b4c7e01381968c9c8955ba5e9667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get instance possible error.  <a href="classara_1_1core_1_1Result.html#a69b3b4c7e01381968c9c8955ba5e9667">More...</a><br /></td></tr>
 <tr class="separator:a69b3b4c7e01381968c9c8955ba5e9667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf3495f574903d537f1313a8f2dfcab4"><td class="memItemLeft" align="right" valign="top">E &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#acf3495f574903d537f1313a8f2dfcab4">Error</a> () &amp;&amp;</td></tr>
-<tr class="memdesc:acf3495f574903d537f1313a8f2dfcab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> possible error.  <a href="classara_1_1core_1_1Result.html#acf3495f574903d537f1313a8f2dfcab4">More...</a><br /></td></tr>
+<tr class="memdesc:acf3495f574903d537f1313a8f2dfcab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get instance possible error.  <a href="classara_1_1core_1_1Result.html#acf3495f574903d537f1313a8f2dfcab4">More...</a><br /></td></tr>
 <tr class="separator:acf3495f574903d537f1313a8f2dfcab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff9c2387ca0a7c140b7f1d350fade8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a4ff9c2387ca0a7c140b7f1d350fade8d">Ok</a> () const &amp;</td></tr>
+<tr class="memdesc:a4ff9c2387ca0a7c140b7f1d350fade8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get optional instance value.  <a href="classara_1_1core_1_1Result.html#a4ff9c2387ca0a7c140b7f1d350fade8d">More...</a><br /></td></tr>
+<tr class="separator:a4ff9c2387ca0a7c140b7f1d350fade8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7abf1433f1bb613d141496c2f534429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#af7abf1433f1bb613d141496c2f534429">Ok</a> () &amp;&amp;</td></tr>
+<tr class="memdesc:af7abf1433f1bb613d141496c2f534429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get optional instance value.  <a href="classara_1_1core_1_1Result.html#af7abf1433f1bb613d141496c2f534429">More...</a><br /></td></tr>
+<tr class="separator:af7abf1433f1bb613d141496c2f534429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adada207e5faf8f2d0fa7888c4820ae3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; E &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#adada207e5faf8f2d0fa7888c4820ae3d">Err</a> () const &amp;</td></tr>
+<tr class="memdesc:adada207e5faf8f2d0fa7888c4820ae3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get optional instance error.  <a href="classara_1_1core_1_1Result.html#adada207e5faf8f2d0fa7888c4820ae3d">More...</a><br /></td></tr>
+<tr class="separator:adada207e5faf8f2d0fa7888c4820ae3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38367c1e3382fe009b3cafc63fa7343e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; E &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a38367c1e3382fe009b3cafc63fa7343e">Err</a> () &amp;&amp;</td></tr>
+<tr class="memdesc:a38367c1e3382fe009b3cafc63fa7343e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get optional instance error.  <a href="classara_1_1core_1_1Result.html#a38367c1e3382fe009b3cafc63fa7343e">More...</a><br /></td></tr>
+<tr class="separator:a38367c1e3382fe009b3cafc63fa7343e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a425fe4293f35288267a083eac9df7b34"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
 <tr class="memitem:a425fe4293f35288267a083eac9df7b34"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a425fe4293f35288267a083eac9df7b34">ValueOr</a> (U &amp;&amp;defaultValue) const &amp;</td></tr>
 <tr class="memdesc:a425fe4293f35288267a083eac9df7b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance value or the default value.  <a href="classara_1_1core_1_1Result.html#a425fe4293f35288267a083eac9df7b34">More...</a><br /></td></tr>
@@ -401,6 +413,66 @@ template&lt;typename... Args&gt; </div>
 
 </div>
 </div>
+<a id="a38367c1e3382fe009b3cafc63fa7343e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38367c1e3382fe009b3cafc63fa7343e">&#9670;&nbsp;</a></span>Err() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E  = ErrorCode&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt;E&gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::Err </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get optional instance error. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> eror </dd></dl>
+
+</div>
+</div>
+<a id="adada207e5faf8f2d0fa7888c4820ae3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adada207e5faf8f2d0fa7888c4820ae3d">&#9670;&nbsp;</a></span>Err() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E  = ErrorCode&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt;E&gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::Err </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get optional instance error. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> eror </dd></dl>
+
+</div>
+</div>
 <a id="acf3495f574903d537f1313a8f2dfcab4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf3495f574903d537f1313a8f2dfcab4">&#9670;&nbsp;</a></span>Error() <span class="overload">[1/2]</span></h2>
 
@@ -426,11 +498,11 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> possible error. </p>
+<p>Get instance possible error. </p>
 <dl class="section return"><dt>Returns</dt><dd>Movable error </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no error </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no error </td></tr>
   </table>
   </dd>
 </dl>
@@ -462,11 +534,11 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> possible error. </p>
+<p>Get instance possible error. </p>
 <dl class="section return"><dt>Returns</dt><dd>Copied error </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no error </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no error </td></tr>
   </table>
   </dd>
 </dl>
@@ -737,6 +809,66 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 
 </div>
 </div>
+<a id="af7abf1433f1bb613d141496c2f534429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7abf1433f1bb613d141496c2f534429">&#9670;&nbsp;</a></span>Ok() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E  = ErrorCode&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt;T&gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::Ok </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get optional instance value. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> value </dd></dl>
+
+</div>
+</div>
+<a id="a4ff9c2387ca0a7c140b7f1d350fade8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff9c2387ca0a7c140b7f1d350fade8d">&#9670;&nbsp;</a></span>Ok() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E  = ErrorCode&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt;T&gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::Ok </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get optional instance value. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> value </dd></dl>
+
+</div>
+</div>
 <a id="a88945485227813c2c7e3f82dbc0bdc89"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88945485227813c2c7e3f82dbc0bdc89">&#9670;&nbsp;</a></span>operator bool()</h2>
 
@@ -761,7 +893,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>True if has a value and false if it contains an error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the instance has a value and false if it contains an error </dd></dl>
 
 </div>
 </div>
@@ -792,7 +924,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Movable value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -826,7 +958,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Copied value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -860,7 +992,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Constant value pointer </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -912,6 +1044,42 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
+<a id="a5068a9c75c30e7ba3713e5c868ac0ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5068a9c75c30e7ba3713e5c868ac0ccc">&#9670;&nbsp;</a></span>Swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename E  = ErrorCode&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::Swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; T, E &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swap the current instance with another one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> for swapping </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a993979b4b42e055f7b4faa9f3c8b914e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a993979b4b42e055f7b4faa9f3c8b914e">&#9670;&nbsp;</a></span>Value() <span class="overload">[1/2]</span></h2>
 
@@ -937,11 +1105,11 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> possible value. </p>
+<p>Get instance possible value. </p>
 <dl class="section return"><dt>Returns</dt><dd>Movable value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -973,11 +1141,11 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> possible value. </p>
+<p>Get instance possible value. </p>
 <dl class="section return"><dt>Returns</dt><dd>Copied value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1103,7 +1271,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Movable value if exists </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1140,7 +1308,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Copied value if exists </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>

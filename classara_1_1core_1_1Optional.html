@@ -102,40 +102,458 @@ $(document).ready(function(){initNavTree('classara_1_1core_1_1Optional.html','')
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ace51937a135927d68bc6a4589dabbd30"><td class="memItemLeft" align="right" valign="top"><a id="ace51937a135927d68bc6a4589dabbd30"></a>
-constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>Optional</b> (T &amp;&amp;value) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value)</td></tr>
-<tr class="separator:ace51937a135927d68bc6a4589dabbd30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28ead5b296ef23fbc4ce25fb2b9bb70e"><td class="memItemLeft" align="right" valign="top"><a id="a28ead5b296ef23fbc4ce25fb2b9bb70e"></a>
-constexpr <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;other)</td></tr>
-<tr class="separator:a28ead5b296ef23fbc4ce25fb2b9bb70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af963bed02e80da0fd94e23cec72cd0d7"><td class="memItemLeft" align="right" valign="top"><a id="af963bed02e80da0fd94e23cec72cd0d7"></a>
-constexpr <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;&amp;other) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value)</td></tr>
-<tr class="separator:af963bed02e80da0fd94e23cec72cd0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae897e6192b424baf4c08e8caf340043c"><td class="memItemLeft" align="right" valign="top"><a id="ae897e6192b424baf4c08e8caf340043c"></a>
-constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const &amp;</td></tr>
-<tr class="separator:ae897e6192b424baf4c08e8caf340043c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3d4569cb074078866f6cfc5646be55f"><td class="memItemLeft" align="right" valign="top"><a id="af3d4569cb074078866f6cfc5646be55f"></a>
-constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () &amp;</td></tr>
-<tr class="separator:af3d4569cb074078866f6cfc5646be55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6bedb132da77a3789d3afe256c52cf7"><td class="memItemLeft" align="right" valign="top"><a id="ad6bedb132da77a3789d3afe256c52cf7"></a>
-constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () const noexcept</td></tr>
+<tr class="memitem:ae2069b6c1c34676895cf09664133ee76"><td class="memItemLeft" align="right" valign="top"><a id="ae2069b6c1c34676895cf09664133ee76"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Optional</b> (const T &amp;value)</td></tr>
+<tr class="separator:ae2069b6c1c34676895cf09664133ee76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8fc2f27127f37b092776e59c4e47e13"><td class="memItemLeft" align="right" valign="top"><a id="ad8fc2f27127f37b092776e59c4e47e13"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Optional</b> (T &amp;&amp;value)</td></tr>
+<tr class="separator:ad8fc2f27127f37b092776e59c4e47e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae384b140f675f733ed716fa16e81920f"><td class="memItemLeft" align="right" valign="top"><a id="ae384b140f675f733ed716fa16e81920f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Optional</b> (const <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;other)</td></tr>
+<tr class="separator:ae384b140f675f733ed716fa16e81920f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3304ec54d5796b36c876ab700ad7c525"><td class="memItemLeft" align="right" valign="top"><a id="a3304ec54d5796b36c876ab700ad7c525"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Optional</b> (<a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;&amp;other) noexcept(std::is_nothrow_move_assignable&lt; T &gt;::value)</td></tr>
+<tr class="separator:a3304ec54d5796b36c876ab700ad7c525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8e3dad9e51cbf2fe14effae222faff6"><td class="memItemLeft" align="right" valign="top"><a id="af8e3dad9e51cbf2fe14effae222faff6"></a>
+<a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;other)</td></tr>
+<tr class="separator:af8e3dad9e51cbf2fe14effae222faff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae23b632be589a4d26ae2bfd5b0d713a"><td class="memItemLeft" align="right" valign="top"><a id="aae23b632be589a4d26ae2bfd5b0d713a"></a>
+constexpr <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;&amp;other) noexcept(std::is_nothrow_move_assignable&lt; T &gt;::value)</td></tr>
+<tr class="separator:aae23b632be589a4d26ae2bfd5b0d713a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff171daf7911b3e9c96d0de3aaf8dd7"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a9ff171daf7911b3e9c96d0de3aaf8dd7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a9ff171daf7911b3e9c96d0de3aaf8dd7">Emplace</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a9ff171daf7911b3e9c96d0de3aaf8dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new value from the give argument(s) and assign it to the instance value.  <a href="classara_1_1core_1_1Optional.html#a9ff171daf7911b3e9c96d0de3aaf8dd7">More...</a><br /></td></tr>
+<tr class="separator:a9ff171daf7911b3e9c96d0de3aaf8dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a281b1c0b8357a5acab371409c5c9c82a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a281b1c0b8357a5acab371409c5c9c82a">Swap</a> (<a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;other) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value)</td></tr>
+<tr class="memdesc:a281b1c0b8357a5acab371409c5c9c82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the current instance with another one.  <a href="classara_1_1core_1_1Optional.html#a281b1c0b8357a5acab371409c5c9c82a">More...</a><br /></td></tr>
+<tr class="separator:a281b1c0b8357a5acab371409c5c9c82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a386a36862137c2beda1f5a5797900c9b"><td class="memItemLeft" align="right" valign="top"><a id="a386a36862137c2beda1f5a5797900c9b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b">Reset</a> () noexcept</td></tr>
+<tr class="memdesc:a386a36862137c2beda1f5a5797900c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the instance value. <br /></td></tr>
+<tr class="separator:a386a36862137c2beda1f5a5797900c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb8db08215d41172c145fc4075e1718"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a5fb8db08215d41172c145fc4075e1718">HasValue</a> () const noexcept</td></tr>
+<tr class="memdesc:a5fb8db08215d41172c145fc4075e1718"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the instance has a value or not.  <a href="classara_1_1core_1_1Optional.html#a5fb8db08215d41172c145fc4075e1718">More...</a><br /></td></tr>
+<tr class="separator:a5fb8db08215d41172c145fc4075e1718"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6bedb132da77a3789d3afe256c52cf7"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#ad6bedb132da77a3789d3afe256c52cf7">operator bool</a> () const noexcept</td></tr>
 <tr class="separator:ad6bedb132da77a3789d3afe256c52cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae91721e2c75a3bee821ca436c3f54e83"><td class="memItemLeft" align="right" valign="top"><a id="ae91721e2c75a3bee821ca436c3f54e83"></a>
-constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_value</b> () const noexcept</td></tr>
-<tr class="separator:ae91721e2c75a3bee821ca436c3f54e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb9203935bea5c84195b410cee4a64db"><td class="memItemLeft" align="right" valign="top"><a id="adb9203935bea5c84195b410cee4a64db"></a>
-constexpr const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> () const &amp;</td></tr>
-<tr class="separator:adb9203935bea5c84195b410cee4a64db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae81ef81882c62371662b9caa623a8b8d"><td class="memItemLeft" align="right" valign="top"><a id="ae81ef81882c62371662b9caa623a8b8d"></a>
-constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> () &amp;</td></tr>
-<tr class="separator:ae81ef81882c62371662b9caa623a8b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14413a0c8692f0fbc22923488aa0a43f"><td class="memItemLeft" align="right" valign="top"><a id="a14413a0c8692f0fbc22923488aa0a43f"></a>
-constexpr T&#160;</td><td class="memItemRight" valign="bottom"><b>value_or</b> (T &amp;&amp;defaultValue) const &amp;</td></tr>
-<tr class="separator:a14413a0c8692f0fbc22923488aa0a43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84f828b84e97bf2ec66adc7fbb9af4f"><td class="memItemLeft" align="right" valign="top"><a id="ae84f828b84e97bf2ec66adc7fbb9af4f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> () noexcept</td></tr>
-<tr class="separator:ae84f828b84e97bf2ec66adc7fbb9af4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a645481dc74d820be7fdd8e35e56539ce"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a645481dc74d820be7fdd8e35e56539ce">operator*</a> () const &amp;</td></tr>
+<tr class="separator:a645481dc74d820be7fdd8e35e56539ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289bc55faa6b9d43ae557e28c9cf9a58"><td class="memItemLeft" align="right" valign="top">T &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a289bc55faa6b9d43ae557e28c9cf9a58">operator*</a> () &amp;&amp;</td></tr>
+<tr class="separator:a289bc55faa6b9d43ae557e28c9cf9a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874abb0f9f724534af926e7d405aec08"><td class="memItemLeft" align="right" valign="top">const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a874abb0f9f724534af926e7d405aec08">operator-&gt;</a> () const</td></tr>
+<tr class="separator:a874abb0f9f724534af926e7d405aec08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21061a0dcc21ef952df6019d39630f4e"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a21061a0dcc21ef952df6019d39630f4e">Value</a> () const &amp;</td></tr>
+<tr class="memdesc:a21061a0dcc21ef952df6019d39630f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get instance possible value.  <a href="classara_1_1core_1_1Optional.html#a21061a0dcc21ef952df6019d39630f4e">More...</a><br /></td></tr>
+<tr class="separator:a21061a0dcc21ef952df6019d39630f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390175774131d01453d964d7c822bb87"><td class="memItemLeft" align="right" valign="top">T &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a390175774131d01453d964d7c822bb87">Value</a> () &amp;&amp;</td></tr>
+<tr class="memdesc:a390175774131d01453d964d7c822bb87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get instance possible value.  <a href="classara_1_1core_1_1Optional.html#a390175774131d01453d964d7c822bb87">More...</a><br /></td></tr>
+<tr class="separator:a390175774131d01453d964d7c822bb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3b010aa9f7f78043516f0e8e8f5078"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a9a3b010aa9f7f78043516f0e8e8f5078"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a9a3b010aa9f7f78043516f0e8e8f5078">ValueOr</a> (U &amp;&amp;defaultValue) const &amp;</td></tr>
+<tr class="memdesc:a9a3b010aa9f7f78043516f0e8e8f5078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance value or the default value.  <a href="classara_1_1core_1_1Optional.html#a9a3b010aa9f7f78043516f0e8e8f5078">More...</a><br /></td></tr>
+<tr class="separator:a9a3b010aa9f7f78043516f0e8e8f5078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc67a259226315d32d6380c8d83197a4"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:adc67a259226315d32d6380c8d83197a4"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#adc67a259226315d32d6380c8d83197a4">ValueOr</a> (U &amp;&amp;defaultValue) &amp;&amp;</td></tr>
+<tr class="memdesc:adc67a259226315d32d6380c8d83197a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance value or the default value.  <a href="classara_1_1core_1_1Optional.html#adc67a259226315d32d6380c8d83197a4">More...</a><br /></td></tr>
+<tr class="separator:adc67a259226315d32d6380c8d83197a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9ff171daf7911b3e9c96d0de3aaf8dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ff171daf7911b3e9c96d0de3aaf8dd7">&#9670;&nbsp;</a></span>Emplace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::Emplace </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new value from the give argument(s) and assign it to the instance value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Argument(s) to construct a new value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5fb8db08215d41172c145fc4075e1718"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb8db08215d41172c145fc4075e1718">&#9670;&nbsp;</a></span>HasValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::HasValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicate whether the instance has a value or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if has a value, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="ad6bedb132da77a3789d3afe256c52cf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6bedb132da77a3789d3afe256c52cf7">&#9670;&nbsp;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if the instance has a value, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a289bc55faa6b9d43ae557e28c9cf9a58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289bc55faa6b9d43ae557e28c9cf9a58">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp;&amp; <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Movable value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a645481dc74d820be7fdd8e35e56539ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a645481dc74d820be7fdd8e35e56539ce">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Copied value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a874abb0f9f724534af926e7d405aec08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874abb0f9f724534af926e7d405aec08">&#9670;&nbsp;</a></span>operator-&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T* <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Constant value pointer </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a281b1c0b8357a5acab371409c5c9c82a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a281b1c0b8357a5acab371409c5c9c82a">&#9670;&nbsp;</a></span>Swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::Swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swap the current instance with another one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> for swapping </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a390175774131d01453d964d7c822bb87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390175774131d01453d964d7c822bb87">&#9670;&nbsp;</a></span>Value() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp;&amp; <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::Value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get instance possible value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Movable value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a21061a0dcc21ef952df6019d39630f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21061a0dcc21ef952df6019d39630f4e">&#9670;&nbsp;</a></span>Value() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const T&amp; <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::Value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get instance possible value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Copied value </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc67a259226315d32d6380c8d83197a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc67a259226315d32d6380c8d83197a4">&#9670;&nbsp;</a></span>ValueOr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::ValueOr </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramname"><em>defaultValue</em></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the instance value or the default value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">U</td><td>Default value type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>Value to be return in absence of the instance value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Instance value if exists, otherwise the default value </dd></dl>
+
+</div>
+</div>
+<a id="a9a3b010aa9f7f78043516f0e8e8f5078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3b010aa9f7f78043516f0e8e8f5078">&#9670;&nbsp;</a></span>ValueOr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classara_1_1core_1_1Optional.html">ara::core::Optional</a>&lt; T &gt;::ValueOr </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&amp;&#160;</td>
+          <td class="paramname"><em>defaultValue</em></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the instance value or the default value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">U</td><td>Default value type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>Value to be return in absence of the instance value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Instance value if exists, otherwise the default value </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
