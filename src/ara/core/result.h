@@ -62,7 +62,7 @@ namespace ara
             {
             }
 
-            Result(T &&t) : mValue{std::move(t)},
+            Result(T &&t) : mValue{t},
                             mHasValue{false}
             {
             }
@@ -73,7 +73,7 @@ namespace ara
             {
             }
 
-            explicit Result(E &&e) : mError{std::move(e)},
+            explicit Result(E &&e) : mError{e},
                                      // Result cannot contain both value and error at the same time.
                                      mHasValue{false}
             {
@@ -105,7 +105,7 @@ namespace ara
             /// @param t Result value
             static Result FromValue(T &&t)
             {
-                Result _result{std::move(t)};
+                Result _result{t};
                 return _result;
             }
 
@@ -121,7 +121,7 @@ namespace ara
             /// @param e Result error
             static Result FromError(E &&e)
             {
-                Result _result{std::move(e)};
+                Result _result{e};
                 return _result;
             }
 
