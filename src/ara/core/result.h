@@ -1,10 +1,8 @@
 #ifndef RESULT_H
 #define RESULT_H
 
-#include <type_traits>
-#include <utility>
-#include <stdexcept>
 #include "./error_code.h"
+#include "./optional.h"
 
 namespace ara
 {
@@ -157,6 +155,8 @@ namespace ara
                 mHasValue = false;
             }
 
+            /// @brief Swap the current instance with another one
+            /// @param other Another Result for swapping
             void Swap(Result &other) noexcept(
                 std::is_nothrow_move_constructible<T>::value &&
                     std::is_nothrow_move_assignable<T>::value &&
@@ -173,14 +173,14 @@ namespace ara
                 return mHasValue;
             }
 
-            /// @returns True if has a value and false if it contains an error
+            /// @returns True if the instance has a value and false if it contains an error
             explicit operator bool() const noexcept
             {
                 return mHasValue;
             }
 
             /// @returns Copied value
-            /// @throws std::logic_error Throws if there is no value
+            /// @throws std::bad_exception Throws if there is no value
             const T &operator*() const &
             {
                 if (mHasValue)
@@ -189,12 +189,12 @@ namespace ara
                 }
                 else
                 {
-                    throw std::logic_error("Result contains no value.");
+                    throw std::bad_exception("Result contains no value.");
                 }
             }
 
             /// @returns Movable value
-            /// @throws std::logic_error Throws if there is no value
+            /// @throws std::bad_exception Throws if there is no value
             T &&operator*() &&
             {
                 if (mHasValue)
@@ -203,12 +203,12 @@ namespace ara
                 }
                 else
                 {
-                    throw std::logic_error("Result contains no value.");
+                    throw std::bad_exception("Result contains no value.");
                 }
             }
 
             /// @returns Constant value pointer
-            /// @throws std::logic_error Throws if there is no value
+            /// @throws std::bad_exception Throws if there is no value
             const T *operator->() const
             {
                 if (mHasValue)
@@ -217,13 +217,13 @@ namespace ara
                 }
                 else
                 {
-                    throw std::logic_error("Result contains no value.");
+                    throw std::bad_exception("Result contains no value.");
                 }
             }
 
-            /// @brief Get Result possible value
+            /// @brief Get instance possible value
             /// @returns Copied value
-            /// @throws std::logic_error Throws if there is no value
+            /// @throws std::bad_exception Throws if there is no value
             const T &Value() const &
             {
                 if (mHasValue)
@@ -232,13 +232,13 @@ namespace ara
                 }
                 else
                 {
-                    throw std::logic_error("Result contains no value.");
+                    throw std::bad_exception("Result contains no value.");
                 }
             }
 
-            /// @brief Get Result possible value
+            /// @brief Get instance possible value
             /// @returns Movable value
-            /// @throws std::logic_error Throws if there is no value
+            /// @throws std::bad_exception Throws if there is no value
             T &&Value() &&
             {
                 if (mHasValue)
@@ -247,18 +247,18 @@ namespace ara
                 }
                 else
                 {
-                    throw std::logic_error("Result contains no value.");
+                    throw std::bad_exception("Result contains no value.");
                 }
             }
 
-            /// @brief Get Result possible error
+            /// @brief Get instance possible error
             /// @returns Copied error
-            /// @throws std::logic_error Throws if there is no error
+            /// @throws std::bad_exception Throws if there is no error
             const E &Error() const &
             {
                 if (mHasValue)
                 {
-                    throw std::logic_error("Result contains no error.");
+                    throw std::bad_exception("Result contains no error.");
                 }
                 else
                 {
@@ -266,19 +266,75 @@ namespace ara
                 }
             }
 
-            /// @brief Get Result possible error
+            /// @brief Get instance possible error
             /// @returns Movable error
-            /// @throws std::logic_error Throws if there is no error
+            /// @throws std::bad_exception Throws if there is no error
             E &&Error() &&
             {
                 if (mHasValue)
                 {
-                    throw std::logic_error("Result contains no error.");
+                    throw std::bad_exception("Result contains no error.");
                 }
                 else
                 {
                     return std::move(mError);
                 }
+            }
+
+            /// @brief Get optional instance value
+            /// @returns Optional value
+            Optional<T> Ok() const &
+            {
+                Optional<T> _result;
+
+                if (mHasValue)
+                {
+                    _result = mValue;
+                }
+
+                return _result;
+            }
+
+            /// @brief Get optional instance value
+            /// @returns Optional value
+            Optional<T> Ok() &&
+            {
+                Optional<T> _result;
+
+                if (mHasValue)
+                {
+                    _result = std::move(mValue);
+                }
+
+                return _result;
+            }
+
+            /// @brief Get optional instance error
+            /// @returns Optional eror
+            Optional<E> Err() const &
+            {
+                Optional<E> _result;
+
+                if (!mHasValue)
+                {
+                    _result = mError;
+                }
+
+                return _result;
+            }
+
+            /// @brief Get optional instance error
+            /// @returns Optional eror
+            Optional<E> Err() &&
+            {
+                Optional<E> _result;
+
+                if (!mHasValue)
+                {
+                    _result = std::move(mError);
+                }
+
+                return _result;
             }
 
             /// @brief Get the instance value or the default value
@@ -369,7 +425,7 @@ namespace ara
 
             /// @brief Get instance possible value or throw an exception
             /// @returns Copied value if exists
-            /// @throws std::logic_error Throws if there is no value
+            /// @throws std::bad_exception Throws if there is no value
             const T &ValueOrThrow() const &noexcept(false)
             {
                 return Value();
@@ -377,7 +433,7 @@ namespace ara
 
             /// @brief Get instance possible value or throw an exception
             /// @returns Movable value if exists
-            /// @throws std::logic_error Throws if there is no value
+            /// @throws std::bad_exception Throws if there is no value
             T &&ValueOrThrow() &&noexcept(false)
             {
                 /// @todo Check if the correct overload will be called or not
