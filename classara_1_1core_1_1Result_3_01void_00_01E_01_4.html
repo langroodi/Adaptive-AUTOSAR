@@ -101,61 +101,791 @@ $(document).ready(function(){initNavTree('classara_1_1core_1_1Result_3_01void_00
 <div class="title">ara::core::Result&lt; void, E &gt; Class Template Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A wrapper around the callee's possible error.  
+ <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="result_8h_source.html">result.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:af7bc88db20232dba8a06e10f7eb22843"><td class="memItemLeft" align="right" valign="top"><a id="af7bc88db20232dba8a06e10f7eb22843"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b> = void</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#af7bc88db20232dba8a06e10f7eb22843">value_type</a> = void</td></tr>
+<tr class="memdesc:af7bc88db20232dba8a06e10f7eb22843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Void value type alias. <br /></td></tr>
 <tr class="separator:af7bc88db20232dba8a06e10f7eb22843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16810845d1e2c4029812478a98c97e42"><td class="memItemLeft" align="right" valign="top"><a id="a16810845d1e2c4029812478a98c97e42"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>error_type</b> = E</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a16810845d1e2c4029812478a98c97e42">error_type</a> = E</td></tr>
+<tr class="memdesc:a16810845d1e2c4029812478a98c97e42"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> error type alias. <br /></td></tr>
 <tr class="separator:a16810845d1e2c4029812478a98c97e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a91b43a3e75663b93f2b2f907b940ebe1"><td class="memItemLeft" align="right" valign="top"><a id="a91b43a3e75663b93f2b2f907b940ebe1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const E &amp;e)</td></tr>
-<tr class="separator:a91b43a3e75663b93f2b2f907b940ebe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc72a6ee56f76382cb71b68102b1a35"><td class="memItemLeft" align="right" valign="top"><a id="adbc72a6ee56f76382cb71b68102b1a35"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (E &amp;&amp;e)</td></tr>
-<tr class="separator:adbc72a6ee56f76382cb71b68102b1a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83423e7ad79de5a59812ac1c5e8e2433"><td class="memItemLeft" align="right" valign="top"><a id="a83423e7ad79de5a59812ac1c5e8e2433"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const <a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other)</td></tr>
-<tr class="separator:a83423e7ad79de5a59812ac1c5e8e2433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d3dcd125e7cce7fe6e3e458efddd552"><td class="memItemLeft" align="right" valign="top"><a id="a5d3dcd125e7cce7fe6e3e458efddd552"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&amp;other) noexcept(std::is_nothrow_move_constructible&lt; E &gt;::value)</td></tr>
-<tr class="separator:a5d3dcd125e7cce7fe6e3e458efddd552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c5391b954cda80debb58b5440d63b38"><td class="memItemLeft" align="right" valign="top"><a id="a8c5391b954cda80debb58b5440d63b38"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> const &amp;other)</td></tr>
-<tr class="separator:a8c5391b954cda80debb58b5440d63b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84b629d4c3fed6527c7cb9802092bed5"><td class="memItemLeft" align="right" valign="top"><a id="a84b629d4c3fed6527c7cb9802092bed5"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&amp;other) noexcept(std::is_nothrow_move_constructible&lt; E &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
-<tr class="separator:a84b629d4c3fed6527c7cb9802092bed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada86b88f508c93b813a27f1c885fb12e"><td class="memItemLeft" align="right" valign="top"><a id="ada86b88f508c93b813a27f1c885fb12e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Swap</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other) noexcept(std::is_nothrow_move_constructible&lt; E &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
-<tr class="separator:ada86b88f508c93b813a27f1c885fb12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d5d6ec1b136719441ae28aedcd53aee"><td class="memItemLeft" align="right" valign="top"><a id="a4d5d6ec1b136719441ae28aedcd53aee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () const noexcept</td></tr>
-<tr class="separator:a4d5d6ec1b136719441ae28aedcd53aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8bd1615a7ce2f01dd4d4b719f5e4c38"><td class="memItemLeft" align="right" valign="top"><a id="ac8bd1615a7ce2f01dd4d4b719f5e4c38"></a>
-const E &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Error</b> () const &amp;</td></tr>
+<tr class="memitem:af2cf8409f2a03b14ddae46c967af492e"><td class="memItemLeft" align="right" valign="top"><a id="af2cf8409f2a03b14ddae46c967af492e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const E &amp;e) noexcept(std::is_nothrow_copy_constructible&lt; E &gt;::value)</td></tr>
+<tr class="separator:af2cf8409f2a03b14ddae46c967af492e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a294bb44c2cafa49956a5e11c90bfb553"><td class="memItemLeft" align="right" valign="top"><a id="a294bb44c2cafa49956a5e11c90bfb553"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (E &amp;&amp;e) noexcept(std::is_nothrow_move_constructible&lt; E &gt;::value)</td></tr>
+<tr class="separator:a294bb44c2cafa49956a5e11c90bfb553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046658627455ea3d7000a68afb657afa"><td class="memItemLeft" align="right" valign="top"><a id="a046658627455ea3d7000a68afb657afa"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const <a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other) noexcept(std::is_nothrow_copy_assignable&lt; E &gt;::value)</td></tr>
+<tr class="separator:a046658627455ea3d7000a68afb657afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20657b7b601bcb0a15d0d2d9c687617c"><td class="memItemLeft" align="right" valign="top"><a id="a20657b7b601bcb0a15d0d2d9c687617c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&amp;other) noexcept(std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
+<tr class="separator:a20657b7b601bcb0a15d0d2d9c687617c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba75adf5746fe3df8fdec0d58e62268"><td class="memItemLeft" align="right" valign="top"><a id="a7ba75adf5746fe3df8fdec0d58e62268"></a>
+<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> const &amp;other) noexcept(std::is_nothrow_copy_assignable&lt; E &gt;::value)</td></tr>
+<tr class="separator:a7ba75adf5746fe3df8fdec0d58e62268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a850738a07298d40efa58d38e567e7502"><td class="memItemLeft" align="right" valign="top"><a id="a850738a07298d40efa58d38e567e7502"></a>
+<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&amp;other) noexcept(std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
+<tr class="separator:a850738a07298d40efa58d38e567e7502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac312d86cbbfb1196a39c03898d33e687"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ac312d86cbbfb1196a39c03898d33e687"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ac312d86cbbfb1196a39c03898d33e687">EmplaceError</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ac312d86cbbfb1196a39c03898d33e687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new error from the give argument(s) and assign it to the instance error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ac312d86cbbfb1196a39c03898d33e687">More...</a><br /></td></tr>
+<tr class="separator:ac312d86cbbfb1196a39c03898d33e687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6255206051b3bd16ea45df77c1021115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a6255206051b3bd16ea45df77c1021115">Swap</a> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other) noexcept(std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
+<tr class="memdesc:a6255206051b3bd16ea45df77c1021115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the current instance with another one.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a6255206051b3bd16ea45df77c1021115">More...</a><br /></td></tr>
+<tr class="separator:a6255206051b3bd16ea45df77c1021115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04107d1692e1dad2a17bb8d5acebd579"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a04107d1692e1dad2a17bb8d5acebd579">HasValue</a> () const noexcept</td></tr>
+<tr class="memdesc:a04107d1692e1dad2a17bb8d5acebd579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate that the instance contains no value.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a04107d1692e1dad2a17bb8d5acebd579">More...</a><br /></td></tr>
+<tr class="separator:a04107d1692e1dad2a17bb8d5acebd579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4716735f7910f6a7c127fa2689c5c4"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aaa4716735f7910f6a7c127fa2689c5c4">operator bool</a> () const noexcept</td></tr>
+<tr class="separator:aaa4716735f7910f6a7c127fa2689c5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4910a9bce102a546598cc7505081bd9e"><td class="memItemLeft" align="right" valign="top"><a id="a4910a9bce102a546598cc7505081bd9e"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const noexcept</td></tr>
+<tr class="separator:a4910a9bce102a546598cc7505081bd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff1850a18555e35fef026f44cd41e08"><td class="memItemLeft" align="right" valign="top"><a id="a6ff1850a18555e35fef026f44cd41e08"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><b>operator-&gt;</b> () const noexcept</td></tr>
+<tr class="separator:a6ff1850a18555e35fef026f44cd41e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca16984cba729d443b2a4be7f61aec28"><td class="memItemLeft" align="right" valign="top"><a id="aca16984cba729d443b2a4be7f61aec28"></a>
+constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aca16984cba729d443b2a4be7f61aec28">Value</a> () const noexcept</td></tr>
+<tr class="memdesc:aca16984cba729d443b2a4be7f61aec28"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function does nothing. <br /></td></tr>
+<tr class="separator:aca16984cba729d443b2a4be7f61aec28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8bd1615a7ce2f01dd4d4b719f5e4c38"><td class="memItemLeft" align="right" valign="top">const E &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ac8bd1615a7ce2f01dd4d4b719f5e4c38">Error</a> () const &amp;</td></tr>
+<tr class="memdesc:ac8bd1615a7ce2f01dd4d4b719f5e4c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get instance possible error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ac8bd1615a7ce2f01dd4d4b719f5e4c38">More...</a><br /></td></tr>
 <tr class="separator:ac8bd1615a7ce2f01dd4d4b719f5e4c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a815c148d955533ed65ad43043ac73b5c"><td class="memItemLeft" align="right" valign="top"><a id="a815c148d955533ed65ad43043ac73b5c"></a>
-E &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Error</b> () &amp;&amp;</td></tr>
+<tr class="memitem:a815c148d955533ed65ad43043ac73b5c"><td class="memItemLeft" align="right" valign="top">E &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a815c148d955533ed65ad43043ac73b5c">Error</a> () &amp;&amp;</td></tr>
+<tr class="memdesc:a815c148d955533ed65ad43043ac73b5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get instance possible error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a815c148d955533ed65ad43043ac73b5c">More...</a><br /></td></tr>
 <tr class="separator:a815c148d955533ed65ad43043ac73b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f6f3f1deb29d9a54701fd842860b6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; E &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a73f6f3f1deb29d9a54701fd842860b6e">Err</a> () const &amp;</td></tr>
+<tr class="memdesc:a73f6f3f1deb29d9a54701fd842860b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get optional instance error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a73f6f3f1deb29d9a54701fd842860b6e">More...</a><br /></td></tr>
+<tr class="separator:a73f6f3f1deb29d9a54701fd842860b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a633583ef06ca1b69a14c2efe016c4e9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; E &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a633583ef06ca1b69a14c2efe016c4e9a">Err</a> () &amp;&amp;</td></tr>
+<tr class="memdesc:a633583ef06ca1b69a14c2efe016c4e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get optional instance error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a633583ef06ca1b69a14c2efe016c4e9a">More...</a><br /></td></tr>
+<tr class="separator:a633583ef06ca1b69a14c2efe016c4e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9af25785a80a31be04f2dea9a59cb48"><td class="memTemplParams" colspan="2"><a id="ae9af25785a80a31be04f2dea9a59cb48"></a>
+template&lt;typename U &gt; </td></tr>
+<tr class="memitem:ae9af25785a80a31be04f2dea9a59cb48"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ae9af25785a80a31be04f2dea9a59cb48">ValueOr</a> (U &amp;&amp;defaultValue) const noexcept</td></tr>
+<tr class="memdesc:ae9af25785a80a31be04f2dea9a59cb48"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function does nothing. <br /></td></tr>
+<tr class="separator:ae9af25785a80a31be04f2dea9a59cb48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b0d99bbeb56c967b2a545f08a214067"><td class="memTemplParams" colspan="2">template&lt;typename G &gt; </td></tr>
+<tr class="memitem:a9b0d99bbeb56c967b2a545f08a214067"><td class="memTemplItemLeft" align="right" valign="top">E&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a9b0d99bbeb56c967b2a545f08a214067">ErrorOr</a> (G &amp;&amp;defaultError) const &amp;</td></tr>
+<tr class="memdesc:a9b0d99bbeb56c967b2a545f08a214067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance error or the default error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a9b0d99bbeb56c967b2a545f08a214067">More...</a><br /></td></tr>
+<tr class="separator:a9b0d99bbeb56c967b2a545f08a214067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41251f86ed84989cd70f265979a5a0e"><td class="memTemplParams" colspan="2">template&lt;typename G &gt; </td></tr>
+<tr class="memitem:aa41251f86ed84989cd70f265979a5a0e"><td class="memTemplItemLeft" align="right" valign="top">E&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aa41251f86ed84989cd70f265979a5a0e">ErrorOr</a> (G &amp;&amp;defaultError) &amp;&amp;</td></tr>
+<tr class="memdesc:aa41251f86ed84989cd70f265979a5a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance error or the default error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aa41251f86ed84989cd70f265979a5a0e">More...</a><br /></td></tr>
+<tr class="separator:aa41251f86ed84989cd70f265979a5a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a750a475b37e39a167afbcda057866e5c"><td class="memTemplParams" colspan="2">template&lt;typename G &gt; </td></tr>
+<tr class="memitem:a750a475b37e39a167afbcda057866e5c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a750a475b37e39a167afbcda057866e5c">CheckError</a> (G &amp;&amp;error) const</td></tr>
+<tr class="memdesc:a750a475b37e39a167afbcda057866e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check an error with the instance error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a750a475b37e39a167afbcda057866e5c">More...</a><br /></td></tr>
+<tr class="separator:a750a475b37e39a167afbcda057866e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad820d4573899964f8006c6a832ac2ceb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ad820d4573899964f8006c6a832ac2ceb">ValueOrThrow</a> () const noexcept(false)</td></tr>
+<tr class="memdesc:ad820d4573899964f8006c6a832ac2ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw an exception.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ad820d4573899964f8006c6a832ac2ceb">More...</a><br /></td></tr>
+<tr class="separator:ad820d4573899964f8006c6a832ac2ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba8710f3e39c53ea7c759b0e3b916cc9"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:aba8710f3e39c53ea7c759b0e3b916cc9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aba8710f3e39c53ea7c759b0e3b916cc9">Resolve</a> (F &amp;&amp;f) const</td></tr>
+<tr class="memdesc:aba8710f3e39c53ea7c759b0e3b916cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoke a callable.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aba8710f3e39c53ea7c759b0e3b916cc9">More...</a><br /></td></tr>
+<tr class="separator:aba8710f3e39c53ea7c759b0e3b916cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15171d998e06d5c78d26ba7fee1e75db"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a15171d998e06d5c78d26ba7fee1e75db"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a15171d998e06d5c78d26ba7fee1e75db">Bind</a> (F &amp;&amp;f) const -&gt; <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; decltype(f()), E &gt;</td></tr>
+<tr class="memdesc:a15171d998e06d5c78d26ba7fee1e75db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> by invoking a callable.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a15171d998e06d5c78d26ba7fee1e75db">More...</a><br /></td></tr>
+<tr class="separator:a15171d998e06d5c78d26ba7fee1e75db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2100775fe730f72a0a2dced7a1f49425"><td class="memItemLeft" align="right" valign="top"><a id="a2100775fe730f72a0a2dced7a1f49425"></a>
-static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FromValue</b> ()</td></tr>
-<tr class="separator:a2100775fe730f72a0a2dced7a1f49425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13fd687e799c0eebf2ae598b06115f50"><td class="memItemLeft" align="right" valign="top"><a id="a13fd687e799c0eebf2ae598b06115f50"></a>
-static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FromError</b> (const E &amp;e)</td></tr>
-<tr class="separator:a13fd687e799c0eebf2ae598b06115f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a6ee6ef99b4509d0a6c79a0b4e2fa99"><td class="memItemLeft" align="right" valign="top"><a id="a5a6ee6ef99b4509d0a6c79a0b4e2fa99"></a>
-static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FromError</b> (E &amp;&amp;e)</td></tr>
-<tr class="separator:a5a6ee6ef99b4509d0a6c79a0b4e2fa99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48db206fee43fa7df83e53e6dd5f8bea"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a48db206fee43fa7df83e53e6dd5f8bea">FromValue</a> () noexcept</td></tr>
+<tr class="memdesc:a48db206fee43fa7df83e53e6dd5f8bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Void <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a48db206fee43fa7df83e53e6dd5f8bea">More...</a><br /></td></tr>
+<tr class="separator:a48db206fee43fa7df83e53e6dd5f8bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f43111ab32f81b4d2f6014205d204de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a6f43111ab32f81b4d2f6014205d204de">FromError</a> (const E &amp;e) noexcept(std::is_nothrow_copy_constructible&lt; E &gt;::value)</td></tr>
+<tr class="memdesc:a6f43111ab32f81b4d2f6014205d204de"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by copying its error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a6f43111ab32f81b4d2f6014205d204de">More...</a><br /></td></tr>
+<tr class="separator:a6f43111ab32f81b4d2f6014205d204de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dba8ffc5b4672a9da66a0d11563b365"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a3dba8ffc5b4672a9da66a0d11563b365">FromError</a> (E &amp;&amp;e) noexcept(std::is_nothrow_move_constructible&lt; E &gt;::value)</td></tr>
+<tr class="memdesc:a3dba8ffc5b4672a9da66a0d11563b365"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by moving its error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a3dba8ffc5b4672a9da66a0d11563b365">More...</a><br /></td></tr>
+<tr class="separator:a3dba8ffc5b4672a9da66a0d11563b365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38d872ef8f121c739ea5fb6eb67c5e2"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ae38d872ef8f121c739ea5fb6eb67c5e2"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ae38d872ef8f121c739ea5fb6eb67c5e2">FromError</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ae38d872ef8f121c739ea5fb6eb67c5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new error from the give argument(s) and assign it to the instance error.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ae38d872ef8f121c739ea5fb6eb67c5e2">More...</a><br /></td></tr>
+<tr class="separator:ae38d872ef8f121c739ea5fb6eb67c5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename E&gt;<br />
+class ara::core::Result&lt; void, E &gt;</h3>
+
+<p>A wrapper around the callee's possible error. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">E</td><td>Callee's possible error type </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a15171d998e06d5c78d26ba7fee1e75db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15171d998e06d5c78d26ba7fee1e75db">&#9670;&nbsp;</a></span>Bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::Bind </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt;decltype(f()), E&gt;
+            </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a new <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> by invoking a callable. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>Callable type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Callable that returns a new <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Callable result if the instance does not contain an error, otherwise a new <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> with the copied instance error </dd></dl>
+
+</div>
+</div>
+<a id="a750a475b37e39a167afbcda057866e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750a475b37e39a167afbcda057866e5c">&#9670;&nbsp;</a></span>CheckError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<div class="memtemplate">
+template&lt;typename G &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::CheckError </td>
+          <td>(</td>
+          <td class="paramtype">G &amp;&amp;&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check an error with the instance error. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">G</td><td>Input error type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the input error equals the instance error, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="ac312d86cbbfb1196a39c03898d33e687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac312d86cbbfb1196a39c03898d33e687">&#9670;&nbsp;</a></span>EmplaceError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::EmplaceError </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new error from the give argument(s) and assign it to the instance error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Argument(s) to construct a new error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a633583ef06ca1b69a14c2efe016c4e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a633583ef06ca1b69a14c2efe016c4e9a">&#9670;&nbsp;</a></span>Err() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt;E&gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::Err </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get optional instance error. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> error </dd></dl>
+
+</div>
+</div>
+<a id="a73f6f3f1deb29d9a54701fd842860b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f6f3f1deb29d9a54701fd842860b6e">&#9670;&nbsp;</a></span>Err() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt;E&gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::Err </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get optional instance error. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> error </dd></dl>
+
+</div>
+</div>
+<a id="a815c148d955533ed65ad43043ac73b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a815c148d955533ed65ad43043ac73b5c">&#9670;&nbsp;</a></span>Error() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">E&amp;&amp; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::Error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get instance possible error. </p>
+<dl class="section return"><dt>Returns</dt><dd>Movable error </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac8bd1615a7ce2f01dd4d4b719f5e4c38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8bd1615a7ce2f01dd4d4b719f5e4c38">&#9670;&nbsp;</a></span>Error() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const E&amp; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::Error </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get instance possible error. </p>
+<dl class="section return"><dt>Returns</dt><dd>Copied error </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa41251f86ed84989cd70f265979a5a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa41251f86ed84989cd70f265979a5a0e">&#9670;&nbsp;</a></span>ErrorOr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<div class="memtemplate">
+template&lt;typename G &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">E <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::ErrorOr </td>
+          <td>(</td>
+          <td class="paramtype">G &amp;&amp;&#160;</td>
+          <td class="paramname"><em>defaultError</em></td><td>)</td>
+          <td> &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the instance error or the default error. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">G</td><td>Default error type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultError</td><td>Error to be return in absence of the instance error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Instance error if exists, otherwise the default error </dd></dl>
+
+</div>
+</div>
+<a id="a9b0d99bbeb56c967b2a545f08a214067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b0d99bbeb56c967b2a545f08a214067">&#9670;&nbsp;</a></span>ErrorOr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<div class="memtemplate">
+template&lt;typename G &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">E <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::ErrorOr </td>
+          <td>(</td>
+          <td class="paramtype">G &amp;&amp;&#160;</td>
+          <td class="paramname"><em>defaultError</em></td><td>)</td>
+          <td> const &amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the instance error or the default error. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">G</td><td>Default error type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultError</td><td>Error to be return in absence of the instance error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Instance error if exists, otherwise the default error </dd></dl>
+
+</div>
+</div>
+<a id="ae38d872ef8f121c739ea5fb6eb67c5e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae38d872ef8f121c739ea5fb6eb67c5e2">&#9670;&nbsp;</a></span>FromError() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a> <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::FromError </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new error from the give argument(s) and assign it to the instance error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Argument(s) to construct a new error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f43111ab32f81b4d2f6014205d204de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f43111ab32f81b4d2f6014205d204de">&#9670;&nbsp;</a></span>FromError() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::FromError </td>
+          <td>(</td>
+          <td class="paramtype">const E &amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by copying its error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Created <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> from the error </dd></dl>
+
+</div>
+</div>
+<a id="a3dba8ffc5b4672a9da66a0d11563b365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dba8ffc5b4672a9da66a0d11563b365">&#9670;&nbsp;</a></span>FromError() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::FromError </td>
+          <td>(</td>
+          <td class="paramtype">E &amp;&amp;&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by moving its error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Created <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> from the error </dd></dl>
+
+</div>
+</div>
+<a id="a48db206fee43fa7df83e53e6dd5f8bea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48db206fee43fa7df83e53e6dd5f8bea">&#9670;&nbsp;</a></span>FromValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::FromValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Void <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory. </p>
+<dl class="section return"><dt>Returns</dt><dd>Default void <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> </dd></dl>
+
+</div>
+</div>
+<a id="a04107d1692e1dad2a17bb8d5acebd579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04107d1692e1dad2a17bb8d5acebd579">&#9670;&nbsp;</a></span>HasValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::HasValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicate that the instance contains no value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Always false </dd></dl>
+
+</div>
+</div>
+<a id="aaa4716735f7910f6a7c127fa2689c5c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4716735f7910f6a7c127fa2689c5c4">&#9670;&nbsp;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>False due to the fact that it never can contain a value </dd></dl>
+
+</div>
+</div>
+<a id="aba8710f3e39c53ea7c759b0e3b916cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba8710f3e39c53ea7c759b0e3b916cc9">&#9670;&nbsp;</a></span>Resolve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::Resolve </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invoke a callable. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">F</td><td>Callable type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>Callable to be invoked </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6255206051b3bd16ea45df77c1021115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6255206051b3bd16ea45df77c1021115">&#9670;&nbsp;</a></span>Swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::Swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swap the current instance with another one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> for swapping </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad820d4573899964f8006c6a832ac2ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad820d4573899964f8006c6a832ac2ceb">&#9670;&nbsp;</a></span>ValueOrThrow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void, E &gt;::ValueOrThrow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Throw an exception. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_exception</td><td>Throws always due to the fact that the instance does not contain a value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

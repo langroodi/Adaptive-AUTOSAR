@@ -1,7 +1,7 @@
 var searchData=
 [
   ['cancel_454',['Cancel',['../classara_1_1com_1_1helper_1_1TtlTimer.html#a25f0b24c8290c38670cac12218d344c1',1,'ara::com::helper::TtlTimer']]],
-  ['checkerror_455',['CheckError',['../classara_1_1core_1_1Result.html#a4561d1c6fd989b38a44e338cb6e09bb0',1,'ara::core::Result']]],
+  ['checkerror_455',['CheckError',['../classara_1_1core_1_1Result.html#a4561d1c6fd989b38a44e338cb6e09bb0',1,'ara::core::Result::CheckError()'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a750a475b37e39a167afbcda057866e5c',1,'ara::core::Result&lt; void, E &gt;::CheckError()']]],
   ['clientid_456',['ClientId',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a0f7d99d444a67e92cb31344746f27dc2',1,'ara::com::someip::SomeIpMessage']]],
   ['clientinitialwaitstate_457',['ClientInitialWaitState',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState.html#a7546c6af69fed02d5172b2dcf2de30ab',1,'ara::com::someip::sd::fsm::ClientInitialWaitState']]],
   ['clientrepetitionstate_458',['ClientRepetitionState',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientRepetitionState.html#a0aaa0947547df22a3a0980051792c35a',1,'ara::com::someip::sd::fsm::ClientRepetitionState']]],

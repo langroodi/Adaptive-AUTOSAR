@@ -1,2 +1,0 @@
-/usr/bin/ar qc libara_sm.a 
-/usr/bin/ranlib libara_sm.a

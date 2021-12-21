@@ -120,30 +120,30 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a278ff92bad552c89e310b0af14158f9e"><td class="memItemLeft" align="right" valign="top"><a id="a278ff92bad552c89e310b0af14158f9e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const T &amp;t)</td></tr>
-<tr class="separator:a278ff92bad552c89e310b0af14158f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa745ade3aa5dd96b759157c19f82a269"><td class="memItemLeft" align="right" valign="top"><a id="aa745ade3aa5dd96b759157c19f82a269"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (T &amp;&amp;t)</td></tr>
-<tr class="separator:aa745ade3aa5dd96b759157c19f82a269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a309c9e79d564d9f250b1aa0a30a4f617"><td class="memItemLeft" align="right" valign="top"><a id="a309c9e79d564d9f250b1aa0a30a4f617"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const E &amp;e)</td></tr>
-<tr class="separator:a309c9e79d564d9f250b1aa0a30a4f617"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23007f1786246b57b18b3d89e73b3337"><td class="memItemLeft" align="right" valign="top"><a id="a23007f1786246b57b18b3d89e73b3337"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (E &amp;&amp;e)</td></tr>
-<tr class="separator:a23007f1786246b57b18b3d89e73b3337"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac297943cf2fd752b73b1f753380ca0fa"><td class="memItemLeft" align="right" valign="top"><a id="ac297943cf2fd752b73b1f753380ca0fa"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const <a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other)</td></tr>
-<tr class="separator:ac297943cf2fd752b73b1f753380ca0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7899165dfcda9fc55079829076bc7acc"><td class="memItemLeft" align="right" valign="top"><a id="a7899165dfcda9fc55079829076bc7acc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&amp;other) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_constructible&lt; E &gt;::value)</td></tr>
-<tr class="separator:a7899165dfcda9fc55079829076bc7acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af008abe97842f8414711b0f49eedc5b2"><td class="memItemLeft" align="right" valign="top"><a id="af008abe97842f8414711b0f49eedc5b2"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> const &amp;other)</td></tr>
-<tr class="separator:af008abe97842f8414711b0f49eedc5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73c98909ebcea8b22abd78cadb3ca977"><td class="memItemLeft" align="right" valign="top"><a id="a73c98909ebcea8b22abd78cadb3ca977"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&amp;other) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_constructible&lt; E &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
-<tr class="separator:a73c98909ebcea8b22abd78cadb3ca977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a47ff84480d8fa103a625240d887d34"><td class="memItemLeft" align="right" valign="top"><a id="a5a47ff84480d8fa103a625240d887d34"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const T &amp;t) noexcept(std::is_nothrow_copy_constructible&lt; T &gt;::value)</td></tr>
+<tr class="separator:a5a47ff84480d8fa103a625240d887d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7650a00591cc893b95c082b236c56b2f"><td class="memItemLeft" align="right" valign="top"><a id="a7650a00591cc893b95c082b236c56b2f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (T &amp;&amp;t) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value)</td></tr>
+<tr class="separator:a7650a00591cc893b95c082b236c56b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a09ffb961f497dfd89f8df275efa48f"><td class="memItemLeft" align="right" valign="top"><a id="a7a09ffb961f497dfd89f8df275efa48f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const E &amp;e) noexcept(std::is_nothrow_copy_constructible&lt; E &gt;::value)</td></tr>
+<tr class="separator:a7a09ffb961f497dfd89f8df275efa48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1b284a3c23b09d63ffe5a8720be6c3"><td class="memItemLeft" align="right" valign="top"><a id="afe1b284a3c23b09d63ffe5a8720be6c3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (E &amp;&amp;e) noexcept(std::is_nothrow_move_constructible&lt; E &gt;::value)</td></tr>
+<tr class="separator:afe1b284a3c23b09d63ffe5a8720be6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf190f507381e6afe0d51b3ebd61dffe"><td class="memItemLeft" align="right" valign="top"><a id="adf190f507381e6afe0d51b3ebd61dffe"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (const <a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other) noexcept(std::is_nothrow_copy_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_copy_assignable&lt; E &gt;::value)</td></tr>
+<tr class="separator:adf190f507381e6afe0d51b3ebd61dffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31c5dc21da93c795745f64f57a32130"><td class="memItemLeft" align="right" valign="top"><a id="ad31c5dc21da93c795745f64f57a32130"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Result</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&amp;other) noexcept(std::is_nothrow_move_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
+<tr class="separator:ad31c5dc21da93c795745f64f57a32130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b96653f4539420ca76cc1732f1bc37a"><td class="memItemLeft" align="right" valign="top"><a id="a1b96653f4539420ca76cc1732f1bc37a"></a>
+<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> const &amp;other) noexcept(std::is_nothrow_copy_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_copy_assignable&lt; E &gt;::value)</td></tr>
+<tr class="separator:a1b96653f4539420ca76cc1732f1bc37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15233f06a71ccdbb2240bcd1c0d6678"><td class="memItemLeft" align="right" valign="top"><a id="af15233f06a71ccdbb2240bcd1c0d6678"></a>
+<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;&amp;other) noexcept(std::is_nothrow_move_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
+<tr class="separator:af15233f06a71ccdbb2240bcd1c0d6678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a901ddab5a89431aef552a8ff2cb5366f"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a901ddab5a89431aef552a8ff2cb5366f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a901ddab5a89431aef552a8ff2cb5366f">EmplaceValue</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a901ddab5a89431aef552a8ff2cb5366f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new value from the give argument(s) and assign it to the instance value.  <a href="classara_1_1core_1_1Result.html#a901ddab5a89431aef552a8ff2cb5366f">More...</a><br /></td></tr>
@@ -152,9 +152,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a36d40985b89bafca5abd3153c1990889"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a36d40985b89bafca5abd3153c1990889">EmplaceError</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a36d40985b89bafca5abd3153c1990889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new error from the give argument(s) and assign it to the instance error.  <a href="classara_1_1core_1_1Result.html#a36d40985b89bafca5abd3153c1990889">More...</a><br /></td></tr>
 <tr class="separator:a36d40985b89bafca5abd3153c1990889"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5068a9c75c30e7ba3713e5c868ac0ccc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a5068a9c75c30e7ba3713e5c868ac0ccc">Swap</a> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_constructible&lt; E &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
-<tr class="memdesc:a5068a9c75c30e7ba3713e5c868ac0ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the current instance with another one.  <a href="classara_1_1core_1_1Result.html#a5068a9c75c30e7ba3713e5c868ac0ccc">More...</a><br /></td></tr>
-<tr class="separator:a5068a9c75c30e7ba3713e5c868ac0ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab886491528802d6db41891ee0aea1313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#ab886491528802d6db41891ee0aea1313">Swap</a> (<a class="el" href="classara_1_1core_1_1Result.html">Result</a> &amp;other) noexcept(std::is_nothrow_move_assignable&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; E &gt;::value)</td></tr>
+<tr class="memdesc:ab886491528802d6db41891ee0aea1313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the current instance with another one.  <a href="classara_1_1core_1_1Result.html#ab886491528802d6db41891ee0aea1313">More...</a><br /></td></tr>
+<tr class="separator:ab886491528802d6db41891ee0aea1313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90e193cb7c0198137d0c38b964cd18c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a90e193cb7c0198137d0c38b964cd18c5">HasValue</a> () const noexcept</td></tr>
 <tr class="memdesc:a90e193cb7c0198137d0c38b964cd18c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the instance has a value or not.  <a href="classara_1_1core_1_1Result.html#a90e193cb7c0198137d0c38b964cd18c5">More...</a><br /></td></tr>
 <tr class="separator:a90e193cb7c0198137d0c38b964cd18c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,25 +220,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60fde32930cb8ad251f6501fe6b23d6d"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a60fde32930cb8ad251f6501fe6b23d6d">Resolve</a> (F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:a60fde32930cb8ad251f6501fe6b23d6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance value or a callable result.  <a href="classara_1_1core_1_1Result.html#a60fde32930cb8ad251f6501fe6b23d6d">More...</a><br /></td></tr>
 <tr class="separator:a60fde32930cb8ad251f6501fe6b23d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d6641c9a63b80a924cd8485740f40f4"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:a2d6641c9a63b80a924cd8485740f40f4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a2d6641c9a63b80a924cd8485740f40f4">Bind</a> (F &amp;&amp;f) const</td></tr>
-<tr class="memdesc:a2d6641c9a63b80a924cd8485740f40f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> by passing the instance value (if exists) to a callable.  <a href="classara_1_1core_1_1Result.html#a2d6641c9a63b80a924cd8485740f40f4">More...</a><br /></td></tr>
-<tr class="separator:a2d6641c9a63b80a924cd8485740f40f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a">Bind</a> (F &amp;&amp;f) const -&gt; <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; decltype(f(<a class="el" href="classara_1_1core_1_1Result.html#aa3c96fb6ab572ccd4d40bb50fb10edd2">Value</a>())), E &gt;</td></tr>
+<tr class="memdesc:a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> by passing the instance value (if exists) to a callable.  <a href="classara_1_1core_1_1Result.html#a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a">More...</a><br /></td></tr>
+<tr class="separator:a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8d06acb7cacd39ab70cd3e351e526306"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a8d06acb7cacd39ab70cd3e351e526306">FromValue</a> (const T &amp;t)</td></tr>
-<tr class="memdesc:a8d06acb7cacd39ab70cd3e351e526306"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by copying its value.  <a href="classara_1_1core_1_1Result.html#a8d06acb7cacd39ab70cd3e351e526306">More...</a><br /></td></tr>
-<tr class="separator:a8d06acb7cacd39ab70cd3e351e526306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e606539985bb6ee6aa210a4cd98e4fd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a3e606539985bb6ee6aa210a4cd98e4fd">FromValue</a> (T &amp;&amp;t)</td></tr>
-<tr class="memdesc:a3e606539985bb6ee6aa210a4cd98e4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by moving its value.  <a href="classara_1_1core_1_1Result.html#a3e606539985bb6ee6aa210a4cd98e4fd">More...</a><br /></td></tr>
-<tr class="separator:a3e606539985bb6ee6aa210a4cd98e4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab48f0e6fa377e5852a5bb34104567d63"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#ab48f0e6fa377e5852a5bb34104567d63">FromError</a> (const E &amp;e)</td></tr>
-<tr class="memdesc:ab48f0e6fa377e5852a5bb34104567d63"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by copying its error.  <a href="classara_1_1core_1_1Result.html#ab48f0e6fa377e5852a5bb34104567d63">More...</a><br /></td></tr>
-<tr class="separator:ab48f0e6fa377e5852a5bb34104567d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef2815e07f27690a29d7f59cff8a0e4f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#aef2815e07f27690a29d7f59cff8a0e4f">FromError</a> (E &amp;&amp;e)</td></tr>
-<tr class="memdesc:aef2815e07f27690a29d7f59cff8a0e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by moving its error.  <a href="classara_1_1core_1_1Result.html#aef2815e07f27690a29d7f59cff8a0e4f">More...</a><br /></td></tr>
-<tr class="separator:aef2815e07f27690a29d7f59cff8a0e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f7756a8baf7331c09b90f8ab350bde4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a9f7756a8baf7331c09b90f8ab350bde4">FromValue</a> (const T &amp;t) noexcept(std::is_nothrow_copy_constructible&lt; T &gt;::value)</td></tr>
+<tr class="memdesc:a9f7756a8baf7331c09b90f8ab350bde4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by copying its value.  <a href="classara_1_1core_1_1Result.html#a9f7756a8baf7331c09b90f8ab350bde4">More...</a><br /></td></tr>
+<tr class="separator:a9f7756a8baf7331c09b90f8ab350bde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c9b67f1a68a5af75db38c56c741469b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a7c9b67f1a68a5af75db38c56c741469b">FromValue</a> (T &amp;&amp;t) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value)</td></tr>
+<tr class="memdesc:a7c9b67f1a68a5af75db38c56c741469b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by moving its value.  <a href="classara_1_1core_1_1Result.html#a7c9b67f1a68a5af75db38c56c741469b">More...</a><br /></td></tr>
+<tr class="separator:a7c9b67f1a68a5af75db38c56c741469b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a040a5285f47887b13cdbefcd5dbb9731"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a040a5285f47887b13cdbefcd5dbb9731">FromError</a> (const E &amp;e) noexcept(std::is_nothrow_copy_constructible&lt; E &gt;::value)</td></tr>
+<tr class="memdesc:a040a5285f47887b13cdbefcd5dbb9731"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by copying its error.  <a href="classara_1_1core_1_1Result.html#a040a5285f47887b13cdbefcd5dbb9731">More...</a><br /></td></tr>
+<tr class="separator:a040a5285f47887b13cdbefcd5dbb9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f140e664e8fbc6ac9c06f0c2b4a9a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html#a87f140e664e8fbc6ac9c06f0c2b4a9a5">FromError</a> (E &amp;&amp;e) noexcept(std::is_nothrow_move_constructible&lt; E &gt;::value)</td></tr>
+<tr class="memdesc:a87f140e664e8fbc6ac9c06f0c2b4a9a5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> factory by moving its error.  <a href="classara_1_1core_1_1Result.html#a87f140e664e8fbc6ac9c06f0c2b4a9a5">More...</a><br /></td></tr>
+<tr class="separator:a87f140e664e8fbc6ac9c06f0c2b4a9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T, typename E = ErrorCode&gt;<br />
@@ -253,8 +253,8 @@ class ara::core::Result&lt; T, E &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2d6641c9a63b80a924cd8485740f40f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d6641c9a63b80a924cd8485740f40f4">&#9670;&nbsp;</a></span>Bind()</h2>
+<a id="a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a">&#9670;&nbsp;</a></span>Bind()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,7 +271,8 @@ template&lt;typename F &gt; </div>
           <td>(</td>
           <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
-          <td> const</td>
+          <td> const -&gt; <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt;decltype(f(<a class="el" href="classara_1_1core_1_1Result.html#aa3c96fb6ab572ccd4d40bb50fb10edd2">Value</a>())), E&gt;
+            </td>
         </tr>
       </table>
   </td>
@@ -439,7 +440,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 </div><div class="memdoc">
 
 <p>Get optional instance error. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> eror </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> error </dd></dl>
 
 </div>
 </div>
@@ -469,7 +470,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 </div><div class="memdoc">
 
 <p>Get optional instance error. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> eror </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> error </dd></dl>
 
 </div>
 </div>
@@ -635,19 +636,19 @@ template&lt;typename G &gt; </div>
 
 </div>
 </div>
-<a id="ab48f0e6fa377e5852a5bb34104567d63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab48f0e6fa377e5852a5bb34104567d63">&#9670;&nbsp;</a></span>FromError() <span class="overload">[1/2]</span></h2>
+<a id="a040a5285f47887b13cdbefcd5dbb9731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040a5285f47887b13cdbefcd5dbb9731">&#9670;&nbsp;</a></span>FromError() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename E  = ErrorCode&gt; </div>
+template&lt;typename T , typename E &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a> <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::FromError </td>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; T, E &gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::FromError </td>
           <td>(</td>
           <td class="paramtype">const E &amp;&#160;</td>
           <td class="paramname"><em>e</em></td><td>)</td>
@@ -656,7 +657,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -668,22 +669,23 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Created <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> from the error </dd></dl>
 
 </div>
 </div>
-<a id="aef2815e07f27690a29d7f59cff8a0e4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef2815e07f27690a29d7f59cff8a0e4f">&#9670;&nbsp;</a></span>FromError() <span class="overload">[2/2]</span></h2>
+<a id="a87f140e664e8fbc6ac9c06f0c2b4a9a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87f140e664e8fbc6ac9c06f0c2b4a9a5">&#9670;&nbsp;</a></span>FromError() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename E  = ErrorCode&gt; </div>
+template&lt;typename T , typename E &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a> <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::FromError </td>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; T, E &gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::FromError </td>
           <td>(</td>
           <td class="paramtype">E &amp;&amp;&#160;</td>
           <td class="paramname"><em>e</em></td><td>)</td>
@@ -692,7 +694,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -704,22 +706,23 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Created <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> from the error </dd></dl>
 
 </div>
 </div>
-<a id="a8d06acb7cacd39ab70cd3e351e526306"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d06acb7cacd39ab70cd3e351e526306">&#9670;&nbsp;</a></span>FromValue() <span class="overload">[1/2]</span></h2>
+<a id="a9f7756a8baf7331c09b90f8ab350bde4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f7756a8baf7331c09b90f8ab350bde4">&#9670;&nbsp;</a></span>FromValue() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename E  = ErrorCode&gt; </div>
+template&lt;typename T , typename E &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a> <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::FromValue </td>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; T, E &gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::FromValue </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
@@ -728,7 +731,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -740,22 +743,23 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Created <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> from the value </dd></dl>
 
 </div>
 </div>
-<a id="a3e606539985bb6ee6aa210a4cd98e4fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e606539985bb6ee6aa210a4cd98e4fd">&#9670;&nbsp;</a></span>FromValue() <span class="overload">[2/2]</span></h2>
+<a id="a7c9b67f1a68a5af75db38c56c741469b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c9b67f1a68a5af75db38c56c741469b">&#9670;&nbsp;</a></span>FromValue() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename E  = ErrorCode&gt; </div>
+template&lt;typename T , typename E &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a> <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::FromValue </td>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; T, E &gt; <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; T, E &gt;::FromValue </td>
           <td>(</td>
           <td class="paramtype">T &amp;&amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
@@ -764,7 +768,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -776,6 +780,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Created <a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> from the value </dd></dl>
 
 </div>
 </div>
@@ -1044,8 +1049,8 @@ template&lt;typename F &gt; </div>
 
 </div>
 </div>
-<a id="a5068a9c75c30e7ba3713e5c868ac0ccc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5068a9c75c30e7ba3713e5c868ac0ccc">&#9670;&nbsp;</a></span>Swap()</h2>
+<a id="ab886491528802d6db41891ee0aea1313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab886491528802d6db41891ee0aea1313">&#9670;&nbsp;</a></span>Swap()</h2>
 
 <div class="memitem">
 <div class="memproto">
