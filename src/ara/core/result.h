@@ -530,6 +530,106 @@ namespace ara
             return _result;
         }
 
+        /// @returns True if both instances contain equal values or equal erros, otherwise false
+        template <typename T, typename E>
+        inline bool operator==(const Result<T, E> &lhs, const Result<T, E> &rhs)
+        {
+            bool _result;
+
+            if (lhs.HasValue() && rhs.HasValue())
+            {
+                _result = lhs.Value() == rhs.Value();
+            }
+            else if (!lhs.HasValue() && !rhs.HasValue())
+            {
+                _result = lhs.Error() == rhs.Error();
+            }
+            else
+            {
+                _result = false;
+            }
+
+            return _result;
+        }
+
+        /// @returns False if both instances contain equal values or equal erros, otherwise true
+        template <typename T, typename E>
+        inline bool operator!=(const Result<T, E> &lhs, const Result<T, E> &rhs)
+        {
+            bool _result;
+
+            if (lhs.HasValue() && rhs.HasValue())
+            {
+                _result = lhs.Value() != rhs.Value();
+            }
+            else if (!lhs.HasValue() && !rhs.HasValue())
+            {
+                _result = lhs.Error() != rhs.Error();
+            }
+            else
+            {
+                _result = true;
+            }
+
+            return _result;
+        }
+
+        template <typename T, typename E>
+        inline bool operator==(const Result<T, E> &lhs, const T &rhs)
+        {
+            bool _result = lhs.HasValue() ? lhs.Value() == rhs : false;
+            return _result;
+        }
+
+        template <typename T, typename E>
+        inline bool operator==(const T &lhs, const Result<T, E> &rhs)
+        {
+            bool _result = rhs.HasValue() ? lhs == rhs.Value() : false;
+            return _result;
+        }
+
+        template <typename T, typename E>
+        inline bool operator!=(const Result<T, E> &lhs, const T &rhs)
+        {
+            bool _result = lhs.HasValue() ? lhs.Value() != rhs : true;
+            return _result;
+        }
+
+        template <typename T, typename E>
+        inline bool operator!=(const T &lhs, const Result<T, E> &rhs)
+        {
+            bool _result = rhs.HasValue() ? lhs != rhs.Value() : true;
+            return _result;
+        }
+
+        template <typename T, typename E>
+        inline bool operator==(const Result<T, E> &lhs, const E &rhs)
+        {
+            bool _result = lhs.HasValue() ? false : lhs.Error() == rhs;
+            return _result;
+        }
+
+        template <typename T, typename E>
+        inline bool operator==(const E &lhs, const Result<T, E> &rhs)
+        {
+            bool _result = rhs.HasValue() ? false : lhs == rhs.Err();
+            return _result;
+        }
+
+        template <typename T, typename E>
+        inline bool operator!=(const Result<T, E> &lhs, const E &rhs)
+        {
+            bool _result = lhs.HasValue() ? true : lhs.Error() != rhs;
+            return _result;
+        }
+
+        template <typename T, typename E>
+        inline bool operator!=(const E &lhs, const Result<T, E> &rhs)
+        {
+            bool _result = rhs.HasValue() ? true : lhs != rhs.Err();
+            return _result;
+        }
+
         /// @brief A wrapper around the callee's possible error
         /// @tparam E Callee's possible error type
         template <typename E>
