@@ -2,6 +2,7 @@ var classara_1_1core_1_1Result =
 [
     [ "error_type", "classara_1_1core_1_1Result.html#ae4075b56a0084b81172b1a1d00a2f4f9", null ],
     [ "value_type", "classara_1_1core_1_1Result.html#a61a565d803bd65806fe689fa811e83c7", null ],
+    [ "Result", "classara_1_1core_1_1Result.html#a93dfc631b59656fc14979d292ac67ff4", null ],
     [ "Result", "classara_1_1core_1_1Result.html#a5a47ff84480d8fa103a625240d887d34", null ],
     [ "Result", "classara_1_1core_1_1Result.html#a7650a00591cc893b95c082b236c56b2f", null ],
     [ "Result", "classara_1_1core_1_1Result.html#a7a09ffb961f497dfd89f8df275efa48f", null ],
