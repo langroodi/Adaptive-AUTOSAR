@@ -124,9 +124,9 @@ constexpr <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &a
 <tr class="memitem:a9ff171daf7911b3e9c96d0de3aaf8dd7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a9ff171daf7911b3e9c96d0de3aaf8dd7">Emplace</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a9ff171daf7911b3e9c96d0de3aaf8dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new value from the give argument(s) and assign it to the instance value.  <a href="classara_1_1core_1_1Optional.html#a9ff171daf7911b3e9c96d0de3aaf8dd7">More...</a><br /></td></tr>
 <tr class="separator:a9ff171daf7911b3e9c96d0de3aaf8dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a281b1c0b8357a5acab371409c5c9c82a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a281b1c0b8357a5acab371409c5c9c82a">Swap</a> (<a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;other) noexcept(std::is_nothrow_move_constructible&lt; T &gt;::value &amp;&amp;std::is_nothrow_move_assignable&lt; T &gt;::value)</td></tr>
-<tr class="memdesc:a281b1c0b8357a5acab371409c5c9c82a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the current instance with another one.  <a href="classara_1_1core_1_1Optional.html#a281b1c0b8357a5acab371409c5c9c82a">More...</a><br /></td></tr>
-<tr class="separator:a281b1c0b8357a5acab371409c5c9c82a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc0b80f3ebd4ea7b0f55d3025c2f521"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#accc0b80f3ebd4ea7b0f55d3025c2f521">Swap</a> (<a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> &amp;other) noexcept(std::is_nothrow_move_assignable&lt; T &gt;::value)</td></tr>
+<tr class="memdesc:accc0b80f3ebd4ea7b0f55d3025c2f521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the current instance with another one.  <a href="classara_1_1core_1_1Optional.html#accc0b80f3ebd4ea7b0f55d3025c2f521">More...</a><br /></td></tr>
+<tr class="separator:accc0b80f3ebd4ea7b0f55d3025c2f521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a386a36862137c2beda1f5a5797900c9b"><td class="memItemLeft" align="right" valign="top"><a id="a386a36862137c2beda1f5a5797900c9b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b">Reset</a> () noexcept</td></tr>
 <tr class="memdesc:a386a36862137c2beda1f5a5797900c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the instance value. <br /></td></tr>
@@ -281,7 +281,7 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Movable value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -315,7 +315,7 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Copied value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -349,15 +349,15 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Constant value pointer </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a281b1c0b8357a5acab371409c5c9c82a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a281b1c0b8357a5acab371409c5c9c82a">&#9670;&nbsp;</a></span>Swap()</h2>
+<a id="accc0b80f3ebd4ea7b0f55d3025c2f521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc0b80f3ebd4ea7b0f55d3025c2f521">&#9670;&nbsp;</a></span>Swap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -421,7 +421,7 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Movable value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -457,7 +457,7 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Copied value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>

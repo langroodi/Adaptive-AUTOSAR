@@ -15,7 +15,7 @@ var classara_1_1core_1_1Optional =
     [ "operator=", "classara_1_1core_1_1Optional.html#af8e3dad9e51cbf2fe14effae222faff6", null ],
     [ "operator=", "classara_1_1core_1_1Optional.html#aae23b632be589a4d26ae2bfd5b0d713a", null ],
     [ "Reset", "classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b", null ],
-    [ "Swap", "classara_1_1core_1_1Optional.html#a281b1c0b8357a5acab371409c5c9c82a", null ],
+    [ "Swap", "classara_1_1core_1_1Optional.html#accc0b80f3ebd4ea7b0f55d3025c2f521", null ],
     [ "Value", "classara_1_1core_1_1Optional.html#a390175774131d01453d964d7c822bb87", null ],
     [ "Value", "classara_1_1core_1_1Optional.html#a21061a0dcc21ef952df6019d39630f4e", null ],
     [ "ValueOr", "classara_1_1core_1_1Optional.html#adc67a259226315d32d6380c8d83197a4", null ],
