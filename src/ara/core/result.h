@@ -728,6 +728,8 @@ namespace ara
                 }
 
                 mHasError = other.mHasError;
+
+                return *this;
             }
 
             Result &operator=(Result &&other) noexcept(
@@ -739,6 +741,8 @@ namespace ara
                 }
 
                 mHasError = other.mHasError;
+
+                return *this;
             }
 
             /// @brief Construct a new error from the give argument(s) and assign it to the instance error
@@ -763,13 +767,13 @@ namespace ara
                 {
                     other.mError = std::move(mError);
                     mHasError = false;
-                    other.mHasValue = true;
+                    other.mHasError = true;
                 }
                 else if (!mHasError && other.mHasError)
                 {
                     mError = std::move(other.mError);
                     mHasError = true;
-                    other.mHasValue = false;
+                    other.mHasError = false;
                 }
             }
 
