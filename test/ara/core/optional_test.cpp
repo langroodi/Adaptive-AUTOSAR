@@ -126,5 +126,39 @@ namespace ara
             Optional<bool> _optional;
             EXPECT_TRUE(_optional.ValueOr<int>(1));
         }
+
+        TEST(OptionalTest, EqualityOperator)
+        {
+            Optional<bool> _optional;
+            Optional<bool> _otherOptional;
+
+            EXPECT_TRUE(_optional == _otherOptional);
+
+            _optional.Emplace(true);
+            EXPECT_FALSE(_optional == _otherOptional);
+
+            _otherOptional.Emplace(false);
+            EXPECT_FALSE(_optional == _otherOptional);
+
+            _otherOptional.Emplace(true);
+            EXPECT_TRUE(_optional == _otherOptional);
+        }
+
+        TEST(OptionalTest, InequalityOperator)
+        {
+            Optional<bool> _optional;
+            Optional<bool> _otherOptional;
+
+            EXPECT_FALSE(_optional != _otherOptional);
+
+            _optional.Emplace(true);
+            EXPECT_TRUE(_optional != _otherOptional);
+
+            _otherOptional.Emplace(false);
+            EXPECT_TRUE(_optional != _otherOptional);
+
+            _otherOptional.Emplace(true);
+            EXPECT_FALSE(_optional != _otherOptional);
+        }
     }
 }
