@@ -3,7 +3,7 @@
 
 #include <type_traits>
 #include <utility>
-#include <exception>
+#include <stdexcept>
 
 namespace ara
 {
@@ -38,7 +38,7 @@ namespace ara
                     mValue = other.mValue;
                 }
 
-                mHasValue = other.has_value;
+                mHasValue = other.mHasValue;
             }
 
             Optional(Optional &&other) noexcept(
@@ -49,7 +49,7 @@ namespace ara
                     mValue = std::move(other.mValue);
                 }
 
-                mHasValue = other.has_value;
+                mHasValue = other.mHasValue;
             }
 
             ~Optional() noexcept = default;
@@ -87,10 +87,24 @@ namespace ara
             /// @brief Swap the current instance with another one
             /// @param other Another Optional for swapping
             void Swap(Optional &other) noexcept(
-                std::is_nothrow_move_constructible<T>::value &&
-                    std::is_nothrow_move_assignable<T>::value)
+                std::is_nothrow_move_assignable<T>::value)
             {
-                std::swap(*this, other);
+                if (mHasValue && other.mHasValue)
+                {
+                    std::swap(mValue, other.mValue);
+                }
+                else if (mHasValue && !other.mHasValue)
+                {
+                    other.mValue = std::move(mValue);
+                    other.mHasValue = true;
+                    mHasValue = false;
+                }
+                else if (!mHasValue && other.mHasValue)
+                {
+                    mValue = std::move(other.mValue);
+                    mHasValue = true;
+                    other.mHasValue = false;
+                }
             }
 
             /// @brief Reset the instance value
@@ -113,7 +127,7 @@ namespace ara
             }
 
             /// @returns Copied value
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             const T &operator*() const &
             {
                 if (mHasValue)
@@ -122,12 +136,12 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Optional contains no value.");
+                    throw std::runtime_error("Optional contains no value.");
                 }
             }
 
             /// @returns Movable value
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             T &&operator*() &&
             {
                 if (mHasValue)
@@ -136,12 +150,12 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Optional contains no value.");
+                    throw std::runtime_error("Optional contains no value.");
                 }
             }
 
             /// @returns Constant value pointer
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             const T *operator->() const
             {
                 if (mHasValue)
@@ -150,13 +164,13 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Optional contains no value.");
+                    throw std::runtime_error("Optional contains no value.");
                 }
             }
 
             /// @brief Get instance possible value
             /// @returns Copied value
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             const T &Value() const &
             {
                 if (mHasValue)
@@ -165,13 +179,13 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Optional contains no value.");
+                    throw std::runtime_error("Optional contains no value.");
                 }
             }
 
             /// @brief Get instance possible value
             /// @returns Movable value
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             T &&Value() &&
             {
                 if (mHasValue)
@@ -180,7 +194,7 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Optional contains no value.");
+                    throw std::runtime_error("Optional contains no value.");
                 }
             }
 

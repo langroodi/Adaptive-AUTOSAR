@@ -117,6 +117,7 @@ set(test_ara_core_dir
 
 add_library(
   ara_core
+  ${source_ara_core_dir}/optional.h
   ${source_ara_core_dir}/error_domain.h
   ${source_ara_core_dir}/error_code.h
   ${source_ara_core_dir}/error_code.cpp
@@ -273,6 +274,7 @@ if(build_tests)
     ${test_ara_com_someip_sd_fsm_dir}/machine_state_test.cpp
     ${test_ara_exec_dir}/worker_thread_test.cpp
     ${test_ara_exec_dir}/worker_runnable_test.cpp
+    ${test_ara_core_dir}/optional_test.cpp
     ${test_ara_core_dir}/error_domain_test.cpp
     ${test_ara_core_dir}/error_code_test.cpp
   )
