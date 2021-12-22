@@ -19,12 +19,12 @@ namespace ara
             E mError;
             bool mHasValue;
 
-            static void copy(Result *source, Result *destination) noexcept(
+            static void copy(const Result *source, Result *destination) noexcept(
                 std::is_nothrow_copy_assignable<T>::value &&
                     std::is_nothrow_copy_assignable<E>::value)
             {
                 // Copy the value if exists, otherwise copy the error
-                if (source->HasValue)
+                if (source->mHasValue)
                 {
                     destination->mValue = source->mValue;
                 }
@@ -33,7 +33,7 @@ namespace ara
                     destination->mError = source->mError;
                 }
 
-                destination->mHasValue = source->HasValue;
+                destination->mHasValue = source->mHasValue;
             }
 
             static void move(Result *source, Result *destination) noexcept(
@@ -41,7 +41,7 @@ namespace ara
                     std::is_nothrow_move_assignable<E>::value)
             {
                 // Move the value if exists, otherwise move the error
-                if (source->HasValue)
+                if (source->mHasValue)
                 {
                     destination->mValue = std::move(source->mValue);
                 }
@@ -50,7 +50,7 @@ namespace ara
                     destination->mError = std::move(source->mError);
                 }
 
-                destination->mHasValue = source->HasValue;
+                destination->mHasValue = source->mHasValue;
             }
 
         public:
@@ -67,7 +67,7 @@ namespace ara
 
             Result(T &&t) noexcept(
                 std::is_nothrow_move_constructible<T>::value) : mValue{t},
-                                                                mHasValue{false}
+                                                                mHasValue{true}
             {
             }
 
@@ -130,6 +130,7 @@ namespace ara
                     std::is_nothrow_copy_assignable<E>::value)
             {
                 copy(&other, this);
+                return *this;
             }
 
             Result &operator=(Result &&other) noexcept(
@@ -137,6 +138,7 @@ namespace ara
                     std::is_nothrow_move_assignable<E>::value)
             {
                 move(&other, this);
+                return *this;
             }
 
             /// @brief Construct a new value from the give argument(s) and assign it to the instance value
@@ -201,7 +203,7 @@ namespace ara
             }
 
             /// @returns Copied value
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             const T &operator*() const &
             {
                 if (mHasValue)
@@ -210,12 +212,12 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Result contains no value.");
+                    throw std::runtime_error("Result contains no value.");
                 }
             }
 
             /// @returns Movable value
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             T &&operator*() &&
             {
                 if (mHasValue)
@@ -224,12 +226,12 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Result contains no value.");
+                    throw std::runtime_error("Result contains no value.");
                 }
             }
 
             /// @returns Constant value pointer
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             const T *operator->() const
             {
                 if (mHasValue)
@@ -238,13 +240,13 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Result contains no value.");
+                    throw std::runtime_error("Result contains no value.");
                 }
             }
 
             /// @brief Get instance possible value
             /// @returns Copied value
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             const T &Value() const &
             {
                 if (mHasValue)
@@ -253,13 +255,13 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Result contains no value.");
+                    throw std::runtime_error("Result contains no value.");
                 }
             }
 
             /// @brief Get instance possible value
             /// @returns Movable value
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             T &&Value() &&
             {
                 if (mHasValue)
@@ -268,18 +270,18 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Result contains no value.");
+                    throw std::runtime_error("Result contains no value.");
                 }
             }
 
             /// @brief Get instance possible error
             /// @returns Copied error
-            /// @throws std::bad_exception Throws if there is no error
+            /// @throws std::runtime_error Throws if there is no error
             const E &Error() const &
             {
                 if (mHasValue)
                 {
-                    throw std::bad_exception("Result contains no error.");
+                    throw std::runtime_error("Result contains no error.");
                 }
                 else
                 {
@@ -289,12 +291,12 @@ namespace ara
 
             /// @brief Get instance possible error
             /// @returns Movable error
-            /// @throws std::bad_exception Throws if there is no error
+            /// @throws std::runtime_error Throws if there is no error
             E &&Error() &&
             {
                 if (mHasValue)
                 {
-                    throw std::bad_exception("Result contains no error.");
+                    throw std::runtime_error("Result contains no error.");
                 }
                 else
                 {
@@ -446,19 +448,32 @@ namespace ara
 
             /// @brief Get instance possible value or throw an exception
             /// @returns Copied value if exists
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             const T &ValueOrThrow() const &noexcept(false)
             {
-                return Value();
+                if (mHasValue)
+                {
+                    return mValue;
+                }
+                else
+                {
+                    throw std::runtime_error("Result contains no value.");
+                }
             }
 
             /// @brief Get instance possible value or throw an exception
             /// @returns Movable value if exists
-            /// @throws std::bad_exception Throws if there is no value
+            /// @throws std::runtime_error Throws if there is no value
             T &&ValueOrThrow() &&noexcept(false)
             {
-                /// @todo Check if the correct overload will be called or not
-                return Value();
+                if (mHasValue)
+                {
+                    return std::move(mValue);
+                }
+                else
+                {
+                    throw std::runtime_error("Result contains no value.");
+                }
             }
 
             /// @brief Get the instance value or a callable result
@@ -468,14 +483,7 @@ namespace ara
             template <typename F>
             T Resolve(F &&f) const
             {
-                if (mHasValue)
-                {
-                    return mValue;
-                }
-                else
-                {
-                    f(mError);
-                }
+                return mHasValue ? mValue : f(mError);
             }
 
             /// @brief Create a new Result by passing the instance value (if exists) to a callable
@@ -796,7 +804,7 @@ namespace ara
 
             /// @brief Get instance possible error
             /// @returns Copied error
-            /// @throws std::bad_exception Throws if there is no error
+            /// @throws std::runtime_error Throws if there is no error
             const E &Error() const &
             {
                 if (mHasError)
@@ -805,13 +813,13 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Result contains no error.");
+                    throw std::runtime_error("Result contains no error.");
                 }
             }
 
             /// @brief Get instance possible error
             /// @returns Movable error
-            /// @throws std::bad_exception Throws if there is no error
+            /// @throws std::runtime_error Throws if there is no error
             E &&Error() &&
             {
                 if (mHasError)
@@ -820,7 +828,7 @@ namespace ara
                 }
                 else
                 {
-                    throw std::bad_exception("Result contains no error.");
+                    throw std::runtime_error("Result contains no error.");
                 }
             }
 
@@ -912,10 +920,10 @@ namespace ara
             }
 
             /// @brief Throw an exception
-            /// @throws std::bad_exception Throws always due to the fact that the instance does not contain a value
+            /// @throws std::runtime_error Throws always due to the fact that the instance does not contain a value
             void ValueOrThrow() const noexcept(false)
             {
-                throw std::bad_exception("Result contains no value.");
+                throw std::runtime_error("Result contains no value.");
             }
 
             /// @brief Invoke a callable

@@ -54,7 +54,7 @@ namespace ara
 
             ~Optional() noexcept = default;
 
-            Optional &operator=(const Optional &other)
+            constexpr Optional &operator=(const Optional &other)
             {
                 if (other.mHasValue)
                 {
@@ -62,6 +62,8 @@ namespace ara
                 }
 
                 mHasValue = mHasValue;
+
+                return *this;
             }
 
             constexpr Optional &operator=(Optional &&other) noexcept(
@@ -73,6 +75,26 @@ namespace ara
                 }
 
                 mHasValue = mHasValue;
+
+                return *this;
+            }
+
+            template <typename U = T>
+            constexpr Optional &operator=(const U &value)
+            {
+                mValue = static_cast<T>(value);
+                mHasValue = true;
+
+                return *this;
+            }
+
+            template <typename U = T>
+            constexpr Optional &operator=(U &&value)
+            {
+                mValue = static_cast<T>(value);
+                mHasValue = true;
+
+                return *this;
             }
 
             /// @brief Construct a new value from the give argument(s) and assign it to the instance value
