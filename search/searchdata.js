@@ -7,8 +7,7 @@ var indexSectionsWithContent =
   4: "cfost",
   5: "ceintv",
   6: "ceflops",
-  7: "aiklmnorsu",
-  8: "t"
+  7: "aiklmnorsu"
 };
 
 var indexSectionNames =
@@ -20,8 +19,7 @@ var indexSectionNames =
   4: "variables",
   5: "typedefs",
   6: "enums",
-  7: "enumvalues",
-  8: "pages"
+  7: "enumvalues"
 };
 
 var indexSectionLabels =
@@ -33,7 +31,6 @@ var indexSectionLabels =
   4: "Variables",
   5: "Typedefs",
   6: "Enumerations",
-  7: "Enumerator",
-  8: "Pages"
+  7: "Enumerator"
 };
 

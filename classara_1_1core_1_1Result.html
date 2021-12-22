@@ -503,7 +503,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Movable error </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no error </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no error </td></tr>
   </table>
   </dd>
 </dl>
@@ -539,7 +539,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Copied error </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no error </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no error </td></tr>
   </table>
   </dd>
 </dl>
@@ -929,7 +929,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Movable value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -963,7 +963,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Copied value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -997,7 +997,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Constant value pointer </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1114,7 +1114,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Movable value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1150,7 +1150,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Copied value </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1276,11 +1276,10 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Movable value if exists </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Check if the correct overload will be called or not </dd></dl>
 
 </div>
 </div>
@@ -1313,7 +1312,7 @@ template&lt;typename T , typename E  = ErrorCode&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Copied value if exists </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::bad_exception</td><td>Throws if there is no value </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>Throws if there is no value </td></tr>
   </table>
   </dd>
 </dl>

@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "Adaptive AUTOSAR", "index.html", [
-    [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -51,11 +50,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceReadyState.html",
-"classara_1_1diag_1_1EcuResetRequest.html#a3d0915cf6e2e94ace9763930f904d891",
-"deterministic__client_8h.html#ab2bd2ca70e096b765f839a1dd7349396ab217b1cb58a6ee4ef35a6c84cf367659",
-"namespaceara_1_1log.html#a76733092128ddf2b75e7159bd9d79c5da485b505a72a57b16c8dd36bfc17c98c0"
+"",
+"classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1RepetitionState.html#a8f09c0c600a6dc01f8ce77e876a35dac",
+"classara_1_1diag_1_1DiagUdsNrcException.html#ac92f31711bba2b0f7ae1384ba639e7ec",
+"conversation_8h.html#a9af2d3d69cef3069c4f7ea9f412abff7adab91c21d81f4fa464bb874191d85817",
+"namespaceara_1_1log.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
