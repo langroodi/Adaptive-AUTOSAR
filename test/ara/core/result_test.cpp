@@ -184,5 +184,49 @@ namespace ara
 
             EXPECT_STREQ(cTrueStr, _result.Bind(_callable).Value());
         }
+
+        TEST(ResultTest, ValueEquality)
+        {
+            const bool cValue{true};
+            const Result<bool, int> cResult{cValue};
+            const Result<bool, int> cOtherResult{cValue};
+
+            EXPECT_TRUE(cResult == cOtherResult);
+            EXPECT_TRUE(cResult == cValue);
+            EXPECT_TRUE(cValue == cOtherResult);
+        }
+
+        TEST(ResultTest, ErrorEquality)
+        {
+            const bool cError{true};
+            const Result<bool, int> cResult{cError};
+            const Result<bool, int> cOtherResult{cError};
+
+            EXPECT_TRUE(cResult == cOtherResult);
+            EXPECT_TRUE(cResult == cError);
+            EXPECT_TRUE(cError == cOtherResult);
+        }
+
+        TEST(ResultTest, ValueInequality)
+        {
+            const bool cValue{true};
+            const Result<bool, int> cResult{cValue};
+            const Result<bool, int> cOtherResult{cValue};
+
+            EXPECT_FALSE(cResult != cOtherResult);
+            EXPECT_FALSE(cResult != cValue);
+            EXPECT_FALSE(cValue != cOtherResult);
+        }
+
+        TEST(ResultTest, ErrorInequality)
+        {
+            const bool cError{true};
+            const Result<bool, int> cResult{cError};
+            const Result<bool, int> cOtherResult{cError};
+
+            EXPECT_FALSE(cResult != cOtherResult);
+            EXPECT_FALSE(cResult != cError);
+            EXPECT_FALSE(cError != cOtherResult);
+        }
     }
 }

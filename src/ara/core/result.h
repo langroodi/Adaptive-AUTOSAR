@@ -59,6 +59,8 @@ namespace ara
             /// @brief Result error type alias
             using error_type = E;
 
+            Result() = delete;
+
             Result(const T &t) noexcept(
                 std::is_nothrow_copy_constructible<T>::value) : mValue{t},
                                                                 mHasValue{true}
