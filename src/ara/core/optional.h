@@ -75,48 +75,6 @@ namespace ara
                 mHasValue = mHasValue;
             }
 
-            /// @returns True if both optional instances contain a value and their values are equal or both do not contain a value, otherwise false
-            bool operator==(Optional other) const noexcept
-            {
-                bool _result;
-
-                if (mHasValue && other.mHasValue)
-                {
-                    _result = mValue == other.mValue;
-                }
-                else if (!mHasValue && !other.mHasValue)
-                {
-                    _result = true;
-                }
-                else
-                {
-                    _result = false;
-                }
-
-                return _result;
-            }
-
-            /// @returns False if both optional instances contain a value and their values are equal or both do not contain a value, otherwise true
-            bool operator!=(Optional other) const noexcept
-            {
-                bool _result;
-
-                if (mHasValue && other.mHasValue)
-                {
-                    _result = mValue != other.mValue;
-                }
-                else if (!mHasValue && !other.mHasValue)
-                {
-                    _result = false;
-                }
-                else
-                {
-                    _result = true;
-                }
-
-                return _result;
-            }
-
             /// @brief Construct a new value from the give argument(s) and assign it to the instance value
             /// @param args Argument(s) to construct a new value
             template <typename... Args>
@@ -274,6 +232,50 @@ namespace ara
                 }
             }
         };
+
+        /// @returns True if both optional instances contain a value and their values are equal or both do not contain a value, otherwise false
+        template <typename T>
+        inline bool operator==(const Optional<T> &lhs, const Optional<T> &rhs) noexcept
+        {
+            bool _result;
+
+            if (lhs.HasValue() && rhs.HasValue())
+            {
+                _result = lhs.Value() == rhs.Value();
+            }
+            else if (!lhs.HasValue() && !rhs.HasValue())
+            {
+                _result = true;
+            }
+            else
+            {
+                _result = false;
+            }
+
+            return _result;
+        }
+
+        /// @returns False if both optional instances contain a value and their values are equal or both do not contain a value, otherwise true
+        template <typename T>
+        inline bool operator!=(const Optional<T> &lhs, const Optional<T> &rhs) noexcept
+        {
+            bool _result;
+
+            if (lhs.HasValue() && rhs.HasValue())
+            {
+                _result = lhs.Value() != rhs.Value();
+            }
+            else if (!lhs.HasValue() && !rhs.HasValue())
+            {
+                _result = false;
+            }
+            else
+            {
+                _result = true;
+            }
+
+            return _result;
+        }
     }
 }
 #endif
