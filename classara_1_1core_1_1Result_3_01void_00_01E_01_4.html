@@ -146,7 +146,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6255206051b3bd16ea45df77c1021115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap the current instance with another one.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a6255206051b3bd16ea45df77c1021115">More...</a><br /></td></tr>
 <tr class="separator:a6255206051b3bd16ea45df77c1021115"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04107d1692e1dad2a17bb8d5acebd579"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a04107d1692e1dad2a17bb8d5acebd579">HasValue</a> () const noexcept</td></tr>
-<tr class="memdesc:a04107d1692e1dad2a17bb8d5acebd579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate that the instance contains no value.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a04107d1692e1dad2a17bb8d5acebd579">More...</a><br /></td></tr>
+<tr class="memdesc:a04107d1692e1dad2a17bb8d5acebd579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the instance contains an error or not.  <a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a04107d1692e1dad2a17bb8d5acebd579">More...</a><br /></td></tr>
 <tr class="separator:a04107d1692e1dad2a17bb8d5acebd579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa4716735f7910f6a7c127fa2689c5c4"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aaa4716735f7910f6a7c127fa2689c5c4">operator bool</a> () const noexcept</td></tr>
 <tr class="separator:aaa4716735f7910f6a7c127fa2689c5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -378,7 +378,7 @@ template&lt;typename E &gt; </div>
 </div><div class="memdoc">
 
 <p>Get optional instance error. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html" title="A wrapper around a possible value.">Optional</a> error </dd></dl>
 
 </div>
 </div>
@@ -408,7 +408,7 @@ template&lt;typename E &gt; </div>
 </div><div class="memdoc">
 
 <p>Get optional instance error. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a> error </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Optional.html" title="A wrapper around a possible value.">Optional</a> error </dd></dl>
 
 </div>
 </div>
@@ -738,8 +738,8 @@ template&lt;typename E &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Indicate that the instance contains no value. </p>
-<dl class="section return"><dt>Returns</dt><dd>Always false </dd></dl>
+<p>Indicate whether the instance contains an error or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the instance has no error, otherwise false </dd></dl>
 
 </div>
 </div>
@@ -767,7 +767,7 @@ template&lt;typename E &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>False due to the fact that it never can contain a value </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the instance has no error, otherwise false </dd></dl>
 
 </div>
 </div>

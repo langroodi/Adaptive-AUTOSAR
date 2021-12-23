@@ -112,8 +112,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that defines the domain of an <a class="el" href="classara_1_1core_1_1ErrorCode.html" title="A wrapper around the raw error code in a specific ErrorDomain.">ErrorCode</a> to avoid code interferences.  <a href="classara_1_1core_1_1ErrorDomain.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">AUTOSAR shortname-path wrapper.  <a href="classara_1_1core_1_1InstanceSpecifier.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Optional.html">Optional</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper around a possible value.  <a href="classara_1_1core_1_1Optional.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1Result.html">Result</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper around the callee's return value and its possible error.  <a href="classara_1_1core_1_1Result.html#details">More...</a><br /></td></tr>
@@ -124,6 +126,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a7daee89335c71569ebefc986eae623d9"><td class="memItemLeft" align="right" valign="top"><a id="a7daee89335c71569ebefc986eae623d9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (std::string lhs, const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;rhs) noexcept</td></tr>
+<tr class="separator:a7daee89335c71569ebefc986eae623d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b36f87d165525aa8639981327552842"><td class="memItemLeft" align="right" valign="top"><a id="a5b36f87d165525aa8639981327552842"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (std::string lhs, const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;rhs) noexcept</td></tr>
+<tr class="separator:a5b36f87d165525aa8639981327552842"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa38bfc648d042b639554c1d5b8818037"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa38bfc648d042b639554c1d5b8818037"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceara_1_1core.html#aa38bfc648d042b639554c1d5b8818037">operator==</a> (const <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; T &gt; &amp;lhs, const <a class="el" href="classara_1_1core_1_1Optional.html">Optional</a>&lt; T &gt; &amp;rhs) noexcept</td></tr>
 <tr class="separator:aa38bfc648d042b639554c1d5b8818037"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,12 +176,18 @@ template&lt;typename T , typename E &gt; </td></tr>
 template&lt;typename T , typename E &gt; </td></tr>
 <tr class="memitem:a347d992aab074926c6b8bfa4b7c2b704"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator!=</b> (const E &amp;lhs, const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; T, E &gt; &amp;rhs)</td></tr>
 <tr class="separator:a347d992aab074926c6b8bfa4b7c2b704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69909abdb2676d59dfad529520de9d76"><td class="memTemplParams" colspan="2">template&lt;typename E &gt; </td></tr>
+<tr class="memitem:a69909abdb2676d59dfad529520de9d76"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceara_1_1core.html#a69909abdb2676d59dfad529520de9d76">operator==</a> (const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;lhs, const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;rhs)</td></tr>
+<tr class="separator:a69909abdb2676d59dfad529520de9d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7815f5c7cc021c442bd912ff2d8965"><td class="memTemplParams" colspan="2">template&lt;typename E &gt; </td></tr>
+<tr class="memitem:a7c7815f5c7cc021c442bd912ff2d8965"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceara_1_1core.html#a7c7815f5c7cc021c442bd912ff2d8965">operator!=</a> (const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;lhs, const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;rhs)</td></tr>
+<tr class="separator:a7c7815f5c7cc021c442bd912ff2d8965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ARA basic core types namespace. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a9d487cbd42973c9d405fc894792e7152"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d487cbd42973c9d405fc894792e7152">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d487cbd42973c9d405fc894792e7152">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +226,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a6fd1ed3304f0a141d4c51909c3bafa12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fd1ed3304f0a141d4c51909c3bafa12">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd1ed3304f0a141d4c51909c3bafa12">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,12 +260,51 @@ template&lt;typename T , typename E &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>False if both instances contain equal values or equal erros, otherwise true </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>False if both instances contain equal values or equal errors, otherwise true </dd></dl>
+
+</div>
+</div>
+<a id="a7c7815f5c7cc021c442bd912ff2d8965"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c7815f5c7cc021c442bd912ff2d8965">&#9670;&nbsp;</a></span>operator!=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::core::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>False if both instances contain no errors or equal errors, otherwise true </dd></dl>
 
 </div>
 </div>
 <a id="aa38bfc648d042b639554c1d5b8818037"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa38bfc648d042b639554c1d5b8818037">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38bfc648d042b639554c1d5b8818037">&#9670;&nbsp;</a></span>operator==() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,7 +343,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="af94de709aef7965d72c48c8004c9fd65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af94de709aef7965d72c48c8004c9fd65">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af94de709aef7965d72c48c8004c9fd65">&#9670;&nbsp;</a></span>operator==() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,7 +377,46 @@ template&lt;typename T , typename E &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>True if both instances contain equal values or equal erros, otherwise false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if both instances contain equal values or equal errors, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a69909abdb2676d59dfad529520de9d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69909abdb2676d59dfad529520de9d76">&#9670;&nbsp;</a></span>operator==() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename E &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::core::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; void, E &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if both instances contain no errors or equal errors, otherwise false </dd></dl>
 
 </div>
 </div>

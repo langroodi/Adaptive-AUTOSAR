@@ -100,12 +100,29 @@ $(document).ready(function(){initNavTree('classara_1_1core_1_1InstanceSpecifier.
 <div class="title">ara::core::InstanceSpecifier Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>AUTOSAR shortname-path wrapper.  
+ <a href="classara_1_1core_1_1InstanceSpecifier.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="instance__specifier_8h_source.html">instance_specifier.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aab26f9b2dce48d6863ea31543b7b78ed"><td class="memItemLeft" align="right" valign="top"><a id="aab26f9b2dce48d6863ea31543b7b78ed"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>InstanceSpecifier</b> (std::string metaModelIdentifier)</td></tr>
+<tr class="memitem:aab26f9b2dce48d6863ea31543b7b78ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1InstanceSpecifier.html#aab26f9b2dce48d6863ea31543b7b78ed">InstanceSpecifier</a> (std::string metaModelIdentifier)</td></tr>
+<tr class="memdesc:aab26f9b2dce48d6863ea31543b7b78ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1core_1_1InstanceSpecifier.html#aab26f9b2dce48d6863ea31543b7b78ed">More...</a><br /></td></tr>
 <tr class="separator:aab26f9b2dce48d6863ea31543b7b78ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af08ef19230fcd1d43471dd58b83f65b8"><td class="memItemLeft" align="right" valign="top"><a id="af08ef19230fcd1d43471dd58b83f65b8"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>InstanceSpecifier</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;other)</td></tr>
+<tr class="separator:af08ef19230fcd1d43471dd58b83f65b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126a91ca56e7a302550907497ce6f6f1"><td class="memItemLeft" align="right" valign="top"><a id="a126a91ca56e7a302550907497ce6f6f1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>InstanceSpecifier</b> (<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:a126a91ca56e7a302550907497ce6f6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49350325300423d6b8243d0525e57fe8"><td class="memItemLeft" align="right" valign="top"><a id="a49350325300423d6b8243d0525e57fe8"></a>
+<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;other)</td></tr>
+<tr class="separator:a49350325300423d6b8243d0525e57fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55fb193f5e42459b8c82a5d1158b6e95"><td class="memItemLeft" align="right" valign="top"><a id="a55fb193f5e42459b8c82a5d1158b6e95"></a>
+<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;&amp;other)</td></tr>
+<tr class="separator:a55fb193f5e42459b8c82a5d1158b6e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab100315f5cedc138b92e1c199d313e76"><td class="memItemLeft" align="right" valign="top"><a id="ab100315f5cedc138b92e1c199d313e76"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;other) const noexcept</td></tr>
 <tr class="separator:ab100315f5cedc138b92e1c199d313e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,16 +141,117 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (con
 <tr class="memitem:a8779facf33ce4c16d520cc40be0175d5"><td class="memItemLeft" align="right" valign="top"><a id="a8779facf33ce4c16d520cc40be0175d5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &amp;other) const noexcept</td></tr>
 <tr class="separator:a8779facf33ce4c16d520cc40be0175d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e9549a1ef0261159b244ff1507588a4"><td class="memItemLeft" align="right" valign="top"><a id="a0e9549a1ef0261159b244ff1507588a4"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> () const noexcept</td></tr>
+<tr class="memitem:a0e9549a1ef0261159b244ff1507588a4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1InstanceSpecifier.html#a0e9549a1ef0261159b244ff1507588a4">ToString</a> () const noexcept</td></tr>
+<tr class="memdesc:a0e9549a1ef0261159b244ff1507588a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the instance to a string.  <a href="classara_1_1core_1_1InstanceSpecifier.html#a0e9549a1ef0261159b244ff1507588a4">More...</a><br /></td></tr>
 <tr class="separator:a0e9549a1ef0261159b244ff1507588a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a34c5e9c7cae3678107c85423fdbf5902"><td class="memItemLeft" align="right" valign="top"><a id="a34c5e9c7cae3678107c85423fdbf5902"></a>
-static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Create</b> (std::string metaModelIdentifier)</td></tr>
-<tr class="separator:a34c5e9c7cae3678107c85423fdbf5902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec4b0e5046c6f82a1c5b44efe28583d1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1InstanceSpecifier.html#aec4b0e5046c6f82a1c5b44efe28583d1">Create</a> (std::string metaModelIdentifier)</td></tr>
+<tr class="memdesc:aec4b0e5046c6f82a1c5b44efe28583d1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1core_1_1InstanceSpecifier.html" title="AUTOSAR shortname-path wrapper.">InstanceSpecifier</a> factory.  <a href="classara_1_1core_1_1InstanceSpecifier.html#aec4b0e5046c6f82a1c5b44efe28583d1">More...</a><br /></td></tr>
+<tr class="separator:aec4b0e5046c6f82a1c5b44efe28583d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>AUTOSAR shortname-path wrapper. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aab26f9b2dce48d6863ea31543b7b78ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab26f9b2dce48d6863ea31543b7b78ed">&#9670;&nbsp;</a></span>InstanceSpecifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::core::InstanceSpecifier::InstanceSpecifier </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>metaModelIdentifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metaModelIdentifier</td><td>Shortname-path </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aec4b0e5046c6f82a1c5b44efe28583d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec4b0e5046c6f82a1c5b44efe28583d1">&#9670;&nbsp;</a></span>Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">Result</a>&lt; <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">InstanceSpecifier</a> &gt; ara::core::InstanceSpecifier::Create </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>metaModelIdentifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classara_1_1core_1_1InstanceSpecifier.html" title="AUTOSAR shortname-path wrapper.">InstanceSpecifier</a> factory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metaModelIdentifier</td><td>Shortname-path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1core_1_1Result.html" title="A wrapper around the callee&#39;s return value and its possible error.">Result</a> containing the created <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html" title="AUTOSAR shortname-path wrapper.">InstanceSpecifier</a> </dd></dl>
+
+</div>
+</div>
+<a id="a0e9549a1ef0261159b244ff1507588a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e9549a1ef0261159b244ff1507588a4">&#9670;&nbsp;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ara::core::InstanceSpecifier::ToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert the instance to a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>Meta-model ID (Shortname-path) </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
