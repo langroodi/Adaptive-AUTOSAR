@@ -280,6 +280,7 @@ if(build_tests)
     ${test_ara_core_dir}/result_void_test.cpp
     ${test_ara_core_dir}/error_domain_test.cpp
     ${test_ara_core_dir}/error_code_test.cpp
+    ${test_ara_core_dir}/instance_specifier_test.cpp
   )
 
   target_link_libraries(

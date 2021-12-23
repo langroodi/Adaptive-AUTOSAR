@@ -8,30 +8,42 @@ namespace ara
             std::string metaModelIdentifier) : mMetaModelIdentifier{metaModelIdentifier}
         {
         }
-        
-        bool InstanceSpecifier::operator==(const InstanceSpecifier &other) const noexcept
+
+        InstanceSpecifier::InstanceSpecifier(
+            const InstanceSpecifier &other) : mMetaModelIdentifier{other.mMetaModelIdentifier}
         {
-            return mMetaModelIdentifier == other.mMetaModelIdentifier;
         }
 
-        bool InstanceSpecifier::operator==(std::string other) const noexcept
+        InstanceSpecifier::InstanceSpecifier(
+            InstanceSpecifier &&other) noexcept : mMetaModelIdentifier{std::move(other.mMetaModelIdentifier)}
         {
-            return mMetaModelIdentifier == other;
         }
 
-        bool InstanceSpecifier::operator!=(const InstanceSpecifier &other) const noexcept
+        InstanceSpecifier &InstanceSpecifier::operator=(
+            const InstanceSpecifier &other)
         {
-            return mMetaModelIdentifier != other.mMetaModelIdentifier;
+            mMetaModelIdentifier = other.mMetaModelIdentifier;
+            return *this;
         }
-        
-        bool InstanceSpecifier::operator!=(std::string other) const noexcept
+        InstanceSpecifier &InstanceSpecifier::operator=(
+            InstanceSpecifier &&other)
         {
-            return mMetaModelIdentifier != other;
+            mMetaModelIdentifier = std::move(other.mMetaModelIdentifier);
+            return *this;
         }
 
         std::string InstanceSpecifier::ToString() const noexcept
         {
             return mMetaModelIdentifier;
+        }
+
+        Result<InstanceSpecifier> InstanceSpecifier::Create(
+            std::string metaModelIdentifier)
+        {
+            InstanceSpecifier _instanceSpecifier{metaModelIdentifier};
+            Result<InstanceSpecifier> _result{std::move(_instanceSpecifier)};
+
+            return _result;
         }
     }
 }
