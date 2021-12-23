@@ -9,6 +9,8 @@ namespace ara
 {
     namespace core
     {
+        /// @brief A wrapper around a possible value
+        /// @tparam T Possible value type
         template <typename T>
         class Optional
         {

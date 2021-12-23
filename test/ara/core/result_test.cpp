@@ -198,7 +198,7 @@ namespace ara
 
         TEST(ResultTest, ErrorEquality)
         {
-            const bool cError{true};
+            const int cError{1};
             const Result<bool, int> cResult{cError};
             const Result<bool, int> cOtherResult{cError};
 
@@ -220,7 +220,7 @@ namespace ara
 
         TEST(ResultTest, ErrorInequality)
         {
-            const bool cError{true};
+            const int cError{1};
             const Result<bool, int> cResult{cError};
             const Result<bool, int> cOtherResult{cError};
 

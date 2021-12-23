@@ -540,7 +540,7 @@ namespace ara
             return _result;
         }
 
-        /// @returns True if both instances contain equal values or equal erros, otherwise false
+        /// @returns True if both instances contain equal values or equal errors, otherwise false
         template <typename T, typename E>
         inline bool operator==(const Result<T, E> &lhs, const Result<T, E> &rhs)
         {
@@ -562,7 +562,7 @@ namespace ara
             return _result;
         }
 
-        /// @returns False if both instances contain equal values or equal erros, otherwise true
+        /// @returns False if both instances contain equal values or equal errors, otherwise true
         template <typename T, typename E>
         inline bool operator!=(const Result<T, E> &lhs, const Result<T, E> &rhs)
         {
@@ -622,7 +622,7 @@ namespace ara
         template <typename T, typename E>
         inline bool operator==(const E &lhs, const Result<T, E> &rhs)
         {
-            bool _result = rhs.HasValue() ? false : lhs == rhs.Err();
+            bool _result = rhs.HasValue() ? false : lhs == rhs.Error();
             return _result;
         }
 
@@ -636,7 +636,7 @@ namespace ara
         template <typename T, typename E>
         inline bool operator!=(const E &lhs, const Result<T, E> &rhs)
         {
-            bool _result = rhs.HasValue() ? true : lhs != rhs.Err();
+            bool _result = rhs.HasValue() ? true : lhs != rhs.Error();
             return _result;
         }
 
@@ -779,17 +779,17 @@ namespace ara
                 }
             }
 
-            /// @brief Indicate that the instance contains no value
-            /// @returns Always false
+            /// @brief Indicate whether the instance contains an error or not
+            /// @returns True if the instance has no error, otherwise false
             constexpr bool HasValue() const noexcept
             {
-                return false;
+                return !mHasError;
             }
 
-            /// @returns False due to the fact that it never can contain a value
+            /// @returns True if the instance has no error, otherwise false
             constexpr explicit operator bool() const noexcept
             {
-                return false;
+                return !mHasError;
             }
 
             constexpr void operator*() const noexcept
@@ -984,6 +984,50 @@ namespace ara
             std::is_nothrow_move_constructible<E>::value)
         {
             Result _result{e};
+            return _result;
+        }
+
+        /// @returns True if both instances contain no errors or equal errors, otherwise false
+        template <typename E>
+        inline bool operator==(const Result<void, E> &lhs, const Result<void, E> &rhs)
+        {
+            bool _result;
+
+            if (lhs.HasValue() && rhs.HasValue())
+            {
+                _result = true;
+            }
+            else if (!lhs.HasValue() && !rhs.HasValue())
+            {
+                _result = lhs.Error() == rhs.Error();
+            }
+            else
+            {
+                _result = false;
+            }
+
+            return _result;
+        }
+
+        /// @returns False if both instances contain no errors or equal errors, otherwise true
+        template <typename E>
+        inline bool operator!=(const Result<void, E> &lhs, const Result<void, E> &rhs)
+        {
+            bool _result;
+
+            if (lhs.HasValue() && rhs.HasValue())
+            {
+                _result = false;
+            }
+            else if (!lhs.HasValue() && !rhs.HasValue())
+            {
+                _result = lhs.Error() != rhs.Error();
+            }
+            else
+            {
+                _result = true;
+            }
+
             return _result;
         }
     }

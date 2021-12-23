@@ -8,7 +8,7 @@ namespace ara
         TEST(ResultVoidTest, DefaultConstructor)
         {
             Result<void, int> _result;
-            EXPECT_FALSE(_result.HasValue());
+            EXPECT_TRUE(_result.HasValue());
         }
 
         TEST(ResultVoidTest, CopyErrorConstructor)
@@ -111,6 +111,44 @@ namespace ara
             { return cTrueStr; };
 
             EXPECT_STREQ(cTrueStr, _result.Bind(_callable).Value());
+        }
+
+        TEST(ResultVoidTest, Eqaulity)
+        {
+            const Result<void, int> cResult;
+            const Result<void, int> cOtherResult;
+
+            EXPECT_TRUE(cResult == cOtherResult);
+        }
+
+        TEST(ResultVoidTest, ErrorEquality)
+        {
+            const int cError{1};
+            const Result<void, int> cResult{cError};
+            const Result<void, int> cOtherResult;
+
+            EXPECT_FALSE(cResult == cOtherResult);
+            EXPECT_TRUE(cResult == cError);
+            EXPECT_FALSE(cError == cOtherResult);
+        }
+
+        TEST(ResultVoidTest, Ineqaulity)
+        {
+            const Result<void, int> cResult;
+            const Result<void, int> cOtherResult;
+
+            EXPECT_FALSE(cResult != cOtherResult);
+        }
+
+        TEST(ResultVoidTest, ErrorInequality)
+        {
+            const int cError{1};
+            const Result<void, int> cResult{cError};
+            const Result<void, int> cOtherResult;
+
+            EXPECT_TRUE(cResult != cOtherResult);
+            EXPECT_FALSE(cResult != cError);
+            EXPECT_TRUE(cError != cOtherResult);
         }
     }
 }
