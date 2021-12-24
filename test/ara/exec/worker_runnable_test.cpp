@@ -8,7 +8,7 @@ namespace ara
         class WorkerRunnableTest : public testing::Test, public WorkerRunnable<uint64_t>
         {
         public:
-            virtual void  Run(uint64_t &element, WorkerThread &t) override
+            virtual void Run(uint64_t &element, WorkerThread &t) override
             {
                 element = t.GetRandom() + 1;
             }

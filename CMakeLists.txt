@@ -236,9 +236,9 @@ add_library(
   ${source_ara_exec_dir}/worker_runnable.h
 )
 
-set_target_properties(
+target_link_libraries(
   ara_exec
-  PROPERTIES LINKER_LANGUAGE CXX
+  ara_core
 )
 
 target_link_libraries(
