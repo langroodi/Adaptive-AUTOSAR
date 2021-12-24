@@ -285,10 +285,6 @@ var namespaces_dup =
           [ "kRun", "deterministic__client_8h.html#ab2bd2ca70e096b765f839a1dd7349396ac1f0a0a6528c3d1ea0c0ee22f5ac4d77", null ],
           [ "kTerminate", "deterministic__client_8h.html#ab2bd2ca70e096b765f839a1dd7349396a0de86bbcdd9cc86fd540e678777219f0", null ]
         ] ],
-        [ "ActivationTimeStampReturnType", "deterministic__client_8h.html#a4a5cdf3ccb13d1b58eed9cd73750e2bd", [
-          [ "kSuccess", "deterministic__client_8h.html#a4a5cdf3ccb13d1b58eed9cd73750e2bda8c632159fa131f09d04f94e3cbcd8782", null ],
-          [ "kNotAvailable", "deterministic__client_8h.html#a4a5cdf3ccb13d1b58eed9cd73750e2bda2437e2651ed47cf5c1a4d078eb69c04d", null ]
-        ] ],
         [ "ExecErrc", "error__code__domain_8h.html#ad9505416a5a45c596ebf1a7706c1a230", [
           [ "kGeneralError", "error__code__domain_8h.html#ad9505416a5a45c596ebf1a7706c1a230a133cecba135fb1c756e7ebfbdd840024", null ],
           [ "kInvalidArguments", "error__code__domain_8h.html#ad9505416a5a45c596ebf1a7706c1a230adf6b881cc0401487c1f6723ec3b5398e", null ],
