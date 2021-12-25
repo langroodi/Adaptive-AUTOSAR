@@ -1,5 +1,5 @@
-#ifndef OPTIONAL_H
-#define OPTIONAL_H
+#ifndef ATOMIC_OPTIONAL_H
+#define ATOMIC_OPTIONAL_H
 
 #include <type_traits>
 #include <utility>
