@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1DeterministicClien
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classara_1_1exec_1_1DeterministicClient-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ara::exec::DeterministicClient Class Reference</div>  </div>
+<div class="title">ara::exec::DeterministicClient Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -108,16 +108,16 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1DeterministicClien
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a54c8938efc035c2b635cc9cf1550e634"><td class="memItemLeft" align="right" valign="top"><a id="a54c8938efc035c2b635cc9cf1550e634"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">TimeStamp</a> = std::chrono::time_point&lt; std::chrono::system_clock &gt;</td></tr>
-<tr class="memdesc:a54c8938efc035c2b635cc9cf1550e634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steady clock time point for deterministic cycles. <br /></td></tr>
-<tr class="separator:a54c8938efc035c2b635cc9cf1550e634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadf1e4a74ce3eda295f39c0559de0bbb"><td class="memItemLeft" align="right" valign="top"><a id="aadf1e4a74ce3eda295f39c0559de0bbb"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">TimeStamp</a> = std::chrono::time_point&lt; std::chrono::steady_clock &gt;</td></tr>
+<tr class="memdesc:aadf1e4a74ce3eda295f39c0559de0bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steady clock time point for deterministic cycles. <br /></td></tr>
+<tr class="separator:aadf1e4a74ce3eda295f39c0559de0bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af074e205fe64ad833df99edbdb058dfd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; ActivationReturnType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#af074e205fe64ad833df99edbdb058dfd">WaitForActivation</a> () noexcept</td></tr>
-<tr class="memdesc:af074e205fe64ad833df99edbdb058dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the caller till reaching the next activation time.  <a href="classara_1_1exec_1_1DeterministicClient.html#af074e205fe64ad833df99edbdb058dfd">More...</a><br /></td></tr>
-<tr class="separator:af074e205fe64ad833df99edbdb058dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64c3cc9da796c3a09afbfc0e5e92f27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; ActivationReturnType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#af64c3cc9da796c3a09afbfc0e5e92f27">WaitForActivation</a> ()</td></tr>
+<tr class="memdesc:af64c3cc9da796c3a09afbfc0e5e92f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the caller till reaching the next activation time.  <a href="classara_1_1exec_1_1DeterministicClient.html#af64c3cc9da796c3a09afbfc0e5e92f27">More...</a><br /></td></tr>
+<tr class="separator:af64c3cc9da796c3a09afbfc0e5e92f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39deadd5cce092c56cd2db52ba305b4f"><td class="memTemplParams" colspan="2">template&lt;typename ValueType , typename Container &gt; </td></tr>
 <tr class="memitem:a39deadd5cce092c56cd2db52ba305b4f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#a39deadd5cce092c56cd2db52ba305b4f">RunWorkerPool</a> (<a class="el" href="classara_1_1exec_1_1WorkerRunnable.html">WorkerRunnable</a>&lt; ValueType &gt; &amp;runnableObj, Container &amp;container) noexcept</td></tr>
 <tr class="memdesc:a39deadd5cce092c56cd2db52ba305b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a deterministic worker pool to process a container via a runnable object.  <a href="classara_1_1exec_1_1DeterministicClient.html#a39deadd5cce092c56cd2db52ba305b4f">More...</a><br /></td></tr>
@@ -128,18 +128,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a300f2f6d49582ca46239c6242e5c26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#a5a300f2f6d49582ca46239c6242e5c26">SetRandomSeed</a> (uint64_t seed) noexcept</td></tr>
 <tr class="memdesc:a5a300f2f6d49582ca46239c6242e5c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a seed number to the deterministic random number generator.  <a href="classara_1_1exec_1_1DeterministicClient.html#a5a300f2f6d49582ca46239c6242e5c26">More...</a><br /></td></tr>
 <tr class="separator:a5a300f2f6d49582ca46239c6242e5c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affc341ff7702654679c1b29345317e2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">TimeStamp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#affc341ff7702654679c1b29345317e2a">GetActivationTime</a> () noexcept</td></tr>
-<tr class="memdesc:affc341ff7702654679c1b29345317e2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last activation time.  <a href="classara_1_1exec_1_1DeterministicClient.html#affc341ff7702654679c1b29345317e2a">More...</a><br /></td></tr>
-<tr class="separator:affc341ff7702654679c1b29345317e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80ae9403e2aeb5085e88d4b8b331a3ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">TimeStamp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#a80ae9403e2aeb5085e88d4b8b331a3ce">GetNextActivationTime</a> () noexcept</td></tr>
-<tr class="memdesc:a80ae9403e2aeb5085e88d4b8b331a3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next comming activation time.  <a href="classara_1_1exec_1_1DeterministicClient.html#a80ae9403e2aeb5085e88d4b8b331a3ce">More...</a><br /></td></tr>
-<tr class="separator:a80ae9403e2aeb5085e88d4b8b331a3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2e1ac03ea85b34c73f3dd29834d6a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">TimeStamp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#acb2e1ac03ea85b34c73f3dd29834d6a7">GetActivationTime</a> () noexcept</td></tr>
+<tr class="memdesc:acb2e1ac03ea85b34c73f3dd29834d6a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last activation time.  <a href="classara_1_1exec_1_1DeterministicClient.html#acb2e1ac03ea85b34c73f3dd29834d6a7">More...</a><br /></td></tr>
+<tr class="separator:acb2e1ac03ea85b34c73f3dd29834d6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb343c3ecb532efe8ecca8c4a7d8999f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">TimeStamp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1DeterministicClient.html#adb343c3ecb532efe8ecca8c4a7d8999f">GetNextActivationTime</a> ()</td></tr>
+<tr class="memdesc:adb343c3ecb532efe8ecca8c4a7d8999f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next comming activation time.  <a href="classara_1_1exec_1_1DeterministicClient.html#adb343c3ecb532efe8ecca8c4a7d8999f">More...</a><br /></td></tr>
+<tr class="separator:adb343c3ecb532efe8ecca8c4a7d8999f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that utilizes a client to have deterministic behaviour. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="affc341ff7702654679c1b29345317e2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affc341ff7702654679c1b29345317e2a">&#9670;&nbsp;</a></span>GetActivationTime()</h2>
+<a id="acb2e1ac03ea85b34c73f3dd29834d6a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb2e1ac03ea85b34c73f3dd29834d6a7">&#9670;&nbsp;</a></span>GetActivationTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +148,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt;<a class="el" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">TimeStamp</a>&gt; ara::exec::DeterministicClient::GetActivationTime </td>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">DeterministicClient::TimeStamp</a> &gt; ara::exec::DeterministicClient::GetActivationTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -166,27 +166,19 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a80ae9403e2aeb5085e88d4b8b331a3ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80ae9403e2aeb5085e88d4b8b331a3ce">&#9670;&nbsp;</a></span>GetNextActivationTime()</h2>
+<a id="adb343c3ecb532efe8ecca8c4a7d8999f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb343c3ecb532efe8ecca8c4a7d8999f">&#9670;&nbsp;</a></span>GetNextActivationTime()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt;<a class="el" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">TimeStamp</a>&gt; ara::exec::DeterministicClient::GetNextActivationTime </td>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">DeterministicClient::TimeStamp</a> &gt; ara::exec::DeterministicClient::GetNextActivationTime </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Get the next comming activation time. </p>
@@ -253,7 +245,7 @@ template&lt;typename ValueType , typename Container &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -311,31 +303,24 @@ template&lt;typename ValueType , typename Container &gt; </div>
 
 </div>
 </div>
-<a id="af074e205fe64ad833df99edbdb058dfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af074e205fe64ad833df99edbdb058dfd">&#9670;&nbsp;</a></span>WaitForActivation()</h2>
+<a id="af64c3cc9da796c3a09afbfc0e5e92f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64c3cc9da796c3a09afbfc0e5e92f27">&#9670;&nbsp;</a></span>WaitForActivation()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt;ActivationReturnType&gt; ara::exec::DeterministicClient::WaitForActivation </td>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; ActivationReturnType &gt; ara::exec::DeterministicClient::WaitForActivation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Blocks the caller till reaching the next activation time. </p>
 <dl class="section return"><dt>Returns</dt><dd>Value that controls the caller's internal lifecylce </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Return proper value based on the client current lifecycle </dd></dl>
 
 </div>
 </div>

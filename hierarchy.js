@@ -6,6 +6,7 @@ var hierarchy =
     ] ],
     [ "ara::log::Argument< T >", "classara_1_1log_1_1Argument.html", null ],
     [ "ara::exec::helper::AtomicOptional< T >", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", null ],
+    [ "ara::exec::helper::AtomicOptional< uint64_t >", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", null ],
     [ "ara::diag::CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", null ],
     [ "ara::diag::ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
     [ "ara::diag::CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],

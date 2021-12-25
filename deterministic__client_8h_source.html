@@ -100,61 +100,96 @@ $(document).ready(function(){initNavTree('deterministic__client_8h_source.html',
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DETERMINISTIC_CLIENT_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;future&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../core/result.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;./worker_runnable.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>ara</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">namespace </span>exec</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">enum class</span> ActivationReturnType : uint8_t</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            kRegisterService = 0,   </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            kServiceDiscovery = 1,  </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            kInit = 2,              </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            kRun = 3,               </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            kTerminate = 4          </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        };</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html">   25</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classara_1_1exec_1_1DeterministicClient.html">DeterministicClient</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">   29</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">TimeStamp</a> = std::chrono::time_point&lt;std::chrono::system_clock&gt;;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classara_1_1exec_1_1DeterministicClient.html">DeterministicClient</a>() noexcept;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            ~<a class="code" href="classara_1_1exec_1_1DeterministicClient.html">DeterministicClient</a>() noexcept;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../core/result.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;./worker_runnable.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;./helper/atomic_optional.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>ara</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">namespace </span>exec</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">enum class</span> ActivationReturnType : uint8_t</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            kRegisterService = 0,  </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            kServiceDiscovery = 1, </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            kInit = 2,             </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            kRun = 3,              </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            kTerminate = 4         </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html">   28</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classara_1_1exec_1_1DeterministicClient.html">DeterministicClient</a> final</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">   32</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">TimeStamp</a> = std::chrono::time_point&lt;std::chrono::steady_clock&gt;;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#af074e205fe64ad833df99edbdb058dfd">   36</a></span>&#160;            core::Result&lt;ActivationReturnType&gt; <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#af074e205fe64ad833df99edbdb058dfd">WaitForActivation</a>() noexcept;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            template &lt;typename ValueType, typename Container&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="comment">//static_assert(std::is_same&lt;ValueType, typename Container::value_type&gt;::value, &quot;Container value type mismatch!&quot;);</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#a39deadd5cce092c56cd2db52ba305b4f">   47</a></span>&#160;            ara::core::Result&lt;<span class="keywordtype">void</span>&gt; <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a39deadd5cce092c56cd2db52ba305b4f">RunWorkerPool</a>(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="classara_1_1exec_1_1WorkerRunnable.html">WorkerRunnable</a>&lt;ValueType&gt; &amp;runnableObj,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                Container &amp;container) noexcept;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#a5b56ebd3a6839c2116a746848210f937">   53</a></span>&#160;            uint64_t <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a5b56ebd3a6839c2116a746848210f937">GetRandom</a>() noexcept;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#a5a300f2f6d49582ca46239c6242e5c26">   57</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a5a300f2f6d49582ca46239c6242e5c26">SetRandomSeed</a> (uint64_t seed) noexcept;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#affc341ff7702654679c1b29345317e2a">   61</a></span>&#160;            core::Result&lt;<a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">TimeStamp</a>&gt; <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#affc341ff7702654679c1b29345317e2a">GetActivationTime</a>() noexcept;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#a80ae9403e2aeb5085e88d4b8b331a3ce">   65</a></span>&#160;            core::Result&lt;<a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">TimeStamp</a>&gt; <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a80ae9403e2aeb5085e88d4b8b331a3ce">GetNextActivationTime</a>() noexcept;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        };</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html">ara::exec::DeterministicClient</a></div><div class="ttdoc">Class that utilizes a client to have deterministic behaviour.</div><div class="ttdef"><b>Definition:</b> deterministic_client.h:26</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_a39deadd5cce092c56cd2db52ba305b4f"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#a39deadd5cce092c56cd2db52ba305b4f">ara::exec::DeterministicClient::RunWorkerPool</a></div><div class="ttdeci">ara::core::Result&lt; void &gt; RunWorkerPool(WorkerRunnable&lt; ValueType &gt; &amp;runnableObj, Container &amp;container) noexcept</div><div class="ttdoc">Run a deterministic worker pool to process a container via a runnable object.</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_a54c8938efc035c2b635cc9cf1550e634"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#a54c8938efc035c2b635cc9cf1550e634">ara::exec::DeterministicClient::TimeStamp</a></div><div class="ttdeci">std::chrono::time_point&lt; std::chrono::system_clock &gt; TimeStamp</div><div class="ttdoc">Steady clock time point for deterministic cycles.</div><div class="ttdef"><b>Definition:</b> deterministic_client.h:29</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_a5a300f2f6d49582ca46239c6242e5c26"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#a5a300f2f6d49582ca46239c6242e5c26">ara::exec::DeterministicClient::SetRandomSeed</a></div><div class="ttdeci">void SetRandomSeed(uint64_t seed) noexcept</div><div class="ttdoc">Set a seed number to the deterministic random number generator.</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_a5b56ebd3a6839c2116a746848210f937"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#a5b56ebd3a6839c2116a746848210f937">ara::exec::DeterministicClient::GetRandom</a></div><div class="ttdeci">uint64_t GetRandom() noexcept</div><div class="ttdoc">Get a deterministic random number.</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_a80ae9403e2aeb5085e88d4b8b331a3ce"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#a80ae9403e2aeb5085e88d4b8b331a3ce">ara::exec::DeterministicClient::GetNextActivationTime</a></div><div class="ttdeci">core::Result&lt; TimeStamp &gt; GetNextActivationTime() noexcept</div><div class="ttdoc">Get the next comming activation time.</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_af074e205fe64ad833df99edbdb058dfd"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#af074e205fe64ad833df99edbdb058dfd">ara::exec::DeterministicClient::WaitForActivation</a></div><div class="ttdeci">core::Result&lt; ActivationReturnType &gt; WaitForActivation() noexcept</div><div class="ttdoc">Blocks the caller till reaching the next activation time.</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_affc341ff7702654679c1b29345317e2a"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#affc341ff7702654679c1b29345317e2a">ara::exec::DeterministicClient::GetActivationTime</a></div><div class="ttdeci">core::Result&lt; TimeStamp &gt; GetActivationTime() noexcept</div><div class="ttdoc">Get the last activation time.</div></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">static</span> <span class="keyword">const</span> uint64_t cCycleDelayMs{10};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">static</span> std::atomic_uint8_t mCounter;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keyword">static</span> std::future&lt;void&gt; mFuture;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">bool</span> mRunning;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">static</span> std::mutex mCycleMutex;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">static</span> std::condition_variable mCycleConditionVariable;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> std::default_random_engine mGenerator;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">static</span> std::uniform_int_distribution&lt;uint64_t&gt; mDistribution;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">static</span> <a class="code" href="classara_1_1exec_1_1helper_1_1AtomicOptional.html">helper::AtomicOptional&lt;uint64_t&gt;</a> mSeed;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">static</span> uint64_t mRandomNumber;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">static</span> <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">TimeStamp</a> mActivationTime;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classara_1_1exec_1_1WorkerThread.html">WorkerThread</a> mWorkerThread;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> activateCycle();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classara_1_1exec_1_1DeterministicClient.html">DeterministicClient</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            ~<a class="code" href="classara_1_1exec_1_1DeterministicClient.html">DeterministicClient</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">core::Result&lt;ActivationReturnType&gt;</a> <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#af64c3cc9da796c3a09afbfc0e5e92f27">WaitForActivation</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ValueType, <span class="keyword">typename</span> Container&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1DeterministicClient.html#a39deadd5cce092c56cd2db52ba305b4f">   66</a></span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a39deadd5cce092c56cd2db52ba305b4f">RunWorkerPool</a>(</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="classara_1_1exec_1_1WorkerRunnable.html">WorkerRunnable&lt;ValueType&gt;</a> &amp;runnableObj,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                Container &amp;container) noexcept</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                static_assert(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    std::is_same&lt;ValueType, typename Container::value_type&gt;::value,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="stringliteral">&quot;Container value type mismatch!&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> element : container)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    runnableObj.Run(element, mWorkerThread);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <a class="code" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> _result;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">return</span> _result;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            uint64_t <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a5b56ebd3a6839c2116a746848210f937">GetRandom</a>() noexcept;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#a5a300f2f6d49582ca46239c6242e5c26">SetRandomSeed</a>(uint64_t seed) noexcept;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            core::Result&lt;<a class="code" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">TimeStamp</a>&gt; <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#acb2e1ac03ea85b34c73f3dd29834d6a7">GetActivationTime</a>() noexcept;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            core::Result&lt;<a class="code" href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">TimeStamp</a>&gt; <a class="code" href="classara_1_1exec_1_1DeterministicClient.html#adb343c3ecb532efe8ecca8c4a7d8999f">GetNextActivationTime</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        };</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassara_1_1core_1_1Result_html"><div class="ttname"><a href="classara_1_1core_1_1Result.html">ara::core::Result</a></div><div class="ttdoc">A wrapper around the callee's return value and its possible error.</div><div class="ttdef"><b>Definition:</b> result.h:16</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html">ara::exec::DeterministicClient</a></div><div class="ttdoc">Class that utilizes a client to have deterministic behaviour.</div><div class="ttdef"><b>Definition:</b> deterministic_client.h:29</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_a39deadd5cce092c56cd2db52ba305b4f"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#a39deadd5cce092c56cd2db52ba305b4f">ara::exec::DeterministicClient::RunWorkerPool</a></div><div class="ttdeci">ara::core::Result&lt; void &gt; RunWorkerPool(WorkerRunnable&lt; ValueType &gt; &amp;runnableObj, Container &amp;container) noexcept</div><div class="ttdoc">Run a deterministic worker pool to process a container via a runnable object.</div><div class="ttdef"><b>Definition:</b> deterministic_client.h:66</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_a5a300f2f6d49582ca46239c6242e5c26"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#a5a300f2f6d49582ca46239c6242e5c26">ara::exec::DeterministicClient::SetRandomSeed</a></div><div class="ttdeci">void SetRandomSeed(uint64_t seed) noexcept</div><div class="ttdoc">Set a seed number to the deterministic random number generator.</div><div class="ttdef"><b>Definition:</b> deterministic_client.cpp:70</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_a5b56ebd3a6839c2116a746848210f937"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#a5b56ebd3a6839c2116a746848210f937">ara::exec::DeterministicClient::GetRandom</a></div><div class="ttdeci">uint64_t GetRandom() noexcept</div><div class="ttdoc">Get a deterministic random number.</div><div class="ttdef"><b>Definition:</b> deterministic_client.cpp:65</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_aadf1e4a74ce3eda295f39c0559de0bbb"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb">ara::exec::DeterministicClient::TimeStamp</a></div><div class="ttdeci">std::chrono::time_point&lt; std::chrono::steady_clock &gt; TimeStamp</div><div class="ttdoc">Steady clock time point for deterministic cycles.</div><div class="ttdef"><b>Definition:</b> deterministic_client.h:32</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_acb2e1ac03ea85b34c73f3dd29834d6a7"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#acb2e1ac03ea85b34c73f3dd29834d6a7">ara::exec::DeterministicClient::GetActivationTime</a></div><div class="ttdeci">core::Result&lt; TimeStamp &gt; GetActivationTime() noexcept</div><div class="ttdoc">Get the last activation time.</div><div class="ttdef"><b>Definition:</b> deterministic_client.cpp:75</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_adb343c3ecb532efe8ecca8c4a7d8999f"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#adb343c3ecb532efe8ecca8c4a7d8999f">ara::exec::DeterministicClient::GetNextActivationTime</a></div><div class="ttdeci">core::Result&lt; TimeStamp &gt; GetNextActivationTime()</div><div class="ttdoc">Get the next comming activation time.</div><div class="ttdef"><b>Definition:</b> deterministic_client.cpp:81</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html_af64c3cc9da796c3a09afbfc0e5e92f27"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html#af64c3cc9da796c3a09afbfc0e5e92f27">ara::exec::DeterministicClient::WaitForActivation</a></div><div class="ttdeci">core::Result&lt; ActivationReturnType &gt; WaitForActivation()</div><div class="ttdoc">Blocks the caller till reaching the next activation time.</div><div class="ttdef"><b>Definition:</b> deterministic_client.cpp:55</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1WorkerRunnable_html"><div class="ttname"><a href="classara_1_1exec_1_1WorkerRunnable.html">ara::exec::WorkerRunnable</a></div><div class="ttdoc">DeterministicClient worker runnable abstract class.</div><div class="ttdef"><b>Definition:</b> worker_runnable.h:14</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1WorkerThread_html"><div class="ttname"><a href="classara_1_1exec_1_1WorkerThread.html">ara::exec::WorkerThread</a></div><div class="ttdoc">DeterministicClient random number generator.</div><div class="ttdef"><b>Definition:</b> worker_thread.h:14</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1helper_1_1AtomicOptional_html"><div class="ttname"><a href="classara_1_1exec_1_1helper_1_1AtomicOptional.html">ara::exec::helper::AtomicOptional&lt; uint64_t &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
