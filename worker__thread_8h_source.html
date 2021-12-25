@@ -111,24 +111,23 @@ $(document).ready(function(){initNavTree('worker__thread_8h_source.html',''); in
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">static</span> std::atomic_uint64_t mOffset;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            std::default_random_engine mGenerator;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            std::uniform_int_distribution&lt;uint64_t&gt; mDistribution;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1WorkerThread.html#acc7f3739fbe7fbd3e1244dddf20adf32">   22</a></span>&#160;            <span class="keyword">static</span> <span class="keyword">const</span> uint64_t <a class="code" href="classara_1_1exec_1_1WorkerThread.html#acc7f3739fbe7fbd3e1244dddf20adf32">cOffsetStep</a> = 6;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classara_1_1exec_1_1WorkerThread.html">WorkerThread</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classara_1_1exec_1_1WorkerThread.html">WorkerThread</a>() noexcept = default;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            uint64_t <a class="code" href="classara_1_1exec_1_1WorkerThread.html#a596d0ebde5ae6709350430a9e3c91600">GetRandom</a>() noexcept;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        };</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">static</span> thread_local std::default_random_engine mGenerator;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1WorkerThread.html#acc7f3739fbe7fbd3e1244dddf20adf32">   21</a></span>&#160;            <span class="keyword">static</span> <span class="keyword">const</span> uint64_t <a class="code" href="classara_1_1exec_1_1WorkerThread.html#acc7f3739fbe7fbd3e1244dddf20adf32">cOffsetStep</a> = 6;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classara_1_1exec_1_1WorkerThread.html">WorkerThread</a>() noexcept = default;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            virtual ~<a class="code" href="classara_1_1exec_1_1WorkerThread.html">WorkerThread</a>() noexcept = default;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            uint64_t <a class="code" href="classara_1_1exec_1_1WorkerThread.html#a596d0ebde5ae6709350430a9e3c91600">GetRandom</a>() noexcept;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1exec_1_1WorkerThread_html"><div class="ttname"><a href="classara_1_1exec_1_1WorkerThread.html">ara::exec::WorkerThread</a></div><div class="ttdoc">DeterministicClient random number generator.</div><div class="ttdef"><b>Definition:</b> worker_thread.h:14</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1WorkerThread_html_a596d0ebde5ae6709350430a9e3c91600"><div class="ttname"><a href="classara_1_1exec_1_1WorkerThread.html#a596d0ebde5ae6709350430a9e3c91600">ara::exec::WorkerThread::GetRandom</a></div><div class="ttdeci">uint64_t GetRandom() noexcept</div><div class="ttdoc">Generate a unique random number for each container.</div><div class="ttdef"><b>Definition:</b> worker_thread.cpp:14</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1WorkerThread_html_acc7f3739fbe7fbd3e1244dddf20adf32"><div class="ttname"><a href="classara_1_1exec_1_1WorkerThread.html#acc7f3739fbe7fbd3e1244dddf20adf32">ara::exec::WorkerThread::cOffsetStep</a></div><div class="ttdeci">static const uint64_t cOffsetStep</div><div class="ttdoc">Offset step that WorkerThread takes to generate the next unique random number.</div><div class="ttdef"><b>Definition:</b> worker_thread.h:22</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1WorkerThread_html_a596d0ebde5ae6709350430a9e3c91600"><div class="ttname"><a href="classara_1_1exec_1_1WorkerThread.html#a596d0ebde5ae6709350430a9e3c91600">ara::exec::WorkerThread::GetRandom</a></div><div class="ttdeci">uint64_t GetRandom() noexcept</div><div class="ttdoc">Generate a unique random number for each container.</div><div class="ttdef"><b>Definition:</b> worker_thread.cpp:11</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1WorkerThread_html_acc7f3739fbe7fbd3e1244dddf20adf32"><div class="ttname"><a href="classara_1_1exec_1_1WorkerThread.html#acc7f3739fbe7fbd3e1244dddf20adf32">ara::exec::WorkerThread::cOffsetStep</a></div><div class="ttdeci">static const uint64_t cOffsetStep</div><div class="ttdoc">Offset step that WorkerThread takes to generate the next unique random number.</div><div class="ttdef"><b>Definition:</b> worker_thread.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
