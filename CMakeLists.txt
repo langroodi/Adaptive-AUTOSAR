@@ -240,6 +240,8 @@ add_library(
   ${source_ara_exec_dir}/worker_thread.h
   ${source_ara_exec_dir}/worker_thread.cpp
   ${source_ara_exec_dir}/worker_runnable.h
+  ${source_ara_exec_dir}/deterministic_client.h
+  ${source_ara_exec_dir}/deterministic_client.cpp
   ${source_ara_exec_helper_dir}/atomic_optional.h
 )
 
@@ -282,6 +284,7 @@ if(build_tests)
     ${test_ara_com_someip_sd_fsm_dir}/machine_state_test.cpp
     ${test_ara_exec_dir}/worker_thread_test.cpp
     ${test_ara_exec_dir}/worker_runnable_test.cpp
+    ${test_ara_exec_dir}/deterministic_client_test.cpp
     ${test_ara_exec_helper_dir}/atomic_optional_test.cpp
     ${test_ara_core_dir}/optional_test.cpp
     ${test_ara_core_dir}/result_test.cpp
