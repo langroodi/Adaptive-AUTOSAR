@@ -78,7 +78,13 @@ set(source_ara_com_someip_pubsub_fsm_dir
 set(source_ara_exec_dir
   "${CMAKE_SOURCE_DIR}/src/ara/exec")
 
+set(source_ara_exec_helper_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/exec/helper")
+
 # Test Directories:
+
+set(test_ara_core_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/core")
 
 set(test_ara_log_dir
   "${CMAKE_SOURCE_DIR}/test/ara/log")
@@ -110,8 +116,8 @@ set(test_ara_com_someip_sd_fsm_dir
 set(test_ara_exec_dir
   "${CMAKE_SOURCE_DIR}/test/ara/exec")
 
-set(test_ara_core_dir
-  "${CMAKE_SOURCE_DIR}/test/ara/core")
+  set(test_ara_exec_helper_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/exec/helper")
 
 ########################################################################
 
@@ -234,6 +240,7 @@ add_library(
   ${source_ara_exec_dir}/worker_thread.h
   ${source_ara_exec_dir}/worker_thread.cpp
   ${source_ara_exec_dir}/worker_runnable.h
+  ${source_ara_exec_helper_dir}/atomic_optional.h
 )
 
 target_link_libraries(
@@ -275,6 +282,7 @@ if(build_tests)
     ${test_ara_com_someip_sd_fsm_dir}/machine_state_test.cpp
     ${test_ara_exec_dir}/worker_thread_test.cpp
     ${test_ara_exec_dir}/worker_runnable_test.cpp
+    ${test_ara_exec_helper_dir}/atomic_optional_test.cpp
     ${test_ara_core_dir}/optional_test.cpp
     ${test_ara_core_dir}/result_test.cpp
     ${test_ara_core_dir}/result_void_test.cpp
