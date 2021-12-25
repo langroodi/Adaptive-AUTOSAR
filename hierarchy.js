@@ -5,6 +5,7 @@ var hierarchy =
       [ "ara::com::helper::FiniteStateMachine< T >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ]
     ] ],
     [ "ara::log::Argument< T >", "classara_1_1log_1_1Argument.html", null ],
+    [ "ara::exec::helper::AtomicOptional< T >", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", null ],
     [ "ara::diag::CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", null ],
     [ "ara::diag::ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
     [ "ara::diag::CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],

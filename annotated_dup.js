@@ -101,6 +101,9 @@ var annotated_dup =
         [ "UploadService", "classara_1_1diag_1_1UploadService.html", "classara_1_1diag_1_1UploadService" ]
       ] ],
       [ "exec", null, [
+        [ "helper", "namespaceara_1_1exec_1_1helper.html", [
+          [ "AtomicOptional", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", "classara_1_1exec_1_1helper_1_1AtomicOptional" ]
+        ] ],
         [ "DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", "classara_1_1exec_1_1DeterministicClient" ],
         [ "ExecException", "classara_1_1exec_1_1ExecException.html", "classara_1_1exec_1_1ExecException" ],
         [ "ExceErrorDomain", "classara_1_1exec_1_1ExceErrorDomain.html", "classara_1_1exec_1_1ExceErrorDomain" ],

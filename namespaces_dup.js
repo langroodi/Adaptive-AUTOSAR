@@ -269,6 +269,7 @@ var namespaces_dup =
         ] ]
       ] ],
       [ "exec", null, [
+        [ "helper", "namespaceara_1_1exec_1_1helper.html", "namespaceara_1_1exec_1_1helper" ],
         [ "DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", "classara_1_1exec_1_1DeterministicClient" ],
         [ "ExecException", "classara_1_1exec_1_1ExecException.html", "classara_1_1exec_1_1ExecException" ],
         [ "ExceErrorDomain", "classara_1_1exec_1_1ExceErrorDomain.html", "classara_1_1exec_1_1ExceErrorDomain" ],
