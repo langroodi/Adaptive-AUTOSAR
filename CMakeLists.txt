@@ -242,7 +242,10 @@ add_library(
   ${source_ara_exec_dir}/worker_runnable.h
   ${source_ara_exec_dir}/deterministic_client.h
   ${source_ara_exec_dir}/deterministic_client.cpp
+  ${source_ara_exec_dir}/execution_client.h
+  ${source_ara_exec_dir}/execution_client.cpp
   ${source_ara_exec_helper_dir}/atomic_optional.h
+  ${source_ara_exec_helper_dir}/fifo_layer.h
 )
 
 target_link_libraries(
@@ -285,7 +288,9 @@ if(build_tests)
     ${test_ara_exec_dir}/worker_thread_test.cpp
     ${test_ara_exec_dir}/worker_runnable_test.cpp
     ${test_ara_exec_dir}/deterministic_client_test.cpp
+    ${test_ara_exec_dir}/execution_client_test.cpp
     ${test_ara_exec_helper_dir}/atomic_optional_test.cpp
+    ${test_ara_exec_helper_dir}/mockup_fifo_layer.h
     ${test_ara_core_dir}/optional_test.cpp
     ${test_ara_core_dir}/result_test.cpp
     ${test_ara_core_dir}/result_void_test.cpp
