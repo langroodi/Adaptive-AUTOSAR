@@ -17,7 +17,7 @@ namespace ara
                 return "";
             }
 
-            virtual const char *Message(CodeType errorCode) const noexcept
+            virtual const char *Message(CodeType errorCode) const noexcept override
             {
                 return "";
             }

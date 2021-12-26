@@ -63,7 +63,7 @@ namespace ara
                     mValue = other.mHasValue;
                 }
 
-                mHasValue = mHasValue;
+                mHasValue = other.mHasValue;
 
                 return *this;
             }
@@ -76,7 +76,7 @@ namespace ara
                     mValue = std::move(other.mHasValue);
                 }
 
-                mHasValue = mHasValue;
+                mHasValue = other.mHasValue;
 
                 return *this;
             }
