@@ -15,7 +15,7 @@ namespace ara
         class Optional
         {
         private:
-            T mValue;
+            T *mValuePtr;
             bool mHasValue;
 
         public:
@@ -23,21 +23,23 @@ namespace ara
             {
             }
 
-            Optional(const T &value) : mValue{value},
-                                       mHasValue{true}
+            Optional(const T &value)
             {
+                mValuePtr = new T{value};
+                mHasValue = true;
             }
 
-            Optional(T &&value) : mValue{value},
-                                  mHasValue{true}
+            Optional(T &&value)
             {
+                mValuePtr = new T{value};
+                mHasValue = true;
             }
 
             Optional(const Optional &other)
             {
                 if (other.mHasValue)
                 {
-                    mValue = other.mValue;
+                    mValuePtr = new T{*other.mValuePtr};
                 }
 
                 mHasValue = other.mHasValue;
@@ -48,19 +50,24 @@ namespace ara
             {
                 if (other.mHasValue)
                 {
-                    mValue = std::move(other.mValue);
+                    mValuePtr = new T{std::move(*other.mValuePtr)};
+                    mHasValue = true;
+                    other.mHasValue = false;
                 }
-
-                mHasValue = other.mHasValue;
             }
 
-            ~Optional() noexcept = default;
+            ~Optional()
+            {
+                Reset();
+            }
 
             constexpr Optional &operator=(const Optional &other)
             {
+                Reset();
+
                 if (other.mHasValue)
                 {
-                    mValue = other.mHasValue;
+                    mValuePtr = new T{*other.mValue};
                 }
 
                 mHasValue = other.mHasValue;
@@ -71,12 +78,14 @@ namespace ara
             constexpr Optional &operator=(Optional &&other) noexcept(
                 std::is_nothrow_move_assignable<T>::value)
             {
+                Reset();
+
                 if (other.mHasValue)
                 {
-                    mValue = std::move(other.mHasValue);
+                    mValuePtr = new T{std::move(*other.mValuePtr)};
+                    mHasValue = true;
+                    other.mHasValue = false;
                 }
-
-                mHasValue = other.mHasValue;
 
                 return *this;
             }
@@ -84,7 +93,8 @@ namespace ara
             template <typename U = T>
             constexpr Optional &operator=(const U &value)
             {
-                mValue = static_cast<T>(value);
+                Reset();
+                mValuePtr = new T{static_cast<const T &>(value)};
                 mHasValue = true;
 
                 return *this;
@@ -93,7 +103,8 @@ namespace ara
             template <typename U = T>
             constexpr Optional &operator=(U &&value)
             {
-                mValue = static_cast<T>(value);
+                Reset();
+                mValuePtr = new T{static_cast<T &&>(value)};
                 mHasValue = true;
 
                 return *this;
@@ -104,7 +115,8 @@ namespace ara
             template <typename... Args>
             void Emplace(Args &&...args)
             {
-                mValue = T{args...};
+                Reset();
+                mValuePtr = new T{args...};
                 mHasValue = true;
             }
 
@@ -115,17 +127,17 @@ namespace ara
             {
                 if (mHasValue && other.mHasValue)
                 {
-                    std::swap(mValue, other.mValue);
+                    std::swap(mValuePtr, other.mValuePtr);
                 }
                 else if (mHasValue && !other.mHasValue)
                 {
-                    other.mValue = std::move(mValue);
+                    other.mValuePtr = mValuePtr;
                     other.mHasValue = true;
                     mHasValue = false;
                 }
                 else if (!mHasValue && other.mHasValue)
                 {
-                    mValue = std::move(other.mValue);
+                    mValuePtr = other.mValuePtr;
                     mHasValue = true;
                     other.mHasValue = false;
                 }
@@ -134,7 +146,11 @@ namespace ara
             /// @brief Reset the instance value
             void Reset() noexcept
             {
-                mHasValue = false;
+                if (mHasValue)
+                {
+                    delete mValuePtr;
+                    mHasValue = false;
+                }
             }
 
             /// @brief Indicate whether the instance has a value or not
@@ -156,7 +172,7 @@ namespace ara
             {
                 if (mHasValue)
                 {
-                    return mValue;
+                    return *mValuePtr;
                 }
                 else
                 {
@@ -170,7 +186,7 @@ namespace ara
             {
                 if (mHasValue)
                 {
-                    return std::move(mValue);
+                    return std::move(*mValuePtr);
                 }
                 else
                 {
@@ -184,7 +200,7 @@ namespace ara
             {
                 if (mHasValue)
                 {
-                    &mValue;
+                    mValuePtr;
                 }
                 else
                 {
@@ -199,7 +215,7 @@ namespace ara
             {
                 if (mHasValue)
                 {
-                    return mValue;
+                    return *mValuePtr;
                 }
                 else
                 {
@@ -214,7 +230,8 @@ namespace ara
             {
                 if (mHasValue)
                 {
-                    return std::move(mValue);
+                    mHasValue = false;
+                    return std::move(*mValuePtr);
                 }
                 else
                 {
@@ -231,7 +248,7 @@ namespace ara
             {
                 if (mHasValue)
                 {
-                    return mValue;
+                    return *mValuePtr;
                 }
                 else
                 {
@@ -248,7 +265,7 @@ namespace ara
             {
                 if (mHasValue)
                 {
-                    return std::move(mValue);
+                    return std::move(*mValuePtr);
                 }
                 else
                 {
