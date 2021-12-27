@@ -16,43 +16,35 @@ namespace ara
         {
         private:
             T *mValuePtr;
-            bool mHasValue;
 
         public:
-            constexpr Optional() noexcept : mHasValue{false}
+            constexpr Optional() noexcept : mValuePtr{nullptr}
             {
             }
 
-            Optional(const T &value)
+            Optional(const T &value) : mValuePtr{new T{value}}
             {
-                mValuePtr = new T{value};
-                mHasValue = true;
             }
 
-            Optional(T &&value)
+            Optional(T &&value) : mValuePtr{new T{value}}
             {
-                mValuePtr = new T{value};
-                mHasValue = true;
             }
 
             Optional(const Optional &other)
             {
-                if (other.mHasValue)
+                if (other.HasValue())
                 {
                     mValuePtr = new T{*other.mValuePtr};
                 }
-
-                mHasValue = other.mHasValue;
             }
 
             Optional(Optional &&other) noexcept(
                 std::is_nothrow_move_assignable<T>::value)
             {
-                if (other.mHasValue)
+                if (other.HasValue())
                 {
-                    mValuePtr = new T{std::move(*other.mValuePtr)};
-                    mHasValue = true;
-                    other.mHasValue = false;
+                    mValuePtr = other.mValuePtr;
+                    other.mValuePtr = nullptr;
                 }
             }
 
@@ -65,12 +57,10 @@ namespace ara
             {
                 Reset();
 
-                if (other.mHasValue)
+                if (other.HasValue())
                 {
                     mValuePtr = new T{*other.mValue};
                 }
-
-                mHasValue = other.mHasValue;
 
                 return *this;
             }
@@ -82,9 +72,8 @@ namespace ara
 
                 if (other.mHasValue)
                 {
-                    mValuePtr = new T{std::move(*other.mValuePtr)};
-                    mHasValue = true;
-                    other.mHasValue = false;
+                    mValuePtr = other.mValuePtr;
+                    other.mValuePtr = nullptr;
                 }
 
                 return *this;
@@ -95,7 +84,6 @@ namespace ara
             {
                 Reset();
                 mValuePtr = new T{static_cast<const T &>(value)};
-                mHasValue = true;
 
                 return *this;
             }
@@ -105,7 +93,6 @@ namespace ara
             {
                 Reset();
                 mValuePtr = new T{static_cast<T &&>(value)};
-                mHasValue = true;
 
                 return *this;
             }
@@ -117,7 +104,6 @@ namespace ara
             {
                 Reset();
                 mValuePtr = new T{args...};
-                mHasValue = true;
             }
 
             /// @brief Swap the current instance with another one
@@ -125,31 +111,29 @@ namespace ara
             void Swap(Optional &other) noexcept(
                 std::is_nothrow_move_assignable<T>::value)
             {
-                if (mHasValue && other.mHasValue)
+                if (HasValue() && other.HasValue())
                 {
                     std::swap(mValuePtr, other.mValuePtr);
                 }
-                else if (mHasValue && !other.mHasValue)
+                else if (HasValue() && !other.HasValue())
                 {
                     other.mValuePtr = mValuePtr;
-                    other.mHasValue = true;
-                    mHasValue = false;
+                    mValuePtr = nullptr;
                 }
-                else if (!mHasValue && other.mHasValue)
+                else if (!HasValue() && other.HasValue())
                 {
                     mValuePtr = other.mValuePtr;
-                    mHasValue = true;
-                    other.mHasValue = false;
+                    other.mValuePtr = nullptr;
                 }
             }
 
             /// @brief Reset the instance value
             void Reset() noexcept
             {
-                if (mHasValue)
+                if (HasValue())
                 {
                     delete mValuePtr;
-                    mHasValue = false;
+                    mValuePtr = nullptr;
                 }
             }
 
@@ -157,20 +141,20 @@ namespace ara
             /// @returns True if has a value, otherwise false
             constexpr bool HasValue() const noexcept
             {
-                return mHasValue;
+                return mValuePtr != nullptr;
             }
 
             /// @returns True if the instance has a value, otherwise false
             constexpr explicit operator bool() const noexcept
             {
-                return mHasValue;
+                return HasValue();
             }
 
             /// @returns Copied value
             /// @throws std::runtime_error Throws if there is no value
             const T &operator*() const &
             {
-                if (mHasValue)
+                if (HasValue())
                 {
                     return *mValuePtr;
                 }
@@ -184,7 +168,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no value
             T &&operator*() &&
             {
-                if (mHasValue)
+                if (HasValue())
                 {
                     return std::move(*mValuePtr);
                 }
@@ -198,7 +182,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no value
             const T *operator->() const
             {
-                if (mHasValue)
+                if (HasValue())
                 {
                     mValuePtr;
                 }
@@ -213,7 +197,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no value
             const T &Value() const &
             {
-                if (mHasValue)
+                if (HasValue())
                 {
                     return *mValuePtr;
                 }
@@ -228,10 +212,12 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no value
             T &&Value() &&
             {
-                if (mHasValue)
+                if (HasValue())
                 {
-                    mHasValue = false;
-                    return std::move(*mValuePtr);
+                    T&& _result = std::move(*mValuePtr);
+                    mValuePtr = nullptr;
+
+                    return _result;
                 }
                 else
                 {
@@ -246,7 +232,7 @@ namespace ara
             template <typename U>
             T ValueOr(U &&defaultValue) const &
             {
-                if (mHasValue)
+                if (HasValue())
                 {
                     return *mValuePtr;
                 }
@@ -263,7 +249,7 @@ namespace ara
             template <typename U>
             T ValueOr(U &&defaultValue) &&
             {
-                if (mHasValue)
+                if (HasValue())
                 {
                     return std::move(*mValuePtr);
                 }
