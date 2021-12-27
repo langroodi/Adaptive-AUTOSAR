@@ -102,7 +102,8 @@ var annotated_dup =
       ] ],
       [ "exec", null, [
         [ "helper", "namespaceara_1_1exec_1_1helper.html", [
-          [ "AtomicOptional", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", "classara_1_1exec_1_1helper_1_1AtomicOptional" ]
+          [ "AtomicOptional", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", "classara_1_1exec_1_1helper_1_1AtomicOptional" ],
+          [ "FifoLayer", "classara_1_1exec_1_1helper_1_1FifoLayer.html", "classara_1_1exec_1_1helper_1_1FifoLayer" ]
         ] ],
         [ "DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", "classara_1_1exec_1_1DeterministicClient" ],
         [ "ExecException", "classara_1_1exec_1_1ExecException.html", "classara_1_1exec_1_1ExecException" ],

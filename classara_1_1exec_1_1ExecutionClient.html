@@ -93,19 +93,103 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1ExecutionClient.ht
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classara_1_1exec_1_1ExecutionClient-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ara::exec::ExecutionClient Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that enables an adaptive application to interact with Execution Management.  
+ <a href="classara_1_1exec_1_1ExecutionClient.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="execution__client_8h_source.html">execution_client.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a7740bdcd774d6233ade89d497429ac01"><td class="memItemLeft" align="right" valign="top"><a id="a7740bdcd774d6233ade89d497429ac01"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">FifoMessageType</a> = std::pair&lt; <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a>, ExecutionState &gt;</td></tr>
+<tr class="memdesc:a7740bdcd774d6233ade89d497429ac01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message type communicate via the IPC pipe. <br /></td></tr>
+<tr class="separator:a7740bdcd774d6233ade89d497429ac01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a859547150350101d01928ca3ef7b859b"><td class="memItemLeft" align="right" valign="top"><a id="a859547150350101d01928ca3ef7b859b"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ReportExecutionState</b> (ExecutionState state) const noexcept</td></tr>
-<tr class="separator:a859547150350101d01928ca3ef7b859b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e0a694071ec42ef31e4978978550a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">ExecutionClient</a> (<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> instanceSpecifier, <a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; <a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">FifoMessageType</a> &gt; *communicationLayer)</td></tr>
+<tr class="memdesc:a45e0a694071ec42ef31e4978978550a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">More...</a><br /></td></tr>
+<tr class="separator:a45e0a694071ec42ef31e4978978550a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959e718835c368903c36d92b949071cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">ReportExecutionState</a> (ExecutionState state) const</td></tr>
+<tr class="memdesc:a959e718835c368903c36d92b949071cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the application internal state to Execution Management.  <a href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">More...</a><br /></td></tr>
+<tr class="separator:a959e718835c368903c36d92b949071cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that enables an adaptive application to interact with Execution Management. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a45e0a694071ec42ef31e4978978550a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e0a694071ec42ef31e4978978550a2">&#9670;&nbsp;</a></span>ExecutionClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::exec::ExecutionClient::ExecutionClient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a>&#160;</td>
+          <td class="paramname"><em>instanceSpecifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; <a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">FifoMessageType</a> &gt; *&#160;</td>
+          <td class="paramname"><em>communicationLayer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instanceSpecifier</td><td>Adaptive application instance shortname-path </td></tr>
+    <tr><td class="paramname">communicationLayer</td><td>IPC communication abstraction layer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a959e718835c368903c36d92b949071cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959e718835c368903c36d92b949071cd">&#9670;&nbsp;</a></span>ReportExecutionState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::exec::ExecutionClient::ReportExecutionState </td>
+          <td>(</td>
+          <td class="paramtype">ExecutionState&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Report the application internal state to Execution Management. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Application current internal state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Void Result if the state reporting was successful, otherwise a Result containing the occurred error </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

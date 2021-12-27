@@ -295,8 +295,7 @@ var namespaces_dup =
           [ "kFailed", "error__code__domain_8h.html#ad9505416a5a45c596ebf1a7706c1a230ab62fa3c9492b6dae76c23d6dfa466611", null ]
         ] ],
         [ "ExecutionState", "execution__client_8h.html#a2cef995abddcd1737d4d80a4f016ab31", [
-          [ "kRunning", "execution__client_8h.html#a2cef995abddcd1737d4d80a4f016ab31a2fc7fbf0d19294f85dd3880460dd3c0a", null ],
-          [ "kTerminating", "execution__client_8h.html#a2cef995abddcd1737d4d80a4f016ab31a565f31fd6e6a7251958cd91de2d701e5", null ]
+          [ "kRunning", "execution__client_8h.html#a2cef995abddcd1737d4d80a4f016ab31a2fc7fbf0d19294f85dd3880460dd3c0a", null ]
         ] ]
       ] ],
       [ "log", "namespaceara_1_1log.html", "namespaceara_1_1log" ],

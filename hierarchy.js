@@ -41,6 +41,8 @@ var hierarchy =
       [ "ara::exec::ExecException", "classara_1_1exec_1_1ExecException.html", null ]
     ] ],
     [ "ara::exec::ExecutionClient", "classara_1_1exec_1_1ExecutionClient.html", null ],
+    [ "ara::exec::helper::FifoLayer< T >", "classara_1_1exec_1_1helper_1_1FifoLayer.html", null ],
+    [ "ara::exec::helper::FifoLayer< FifoMessageType >", "classara_1_1exec_1_1helper_1_1FifoLayer.html", null ],
     [ "ara::exec::FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", null ],
     [ "ara::exec::FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", null ],
     [ "ara::diag::GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],

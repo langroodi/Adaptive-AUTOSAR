@@ -5,7 +5,7 @@ var classara_1_1core_1_1Optional =
     [ "Optional", "classara_1_1core_1_1Optional.html#ad8fc2f27127f37b092776e59c4e47e13", null ],
     [ "Optional", "classara_1_1core_1_1Optional.html#ae384b140f675f733ed716fa16e81920f", null ],
     [ "Optional", "classara_1_1core_1_1Optional.html#a3304ec54d5796b36c876ab700ad7c525", null ],
-    [ "~Optional", "classara_1_1core_1_1Optional.html#a4416ed43d82ad5eeb4a541be94984511", null ],
+    [ "~Optional", "classara_1_1core_1_1Optional.html#ae17e8ce1259fcc61ad6c4cc21355a87d", null ],
     [ "Emplace", "classara_1_1core_1_1Optional.html#a9ff171daf7911b3e9c96d0de3aaf8dd7", null ],
     [ "HasValue", "classara_1_1core_1_1Optional.html#a5fb8db08215d41172c145fc4075e1718", null ],
     [ "operator bool", "classara_1_1core_1_1Optional.html#ad6bedb132da77a3789d3afe256c52cf7", null ],
