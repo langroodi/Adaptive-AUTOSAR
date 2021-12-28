@@ -59,7 +59,7 @@ namespace ara
 
                 if (other.HasValue())
                 {
-                    mValuePtr = new T{*other.mValue};
+                    mValuePtr = new T{*other.mValuePtr};
                 }
 
                 return *this;
@@ -70,7 +70,7 @@ namespace ara
             {
                 Reset();
 
-                if (other.mHasValue)
+                if (other.HasValue())
                 {
                     mValuePtr = other.mValuePtr;
                     other.mValuePtr = nullptr;
@@ -214,10 +214,10 @@ namespace ara
             {
                 if (HasValue())
                 {
-                    T&& _result = std::move(*mValuePtr);
+                    T* _result{mValuePtr};
                     mValuePtr = nullptr;
 
-                    return _result;
+                    return std::move(*_result);
                 }
                 else
                 {

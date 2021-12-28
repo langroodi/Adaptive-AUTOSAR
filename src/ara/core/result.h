@@ -15,43 +15,8 @@ namespace ara
         class Result final
         {
         private:
-            T mValue;
-            E mError;
-            bool mHasValue;
-
-            static void copy(const Result *source, Result *destination) noexcept(
-                std::is_nothrow_copy_assignable<T>::value &&
-                    std::is_nothrow_copy_assignable<E>::value)
-            {
-                // Copy the value if exists, otherwise copy the error
-                if (source->mHasValue)
-                {
-                    destination->mValue = source->mValue;
-                }
-                else
-                {
-                    destination->mError = source->mError;
-                }
-
-                destination->mHasValue = source->mHasValue;
-            }
-
-            static void move(Result *source, Result *destination) noexcept(
-                std::is_nothrow_move_assignable<T>::value &&
-                    std::is_nothrow_move_assignable<E>::value)
-            {
-                // Move the value if exists, otherwise move the error
-                if (source->mHasValue)
-                {
-                    destination->mValue = std::move(source->mValue);
-                }
-                else
-                {
-                    destination->mError = std::move(source->mError);
-                }
-
-                destination->mHasValue = source->mHasValue;
-            }
+            Optional<T> mValue;
+            Optional<E> mError;
 
         public:
             /// @brief Result value type alias
@@ -62,28 +27,22 @@ namespace ara
             Result() = delete;
 
             Result(const T &t) noexcept(
-                std::is_nothrow_copy_constructible<T>::value) : mValue{t},
-                                                                mHasValue{true}
+                std::is_nothrow_copy_constructible<T>::value) : mValue{t}
             {
             }
 
             Result(T &&t) noexcept(
-                std::is_nothrow_move_constructible<T>::value) : mValue{t},
-                                                                mHasValue{true}
+                std::is_nothrow_move_constructible<T>::value) : mValue{t}
             {
             }
 
             explicit Result(const E &e) noexcept(
-                std::is_nothrow_copy_constructible<E>::value) : mError{e},
-                                                                // Result cannot contain both value and error at the same time.
-                                                                mHasValue{false}
+                std::is_nothrow_copy_constructible<E>::value) : mError{e}
             {
             }
 
             explicit Result(E &&e) noexcept(
-                std::is_nothrow_move_constructible<E>::value) : mError{e},
-                                                                // Result cannot contain both value and error at the same time.
-                                                                mHasValue{false}
+                std::is_nothrow_move_constructible<E>::value) : mError{e}
             {
             }
 
@@ -91,14 +50,30 @@ namespace ara
                 std::is_nothrow_copy_assignable<T>::value &&
                     std::is_nothrow_copy_assignable<E>::value)
             {
-                copy(&other, this);
+                // Copy the value if it exists, otherwise copy the error
+                if (other.HasValue())
+                {
+                    mValue = other.mValue;
+                }
+                else
+                {
+                    mError = other.mError;
+                }
             }
 
             Result(Result &&other) noexcept(
                 std::is_nothrow_move_assignable<T>::value &&
                     std::is_nothrow_move_assignable<E>::value)
             {
-                move(&other, this);
+                // Move the value if it exists, otherwise move the error
+                if (other.HasValue())
+                {
+                    mValue = std::move(other.mValue);
+                }
+                else
+                {
+                    mError = std::move(other.mError);
+                }
             }
 
             ~Result() noexcept = default;
@@ -131,7 +106,18 @@ namespace ara
                 std::is_nothrow_copy_assignable<T>::value &&
                     std::is_nothrow_copy_assignable<E>::value)
             {
-                copy(&other, this);
+                // Copy the value if it exists and reset the error, otherwise copy the error and reset the value
+                if (other.HasValue())
+                {
+                    mValue = other.mValue;
+                    mError.Reset();
+                }
+                else
+                {
+                    mError = other.mError;
+                    mValue.Reset();
+                }
+
                 return *this;
             }
 
@@ -139,7 +125,18 @@ namespace ara
                 std::is_nothrow_move_assignable<T>::value &&
                     std::is_nothrow_move_assignable<E>::value)
             {
-                move(&other, this);
+                // Move the value if it exists and reset the error, otherwise move the error and reset the value
+                if (other.HasValue())
+                {
+                    mValue = std::move(other.mValue);
+                    mError.Reset();
+                }
+                else
+                {
+                    mError = std::move(other.mError);
+                    mValue.Reset();
+                }
+
                 return *this;
             }
 
@@ -149,7 +146,7 @@ namespace ara
             void EmplaceValue(Args &&...args)
             {
                 mValue = T{args...};
-                mHasValue = true;
+                mError.Reset();
             }
 
             /// @brief Construct a new error from the give argument(s) and assign it to the instance error
@@ -158,7 +155,7 @@ namespace ara
             void EmplaceError(Args &&...args)
             {
                 mError = E{args...};
-                mHasValue = false;
+                mValue.Reset();
             }
 
             /// @brief Swap the current instance with another one
@@ -167,23 +164,19 @@ namespace ara
                 std::is_nothrow_move_assignable<T>::value &&
                     std::is_nothrow_move_assignable<E>::value)
             {
-                if (mHasValue && other.mHasValue)
+                if (HasValue() && other.HasValue())
                 {
                     std::swap(mValue, other.mValue);
                 }
-                else if (mHasValue && !other.mHasValue)
+                else if (HasValue() && !other.HasValue())
                 {
                     mError = std::move(other.mError);
-                    mHasValue = false;
                     other.mValue = std::move(mValue);
-                    other.mHasValue = true;
                 }
-                else if (!mHasValue && other.mHasValue)
+                else if (!HasValue() && other.HasValue())
                 {
                     mValue = std::move(other.mValue);
-                    mHasValue = true;
                     other.mError = std::move(mError);
-                    other.mHasValue = false;
                 }
                 else // Both instances contain error
                 {
@@ -195,55 +188,34 @@ namespace ara
             /// @returns True if has a value and false if it contains an error
             bool HasValue() const noexcept
             {
-                return mHasValue;
+                return mValue.HasValue();
             }
 
             /// @returns True if the instance has a value and false if it contains an error
             explicit operator bool() const noexcept
             {
-                return mHasValue;
+                return HasValue();
             }
 
             /// @returns Copied value
             /// @throws std::runtime_error Throws if there is no value
             const T &operator*() const &
             {
-                if (mHasValue)
-                {
-                    return mValue;
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no value.");
-                }
+                return mValue.Value();
             }
 
             /// @returns Movable value
             /// @throws std::runtime_error Throws if there is no value
             T &&operator*() &&
             {
-                if (mHasValue)
-                {
-                    return std::move(mValue);
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no value.");
-                }
+                return std::move(mValue).Value();
             }
 
             /// @returns Constant value pointer
             /// @throws std::runtime_error Throws if there is no value
             const T *operator->() const
             {
-                if (mHasValue)
-                {
-                    &mValue;
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no value.");
-                }
+                return &mValue.Value();
             }
 
             /// @brief Get instance possible value
@@ -251,14 +223,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no value
             const T &Value() const &
             {
-                if (mHasValue)
-                {
-                    return mValue;
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no value.");
-                }
+                return mValue.Value();
             }
 
             /// @brief Get instance possible value
@@ -266,14 +231,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no value
             T &&Value() &&
             {
-                if (mHasValue)
-                {
-                    return std::move(mValue);
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no value.");
-                }
+                return std::move(mValue).Value();
             }
 
             /// @brief Get instance possible error
@@ -281,14 +239,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no error
             const E &Error() const &
             {
-                if (mHasValue)
-                {
-                    throw std::runtime_error("Result contains no error.");
-                }
-                else
-                {
-                    return mError;
-                }
+                return mError.Value();
             }
 
             /// @brief Get instance possible error
@@ -296,70 +247,35 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no error
             E &&Error() &&
             {
-                if (mHasValue)
-                {
-                    throw std::runtime_error("Result contains no error.");
-                }
-                else
-                {
-                    return std::move(mError);
-                }
+                return std::move(mError).Value();
             }
 
             /// @brief Get optional instance value
             /// @returns Optional value
             Optional<T> Ok() const &
             {
-                Optional<T> _result;
-
-                if (mHasValue)
-                {
-                    _result = mValue;
-                }
-
-                return _result;
+                return mValue;
             }
 
             /// @brief Get optional instance value
             /// @returns Optional value
             Optional<T> Ok() &&
             {
-                Optional<T> _result;
-
-                if (mHasValue)
-                {
-                    _result = std::move(mValue);
-                }
-
-                return _result;
+                return std::move(mValue);
             }
 
             /// @brief Get optional instance error
             /// @returns Optional error
             Optional<E> Err() const &
             {
-                Optional<E> _result;
-
-                if (!mHasValue)
-                {
-                    _result = mError;
-                }
-
-                return _result;
+                return mError;
             }
 
             /// @brief Get optional instance error
             /// @returns Optional error
             Optional<E> Err() &&
             {
-                Optional<E> _result;
-
-                if (!mHasValue)
-                {
-                    _result = std::move(mError);
-                }
-
-                return _result;
+                return std::move(mError);
             }
 
             /// @brief Get the instance value or the default value
@@ -369,14 +285,7 @@ namespace ara
             template <typename U>
             T ValueOr(U &&defaultValue) const &
             {
-                if (mHasValue)
-                {
-                    return mValue;
-                }
-                else
-                {
-                    return static_cast<T>(defaultValue);
-                }
+                return mValue.ValueOr(defaultValue);
             }
 
             /// @brief Get the instance value or the default value
@@ -386,14 +295,7 @@ namespace ara
             template <typename U>
             T ValueOr(U &&defaultValue) &&
             {
-                if (mHasValue)
-                {
-                    return std::move(mValue);
-                }
-                else
-                {
-                    return static_cast<T>(defaultValue);
-                }
+                return std::move(mValue).ValueOr(defaultValue);
             }
 
             /// @brief Get the instance error or the default error
@@ -403,14 +305,7 @@ namespace ara
             template <typename G>
             E ErrorOr(G &&defaultError) const &
             {
-                if (mHasValue)
-                {
-                    return static_cast<E>(defaultError);
-                }
-                else
-                {
-                    return mError;
-                }
+                return mError.ValueOr(defaultError);
             }
 
             /// @brief Get the instance error or the default error
@@ -420,14 +315,7 @@ namespace ara
             template <typename G>
             E ErrorOr(G &&defaultError) &&
             {
-                if (mHasValue)
-                {
-                    return static_cast<E>(defaultError);
-                }
-                else
-                {
-                    return std::move(mError);
-                }
+                return std::move(mError).ValueOr(defaultError);
             }
 
             /// @brief Check an error with the instance error
@@ -436,7 +324,7 @@ namespace ara
             template <typename G>
             bool CheckError(G &&error) const
             {
-                if (mHasValue)
+                if (HasValue())
                 {
                     // No error exists for comparison
                     return false;
@@ -444,7 +332,7 @@ namespace ara
                 else
                 {
                     E _error = static_cast<E>(error);
-                    return mError == _error;
+                    return mError.Value() == _error;
                 }
             }
 
@@ -453,14 +341,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no value
             const T &ValueOrThrow() const &noexcept(false)
             {
-                if (mHasValue)
-                {
-                    return mValue;
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no value.");
-                }
+                return mValue.Value();
             }
 
             /// @brief Get instance possible value or throw an exception
@@ -468,14 +349,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no value
             T &&ValueOrThrow() &&noexcept(false)
             {
-                if (mHasValue)
-                {
-                    return std::move(mValue);
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no value.");
-                }
+                return std::move(mValue).Value();
             }
 
             /// @brief Get the instance value or a callable result
@@ -485,7 +359,7 @@ namespace ara
             template <typename F>
             T Resolve(F &&f) const
             {
-                return mHasValue ? mValue : f(mError);
+                return HasValue() ? Value() : f(Error());
             }
 
             /// @brief Create a new Result by passing the instance value (if exists) to a callable
@@ -495,14 +369,14 @@ namespace ara
             template <typename F>
             auto Bind(F &&f) const -> Result<decltype(f(Value())), E>
             {
-                if (mHasValue)
+                if (HasValue())
                 {
-                    Result<decltype(f(Value())), E> _result{f(mValue)};
+                    Result<decltype(f(Value())), E> _result{f(Value())};
                     return _result;
                 }
                 else
                 {
-                    Result<decltype(f(Value())), E> _result{mError};
+                    Result<decltype(f(Value())), E> _result{Error()};
                     return _result;
                 }
             }
@@ -646,8 +520,12 @@ namespace ara
         class Result<void, E> final
         {
         private:
-            E mError;
-            bool mHasError;
+            Optional<E> mError;
+
+            bool hasError() const noexcept
+            {
+                return mError.HasValue();
+            }
 
         public:
             /// @brief Void value type alias
@@ -655,42 +533,34 @@ namespace ara
             /// @brief Result error type alias
             using error_type = E;
 
-            Result() noexcept : mHasError{false}
-            {
-            }
+            Result() noexcept = default;
 
             explicit Result(const E &e) noexcept(
-                std::is_nothrow_copy_constructible<E>::value) : mError{e},
-                                                                mHasError{true}
+                std::is_nothrow_copy_constructible<E>::value) : mError{e}
             {
             }
 
             explicit Result(E &&e) noexcept(
-                std::is_nothrow_move_constructible<E>::value) : mError{e},
-                                                                mHasError{true}
+                std::is_nothrow_move_constructible<E>::value) : mError{e}
             {
             }
 
             Result(const Result &other) noexcept(
                 std::is_nothrow_copy_assignable<E>::value)
             {
-                if (other.mHasError)
+                if (other.hasError())
                 {
                     mError = other.mError;
                 }
-
-                mHasError = other.mHasError;
             }
 
             Result(Result &&other) noexcept(
                 std::is_nothrow_move_assignable<E>::value)
             {
-                if (other.mHasError)
+                if (other.hasError())
                 {
                     mError = std::move(other.mError);
                 }
-
-                mHasError = other.mHasError;
             }
 
             ~Result() noexcept = default;
@@ -714,22 +584,19 @@ namespace ara
             /// @brief Construct a new error from the give argument(s) and assign it to the instance error
             /// @param args Argument(s) to construct a new error
             template <typename... Args>
-            static Result FromError(Args &&...args)
-            {
-                E _error{args...};
-                Result<void, E> _result{_error};
-                return _result;
-            }
+            static Result FromError(Args &&...args);
 
             Result &operator=(Result const &other) noexcept(
                 std::is_nothrow_copy_assignable<E>::value)
             {
-                if (other.mHasError)
+                if (other.hasError())
                 {
                     mError = other.mError;
                 }
-
-                mHasError = other.mHasError;
+                else
+                {
+                    mError.Reset();
+                }
 
                 return *this;
             }
@@ -741,8 +608,10 @@ namespace ara
                 {
                     mError = std::move(other.mError);
                 }
-
-                mHasError = other.mHasError;
+                else
+                {
+                    mError.Reset();
+                }
 
                 return *this;
             }
@@ -753,7 +622,6 @@ namespace ara
             void EmplaceError(Args &&...args)
             {
                 mError = E{args...};
-                mHasError = true;
             }
 
             /// @brief Swap the current instance with another one
@@ -761,21 +629,17 @@ namespace ara
             void Swap(Result &other) noexcept(
                 std::is_nothrow_move_assignable<E>::value)
             {
-                if (mHasError && other.mHasError)
+                if (hasError() && other.hasError())
                 {
                     std::swap(mError, other.mError);
                 }
-                else if (mHasError && !other.mHasError)
+                else if (hasError() && !other.hasError())
                 {
                     other.mError = std::move(mError);
-                    mHasError = false;
-                    other.mHasError = true;
                 }
-                else if (!mHasError && other.mHasError)
+                else if (!hasError() && other.hasError())
                 {
                     mError = std::move(other.mError);
-                    mHasError = true;
-                    other.mHasError = false;
                 }
             }
 
@@ -783,13 +647,13 @@ namespace ara
             /// @returns True if the instance has no error, otherwise false
             constexpr bool HasValue() const noexcept
             {
-                return !mHasError;
+                return !hasError();
             }
 
             /// @returns True if the instance has no error, otherwise false
             constexpr explicit operator bool() const noexcept
             {
-                return !mHasError;
+                return HasValue();
             }
 
             constexpr void operator*() const noexcept
@@ -813,14 +677,7 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no error
             const E &Error() const &
             {
-                if (mHasError)
-                {
-                    return mError;
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no error.");
-                }
+                return mError.Value();
             }
 
             /// @brief Get instance possible error
@@ -828,42 +685,21 @@ namespace ara
             /// @throws std::runtime_error Throws if there is no error
             E &&Error() &&
             {
-                if (mHasError)
-                {
-                    return std::move(mError);
-                }
-                else
-                {
-                    throw std::runtime_error("Result contains no error.");
-                }
+                return std::move(mError).Value();
             }
 
             /// @brief Get optional instance error
             /// @returns Optional error
             Optional<E> Err() const &
             {
-                Optional<E> _result;
-
-                if (mHasError)
-                {
-                    _result = mError;
-                }
-
-                return _result;
+                return mError;
             }
 
             /// @brief Get optional instance error
             /// @returns Optional error
             Optional<E> Err() &&
             {
-                Optional<E> _result;
-
-                if (mHasError)
-                {
-                    _result = std::move(mError);
-                }
-
-                return _result;
+                return std::move(mError);
             }
 
             /// @brief The function does nothing
@@ -880,14 +716,7 @@ namespace ara
             template <typename G>
             E ErrorOr(G &&defaultError) const &
             {
-                if (mHasError)
-                {
-                    return mError;
-                }
-                else
-                {
-                    return static_cast<E>(defaultError);
-                }
+                return mError.ValueOr(defaultError);
             }
 
             /// @brief Get the instance error or the default error
@@ -897,14 +726,7 @@ namespace ara
             template <typename G>
             E ErrorOr(G &&defaultError) &&
             {
-                if (mHasError)
-                {
-                    return std::move(mError);
-                }
-                else
-                {
-                    return static_cast<E>(defaultError);
-                }
+                return std::move(mError).ValueOr(defaultError);
             }
 
             /// @brief Check an error with the instance error
@@ -913,10 +735,10 @@ namespace ara
             template <typename G>
             bool CheckError(G &&error) const
             {
-                if (mHasError)
+                if (hasError())
                 {
                     E _error = static_cast<E>(error);
-                    return mError == _error;
+                    return mError.Value() == _error;
                 }
                 else
                 {
@@ -938,9 +760,9 @@ namespace ara
             template <typename F>
             void Resolve(F &&f) const
             {
-                if (mHasError)
+                if (hasError())
                 {
-                    f(mError);
+                    f(Error());
                 }
             }
 
@@ -951,9 +773,9 @@ namespace ara
             template <typename F>
             auto Bind(F &&f) const -> Result<decltype(f()), E>
             {
-                if (mHasError)
+                if (hasError())
                 {
-                    Result<decltype(f()), E> _result{mError};
+                    Result<decltype(f()), E> _result{Error()};
                     return _result;
                 }
                 else
@@ -984,6 +806,16 @@ namespace ara
             std::is_nothrow_move_constructible<E>::value)
         {
             Result _result{e};
+            return _result;
+        }
+
+        template <typename E>
+        template <typename... Args>
+        Result<void, E> Result<void, E>::FromError(Args &&...args)
+        {
+            E _error{args...};
+            Result _result{_error};
+
             return _result;
         }
 
