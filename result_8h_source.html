@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">Result</a>(T &amp;&amp;t) noexcept(</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                std::is_nothrow_move_constructible&lt;T&gt;::value) : mValue{t}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                std::is_nothrow_move_constructible&lt;T&gt;::value) : mValue{std::move(t)}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">explicit</span> Result(E &amp;&amp;e) noexcept(</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                std::is_nothrow_move_constructible&lt;E&gt;::value) : mError{e}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                std::is_nothrow_move_constructible&lt;E&gt;::value) : mError{std::move(e)}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
@@ -224,14 +224,14 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1Result.html#a901ddab5a89431aef552a8ff2cb5366f">  146</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classara_1_1core_1_1Result.html#a901ddab5a89431aef552a8ff2cb5366f">EmplaceValue</a>(Args &amp;&amp;...args)</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                mValue = T{args...};</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                mValue = T{std::move(args...)};</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                mError.<a class="code" href="classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b">Reset</a>();</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            }</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1Result.html#a36d40985b89bafca5abd3153c1990889">  155</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classara_1_1core_1_1Result.html#a36d40985b89bafca5abd3153c1990889">EmplaceError</a>(Args &amp;&amp;...args)</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                mError = E{args...};</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                mError = E{std::move(args...)};</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                mValue.<a class="code" href="classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b">Reset</a>();</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            }</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
@@ -407,7 +407,7 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00394"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1Result.html#a7c9b67f1a68a5af75db38c56c741469b">  394</a></span>&#160;        <a class="code" href="classara_1_1core_1_1Result.html">Result&lt;T, E&gt;</a> <a class="code" href="classara_1_1core_1_1Result.html#a9f7756a8baf7331c09b90f8ab350bde4">Result&lt;T, E&gt;::FromValue</a>(T &amp;&amp;t) noexcept(</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            std::is_nothrow_move_constructible&lt;T&gt;::value)</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        {</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">Result</a> _result{t};</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">Result</a> _result{std::move(t)};</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="keywordflow">return</span> _result;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        }</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
@@ -423,7 +423,7 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00410"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1Result.html#a87f140e664e8fbc6ac9c06f0c2b4a9a5">  410</a></span>&#160;        <a class="code" href="classara_1_1core_1_1Result.html">Result&lt;T, E&gt;</a> <a class="code" href="classara_1_1core_1_1Result.html#a040a5285f47887b13cdbefcd5dbb9731">Result&lt;T, E&gt;::FromError</a>(E &amp;&amp;e) noexcept(</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            std::is_nothrow_move_constructible&lt;E&gt;::value)</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        {</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">Result</a> _result{e};</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">Result</a> _result{std::move(e)};</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="keywordflow">return</span> _result;</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        }</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
@@ -548,7 +548,7 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            }</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            <span class="keyword">explicit</span> Result(E &amp;&amp;e) noexcept(</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                std::is_nothrow_move_constructible&lt;E&gt;::value) : mError{e}</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                std::is_nothrow_move_constructible&lt;E&gt;::value) : mError{std::move(e)}</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            {</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            }</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
@@ -763,7 +763,7 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00805"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a3dba8ffc5b4672a9da66a0d11563b365">  805</a></span>&#160;        <a class="code" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html">Result&lt;void, E&gt;</a> <a class="code" href="classara_1_1core_1_1Result.html#a040a5285f47887b13cdbefcd5dbb9731">Result&lt;void, E&gt;::FromError</a>(E &amp;&amp;e) noexcept(</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            std::is_nothrow_move_constructible&lt;E&gt;::value)</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        {</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">Result</a> _result{e};</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">Result</a> _result{std::move(e)};</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            <span class="keywordflow">return</span> _result;</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        }</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
@@ -771,7 +771,7 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        <a class="code" href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html">Result&lt;void, E&gt;</a> <a class="code" href="classara_1_1core_1_1Result.html#a040a5285f47887b13cdbefcd5dbb9731">Result&lt;void, E&gt;::FromError</a>(Args &amp;&amp;...args)</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        {</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            E _error{args...};</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            E _error{std::move(args...)};</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;            Result _result{_error};</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            <span class="keywordflow">return</span> _result;</div>
@@ -823,10 +823,10 @@ $(document).ready(function(){initNavTree('result_8h_source.html',''); initResiza
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160; </div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1core_1_1Optional_html"><div class="ttname"><a href="classara_1_1core_1_1Optional.html">ara::core::Optional</a></div><div class="ttdoc">A wrapper around a possible value.</div><div class="ttdef"><b>Definition:</b> optional.h:16</div></div>
-<div class="ttc" id="aclassara_1_1core_1_1Optional_html_a21061a0dcc21ef952df6019d39630f4e"><div class="ttname"><a href="classara_1_1core_1_1Optional.html#a21061a0dcc21ef952df6019d39630f4e">ara::core::Optional::Value</a></div><div class="ttdeci">const T &amp; Value() const &amp;</div><div class="ttdoc">Get instance possible value.</div><div class="ttdef"><b>Definition:</b> optional.h:198</div></div>
-<div class="ttc" id="aclassara_1_1core_1_1Optional_html_a386a36862137c2beda1f5a5797900c9b"><div class="ttname"><a href="classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b">ara::core::Optional::Reset</a></div><div class="ttdeci">void Reset() noexcept</div><div class="ttdoc">Reset the instance value.</div><div class="ttdef"><b>Definition:</b> optional.h:131</div></div>
-<div class="ttc" id="aclassara_1_1core_1_1Optional_html_a5fb8db08215d41172c145fc4075e1718"><div class="ttname"><a href="classara_1_1core_1_1Optional.html#a5fb8db08215d41172c145fc4075e1718">ara::core::Optional::HasValue</a></div><div class="ttdeci">constexpr bool HasValue() const noexcept</div><div class="ttdoc">Indicate whether the instance has a value or not.</div><div class="ttdef"><b>Definition:</b> optional.h:142</div></div>
-<div class="ttc" id="aclassara_1_1core_1_1Optional_html_a9a3b010aa9f7f78043516f0e8e8f5078"><div class="ttname"><a href="classara_1_1core_1_1Optional.html#a9a3b010aa9f7f78043516f0e8e8f5078">ara::core::Optional::ValueOr</a></div><div class="ttdeci">T ValueOr(U &amp;&amp;defaultValue) const &amp;</div><div class="ttdoc">Get the instance value or the default value.</div><div class="ttdef"><b>Definition:</b> optional.h:233</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1Optional_html_a21061a0dcc21ef952df6019d39630f4e"><div class="ttname"><a href="classara_1_1core_1_1Optional.html#a21061a0dcc21ef952df6019d39630f4e">ara::core::Optional::Value</a></div><div class="ttdeci">const T &amp; Value() const &amp;</div><div class="ttdoc">Get instance possible value.</div><div class="ttdef"><b>Definition:</b> optional.h:200</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1Optional_html_a386a36862137c2beda1f5a5797900c9b"><div class="ttname"><a href="classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b">ara::core::Optional::Reset</a></div><div class="ttdeci">void Reset() noexcept</div><div class="ttdoc">Reset the instance value.</div><div class="ttdef"><b>Definition:</b> optional.h:133</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1Optional_html_a5fb8db08215d41172c145fc4075e1718"><div class="ttname"><a href="classara_1_1core_1_1Optional.html#a5fb8db08215d41172c145fc4075e1718">ara::core::Optional::HasValue</a></div><div class="ttdeci">constexpr bool HasValue() const noexcept</div><div class="ttdoc">Indicate whether the instance has a value or not.</div><div class="ttdef"><b>Definition:</b> optional.h:144</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1Optional_html_a9a3b010aa9f7f78043516f0e8e8f5078"><div class="ttname"><a href="classara_1_1core_1_1Optional.html#a9a3b010aa9f7f78043516f0e8e8f5078">ara::core::Optional::ValueOr</a></div><div class="ttdeci">T ValueOr(U &amp;&amp;defaultValue) const &amp;</div><div class="ttdoc">Get the instance value or the default value.</div><div class="ttdef"><b>Definition:</b> optional.h:235</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1Result_3_01void_00_01E_01_4_html"><div class="ttname"><a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html">ara::core::Result&lt; void, E &gt;</a></div><div class="ttdoc">A wrapper around the callee's possible error.</div><div class="ttdef"><b>Definition:</b> result.h:521</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1Result_3_01void_00_01E_01_4_html_a04107d1692e1dad2a17bb8d5acebd579"><div class="ttname"><a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a04107d1692e1dad2a17bb8d5acebd579">ara::core::Result&lt; void, E &gt;::HasValue</a></div><div class="ttdeci">constexpr bool HasValue() const noexcept</div><div class="ttdoc">Indicate whether the instance contains an error or not.</div><div class="ttdef"><b>Definition:</b> result.h:648</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1Result_3_01void_00_01E_01_4_html_a15171d998e06d5c78d26ba7fee1e75db"><div class="ttname"><a href="classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a15171d998e06d5c78d26ba7fee1e75db">ara::core::Result&lt; void, E &gt;::Bind</a></div><div class="ttdeci">auto Bind(F &amp;&amp;f) const -&gt; Result&lt; decltype(f()), E &gt;</div><div class="ttdoc">Create a new Result by invoking a callable.</div><div class="ttdef"><b>Definition:</b> result.h:774</div></div>
