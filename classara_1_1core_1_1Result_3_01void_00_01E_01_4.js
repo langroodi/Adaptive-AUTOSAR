@@ -2,7 +2,7 @@ var classara_1_1core_1_1Result_3_01void_00_01E_01_4 =
 [
     [ "error_type", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a16810845d1e2c4029812478a98c97e42", null ],
     [ "value_type", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#af7bc88db20232dba8a06e10f7eb22843", null ],
-    [ "Result", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#af40d206a7ea02cd73346d05cbc4bc35a", null ],
+    [ "Result", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a85b9f02284595b6e9fb41d3dedf53a0f", null ],
     [ "Result", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#af2cf8409f2a03b14ddae46c967af492e", null ],
     [ "Result", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a294bb44c2cafa49956a5e11c90bfb553", null ],
     [ "Result", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a046658627455ea3d7000a68afb657afa", null ],
@@ -17,6 +17,7 @@ var classara_1_1core_1_1Result_3_01void_00_01E_01_4 =
     [ "Error", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ac8bd1615a7ce2f01dd4d4b719f5e4c38", null ],
     [ "ErrorOr", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aa41251f86ed84989cd70f265979a5a0e", null ],
     [ "ErrorOr", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a9b0d99bbeb56c967b2a545f08a214067", null ],
+    [ "FromError", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a5e3965b33bede4fa76cc655186faa8ec", null ],
     [ "HasValue", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a04107d1692e1dad2a17bb8d5acebd579", null ],
     [ "operator bool", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aaa4716735f7910f6a7c127fa2689c5c4", null ],
     [ "operator*", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a4910a9bce102a546598cc7505081bd9e", null ],

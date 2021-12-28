@@ -104,6 +104,8 @@ var hierarchy =
       [ "ara::com::option::LoadBalancingOption", "classara_1_1com_1_1option_1_1LoadBalancingOption.html", null ]
     ] ],
     [ "ara::core::Optional< T >", "classara_1_1core_1_1Optional.html", null ],
+    [ "ara::core::Optional< E >", "classara_1_1core_1_1Optional.html", null ],
+    [ "ara::core::Optional< ErrorCode >", "classara_1_1core_1_1Optional.html", null ],
     [ "ara::com::option::OptionDeserializer", "classara_1_1com_1_1option_1_1OptionDeserializer.html", null ],
     [ "ara::core::Result< T, E >", "classara_1_1core_1_1Result.html", null ],
     [ "ara::core::Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", null ],
