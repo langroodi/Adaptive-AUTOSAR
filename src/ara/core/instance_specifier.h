@@ -25,7 +25,7 @@ namespace ara
             InstanceSpecifier &operator=(const InstanceSpecifier &other);
             InstanceSpecifier &operator=(InstanceSpecifier &&other);
 
-            InstanceSpecifier() noexcept = default;
+            InstanceSpecifier() = delete;
             ~InstanceSpecifier() noexcept = default;
 
             /// @brief InstanceSpecifier factory
