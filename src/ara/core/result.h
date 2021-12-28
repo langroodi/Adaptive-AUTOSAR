@@ -32,7 +32,7 @@ namespace ara
             }
 
             Result(T &&t) noexcept(
-                std::is_nothrow_move_constructible<T>::value) : mValue{t}
+                std::is_nothrow_move_constructible<T>::value) : mValue{std::move(t)}
             {
             }
 
@@ -42,7 +42,7 @@ namespace ara
             }
 
             explicit Result(E &&e) noexcept(
-                std::is_nothrow_move_constructible<E>::value) : mError{e}
+                std::is_nothrow_move_constructible<E>::value) : mError{std::move(e)}
             {
             }
 
@@ -145,7 +145,7 @@ namespace ara
             template <typename... Args>
             void EmplaceValue(Args &&...args)
             {
-                mValue = T{args...};
+                mValue = T{std::move(args...)};
                 mError.Reset();
             }
 
@@ -154,7 +154,7 @@ namespace ara
             template <typename... Args>
             void EmplaceError(Args &&...args)
             {
-                mError = E{args...};
+                mError = E{std::move(args...)};
                 mValue.Reset();
             }
 
@@ -394,7 +394,7 @@ namespace ara
         Result<T, E> Result<T, E>::FromValue(T &&t) noexcept(
             std::is_nothrow_move_constructible<T>::value)
         {
-            Result _result{t};
+            Result _result{std::move(t)};
             return _result;
         }
 
@@ -410,7 +410,7 @@ namespace ara
         Result<T, E> Result<T, E>::FromError(E &&e) noexcept(
             std::is_nothrow_move_constructible<E>::value)
         {
-            Result _result{e};
+            Result _result{std::move(e)};
             return _result;
         }
 
@@ -541,7 +541,7 @@ namespace ara
             }
 
             explicit Result(E &&e) noexcept(
-                std::is_nothrow_move_constructible<E>::value) : mError{e}
+                std::is_nothrow_move_constructible<E>::value) : mError{std::move(e)}
             {
             }
 
@@ -805,7 +805,7 @@ namespace ara
         Result<void, E> Result<void, E>::FromError(E &&e) noexcept(
             std::is_nothrow_move_constructible<E>::value)
         {
-            Result _result{e};
+            Result _result{std::move(e)};
             return _result;
         }
 
@@ -813,7 +813,7 @@ namespace ara
         template <typename... Args>
         Result<void, E> Result<void, E>::FromError(Args &&...args)
         {
-            E _error{args...};
+            E _error{std::move(args...)};
             Result _result{_error};
 
             return _result;

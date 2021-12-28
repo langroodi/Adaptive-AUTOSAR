@@ -22,12 +22,14 @@ namespace ara
             {
             }
 
-            Optional(const T &value) : mValuePtr{new T{value}}
+            Optional(const T &value)
             {
+                mValuePtr = new T{value};
             }
 
-            Optional(T &&value) : mValuePtr{new T{value}}
+            Optional(T &&value)
             {
+                mValuePtr = new T{std::move(value)};
             }
 
             Optional(const Optional &other)
@@ -214,7 +216,7 @@ namespace ara
             {
                 if (HasValue())
                 {
-                    T* _result{mValuePtr};
+                    T *_result{mValuePtr};
                     mValuePtr = nullptr;
 
                     return std::move(*_result);
