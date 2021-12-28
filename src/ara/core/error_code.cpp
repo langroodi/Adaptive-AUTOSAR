@@ -7,7 +7,7 @@ namespace ara
     {
         std::string ErrorCode::Message() const noexcept
         {
-            std::string _result(mDomain->Message(mValue));
+            std::string _result(mDomain.Message(mValue));
             return _result;
         }
 

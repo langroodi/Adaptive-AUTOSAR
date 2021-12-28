@@ -13,7 +13,7 @@ namespace ara
         {
         private:
             ErrorDomain::CodeType mValue;
-            const ErrorDomain *mDomain;
+            const ErrorDomain& mDomain;
 
         public:
             /// @brief Constructor
@@ -21,13 +21,12 @@ namespace ara
             /// @param domain Error code domain
             constexpr ErrorCode(
                 ErrorDomain::CodeType value,
-                const ErrorDomain &domain) noexcept : mValue{value}, mDomain{&domain}
+                const ErrorDomain &domain) noexcept : mValue{value}, mDomain{domain}
             {
             }
 
-            constexpr ErrorCode() noexcept : mValue{0}, mDomain{NULL}
-            {
-            }
+            ErrorCode() = delete;
+            ~ErrorCode() noexcept = default;
 
             /// @brief Get error code value
             /// @returns Raw error code value
@@ -40,7 +39,7 @@ namespace ara
             /// @returns Error domain which the error code belongs to
             constexpr ErrorDomain const &Domain() const noexcept
             {
-                return *mDomain;
+                return mDomain;
             }
 
             /// @brief Get error message
@@ -52,12 +51,12 @@ namespace ara
 
             constexpr bool operator==(const ErrorCode &other) noexcept
             {
-                return *mDomain == *(other.mDomain) && mValue == other.mValue;
+                return mDomain == other.mDomain && mValue == other.mValue;
             }
 
             constexpr bool operator!=(const ErrorCode &other) noexcept
             {
-                return *mDomain != *(other.mDomain) || mValue != other.mValue;
+                return mDomain != other.mDomain || mValue != other.mValue;
             }
         };
     }
