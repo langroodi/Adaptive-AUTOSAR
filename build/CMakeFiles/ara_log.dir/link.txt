@@ -1,0 +1,2 @@
+/usr/bin/ar qc libara_log.a CMakeFiles/ara_log.dir/src/ara/log/log_stream.cpp.o CMakeFiles/ara_log.dir/src/ara/log/logger.cpp.o CMakeFiles/ara_log.dir/src/ara/log/logging_framework.cpp.o CMakeFiles/ara_log.dir/src/ara/log/sink/console_log_sink.cpp.o CMakeFiles/ara_log.dir/src/ara/log/sink/file_log_sink.cpp.o CMakeFiles/ara_log.dir/src/ara/log/sink/log_sink.cpp.o
+/usr/bin/ranlib libara_log.a

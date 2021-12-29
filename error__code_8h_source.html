@@ -110,52 +110,51 @@ $(document).ready(function(){initNavTree('error__code_8h_source.html',''); initR
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752">ErrorDomain::CodeType</a> mValue;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> *mDomain;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a>&amp; mDomain;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorCode.html#a91eee3dbbfca15a25784f1445f87d161">   22</a></span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorCode.html#a91eee3dbbfca15a25784f1445f87d161">ErrorCode</a>(</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <a class="code" href="classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752">ErrorDomain::CodeType</a> value,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;domain) noexcept : mValue{value}, mDomain{&amp;domain}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keyword">const</span> <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> &amp;domain) noexcept : mValue{value}, mDomain{domain}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            constexpr ErrorCode() noexcept : mValue{0}, mDomain{NULL}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorCode.html#aa435db6ffa2946b126183f1df8f3301d">   34</a></span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752">ErrorDomain::CodeType</a> <a class="code" href="classara_1_1core_1_1ErrorCode.html#aa435db6ffa2946b126183f1df8f3301d">Value</a>() const noexcept</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">return</span> mValue;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15">   41</a></span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> <span class="keyword">const</span> &amp;<a class="code" href="classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15">Domain</a>() const noexcept</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span> *mDomain;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::string <a class="code" href="classara_1_1core_1_1ErrorCode.html#a5c707129aafab916be731a5c632ff2f0">Message</a>() const noexcept;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classara_1_1core_1_1ErrorCode.html#ad8fb7af9bf186e18208b0d31a46f4736">ThrowAsException</a>() const;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            constexpr <span class="keywordtype">bool</span> operator==(const <a class="code" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a> &amp;other) noexcept</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">return</span> *mDomain == *(other.mDomain) &amp;&amp; mValue == other.mValue;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            constexpr <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> ErrorCode &amp;other) noexcept</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> *mDomain != *(other.mDomain) || mValue != other.mValue;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        };</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            ErrorCode() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ~ErrorCode() noexcept = default;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorCode.html#aa435db6ffa2946b126183f1df8f3301d">   33</a></span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a>::CodeType <a class="code" href="classara_1_1core_1_1ErrorCode.html#aa435db6ffa2946b126183f1df8f3301d">Value</a>() const noexcept</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span> mValue;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15">   40</a></span>&#160;            constexpr <a class="code" href="classara_1_1core_1_1ErrorDomain.html">ErrorDomain</a> <span class="keyword">const</span> &amp;<a class="code" href="classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15">Domain</a>() const noexcept</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">return</span> mDomain;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            std::string <a class="code" href="classara_1_1core_1_1ErrorCode.html#a5c707129aafab916be731a5c632ff2f0">Message</a>() const noexcept;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classara_1_1core_1_1ErrorCode.html#ad8fb7af9bf186e18208b0d31a46f4736">ThrowAsException</a>() const;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            constexpr <span class="keywordtype">bool</span> operator==(const <a class="code" href="classara_1_1core_1_1ErrorCode.html">ErrorCode</a> &amp;other) noexcept</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">return</span> mDomain == other.mDomain &amp;&amp; mValue == other.mValue;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            constexpr <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> ErrorCode &amp;other) noexcept</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">return</span> mDomain != other.mDomain || mValue != other.mValue;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a></div><div class="ttdoc">A wrapper around the raw error code in a specific ErrorDomain.</div><div class="ttdef"><b>Definition:</b> error_code.h:13</div></div>
-<div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html_a45fd2466b0419d71d48f7a89fafefc15"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15">ara::core::ErrorCode::Domain</a></div><div class="ttdeci">constexpr ErrorDomain const  &amp; Domain() const noexcept</div><div class="ttdoc">Get error code domain.</div><div class="ttdef"><b>Definition:</b> error_code.h:41</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html_a45fd2466b0419d71d48f7a89fafefc15"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html#a45fd2466b0419d71d48f7a89fafefc15">ara::core::ErrorCode::Domain</a></div><div class="ttdeci">constexpr ErrorDomain const  &amp; Domain() const noexcept</div><div class="ttdoc">Get error code domain.</div><div class="ttdef"><b>Definition:</b> error_code.h:40</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html_a5c707129aafab916be731a5c632ff2f0"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html#a5c707129aafab916be731a5c632ff2f0">ara::core::ErrorCode::Message</a></div><div class="ttdeci">std::string Message() const noexcept</div><div class="ttdoc">Get error message.</div><div class="ttdef"><b>Definition:</b> error_code.cpp:8</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html_a91eee3dbbfca15a25784f1445f87d161"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html#a91eee3dbbfca15a25784f1445f87d161">ara::core::ErrorCode::ErrorCode</a></div><div class="ttdeci">constexpr ErrorCode(ErrorDomain::CodeType value, const ErrorDomain &amp;domain) noexcept</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> error_code.h:22</div></div>
-<div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html_aa435db6ffa2946b126183f1df8f3301d"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html#aa435db6ffa2946b126183f1df8f3301d">ara::core::ErrorCode::Value</a></div><div class="ttdeci">constexpr ErrorDomain::CodeType Value() const noexcept</div><div class="ttdoc">Get error code value.</div><div class="ttdef"><b>Definition:</b> error_code.h:34</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html_aa435db6ffa2946b126183f1df8f3301d"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html#aa435db6ffa2946b126183f1df8f3301d">ara::core::ErrorCode::Value</a></div><div class="ttdeci">constexpr ErrorDomain::CodeType Value() const noexcept</div><div class="ttdoc">Get error code value.</div><div class="ttdef"><b>Definition:</b> error_code.h:33</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1ErrorCode_html_ad8fb7af9bf186e18208b0d31a46f4736"><div class="ttname"><a href="classara_1_1core_1_1ErrorCode.html#ad8fb7af9bf186e18208b0d31a46f4736">ara::core::ErrorCode::ThrowAsException</a></div><div class="ttdeci">void ThrowAsException() const</div><div class="ttdoc">Throw the error as an exception.</div><div class="ttdef"><b>Definition:</b> error_code.cpp:14</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></div><div class="ttdoc">A class that defines the domain of an ErrorCode to avoid code interferences.</div><div class="ttdef"><b>Definition:</b> error_domain.h:14</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1ErrorDomain_html_a858bd680c1af572fa31fcfb6cf5f4752"><div class="ttname"><a href="classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752">ara::core::ErrorDomain::CodeType</a></div><div class="ttdeci">uint32_t CodeType</div><div class="ttdoc">Alias type of the error code.</div><div class="ttdef"><b>Definition:</b> error_domain.h:19</div></div>
