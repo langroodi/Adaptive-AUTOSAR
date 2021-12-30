@@ -98,9 +98,14 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1FunctionGroupState
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classara_1_1exec_1_1FunctionGroupState-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ara::exec::FunctionGroupState Class Reference</div>  </div>
+<div class="title">ara::exec::FunctionGroupState Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class that links a function group to a certain state.  
+ <a href="classara_1_1exec_1_1FunctionGroupState.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="function__group__state_8h_source.html">function_group_state.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -110,6 +115,30 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>CtorToken</b> = std:
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ae8a7b3a03d599903486e3079ee225375"><td class="memItemLeft" align="right" valign="top"><a id="ae8a7b3a03d599903486e3079ee225375"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FunctionGroupState</b> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;other)=delete</td></tr>
+<tr class="separator:ae8a7b3a03d599903486e3079ee225375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa657c3652b14fe6daae87441abdbaf81"><td class="memItemLeft" align="right" valign="top"><a id="aa657c3652b14fe6daae87441abdbaf81"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FunctionGroupState</b> (<a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;&amp;other)</td></tr>
+<tr class="separator:aa657c3652b14fe6daae87441abdbaf81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67643a120bacfec4785f2ef4c25e102d"><td class="memItemLeft" align="right" valign="top"><a id="a67643a120bacfec4785f2ef4c25e102d"></a>
+<a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;other)=delete</td></tr>
+<tr class="separator:a67643a120bacfec4785f2ef4c25e102d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d8f5bb143fc671cc4a50deb4c99f75"><td class="memItemLeft" align="right" valign="top"><a id="ac1d8f5bb143fc671cc4a50deb4c99f75"></a>
+<a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;&amp;other)</td></tr>
+<tr class="separator:ac1d8f5bb143fc671cc4a50deb4c99f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a6088a8c310113db7fc87c344f36c6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">FunctionGroup</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1FunctionGroupState.html#ae3a6088a8c310113db7fc87c344f36c6">GetFunctionGroup</a> () const noexcept</td></tr>
+<tr class="memdesc:ae3a6088a8c310113db7fc87c344f36c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the function group bound to the instance.  <a href="classara_1_1exec_1_1FunctionGroupState.html#ae3a6088a8c310113db7fc87c344f36c6">More...</a><br /></td></tr>
+<tr class="separator:ae3a6088a8c310113db7fc87c344f36c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4136074a9dd78eb219fe5f6e536fb325"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1FunctionGroupState.html#a4136074a9dd78eb219fe5f6e536fb325">GetState</a> () const noexcept</td></tr>
+<tr class="memdesc:a4136074a9dd78eb219fe5f6e536fb325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state bound to the instance.  <a href="classara_1_1exec_1_1FunctionGroupState.html#a4136074a9dd78eb219fe5f6e536fb325">More...</a><br /></td></tr>
+<tr class="separator:a4136074a9dd78eb219fe5f6e536fb325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d23c3a4727d9b61c10bf4854a70f09"><td class="memItemLeft" align="right" valign="top"><a id="aa5d23c3a4727d9b61c10bf4854a70f09"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:aa5d23c3a4727d9b61c10bf4854a70f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab926fc1f7129d8d2df7dd7b07d22cc4f"><td class="memItemLeft" align="right" valign="top"><a id="ab926fc1f7129d8d2df7dd7b07d22cc4f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;other) const noexcept</td></tr>
+<tr class="separator:ab926fc1f7129d8d2df7dd7b07d22cc4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f510c4f205347cd6e47d54a97270700"><td class="memItemLeft" align="right" valign="top"><a id="a2f510c4f205347cd6e47d54a97270700"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FunctionGroupState</b> (CtorToken &amp;&amp;token) noexcept</td></tr>
 <tr class="separator:a2f510c4f205347cd6e47d54a97270700"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,10 +151,117 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a6dccc0ba2b23eb9d7a902098b9b24e15"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1FunctionGroupState.html#a6dccc0ba2b23eb9d7a902098b9b24e15">Create</a> (const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">FunctionGroup</a> &amp;functionGroup, std::string metaModelIdentifier)</td></tr>
+<tr class="memdesc:a6dccc0ba2b23eb9d7a902098b9b24e15"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1exec_1_1FunctionGroupState.html" title="Class that links a function group to a certain state.">FunctionGroupState</a> factory.  <a href="classara_1_1exec_1_1FunctionGroupState.html#a6dccc0ba2b23eb9d7a902098b9b24e15">More...</a><br /></td></tr>
+<tr class="separator:a6dccc0ba2b23eb9d7a902098b9b24e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a0f7c6c7f911bca0f8b3ad87631fd8a"><td class="memItemLeft" align="right" valign="top"><a id="a1a0f7c6c7f911bca0f8b3ad87631fd8a"></a>
 static <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; CtorToken &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Preconstruct</b> (std::string metaModelIdentifier) noexcept</td></tr>
 <tr class="separator:a1a0f7c6c7f911bca0f8b3ad87631fd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that links a function group to a certain state. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6dccc0ba2b23eb9d7a902098b9b24e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dccc0ba2b23eb9d7a902098b9b24e15">&#9670;&nbsp;</a></span>Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &gt; ara::exec::FunctionGroupState::Create </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">FunctionGroup</a> &amp;&#160;</td>
+          <td class="paramname"><em>functionGroup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>metaModelIdentifier</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classara_1_1exec_1_1FunctionGroupState.html" title="Class that links a function group to a certain state.">FunctionGroupState</a> factory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metaModelIdentifier</td><td>State manifest of a function group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result containing a new instance if creation was successful, otherwise a Result containing the occurred error </dd></dl>
+
+</div>
+</div>
+<a id="ae3a6088a8c310113db7fc87c344f36c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a6088a8c310113db7fc87c344f36c6">&#9670;&nbsp;</a></span>GetFunctionGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">FunctionGroup</a> &amp; ara::exec::FunctionGroupState::GetFunctionGroup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the function group bound to the instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the corresponding function group </dd></dl>
+
+</div>
+</div>
+<a id="a4136074a9dd78eb219fe5f6e536fb325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4136074a9dd78eb219fe5f6e536fb325">&#9670;&nbsp;</a></span>GetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; ara::exec::FunctionGroupState::GetState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the state bound to the instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>Constant reference to the state metamodel </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
