@@ -246,6 +246,8 @@ add_library(
   ${source_ara_exec_dir}/execution_client.cpp
   ${source_ara_exec_dir}/function_group.h
   ${source_ara_exec_dir}/function_group.cpp
+  ${source_ara_exec_dir}/function_group_state.h
+  ${source_ara_exec_dir}/function_group_state.cpp
   ${source_ara_exec_helper_dir}/atomic_optional.h
   ${source_ara_exec_helper_dir}/fifo_layer.h
 )
@@ -292,6 +294,7 @@ if(build_tests)
     ${test_ara_exec_dir}/deterministic_client_test.cpp
     ${test_ara_exec_dir}/execution_client_test.cpp
     ${test_ara_exec_dir}/function_group_test.cpp
+    ${test_ara_exec_dir}/function_group_state_test.cpp
     ${test_ara_exec_helper_dir}/atomic_optional_test.cpp
     ${test_ara_exec_helper_dir}/mockup_fifo_layer.h
     ${test_ara_core_dir}/optional_test.cpp
