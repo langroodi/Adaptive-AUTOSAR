@@ -248,6 +248,8 @@ add_library(
   ${source_ara_exec_dir}/function_group.cpp
   ${source_ara_exec_dir}/function_group_state.h
   ${source_ara_exec_dir}/function_group_state.cpp
+  ${source_ara_exec_dir}/exec_error_domain.h
+  ${source_ara_exec_dir}/exec_error_domain.cpp
   ${source_ara_exec_helper_dir}/atomic_optional.h
   ${source_ara_exec_helper_dir}/fifo_layer.h
 )

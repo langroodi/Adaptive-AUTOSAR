@@ -38,7 +38,7 @@ namespace ara
             const FunctionGroup &GetFunctionGroup() const noexcept;
 
             /// @brief Get the state bound to the instance
-            /// @returns Constant reference to the state metamodel
+            /// @returns Constant reference to the state meta-model
             const std::string &GetState() const noexcept;
 
             inline bool operator==(const FunctionGroupState &other) const noexcept
