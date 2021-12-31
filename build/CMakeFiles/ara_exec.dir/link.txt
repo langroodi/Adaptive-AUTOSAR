@@ -1,2 +1,0 @@
-/usr/bin/ar qc libara_exec.a CMakeFiles/ara_exec.dir/src/ara/exec/worker_thread.cpp.o CMakeFiles/ara_exec.dir/src/ara/exec/deterministic_client.cpp.o CMakeFiles/ara_exec.dir/src/ara/exec/execution_client.cpp.o CMakeFiles/ara_exec.dir/src/ara/exec/function_group.cpp.o CMakeFiles/ara_exec.dir/src/ara/exec/function_group_state.cpp.o
-/usr/bin/ranlib libara_exec.a
