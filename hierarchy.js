@@ -32,7 +32,6 @@ var hierarchy =
       [ "ara::diag::DiagOfferErrorDomain", "classara_1_1diag_1_1DiagOfferErrorDomain.html", null ],
       [ "ara::diag::DiagReportingErrorDomain", "classara_1_1diag_1_1DiagReportingErrorDomain.html", null ],
       [ "ara::diag::DiagUdsNrcErrorDomain", "classara_1_1diag_1_1DiagUdsNrcErrorDomain.html", null ],
-      [ "ara::exec::ExceErrorDomain", "classara_1_1exec_1_1ExceErrorDomain.html", null ],
       [ "ara::exec::ExecErrorDomain", "classara_1_1exec_1_1ExecErrorDomain.html", null ]
     ] ],
     [ "ara::diag::Event", "classara_1_1diag_1_1Event.html", null ],

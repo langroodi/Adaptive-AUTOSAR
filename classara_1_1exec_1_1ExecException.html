@@ -99,6 +99,11 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1ExecException.html
 <div class="title">ara::exec::ExecException Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Execution Management exception.  
+ <a href="classara_1_1exec_1_1ExecException.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="exec__exception_8h_source.html">exec_exception.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ara::exec::ExecException:</div>
 <div class="dyncontent">
@@ -108,16 +113,117 @@ Inheritance diagram for ara::exec::ExecException:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6d7c34fd9df5b40cea0870221659363a"><td class="memItemLeft" align="right" valign="top"><a id="a6d7c34fd9df5b40cea0870221659363a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ExecException</b> (<a class="el" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a> errorCode) noexcept</td></tr>
-<tr class="separator:a6d7c34fd9df5b40cea0870221659363a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3aa31506b6d56bf380be7ff0af1923d"><td class="memItemLeft" align="right" valign="top"><a id="aa3aa31506b6d56bf380be7ff0af1923d"></a>
-const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetExecErrorDomain</b> () noexcept</td></tr>
-<tr class="separator:aa3aa31506b6d56bf380be7ff0af1923d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a734ca161a2edef8957a4c5f12d01a8b1"><td class="memItemLeft" align="right" valign="top"><a id="a734ca161a2edef8957a4c5f12d01a8b1"></a>
-<a class="el" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MakeErrorCode</b> (ExecErrc code) noexcept</td></tr>
-<tr class="separator:a734ca161a2edef8957a4c5f12d01a8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa65642a1df094492259b397beb2821"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecException.html#acfa65642a1df094492259b397beb2821">ExecException</a> (<a class="el" href="classara_1_1core_1_1ErrorCode.html">core::ErrorCode</a> errorCode) noexcept</td></tr>
+<tr class="memdesc:acfa65642a1df094492259b397beb2821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1ExecException.html#acfa65642a1df094492259b397beb2821">More...</a><br /></td></tr>
+<tr class="separator:acfa65642a1df094492259b397beb2821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76f0e5c21742a0b179b96edc69ad77e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">core::ErrorDomain</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecException.html#ae76f0e5c21742a0b179b96edc69ad77e">GetExecErrorDomain</a> () noexcept</td></tr>
+<tr class="memdesc:ae76f0e5c21742a0b179b96edc69ad77e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the exception error domain.  <a href="classara_1_1exec_1_1ExecException.html#ae76f0e5c21742a0b179b96edc69ad77e">More...</a><br /></td></tr>
+<tr class="separator:ae76f0e5c21742a0b179b96edc69ad77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe9d12f9d5da654d122fca03b0f94ee3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1ErrorCode.html">core::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecException.html#afe9d12f9d5da654d122fca03b0f94ee3">MakeErrorCode</a> (ExecErrc code) noexcept</td></tr>
+<tr class="memdesc:afe9d12f9d5da654d122fca03b0f94ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a error code in the same error domain.  <a href="classara_1_1exec_1_1ExecException.html#afe9d12f9d5da654d122fca03b0f94ee3">More...</a><br /></td></tr>
+<tr class="separator:afe9d12f9d5da654d122fca03b0f94ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Execution Management exception. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acfa65642a1df094492259b397beb2821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfa65642a1df094492259b397beb2821">&#9670;&nbsp;</a></span>ExecException()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::exec::ExecException::ExecException </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1core_1_1ErrorCode.html">core::ErrorCode</a>&#160;</td>
+          <td class="paramname"><em>errorCode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errorCode</td><td>Exception error code in the current error domain </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae76f0e5c21742a0b179b96edc69ad77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76f0e5c21742a0b179b96edc69ad77e">&#9670;&nbsp;</a></span>GetExecErrorDomain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">core::ErrorDomain</a> &amp; ara::exec::ExecException::GetExecErrorDomain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the exception error domain. </p>
+<dl class="section return"><dt>Returns</dt><dd>EM error domain </dd></dl>
+
+</div>
+</div>
+<a id="afe9d12f9d5da654d122fca03b0f94ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe9d12f9d5da654d122fca03b0f94ee3">&#9670;&nbsp;</a></span>MakeErrorCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1ErrorCode.html">core::ErrorCode</a> ara::exec::ExecException::MakeErrorCode </td>
+          <td>(</td>
+          <td class="paramtype">ExecErrc&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make a error code in the same error domain. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>EM error code number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Created error code with determined error number </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

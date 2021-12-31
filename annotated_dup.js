@@ -106,9 +106,8 @@ var annotated_dup =
           [ "FifoLayer", "classara_1_1exec_1_1helper_1_1FifoLayer.html", "classara_1_1exec_1_1helper_1_1FifoLayer" ]
         ] ],
         [ "DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", "classara_1_1exec_1_1DeterministicClient" ],
-        [ "ExecException", "classara_1_1exec_1_1ExecException.html", "classara_1_1exec_1_1ExecException" ],
-        [ "ExceErrorDomain", "classara_1_1exec_1_1ExceErrorDomain.html", "classara_1_1exec_1_1ExceErrorDomain" ],
         [ "ExecErrorDomain", "classara_1_1exec_1_1ExecErrorDomain.html", "classara_1_1exec_1_1ExecErrorDomain" ],
+        [ "ExecException", "classara_1_1exec_1_1ExecException.html", "classara_1_1exec_1_1ExecException" ],
         [ "ExecutionClient", "classara_1_1exec_1_1ExecutionClient.html", "classara_1_1exec_1_1ExecutionClient" ],
         [ "FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", "classara_1_1exec_1_1FunctionGroup" ],
         [ "FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", "classara_1_1exec_1_1FunctionGroupState" ],

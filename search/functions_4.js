@@ -12,8 +12,9 @@ var searchData=
   ['errordomain_518',['ErrorDomain',['../classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82',1,'ara::core::ErrorDomain']]],
   ['erroror_519',['ErrorOr',['../classara_1_1core_1_1Result.html#a9fd03e82fbd6a723f0bb9215c7b97b2a',1,'ara::core::Result::ErrorOr(G &amp;&amp;defaultError) const &amp;'],['../classara_1_1core_1_1Result.html#ac3e572f5a610743b4c995f28094a2d4f',1,'ara::core::Result::ErrorOr(G &amp;&amp;defaultError) &amp;&amp;'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a9b0d99bbeb56c967b2a545f08a214067',1,'ara::core::Result&lt; void, E &gt;::ErrorOr(G &amp;&amp;defaultError) const &amp;'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aa41251f86ed84989cd70f265979a5a0e',1,'ara::core::Result&lt; void, E &gt;::ErrorOr(G &amp;&amp;defaultError) &amp;&amp;']]],
   ['eventgroupid_520',['EventgroupId',['../classara_1_1com_1_1entry_1_1EventgroupEntry.html#a700028675f87f32255064ce9de66c725',1,'ara::com::entry::EventgroupEntry']]],
-  ['executionclient_521',['ExecutionClient',['../classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2',1,'ara::exec::ExecutionClient']]],
-  ['extract_522',['Extract',['../structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba',1,'ara::com::helper::Ipv4Address']]],
-  ['extractinteger_523',['ExtractInteger',['../namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7',1,'ara::com::helper']]],
-  ['extractshort_524',['ExtractShort',['../namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb',1,'ara::com::helper']]]
+  ['execexception_521',['ExecException',['../classara_1_1exec_1_1ExecException.html#acfa65642a1df094492259b397beb2821',1,'ara::exec::ExecException']]],
+  ['executionclient_522',['ExecutionClient',['../classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2',1,'ara::exec::ExecutionClient']]],
+  ['extract_523',['Extract',['../structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba',1,'ara::com::helper::Ipv4Address']]],
+  ['extractinteger_524',['ExtractInteger',['../namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7',1,'ara::com::helper']]],
+  ['extractshort_525',['ExtractShort',['../namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb',1,'ara::com::helper']]]
 ];

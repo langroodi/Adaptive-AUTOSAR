@@ -8,7 +8,7 @@ var searchData=
   ['entry_79',['Entry',['../classara_1_1com_1_1entry_1_1Entry.html',1,'ara::com::entry::Entry'],['../classara_1_1com_1_1entry_1_1Entry.html#a9de576201c39959847e554facb421125',1,'ara::com::entry::Entry::Entry()']]],
   ['entrydeserializer_80',['EntryDeserializer',['../classara_1_1com_1_1entry_1_1EntryDeserializer.html',1,'ara::com::entry::EntryDeserializer'],['../classara_1_1com_1_1entry_1_1EntryDeserializer.html#a3d10bfe93bda141ff11f2d1fbac71beb',1,'ara::com::entry::EntryDeserializer::EntryDeserializer()']]],
   ['entrytype_81',['EntryType',['../namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171e',1,'ara::com::entry']]],
-  ['err_82',['Err',['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a73f6f3f1deb29d9a54701fd842860b6e',1,'ara::core::Result&lt; void, E &gt;::Err() const &amp;'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a633583ef06ca1b69a14c2efe016c4e9a',1,'ara::core::Result&lt; void, E &gt;::Err() &amp;&amp;'],['../classara_1_1core_1_1Result.html#a38367c1e3382fe009b3cafc63fa7343e',1,'ara::core::Result::Err() &amp;&amp;'],['../classara_1_1core_1_1Result.html#adada207e5faf8f2d0fa7888c4820ae3d',1,'ara::core::Result::Err() const &amp;']]],
+  ['err_82',['Err',['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a633583ef06ca1b69a14c2efe016c4e9a',1,'ara::core::Result&lt; void, E &gt;::Err() &amp;&amp;'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a73f6f3f1deb29d9a54701fd842860b6e',1,'ara::core::Result&lt; void, E &gt;::Err() const &amp;'],['../classara_1_1core_1_1Result.html#a38367c1e3382fe009b3cafc63fa7343e',1,'ara::core::Result::Err() &amp;&amp;'],['../classara_1_1core_1_1Result.html#adada207e5faf8f2d0fa7888c4820ae3d',1,'ara::core::Result::Err() const &amp;']]],
   ['error_83',['Error',['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a815c148d955533ed65ad43043ac73b5c',1,'ara::core::Result&lt; void, E &gt;::Error() &amp;&amp;'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ac8bd1615a7ce2f01dd4d4b719f5e4c38',1,'ara::core::Result&lt; void, E &gt;::Error() const &amp;'],['../classara_1_1core_1_1Result.html#acf3495f574903d537f1313a8f2dfcab4',1,'ara::core::Result::Error() &amp;&amp;'],['../classara_1_1core_1_1Result.html#a69b3b4c7e01381968c9c8955ba5e9667',1,'ara::core::Result::Error() const &amp;']]],
   ['error_5ftype_84',['error_type',['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a16810845d1e2c4029812478a98c97e42',1,'ara::core::Result&lt; void, E &gt;::error_type()'],['../classara_1_1core_1_1Result.html#ae4075b56a0084b81172b1a1d00a2f4f9',1,'ara::core::Result::error_type()']]],
   ['errorcode_85',['ErrorCode',['../classara_1_1core_1_1ErrorCode.html',1,'ara::core::ErrorCode'],['../classara_1_1core_1_1ErrorCode.html#a91eee3dbbfca15a25784f1445f87d161',1,'ara::core::ErrorCode::ErrorCode()']]],
@@ -17,11 +17,10 @@ var searchData=
   ['event_88',['Event',['../classara_1_1diag_1_1Event.html',1,'ara::diag']]],
   ['eventgroupentry_89',['EventgroupEntry',['../classara_1_1com_1_1entry_1_1EventgroupEntry.html',1,'ara::com::entry']]],
   ['eventgroupid_90',['EventgroupId',['../classara_1_1com_1_1entry_1_1EventgroupEntry.html#a700028675f87f32255064ce9de66c725',1,'ara::com::entry::EventgroupEntry']]],
-  ['exceerrordomain_91',['ExceErrorDomain',['../classara_1_1exec_1_1ExceErrorDomain.html',1,'ara::exec']]],
-  ['execerrordomain_92',['ExecErrorDomain',['../classara_1_1exec_1_1ExecErrorDomain.html',1,'ara::exec']]],
-  ['execexception_93',['ExecException',['../classara_1_1exec_1_1ExecException.html',1,'ara::exec']]],
-  ['executionclient_94',['ExecutionClient',['../classara_1_1exec_1_1ExecutionClient.html',1,'ara::exec::ExecutionClient'],['../classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2',1,'ara::exec::ExecutionClient::ExecutionClient()']]],
-  ['extract_95',['Extract',['../structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba',1,'ara::com::helper::Ipv4Address']]],
-  ['extractinteger_96',['ExtractInteger',['../namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7',1,'ara::com::helper']]],
-  ['extractshort_97',['ExtractShort',['../namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb',1,'ara::com::helper']]]
+  ['execerrordomain_91',['ExecErrorDomain',['../classara_1_1exec_1_1ExecErrorDomain.html',1,'ara::exec']]],
+  ['execexception_92',['ExecException',['../classara_1_1exec_1_1ExecException.html',1,'ara::exec::ExecException'],['../classara_1_1exec_1_1ExecException.html#acfa65642a1df094492259b397beb2821',1,'ara::exec::ExecException::ExecException()']]],
+  ['executionclient_93',['ExecutionClient',['../classara_1_1exec_1_1ExecutionClient.html',1,'ara::exec::ExecutionClient'],['../classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2',1,'ara::exec::ExecutionClient::ExecutionClient()']]],
+  ['extract_94',['Extract',['../structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba',1,'ara::com::helper::Ipv4Address']]],
+  ['extractinteger_95',['ExtractInteger',['../namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7',1,'ara::com::helper']]],
+  ['extractshort_96',['ExtractShort',['../namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb',1,'ara::com::helper']]]
 ];
