@@ -274,11 +274,13 @@ var namespaces_dup =
         [ "ExecErrorDomain", "classara_1_1exec_1_1ExecErrorDomain.html", "classara_1_1exec_1_1ExecErrorDomain" ],
         [ "ExecException", "classara_1_1exec_1_1ExecException.html", "classara_1_1exec_1_1ExecException" ],
         [ "ExecutionClient", "classara_1_1exec_1_1ExecutionClient.html", "classara_1_1exec_1_1ExecutionClient" ],
+        [ "ExecutionErrorEvent", "structara_1_1exec_1_1ExecutionErrorEvent.html", "structara_1_1exec_1_1ExecutionErrorEvent" ],
         [ "FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", "classara_1_1exec_1_1FunctionGroup" ],
         [ "FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", "classara_1_1exec_1_1FunctionGroupState" ],
         [ "StateClient", "classara_1_1exec_1_1StateClient.html", "classara_1_1exec_1_1StateClient" ],
         [ "WorkerRunnable", "classara_1_1exec_1_1WorkerRunnable.html", "classara_1_1exec_1_1WorkerRunnable" ],
         [ "WorkerThread", "classara_1_1exec_1_1WorkerThread.html", "classara_1_1exec_1_1WorkerThread" ],
+        [ "ExecutionError", "execution__error__event_8h.html#afc5c14bda0d256f751c3350c2a13e8d3", null ],
         [ "ActivationReturnType", "deterministic__client_8h.html#ab2bd2ca70e096b765f839a1dd7349396", [
           [ "kRegisterService", "deterministic__client_8h.html#ab2bd2ca70e096b765f839a1dd7349396a591bba8c1ee303b9204d4c6167a7790f", null ],
           [ "kServiceDiscovery", "deterministic__client_8h.html#ab2bd2ca70e096b765f839a1dd7349396a457f528f7e19f118879f9f169e99091e", null ],
