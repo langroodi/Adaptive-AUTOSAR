@@ -18,11 +18,9 @@ namespace ara
         /// @brief Class that enables an adaptive application to interact with Execution Management
         class ExecutionClient final
         {
-        public:
-            /// @brief Message type communicate via the IPC pipe
+        private:
             using FifoMessageType = std::pair<core::InstanceSpecifier, ExecutionState>;
 
-        private:
             core::InstanceSpecifier mInstanceSpecifier;
             helper::FifoLayer<FifoMessageType> *mCommunicationLayer;
 

@@ -252,6 +252,9 @@ add_library(
   ${source_ara_exec_dir}/exec_error_domain.cpp
   ${source_ara_exec_dir}/exec_exception.h
   ${source_ara_exec_dir}/exec_exception.cpp
+  ${source_ara_exec_dir}/execution_error_event.h
+  ${source_ara_exec_dir}/state_client.h
+  ${source_ara_exec_dir}/state_client.cpp
   ${source_ara_exec_helper_dir}/atomic_optional.h
   ${source_ara_exec_helper_dir}/fifo_layer.h
 )
@@ -300,6 +303,7 @@ if(build_tests)
     ${test_ara_exec_dir}/function_group_test.cpp
     ${test_ara_exec_dir}/function_group_state_test.cpp
     ${test_ara_exec_dir}/exec_exception_test.cpp
+    ${test_ara_exec_dir}/state_client_test.cpp
     ${test_ara_exec_helper_dir}/atomic_optional_test.cpp
     ${test_ara_exec_helper_dir}/mockup_fifo_layer.h
     ${test_ara_core_dir}/optional_test.cpp

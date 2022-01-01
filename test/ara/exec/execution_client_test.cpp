@@ -9,11 +9,12 @@ namespace ara
         class ExecutionClientTest : public testing::Test
         {
         private:
-            const core::InstanceSpecifier cInstance{"test_instance"};
-            helper::MockupFifoLayer<ExecutionClient::FifoMessageType> mCommunicationLayer;
-            ExecutionClient mClient;
+            using FifoMessageType = std::pair<core::InstanceSpecifier, ExecutionState>;
 
-            void receiver(ExecutionClient::FifoMessageType message)
+            const core::InstanceSpecifier cInstance{"test_instance"};
+            helper::MockupFifoLayer<FifoMessageType> mCommunicationLayer;
+
+            void receiver(FifoMessageType message)
             {
                 if (message.first == cInstance)
                 {
@@ -22,20 +23,16 @@ namespace ara
             }
 
         protected:
+            ExecutionClient Client;
             core::Optional<ExecutionState> ReportedState;
 
-            ExecutionClientTest() : mClient{cInstance, &mCommunicationLayer}
+            ExecutionClientTest() : Client{cInstance, &mCommunicationLayer}
             {
                 auto _receiver =
                     std::bind(
                         &ExecutionClientTest::receiver, this, std::placeholders::_1);
 
                 mCommunicationLayer.SetReceiver(_receiver);
-            }
-
-            void ReportExecutionState(ExecutionState state)
-            {
-                mClient.ReportExecutionState(state);
             }
         };
 
@@ -44,7 +41,7 @@ namespace ara
             const ExecutionState cState{ExecutionState::kRunning};
             EXPECT_FALSE(ReportedState.HasValue());
 
-            ReportExecutionState(cState);
+            Client.ReportExecutionState(cState);
 
             EXPECT_TRUE(ReportedState.HasValue());
             EXPECT_EQ(cState, ReportedState.Value());
