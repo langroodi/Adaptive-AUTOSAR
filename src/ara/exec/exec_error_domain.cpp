@@ -4,6 +4,8 @@ namespace ara
 {
     namespace exec
     {
+        const core::ErrorDomain::IdType ExecErrorDomain::cDomainId;
+
         ExecErrorDomain::ExecErrorDomain() noexcept : ErrorDomain{cDomainId}
         {
         }

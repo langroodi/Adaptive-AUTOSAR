@@ -29,7 +29,7 @@ namespace ara
         class ExecErrorDomain final : public core::ErrorDomain
         {
         private:
-            const core::ErrorDomain::IdType cDomainId{0x8000000000000202};
+            static const core::ErrorDomain::IdType cDomainId{0x8000000000000202};
 
         public:
             ExecErrorDomain() noexcept;
