@@ -15,6 +15,30 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 - Google Test: v1.11.0
 - [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary)
 
+
+## Build
+
+### Compiler debug configuration
+
+- GCC:
+```bash
+cmake -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/x86_64-linux-gnu-gcc-9 -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/x86_64-linux-gnu-g++-9 -S . -B build
+```
+- Clang:
+```bash
+cmake -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/clang-10 -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++-10 -S . -B build
+```
+
+### Compiling
+```bash
+cmake --build build
+```
+
+### Unit tests running
+```bash
+cd build && ctest
+```
+
 ## Documentation
 
 Please refer to [the project GitHub pages](https://langroodi.github.io/Adaptive-AUTOSAR/) powered by Doxygen.
