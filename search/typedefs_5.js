@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['timestamp_693',['TimeStamp',['../classara_1_1exec_1_1DeterministicClient.html#aadf1e4a74ce3eda295f39c0559de0bbb',1,'ara::exec::DeterministicClient']]],
-  ['triggerhandler_694',['TriggerHandler',['../namespaceara_1_1sm.html#a6284fdcb3bdb730c67113b085292cac6',1,'ara::sm']]]
+  ['value_5ftype_702',['value_type',['../classara_1_1core_1_1Result.html#a61a565d803bd65806fe689fa811e83c7',1,'ara::core::Result::value_type()'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#af7bc88db20232dba8a06e10f7eb22843',1,'ara::core::Result&lt; void, E &gt;::value_type()']]]
 ];

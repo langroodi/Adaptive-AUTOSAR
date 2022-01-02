@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['idtype_691',['IdType',['../classara_1_1core_1_1ErrorDomain.html#a2293fffefc45549aa2d0e4d88d7b5e9d',1,'ara::core::ErrorDomain']]]
+  ['notificationhandler_699',['NotificationHandler',['../namespaceara_1_1sm.html#ad1a2b42e6183cddc534d4cba9fd58970',1,'ara::sm']]]
 ];

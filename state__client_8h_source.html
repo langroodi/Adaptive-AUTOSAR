@@ -99,55 +99,60 @@ $(document).ready(function(){initNavTree('state__client_8h_source.html',''); ini
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STATE_CLIENT_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define STATE_CLIENT_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../core/result.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;future&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>ara</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">namespace </span>exec</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">class </span>FunctionGroup</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keyword">using</span> CtorToken = std::string;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">explicit</span> FunctionGroup(CtorToken &amp;&amp;token) noexcept;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            ~FunctionGroup() noexcept;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordtype">bool</span> operator==(const FunctionGroup &amp;other) const noexcept;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordtype">bool</span> operator!=(const FunctionGroup &amp;other) const noexcept;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            static ara::core::Result&lt;CtorToken&gt; Preconstruct(</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                std::<span class="keywordtype">string</span> metaModelIdentifier) noexcept;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        class FunctionGroupState</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">using</span> CtorToken = std::string;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">explicit</span> FunctionGroupState(CtorToken &amp;&amp;token) noexcept;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            ~FunctionGroupState() noexcept;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordtype">bool</span> operator==(const FunctionGroupState &amp;other) const noexcept;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordtype">bool</span> operator!=(const FunctionGroupState &amp;other) const noexcept;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            static ara::core::Result&lt;CtorToken&gt; Preconstruct(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                std::<span class="keywordtype">string</span> metaModelIdentifier) noexcept;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        };</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1StateClient.html">   39</a></span>&#160;        class <a class="code" href="classara_1_1exec_1_1StateClient.html">StateClient</a></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classara_1_1exec_1_1StateClient.html">StateClient</a>() noexcept;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ~<a class="code" href="classara_1_1exec_1_1StateClient.html">StateClient</a>() noexcept;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::future&lt;void&gt; SetState(<span class="keyword">const</span> <a class="code" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;state);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::future&lt;void&gt; GetInitialMachineStateTransitionResult () <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;future&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;./helper/fifo_layer.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;./execution_error_event.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;./function_group_state.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;./exec_exception.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>ara</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">namespace </span>exec</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1StateClient.html">   16</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classara_1_1exec_1_1StateClient.html">StateClient</a> final</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">using</span> SetStateMessage = std::pair&lt;const FunctionGroup *, std::string&gt;;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="classara_1_1exec_1_1ExecErrorDomain.html">ExecErrorDomain</a> cErrorDomain;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            std::function&lt;void(<span class="keyword">const</span> <a class="code" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &amp;)&gt; mUndefinedStateCallback;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer&lt;SetStateMessage&gt;</a> *mCommunicationLayer;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            std::mutex mInitializationMutex;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordtype">bool</span> mInitialized;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordtype">void</span> setPromiseException(</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                std::promise&lt;void&gt;&amp; promise, ExecErrc executionErrorCode) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classara_1_1exec_1_1StateClient.html">StateClient</a>(</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> <a class="code" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &amp;)&gt; undefinedStateCallback,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer&lt;SetStateMessage&gt;</a> *communicationLayer);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classara_1_1exec_1_1StateClient.html">StateClient</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            ~<a class="code" href="classara_1_1exec_1_1StateClient.html">StateClient</a>() noexcept = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            std::future&lt;void&gt; <a class="code" href="classara_1_1exec_1_1StateClient.html#a587e445f0354557205be7fde3dc5a97e">SetState</a>(<span class="keyword">const</span> <a class="code" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;state);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::future&lt;void&gt; <a class="code" href="classara_1_1exec_1_1StateClient.html#acd99b1be907fe5f6fb58a12292fcd7bc">GetInitialMachineStateTransitionResult</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">core::Result&lt;ExecutionErrorEvent&gt;</a> <a class="code" href="classara_1_1exec_1_1StateClient.html#a36b5c30c5590db0078621c5d272df54d">GetExecutionError</a>(</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keyword">const</span> <a class="code" href="classara_1_1exec_1_1FunctionGroup.html">FunctionGroup</a> &amp;functionGroup) noexcept;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassara_1_1core_1_1Result_html"><div class="ttname"><a href="classara_1_1core_1_1Result.html">ara::core::Result</a></div><div class="ttdoc">A wrapper around the callee's return value and its possible error.</div><div class="ttdef"><b>Definition:</b> result.h:16</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1ExecErrorDomain_html"><div class="ttname"><a href="classara_1_1exec_1_1ExecErrorDomain.html">ara::exec::ExecErrorDomain</a></div><div class="ttdoc">Execution Management ErrorDomain.</div><div class="ttdef"><b>Definition:</b> exec_error_domain.h:30</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1FunctionGroupState_html"><div class="ttname"><a href="classara_1_1exec_1_1FunctionGroupState.html">ara::exec::FunctionGroupState</a></div><div class="ttdoc">Class that links a function group to a certain state.</div><div class="ttdef"><b>Definition:</b> function_group_state.h:12</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1StateClient_html"><div class="ttname"><a href="classara_1_1exec_1_1StateClient.html">ara::exec::StateClient</a></div><div class="ttdef"><b>Definition:</b> state_client.h:40</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1FunctionGroup_html"><div class="ttname"><a href="classara_1_1exec_1_1FunctionGroup.html">ara::exec::FunctionGroup</a></div><div class="ttdoc">A function group representative based on a manifest.</div><div class="ttdef"><b>Definition:</b> function_group.h:14</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1StateClient_html"><div class="ttname"><a href="classara_1_1exec_1_1StateClient.html">ara::exec::StateClient</a></div><div class="ttdoc">Class the enables State Management to interact with Execution Management.</div><div class="ttdef"><b>Definition:</b> state_client.h:17</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1StateClient_html_a36b5c30c5590db0078621c5d272df54d"><div class="ttname"><a href="classara_1_1exec_1_1StateClient.html#a36b5c30c5590db0078621c5d272df54d">ara::exec::StateClient::GetExecutionError</a></div><div class="ttdeci">core::Result&lt; ExecutionErrorEvent &gt; GetExecutionError(const FunctionGroup &amp;functionGroup) noexcept</div><div class="ttdoc">Get the execution error made the state of function group undefined.</div><div class="ttdef"><b>Definition:</b> state_client.cpp:67</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1StateClient_html_a587e445f0354557205be7fde3dc5a97e"><div class="ttname"><a href="classara_1_1exec_1_1StateClient.html#a587e445f0354557205be7fde3dc5a97e">ara::exec::StateClient::SetState</a></div><div class="ttdeci">std::future&lt; void &gt; SetState(const FunctionGroupState &amp;state)</div><div class="ttdoc">Set a function group state.</div><div class="ttdef"><b>Definition:</b> state_client.cpp:17</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1StateClient_html_acd99b1be907fe5f6fb58a12292fcd7bc"><div class="ttname"><a href="classara_1_1exec_1_1StateClient.html#acd99b1be907fe5f6fb58a12292fcd7bc">ara::exec::StateClient::GetInitialMachineStateTransitionResult</a></div><div class="ttdeci">std::future&lt; void &gt; GetInitialMachineStateTransitionResult()</div><div class="ttdoc">Push the EM to its start-up state.</div><div class="ttdef"><b>Definition:</b> state_client.cpp:41</div></div>
+<div class="ttc" id="aclassara_1_1exec_1_1helper_1_1FifoLayer_html"><div class="ttname"><a href="classara_1_1exec_1_1helper_1_1FifoLayer.html">ara::exec::helper::FifoLayer&lt; SetStateMessage &gt;</a></div></div>
+<div class="ttc" id="astructara_1_1exec_1_1ExecutionErrorEvent_html"><div class="ttname"><a href="structara_1_1exec_1_1ExecutionErrorEvent.html">ara::exec::ExecutionErrorEvent</a></div><div class="ttdoc">Undefined Function Group State event argument.</div><div class="ttdef"><b>Definition:</b> execution_error_event.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

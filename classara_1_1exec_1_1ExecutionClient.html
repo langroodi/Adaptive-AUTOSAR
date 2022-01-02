@@ -93,7 +93,6 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1ExecutionClient.ht
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classara_1_1exec_1_1ExecutionClient-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -106,16 +105,9 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1ExecutionClient.ht
 
 <p><code>#include &lt;<a class="el" href="execution__client_8h_source.html">execution_client.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a7740bdcd774d6233ade89d497429ac01"><td class="memItemLeft" align="right" valign="top"><a id="a7740bdcd774d6233ade89d497429ac01"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">FifoMessageType</a> = std::pair&lt; <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a>, ExecutionState &gt;</td></tr>
-<tr class="memdesc:a7740bdcd774d6233ade89d497429ac01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message type communicate via the IPC pipe. <br /></td></tr>
-<tr class="separator:a7740bdcd774d6233ade89d497429ac01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45e0a694071ec42ef31e4978978550a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">ExecutionClient</a> (<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> instanceSpecifier, <a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; <a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">FifoMessageType</a> &gt; *communicationLayer)</td></tr>
+<tr class="memitem:a45e0a694071ec42ef31e4978978550a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">ExecutionClient</a> (<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> instanceSpecifier, <a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; FifoMessageType &gt; *communicationLayer)</td></tr>
 <tr class="memdesc:a45e0a694071ec42ef31e4978978550a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">More...</a><br /></td></tr>
 <tr class="separator:a45e0a694071ec42ef31e4978978550a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a959e718835c368903c36d92b949071cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">ReportExecutionState</a> (ExecutionState state) const</td></tr>
@@ -140,7 +132,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; <a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">FifoMessageType</a> &gt; *&#160;</td>
+          <td class="paramtype"><a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; FifoMessageType &gt; *&#160;</td>
           <td class="paramname"><em>communicationLayer</em>&#160;</td>
         </tr>
         <tr>

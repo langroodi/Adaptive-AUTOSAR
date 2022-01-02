@@ -96,19 +96,154 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1StateClient.html',
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classara_1_1exec_1_1StateClient-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ara::exec::StateClient Class Reference</div>  </div>
+<div class="title">ara::exec::StateClient Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class the enables State Management to interact with Execution Management.  
+ <a href="classara_1_1exec_1_1StateClient.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="state__client_8h_source.html">state_client.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeb2ef6c9c3c9ffaef59cac73de733aec"><td class="memItemLeft" align="right" valign="top"><a id="aeb2ef6c9c3c9ffaef59cac73de733aec"></a>
-std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetState</b> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;state)</td></tr>
-<tr class="separator:aeb2ef6c9c3c9ffaef59cac73de733aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a5b9d0873a17794cc3aa052456a9dfa"><td class="memItemLeft" align="right" valign="top"><a id="a1a5b9d0873a17794cc3aa052456a9dfa"></a>
-std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetInitialMachineStateTransitionResult</b> () const noexcept</td></tr>
-<tr class="separator:a1a5b9d0873a17794cc3aa052456a9dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a3c43f22789e96737a74475e30239a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#aa8a3c43f22789e96737a74475e30239a">StateClient</a> (std::function&lt; void(const <a class="el" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &amp;)&gt; undefinedStateCallback, <a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; SetStateMessage &gt; *communicationLayer)</td></tr>
+<tr class="memdesc:aa8a3c43f22789e96737a74475e30239a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1StateClient.html#aa8a3c43f22789e96737a74475e30239a">More...</a><br /></td></tr>
+<tr class="separator:aa8a3c43f22789e96737a74475e30239a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a587e445f0354557205be7fde3dc5a97e"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a587e445f0354557205be7fde3dc5a97e">SetState</a> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;state)</td></tr>
+<tr class="memdesc:a587e445f0354557205be7fde3dc5a97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a function group state.  <a href="classara_1_1exec_1_1StateClient.html#a587e445f0354557205be7fde3dc5a97e">More...</a><br /></td></tr>
+<tr class="separator:a587e445f0354557205be7fde3dc5a97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd99b1be907fe5f6fb58a12292fcd7bc"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#acd99b1be907fe5f6fb58a12292fcd7bc">GetInitialMachineStateTransitionResult</a> ()</td></tr>
+<tr class="memdesc:acd99b1be907fe5f6fb58a12292fcd7bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push the EM to its start-up state.  <a href="classara_1_1exec_1_1StateClient.html#acd99b1be907fe5f6fb58a12292fcd7bc">More...</a><br /></td></tr>
+<tr class="separator:acd99b1be907fe5f6fb58a12292fcd7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b5c30c5590db0078621c5d272df54d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a36b5c30c5590db0078621c5d272df54d">GetExecutionError</a> (const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">FunctionGroup</a> &amp;functionGroup) noexcept</td></tr>
+<tr class="memdesc:a36b5c30c5590db0078621c5d272df54d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the execution error made the state of function group undefined.  <a href="classara_1_1exec_1_1StateClient.html#a36b5c30c5590db0078621c5d272df54d">More...</a><br /></td></tr>
+<tr class="separator:a36b5c30c5590db0078621c5d272df54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class the enables State Management to interact with Execution Management. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa8a3c43f22789e96737a74475e30239a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a3c43f22789e96737a74475e30239a">&#9670;&nbsp;</a></span>StateClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::exec::StateClient::StateClient </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(const <a class="el" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>undefinedStateCallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; SetStateMessage &gt; *&#160;</td>
+          <td class="paramname"><em>communicationLayer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">undefinedStateCallback</td><td>Callback to be invoked when a function group is unexpectedly terminated while state transition </td></tr>
+    <tr><td class="paramname">communicationLayer</td><td>FIFO IPC abstraction layer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a36b5c30c5590db0078621c5d272df54d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b5c30c5590db0078621c5d272df54d">&#9670;&nbsp;</a></span>GetExecutionError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &gt; ara::exec::StateClient::GetExecutionError </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">FunctionGroup</a> &amp;&#160;</td>
+          <td class="paramname"><em>functionGroup</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the execution error made the state of function group undefined. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">functionGroup</td><td>Function group of interest </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result containing the execution error if the Undefined Function Group State exist, otherwise Failed Result </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Implement set state tracking </dd></dl>
+
+</div>
+</div>
+<a id="acd99b1be907fe5f6fb58a12292fcd7bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd99b1be907fe5f6fb58a12292fcd7bc">&#9670;&nbsp;</a></span>GetInitialMachineStateTransitionResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; void &gt; ara::exec::StateClient::GetInitialMachineStateTransitionResult </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Push the EM to its start-up state. </p>
+<dl class="section return"><dt>Returns</dt><dd>Void future unless an error occurs </dd></dl>
+
+</div>
+</div>
+<a id="a587e445f0354557205be7fde3dc5a97e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a587e445f0354557205be7fde3dc5a97e">&#9670;&nbsp;</a></span>SetState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; void &gt; ara::exec::StateClient::SetState </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a function group state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Function group-state of interest combination </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Void future unless an error occurs </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

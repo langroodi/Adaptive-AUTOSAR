@@ -114,31 +114,30 @@ $(document).ready(function(){initNavTree('execution__client_8h_source.html','');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1ExecutionClient.html">   19</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classara_1_1exec_1_1ExecutionClient.html">ExecutionClient</a> final</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">   23</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">FifoMessageType</a> = std::pair&lt;core::InstanceSpecifier, ExecutionState&gt;;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> mInstanceSpecifier;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer&lt;FifoMessageType&gt;</a> *mCommunicationLayer;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">ExecutionClient</a>(</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> instanceSpecifier,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer&lt;FifoMessageType&gt;</a> *communicationLayer);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">using</span> FifoMessageType = std::pair&lt;core::InstanceSpecifier, ExecutionState&gt;;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> mInstanceSpecifier;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer&lt;FifoMessageType&gt;</a> *mCommunicationLayer;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">ExecutionClient</a>(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> instanceSpecifier,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer&lt;FifoMessageType&gt;</a> *communicationLayer);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            ~<a class="code" href="classara_1_1exec_1_1ExecutionClient.html">ExecutionClient</a>() noexcept = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            ~<a class="code" href="classara_1_1exec_1_1ExecutionClient.html">ExecutionClient</a>() noexcept = default;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            ara::core::Result&lt;<span class="keywordtype">void</span>&gt; <a class="code" href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">ReportExecutionState</a>(</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                ExecutionState state) const;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> <a class="code" href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">ReportExecutionState</a>(</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                ExecutionState state) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        };</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1core_1_1InstanceSpecifier_html"><div class="ttname"><a href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a></div><div class="ttdoc">AUTOSAR shortname-path wrapper.</div><div class="ttdef"><b>Definition:</b> instance_specifier.h:13</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1Result_html"><div class="ttname"><a href="classara_1_1core_1_1Result.html">ara::core::Result</a></div><div class="ttdoc">A wrapper around the callee's return value and its possible error.</div><div class="ttdef"><b>Definition:</b> result.h:16</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1ExecutionClient_html"><div class="ttname"><a href="classara_1_1exec_1_1ExecutionClient.html">ara::exec::ExecutionClient</a></div><div class="ttdoc">Class that enables an adaptive application to interact with Execution Management.</div><div class="ttdef"><b>Definition:</b> execution_client.h:20</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1ExecutionClient_html_a45e0a694071ec42ef31e4978978550a2"><div class="ttname"><a href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">ara::exec::ExecutionClient::ExecutionClient</a></div><div class="ttdeci">ExecutionClient(core::InstanceSpecifier instanceSpecifier, helper::FifoLayer&lt; FifoMessageType &gt; *communicationLayer)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> execution_client.cpp:8</div></div>
-<div class="ttc" id="aclassara_1_1exec_1_1ExecutionClient_html_a7740bdcd774d6233ade89d497429ac01"><div class="ttname"><a href="classara_1_1exec_1_1ExecutionClient.html#a7740bdcd774d6233ade89d497429ac01">ara::exec::ExecutionClient::FifoMessageType</a></div><div class="ttdeci">std::pair&lt; core::InstanceSpecifier, ExecutionState &gt; FifoMessageType</div><div class="ttdoc">Message type communicate via the IPC pipe.</div><div class="ttdef"><b>Definition:</b> execution_client.h:23</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1ExecutionClient_html_a959e718835c368903c36d92b949071cd"><div class="ttname"><a href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">ara::exec::ExecutionClient::ReportExecutionState</a></div><div class="ttdeci">ara::core::Result&lt; void &gt; ReportExecutionState(ExecutionState state) const</div><div class="ttdoc">Report the application internal state to Execution Management.</div><div class="ttdef"><b>Definition:</b> execution_client.cpp:15</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1helper_1_1FifoLayer_html"><div class="ttname"><a href="classara_1_1exec_1_1helper_1_1FifoLayer.html">ara::exec::helper::FifoLayer&lt; FifoMessageType &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
