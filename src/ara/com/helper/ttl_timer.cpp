@@ -55,6 +55,11 @@ namespace ara
                 {
                     mTtl = ttl;
                     mRunning = true;
+                    if (mFuture.valid())
+                    {
+                        mFuture.get();
+                    }
+
                     mFuture =
                         std::async(std::launch::async, &TtlTimer::countdown, this);
                 }
