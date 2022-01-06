@@ -32,8 +32,6 @@ namespace ara
                 _ttlTimer.Set(cTtl);
                 // Timer has been already set which makes the following call invalid.
                 EXPECT_THROW(_ttlTimer.Set(cTtl), std::logic_error);
-                // Cancel the timer gracefully
-                _ttlTimer.Cancel();
             }
         }
     }
