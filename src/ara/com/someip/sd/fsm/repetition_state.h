@@ -25,14 +25,13 @@ namespace ara
                     private:
                         const int mRepetitionsMax;
                         const int mRepetitionsBaseDelay;
-                        uint32_t mRun;
 
                     protected:
                         void SetTimer() override
                         {
-                            while (mRun < mRepetitionsMax)
+                            for (uint32_t i = 0; i < mRepetitionsMax; ++i)
                             {
-                                int _doubledDelay = std::pow(2, mRun) * mRepetitionsBaseDelay;
+                                int _doubledDelay = std::pow(2, i) * mRepetitionsBaseDelay;
                                 auto _delay = std::chrono::milliseconds(_doubledDelay);
                                 bool _interrupted = this->WaitFor(_delay);
 
@@ -43,7 +42,6 @@ namespace ara
 
                                 // Invoke the on timer expiration callback
                                 this->OnTimerExpired();
-                                ++mRun;
                             }
                         }
 
@@ -64,8 +62,7 @@ namespace ara
                             int repetitionsBaseDelay) : helper::MachineState<T>(currentState),
                                                         TimerSetState<T>(nextState, stoppedState, onTimerExpired),
                                                         mRepetitionsMax{static_cast<int>(repetitionsMax)},
-                                                        mRepetitionsBaseDelay{repetitionsBaseDelay},
-                                                        mRun{0}
+                                                        mRepetitionsBaseDelay{repetitionsBaseDelay}
                         {
                             if (repetitionsBaseDelay < 0)
                             {

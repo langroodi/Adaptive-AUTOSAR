@@ -39,7 +39,7 @@ namespace ara
                     std::mutex mStopOfferingMutex;
                     std::unique_lock<std::mutex> mStopOfferingLock;
                     std::condition_variable mStopOfferingConditionVariable;
-                    bool mValidNotify;
+                    bool mValidState;
 
                     void sendFind();
                     bool matchRequestedService(

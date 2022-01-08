@@ -33,7 +33,7 @@ namespace ara
                                               mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)},
                                               mOfferingLock(mOfferingMutex, std::defer_lock),
                                               mStopOfferingLock(mStopOfferingMutex, std::defer_lock),
-                                              mValidNotify{true}
+                                              mValidState{true}
                 {
                     this->StateMachine.Initialize(
                         {&mServiceNotseenState,
@@ -128,18 +128,22 @@ namespace ara
 
                 void SomeIpSdClient::receiveSdMessage(SomeIpSdMessage &&message)
                 {
-                    uint32_t _ttl;
-                    bool _matches = matchRequestedService(message, _ttl);
-                    if (_matches)
+                    // While destruction, ignore communication layer received messages
+                    if (mValidState)
                     {
-                        // TTL determines the Offering or Stop Offering message
-                        if (_ttl > 0)
+                        uint32_t _ttl;
+                        bool _matches = matchRequestedService(message, _ttl);
+                        if (_matches)
                         {
-                            onServiceOffered(_ttl);
-                        }
-                        else
-                        {
-                            onServiceOfferStopped();
+                            // TTL determines the Offering or Stop Offering message
+                            if (_ttl > 0)
+                            {
+                                onServiceOffered(_ttl);
+                            }
+                            else
+                            {
+                                onServiceOfferStopped();
+                            }
                         }
                     }
                 }
@@ -190,7 +194,7 @@ namespace ara
                             mOfferingConditionVariable.wait_for(
                                 mOfferingLock, std::chrono::milliseconds(duration));
                         mOfferingLock.unlock();
-                        _result = mValidNotify && (_status != std::cv_status::timeout);
+                        _result = mValidState && (_status != std::cv_status::timeout);
                     }
 
                     return _result;
@@ -214,7 +218,7 @@ namespace ara
                             mStopOfferingConditionVariable.wait_for(
                                 mStopOfferingLock, std::chrono::milliseconds(duration));
                         mStopOfferingLock.unlock();
-                        _result = mValidNotify && (_status != std::cv_status::timeout);
+                        _result = mValidState && (_status != std::cv_status::timeout);
                     }
 
                     return _result;
@@ -222,8 +226,8 @@ namespace ara
 
                 SomeIpSdClient::~SomeIpSdClient()
                 {
-                    // Condition variable notifications are not valid anymore during destruction.
-                    mValidNotify = false;
+                    // Client state is not valid anymore during destruction.
+                    mValidState = false;
                     // Release the threads waiting for the condition variables before desctruction
                     mOfferingConditionVariable.notify_one();
                     mStopOfferingConditionVariable.notify_one();

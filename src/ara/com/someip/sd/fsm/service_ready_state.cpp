@@ -16,7 +16,7 @@ namespace ara
                                                                                ClientServiceState(ttlTimer),
                                                                                mConditionVariable{conditionVariable},
                                                                                mActivated{false},
-                                                                               mRequested{true}
+                                                                               mClientRequested{true}
                     {
                     }
 
@@ -29,7 +29,7 @@ namespace ara
                     {
                         mActivated = true;
 
-                        if (!mRequested)
+                        if (!mClientRequested)
                         {
                             Transit(helper::SdClientState::ServiceSeen);
                         }
@@ -50,8 +50,8 @@ namespace ara
                         }
                         else
                         {
-                            // Reset the requested flag
-                            mRequested = false;
+                            // Reset the client requested flag
+                            mClientRequested = false;
                         }
                     }
 
@@ -70,8 +70,8 @@ namespace ara
                     {
                         Timer->ResetExpirationCallback();
                         
-                        // Set the requested flag to default
-                        mRequested = true;
+                        // Set the client requested flag to default
+                        mClientRequested = true;
                         mActivated = false;
                     }
 

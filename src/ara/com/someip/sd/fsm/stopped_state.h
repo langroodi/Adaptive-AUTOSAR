@@ -20,7 +20,7 @@ namespace ara
                     private:
                         std::condition_variable *const mConditionVariable;
                         bool mActivated;
-                        bool mRequested;
+                        bool mClientRequested;
 
                     protected:
                         void Deactivate(helper::SdClientState nextState) override;

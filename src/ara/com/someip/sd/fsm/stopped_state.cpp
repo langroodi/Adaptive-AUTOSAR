@@ -16,7 +16,7 @@ namespace ara
                                                                                ClientServiceState(ttlTimer),
                                                                                mConditionVariable{conditionVariable},
                                                                                mActivated{false},
-                                                                               mRequested{true}
+                                                                               mClientRequested{true}
                     {
                     }
 
@@ -27,7 +27,7 @@ namespace ara
                         // Notify the condition variable that the service is not offered yet
                         mConditionVariable->notify_one();
 
-                        if (!mRequested)
+                        if (!mClientRequested)
                         {
                             Transit(helper::SdClientState::ServiceNotSeen);
                         }
@@ -41,8 +41,8 @@ namespace ara
                         }
                         else
                         {
-                            // Reset the requested flag
-                            mRequested = false;
+                            // Reset the client requested flag
+                            mClientRequested = false;
                         }
                     }
 
@@ -54,8 +54,8 @@ namespace ara
 
                     void StoppedState::Deactivate(helper::SdClientState nextState)
                     {
-                        // Set the requested to default
-                        mRequested = true;
+                        // Set the client requested to default
+                        mClientRequested = true;
                         mActivated = false;
                     }
                 };
