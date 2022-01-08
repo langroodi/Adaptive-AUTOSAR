@@ -148,15 +148,19 @@ $(document).ready(function(){initNavTree('finite__state__machine_8h_source.html'
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a0acd279f581eea67989c9024035ef2d9">   62</a></span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a0acd279f581eea67989c9024035ef2d9">Transit</a>(T previousState, T nextState)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">                </span>{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keyword">auto</span> _nextMachineState = mStates.at(nextState);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    mCurrentState = nextState;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    _nextMachineState-&gt;Activate(previousState);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="comment">// Only current state should be able to transit to another state</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keywordflow">if</span> (previousState == mCurrentState)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keyword">auto</span> _nextMachineState = mStates.at(nextState);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        mCurrentState = nextState;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        _nextMachineState-&gt;Activate(previousState);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1AbstractStateMachine_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1AbstractStateMachine.html">ara::com::helper::AbstractStateMachine</a></div><div class="ttdoc">Abstract Finite State Machine (FMS) that transits between states.</div><div class="ttdef"><b>Definition:</b> abstract_state_machine.h:14</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1FiniteStateMachine_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html">ara::com::helper::FiniteStateMachine</a></div><div class="ttdoc">Finite State Machine (FMS) controller.</div><div class="ttdef"><b>Definition:</b> finite_state_machine.h:20</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1FiniteStateMachine_html_a0acd279f581eea67989c9024035ef2d9"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a0acd279f581eea67989c9024035ef2d9">ara::com::helper::FiniteStateMachine::Transit</a></div><div class="ttdeci">void Transit(T previousState, T nextState) override</div><div class="ttdoc">Tranit from the current state to a new state.</div><div class="ttdef"><b>Definition:</b> finite_state_machine.h:62</div></div>
