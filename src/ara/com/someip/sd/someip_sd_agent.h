@@ -83,6 +83,7 @@ namespace ara
                     void Stop()
                     {
                         StopAgent();
+                        CommunicationLayer->ResetReceiver(this);
                     }
 
                     virtual ~SomeIpSdAgent() noexcept = default;

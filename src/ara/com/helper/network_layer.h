@@ -1,7 +1,7 @@
 #ifndef NETWORK_LAYER_H
 #define NETWORK_LAYER_H
 
-#include <vector>
+#include <map>
 #include <functional>
 #include <type_traits>
 
@@ -21,7 +21,7 @@ namespace ara
                     "The template argument is not copy assignable.");
 
             private:
-                std::vector<std::function<void(T)>> mReceiverCallbacks;
+                std::map<void*, std::function<void(T)>> mReceiverCallbacks;
 
             protected:
                 /// @brief Fire all the set receiver callaback
@@ -31,9 +31,10 @@ namespace ara
                     // Copy the received message
                     T _receivedMessage = message;
 
-                    for (auto callback : mReceiverCallbacks)
+                    for (auto objectCallbackPair : mReceiverCallbacks)
                     {
-                        callback(_receivedMessage);
+                        std::function<void(T)> _callback = objectCallbackPair.second;
+                        _callback(_receivedMessage);
                     }
                 }
 
@@ -46,10 +47,18 @@ namespace ara
                 virtual void Send(const T &message) = 0;
 
                 /// @brief Set a receiver callback
+                /// @param object Object that owns the callback
                 /// @param receiver Receiver callback to be called when a message has been received
-                void SetReceiver(std::function<void(T)> receiver)
+                void SetReceiver(void* object, std::function<void(T)> receiver)
                 {
-                    mReceiverCallbacks.push_back(receiver);
+                    mReceiverCallbacks[object] = receiver;
+                }
+
+                /// @brief Remove a receiver callback
+                /// @param object Callback owner object
+                void ResetReceiver(void* object)
+                {
+                    mReceiverCallbacks.erase(object);
                 }
             };
         }

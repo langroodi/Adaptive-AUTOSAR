@@ -36,7 +36,7 @@ namespace ara
                             &SomeIpPubSubServer::onMessageReceived,
                             this,
                             std::placeholders::_1);
-                    mCommunicationLayer->SetReceiver(_receiver);
+                    mCommunicationLayer->SetReceiver(this, _receiver);
                 }
 
                 void SomeIpPubSubServer::onMessageReceived(sd::SomeIpSdMessage &&message)

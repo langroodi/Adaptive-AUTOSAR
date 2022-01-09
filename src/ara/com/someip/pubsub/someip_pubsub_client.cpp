@@ -21,7 +21,7 @@ namespace ara
                             this,
                             std::placeholders::_1);
 
-                    mCommunicationLayer->SetReceiver(_receiver);
+                    mCommunicationLayer->SetReceiver(this, _receiver);
                 }
 
                 void SomeIpPubSubClient::onMessageReceived(sd::SomeIpSdMessage &&message)

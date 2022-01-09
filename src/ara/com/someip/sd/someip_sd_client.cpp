@@ -51,7 +51,7 @@ namespace ara
                             &SomeIpSdClient::receiveSdMessage,
                             this,
                             std::placeholders::_1);
-                    this->CommunicationLayer->SetReceiver(_receiver);
+                    this->CommunicationLayer->SetReceiver(this, _receiver);
                 }
 
                 void SomeIpSdClient::sendFind()

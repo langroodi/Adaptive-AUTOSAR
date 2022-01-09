@@ -77,7 +77,7 @@ namespace ara
                             &SomeIpSdServer::receiveFind,
                             this,
                             std::placeholders::_1);
-                    this->CommunicationLayer->SetReceiver(_receiver);
+                    this->CommunicationLayer->SetReceiver(this, _receiver);
                 }
 
                 bool SomeIpSdServer::matchOfferingService(const SomeIpSdMessage &message) const
