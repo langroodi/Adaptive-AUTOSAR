@@ -21,7 +21,7 @@ FetchContent_Declare(
 # Fetching Async-BSD-Socket-Lib for network abstraction
 FetchContent_Declare(
   Async-BSD-Socket-Lib
-  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/510bd5e288ac827217191310d18fa93ca3ac0d50.zip
+  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/96b00d3a33fe03dfb3d7606fe9fcc28488e9e431.zip
 )
 
 FetchContent_MakeAvailable(googletest Async-BSD-Socket-Lib)
@@ -304,6 +304,7 @@ if(build_tests)
     ${test_ara_exec_dir}/function_group_state_test.cpp
     ${test_ara_exec_dir}/exec_exception_test.cpp
     ${test_ara_exec_dir}/state_client_test.cpp
+    ${test_ara_exec_dir}/fifo_abstraction_test.cpp
     ${test_ara_exec_helper_dir}/atomic_optional_test.cpp
     ${test_ara_exec_helper_dir}/mockup_fifo_layer.h
     ${test_ara_core_dir}/optional_test.cpp
