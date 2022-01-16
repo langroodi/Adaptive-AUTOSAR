@@ -1,6 +1,5 @@
 var classara_1_1com_1_1option_1_1Ipv4EndpointOption =
 [
-    [ "Ipv4EndpointOption", "classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a545017e07f47f97343812e22a66d5e25", null ],
     [ "IpAddress", "classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a254677dbfe729c5be5fddc26ca38233f", null ],
     [ "L4Proto", "classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a86998c4a04019f452b6c9dad4cffbf51", null ],
     [ "Length", "classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#aac24fdd37ccb8bcfc7070f88d59349fc", null ],

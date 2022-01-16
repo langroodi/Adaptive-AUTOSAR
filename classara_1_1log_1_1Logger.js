@@ -1,7 +1,5 @@
 var classara_1_1log_1_1Logger =
 [
-    [ "Logger", "classara_1_1log_1_1Logger.html#a417ffb0af09b92533363f46c3419d72c", null ],
-    [ "~Logger", "classara_1_1log_1_1Logger.html#a150fdaaaea673f167bf356d427897dcf", null ],
     [ "IsEnabled", "classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d", null ],
     [ "LogDebug", "classara_1_1log_1_1Logger.html#a071d1ab6f040fc37c25fc6bd995e2188", null ],
     [ "LogError", "classara_1_1log_1_1Logger.html#a59c1e35e0d653ede25635377e71d9aa3", null ],

@@ -1,7 +1,6 @@
 var classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent =
 [
     [ "SomeIpSdAgent", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a6f172934743f9ef1d6419ff8dadac68b", null ],
-    [ "~SomeIpSdAgent", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a3e45ee6f6b874475c9a84124da5b5aa7", null ],
     [ "GetState", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a4846674ca962facd2f182f277236b476", null ],
     [ "Join", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a173c9eaee8d4b3d7c5620a428f891938", null ],
     [ "Start", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#afa2301772d426cf97eeb456b6748c31d", null ],

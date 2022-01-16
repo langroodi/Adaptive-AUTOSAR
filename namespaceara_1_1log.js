@@ -6,9 +6,9 @@ var namespaceara_1_1log =
       [ "LogSink", "classara_1_1log_1_1sink_1_1LogSink.html", "classara_1_1log_1_1sink_1_1LogSink" ]
     ] ],
     [ "Argument", "classara_1_1log_1_1Argument.html", "classara_1_1log_1_1Argument" ],
-    [ "LogStream", "classara_1_1log_1_1LogStream.html", "classara_1_1log_1_1LogStream" ],
     [ "Logger", "classara_1_1log_1_1Logger.html", "classara_1_1log_1_1Logger" ],
     [ "LoggingFramework", "classara_1_1log_1_1LoggingFramework.html", "classara_1_1log_1_1LoggingFramework" ],
+    [ "LogStream", "classara_1_1log_1_1LogStream.html", "classara_1_1log_1_1LogStream" ],
     [ "ClientState", "namespaceara_1_1log.html#a76733092128ddf2b75e7159bd9d79c5d", [
       [ "kUnknown", "namespaceara_1_1log.html#a76733092128ddf2b75e7159bd9d79c5da25c2dc47991b3df171ed5192bcf70390", null ],
       [ "kNotConnected", "namespaceara_1_1log.html#a76733092128ddf2b75e7159bd9d79c5da32a54fa8629fe6e9cb3e265e959258d8", null ],
