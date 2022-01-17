@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['powermodemsg_0',['PowerModeMsg',['../namespaceara_1_1sm.html#a69b2993d745033ea573badd8ec18a1d9',1,'ara::sm']]],
-  ['powermoderespmsg_1',['PowerModeRespMsg',['../namespaceara_1_1sm.html#add42f45861e34da92c9adc554016ecbc',1,'ara::sm']]],
-  ['pubsubstate_2',['PubSubState',['../namespaceara_1_1com_1_1helper.html#ad5deceed07efed82dc2f600b8515de43',1,'ara::com::helper']]]
+  ['optiontype_0',['OptionType',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0',1,'ara::com::option']]]
 ];

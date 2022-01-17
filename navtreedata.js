@@ -55,7 +55,7 @@ var NAVTREEINDEX =
 "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html",
 "classara_1_1core_1_1Result.html#a36d40985b89bafca5abd3153c1990889",
 "classara_1_1log_1_1LogStream.html#a7449a298882fda084a627f43dcde399e",
-"structara_1_1diag_1_1ComCtrlRequestParamsType.html"
+"namespaceara_1_1sm.html#a44475ebff7dfb704bf74a243f487c115aea97c7b9b8205d7fe6efb21f90ec53c8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

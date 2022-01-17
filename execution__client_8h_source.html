@@ -106,9 +106,9 @@ $(document).ready(function(){initNavTree('execution__client_8h_source.html','');
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">namespace </span>exec</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keyword">enum class</span> ExecutionState : uint8_t</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceara_1_1exec.html#a2cef995abddcd1737d4d80a4f016ab31">   13</a></span>        <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespaceara_1_1exec.html#a2cef995abddcd1737d4d80a4f016ab31">ExecutionState</a> : uint8_t</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            kRunning = 0 </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <a class="code hl_enumvalue" href="namespaceara_1_1exec.html#a2cef995abddcd1737d4d80a4f016ab31a2fc7fbf0d19294f85dd3880460dd3c0a">kRunning</a> = 0 </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        };</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classara_1_1exec_1_1ExecutionClient.html">   19</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classara_1_1exec_1_1ExecutionClient.html">ExecutionClient</a> final</div>
@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('execution__client_8h_source.html','');
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <a class="code hl_class" href="classara_1_1exec_1_1ExecutionClient.html">~ExecutionClient</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> <a class="code hl_function" href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">ReportExecutionState</a>(</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                ExecutionState state) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <a class="code hl_enumeration" href="namespaceara_1_1exec.html#a2cef995abddcd1737d4d80a4f016ab31">ExecutionState</a> state) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        };</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
@@ -139,6 +139,8 @@ $(document).ready(function(){initNavTree('execution__client_8h_source.html','');
 <div class="ttc" id="aclassara_1_1exec_1_1ExecutionClient_html_a45e0a694071ec42ef31e4978978550a2"><div class="ttname"><a href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">ara::exec::ExecutionClient::ExecutionClient</a></div><div class="ttdeci">ExecutionClient(core::InstanceSpecifier instanceSpecifier, helper::FifoLayer&lt; FifoMessageType &gt; *communicationLayer)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> execution_client.cpp:8</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1ExecutionClient_html_a959e718835c368903c36d92b949071cd"><div class="ttname"><a href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">ara::exec::ExecutionClient::ReportExecutionState</a></div><div class="ttdeci">ara::core::Result&lt; void &gt; ReportExecutionState(ExecutionState state) const</div><div class="ttdoc">Report the application internal state to Execution Management.</div><div class="ttdef"><b>Definition:</b> execution_client.cpp:15</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1helper_1_1FifoLayer_html"><div class="ttname"><a href="classara_1_1exec_1_1helper_1_1FifoLayer.html">ara::exec::helper::FifoLayer</a></div><div class="ttdoc">FIFO (named pipe) interprocess communication abstraction layer.</div><div class="ttdef"><b>Definition:</b> fifo_layer.h:16</div></div>
+<div class="ttc" id="anamespaceara_1_1exec_html_a2cef995abddcd1737d4d80a4f016ab31"><div class="ttname"><a href="namespaceara_1_1exec.html#a2cef995abddcd1737d4d80a4f016ab31">ara::exec::ExecutionState</a></div><div class="ttdeci">ExecutionState</div><div class="ttdoc">Adaptive application internal state.</div><div class="ttdef"><b>Definition:</b> execution_client.h:14</div></div>
+<div class="ttc" id="anamespaceara_1_1exec_html_a2cef995abddcd1737d4d80a4f016ab31a2fc7fbf0d19294f85dd3880460dd3c0a"><div class="ttname"><a href="namespaceara_1_1exec.html#a2cef995abddcd1737d4d80a4f016ab31a2fc7fbf0d19294f85dd3880460dd3c0a">ara::exec::ExecutionState::kRunning</a></div><div class="ttdeci">@ kRunning</div><div class="ttdoc">Application process performs normally.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['offering_0',['Offering',['../namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171eadb69c473bc9f0522c1d1e82c01240f39',1,'ara::com::entry']]]
+  ['mainphase_0',['MainPhase',['../namespaceara_1_1com_1_1helper.html#acf1d9945823fc0d57836df192794405ba9a149a5ca1439d5d35d63c41cf47f785',1,'ara::com::helper']]]
 ];
