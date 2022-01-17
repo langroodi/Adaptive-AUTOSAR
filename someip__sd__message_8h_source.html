@@ -118,8 +118,8 @@ $(document).ready(function(){initNavTree('someip__sd__message_8h_source.html',''
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t cProtocolVersion = 0x01;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t cInterfaceVersion = 0x01;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                    <span class="keyword">static</span> <span class="keyword">const</span> SomeIpMessageType cMessageType = SomeIpMessageType::Notification;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t cRebootedFlag = 0xe0000000;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t cNotRebootedFlag = 0x60000000;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t cRebootedFlag = 0xc0000000;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                    <span class="keyword">static</span> <span class="keyword">const</span> uint32_t cNotRebootedFlag = 0x40000000;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                    <span class="keywordtype">bool</span> mRebooted;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                    std::vector&lt;std::shared_ptr&lt;entry::Entry&gt;&gt; mEntries;</div>
