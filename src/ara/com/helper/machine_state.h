@@ -13,29 +13,29 @@ namespace ara
             /// @brief Service discovery server machine state
             enum class SdServerState
             {
-                NotReady,         ///!< Server's service is down
-                InitialWaitPhase, ///!< Server's service is in initial waiting phase
-                RepetitionPhase,  ///!< Server's service is in repetition phase
-                MainPhase         ///!< Server's service is in main phase
+                NotReady,         ///< Server's service is down
+                InitialWaitPhase, ///< Server's service is in initial waiting phase
+                RepetitionPhase,  ///< Server's service is in repetition phase
+                MainPhase         ///< Server's service is in main phase
             };
 
             /// @brief Service discovery client machine state
             enum class SdClientState
             {
-                ServiceNotSeen,   ///!< Service is not requested and not seen
-                ServiceSeen,      ///!< Service is not requsted, but seen
-                ServiceReady,     ///!< Service is ready
-                Stopped,          ///!< Service is stopped
-                InitialWaitPhase, ///!< Client service is in initial waiting phase
-                RepetitionPhase   ///!< Client service is in repetition phase
+                ServiceNotSeen,   ///< Service is not requested and not seen
+                ServiceSeen,      ///< Service is not requsted, but seen
+                ServiceReady,     ///< Service is ready
+                Stopped,          ///< Service is stopped
+                InitialWaitPhase, ///< Client service is in initial waiting phase
+                RepetitionPhase   ///< Client service is in repetition phase
             };
 
             /// @brief Publish-subscribe server machine state
             enum class PubSubState
             {
-                ServiceDown,    ///!< Service server is down
-                NotSubscribed,  ///!< Service server is up, but there is no subscriber
-                Subscribed      ///!< Service server is up, and there is at least a subscriber
+                ServiceDown,    ///< Service server is down
+                NotSubscribed,  ///< Service server is up, but there is no subscriber
+                Subscribed      ///< Service server is up, and there is at least a subscriber
             };
 
             /// @brief Machine state abstract class

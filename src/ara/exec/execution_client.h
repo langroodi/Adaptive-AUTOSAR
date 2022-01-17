@@ -12,7 +12,7 @@ namespace ara
         /// @brief Adaptive application internal state
         enum class ExecutionState : uint8_t
         {
-            kRunning = 0 ///!< Application process performs normally
+            kRunning = 0 ///< Application process performs normally
         };
 
         /// @brief Class that enables an adaptive application to interact with Execution Management

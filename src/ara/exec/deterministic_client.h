@@ -17,11 +17,11 @@ namespace ara
         /// @brief Application deterministic behaviour lifecycle action
         enum class ActivationReturnType : uint8_t
         {
-            kRegisterService = 0,  ///!< Application shall register its service server
-            kServiceDiscovery = 1, ///!< Application shall discover its service server
-            kInit = 2,             ///!< Application shall intialize itself
-            kRun = 3,              ///!< Application shall perform its normal operation
-            kTerminate = 4         ///!< Application shall terminate itself
+            kRegisterService = 0,  ///< Application shall register its service server
+            kServiceDiscovery = 1, ///< Application shall discover its service server
+            kInit = 2,             ///< Application shall intialize itself
+            kRun = 3,              ///< Application shall perform its normal operation
+            kTerminate = 4         ///< Application shall terminate itself
         };
 
         /// @brief Class that utilizes a client to have deterministic behaviour

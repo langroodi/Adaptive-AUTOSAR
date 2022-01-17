@@ -16,37 +16,37 @@ namespace ara
             /// @brief SOME/IP communication message type
             enum class SomeIpMessageType : uint8_t
             {
-                Request = 0x00,           ///!< Request expecting a response
-                RequestNoReturn = 0x01,   ///!< Fire and forget request
-                Notification = 0x02,      ///!< Notification/event callback
-                Response = 0x80,          ///!< Response without any error
-                Error = 0x81,             ///!< Response containing error
-                TpRequest = 0x20,         ///!< Transfer protocol request
-                TpRequestNoReturn = 0x21, ///!< Transfer protocol fire and forget request
-                TpNotification = 0x22,    ///!< Transfer protocol notification
-                TpResponse = 0xa0,        ///!< Transfer protocol response
-                TpError = 0xa1            ///!< Transfer protocol error
+                Request = 0x00,           ///< Request expecting a response
+                RequestNoReturn = 0x01,   ///< Fire and forget request
+                Notification = 0x02,      ///< Notification/event callback
+                Response = 0x80,          ///< Response without any error
+                Error = 0x81,             ///< Response containing error
+                TpRequest = 0x20,         ///< Transfer protocol request
+                TpRequestNoReturn = 0x21, ///< Transfer protocol fire and forget request
+                TpNotification = 0x22,    ///< Transfer protocol notification
+                TpResponse = 0xa0,        ///< Transfer protocol response
+                TpError = 0xa1            ///< Transfer protocol error
             };
 
             /// @brief SOME/IP communication message return code
             enum class SomeIpReturnCode : uint8_t
             {
-                eOK,                    ///!< No error occurred
-                eNotOk,                 ///!< Unspecified error occurred
-                eUnknownService,        ///!< Service ID is unknown
-                eUnknownMethod,         ///!< Method ID is unknown
-                eNotReady,              ///!< Service is not running
-                eNotReachable,          ///!< Service is not reachable
-                eTimeout,               ///!< Timeout occurred
-                eWrongProtocolVersion,  ///!< SOME/IP protocol version is not supported
-                eWrongInterfaceVersion, ///!< Service interface version is not supported
-                eMalformedMessage,      ///!< Deserialization error occurred
-                eWrongMessageType,      ///!< Invalid message type
-                eE2eRepeated,           ///!< Repeated E2E calculation error
-                eE2eWrongSequnece,      ///!< Wrong E2E sequence error
-                eE2e,                   ///!< Unspecified E2E error
-                eE2eNotAvailable,       ///!< E2E is not supported
-                eE2eNoNewData           ///!< No new data E2E calculation present
+                eOK,                    ///< No error occurred
+                eNotOk,                 ///< Unspecified error occurred
+                eUnknownService,        ///< Service ID is unknown
+                eUnknownMethod,         ///< Method ID is unknown
+                eNotReady,              ///< Service is not running
+                eNotReachable,          ///< Service is not reachable
+                eTimeout,               ///< Timeout occurred
+                eWrongProtocolVersion,  ///< SOME/IP protocol version is not supported
+                eWrongInterfaceVersion, ///< Service interface version is not supported
+                eMalformedMessage,      ///< Deserialization error occurred
+                eWrongMessageType,      ///< Invalid message type
+                eE2eRepeated,           ///< Repeated E2E calculation error
+                eE2eWrongSequnece,      ///< Wrong E2E sequence error
+                eE2e,                   ///< Unspecified E2E error
+                eE2eNotAvailable,       ///< E2E is not supported
+                eE2eNoNewData           ///< No new data E2E calculation present
             };
 
             /// @brief SOME/IP Abstract Message

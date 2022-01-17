@@ -15,21 +15,21 @@ namespace ara
             /// @brief Entry option type
             enum class OptionType : uint8_t
             {
-                Configuration = 0x01,  ///!< DNS configuration
-                LoadBalancing = 0x02,  ///!< Service instnace load balancing
-                IPv4Endpoint = 0x04,   ///!< Generic IPv4 unicast endpoint
-                IPv6Endpoint = 0x06,   ///!< Generic IPv6 unicast endpoint
-                IPv4Multicast = 0x14,  ///!< Generic IPv4 multicast endpoint
-                IPv6Multicast = 0x16,  ///!< Genetic IPv6 multicast endpoint
-                IPv4SdEndpoint = 0x24, ///!< Service discovery IPv4 endpoint
-                IPv6SdEndpoint = 0x26  ///!< Service discovery IPv6 endpoint
+                Configuration = 0x01,  ///< DNS configuration
+                LoadBalancing = 0x02,  ///< Service instnace load balancing
+                IPv4Endpoint = 0x04,   ///< Generic IPv4 unicast endpoint
+                IPv6Endpoint = 0x06,   ///< Generic IPv6 unicast endpoint
+                IPv4Multicast = 0x14,  ///< Generic IPv4 multicast endpoint
+                IPv6Multicast = 0x16,  ///< Genetic IPv6 multicast endpoint
+                IPv4SdEndpoint = 0x24, ///< Service discovery IPv4 endpoint
+                IPv6SdEndpoint = 0x26  ///< Service discovery IPv6 endpoint
             };
 
             /// @brief OSI layer-4 protocol type
             enum class Layer4ProtocolType : uint8_t
             {
-                Tcp = 0x06, ///!< Transmission control protocol
-                Udp = 0x11  ///!< User datagram protocol
+                Tcp = 0x06, ///< Transmission control protocol
+                Udp = 0x11  ///< User datagram protocol
             };
 
             /// @brief Communication message entry abstract option

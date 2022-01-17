@@ -17,10 +17,10 @@ namespace ara
             /// @brief Message entry type
             enum class EntryType : uint8_t
             {
-                Finding = 0x00,      ///!< Service finding
-                Offering = 0x01,     ///!< Service start/stop offering
-                Subscribing = 0x06,  ///!< Event start/stop subscribing
-                Acknowledging = 0x07 ///!< Event subscribe positive/negative acknowledging
+                Finding = 0x00,      ///< Service finding
+                Offering = 0x01,     ///< Service start/stop offering
+                Subscribing = 0x06,  ///< Event start/stop subscribing
+                Acknowledging = 0x07 ///< Event subscribe positive/negative acknowledging
             };
 
             /// @brief Communication message abstract entry
