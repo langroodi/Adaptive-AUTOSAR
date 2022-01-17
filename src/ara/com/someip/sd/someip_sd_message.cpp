@@ -106,12 +106,12 @@ namespace ara
 
                     if (mRebooted)
                     {
-                        // Both Unicast Support and Explicit Initial Data Control flags are on.
+                        // Unicast Support flag is on.
                         helper::Inject(_result, cRebootedFlag);
                     }
                     else
                     {
-                        // Both Unicast Support and Explicit Initial Data Control flags are on.
+                        // Unicast Support flag is on.
                         helper::Inject(_result, cNotRebootedFlag);
                     }
 

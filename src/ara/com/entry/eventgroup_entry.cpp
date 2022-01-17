@@ -87,7 +87,6 @@ namespace ara
             {
                 std::vector<uint8_t> _result = Entry::BasePayload(optionIndex);
 
-                // Disabled Initial Data Requested Flag with the counter
                 uint16_t _eventgroupFlag = static_cast<uint16_t>(mCounter);
                 helper::Inject(_result, _eventgroupFlag);
                 helper::Inject(_result, mEventgroupId);

@@ -22,8 +22,8 @@ namespace ara
                     static const uint8_t cProtocolVersion = 0x01;
                     static const uint8_t cInterfaceVersion = 0x01;
                     static const SomeIpMessageType cMessageType = SomeIpMessageType::Notification;
-                    static const uint32_t cRebootedFlag = 0xe0000000;
-                    static const uint32_t cNotRebootedFlag = 0x60000000;
+                    static const uint32_t cRebootedFlag = 0xc0000000;
+                    static const uint32_t cNotRebootedFlag = 0x40000000;
 
                     bool mRebooted;
                     std::vector<std::shared_ptr<entry::Entry>> mEntries;

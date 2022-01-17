@@ -92,7 +92,7 @@ namespace ara
                          0x00, 0x00, 0x00, 0x01,
                          0x01, 0x01, 0x02, 0x00,
                          // Flags + reserved:
-                         0xe0, 0x00, 0x00, 0x00,
+                         0xc0, 0x00, 0x00, 0x00,
                          // Entries length:
                          0x00, 0x00, 0x00, 0x10,
                          // Entry:
