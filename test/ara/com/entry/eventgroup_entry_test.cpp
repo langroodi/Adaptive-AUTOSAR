@@ -81,12 +81,12 @@ namespace ara
                 const uint16_t cEventgroupId = 0x0005;
                 const EntryType cType = EntryType::Acknowledging;
 
-                auto _subscribeEntry =
+                auto _subscribeEntry{
                     EventgroupEntry::CreateSubscribeEventEntry(
-                        cServiceId, cInstanceId, cMajorVersion, cCounter, cEventgroupId);
+                        cServiceId, cInstanceId, cMajorVersion, cCounter, cEventgroupId)};
 
-                auto _ackEntry =
-                    EventgroupEntry::CreateAcknowledgeEntry(_subscribeEntry);
+                auto _ackEntry{
+                    EventgroupEntry::CreateAcknowledgeEntry(_subscribeEntry.get())};
 
                 EXPECT_EQ(_ackEntry->ServiceId(), _subscribeEntry->ServiceId());
                 EXPECT_EQ(_ackEntry->InstanceId(), _subscribeEntry->InstanceId());
@@ -107,12 +107,12 @@ namespace ara
                 const uint32_t cTTL = 0x000000;
                 const EntryType cType = EntryType::Acknowledging;
 
-                auto _subscribeEntry =
+                auto _subscribeEntry{
                     EventgroupEntry::CreateSubscribeEventEntry(
-                        cServiceId, cInstanceId, cMajorVersion, cCounter, cEventgroupId);
+                        cServiceId, cInstanceId, cMajorVersion, cCounter, cEventgroupId)};
 
-                auto _nackEntry =
-                    EventgroupEntry::CreateNegativeAcknowledgeEntry(_subscribeEntry);
+                auto _nackEntry{
+                    EventgroupEntry::CreateNegativeAcknowledgeEntry(_subscribeEntry.get())};
 
                 EXPECT_EQ(_nackEntry->ServiceId(), _subscribeEntry->ServiceId());
                 EXPECT_EQ(_nackEntry->InstanceId(), _subscribeEntry->InstanceId());
@@ -171,21 +171,15 @@ namespace ara
                     EventgroupEntry::CreateSubscribeEventEntry(
                         cServiceId, cInstanceId, cMajorVersion, cCounter, cEventgroupId);
 
-                auto _ackEntry =
-                    EventgroupEntry::CreateAcknowledgeEntry(_subscribeEntry);
+                auto _ackEntry{
+                    EventgroupEntry::CreateAcknowledgeEntry(_subscribeEntry.get())};
 
-                auto _option =
+                auto _option{
                     option::Ipv4EndpointOption::CreateMulticastEndpoint(
-                        cDiscardable, cIpAddress, cPort);
+                        cDiscardable, cIpAddress, cPort)};
 
-                EXPECT_THROW(
-                    _subscribeEntry->AddFirstOption(_option), std::invalid_argument);
-                EXPECT_THROW(
-                    _subscribeEntry->AddSecondOption(_option), std::invalid_argument);
                 EXPECT_NO_THROW(
-                    _ackEntry->AddFirstOption(_option));
-                EXPECT_THROW(
-                    _ackEntry->AddSecondOption(_option), std::invalid_argument);
+                    _ackEntry->AddFirstOption(std::move(_option)));
             }
 
             TEST(EventgroupEntryTest, Deserializing)
@@ -203,11 +197,19 @@ namespace ara
                 uint8_t _optionIndex = 0;
                 std::size_t _offset = 0;
                 auto _payload = _originalEntry->Payload(_optionIndex);
-                EntryDeserializer _entryDeserializer(_payload, _offset);
+
+                uint8_t _firstOptionNo;
+                uint8_t _secondOptionsNo;
+
+                auto _deserializedEntryPtr{EntryDeserializer::Deserialize(
+                    _payload,
+                    _offset,
+                    _firstOptionNo,
+                    _secondOptionsNo)};
 
                 auto _deserializedEntry =
-                    std::dynamic_pointer_cast<EventgroupEntry>(
-                        _entryDeserializer.DeserializedEntry());
+                    dynamic_cast<EventgroupEntry *>(
+                        _deserializedEntryPtr.get());
 
                 EXPECT_EQ(
                     _originalEntry->Type(),

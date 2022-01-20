@@ -18,7 +18,7 @@ namespace ara
             {
             }
 
-            bool Entry::ValidateOption(std::shared_ptr<const option::Option> option) const noexcept
+            bool Entry::ValidateOption(const option::Option *option) const noexcept
             {
                 bool _result;
 
@@ -66,7 +66,7 @@ namespace ara
 
             bool Entry::ContainsOption(option::OptionType optionType) const noexcept
             {
-                for (auto firstOption : mFirstOptions)
+                for (auto &firstOption : mFirstOptions)
                 {
                     if (firstOption->Type() == optionType)
                     {
@@ -74,7 +74,7 @@ namespace ara
                     }
                 }
 
-                for (auto secondOption : mSecondOptions)
+                for (auto &secondOption : mSecondOptions)
                 {
                     if (secondOption->Type() == optionType)
                     {
@@ -110,18 +110,18 @@ namespace ara
                 return mTTL;
             }
 
-            const std::vector<std::shared_ptr<option::Option>> &Entry::FirstOptions() const noexcept
+            const std::vector<std::unique_ptr<option::Option>> &Entry::FirstOptions() const noexcept
             {
                 return mFirstOptions;
             }
 
-            void Entry::AddFirstOption(std::shared_ptr<option::Option> firstOption)
+            void Entry::AddFirstOption(std::unique_ptr<option::Option> firstOption)
             {
-                bool _valid = ValidateOption(firstOption);
+                bool _valid = ValidateOption(firstOption.get());
 
                 if (_valid)
                 {
-                    mFirstOptions.push_back(firstOption);
+                    mFirstOptions.push_back(std::move(firstOption));
                 }
                 else
                 {
@@ -129,18 +129,18 @@ namespace ara
                 }
             }
 
-            const std::vector<std::shared_ptr<option::Option>> &Entry::SecondOptions() const noexcept
+            const std::vector<std::unique_ptr<option::Option>> &Entry::SecondOptions() const noexcept
             {
                 return mSecondOptions;
             }
 
-            void Entry::AddSecondOption(std::shared_ptr<option::Option> secondOption)
+            void Entry::AddSecondOption(std::unique_ptr<option::Option> secondOption)
             {
-                bool _valid = ValidateOption(secondOption);
+                bool _valid = ValidateOption(secondOption.get());
 
                 if (_valid)
                 {
-                    mSecondOptions.push_back(secondOption);
+                    mSecondOptions.push_back(std::move(secondOption));
                 }
                 else
                 {

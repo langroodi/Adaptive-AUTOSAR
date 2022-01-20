@@ -49,8 +49,8 @@ namespace ara
                 /// @param payload Serialized option payload byte array
                 /// @param offset Deserializing offset in the payload
                 /// @param discardable Indicates whether the option can be discarded or not
-                /// @returns Shared pointer to the option which is created while deserializing
-                static std::shared_ptr<LoadBalancingOption> Deserialize(
+                /// @returns Deserialized option
+                static std::unique_ptr<LoadBalancingOption> Deserialize(
                     const std::vector<uint8_t> &payload,
                     std::size_t &offset,
                     bool discardable);

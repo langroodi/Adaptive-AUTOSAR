@@ -17,9 +17,9 @@ namespace ara
                 /// @brief Deserialize an option payload
                 /// @param payload Serialized option payload byte array
                 /// @param offset Deserializing offset in the payload
-                /// @returns Shared pointer to the option which is created while deserializing
+                /// @returns Deserialized option
                 /// @throws std::out_of_range Throws when the option type for deserializing is not supported
-                static std::shared_ptr<Option> Deserialize(
+                static std::unique_ptr<Option> Deserialize(
                     const std::vector<uint8_t> &payload,
                     std::size_t &offset);
             };

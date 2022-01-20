@@ -44,13 +44,13 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<Ipv4EndpointOption> Ipv4EndpointOption::CreateUnitcastEndpoint(
+            std::unique_ptr<Ipv4EndpointOption> Ipv4EndpointOption::CreateUnitcastEndpoint(
                 bool discardable,
                 helper::Ipv4Address ipAddress,
                 Layer4ProtocolType protocol,
                 uint16_t port) noexcept
             {
-                std::shared_ptr<Ipv4EndpointOption> _result(
+                std::unique_ptr<Ipv4EndpointOption> _result(
                     new Ipv4EndpointOption(
                         OptionType::IPv4Endpoint,
                         discardable,
@@ -61,7 +61,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<Ipv4EndpointOption> Ipv4EndpointOption::CreateMulticastEndpoint(
+            std::unique_ptr<Ipv4EndpointOption> Ipv4EndpointOption::CreateMulticastEndpoint(
                 bool discardable,
                 helper::Ipv4Address ipAddress,
                 uint16_t port)
@@ -76,7 +76,7 @@ namespace ara
                     throw std::invalid_argument("IP address is out of range.");
                 }
 
-                std::shared_ptr<Ipv4EndpointOption> _result(
+                std::unique_ptr<Ipv4EndpointOption> _result(
                     new Ipv4EndpointOption(
                         OptionType::IPv4Multicast,
                         discardable,
@@ -87,13 +87,13 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<Ipv4EndpointOption> Ipv4EndpointOption::CreateSdEndpoint(
+            std::unique_ptr<Ipv4EndpointOption> Ipv4EndpointOption::CreateSdEndpoint(
                 bool discardable,
                 helper::Ipv4Address ipAddress,
                 Layer4ProtocolType protocol,
                 uint16_t port) noexcept
             {
-                std::shared_ptr<Ipv4EndpointOption> _result(
+                std::unique_ptr<Ipv4EndpointOption> _result(
                     new Ipv4EndpointOption(OptionType::IPv4SdEndpoint,
                                            discardable,
                                            ipAddress,
@@ -103,7 +103,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<Ipv4EndpointOption> Ipv4EndpointOption::Deserialize(
+            std::unique_ptr<Ipv4EndpointOption> Ipv4EndpointOption::Deserialize(
                 const std::vector<uint8_t> &payload,
                 std::size_t &offset,
                 OptionType type,

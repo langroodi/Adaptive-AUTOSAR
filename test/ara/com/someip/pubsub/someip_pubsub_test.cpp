@@ -15,10 +15,8 @@ namespace ara
                 {
                 private:
                     static const uint16_t cCounter = 0;
-                    static const uint16_t cPort = 9090;
 
                     helper::MockupNetworkLayer<sd::SomeIpSdMessage> mNetworkLayer;
-                    helper::Ipv4Address mIpAddress;
 
                 protected:
                     static const uint16_t cServiceId = 1;
@@ -30,14 +28,11 @@ namespace ara
                     SomeIpPubSubServer Server;
                     SomeIpPubSubClient Client;
 
-                    SomeIpPubSubTest() : mIpAddress(224, 0, 0, 0),
-                                         Server(&mNetworkLayer,
+                    SomeIpPubSubTest() : Server(&mNetworkLayer,
                                                 cServiceId,
                                                 cInstanceId,
                                                 cMajorVersion,
-                                                cEventgroupId,
-                                                mIpAddress,
-                                                cPort),
+                                                cEventgroupId),
                                          Client(
                                              &mNetworkLayer,
                                              cCounter)
@@ -91,8 +86,8 @@ namespace ara
                     EXPECT_TRUE(_succeed);
 
                     auto _eventgroupEntry =
-                        std::dynamic_pointer_cast<entry::EventgroupEntry>(
-                            _message.Entries().at(0));
+                        dynamic_cast<entry::EventgroupEntry *>(
+                            _message.Entries().at(0).get());
 
                     EXPECT_GT(_eventgroupEntry->TTL(), 0);
                     EXPECT_EQ(cExpectedState, Server.GetState());
@@ -112,8 +107,8 @@ namespace ara
                     EXPECT_TRUE(_succeed);
 
                     auto _eventgroupEntry =
-                        std::dynamic_pointer_cast<entry::EventgroupEntry>(
-                            _message.Entries().at(0));
+                        dynamic_cast<entry::EventgroupEntry *>(
+                            _message.Entries().at(0).get());
 
                     EXPECT_EQ(_eventgroupEntry->TTL(), 0);
                     EXPECT_EQ(cExpectedState, Server.GetState());

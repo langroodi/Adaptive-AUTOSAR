@@ -71,18 +71,18 @@ namespace ara
                         entry::ServiceEntry::CreateOfferServiceEntry(
                             cServiceId, cInstanceId, cMajorVersion, cMinorVersion);
 
-                    std::shared_ptr<option::LoadBalancingOption> _firstOption =
-                        std::make_shared<option::LoadBalancingOption>(
+                    std::unique_ptr<option::LoadBalancingOption> _firstOption =
+                        std::make_unique<option::LoadBalancingOption>(
                             cFirstDiscardable, cPriority, cWeight);
-                    _entry->AddFirstOption(_firstOption);
+                    _entry->AddFirstOption(std::move(_firstOption));
 
                     auto _secondOption =
                         option::Ipv4EndpointOption::CreateUnitcastEndpoint(
                             cSecondDiscardable, cIpAddress, cProtocol, cPort);
-                    _entry->AddSecondOption(_secondOption);
+                    _entry->AddSecondOption(std::move(_secondOption));
 
                     SomeIpSdMessage _message;
-                    _message.AddEntry(_entry);
+                    _message.AddEntry(std::move(_entry));
 
                     const size_t cPayloadSize = 64;
                     const std::array<uint8_t, cPayloadSize> cExpectedPayload =
@@ -191,18 +191,18 @@ namespace ara
                         entry::ServiceEntry::CreateOfferServiceEntry(
                             cServiceId, cInstanceId, cMajorVersion, cMinorVersion);
 
-                    std::shared_ptr<option::LoadBalancingOption> _firstOption =
-                        std::make_shared<option::LoadBalancingOption>(
+                    std::unique_ptr<option::LoadBalancingOption> _firstOption =
+                        std::make_unique<option::LoadBalancingOption>(
                             cFirstDiscardable, cPriority, cWeight);
-                    _entry->AddFirstOption(_firstOption);
+                    _entry->AddFirstOption(std::move(_firstOption));
 
                     auto _secondOption =
                         option::Ipv4EndpointOption::CreateUnitcastEndpoint(
                             cSecondDiscardable, cIpAddress, cProtocol, cPort);
-                    _entry->AddSecondOption(_secondOption);
+                    _entry->AddSecondOption(std::move(_secondOption));
 
                     SomeIpSdMessage _originalMessage;
-                    _originalMessage.AddEntry(_entry);
+                    _originalMessage.AddEntry(std::move(_entry));
 
                     auto _originalMessagePayload = _originalMessage.Payload();
 

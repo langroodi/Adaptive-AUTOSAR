@@ -31,10 +31,9 @@ namespace ara
                     fsm::ServiceDownState mServiceDownState;
                     fsm::NotSubscribedState mNotSubscribedState;
                     fsm::SubscribedState mSubscribedState;
-                    std::shared_ptr<option::Ipv4EndpointOption> mEndpointOption;
 
                     void onMessageReceived(sd::SomeIpSdMessage &&message);
-                    void processEntry(std::shared_ptr<entry::EventgroupEntry> entry);
+                    void processEntry(const entry::EventgroupEntry *entry);
 
                 public:
                     SomeIpPubSubServer() = delete;
@@ -46,16 +45,12 @@ namespace ara
                     /// @param instanceId Service instance ID
                     /// @param majorVersion Service major version
                     /// @param eventgroupId Service event-group ID
-                    /// @param ipAddress Service event multicast endpoint IP Address
-                    /// @param port Service event multicast endpoint UDP port number
                     SomeIpPubSubServer(
                         helper::NetworkLayer<sd::SomeIpSdMessage> *networkLayer,
                         uint16_t serviceId,
                         uint16_t instanceId,
                         uint8_t majorVersion,
-                        uint16_t eventgroupId,
-                        helper::Ipv4Address ipAddress,
-                        uint16_t port);
+                        uint16_t eventgroupId);
 
                     /// @brief Start the server
                     void Start();

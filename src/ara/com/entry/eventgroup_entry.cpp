@@ -32,7 +32,7 @@ namespace ara
             }
 
             bool EventgroupEntry::ValidateOption(
-                std::shared_ptr<const option::Option> option) const noexcept
+                const option::Option *option) const noexcept
             {
                 bool _result = Entry::ValidateOption(option);
 
@@ -94,7 +94,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateSubscribeEventEntry(
+            std::unique_ptr<EventgroupEntry> EventgroupEntry::CreateSubscribeEventEntry(
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
@@ -104,7 +104,7 @@ namespace ara
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
                 const uint32_t cSubscribeEventTTL = 0xffffff;
 
-                std::shared_ptr<EventgroupEntry> _result(
+                std::unique_ptr<EventgroupEntry> _result(
                     new EventgroupEntry(
                         cSubscribeEventEntry,
                         serviceId,
@@ -117,7 +117,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateUnsubscribeEventEntry(
+            std::unique_ptr<EventgroupEntry> EventgroupEntry::CreateUnsubscribeEventEntry(
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
@@ -126,7 +126,7 @@ namespace ara
             {
                 const EntryType cSubscribeEventEntry = EntryType::Subscribing;
 
-                std::shared_ptr<EventgroupEntry> _result(
+                std::unique_ptr<EventgroupEntry> _result(
                     new EventgroupEntry(
                         cSubscribeEventEntry,
                         serviceId,
@@ -139,12 +139,12 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateAcknowledgeEntry(
-                std::shared_ptr<EventgroupEntry> eventgroupEntry)
+            std::unique_ptr<EventgroupEntry> EventgroupEntry::CreateAcknowledgeEntry(
+                const EventgroupEntry *eventgroupEntry)
             {
                 const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
 
-                std::shared_ptr<EventgroupEntry> _result(
+                std::unique_ptr<EventgroupEntry> _result(
                     new EventgroupEntry(
                         cAcknowledgetEntry,
                         eventgroupEntry->ServiceId(),
@@ -157,12 +157,12 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<EventgroupEntry> EventgroupEntry::CreateNegativeAcknowledgeEntry(
-                std::shared_ptr<EventgroupEntry> eventgroupEntry)
+            std::unique_ptr<EventgroupEntry> EventgroupEntry::CreateNegativeAcknowledgeEntry(
+                const EventgroupEntry *eventgroupEntry)
             {
                 const EntryType cAcknowledgetEntry = EntryType::Acknowledging;
 
-                std::shared_ptr<EventgroupEntry> _result(
+                std::unique_ptr<EventgroupEntry> _result(
                     new EventgroupEntry(
                         cAcknowledgetEntry,
                         eventgroupEntry->ServiceId(),
@@ -175,7 +175,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<EventgroupEntry> EventgroupEntry::Deserialize(
+            std::unique_ptr<EventgroupEntry> EventgroupEntry::Deserialize(
                 const std::vector<uint8_t> &payload,
                 std::size_t &offset,
                 EntryType type,
@@ -208,7 +208,7 @@ namespace ara
 
                 case EntryType::Acknowledging:
                 {
-                    std::shared_ptr<EventgroupEntry> _result(
+                    std::unique_ptr<EventgroupEntry> _result(
                         new EventgroupEntry(
                             type,
                             serviceId,

@@ -26,11 +26,11 @@ namespace ara
 
                 void SomeIpPubSubClient::onMessageReceived(sd::SomeIpSdMessage &&message)
                 {
-                    for (auto entry : message.Entries())
+                    for (auto &entry : message.Entries())
                     {
                         if (entry->Type() == entry::EntryType::Acknowledging)
                         {
-                            mMessageBuffer.push(message);
+                            mMessageBuffer.push(std::move(message));
                             mSubscriptionConditionVariable.notify_one();
                         }
                     }
@@ -44,10 +44,10 @@ namespace ara
                 {
                     sd::SomeIpSdMessage _message;
 
-                    auto _entry =
+                    auto _entry{
                         entry::EventgroupEntry::CreateSubscribeEventEntry(
-                            serviceId, instanceId, majorVersion, mCounter, eventgroupId);
-                    _message.AddEntry(_entry);
+                            serviceId, instanceId, majorVersion, mCounter, eventgroupId)};
+                    _message.AddEntry(std::move(_entry));
 
                     mCommunicationLayer->Send(_message);
                 }
@@ -60,10 +60,10 @@ namespace ara
                 {
                     sd::SomeIpSdMessage _message;
 
-                    auto _entry =
+                    auto _entry{
                         entry::EventgroupEntry::CreateUnsubscribeEventEntry(
-                            serviceId, instanceId, majorVersion, mCounter, eventgroupId);
-                    _message.AddEntry(_entry);
+                            serviceId, instanceId, majorVersion, mCounter, eventgroupId)};
+                    _message.AddEntry(std::move(_entry));
 
                     mCommunicationLayer->Send(_message);
                 }
@@ -92,7 +92,7 @@ namespace ara
                     // In the case of successful get, set the first processed subscription to the output argument
                     if (_result)
                     {
-                        message = mMessageBuffer.front();
+                        message = std::move(mMessageBuffer.front());
                         // Remove the message from the buffer after the copy assignment
                         mMessageBuffer.pop();
                     }

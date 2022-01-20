@@ -41,24 +41,10 @@ namespace ara
                                               mMainState(
                                                   std::bind(&SomeIpSdServer::sendOffer, this),
                                                   cycleOfferDelay),
-                                              mOfferServiceEntry{
-                                                  entry::ServiceEntry::CreateOfferServiceEntry(
-                                                      serviceId,
-                                                      instanceId,
-                                                      majorVersion,
-                                                      minorVersion)},
-                                              mStopOfferEntry{
-                                                  entry::ServiceEntry::CreateStopOfferEntry(
-                                                      serviceId,
-                                                      instanceId,
-                                                      majorVersion,
-                                                      minorVersion)},
-                                              mEndpointOption{
-                                                  option::Ipv4EndpointOption::CreateUnitcastEndpoint(
-                                                      false,
-                                                      ipAddress,
-                                                      option::Layer4ProtocolType::Tcp,
-                                                      port)}
+                                              mServiceId{serviceId},
+                                              mInstanceId{instanceId},
+                                              mMajorVersion{majorVersion},
+                                              mMinorVersion{minorVersion}
                 {
                     this->StateMachine.Initialize({&mNotReadyState,
                                                    &mInitialWaitState,
@@ -66,11 +52,39 @@ namespace ara
                                                    &mMainState},
                                                   helper::SdServerState::NotReady);
 
-                    mOfferServiceEntry->AddFirstOption(mEndpointOption);
-                    mOfferServiceMessage.AddEntry(mOfferServiceEntry);
+                    auto _offerServiceEntry{
+                        entry::ServiceEntry::CreateOfferServiceEntry(
+                            serviceId,
+                            instanceId,
+                            majorVersion,
+                            minorVersion)};
 
-                    mStopOfferEntry->AddFirstOption(mEndpointOption);
-                    mStopOfferMessage.AddEntry(mStopOfferEntry);
+                    auto _stopOfferEntry{
+                        entry::ServiceEntry::CreateStopOfferEntry(
+                            serviceId,
+                            instanceId,
+                            majorVersion,
+                            minorVersion)};
+
+                    auto _offerEndpointOption{
+                        option::Ipv4EndpointOption::CreateUnitcastEndpoint(
+                            false,
+                            ipAddress,
+                            option::Layer4ProtocolType::Tcp,
+                            port)};
+
+                    auto _stopOfferEndpointOption{
+                        option::Ipv4EndpointOption::CreateUnitcastEndpoint(
+                            false,
+                            ipAddress,
+                            option::Layer4ProtocolType::Tcp,
+                            port)};
+
+                    _offerServiceEntry->AddFirstOption(std::move(_offerEndpointOption));
+                    mOfferServiceMessage.AddEntry(std::move(_offerServiceEntry));
+
+                    _stopOfferEntry->AddFirstOption(std::move(_stopOfferEndpointOption));
+                    mStopOfferMessage.AddEntry(std::move(_stopOfferEntry));
 
                     auto _receiver =
                         std::bind(
@@ -83,21 +97,21 @@ namespace ara
                 bool SomeIpSdServer::matchOfferingService(const SomeIpSdMessage &message) const
                 {
                     // Iterate over all the message entry to search for the first Service Finding entry
-                    for (auto _entry : message.Entries())
+                    for (auto &_entry : message.Entries())
                     {
                         if (_entry->Type() == entry::EntryType::Finding)
                         {
-                            if (auto _serviceEnty = std::dynamic_pointer_cast<entry::ServiceEntry>(_entry))
+                            if (auto _serviceEnty = dynamic_cast<entry::ServiceEntry *>(_entry.get()))
                             {
                                 // Compare service ID, instance ID, major version, and minor version
                                 bool _result =
-                                    (_serviceEnty->ServiceId() == mOfferServiceEntry->ServiceId()) &&
+                                    (_serviceEnty->ServiceId() == mServiceId) &&
                                     (_serviceEnty->InstanceId() == entry::Entry::cAnyInstanceId ||
-                                     _serviceEnty->InstanceId() == mOfferServiceEntry->InstanceId()) &&
+                                     _serviceEnty->InstanceId() == mInstanceId) &&
                                     (_serviceEnty->MajorVersion() == entry::Entry::cAnyMajorVersion ||
-                                     _serviceEnty->MajorVersion() == mOfferServiceEntry->MajorVersion()) &&
+                                     _serviceEnty->MajorVersion() == mMajorVersion) &&
                                     (_serviceEnty->MinorVersion() == entry::ServiceEntry::cAnyMinorVersion ||
-                                     _serviceEnty->MinorVersion() == mOfferServiceEntry->MinorVersion());
+                                     _serviceEnty->MinorVersion() == mMinorVersion);
 
                                 return _result;
                             }
@@ -111,7 +125,7 @@ namespace ara
                 {
                     if (!mMessageBuffer.empty())
                     {
-                        SomeIpSdMessage _message = mMessageBuffer.front();
+                        SomeIpSdMessage _message = std::move(mMessageBuffer.front());
 
                         bool _matches = matchOfferingService(_message);
                         // Send the offer if the finding matches the service
@@ -128,7 +142,7 @@ namespace ara
 
                 void SomeIpSdServer::receiveFind(SomeIpSdMessage &&message)
                 {
-                    mMessageBuffer.push(message);
+                    mMessageBuffer.push(std::move(message));
                 }
 
                 void SomeIpSdServer::onServiceStopped()

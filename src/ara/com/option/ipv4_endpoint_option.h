@@ -59,7 +59,7 @@ namespace ara
                 /// @param protocol Layer-4 protocol
                 /// @param port Port number
                 /// @returns Unicast IPv4 endpoint
-                static std::shared_ptr<Ipv4EndpointOption> CreateUnitcastEndpoint(
+                static std::unique_ptr<Ipv4EndpointOption> CreateUnitcastEndpoint(
                     bool discardable,
                     helper::Ipv4Address ipAddress,
                     Layer4ProtocolType protocol,
@@ -70,7 +70,7 @@ namespace ara
                 /// @param ipAddress IP address
                 /// @param port Port number
                 /// @returns Multicast IPv4 endpoint
-                static std::shared_ptr<Ipv4EndpointOption> CreateMulticastEndpoint(
+                static std::unique_ptr<Ipv4EndpointOption> CreateMulticastEndpoint(
                     bool discardable,
                     helper::Ipv4Address ipAddress,
                     uint16_t port);
@@ -81,7 +81,7 @@ namespace ara
                 /// @param protocol Layer-4 protocol
                 /// @param port Port number
                 /// @returns Service discovery IPv4 endpoint
-                static std::shared_ptr<Ipv4EndpointOption> CreateSdEndpoint(
+                static std::unique_ptr<Ipv4EndpointOption> CreateSdEndpoint(
                     bool discardable,
                     helper::Ipv4Address ipAddress,
                     Layer4ProtocolType protocol = cDefaultSdProtocol,
@@ -92,9 +92,9 @@ namespace ara
                 /// @param offset Deserializing offset in the payload
                 /// @param type IPv4 endpoint option type
                 /// @param discardable Indicates whether the option can be discarded or not
-                /// @returns Shared pointer to the option which is created while deserializing
+                /// @returns Deserialized option
                 /// @throws std::out_of_range Throws when the option type is not an IPv4 endpoint
-                static std::shared_ptr<Ipv4EndpointOption> Deserialize(
+                static std::unique_ptr<Ipv4EndpointOption> Deserialize(
                     const std::vector<uint8_t> &payload,
                     std::size_t &offset,
                     OptionType type,

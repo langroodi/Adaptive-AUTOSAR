@@ -122,12 +122,11 @@ namespace ara
                     ServiceEntry::CreateFindServiceEntry(
                         cServiceId, cTTL, cInstanceId, cMajorVersion, cMinorVersion);
 
-                std::shared_ptr<option::LoadBalancingOption> _option =
-                    std::make_shared<option::LoadBalancingOption>(
+                std::unique_ptr<option::LoadBalancingOption> _option =
+                    std::make_unique<option::LoadBalancingOption>(
                         cDiscardable, cPriority, cWeight);
 
-                EXPECT_NO_THROW(_entry->AddFirstOption(_option));
-                EXPECT_THROW(_entry->AddSecondOption(_option), std::invalid_argument);
+                EXPECT_NO_THROW(_entry->AddFirstOption(std::move(_option)));
             }
 
             TEST(ServiceEntryTest, Deserializing)
@@ -145,11 +144,19 @@ namespace ara
                 uint8_t _optionIndex = 0;
                 std::size_t _offset = 0;
                 auto _payload = _originalEntry->Payload(_optionIndex);
-                EntryDeserializer _entryDeserializer(_payload, _offset);
+
+                uint8_t _firstOptionNo;
+                uint8_t _secondOptionsNo;
+
+                auto _deserializedEntryPtr{EntryDeserializer::Deserialize(
+                    _payload,
+                    _offset,
+                    _firstOptionNo,
+                    _secondOptionsNo)};
 
                 auto _deserializedEntry =
-                    std::dynamic_pointer_cast<ServiceEntry>(
-                        _entryDeserializer.DeserializedEntry());
+                    dynamic_cast<ServiceEntry *>(
+                        _deserializedEntryPtr.get());
 
                 EXPECT_EQ(
                     _originalEntry->Type(),

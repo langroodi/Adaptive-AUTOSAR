@@ -31,7 +31,6 @@ namespace ara
                     fsm::ClientRepetitionState mRepetitionState;
                     fsm::ServiceReadyState mServiceReadyState;
                     fsm::StoppedState mStoppedState;
-                    std::shared_ptr<entry::ServiceEntry> mFindServiceEntry;
                     SomeIpSdMessage mFindServieMessage;
                     std::mutex mOfferingMutex;
                     std::unique_lock<std::mutex> mOfferingLock;
@@ -40,6 +39,7 @@ namespace ara
                     std::unique_lock<std::mutex> mStopOfferingLock;
                     std::condition_variable mStopOfferingConditionVariable;
                     bool mValidState;
+                    const uint16_t mServiceId;
 
                     void sendFind();
                     bool matchRequestedService(

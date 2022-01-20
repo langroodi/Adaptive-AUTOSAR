@@ -6,7 +6,7 @@ namespace ara
     {
         namespace option
         {
-            std::shared_ptr<Option> OptionDeserializer::Deserialize(
+            std::unique_ptr<Option> OptionDeserializer::Deserialize(
                 const std::vector<uint8_t> &payload,
                 std::size_t &offset)
             {

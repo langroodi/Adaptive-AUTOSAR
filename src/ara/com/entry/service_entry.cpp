@@ -17,7 +17,7 @@ namespace ara
             }
 
             bool ServiceEntry::ValidateOption(
-                std::shared_ptr<const option::Option> option) const noexcept
+                const option::Option *option) const noexcept
             {
                 bool _result = Entry::ValidateOption(option);
 
@@ -42,7 +42,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<ServiceEntry> ServiceEntry::CreateFindServiceEntry(
+            std::unique_ptr<ServiceEntry> ServiceEntry::CreateFindServiceEntry(
                 uint16_t serviceId,
                 uint32_t ttl,
                 uint16_t instanceId,
@@ -56,7 +56,7 @@ namespace ara
                     throw std::invalid_argument("TTL cannot be zero.");
                 }
 
-                std::shared_ptr<ServiceEntry> _result(
+                std::unique_ptr<ServiceEntry> _result(
                     new ServiceEntry(
                         cFindServiceEntry,
                         serviceId,
@@ -68,7 +68,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<ServiceEntry> ServiceEntry::CreateOfferServiceEntry(
+            std::unique_ptr<ServiceEntry> ServiceEntry::CreateOfferServiceEntry(
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
@@ -82,7 +82,7 @@ namespace ara
                     throw std::invalid_argument("TTL cannot be zero.");
                 }
 
-                std::shared_ptr<ServiceEntry> _result(
+                std::unique_ptr<ServiceEntry> _result(
                     new ServiceEntry(
                         cOfferServiceEntry,
                         serviceId,
@@ -94,7 +94,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<ServiceEntry> ServiceEntry::CreateStopOfferEntry(
+            std::unique_ptr<ServiceEntry> ServiceEntry::CreateStopOfferEntry(
                 uint16_t serviceId,
                 uint16_t instanceId,
                 uint8_t majorVersion,
@@ -103,7 +103,7 @@ namespace ara
                 const EntryType cOfferServiceEntry = EntryType::Offering;
                 const uint32_t cStopOfferTTL = 0x000000;
 
-                std::shared_ptr<ServiceEntry> _result(
+                std::unique_ptr<ServiceEntry> _result(
                     new ServiceEntry(
                         cOfferServiceEntry,
                         serviceId,
@@ -115,7 +115,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<ServiceEntry> ServiceEntry::Deserialize(
+            std::unique_ptr<ServiceEntry> ServiceEntry::Deserialize(
                 const std::vector<uint8_t> &payload,
                 std::size_t &offset,
                 EntryType type,

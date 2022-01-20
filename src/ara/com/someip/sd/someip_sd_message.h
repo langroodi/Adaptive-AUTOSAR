@@ -26,7 +26,7 @@ namespace ara
                     static const uint32_t cNotRebootedFlag = 0x40000000;
 
                     bool mRebooted;
-                    std::vector<std::shared_ptr<entry::Entry>> mEntries;
+                    std::vector<std::unique_ptr<entry::Entry>> mEntries;
 
                     uint32_t getEntriesLength() const noexcept;
                     uint32_t getOptionsLength() const noexcept;
@@ -36,11 +36,11 @@ namespace ara
 
                     /// @brief Get entries
                     /// @returns Exisiting message entries
-                    const std::vector<std::shared_ptr<entry::Entry>> &Entries() const noexcept;
+                    const std::vector<std::unique_ptr<entry::Entry>> &Entries() const noexcept;
 
                     /// @brief Add an entry
                     /// @param entry Entry to be added
-                    void AddEntry(std::shared_ptr<entry::Entry> entry);
+                    void AddEntry(std::unique_ptr<entry::Entry> entry);
 
                     virtual uint32_t Length() const noexcept override;
 

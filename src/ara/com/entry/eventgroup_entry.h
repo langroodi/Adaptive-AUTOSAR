@@ -31,7 +31,7 @@ namespace ara
 
             protected:
                 virtual bool ValidateOption(
-                    std::shared_ptr<const option::Option> option) const noexcept override;
+                    const option::Option *option) const noexcept override;
 
             public:
                 EventgroupEntry() = delete;
@@ -54,7 +54,7 @@ namespace ara
                 /// @param eventgroupId Event-group in interest ID
                 /// @returns Subscribe event-group entry
                 /// @throws std::out_of_range Throws if counter is greater than 4 bits
-                static std::shared_ptr<EventgroupEntry> CreateSubscribeEventEntry(
+                static std::unique_ptr<EventgroupEntry> CreateSubscribeEventEntry(
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
@@ -69,7 +69,7 @@ namespace ara
                 /// @param eventgroupId Event-group in interest ID
                 /// @returns Unsubscribe event-group entry
                 /// @throws std::out_of_range Throws if counter is greater than 4 bits
-                static std::shared_ptr<EventgroupEntry> CreateUnsubscribeEventEntry(
+                static std::unique_ptr<EventgroupEntry> CreateUnsubscribeEventEntry(
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
@@ -79,14 +79,14 @@ namespace ara
                 /// @brief Positive acknowledge of an event-group entry factory
                 /// @param eventgroupEntry Received subscribe event-group entry
                 /// @returns Acknowledge event-group subscription entry
-                static std::shared_ptr<EventgroupEntry> CreateAcknowledgeEntry(
-                    std::shared_ptr<EventgroupEntry> eventgroupEntry);
+                static std::unique_ptr<EventgroupEntry> CreateAcknowledgeEntry(
+                    const EventgroupEntry* eventgroupEntry);
 
                 /// @brief Negative acknowledge of an event-group entry factory
                 /// @param eventgroupEntry Received subscribe event-group entry
                 /// @returns Negative acknowledge event-group subscription entry
-                static std::shared_ptr<EventgroupEntry> CreateNegativeAcknowledgeEntry(
-                    std::shared_ptr<EventgroupEntry> eventgroupEntry);
+                static std::unique_ptr<EventgroupEntry> CreateNegativeAcknowledgeEntry(
+                    const EventgroupEntry* eventgroupEntry);
 
                 /// @brief Deserialize a entry payload
                 /// @param payload Serialized entry payload byte array
@@ -96,9 +96,9 @@ namespace ara
                 /// @param instanceId Service in interest instance ID
                 /// @param ttl Entry time to live
                 /// @param majorVersion Service in interest major version
-                /// @returns Shared pointer to the entry which is created while deserializing
+                /// @returns Deserialized entry
                 /// @throws std::out_of_range Throws when the entry type is not an event-group entry
-                static std::shared_ptr<EventgroupEntry> Deserialize(
+                static std::unique_ptr<EventgroupEntry> Deserialize(
                     const std::vector<uint8_t> &payload,
                     std::size_t &offset,
                     EntryType type,

@@ -27,7 +27,7 @@ namespace ara
 
             protected:
                 virtual bool ValidateOption(
-                    std::shared_ptr<const option::Option> option) const noexcept override;
+                    const option::Option *option) const noexcept override;
 
             public:
                 /// @brief Any service minor version
@@ -48,7 +48,7 @@ namespace ara
                 /// @param majorVersion Service in interest major version
                 /// @param minorVersion Service in interest minor version
                 /// @returns Find service entry
-                static std::shared_ptr<ServiceEntry> CreateFindServiceEntry(
+                static std::unique_ptr<ServiceEntry> CreateFindServiceEntry(
                     uint16_t serviceId,
                     uint32_t ttl = cInfiniteTtl,
                     uint16_t instanceId = cAnyInstanceId,
@@ -62,7 +62,7 @@ namespace ara
                 /// @param minorVersion Service in interest minor version
                 /// @param ttl Service offering lifetime
                 /// @returns Offer service entry
-                static std::shared_ptr<ServiceEntry> CreateOfferServiceEntry(
+                static std::unique_ptr<ServiceEntry> CreateOfferServiceEntry(
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
@@ -75,7 +75,7 @@ namespace ara
                 /// @param majorVersion Service in interest major version
                 /// @param minorVersion Service in interest minor version
                 /// @returns Stop service offering entry
-                static std::shared_ptr<ServiceEntry> CreateStopOfferEntry(
+                static std::unique_ptr<ServiceEntry> CreateStopOfferEntry(
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
@@ -89,9 +89,9 @@ namespace ara
                 /// @param instanceId Service in interest instance ID
                 /// @param ttl Entry time to live
                 /// @param majorVersion Service in interest major version
-                /// @returns Shared pointer to the entry which is created while deserializing
+                /// @returns Deserialized entry
                 /// @throws std::out_of_range Throws when the entry type is not a service entry
-                static std::shared_ptr<ServiceEntry> Deserialize(
+                static std::unique_ptr<ServiceEntry> Deserialize(
                     const std::vector<uint8_t> &payload,
                     std::size_t &offset,
                     EntryType type,

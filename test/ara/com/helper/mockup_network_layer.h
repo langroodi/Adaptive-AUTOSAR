@@ -18,10 +18,8 @@ namespace ara
 
                 virtual void Send(const T &message) override
                 {
-                    // Copy the received message
-                    T _receivedMessage = message;
-                    // In the mockup network layer, the message is direcly forwarded to the receiver callback.
-                    this->FireReceiverCallbacks(std::move(_receivedMessage));
+                    // In the mockup network layer, the message payload is direcly forwarded to the receiver callback.
+                    this->FireReceiverCallbacks(message.Payload());
                 }
             };
         }

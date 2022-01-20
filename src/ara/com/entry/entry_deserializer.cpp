@@ -6,9 +6,11 @@ namespace ara
     {
         namespace entry
         {
-            EntryDeserializer::EntryDeserializer(
+            std::unique_ptr<Entry> EntryDeserializer::Deserialize(
                 const std::vector<uint8_t> &payload,
-                std::size_t &offset)
+                std::size_t &offset,
+                uint8_t &numberOfFirstOptions,
+                uint8_t &numberOfSecondOptions)
             {
                 auto _type = static_cast<EntryType>(payload.at(offset++));
 
@@ -16,9 +18,9 @@ namespace ara
                 offset += 2;
 
                 uint8_t optionsNumbers = payload.at(offset++);
-                mNumberOfFirstOptions = optionsNumbers >> Entry::cOptionSizeBitLength;
+                numberOfFirstOptions = optionsNumbers >> Entry::cOptionSizeBitLength;
                 const uint8_t cSecondOptionsNumberMask = 0x0f;
-                mNumberOfSecondOptions = optionsNumbers & cSecondOptionsNumberMask;
+                numberOfSecondOptions = optionsNumbers & cSecondOptionsNumberMask;
 
                 uint16_t _serviceId = helper::ExtractShort(payload, offset);
                 uint16_t _instanceId = helper::ExtractShort(payload, offset);
@@ -37,49 +39,30 @@ namespace ara
                 {
                 case EntryType::Finding:
                 case EntryType::Offering:
-                    mDeserializedEntry =
-                        ServiceEntry::Deserialize(
-                            payload,
-                            offset,
-                            _type,
-                            _serviceId,
-                            _instanceId,
-                            _ttl,
-                            _majorVersion);
-                    break;
+                    return ServiceEntry::Deserialize(
+                        payload,
+                        offset,
+                        _type,
+                        _serviceId,
+                        _instanceId,
+                        _ttl,
+                        _majorVersion);
 
                 case EntryType::Subscribing:
                 case EntryType::Acknowledging:
-                    mDeserializedEntry =
-                        EventgroupEntry::Deserialize(
-                            payload,
-                            offset,
-                            _type,
-                            _serviceId,
-                            _instanceId,
-                            _ttl,
-                            _majorVersion);
-                    break;
+                    return EventgroupEntry::Deserialize(
+                        payload,
+                        offset,
+                        _type,
+                        _serviceId,
+                        _instanceId,
+                        _ttl,
+                        _majorVersion);
 
                 default:
                     throw std::out_of_range(
                         "Entry type is not supported for deserializing.");
                 }
-            }
-
-            std::shared_ptr<Entry> EntryDeserializer::DeserializedEntry() const noexcept
-            {
-                return mDeserializedEntry;
-            }
-
-            uint8_t EntryDeserializer::NumberOfFirstOptions() const noexcept
-            {
-                return mNumberOfFirstOptions;
-            }
-
-            uint8_t EntryDeserializer::NumberOfSecondOptions() const noexcept
-            {
-                return mNumberOfSecondOptions;
             }
         }
     }

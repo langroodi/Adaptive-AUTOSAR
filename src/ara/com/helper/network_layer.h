@@ -16,25 +16,21 @@ namespace ara
             template <typename T>
             class NetworkLayer
             {
-                static_assert(
-                    std::is_copy_assignable<T>::value,
-                    "The template argument is not copy assignable.");
-
             private:
-                std::map<void*, std::function<void(T)>> mReceiverCallbacks;
+                std::map<void *, std::function<void(T)>> mReceiverCallbacks;
 
             protected:
                 /// @brief Fire all the set receiver callaback
-                /// @param message Received message
-                void FireReceiverCallbacks(T &&message)
+                /// @param payload Received payload
+                void FireReceiverCallbacks(const std::vector<uint8_t> &payload)
                 {
-                    // Copy the received message
-                    T _receivedMessage = message;
-
                     for (auto objectCallbackPair : mReceiverCallbacks)
                     {
+                        // Create the received message from the received payload
+                        T _receivedMessage{T::Deserialize(payload)};
+
                         std::function<void(T)> _callback = objectCallbackPair.second;
-                        _callback(_receivedMessage);
+                        _callback(std::move(_receivedMessage));
                     }
                 }
 
@@ -49,14 +45,14 @@ namespace ara
                 /// @brief Set a receiver callback
                 /// @param object Object that owns the callback
                 /// @param receiver Receiver callback to be called when a message has been received
-                void SetReceiver(void* object, std::function<void(T)> receiver)
+                void SetReceiver(void *object, std::function<void(T)> receiver)
                 {
                     mReceiverCallbacks[object] = receiver;
                 }
 
                 /// @brief Remove a receiver callback
                 /// @param object Callback owner object
-                void ResetReceiver(void* object)
+                void ResetReceiver(void *object)
                 {
                     mReceiverCallbacks.erase(object);
                 }

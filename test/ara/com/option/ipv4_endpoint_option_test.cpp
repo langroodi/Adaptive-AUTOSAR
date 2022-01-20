@@ -83,8 +83,8 @@ namespace ara
                     OptionDeserializer::Deserialize(_payload, _offset);
 
                 auto _deserializedOption =
-                    std::dynamic_pointer_cast<Ipv4EndpointOption>(
-                        _deserializedOptionBase);
+                    dynamic_cast<Ipv4EndpointOption *>(
+                        _deserializedOptionBase.get());
 
                 EXPECT_EQ(
                     _originalOption->Type(),

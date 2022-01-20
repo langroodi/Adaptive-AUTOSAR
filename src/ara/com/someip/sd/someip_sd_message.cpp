@@ -34,14 +34,14 @@ namespace ara
                     const uint32_t cOptionLengthFieldSize = 3;
                     uint32_t _result = 0;
 
-                    for (auto entry : mEntries)
+                    for (auto &entry : mEntries)
                     {
-                        for (auto firstOption : entry->FirstOptions())
+                        for (auto &firstOption : entry->FirstOptions())
                         {
                             _result += cOptionLengthFieldSize + firstOption->Length();
                         }
 
-                        for (auto secondOption : entry->SecondOptions())
+                        for (auto &secondOption : entry->SecondOptions())
                         {
                             _result += cOptionLengthFieldSize + secondOption->Length();
                         }
@@ -50,14 +50,14 @@ namespace ara
                     return _result;
                 }
 
-                const std::vector<std::shared_ptr<entry::Entry>> &SomeIpSdMessage::Entries() const noexcept
+                const std::vector<std::unique_ptr<entry::Entry>> &SomeIpSdMessage::Entries() const noexcept
                 {
                     return mEntries;
                 }
 
-                void SomeIpSdMessage::AddEntry(std::shared_ptr<entry::Entry> entry)
+                void SomeIpSdMessage::AddEntry(std::unique_ptr<entry::Entry> entry)
                 {
-                    mEntries.push_back(entry);
+                    mEntries.push_back(std::move(entry));
                 }
 
                 uint32_t SomeIpSdMessage::Length() const noexcept
@@ -118,13 +118,13 @@ namespace ara
                     uint8_t _lastOptionIndex = 0;
                     std::vector<uint8_t> _entriesPayload;
                     std::vector<uint8_t> _optionsPayload;
-                    for (auto entry : mEntries)
+                    for (auto &entry : mEntries)
                     {
                         auto _entryPayload = entry->Payload(_lastOptionIndex);
                         helper::Concat(
                             _entriesPayload, std::move(_entryPayload));
 
-                        for (auto firstOption : entry->FirstOptions())
+                        for (auto &firstOption : entry->FirstOptions())
                         {
                             auto _firstOptionPayload = firstOption->Payload();
                             helper::Concat(
@@ -132,7 +132,7 @@ namespace ara
                             ++_lastOptionIndex;
                         }
 
-                        for (auto secondOption : entry->SecondOptions())
+                        for (auto &secondOption : entry->SecondOptions())
                         {
                             auto _secondOptionPayload = secondOption->Payload();
                             helper::Concat(
@@ -188,28 +188,35 @@ namespace ara
 
                     while (_entryOffset < _entryOffsetMax)
                     {
-                        entry::EntryDeserializer _entryDeserializer(payload, _entryOffset);
-                        auto _entry = _entryDeserializer.DeserializedEntry();
+                        uint8_t _numberOfFirstOptions;
+                        uint8_t _numberOfSecondOptions;
+                        
+                        auto _entry{
+                            entry::EntryDeserializer::Deserialize(
+                                payload,
+                                _entryOffset,
+                                _numberOfFirstOptions,
+                                _numberOfSecondOptions)};
 
-                        for (int i = 0; i < _entryDeserializer.NumberOfFirstOptions(); i++)
+                        for (int i = 0; i < _numberOfFirstOptions; i++)
                         {
-                            auto _option =
+                            auto _option{
                                 option::OptionDeserializer::Deserialize(
-                                    payload, _optionOffset);
-                            
-                            _entry->AddFirstOption(_option);
+                                    payload, _optionOffset)};
+
+                            _entry->AddFirstOption(std::move(_option));
                         }
 
-                        for (int i = 0; i < _entryDeserializer.NumberOfSecondOptions(); i++)
+                        for (int i = 0; i < _numberOfSecondOptions; i++)
                         {
-                            auto _option =
+                            auto _option{
                                 option::OptionDeserializer::Deserialize(
-                                    payload, _optionOffset);
-                            
-                            _entry->AddSecondOption(_option);
+                                    payload, _optionOffset)};
+
+                            _entry->AddSecondOption(std::move(_option));
                         }
 
-                        _result.AddEntry(_entry);
+                        _result.AddEntry(std::move(_entry));
                     }
 
                     return _result;

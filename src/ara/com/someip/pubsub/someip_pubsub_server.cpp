@@ -14,17 +14,11 @@ namespace ara
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
-                    uint16_t eventgroupId,
-                    helper::Ipv4Address ipAddress,
-                    uint16_t port) : mCommunicationLayer{networkLayer},
-                                     mServiceId{serviceId},
-                                     mInstanceId{instanceId},
-                                     mMajorVersion{majorVersion},
-                                     mEventgroupId{eventgroupId},
-                                     mEndpointOption{
-                                         option::Ipv4EndpointOption::CreateMulticastEndpoint(
-                                             false, ipAddress, port)}
-
+                    uint16_t eventgroupId) : mCommunicationLayer{networkLayer},
+                                             mServiceId{serviceId},
+                                             mInstanceId{instanceId},
+                                             mMajorVersion{majorVersion},
+                                             mEventgroupId{eventgroupId}
                 {
                     mStateMachine.Initialize({&mServiceDownState,
                                               &mNotSubscribedState,
@@ -42,11 +36,11 @@ namespace ara
                 void SomeIpPubSubServer::onMessageReceived(sd::SomeIpSdMessage &&message)
                 {
                     // Iterate over all the message entry to search for the first Event-group Subscribing entry
-                    for (auto _entry : message.Entries())
+                    for (auto &_entry : message.Entries())
                     {
                         if (_entry->Type() == entry::EntryType::Subscribing)
                         {
-                            if (auto _eventgroupEntry = std::dynamic_pointer_cast<entry::EventgroupEntry>(_entry))
+                            if (auto _eventgroupEntry = dynamic_cast<entry::EventgroupEntry *>(_entry.get()))
                             {
                                 // Compare service ID, instance ID, major version, and event-group ID
                                 if ((_eventgroupEntry->ServiceId() == mServiceId) &&
@@ -56,7 +50,6 @@ namespace ara
                                      _eventgroupEntry->MajorVersion() == mMajorVersion) &&
                                     (_eventgroupEntry->EventgroupId() == mEventgroupId))
                                 {
-
                                     if (_eventgroupEntry->TTL() > 0)
                                     {
                                         // Subscription
@@ -79,7 +72,7 @@ namespace ara
                     }
                 }
 
-                void SomeIpPubSubServer::processEntry(std::shared_ptr<entry::EventgroupEntry> entry)
+                void SomeIpPubSubServer::processEntry(const entry::EventgroupEntry *entry)
                 {
                     sd::SomeIpSdMessage _acknowledgeMessage;
 
@@ -99,8 +92,8 @@ namespace ara
                                                                          entry)
                                                                    : entry::EventgroupEntry::CreateAcknowledgeEntry(
                                                                          entry);
-
-                    _acknowledgeMessage.AddEntry(_acknowledgeEntry);
+                    /// @todo Add multicast endpoint option to the entry before sending
+                    _acknowledgeMessage.AddEntry(std::move(_acknowledgeEntry));
                     mCommunicationLayer->Send(_acknowledgeMessage);
                 }
 

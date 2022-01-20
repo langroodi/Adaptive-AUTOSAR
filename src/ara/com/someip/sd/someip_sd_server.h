@@ -30,9 +30,10 @@ namespace ara
                     fsm::MainState mMainState;
                     SomeIpSdMessage mOfferServiceMessage;
                     SomeIpSdMessage mStopOfferMessage;
-                    std::shared_ptr<entry::ServiceEntry> mOfferServiceEntry;
-                    std::shared_ptr<entry::ServiceEntry> mStopOfferEntry;
-                    std::shared_ptr<option::Ipv4EndpointOption> mEndpointOption;
+                    const uint16_t mServiceId;
+                    const uint16_t mInstanceId;
+                    const uint8_t mMajorVersion;
+                    const uint32_t mMinorVersion;
 
                     void sendOffer();
                     bool matchOfferingService(const SomeIpSdMessage &message) const;

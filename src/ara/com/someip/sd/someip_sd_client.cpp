@@ -30,10 +30,10 @@ namespace ara
                                                   repetitionBaseDelay),
                                               mServiceReadyState(&mTtlTimer, &mOfferingConditionVariable),
                                               mStoppedState(&mTtlTimer, &mStopOfferingConditionVariable),
-                                              mFindServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)},
                                               mOfferingLock(mOfferingMutex, std::defer_lock),
                                               mStopOfferingLock(mStopOfferingMutex, std::defer_lock),
-                                              mValidState{true}
+                                              mValidState{true},
+                                              mServiceId{serviceId}
                 {
                     this->StateMachine.Initialize(
                         {&mServiceNotseenState,
@@ -44,7 +44,8 @@ namespace ara
                          &mStoppedState},
                         helper::SdClientState::ServiceNotSeen);
 
-                    mFindServieMessage.AddEntry(mFindServiceEntry);
+                    auto _findServiceEntry{entry::ServiceEntry::CreateFindServiceEntry(serviceId)};
+                    mFindServieMessage.AddEntry(std::move(_findServiceEntry));
 
                     auto _receiver =
                         std::bind(
@@ -64,21 +65,14 @@ namespace ara
                     const SomeIpSdMessage &message, uint32_t &ttl) const
                 {
                     // Iterate over all the message entry to search for the first Service Offering entry
-                    for (auto _entry : message.Entries())
+                    for (auto &_entry : message.Entries())
                     {
                         if (_entry->Type() == entry::EntryType::Offering)
                         {
-                            if (auto _serviceEnty = std::dynamic_pointer_cast<entry::ServiceEntry>(_entry))
+                            if (auto _serviceEnty = dynamic_cast<entry::ServiceEntry *>(_entry.get()))
                             {
-                                // Compare service ID, instance ID, major version and minor version
-                                bool _result =
-                                    (_serviceEnty->ServiceId() == mFindServiceEntry->ServiceId()) &&
-                                    (mFindServiceEntry->InstanceId() == entry::ServiceEntry::cAnyInstanceId ||
-                                     _serviceEnty->InstanceId() == mFindServiceEntry->InstanceId()) &&
-                                    (mFindServiceEntry->MajorVersion() == entry::Entry::cAnyMajorVersion ||
-                                     _serviceEnty->MajorVersion() == mFindServiceEntry->MajorVersion()) &&
-                                    (mFindServiceEntry->MinorVersion() == entry::ServiceEntry::cAnyMinorVersion ||
-                                     _serviceEnty->MinorVersion() == mFindServiceEntry->MinorVersion());
+                                // Compare service ID
+                                bool _result = _serviceEnty->ServiceId() == mServiceId;
 
                                 if (_result)
                                 {

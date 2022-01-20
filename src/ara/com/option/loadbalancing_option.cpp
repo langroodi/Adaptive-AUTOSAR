@@ -32,7 +32,7 @@ namespace ara
                 return _result;
             }
 
-            std::shared_ptr<LoadBalancingOption> LoadBalancingOption::Deserialize(
+            std::unique_ptr<LoadBalancingOption> LoadBalancingOption::Deserialize(
                 const std::vector<uint8_t> &payload,
                 std::size_t &offset,
                 bool discardable)
@@ -40,7 +40,7 @@ namespace ara
                 uint16_t _priority = helper::ExtractShort(payload, offset);
                 uint16_t _weight = helper::ExtractShort(payload, offset);
                 auto _result =
-                    std::make_shared<LoadBalancingOption>(
+                    std::make_unique<LoadBalancingOption>(
                         discardable, _priority, _weight);
 
                 return _result;
