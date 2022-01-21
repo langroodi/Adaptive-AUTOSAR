@@ -25,6 +25,12 @@ namespace ara
                 {
                 private:
                     helper::TtlTimer mTtlTimer;
+                    std::mutex mOfferingMutex;
+                    std::unique_lock<std::mutex> mOfferingLock;
+                    std::condition_variable mOfferingConditionVariable;
+                    std::mutex mStopOfferingMutex;
+                    std::unique_lock<std::mutex> mStopOfferingLock;
+                    std::condition_variable mStopOfferingConditionVariable;
                     fsm::ServiceNotseenState mServiceNotseenState;
                     fsm::ServiceSeenState mServiceSeenState;
                     fsm::ClientInitialWaitState mInitialWaitState;
@@ -32,12 +38,6 @@ namespace ara
                     fsm::ServiceReadyState mServiceReadyState;
                     fsm::StoppedState mStoppedState;
                     SomeIpSdMessage mFindServieMessage;
-                    std::mutex mOfferingMutex;
-                    std::unique_lock<std::mutex> mOfferingLock;
-                    std::condition_variable mOfferingConditionVariable;
-                    std::mutex mStopOfferingMutex;
-                    std::unique_lock<std::mutex> mStopOfferingLock;
-                    std::condition_variable mStopOfferingConditionVariable;
                     bool mValidState;
                     const uint16_t mServiceId;
 
