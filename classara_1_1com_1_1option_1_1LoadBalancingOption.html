@@ -141,9 +141,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1eab8bf0764d0c87784ec1fdbdf0bdc4"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">LoadBalancingOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a1eab8bf0764d0c87784ec1fdbdf0bdc4">Deserialize</a> (const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset, bool discardable)</td></tr>
-<tr class="memdesc:a1eab8bf0764d0c87784ec1fdbdf0bdc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize an option payload.  <a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a1eab8bf0764d0c87784ec1fdbdf0bdc4">More...</a><br /></td></tr>
-<tr class="separator:a1eab8bf0764d0c87784ec1fdbdf0bdc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a987db666a25b8bab3f2ae796710b5acc"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">LoadBalancingOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a987db666a25b8bab3f2ae796710b5acc">Deserialize</a> (const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset, bool discardable)</td></tr>
+<tr class="memdesc:a987db666a25b8bab3f2ae796710b5acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize an option payload.  <a href="classara_1_1com_1_1option_1_1LoadBalancingOption.html#a987db666a25b8bab3f2ae796710b5acc">More...</a><br /></td></tr>
+<tr class="separator:a987db666a25b8bab3f2ae796710b5acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -211,8 +211,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1eab8bf0764d0c87784ec1fdbdf0bdc4" name="a1eab8bf0764d0c87784ec1fdbdf0bdc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1eab8bf0764d0c87784ec1fdbdf0bdc4">&#9670;&nbsp;</a></span>Deserialize()</h2>
+<a id="a987db666a25b8bab3f2ae796710b5acc" name="a987db666a25b8bab3f2ae796710b5acc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a987db666a25b8bab3f2ae796710b5acc">&#9670;&nbsp;</a></span>Deserialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,7 +221,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">LoadBalancingOption</a> &gt; ara::com::option::LoadBalancingOption::Deserialize </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1LoadBalancingOption.html">LoadBalancingOption</a> &gt; ara::com::option::LoadBalancingOption::Deserialize </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>payload</em>, </td>
@@ -260,7 +260,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the option which is created while deserializing </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Deserialized option </dd></dl>
 
 </div>
 </div>

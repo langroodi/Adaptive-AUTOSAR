@@ -141,18 +141,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8d206f222dcfa77a8c089a580d09c0ca"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a8d206f222dcfa77a8c089a580d09c0ca">CreateUnitcastEndpoint</a> (bool discardable, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, <a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">Layer4ProtocolType</a> protocol, uint16_t port) noexcept</td></tr>
-<tr class="memdesc:a8d206f222dcfa77a8c089a580d09c0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unitcast endpoint factory.  <a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a8d206f222dcfa77a8c089a580d09c0ca">More...</a><br /></td></tr>
-<tr class="separator:a8d206f222dcfa77a8c089a580d09c0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a344a46608c9170a943972950c151333a"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a344a46608c9170a943972950c151333a">CreateMulticastEndpoint</a> (bool discardable, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, uint16_t port)</td></tr>
-<tr class="memdesc:a344a46608c9170a943972950c151333a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multicast endpoint factory.  <a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a344a46608c9170a943972950c151333a">More...</a><br /></td></tr>
-<tr class="separator:a344a46608c9170a943972950c151333a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ac976ca594e1057122aecd9e1e97c90"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a3ac976ca594e1057122aecd9e1e97c90">CreateSdEndpoint</a> (bool discardable, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, <a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">Layer4ProtocolType</a> protocol=cDefaultSdProtocol, uint16_t port=cDefaultSdPort) noexcept</td></tr>
-<tr class="memdesc:a3ac976ca594e1057122aecd9e1e97c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service discovery factroy.  <a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a3ac976ca594e1057122aecd9e1e97c90">More...</a><br /></td></tr>
-<tr class="separator:a3ac976ca594e1057122aecd9e1e97c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a441e6ae0aec5c67c81a31a345e0edf05"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a441e6ae0aec5c67c81a31a345e0edf05">Deserialize</a> (const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset, <a class="el" href="namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0">OptionType</a> type, bool discardable)</td></tr>
-<tr class="memdesc:a441e6ae0aec5c67c81a31a345e0edf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize an option payload.  <a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a441e6ae0aec5c67c81a31a345e0edf05">More...</a><br /></td></tr>
-<tr class="separator:a441e6ae0aec5c67c81a31a345e0edf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a28444a608ea181cec43a9433847107"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a9a28444a608ea181cec43a9433847107">CreateUnitcastEndpoint</a> (bool discardable, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, <a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">Layer4ProtocolType</a> protocol, uint16_t port) noexcept</td></tr>
+<tr class="memdesc:a9a28444a608ea181cec43a9433847107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unitcast endpoint factory.  <a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a9a28444a608ea181cec43a9433847107">More...</a><br /></td></tr>
+<tr class="separator:a9a28444a608ea181cec43a9433847107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2af4dd5d58c92d37b8b7398b63473a6"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#ab2af4dd5d58c92d37b8b7398b63473a6">CreateMulticastEndpoint</a> (bool discardable, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, uint16_t port)</td></tr>
+<tr class="memdesc:ab2af4dd5d58c92d37b8b7398b63473a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multicast endpoint factory.  <a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#ab2af4dd5d58c92d37b8b7398b63473a6">More...</a><br /></td></tr>
+<tr class="separator:ab2af4dd5d58c92d37b8b7398b63473a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87fd205dfe4f38fa2dd3f3a5dc20a8e0"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a87fd205dfe4f38fa2dd3f3a5dc20a8e0">CreateSdEndpoint</a> (bool discardable, <a class="el" href="structara_1_1com_1_1helper_1_1Ipv4Address.html">helper::Ipv4Address</a> ipAddress, <a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">Layer4ProtocolType</a> protocol=cDefaultSdProtocol, uint16_t port=cDefaultSdPort) noexcept</td></tr>
+<tr class="memdesc:a87fd205dfe4f38fa2dd3f3a5dc20a8e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service discovery factroy.  <a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a87fd205dfe4f38fa2dd3f3a5dc20a8e0">More...</a><br /></td></tr>
+<tr class="separator:a87fd205dfe4f38fa2dd3f3a5dc20a8e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a989b83a252158dfe54d7d3d22f057e60"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a989b83a252158dfe54d7d3d22f057e60">Deserialize</a> (const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset, <a class="el" href="namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0">OptionType</a> type, bool discardable)</td></tr>
+<tr class="memdesc:a989b83a252158dfe54d7d3d22f057e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize an option payload.  <a href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a989b83a252158dfe54d7d3d22f057e60">More...</a><br /></td></tr>
+<tr class="separator:a989b83a252158dfe54d7d3d22f057e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -167,8 +167,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >IPv4 endpoint option for both generic and service discovery purposes. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a344a46608c9170a943972950c151333a" name="a344a46608c9170a943972950c151333a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a344a46608c9170a943972950c151333a">&#9670;&nbsp;</a></span>CreateMulticastEndpoint()</h2>
+<a id="ab2af4dd5d58c92d37b8b7398b63473a6" name="ab2af4dd5d58c92d37b8b7398b63473a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2af4dd5d58c92d37b8b7398b63473a6">&#9670;&nbsp;</a></span>CreateMulticastEndpoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +177,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt; ara::com::option::Ipv4EndpointOption::CreateMulticastEndpoint </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt; ara::com::option::Ipv4EndpointOption::CreateMulticastEndpoint </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>discardable</em>, </td>
@@ -220,8 +220,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3ac976ca594e1057122aecd9e1e97c90" name="a3ac976ca594e1057122aecd9e1e97c90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ac976ca594e1057122aecd9e1e97c90">&#9670;&nbsp;</a></span>CreateSdEndpoint()</h2>
+<a id="a87fd205dfe4f38fa2dd3f3a5dc20a8e0" name="a87fd205dfe4f38fa2dd3f3a5dc20a8e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87fd205dfe4f38fa2dd3f3a5dc20a8e0">&#9670;&nbsp;</a></span>CreateSdEndpoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +230,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt; ara::com::option::Ipv4EndpointOption::CreateSdEndpoint </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt; ara::com::option::Ipv4EndpointOption::CreateSdEndpoint </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>discardable</em>, </td>
@@ -280,8 +280,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8d206f222dcfa77a8c089a580d09c0ca" name="a8d206f222dcfa77a8c089a580d09c0ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d206f222dcfa77a8c089a580d09c0ca">&#9670;&nbsp;</a></span>CreateUnitcastEndpoint()</h2>
+<a id="a9a28444a608ea181cec43a9433847107" name="a9a28444a608ea181cec43a9433847107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a28444a608ea181cec43a9433847107">&#9670;&nbsp;</a></span>CreateUnitcastEndpoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,7 +290,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt; ara::com::option::Ipv4EndpointOption::CreateUnitcastEndpoint </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt; ara::com::option::Ipv4EndpointOption::CreateUnitcastEndpoint </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>discardable</em>, </td>
@@ -340,8 +340,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a441e6ae0aec5c67c81a31a345e0edf05" name="a441e6ae0aec5c67c81a31a345e0edf05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a441e6ae0aec5c67c81a31a345e0edf05">&#9670;&nbsp;</a></span>Deserialize()</h2>
+<a id="a989b83a252158dfe54d7d3d22f057e60" name="a989b83a252158dfe54d7d3d22f057e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a989b83a252158dfe54d7d3d22f057e60">&#9670;&nbsp;</a></span>Deserialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,7 +350,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt; ara::com::option::Ipv4EndpointOption::Deserialize </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Ipv4EndpointOption.html">Ipv4EndpointOption</a> &gt; ara::com::option::Ipv4EndpointOption::Deserialize </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>payload</em>, </td>
@@ -396,7 +396,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the option which is created while deserializing </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Deserialized option </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Throws when the option type is not an IPv4 endpoint </td></tr>

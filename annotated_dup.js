@@ -8,7 +8,7 @@ var annotated_dup =
         ] ],
         [ "entry", "namespaceara_1_1com_1_1entry.html", [
           [ "Entry", "classara_1_1com_1_1entry_1_1Entry.html", "classara_1_1com_1_1entry_1_1Entry" ],
-          [ "EntryDeserializer", "classara_1_1com_1_1entry_1_1EntryDeserializer.html", "classara_1_1com_1_1entry_1_1EntryDeserializer" ],
+          [ "EntryDeserializer", "classara_1_1com_1_1entry_1_1EntryDeserializer.html", null ],
           [ "EventgroupEntry", "classara_1_1com_1_1entry_1_1EventgroupEntry.html", "classara_1_1com_1_1entry_1_1EventgroupEntry" ],
           [ "ServiceEntry", "classara_1_1com_1_1entry_1_1ServiceEntry.html", "classara_1_1com_1_1entry_1_1ServiceEntry" ]
         ] ],

@@ -106,15 +106,15 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1option_1_1OptionDes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a10a8db11c580870ec74f68a5a1763eaa"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Option.html">Option</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1OptionDeserializer.html#a10a8db11c580870ec74f68a5a1763eaa">Deserialize</a> (const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset)</td></tr>
-<tr class="memdesc:a10a8db11c580870ec74f68a5a1763eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize an option payload.  <a href="classara_1_1com_1_1option_1_1OptionDeserializer.html#a10a8db11c580870ec74f68a5a1763eaa">More...</a><br /></td></tr>
-<tr class="separator:a10a8db11c580870ec74f68a5a1763eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80498e661e281c87329a5e2da93a7611"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Option.html">Option</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1option_1_1OptionDeserializer.html#a80498e661e281c87329a5e2da93a7611">Deserialize</a> (const std::vector&lt; uint8_t &gt; &amp;payload, std::size_t &amp;offset)</td></tr>
+<tr class="memdesc:a80498e661e281c87329a5e2da93a7611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize an option payload.  <a href="classara_1_1com_1_1option_1_1OptionDeserializer.html#a80498e661e281c87329a5e2da93a7611">More...</a><br /></td></tr>
+<tr class="separator:a80498e661e281c87329a5e2da93a7611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A helper class for deserialzing an option payload. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a10a8db11c580870ec74f68a5a1763eaa" name="a10a8db11c580870ec74f68a5a1763eaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10a8db11c580870ec74f68a5a1763eaa">&#9670;&nbsp;</a></span>Deserialize()</h2>
+<a id="a80498e661e281c87329a5e2da93a7611" name="a80498e661e281c87329a5e2da93a7611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80498e661e281c87329a5e2da93a7611">&#9670;&nbsp;</a></span>Deserialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -123,7 +123,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Option.html">Option</a> &gt; ara::com::option::OptionDeserializer::Deserialize </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1option_1_1Option.html">Option</a> &gt; ara::com::option::OptionDeserializer::Deserialize </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>payload</em>, </td>
@@ -155,7 +155,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Shared pointer to the option which is created while deserializing </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Deserialized option </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::out_of_range</td><td>Throws when the option type for deserializing is not supported </td></tr>

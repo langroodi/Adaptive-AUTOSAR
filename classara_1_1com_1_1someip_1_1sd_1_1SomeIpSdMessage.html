@@ -116,12 +116,12 @@ Inheritance diagram for ara::com::someip::sd::SomeIpSdMessage:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abae4a47392de62673eed6a3f14758107"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#abae4a47392de62673eed6a3f14758107">Entries</a> () const noexcept</td></tr>
-<tr class="memdesc:abae4a47392de62673eed6a3f14758107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get entries.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#abae4a47392de62673eed6a3f14758107">More...</a><br /></td></tr>
-<tr class="separator:abae4a47392de62673eed6a3f14758107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac46361c471c0a692a9c35b5438a29334"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#ac46361c471c0a692a9c35b5438a29334">AddEntry</a> (std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> &gt; entry)</td></tr>
-<tr class="memdesc:ac46361c471c0a692a9c35b5438a29334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an entry.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#ac46361c471c0a692a9c35b5438a29334">More...</a><br /></td></tr>
-<tr class="separator:ac46361c471c0a692a9c35b5438a29334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa5c3c546fe3e4a0c2db80eb2be0aa2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a0aa5c3c546fe3e4a0c2db80eb2be0aa2">Entries</a> () const noexcept</td></tr>
+<tr class="memdesc:a0aa5c3c546fe3e4a0c2db80eb2be0aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get entries.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a0aa5c3c546fe3e4a0c2db80eb2be0aa2">More...</a><br /></td></tr>
+<tr class="separator:a0aa5c3c546fe3e4a0c2db80eb2be0aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a678a57f959713522e5606cebd3e752b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a678a57f959713522e5606cebd3e752b7">AddEntry</a> (std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> &gt; entry)</td></tr>
+<tr class="memdesc:a678a57f959713522e5606cebd3e752b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an entry.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a678a57f959713522e5606cebd3e752b7">More...</a><br /></td></tr>
+<tr class="separator:a678a57f959713522e5606cebd3e752b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fecb7707047c120d7e074c9de8e47b1"><td class="memItemLeft" align="right" valign="top">virtual uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a2fecb7707047c120d7e074c9de8e47b1">Length</a> () const noexcept override</td></tr>
 <tr class="memdesc:a2fecb7707047c120d7e074c9de8e47b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get message length.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a2fecb7707047c120d7e074c9de8e47b1">More...</a><br /></td></tr>
 <tr class="separator:a2fecb7707047c120d7e074c9de8e47b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,8 +180,8 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >SOME/IP service discovery message. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac46361c471c0a692a9c35b5438a29334" name="ac46361c471c0a692a9c35b5438a29334"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac46361c471c0a692a9c35b5438a29334">&#9670;&nbsp;</a></span>AddEntry()</h2>
+<a id="a678a57f959713522e5606cebd3e752b7" name="a678a57f959713522e5606cebd3e752b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a678a57f959713522e5606cebd3e752b7">&#9670;&nbsp;</a></span>AddEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +189,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void ara::com::someip::sd::SomeIpSdMessage::AddEntry </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> &gt;&#160;</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> &gt;&#160;</td>
           <td class="paramname"><em>entry</em></td><td>)</td>
           <td></td>
         </tr>
@@ -247,8 +247,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="abae4a47392de62673eed6a3f14758107" name="abae4a47392de62673eed6a3f14758107"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abae4a47392de62673eed6a3f14758107">&#9670;&nbsp;</a></span>Entries()</h2>
+<a id="a0aa5c3c546fe3e4a0c2db80eb2be0aa2" name="a0aa5c3c546fe3e4a0c2db80eb2be0aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa5c3c546fe3e4a0c2db80eb2be0aa2">&#9670;&nbsp;</a></span>Entries()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,7 +257,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> &gt; &gt; &amp; ara::com::someip::sd::SomeIpSdMessage::Entries </td>
+          <td class="memname">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classara_1_1com_1_1entry_1_1Entry.html">entry::Entry</a> &gt; &gt; &amp; ara::com::someip::sd::SomeIpSdMessage::Entries </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
