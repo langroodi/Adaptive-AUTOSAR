@@ -18,6 +18,7 @@ namespace ara
                     uint32_t repetitionMax) : SomeIpSdAgent<helper::SdClientState>(networkLayer),
                                               mServiceNotseenState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mServiceSeenState(&mTtlTimer, &mOfferingConditionVariable),
+                                              mStoppedState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mInitialWaitState(
                                                   &mTtlTimer,
                                                   std::bind(&SomeIpSdClient::sendFind, this),
@@ -29,7 +30,6 @@ namespace ara
                                                   repetitionMax,
                                                   repetitionBaseDelay),
                                               mServiceReadyState(&mTtlTimer, &mOfferingConditionVariable),
-                                              mStoppedState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mOfferingLock(mOfferingMutex, std::defer_lock),
                                               mStopOfferingLock(mStopOfferingMutex, std::defer_lock),
                                               mValidState{true},
@@ -220,6 +220,7 @@ namespace ara
 
                 SomeIpSdClient::~SomeIpSdClient()
                 {
+                    StateMachine.Disable();
                     // Client state is not valid anymore during destruction.
                     mValidState = false;
                     // Release the threads waiting for the condition variables before desctruction

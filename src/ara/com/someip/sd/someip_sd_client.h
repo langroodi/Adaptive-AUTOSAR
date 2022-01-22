@@ -33,10 +33,10 @@ namespace ara
                     std::condition_variable mStopOfferingConditionVariable;
                     fsm::ServiceNotseenState mServiceNotseenState;
                     fsm::ServiceSeenState mServiceSeenState;
+                    fsm::StoppedState mStoppedState;
                     fsm::ClientInitialWaitState mInitialWaitState;
                     fsm::ClientRepetitionState mRepetitionState;
                     fsm::ServiceReadyState mServiceReadyState;
-                    fsm::StoppedState mStoppedState;
                     SomeIpSdMessage mFindServieMessage;
                     bool mValidState;
                     const uint16_t mServiceId;

@@ -54,7 +54,7 @@ namespace ara
 
                     ServiceSeenState::~ServiceSeenState()
                     {
-                        ServiceStopped();
+                        Timer->ResetExpirationCallback();
                     }
                 }
             }
