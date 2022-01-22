@@ -220,7 +220,6 @@ namespace ara
 
                 SomeIpSdClient::~SomeIpSdClient()
                 {
-                    StateMachine.Disable();
                     // Client state is not valid anymore during destruction.
                     mValidState = false;
                     // Release the threads waiting for the condition variables before desctruction
