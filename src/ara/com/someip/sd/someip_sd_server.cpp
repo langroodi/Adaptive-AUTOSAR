@@ -46,12 +46,6 @@ namespace ara
                                               mMajorVersion{majorVersion},
                                               mMinorVersion{minorVersion}
                 {
-                    this->StateMachine.Initialize({&mNotReadyState,
-                                                   &mInitialWaitState,
-                                                   &mRepetitionState,
-                                                   &mMainState},
-                                                  helper::SdServerState::NotReady);
-
                     auto _offerServiceEntry{
                         entry::ServiceEntry::CreateOfferServiceEntry(
                             serviceId,
@@ -85,6 +79,12 @@ namespace ara
 
                     _stopOfferEntry->AddFirstOption(std::move(_stopOfferEndpointOption));
                     mStopOfferMessage.AddEntry(std::move(_stopOfferEntry));
+
+                    this->StateMachine.Initialize({&mNotReadyState,
+                                                   &mInitialWaitState,
+                                                   &mRepetitionState,
+                                                   &mMainState},
+                                                  helper::SdServerState::NotReady);
 
                     auto _receiver =
                         std::bind(

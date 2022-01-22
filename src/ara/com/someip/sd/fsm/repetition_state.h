@@ -39,9 +39,11 @@ namespace ara
                                 {
                                     break;
                                 }
-
-                                // Invoke the on timer expiration callback
-                                this->OnTimerExpired();
+                                else
+                                {
+                                    // Invoke the on timer expiration callback
+                                    this->OnTimerExpired();
+                                }
                             }
                         }
 

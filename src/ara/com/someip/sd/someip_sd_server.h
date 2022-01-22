@@ -24,12 +24,12 @@ namespace ara
                 {
                 private:
                     std::queue<SomeIpSdMessage> mMessageBuffer;
+                    SomeIpSdMessage mOfferServiceMessage;
+                    SomeIpSdMessage mStopOfferMessage;
                     fsm::NotReadyState mNotReadyState;
                     fsm::InitialWaitState<helper::SdServerState> mInitialWaitState;
                     fsm::RepetitionState<helper::SdServerState> mRepetitionState;
                     fsm::MainState mMainState;
-                    SomeIpSdMessage mOfferServiceMessage;
-                    SomeIpSdMessage mStopOfferMessage;
                     const uint16_t mServiceId;
                     const uint16_t mInstanceId;
                     const uint8_t mMajorVersion;
