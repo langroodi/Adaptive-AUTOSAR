@@ -18,7 +18,6 @@ namespace ara
                     uint32_t repetitionMax) : SomeIpSdAgent<helper::SdClientState>(networkLayer),
                                               mServiceNotseenState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mServiceSeenState(&mTtlTimer, &mOfferingConditionVariable),
-                                              mStoppedState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mInitialWaitState(
                                                   &mTtlTimer,
                                                   std::bind(&SomeIpSdClient::sendFind, this),
@@ -29,6 +28,7 @@ namespace ara
                                                   std::bind(&SomeIpSdClient::sendFind, this),
                                                   repetitionMax,
                                                   repetitionBaseDelay),
+                                              mStoppedState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mServiceReadyState(&mTtlTimer, &mOfferingConditionVariable),
                                               mOfferingLock(mOfferingMutex, std::defer_lock),
                                               mStopOfferingLock(mStopOfferingMutex, std::defer_lock),
@@ -147,6 +147,10 @@ namespace ara
                     switch (state)
                     {
                     case helper::SdClientState::ServiceNotSeen:
+                        // First, ensure that the previous thread is gracefully finished
+                        mTtlTimer.Cancel();
+                        Join();
+
                         this->Future =
                             std::async(
                                 std::launch::async,
@@ -154,20 +158,17 @@ namespace ara
                                 &mServiceNotseenState);
                         break;
                     case helper::SdClientState::ServiceSeen:
-                        this->Future =
-                            std::async(
-                                std::launch::async,
-                                &fsm::ServiceSeenState::ServiceRequested,
-                                &mServiceSeenState);
+                        mServiceSeenState.ServiceRequested();
                         break;
                     }
                 }
 
                 void SomeIpSdClient::StopAgent()
                 {
-                    mTtlTimer.Cancel();
                     mServiceReadyState.ServiceNotRequested();
                     mStoppedState.ServiceNotRequested();
+                    // Send a synchronized cancel signal to all the state
+                    mTtlTimer.Cancel();
                 }
 
                 bool SomeIpSdClient::TryWaitUntiServiceOffered(int duration)
@@ -226,6 +227,7 @@ namespace ara
                     mOfferingConditionVariable.notify_one();
                     mStopOfferingConditionVariable.notify_one();
 
+                    mServiceNotseenState.ResetEverRequested();
                     Stop();
                     Join();
                 }

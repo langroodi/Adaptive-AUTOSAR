@@ -20,6 +20,8 @@ namespace ara
                     {
                     private:
                         std::condition_variable *const mConditionVariable;
+                        bool mEverRequested;
+                        helper::SdClientState mNextState;
 
                     protected:
                         void Deactivate(helper::SdClientState nextState) override;
@@ -39,9 +41,13 @@ namespace ara
                         void Activate(helper::SdClientState previousState) override;
 
                         /// @brief Inform the state that the client's service is requested
+                        /// @note Due to blocking, this function should be called from a separate thread.
                         void ServiceRequested();
 
-                        void ServiceOffered(uint32_t ttl) override;
+                        /// @brief Forget about that the client is ever requested
+                        void ResetEverRequested() noexcept;
+
+                        void ServiceOffered(uint32_t ttl) noexcept override;
                     };
                 }
             }

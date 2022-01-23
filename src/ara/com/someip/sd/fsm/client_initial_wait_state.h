@@ -36,7 +36,7 @@ namespace ara
                         ClientInitialWaitState(const ClientInitialWaitState &) = delete;
                         ClientInitialWaitState &operator=(const ClientInitialWaitState &) = delete;
 
-                        void ServiceOffered(uint32_t ttl) override;
+                        void ServiceOffered(uint32_t ttl) noexcept override;
                     };
                 }
             }

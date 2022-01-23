@@ -1,6 +1,7 @@
 #ifndef SERVICE_SEEN_STATE_H
 #define SERVICE_SEEN_STATE_H
 
+#include <atomic>
 #include "./client_service_state.h"
 
 namespace ara
@@ -19,8 +20,9 @@ namespace ara
                     {
                     private:
                         std::condition_variable *const mConditionVariable;
+                        std::atomic<helper::SdClientState> mNextState;
 
-                        void onTimerExpired();
+                        void waitForCountdown();
 
                     protected:
                         void Deactivate(helper::SdClientState nextState) override;
@@ -36,17 +38,16 @@ namespace ara
                         ServiceSeenState() = delete;
                         ServiceSeenState(const ServiceSeenState &) = delete;
                         ServiceSeenState &operator=(const ServiceSeenState &) = delete;
-                        ~ServiceSeenState() override;
 
                         void Activate(helper::SdClientState previousState) override;
 
                         /// @brief Inform the state that the client's service is requested
                         void ServiceRequested();
 
-                        void ServiceOffered(uint32_t ttl) override;
+                        void ServiceOffered(uint32_t ttl) noexcept override;
 
                         /// @brief Inform the state that the service has been stopped
-                        void ServiceStopped();
+                        void ServiceStopped() noexcept;
                     };
                 }
             }

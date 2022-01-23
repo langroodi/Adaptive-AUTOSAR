@@ -15,48 +15,38 @@ namespace ara
                         std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::Stopped),
                                                                                ClientServiceState(ttlTimer),
                                                                                mConditionVariable{conditionVariable},
-                                                                               mActivated{false},
-                                                                               mClientRequested{true}
+                                                                               mNextState{helper::SdClientState::Stopped}
                     {
                     }
 
                     void StoppedState::Activate(helper::SdClientState previousState)
                     {
-                        mActivated = true;
-
                         // Notify the condition variable that the service is not offered yet
                         mConditionVariable->notify_one();
 
-                        if (!mClientRequested)
+                        if (mNextState == GetState())
                         {
-                            Transit(helper::SdClientState::ServiceNotSeen);
+                            Timer->WaitForSignal();
                         }
+
+                        Transit(mNextState);
                     }
 
                     void StoppedState::ServiceNotRequested()
                     {
-                        if (mActivated)
-                        {
-                            Transit(helper::SdClientState::ServiceNotSeen);
-                        }
-                        else
-                        {
-                            // Reset the client requested flag
-                            mClientRequested = false;
-                        }
+                        mNextState = helper::SdClientState::ServiceNotSeen;
                     }
 
-                    void StoppedState::ServiceOffered(uint32_t ttl)
+                    void StoppedState::ServiceOffered(uint32_t ttl) noexcept
                     {
-                        Timer->Reset(ttl);
-                        Transit(helper::SdClientState::ServiceReady);
+                        mNextState = helper::SdClientState::ServiceReady;
+                        Timer->Set(ttl);
                     }
 
                     void StoppedState::Deactivate(helper::SdClientState nextState)
                     {
-                        // Set the client requested to default
-                        mClientRequested = true;
-                        mActivated = false;
+                        // Reset the next state variable to prevent an undefined behaviour in the next activation
+                        mNextState = GetState();
                     }
                 };
             }

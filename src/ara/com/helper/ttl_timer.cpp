@@ -8,95 +8,43 @@ namespace ara
     {
         namespace helper
         {
-            TtlTimer::TtlTimer() noexcept : mLock(mMutex, std::defer_lock),
-                                            mRunning{false}
+            TtlTimer::TtlTimer() noexcept : mLock(mMutex, std::defer_lock)
             {
             }
 
-            void TtlTimer::countdown()
+            void TtlTimer::WaitForSignal()
             {
-                while (mRunning)
-                {
-                    mLock.lock();
-                    std::cv_status _status =
-                        mConditionVariable.wait_for(
-                            mLock, std::chrono::seconds(mTtl));
-                    mLock.unlock();
-
-                    // Invoke the timer expiration callback if timeout occurred
-                    if (_status == std::cv_status::timeout)
-                    {
-                        mRunning = false;
-                        if (mOnExpired)
-                        {
-                            mOnExpired();
-                        }
-                    }
-                }
+                mLock.lock();
+                mConditionVariable.wait(mLock);
+                mLock.unlock();
             }
 
-            void TtlTimer::SetExpirationCallback(std::function<void()> callback)
+            bool TtlTimer::Wait()
             {
-                mOnExpired = callback;
+                mLock.lock();
+                std::cv_status _status =
+                    mConditionVariable.wait_for(
+                        mLock, std::chrono::seconds(mTtl));
+                mLock.unlock();
+
+                bool _result = _status == std::cv_status::no_timeout;
+                return _result;
             }
 
-            void TtlTimer::ResetExpirationCallback() noexcept
+            void TtlTimer::Set(uint32_t ttl) noexcept
             {
-                mOnExpired = std::function<void()>();
-            }
-
-            void TtlTimer::Set(uint32_t ttl)
-            {
-                if (mRunning)
-                {
-                    throw std::logic_error("The timer has been set already.");
-                }
-                else
-                {
-                    mTtl = ttl;
-                    mRunning = true;
-                    if (mFuture.valid())
-                    {
-                        mFuture.get();
-                    }
-
-                    mFuture =
-                        std::async(std::launch::async, &TtlTimer::countdown, this);
-                }
-            }
-
-            void TtlTimer::Reset(uint32_t ttl)
-            {
-                if (mRunning)
-                {
-                    mTtl = ttl;
-                    mConditionVariable.notify_one();
-                }
-                else
-                {
-                    Set(ttl);
-                }
-            }
-
-            void TtlTimer::Cancel()
-            {
-                mRunning = false;
+                mTtl = ttl;
                 mConditionVariable.notify_one();
-
-                // Wait for the timer's thread to cancel the timer gracefully
-                if (mFuture.valid())
-                {
-                    mFuture.get();
-                }
             }
 
-            TtlTimer::~TtlTimer()
+            void TtlTimer::Cancel() noexcept
             {
-                // Cancel the timer before destruction if it is still running
-                if (mRunning)
-                {
-                    Cancel();
-                }
+                mConditionVariable.notify_one();
+            }
+
+            TtlTimer::~TtlTimer() noexcept
+            {
+                mConditionVariable.notify_one();
             }
         }
     }

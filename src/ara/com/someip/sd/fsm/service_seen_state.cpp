@@ -14,47 +14,56 @@ namespace ara
                         helper::TtlTimer *ttlTimer,
                         std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceSeen),
                                                                                ClientServiceState(ttlTimer),
-                                                                               mConditionVariable{conditionVariable}
+                                                                               mConditionVariable{conditionVariable},
+                                                                               mNextState{helper::SdClientState::ServiceSeen}
                     {
                     }
 
-                    void ServiceSeenState::onTimerExpired()
+                    void ServiceSeenState::waitForCountdown()
                     {
-                        Transit(helper::SdClientState::ServiceNotSeen);
+                        // Wait while the next state equals to the current state
+                        while (mNextState == GetState())
+                        {
+                            bool _timeout = !Timer->Wait();
+
+                            if (_timeout)
+                            {
+                                // TTL is expired.
+                                mNextState = helper::SdClientState::ServiceNotSeen;
+                            }
+                        }
                     }
 
                     void ServiceSeenState::Activate(helper::SdClientState previousState)
                     {
                         mConditionVariable->notify_one();
-                        auto _callback =
-                            std::bind(&ServiceSeenState::onTimerExpired, this);
-                        Timer->SetExpirationCallback(_callback);
+                        waitForCountdown();
+                        Transit(mNextState);
                     }
 
                     void ServiceSeenState::ServiceRequested()
                     {
-                        Transit(helper::SdClientState::ServiceReady);
-                    }
-
-                    void ServiceSeenState::ServiceOffered(uint32_t ttl)
-                    {
-                        Timer->Reset(ttl);
-                    }
-
-                    void ServiceSeenState::ServiceStopped()
-                    {
+                        mNextState = helper::SdClientState::ServiceReady;
                         Timer->Cancel();
-                        Transit(helper::SdClientState::ServiceNotSeen);
+                    }
+
+                    void ServiceSeenState::ServiceOffered(uint32_t ttl) noexcept
+                    {
+                        // Just reset the TTL, but stay in the same state
+                        // because the client is still not requested
+                        Timer->Set(ttl);
+                    }
+
+                    void ServiceSeenState::ServiceStopped() noexcept
+                    {
+                        mNextState = helper::SdClientState::ServiceNotSeen;
+                        Timer->Cancel();
                     }
 
                     void ServiceSeenState::Deactivate(helper::SdClientState nextState)
                     {
-                        Timer->ResetExpirationCallback();
-                    }
-
-                    ServiceSeenState::~ServiceSeenState()
-                    {
-                        Timer->ResetExpirationCallback();
+                        // Reset the next state variable to prevent en undefined behaviour in the next activation
+                        mNextState = GetState();
                     }
                 }
             }

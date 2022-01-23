@@ -32,11 +32,11 @@ namespace ara
                         TimerSetState::Activate(previousState);
                     }
 
-                    void ClientInitialWaitState::ServiceOffered(uint32_t ttl)
+                    void ClientInitialWaitState::ServiceOffered(uint32_t ttl) noexcept
                     {
                         // Instead of going to repetition state after interruption, transit to the service ready state.
                         SetNextState(helper::SdClientState::ServiceReady);
-                        Timer->Reset(ttl);
+                        Timer->Set(ttl);
                         Interrupt();
                     }
                 }

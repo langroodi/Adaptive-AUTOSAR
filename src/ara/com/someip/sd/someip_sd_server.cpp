@@ -169,12 +169,12 @@ namespace ara
                     mInitialWaitState.ServiceStopped();
                     mRepetitionState.ServiceStopped();
                     mMainState.ServiceStopped();
+                    Join();
                 }
 
                 SomeIpSdServer::~SomeIpSdServer()
                 {
                     Stop();
-                    Join();
                 }
             }
         }

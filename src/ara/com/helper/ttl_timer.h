@@ -3,8 +3,6 @@
 
 #include <mutex>
 #include <condition_variable>
-#include <functional>
-#include <future>
 
 namespace ara
 {
@@ -20,38 +18,29 @@ namespace ara
                 std::mutex mMutex;
                 std::unique_lock<std::mutex> mLock;
                 std::condition_variable mConditionVariable;
-                std::future<void> mFuture;
-                bool mRunning;
                 uint32_t mTtl;
-                std::function<void()> mOnExpired;
-
-                void countdown();
 
             public:
                 TtlTimer() noexcept;
                 TtlTimer(const TtlTimer &) = delete;
                 TtlTimer &operator=(const TtlTimer &) = delete;
-                ~TtlTimer();
+                ~TtlTimer() noexcept;
 
-                /// @brief Set a callback to be invoked on the timer's expiration
-                /// @param callback Callback to be invoked on the expiration from the timer's thread
-                void SetExpirationCallback(std::function<void()> callback);
+                /// @brief Block till Cancel or Set method is called
+                /// @see Cancel
+                /// @see Set
+                void WaitForSignal();
 
-                /// @brief Reset the timer's expiration callback
-                void ResetExpirationCallback() noexcept;
+                /// @brief Wait for the timer to expire or reset
+                /// @returns True if the timer is reset, other false in case of expiration
+                bool Wait();
 
                 /// @brief Set the TTL timer
                 /// @param ttl Time to live in seconds
-                /// @throws std::logic_error Throws when the timer has been set already. Call Reset(uint32_t) instead.
-                void Set(uint32_t ttl);
+                void Set(uint32_t ttl) noexcept;
 
-                /// @brief Reset the TTL timer
-                /// @param ttl New time to live in seconds
-                void Reset(uint32_t ttl);
-
-                /// @brief Cancel the timer
-                /// @note The function blocks the caller till the timer stops.
-                void Cancel();
+                /// @brief Cancel the timer immediately
+                void Cancel() noexcept;
             };
         }
     }

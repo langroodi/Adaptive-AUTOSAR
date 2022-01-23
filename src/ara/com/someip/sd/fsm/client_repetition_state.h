@@ -36,7 +36,7 @@ namespace ara
                         ClientRepetitionState(const ClientRepetitionState &) = delete;
                         ClientRepetitionState &operator=(const ClientRepetitionState &) = delete;
 
-                        void ServiceOffered(uint32_t ttl) override;
+                        void ServiceOffered(uint32_t ttl) noexcept override;
                     };
                 }
             }

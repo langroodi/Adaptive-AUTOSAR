@@ -15,69 +15,58 @@ namespace ara
                         std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceReady),
                                                                                ClientServiceState(ttlTimer),
                                                                                mConditionVariable{conditionVariable},
-                                                                               mActivated{false},
-                                                                               mClientRequested{true}
+                                                                               mNextState{helper::SdClientState::ServiceReady}
                     {
                     }
 
-                    void ServiceReadyState::onTimerExpired()
+                    void ServiceReadyState::waitForCountdown()
                     {
-                        Transit(helper::SdClientState::InitialWaitPhase);
+                        // Wait while the next state equals to the current state
+                        while (mNextState == GetState())
+                        {
+                            bool _timeout = !Timer->Wait();
+
+                            if (_timeout)
+                            {
+                                // TTL is expired while both client and server are up.
+                                mNextState = helper::SdClientState::InitialWaitPhase;
+                            }
+                        }
                     }
 
                     void ServiceReadyState::Activate(helper::SdClientState previousState)
                     {
-                        mActivated = true;
-
-                        if (!mClientRequested)
-                        {
-                            Transit(helper::SdClientState::ServiceSeen);
-                        }
-
                         // Notify the condition variable that the service has been offered
                         mConditionVariable->notify_one();
 
-                        auto _callback =
-                            std::bind(&ServiceReadyState::onTimerExpired, this);
-                        Timer->SetExpirationCallback(_callback);
+                        waitForCountdown();
+                        Transit(mNextState);
                     }
 
-                    void ServiceReadyState::ServiceNotRequested()
+                    void ServiceReadyState::ServiceNotRequested() noexcept
                     {
-                        if (mActivated)
-                        {
-                            Transit(helper::SdClientState::ServiceSeen);
-                        }
-                        else
-                        {
-                            // Reset the client requested flag
-                            mClientRequested = false;
-                        }
+                        // Client is not requested anymore
+                        mNextState = helper::SdClientState::ServiceSeen;
                     }
 
-                    void ServiceReadyState::ServiceOffered(uint32_t ttl)
+                    void ServiceReadyState::ServiceOffered(uint32_t ttl) noexcept
                     {
-                        Timer->Reset(ttl);
+                        // Just reset the TTL, and stay in the same state
+                        // because the client is still requested
+                        Timer->Set(ttl);
                     }
 
-                    void ServiceReadyState::ServiceStopped()
+                    void ServiceReadyState::ServiceStopped() noexcept
                     {
+                        // Server is stopped while the client is still requested
+                        mNextState = helper::SdClientState::Stopped;
                         Timer->Cancel();
-                        Transit(helper::SdClientState::Stopped);
                     }
 
                     void ServiceReadyState::Deactivate(helper::SdClientState nextState)
                     {
-                        Timer->ResetExpirationCallback();
-                        
-                        // Set the client requested flag to default
-                        mClientRequested = true;
-                        mActivated = false;
-                    }
-
-                    ServiceReadyState::~ServiceReadyState()
-                    {
-                        Timer->ResetExpirationCallback();
+                        // Reset the next state variable to prevent an undefined behaviour in the next activation
+                        mNextState = GetState();
                     }
                 }
             }

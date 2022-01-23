@@ -1,6 +1,7 @@
 #ifndef SERVICE_READY_STATE_H
 #define SERVICE_READY_STATE_H
 
+#include <atomic>
 #include "./client_service_state.h"
 
 namespace ara
@@ -18,11 +19,10 @@ namespace ara
                     class ServiceReadyState : public ClientServiceState
                     {
                     private:
-                        std::condition_variable * const mConditionVariable;
-                        bool mActivated;
-                        bool mClientRequested;
-                        
-                        void onTimerExpired();
+                        std::condition_variable *const mConditionVariable;
+                        std::atomic<helper::SdClientState> mNextState;
+
+                        void waitForCountdown();
 
                     protected:
                         void Deactivate(helper::SdClientState nextState) override;
@@ -38,17 +38,17 @@ namespace ara
                         ServiceReadyState() = delete;
                         ServiceReadyState(const ServiceReadyState &) = delete;
                         ServiceReadyState &operator=(const ServiceReadyState &) = delete;
-                        ~ServiceReadyState() override;
 
                         void Activate(helper::SdClientState previousState) override;
 
                         /// @brief Inform the state that the client's service is not requested anymore
-                        void ServiceNotRequested();
+                        /// @note Due to synchronization, the function does NOT cancel the TTL timer.
+                        void ServiceNotRequested() noexcept;
 
-                        void ServiceOffered(uint32_t ttl) override;
+                        void ServiceOffered(uint32_t ttl) noexcept override;
 
                         /// @brief Inform the state that the service has been stopped
-                        void ServiceStopped();
+                        void ServiceStopped() noexcept;
                     };
                 }
             }

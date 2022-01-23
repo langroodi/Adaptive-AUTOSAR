@@ -128,11 +128,8 @@ namespace ara
 
                         virtual ~TimerSetState() override
                         {
-                            if (!mStopped)
-                            {
-                                // Set a fake stop signal, otherwise the timer loop may never end (e.g., in the main phase).
-                                ServiceStopped();
-                            }
+                            // Set a fake stop signal, otherwise the timer loop may never end (e.g., in the main phase).
+                            ServiceStopped();
                         }
                     };
                 }
