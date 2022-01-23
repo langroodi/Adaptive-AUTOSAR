@@ -8,7 +8,8 @@ namespace ara
     {
         namespace helper
         {
-            TtlTimer::TtlTimer() noexcept : mLock(mMutex, std::defer_lock)
+            TtlTimer::TtlTimer() noexcept : mLock(mMutex, std::defer_lock),
+                                            mTtl{0}
             {
             }
 

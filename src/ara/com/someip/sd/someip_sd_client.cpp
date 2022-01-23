@@ -16,6 +16,7 @@ namespace ara
                     int initialDelayMax,
                     int repetitionBaseDelay,
                     uint32_t repetitionMax) : SomeIpSdAgent<helper::SdClientState>(networkLayer),
+                                              mValidState{true},
                                               mServiceNotseenState(&mTtlTimer, &mStopOfferingConditionVariable),
                                               mServiceSeenState(&mTtlTimer, &mOfferingConditionVariable),
                                               mInitialWaitState(
@@ -32,7 +33,6 @@ namespace ara
                                               mServiceReadyState(&mTtlTimer, &mOfferingConditionVariable),
                                               mOfferingLock(mOfferingMutex, std::defer_lock),
                                               mStopOfferingLock(mStopOfferingMutex, std::defer_lock),
-                                              mValidState{true},
                                               mServiceId{serviceId}
                 {
                     this->StateMachine.Initialize(
@@ -167,29 +167,43 @@ namespace ara
                 {
                     mServiceReadyState.ServiceNotRequested();
                     mStoppedState.ServiceNotRequested();
-                    // Send a synchronized cancel signal to all the state
-                    mTtlTimer.Cancel();
+
+                    if (mValidState)
+                    {
+                        // Send a synchronized cancel signal to all the state
+                        mTtlTimer.Cancel();
+                    }
+                    else
+                    {
+                        // Send a synchronized zero-TTL set signal to all the state for stopping immediately
+                        mTtlTimer.Set(0);
+                    }
                 }
 
                 bool SomeIpSdClient::TryWaitUntiServiceOffered(int duration)
                 {
                     bool _result;
-                    helper::SdClientState _state = GetState();
 
-                    if (_state == helper::SdClientState::ServiceReady ||
-                        _state == helper::SdClientState::ServiceSeen)
-                    {
-                        // The service has been already offered, so the function should return immediately.
-                        _result = true;
-                    }
-                    else
+                    if (mValidState)
                     {
                         mOfferingLock.lock();
-                        std::cv_status _status =
+                        std::cv_status _cvStatus =
                             mOfferingConditionVariable.wait_for(
                                 mOfferingLock, std::chrono::milliseconds(duration));
                         mOfferingLock.unlock();
-                        _result = mValidState && (_status != std::cv_status::timeout);
+
+                        // Get the state in case of being already in the desired state
+                        // leads to a timeout while the service is already offered
+                        helper::SdClientState _state = GetState();
+
+                        _result =
+                            mValidState && (_cvStatus == std::cv_status::no_timeout ||
+                                            _state == helper::SdClientState::ServiceReady ||
+                                            _state == helper::SdClientState::ServiceSeen);
+                    }
+                    else
+                    {
+                        _result = false;
                     }
 
                     return _result;
@@ -198,22 +212,27 @@ namespace ara
                 bool SomeIpSdClient::TryWaitUntiServiceOfferStopped(int duration)
                 {
                     bool _result;
-                    helper::SdClientState _state = GetState();
 
-                    if (_state == helper::SdClientState::Stopped ||
-                        _state == helper::SdClientState::ServiceNotSeen)
-                    {
-                        // Offering the service has been already stopped, so the function should return immediately.
-                        _result = true;
-                    }
-                    else
+                    if (mValidState)
                     {
                         mStopOfferingLock.lock();
-                        std::cv_status _status =
+                        std::cv_status _cvStatus =
                             mStopOfferingConditionVariable.wait_for(
                                 mStopOfferingLock, std::chrono::milliseconds(duration));
                         mStopOfferingLock.unlock();
-                        _result = mValidState && (_status != std::cv_status::timeout);
+
+                        // Get the state in case of being already in the desired state
+                        // leads to a timeout while the service offering is already stopped
+                        helper::SdClientState _state = GetState();
+
+                        _result =
+                            mValidState && (_cvStatus == std::cv_status::no_timeout ||
+                                            _state == helper::SdClientState::Stopped ||
+                                            _state == helper::SdClientState::ServiceNotSeen);
+                    }
+                    else
+                    {
+                        _result = false;
                     }
 
                     return _result;

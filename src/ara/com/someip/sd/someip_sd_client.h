@@ -25,6 +25,7 @@ namespace ara
                 {
                 private:
                     helper::TtlTimer mTtlTimer;
+                    bool mValidState;
                     std::mutex mOfferingMutex;
                     std::unique_lock<std::mutex> mOfferingLock;
                     std::condition_variable mOfferingConditionVariable;
@@ -38,7 +39,6 @@ namespace ara
                     fsm::StoppedState mStoppedState;
                     fsm::ServiceReadyState mServiceReadyState;
                     SomeIpSdMessage mFindServieMessage;
-                    bool mValidState;
                     const uint16_t mServiceId;
 
                     void sendFind();

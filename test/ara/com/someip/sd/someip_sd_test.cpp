@@ -109,6 +109,7 @@ namespace ara
                     Client.Start();
                     Client.TryWaitUntiServiceOffered(WaitDuration);
                     Client.Stop();
+                    Client.TryWaitUntiServiceOffered(WaitDuration);
 
                     EXPECT_EQ(Client.GetState(), cServiceSeenState);
                 }
@@ -138,6 +139,7 @@ namespace ara
                     Server.Stop();
                     Client.TryWaitUntiServiceOfferStopped(WaitDuration);
                     Client.Stop();
+                    Client.TryWaitUntiServiceOfferStopped(WaitDuration);
 
                     EXPECT_EQ(Client.GetState(), cServiceNotSeen);
                 }
