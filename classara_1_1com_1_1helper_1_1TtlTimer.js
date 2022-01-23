@@ -1,8 +1,7 @@
 var classara_1_1com_1_1helper_1_1TtlTimer =
 [
-    [ "Cancel", "classara_1_1com_1_1helper_1_1TtlTimer.html#a25f0b24c8290c38670cac12218d344c1", null ],
-    [ "Reset", "classara_1_1com_1_1helper_1_1TtlTimer.html#a4757e83ed69036a40e19a9b71977d83c", null ],
-    [ "ResetExpirationCallback", "classara_1_1com_1_1helper_1_1TtlTimer.html#a6798251191276990aaccc3df8cd13854", null ],
-    [ "Set", "classara_1_1com_1_1helper_1_1TtlTimer.html#a1620c04d90fab1ecd7929545e000620d", null ],
-    [ "SetExpirationCallback", "classara_1_1com_1_1helper_1_1TtlTimer.html#a86e8fe41b930356abd2c9d4b669dbf9d", null ]
+    [ "Cancel", "classara_1_1com_1_1helper_1_1TtlTimer.html#a855e0a6d203d1d6903162ddf54e67910", null ],
+    [ "Set", "classara_1_1com_1_1helper_1_1TtlTimer.html#a2e4ad7dd71586966f735418cdd4fbb65", null ],
+    [ "Wait", "classara_1_1com_1_1helper_1_1TtlTimer.html#aace8f58278baa274472093c8f9b22f24", null ],
+    [ "WaitForSignal", "classara_1_1com_1_1helper_1_1TtlTimer.html#a4f7937e052f4aea6f552b3ab69d8b2c3", null ]
 ];

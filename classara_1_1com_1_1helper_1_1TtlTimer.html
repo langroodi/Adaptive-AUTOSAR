@@ -112,78 +112,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2241225f6f6ad4f11886d46fd7a823a0"><td class="memItemLeft" align="right" valign="top"><a id="a2241225f6f6ad4f11886d46fd7a823a0" name="a2241225f6f6ad4f11886d46fd7a823a0"></a>
 <a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;)=delete</td></tr>
 <tr class="separator:a2241225f6f6ad4f11886d46fd7a823a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86e8fe41b930356abd2c9d4b669dbf9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a86e8fe41b930356abd2c9d4b669dbf9d">SetExpirationCallback</a> (std::function&lt; void()&gt; callback)</td></tr>
-<tr class="memdesc:a86e8fe41b930356abd2c9d4b669dbf9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback to be invoked on the timer's expiration.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a86e8fe41b930356abd2c9d4b669dbf9d">More...</a><br /></td></tr>
-<tr class="separator:a86e8fe41b930356abd2c9d4b669dbf9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6798251191276990aaccc3df8cd13854"><td class="memItemLeft" align="right" valign="top"><a id="a6798251191276990aaccc3df8cd13854" name="a6798251191276990aaccc3df8cd13854"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetExpirationCallback</b> () noexcept</td></tr>
-<tr class="memdesc:a6798251191276990aaccc3df8cd13854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the timer's expiration callback. <br /></td></tr>
-<tr class="separator:a6798251191276990aaccc3df8cd13854"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1620c04d90fab1ecd7929545e000620d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a1620c04d90fab1ecd7929545e000620d">Set</a> (uint32_t ttl)</td></tr>
-<tr class="memdesc:a1620c04d90fab1ecd7929545e000620d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the TTL timer.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a1620c04d90fab1ecd7929545e000620d">More...</a><br /></td></tr>
-<tr class="separator:a1620c04d90fab1ecd7929545e000620d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4757e83ed69036a40e19a9b71977d83c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4757e83ed69036a40e19a9b71977d83c">Reset</a> (uint32_t ttl)</td></tr>
-<tr class="memdesc:a4757e83ed69036a40e19a9b71977d83c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the TTL timer.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4757e83ed69036a40e19a9b71977d83c">More...</a><br /></td></tr>
-<tr class="separator:a4757e83ed69036a40e19a9b71977d83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25f0b24c8290c38670cac12218d344c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a25f0b24c8290c38670cac12218d344c1">Cancel</a> ()</td></tr>
-<tr class="memdesc:a25f0b24c8290c38670cac12218d344c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel the timer.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a25f0b24c8290c38670cac12218d344c1">More...</a><br /></td></tr>
-<tr class="separator:a25f0b24c8290c38670cac12218d344c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f7937e052f4aea6f552b3ab69d8b2c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4f7937e052f4aea6f552b3ab69d8b2c3">WaitForSignal</a> ()</td></tr>
+<tr class="memdesc:a4f7937e052f4aea6f552b3ab69d8b2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block till Cancel or Set method is called.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4f7937e052f4aea6f552b3ab69d8b2c3">More...</a><br /></td></tr>
+<tr class="separator:a4f7937e052f4aea6f552b3ab69d8b2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace8f58278baa274472093c8f9b22f24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#aace8f58278baa274472093c8f9b22f24">Wait</a> ()</td></tr>
+<tr class="memdesc:aace8f58278baa274472093c8f9b22f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the timer to expire or reset.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#aace8f58278baa274472093c8f9b22f24">More...</a><br /></td></tr>
+<tr class="separator:aace8f58278baa274472093c8f9b22f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4ad7dd71586966f735418cdd4fbb65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a2e4ad7dd71586966f735418cdd4fbb65">Set</a> (uint32_t ttl) noexcept</td></tr>
+<tr class="memdesc:a2e4ad7dd71586966f735418cdd4fbb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the TTL timer.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a2e4ad7dd71586966f735418cdd4fbb65">More...</a><br /></td></tr>
+<tr class="separator:a2e4ad7dd71586966f735418cdd4fbb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a855e0a6d203d1d6903162ddf54e67910"><td class="memItemLeft" align="right" valign="top"><a id="a855e0a6d203d1d6903162ddf54e67910" name="a855e0a6d203d1d6903162ddf54e67910"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Cancel</b> () noexcept</td></tr>
+<tr class="memdesc:a855e0a6d203d1d6903162ddf54e67910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel the timer immediately. <br /></td></tr>
+<tr class="separator:a855e0a6d203d1d6903162ddf54e67910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Time To Live countdown timer. </p>
 <dl class="section note"><dt>Note</dt><dd>The timer is not copyable. </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a25f0b24c8290c38670cac12218d344c1" name="a25f0b24c8290c38670cac12218d344c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25f0b24c8290c38670cac12218d344c1">&#9670;&nbsp;</a></span>Cancel()</h2>
+<a id="a2e4ad7dd71586966f735418cdd4fbb65" name="a2e4ad7dd71586966f735418cdd4fbb65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e4ad7dd71586966f735418cdd4fbb65">&#9670;&nbsp;</a></span>Set()</h2>
 
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ara::com::helper::TtlTimer::Cancel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Cancel the timer. </p>
-<dl class="section note"><dt>Note</dt><dd>The function blocks the caller till the timer stops. </dd></dl>
-
-</div>
-</div>
-<a id="a4757e83ed69036a40e19a9b71977d83c" name="a4757e83ed69036a40e19a9b71977d83c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4757e83ed69036a40e19a9b71977d83c">&#9670;&nbsp;</a></span>Reset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ara::com::helper::TtlTimer::Reset </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>ttl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reset the TTL timer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ttl</td><td>New time to live in seconds </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1620c04d90fab1ecd7929545e000620d" name="a1620c04d90fab1ecd7929545e000620d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1620c04d90fab1ecd7929545e000620d">&#9670;&nbsp;</a></span>Set()</h2>
-
-<div class="memitem">
-<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ara::com::helper::TtlTimer::Set </td>
@@ -193,6 +147,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetExpirationCallba
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Set the TTL timer. </p>
@@ -202,38 +161,48 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetExpirationCallba
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">std::logic_error</td><td>Throws when the timer has been set already. Call <a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4757e83ed69036a40e19a9b71977d83c" title="Reset the TTL timer.">Reset(uint32_t)</a> instead. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
-<a id="a86e8fe41b930356abd2c9d4b669dbf9d" name="a86e8fe41b930356abd2c9d4b669dbf9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86e8fe41b930356abd2c9d4b669dbf9d">&#9670;&nbsp;</a></span>SetExpirationCallback()</h2>
+<a id="aace8f58278baa274472093c8f9b22f24" name="aace8f58278baa274472093c8f9b22f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace8f58278baa274472093c8f9b22f24">&#9670;&nbsp;</a></span>Wait()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ara::com::helper::TtlTimer::SetExpirationCallback </td>
+          <td class="memname">bool ara::com::helper::TtlTimer::Wait </td>
           <td>(</td>
-          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set a callback to be invoked on the timer's expiration. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">callback</td><td>Callback to be invoked on the expiration from the timer's thread </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Wait for the timer to expire or reset. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the timer is reset, other false in case of expiration </dd></dl>
+
+</div>
+</div>
+<a id="a4f7937e052f4aea6f552b3ab69d8b2c3" name="a4f7937e052f4aea6f552b3ab69d8b2c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f7937e052f4aea6f552b3ab69d8b2c3">&#9670;&nbsp;</a></span>WaitForSignal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::com::helper::TtlTimer::WaitForSignal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Block till Cancel or Set method is called. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a855e0a6d203d1d6903162ddf54e67910" title="Cancel the timer immediately.">Cancel</a> </dd>
+<dd>
+<a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a2e4ad7dd71586966f735418cdd4fbb65" title="Set the TTL timer.">Set</a> </dd></dl>
 
 </div>
 </div>
