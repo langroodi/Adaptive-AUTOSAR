@@ -1,3 +1,0 @@
-repository='external project URL'
-module='https://github.com/langroodi/Async-BSD-Socket-Lib/archive/96b00d3a33fe03dfb3d7606fe9fcc28488e9e431.zip'
-tag=''
