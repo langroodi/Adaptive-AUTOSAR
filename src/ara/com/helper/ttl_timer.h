@@ -28,7 +28,7 @@ namespace ara
 
                 /// @brief Block till Cancel or Set method is called
                 /// @see Cancel
-                /// @see Set
+                /// @see Set(uint32_t)
                 void WaitForSignal();
 
                 /// @brief Wait for the timer to expire or reset

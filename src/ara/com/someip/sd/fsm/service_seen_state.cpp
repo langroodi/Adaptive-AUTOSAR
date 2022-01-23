@@ -43,21 +43,33 @@ namespace ara
 
                     void ServiceSeenState::ServiceRequested()
                     {
-                        mNextState = helper::SdClientState::ServiceReady;
-                        Timer->Cancel();
+                        // Only set the next state if it has not been set yet from the default value
+                        if (mNextState == GetState())
+                        {
+                            mNextState = helper::SdClientState::ServiceReady;
+                            Timer->Cancel();
+                        }
                     }
 
                     void ServiceSeenState::ServiceOffered(uint32_t ttl) noexcept
                     {
-                        // Just reset the TTL, but stay in the same state
-                        // because the client is still not requested
-                        Timer->Set(ttl);
+                        // Only set the TTL timer if the next state has not been set yet from the default value
+                        if (mNextState == GetState())
+                        {
+                            // Just reset the TTL, but stay in the same state
+                            // because the client is still not requested
+                            Timer->Set(ttl);
+                        }
                     }
 
                     void ServiceSeenState::ServiceStopped() noexcept
                     {
-                        mNextState = helper::SdClientState::ServiceNotSeen;
-                        Timer->Cancel();
+                        // Only set the next state if it has not been set yet from the default value
+                        if (mNextState == GetState())
+                        {
+                            mNextState = helper::SdClientState::ServiceNotSeen;
+                            Timer->Cancel();
+                        }
                     }
 
                     void ServiceSeenState::Deactivate(helper::SdClientState nextState)

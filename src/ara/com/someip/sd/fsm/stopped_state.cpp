@@ -34,13 +34,21 @@ namespace ara
 
                     void StoppedState::ServiceNotRequested()
                     {
-                        mNextState = helper::SdClientState::ServiceNotSeen;
+                        // Only set the next state if it has not been set yet from the default value
+                        if (mNextState == GetState())
+                        {
+                            mNextState = helper::SdClientState::ServiceNotSeen;
+                        }
                     }
 
                     void StoppedState::ServiceOffered(uint32_t ttl) noexcept
                     {
-                        mNextState = helper::SdClientState::ServiceReady;
-                        Timer->Set(ttl);
+                        // Only set the next state if it has not been set yet from the default value
+                        if (mNextState == GetState())
+                        {
+                            mNextState = helper::SdClientState::ServiceReady;
+                            Timer->Set(ttl);
+                        }
                     }
 
                     void StoppedState::Deactivate(helper::SdClientState nextState)

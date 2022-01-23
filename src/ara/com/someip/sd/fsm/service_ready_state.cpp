@@ -45,22 +45,34 @@ namespace ara
 
                     void ServiceReadyState::ServiceNotRequested() noexcept
                     {
-                        // Client is not requested anymore
-                        mNextState = helper::SdClientState::ServiceSeen;
+                        // Only set the next state if it has not been set yet from the default value
+                        if (mNextState == GetState())
+                        {
+                            // Client is not requested anymore
+                            mNextState = helper::SdClientState::ServiceSeen;
+                        }
                     }
 
                     void ServiceReadyState::ServiceOffered(uint32_t ttl) noexcept
                     {
-                        // Just reset the TTL, and stay in the same state
-                        // because the client is still requested
-                        Timer->Set(ttl);
+                        // Only set the TTL timer if the next state has not been set yet from the default value
+                        if (mNextState == GetState())
+                        {
+                            // Just reset the TTL, and stay in the same state
+                            // because the client is still requested
+                            Timer->Set(ttl);
+                        }
                     }
 
                     void ServiceReadyState::ServiceStopped() noexcept
                     {
-                        // Server is stopped while the client is still requested
-                        mNextState = helper::SdClientState::Stopped;
-                        Timer->Cancel();
+                        // Only set the next state if it has not been set yet from the default value
+                        if (mNextState == GetState())
+                        {
+                            // Server is stopped while the client is still requested
+                            mNextState = helper::SdClientState::Stopped;
+                            Timer->Cancel();
+                        }
                     }
 
                     void ServiceReadyState::Deactivate(helper::SdClientState nextState)

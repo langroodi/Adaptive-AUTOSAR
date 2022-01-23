@@ -32,15 +32,11 @@ namespace ara
                     public:
                         ClientServiceState(const ClientServiceState &) = delete;
                         ClientServiceState &operator=(const ClientServiceState &) = delete;
+                        virtual ~ClientServiceState() noexcept = default;
 
                         /// @brief Inform the state that the service is offered
                         /// @param ttl Received service offer entry TTL
                         virtual void ServiceOffered(uint32_t ttl) noexcept = 0;
-
-                        virtual ~ClientServiceState() override
-                        {
-                            Timer->Cancel();
-                        }
                     };
                 }
             }
