@@ -44,7 +44,7 @@ namespace ara
                 void Cancel() noexcept;
 
                 /// @brief Dispose the timer which causes all the waitings return immediately
-                /// @remarks Setting or cancelling the timer neutralizes the disposing state.
+                /// @remarks The side effect of this function call is irreversible.
                 void Dispose() noexcept;
             };
         }

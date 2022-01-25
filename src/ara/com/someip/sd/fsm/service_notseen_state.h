@@ -20,6 +20,7 @@ namespace ara
                     {
                     private:
                         std::condition_variable *const mConditionVariable;
+                        bool mDisposing;
                         bool mEverRequested;
                         helper::SdClientState mNextState;
 
@@ -44,8 +45,10 @@ namespace ara
                         /// @note Due to blocking, this function should be called from a separate thread.
                         void ServiceRequested();
 
-                        /// @brief Forget about that the client is ever requested
-                        void ResetEverRequested() noexcept;
+                        /// @brief Dispose the state to end the blocking caused by ServiceRequested
+                        /// @remarks The side effect of this function call is irreversible.
+                        /// @see ServiceRequested
+                        void Dispose() noexcept;
 
                         void ServiceOffered(uint32_t ttl) noexcept override;
                     };

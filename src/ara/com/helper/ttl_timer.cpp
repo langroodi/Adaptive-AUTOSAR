@@ -50,16 +50,12 @@ namespace ara
 
             void TtlTimer::Set(uint32_t ttl) noexcept
             {
-                // Neutralize disposing first
-                mDisposing = false;
                 mTtl = ttl;
                 mConditionVariable.notify_one();
             }
 
             void TtlTimer::Cancel() noexcept
             {
-                // Neutralize disposing first
-                mDisposing = false;
                 mConditionVariable.notify_one();
             }
 

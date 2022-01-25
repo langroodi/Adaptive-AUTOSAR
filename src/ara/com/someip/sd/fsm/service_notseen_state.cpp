@@ -15,6 +15,7 @@ namespace ara
                         std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceNotSeen),
                                                                                ClientServiceState(ttlTimer),
                                                                                mConditionVariable{conditionVariable},
+                                                                               mDisposing{false},
                                                                                mEverRequested{false},
                                                                                mNextState{helper::SdClientState::ServiceNotSeen}
 
@@ -25,9 +26,9 @@ namespace ara
                     {
                         mConditionVariable->notify_one();
                         
-                        // If the sevice client has ever been requested, keep
-                        // the state flow in the loop by waiting for the timer
-                        if (mEverRequested)
+                        // If the sevice client has ever been requested and it is no disposing,
+                        // keep the state flow in the loop by waiting for the timer
+                        if (mEverRequested && !mDisposing)
                         {
                             Timer->WaitForSignal();
                             Transit(mNextState);
@@ -47,9 +48,9 @@ namespace ara
                         Timer->Set(ttl);
                     }
 
-                    void ServiceNotseenState::ResetEverRequested() noexcept
+                    void ServiceNotseenState::Dispose() noexcept
                     {
-                        mEverRequested = false;
+                        mDisposing = true;
                     }
 
                     void ServiceNotseenState::Deactivate(helper::SdClientState nextState)

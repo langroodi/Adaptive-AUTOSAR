@@ -177,6 +177,8 @@ namespace ara
                     {
                         // Dispose the TTL timer to singal all the states for stopping immediately
                         mTtlTimer.Dispose();
+                        // Dipose the entry point state to stop the service offer monitoring
+                        mServiceNotseenState.Dispose();
                     }
                 }
 
@@ -246,7 +248,6 @@ namespace ara
                     mOfferingConditionVariable.notify_one();
                     mStopOfferingConditionVariable.notify_one();
 
-                    mServiceNotseenState.ResetEverRequested();
                     Stop();
                     Join();
                 }
