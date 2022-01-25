@@ -132,10 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a72db58fde953b4ee158c2e148b147252"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a72db58fde953b4ee158c2e148b147252">ServiceRequested</a> ()</td></tr>
 <tr class="memdesc:a72db58fde953b4ee158c2e148b147252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform the state that the client's service is requested.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a72db58fde953b4ee158c2e148b147252">More...</a><br /></td></tr>
 <tr class="separator:a72db58fde953b4ee158c2e148b147252"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeecae962bcf86a58a830b74555f4a37"><td class="memItemLeft" align="right" valign="top"><a id="aaeecae962bcf86a58a830b74555f4a37" name="aaeecae962bcf86a58a830b74555f4a37"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetEverRequested</b> () noexcept</td></tr>
-<tr class="memdesc:aaeecae962bcf86a58a830b74555f4a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget about that the client is ever requested. <br /></td></tr>
-<tr class="separator:aaeecae962bcf86a58a830b74555f4a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91fa3af6adafdd2a95275779bfe2562d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a91fa3af6adafdd2a95275779bfe2562d">Dispose</a> () noexcept</td></tr>
+<tr class="memdesc:a91fa3af6adafdd2a95275779bfe2562d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispose the state to end the blocking caused by ServiceRequested.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a91fa3af6adafdd2a95275779bfe2562d">More...</a><br /></td></tr>
+<tr class="separator:a91fa3af6adafdd2a95275779bfe2562d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a149e51a614a2ad8e7544e4996b7645e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a149e51a614a2ad8e7544e4996b7645e0">ServiceOffered</a> (uint32_t ttl) noexcept override</td></tr>
 <tr class="memdesc:a149e51a614a2ad8e7544e4996b7645e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform the state that the service is offered.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a149e51a614a2ad8e7544e4996b7645e0">More...</a><br /></td></tr>
 <tr class="separator:a149e51a614a2ad8e7544e4996b7645e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -304,6 +303,35 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="classara_1_1com_1_1helper_1_1MachineState.html#a270d70b243a5d20d2a55fab630d6b401">ara::com::helper::MachineState&lt; helper::SdClientState &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a91fa3af6adafdd2a95275779bfe2562d" name="a91fa3af6adafdd2a95275779bfe2562d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91fa3af6adafdd2a95275779bfe2562d">&#9670;&nbsp;</a></span>Dispose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::com::someip::sd::fsm::ServiceNotseenState::Dispose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dispose the state to end the blocking caused by ServiceRequested. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The side effect of this function call is irreversible. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a72db58fde953b4ee158c2e148b147252" title="Inform the state that the client&#39;s service is requested.">ServiceRequested</a> </dd></dl>
 
 </div>
 </div>

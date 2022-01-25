@@ -11,7 +11,8 @@ var searchData=
   ['diagudsnrcerrordomain_8',['DiagUdsNrcErrorDomain',['../classara_1_1diag_1_1DiagUdsNrcErrorDomain.html',1,'ara::diag']]],
   ['diagudsnrcexception_9',['DiagUdsNrcException',['../classara_1_1diag_1_1DiagUdsNrcException.html',1,'ara::diag']]],
   ['discardable_10',['Discardable',['../classara_1_1com_1_1option_1_1Option.html#ae4b72476201240a6f3d02396bb249c82',1,'ara::com::option::Option']]],
-  ['domain_11',['Domain',['../classara_1_1core_1_1ErrorCode.html#aa452d9fe447a099f35a0ba71dfd9cd7e',1,'ara::core::ErrorCode']]],
-  ['downloadservice_12',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
-  ['dtcinformation_13',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
+  ['dispose_11',['Dispose',['../classara_1_1com_1_1helper_1_1TtlTimer.html#a74a22044b328713d400677d99779ac4f',1,'ara::com::helper::TtlTimer::Dispose()'],['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a91fa3af6adafdd2a95275779bfe2562d',1,'ara::com::someip::sd::fsm::ServiceNotseenState::Dispose()']]],
+  ['domain_12',['Domain',['../classara_1_1core_1_1ErrorCode.html#aa452d9fe447a099f35a0ba71dfd9cd7e',1,'ara::core::ErrorCode']]],
+  ['downloadservice_13',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
+  ['dtcinformation_14',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
 ];
