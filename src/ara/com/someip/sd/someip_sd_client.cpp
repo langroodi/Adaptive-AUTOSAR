@@ -175,8 +175,8 @@ namespace ara
                     }
                     else
                     {
-                        // Send a synchronized zero-TTL set signal to all the state for stopping immediately
-                        mTtlTimer.Set(0);
+                        // Dispose the TTL timer to singal all the states for stopping immediately
+                        mTtlTimer.Dispose();
                     }
                 }
 

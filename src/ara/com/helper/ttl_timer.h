@@ -18,6 +18,7 @@ namespace ara
                 std::mutex mMutex;
                 std::unique_lock<std::mutex> mLock;
                 std::condition_variable mConditionVariable;
+                bool mDisposing;
                 uint32_t mTtl;
 
             public:
@@ -41,6 +42,10 @@ namespace ara
 
                 /// @brief Cancel the timer immediately
                 void Cancel() noexcept;
+
+                /// @brief Dispose the timer which causes all the waitings return immediately
+                /// @remarks Setting or cancelling the timer neutralizes the disposing state.
+                void Dispose() noexcept;
             };
         }
     }
