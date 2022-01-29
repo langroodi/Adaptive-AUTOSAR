@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1sd_1_1fsm
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ara::com::someip::sd::fsm::InitialWaitState&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -159,9 +160,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ServiceStopped</b> ()
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a86f2451ede33f7837708153c3e8c9fbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a86f2451ede33f7837708153c3e8c9fbe">SetTimer</a> () override</td></tr>
-<tr class="memdesc:a86f2451ede33f7837708153c3e8c9fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the phase time on state activation.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a86f2451ede33f7837708153c3e8c9fbe">More...</a><br /></td></tr>
-<tr class="separator:a86f2451ede33f7837708153c3e8c9fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a589b03b851da9717a7f47d23685e69"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a6a589b03b851da9717a7f47d23685e69">SetTimer</a> () override</td></tr>
+<tr class="memdesc:a6a589b03b851da9717a7f47d23685e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the phase time on state activation.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html#a6a589b03b851da9717a7f47d23685e69">More...</a><br /></td></tr>
+<tr class="separator:a6a589b03b851da9717a7f47d23685e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html">ara::com::someip::sd::fsm::TimerSetState&lt; T &gt;</a></td></tr>
 <tr class="memitem:a3362ecab527ba25add8743ed2feb82b0 inherit pro_methods_classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a3362ecab527ba25add8743ed2feb82b0">WaitFor</a> (std::chrono::milliseconds duration)</td></tr>
 <tr class="memdesc:a3362ecab527ba25add8743ed2feb82b0 inherit pro_methods_classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for certian period of time.  <a href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a3362ecab527ba25add8743ed2feb82b0">More...</a><br /></td></tr>
@@ -186,8 +187,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a500adcc937a0704aa5aee53c14509bb8 inherit pro_methods_classara_1_1com_1_1helper_1_1MachineState"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1helper_1_1MachineState.html#a500adcc937a0704aa5aee53c14509bb8">More...</a><br /></td></tr>
 <tr class="separator:a500adcc937a0704aa5aee53c14509bb8 inherit pro_methods_classara_1_1com_1_1helper_1_1MachineState"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a938d00a49807871bf8dc2ec2dcf43614"><td class="memItemLeft" align="right" valign="top"><a id="a938d00a49807871bf8dc2ec2dcf43614" name="a938d00a49807871bf8dc2ec2dcf43614"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>InitialDelayMin</b></td></tr>
+<tr class="memdesc:a938d00a49807871bf8dc2ec2dcf43614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial delay lower bound in milliseconds. <br /></td></tr>
+<tr class="separator:a938d00a49807871bf8dc2ec2dcf43614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac56270010db12cdf88ee96c0c6c7914b"><td class="memItemLeft" align="right" valign="top"><a id="ac56270010db12cdf88ee96c0c6c7914b" name="ac56270010db12cdf88ee96c0c6c7914b"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>InitialDelayMax</b></td></tr>
+<tr class="memdesc:ac56270010db12cdf88ee96c0c6c7914b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial delay higher bound in milliseconds. <br /></td></tr>
+<tr class="separator:ac56270010db12cdf88ee96c0c6c7914b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html">ara::com::someip::sd::fsm::TimerSetState&lt; T &gt;</a></td></tr>
 <tr class="memitem:a873841d1f98c8316a520fabc24870a91 inherit pro_attribs_classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState"><td class="memItemLeft" align="right" valign="top"><a id="a873841d1f98c8316a520fabc24870a91" name="a873841d1f98c8316a520fabc24870a91"></a>
 const std::function&lt; void()&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>OnTimerExpired</b></td></tr>
@@ -281,8 +290,8 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a86f2451ede33f7837708153c3e8c9fbe" name="a86f2451ede33f7837708153c3e8c9fbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86f2451ede33f7837708153c3e8c9fbe">&#9670;&nbsp;</a></span>SetTimer()</h2>
+<a id="a6a589b03b851da9717a7f47d23685e69" name="a6a589b03b851da9717a7f47d23685e69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a589b03b851da9717a7f47d23685e69">&#9670;&nbsp;</a></span>SetTimer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,7 +302,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">ara::com::someip::sd::fsm::InitialWaitState</a>&lt; T &gt;::SetTimer </td>
+          <td class="memname">virtual void <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1InitialWaitState.html">ara::com::someip::sd::fsm::InitialWaitState</a>&lt; T &gt;::SetTimer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -309,6 +318,8 @@ template&lt;typename T &gt; </div>
 <p>Set the phase time on state activation. </p>
 
 <p>Implements <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#af30184b7fc177870cd77f0af8e0f52fd">ara::com::someip::sd::fsm::TimerSetState&lt; T &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState.html#a9a88d9cbec8107a42438ef49752091fc">ara::com::someip::sd::fsm::ClientInitialWaitState</a>.</p>
 
 </div>
 </div>

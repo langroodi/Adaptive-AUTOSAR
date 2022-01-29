@@ -112,19 +112,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2241225f6f6ad4f11886d46fd7a823a0"><td class="memItemLeft" align="right" valign="top"><a id="a2241225f6f6ad4f11886d46fd7a823a0" name="a2241225f6f6ad4f11886d46fd7a823a0"></a>
 <a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html">TtlTimer</a> &amp;)=delete</td></tr>
 <tr class="separator:a2241225f6f6ad4f11886d46fd7a823a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22fd014f5710b17dc14e8324a22a8484"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a22fd014f5710b17dc14e8324a22a8484">GetRequested</a> () const noexcept</td></tr>
+<tr class="memdesc:a22fd014f5710b17dc14e8324a22a8484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the service client is requested or not.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a22fd014f5710b17dc14e8324a22a8484">More...</a><br /></td></tr>
+<tr class="separator:a22fd014f5710b17dc14e8324a22a8484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbfc5a2f48a400157c81fa717b7b098e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#adbfc5a2f48a400157c81fa717b7b098e">SetRequested</a> (bool requested) noexcept</td></tr>
+<tr class="memdesc:adbfc5a2f48a400157c81fa717b7b098e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the service requested status.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#adbfc5a2f48a400157c81fa717b7b098e">More...</a><br /></td></tr>
+<tr class="separator:adbfc5a2f48a400157c81fa717b7b098e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5148232386148efce6ccb100ff0ef9b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a5148232386148efce6ccb100ff0ef9b6">GetOffered</a> () const noexcept</td></tr>
+<tr class="memdesc:a5148232386148efce6ccb100ff0ef9b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the service server is offered or not.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a5148232386148efce6ccb100ff0ef9b6">More...</a><br /></td></tr>
+<tr class="separator:a5148232386148efce6ccb100ff0ef9b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61112daee30cf732fd8826221973e765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a61112daee30cf732fd8826221973e765">SetOffered</a> (uint32_t ttl) noexcept</td></tr>
+<tr class="memdesc:a61112daee30cf732fd8826221973e765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the service offered status.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a61112daee30cf732fd8826221973e765">More...</a><br /></td></tr>
+<tr class="separator:a61112daee30cf732fd8826221973e765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f7937e052f4aea6f552b3ab69d8b2c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4f7937e052f4aea6f552b3ab69d8b2c3">WaitForSignal</a> ()</td></tr>
-<tr class="memdesc:a4f7937e052f4aea6f552b3ab69d8b2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Block till Cancel or Set method is called.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4f7937e052f4aea6f552b3ab69d8b2c3">More...</a><br /></td></tr>
+<tr class="memdesc:a4f7937e052f4aea6f552b3ab69d8b2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a signal from SetRequested or SetOffered.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a4f7937e052f4aea6f552b3ab69d8b2c3">More...</a><br /></td></tr>
 <tr class="separator:a4f7937e052f4aea6f552b3ab69d8b2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aace8f58278baa274472093c8f9b22f24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#aace8f58278baa274472093c8f9b22f24">Wait</a> ()</td></tr>
-<tr class="memdesc:aace8f58278baa274472093c8f9b22f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the timer to expire or reset.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#aace8f58278baa274472093c8f9b22f24">More...</a><br /></td></tr>
-<tr class="separator:aace8f58278baa274472093c8f9b22f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e4ad7dd71586966f735418cdd4fbb65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a2e4ad7dd71586966f735418cdd4fbb65">Set</a> (uint32_t ttl) noexcept</td></tr>
-<tr class="memdesc:a2e4ad7dd71586966f735418cdd4fbb65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the TTL timer.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a2e4ad7dd71586966f735418cdd4fbb65">More...</a><br /></td></tr>
-<tr class="separator:a2e4ad7dd71586966f735418cdd4fbb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a855e0a6d203d1d6903162ddf54e67910"><td class="memItemLeft" align="right" valign="top"><a id="a855e0a6d203d1d6903162ddf54e67910" name="a855e0a6d203d1d6903162ddf54e67910"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Cancel</b> () noexcept</td></tr>
-<tr class="memdesc:a855e0a6d203d1d6903162ddf54e67910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel the timer immediately. <br /></td></tr>
-<tr class="separator:a855e0a6d203d1d6903162ddf54e67910"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc5a9ad398cf318362847ecc86d6482"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a6bc5a9ad398cf318362847ecc86d6482">WaitForExpiration</a> ()</td></tr>
+<tr class="memdesc:a6bc5a9ad398cf318362847ecc86d6482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the timer to expire or reset.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a6bc5a9ad398cf318362847ecc86d6482">More...</a><br /></td></tr>
+<tr class="separator:a6bc5a9ad398cf318362847ecc86d6482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74a22044b328713d400677d99779ac4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a74a22044b328713d400677d99779ac4f">Dispose</a> () noexcept</td></tr>
 <tr class="memdesc:a74a22044b328713d400677d99779ac4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispose the timer which causes all the waitings return immediately.  <a href="classara_1_1com_1_1helper_1_1TtlTimer.html#a74a22044b328713d400677d99779ac4f">More...</a><br /></td></tr>
 <tr class="separator:a74a22044b328713d400677d99779ac4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,8 +166,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Cancel</b> () noexcep
 
 </div>
 </div>
-<a id="a2e4ad7dd71586966f735418cdd4fbb65" name="a2e4ad7dd71586966f735418cdd4fbb65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e4ad7dd71586966f735418cdd4fbb65">&#9670;&nbsp;</a></span>Set()</h2>
+<a id="a5148232386148efce6ccb100ff0ef9b6" name="a5148232386148efce6ccb100ff0ef9b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5148232386148efce6ccb100ff0ef9b6">&#9670;&nbsp;</a></span>GetOffered()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +176,65 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Cancel</b> () noexcep
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ara::com::helper::TtlTimer::Set </td>
+          <td class="memname">bool ara::com::helper::TtlTimer::GetOffered </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicate whether the service server is offered or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the service server is offered, otherwise false </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a61112daee30cf732fd8826221973e765" title="Set the service offered status.">SetOffered</a> </dd></dl>
+
+</div>
+</div>
+<a id="a22fd014f5710b17dc14e8324a22a8484" name="a22fd014f5710b17dc14e8324a22a8484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22fd014f5710b17dc14e8324a22a8484">&#9670;&nbsp;</a></span>GetRequested()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::com::helper::TtlTimer::GetRequested </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicate whether the service client is requested or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the service client is requested, otherwise false </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#adbfc5a2f48a400157c81fa717b7b098e" title="Set the service requested status.">SetRequested</a> </dd></dl>
+
+</div>
+</div>
+<a id="a61112daee30cf732fd8826221973e765" name="a61112daee30cf732fd8826221973e765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61112daee30cf732fd8826221973e765">&#9670;&nbsp;</a></span>SetOffered()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::com::helper::TtlTimer::SetOffered </td>
           <td>(</td>
           <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>ttl</em></td><td>)</td>
@@ -185,24 +248,61 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Cancel</b> () noexcep
 </table>
 </div><div class="memdoc">
 
-<p>Set the TTL timer. </p>
+<p>Set the service offered status. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ttl</td><td>Time to live in seconds </td></tr>
+    <tr><td class="paramname">ttl</td><td>Received service offer entry TTL </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a5148232386148efce6ccb100ff0ef9b6" title="Indicate whether the service server is offered or not.">GetOffered</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Zero TTL indicates stop offering. </dd></dl>
 
 </div>
 </div>
-<a id="aace8f58278baa274472093c8f9b22f24" name="aace8f58278baa274472093c8f9b22f24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aace8f58278baa274472093c8f9b22f24">&#9670;&nbsp;</a></span>Wait()</h2>
+<a id="adbfc5a2f48a400157c81fa717b7b098e" name="adbfc5a2f48a400157c81fa717b7b098e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbfc5a2f48a400157c81fa717b7b098e">&#9670;&nbsp;</a></span>SetRequested()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::com::helper::TtlTimer::SetRequested </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>requested</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the service requested status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requested</td><td>Service client requested status </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a22fd014f5710b17dc14e8324a22a8484" title="Indicate whether the service client is requested or not.">GetRequested</a> </dd></dl>
+
+</div>
+</div>
+<a id="a6bc5a9ad398cf318362847ecc86d6482" name="a6bc5a9ad398cf318362847ecc86d6482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc5a9ad398cf318362847ecc86d6482">&#9670;&nbsp;</a></span>WaitForExpiration()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ara::com::helper::TtlTimer::Wait </td>
+          <td class="memname">bool ara::com::helper::TtlTimer::WaitForExpiration </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -211,7 +311,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Cancel</b> () noexcep
 </div><div class="memdoc">
 
 <p>Wait for the timer to expire or reset. </p>
-<dl class="section return"><dt>Returns</dt><dd>True if the timer is reset, other false in case of expiration </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the TTL is expired, otherwise false in case of timer reset </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>As the method side effect, the TTL will be set to zero in case of expiration. </dd></dl>
 
 </div>
 </div>
@@ -230,10 +331,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Cancel</b> () noexcep
       </table>
 </div><div class="memdoc">
 
-<p>Block till Cancel or Set method is called. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a855e0a6d203d1d6903162ddf54e67910" title="Cancel the timer immediately.">Cancel</a> </dd>
+<p>Wait for a signal from SetRequested or SetOffered. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#adbfc5a2f48a400157c81fa717b7b098e" title="Set the service requested status.">SetRequested(bool)</a> </dd>
 <dd>
-<a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a2e4ad7dd71586966f735418cdd4fbb65" title="Set the TTL timer.">Set(uint32_t)</a> </dd></dl>
+<a class="el" href="classara_1_1com_1_1helper_1_1TtlTimer.html#a61112daee30cf732fd8826221973e765" title="Set the service offered status.">SetOffered(uint32_t)</a> </dd></dl>
 
 </div>
 </div>
