@@ -85,11 +85,11 @@ namespace ara
             void TtlTimer::Dispose() noexcept
             {
                 mDisposing = true;
-                mConditionVariable.notify_one();
             }
 
             TtlTimer::~TtlTimer() noexcept
             {
+                Dispose();
                 mConditionVariable.notify_one();
             }
         }

@@ -123,18 +123,16 @@ namespace ara
 
                 void SomeIpSdClient::StopAgent()
                 {
-                    if (mValidState)
-                    {
-                        // Send a synchronized cancel signal to all the state
-                        mTtlTimer.SetRequested(false);
-                    }
-                    else
+                    if (!mValidState)
                     {
                         // Dispose the entry point state to stop the service offer monitoring
                         mServiceNotseenState.Dispose();
                         // Dispose the TTL timer to singal all the states for stopping immediately
                         mTtlTimer.Dispose();
                     }
+
+                    // Send a synchronized cancel signal to all the state
+                    mTtlTimer.SetRequested(false);
                 }
 
                 bool SomeIpSdClient::TryWaitUntiServiceOffered(int duration)
