@@ -1,7 +1,6 @@
 #ifndef STOPPED_STATE_H
 #define STOPPED_STATE_H
 
-#include <atomic>
 #include "./client_service_state.h"
 
 namespace ara
@@ -20,7 +19,8 @@ namespace ara
                     {
                     private:
                         std::condition_variable *const mConditionVariable;
-                        std::atomic<helper::SdClientState> mNextState;
+
+                        helper::SdClientState waitForNextState();
 
                     protected:
                         void Deactivate(helper::SdClientState nextState) override;
@@ -38,12 +38,6 @@ namespace ara
                         StoppedState &operator=(const StoppedState &) = delete;
 
                         void Activate(helper::SdClientState previousState) override;
-
-                        /// @brief Inform the state that the client's service is not requested anymore
-                        /// @note Due to synchronization, the function does NOT cancel the TTL timer.
-                        void ServiceNotRequested();
-
-                        void ServiceOffered(uint32_t ttl) noexcept override;
                     };
                 }
             }

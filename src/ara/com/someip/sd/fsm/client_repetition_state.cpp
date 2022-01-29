@@ -31,13 +31,30 @@ namespace ara
                         SetNextState(helper::SdClientState::Stopped);
                         TimerSetState::Activate(previousState);
                     }
-                    
-                    void ClientRepetitionState::ServiceOffered(uint32_t ttl) noexcept
+
+                    void ClientRepetitionState::SetTimer()
                     {
-                        // Instead of going to stopped state after interruption, transit to the service ready state.
-                        SetNextState(helper::SdClientState::ServiceReady);
-                        Timer->Set(ttl);
-                        Interrupt();
+                        for (uint32_t i = 0; i < this->RepetitionsMax; ++i)
+                        {
+                            int _doubledDelay = std::pow(2, i) * this->RepetitionsBaseDelay;
+                            auto _delay = std::chrono::milliseconds(_doubledDelay);
+                            bool _interrupted = this->WaitFor(_delay);
+
+                            if (Timer->GetOffered())
+                            {
+                                SetNextState(helper::SdClientState::ServiceReady);
+                                break;
+                            }
+                            else if (_interrupted)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                // Invoke the on timer expiration callback
+                                this->OnTimerExpired();
+                            }
+                        }
                     }
                 }
             }

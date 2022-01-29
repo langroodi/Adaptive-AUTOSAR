@@ -18,6 +18,7 @@ namespace ara
                 std::mutex mMutex;
                 std::unique_lock<std::mutex> mLock;
                 std::condition_variable mConditionVariable;
+                bool mRequested;
                 bool mDisposing;
                 uint32_t mTtl;
 
@@ -27,21 +28,36 @@ namespace ara
                 TtlTimer &operator=(const TtlTimer &) = delete;
                 ~TtlTimer() noexcept;
 
-                /// @brief Block till Cancel or Set method is called
-                /// @see Cancel
-                /// @see Set(uint32_t)
+                /// @brief Indicate whether the service client is requested or not
+                /// @returns True if the service client is requested, otherwise false
+                /// @see SetRequested
+                bool GetRequested() const noexcept;
+
+                /// @brief Set the service requested status
+                /// @param requested Service client requested status
+                /// @see GetRequested
+                void SetRequested(bool requested) noexcept;
+
+                /// @brief Indicate whether the service server is offered or not
+                /// @returns True if the service server is offered, otherwise false
+                /// @see SetOffered
+                bool GetOffered() const noexcept;
+
+                /// @brief Set the service offered status
+                /// @param ttl Received service offer entry TTL
+                /// @see GetOffered
+                /// @note Zero TTL indicates stop offering.
+                void SetOffered(uint32_t ttl) noexcept;
+
+                /// @brief Wait for a signal from SetRequested or SetOffered
+                /// @see SetRequested(bool)
+                /// @see SetOffered(uint32_t)
                 void WaitForSignal();
 
                 /// @brief Wait for the timer to expire or reset
-                /// @returns True if the timer is reset, other false in case of expiration
-                bool Wait();
-
-                /// @brief Set the TTL timer
-                /// @param ttl Time to live in seconds
-                void Set(uint32_t ttl) noexcept;
-
-                /// @brief Cancel the timer immediately
-                void Cancel() noexcept;
+                /// @returns True if the TTL is expired, otherwise false in case of timer reset
+                /// @note As the method side effect, the TTL will be set to zero in case of expiration.
+                bool WaitForExpiration();
 
                 /// @brief Dispose the timer which causes all the waitings return immediately
                 /// @remarks The side effect of this function call is irreversible.

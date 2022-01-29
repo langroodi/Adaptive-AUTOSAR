@@ -16,36 +16,46 @@ namespace ara
                                                                                ClientServiceState(ttlTimer),
                                                                                mConditionVariable{conditionVariable},
                                                                                mDisposing{false},
-                                                                               mEverRequested{false},
-                                                                               mNextState{helper::SdClientState::ServiceNotSeen}
+                                                                               mEverRequested{false}
 
                     {
+                    }
+
+                    helper::SdClientState ServiceNotseenState::waitForNextState()
+                    {
+                        if (!Timer->GetRequested() && !Timer->GetOffered())
+                        {
+                            Timer->WaitForSignal();
+                        }
+
+                        if (Timer->GetRequested())
+                        {
+                            return helper::SdClientState::InitialWaitPhase;
+                        }
+                        else
+                        {
+                            return helper::SdClientState::ServiceSeen;
+                        }
                     }
 
                     void ServiceNotseenState::Activate(helper::SdClientState previousState)
                     {
                         mConditionVariable->notify_one();
-                        
+
                         // If the sevice client has ever been requested and it is no disposing,
                         // keep the state flow in the loop by waiting for the timer
                         if (mEverRequested && !mDisposing)
                         {
-                            Timer->WaitForSignal();
-                            Transit(mNextState);
+                            helper::SdClientState _nextState = waitForNextState();
+                            Transit(_nextState);
                         }
                     }
 
-                    void ServiceNotseenState::ServiceRequested()
+                    void ServiceNotseenState::RequestService()
                     {
                         mEverRequested = true;
                         // Due to calling from a separate thread, it is safe to directly transit.
                         Transit(helper::SdClientState::InitialWaitPhase);
-                    }
-
-                    void ServiceNotseenState::ServiceOffered(uint32_t ttl) noexcept
-                    {
-                        mNextState = helper::SdClientState::ServiceSeen;
-                        Timer->Set(ttl);
                     }
 
                     void ServiceNotseenState::Dispose() noexcept
@@ -55,8 +65,6 @@ namespace ara
 
                     void ServiceNotseenState::Deactivate(helper::SdClientState nextState)
                     {
-                        // Reset the next state variable to prevent a dead-lock while destruction
-                        mNextState = GetState();
                     }
                 }
             }

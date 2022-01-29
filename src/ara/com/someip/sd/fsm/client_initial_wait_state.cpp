@@ -32,12 +32,28 @@ namespace ara
                         TimerSetState::Activate(previousState);
                     }
 
-                    void ClientInitialWaitState::ServiceOffered(uint32_t ttl) noexcept
+                    void ClientInitialWaitState::SetTimer()
                     {
-                        // Instead of going to repetition state after interruption, transit to the service ready state.
-                        SetNextState(helper::SdClientState::ServiceReady);
-                        Timer->Set(ttl);
-                        Interrupt();
+                        // Generate a random initial delay
+                        std::default_random_engine _generator;
+                        std::uniform_int_distribution<int> _distribution(
+                            this->InitialDelayMin, this->InitialDelayMax);
+                        int _randomDely = _distribution(_generator);
+
+                        // Sleep for the initali random delay and
+                        // then transit to the next state
+                        auto _delay = std::chrono::milliseconds(_randomDely);
+                        bool _interrupted = this->WaitFor(_delay);
+
+                        if (Timer->GetOffered())
+                        {
+                            SetNextState(helper::SdClientState::ServiceReady);
+                        }
+                        else if (!_interrupted)
+                        {
+                            // Invoke the on timer expiration callback
+                            this->OnTimerExpired();
+                        }
                     }
                 }
             }

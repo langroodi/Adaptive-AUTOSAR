@@ -22,21 +22,24 @@ namespace ara
                     template <typename T>
                     class InitialWaitState : public TimerSetState<T>
                     {
-                    private:
-                        const int mInitialDelayMin;
-                        const int mInitialDelayMax;
-
                     protected:
-                        void SetTimer() override
+                        /// @brief Initial delay lower bound in milliseconds
+                        const int InitialDelayMin;
+
+                        /// @brief Initial delay higher bound in milliseconds
+                        const int InitialDelayMax;
+
+                        virtual void SetTimer() override
                         {
                             // Generate a random initial delay
                             std::default_random_engine _generator;
                             std::uniform_int_distribution<int> _distribution(
-                                mInitialDelayMin, mInitialDelayMax);
+                                InitialDelayMin, InitialDelayMax);
                             int _randomDely = _distribution(_generator);
 
-                            // Sleep for the initali delay and then transit to the next state.
-                            auto _delay = std::chrono::milliseconds(mInitialDelayMin);
+                            // Sleep for the initali random delay and
+                            // then transit to the next state
+                            auto _delay = std::chrono::milliseconds(_randomDely);
                             bool _interrupted = this->WaitFor(_delay);
 
                             if (!_interrupted)
@@ -62,8 +65,8 @@ namespace ara
                             int initialDelayMin,
                             int initialDelayMax) : helper::MachineState<T>(currentState),
                                                    TimerSetState<T>(nextState, stoppedState, onTimerExpired),
-                                                   mInitialDelayMin{initialDelayMin},
-                                                   mInitialDelayMax{initialDelayMax}
+                                                   InitialDelayMin{initialDelayMin},
+                                                   InitialDelayMax{initialDelayMax}
                         {
                             if ((initialDelayMin < 0) ||
                                 (initialDelayMax < 0) ||

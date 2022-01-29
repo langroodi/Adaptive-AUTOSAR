@@ -87,37 +87,9 @@ namespace ara
                     return false;
                 }
 
-                void SomeIpSdClient::onServiceOffered(uint32_t ttl)
+                void SomeIpSdClient::onOfferChanged(uint32_t ttl)
                 {
-                    auto _machineState = this->StateMachine.GetMachineState();
-
-                    auto _clientServiceState =
-                        dynamic_cast<fsm::ClientServiceState *>(_machineState);
-                    if (_clientServiceState)
-                    {
-                        _clientServiceState->ServiceOffered(ttl);
-                    }
-                }
-
-                void SomeIpSdClient::onServiceOfferStopped()
-                {
-                    helper::SdClientState _state = GetState();
-
-                    switch (_state)
-                    {
-                    case helper::SdClientState::ServiceSeen:
-                        mServiceSeenState.ServiceStopped();
-                        break;
-                    case helper::SdClientState::ServiceReady:
-                        mServiceReadyState.ServiceStopped();
-                        break;
-                    case helper::SdClientState::InitialWaitPhase:
-                        mInitialWaitState.ServiceStopped();
-                        break;
-                    case helper::SdClientState::RepetitionPhase:
-                        mRepetitionState.ServiceStopped();
-                        break;
-                    }
+                    mTtlTimer.SetOffered(ttl);
                 }
 
                 void SomeIpSdClient::receiveSdMessage(SomeIpSdMessage &&message)
@@ -129,56 +101,39 @@ namespace ara
                         bool _matches = matchRequestedService(message, _ttl);
                         if (_matches)
                         {
-                            // TTL determines the Offering or Stop Offering message
-                            if (_ttl > 0)
-                            {
-                                onServiceOffered(_ttl);
-                            }
-                            else
-                            {
-                                onServiceOfferStopped();
-                            }
+                            onOfferChanged(_ttl);
                         }
                     }
                 }
 
                 void SomeIpSdClient::StartAgent(helper::SdClientState state)
                 {
-                    switch (state)
-                    {
-                    case helper::SdClientState::ServiceNotSeen:
-                        // First, ensure that the previous thread is gracefully finished
-                        mTtlTimer.Cancel();
-                        Join();
+                    mTtlTimer.SetRequested(true);
 
+                    // Set the future if has not been set already
+                    if (!Future.valid())
+                    {
                         this->Future =
                             std::async(
                                 std::launch::async,
-                                &fsm::ServiceNotseenState::ServiceRequested,
+                                &fsm::ServiceNotseenState::RequestService,
                                 &mServiceNotseenState);
-                        break;
-                    case helper::SdClientState::ServiceSeen:
-                        mServiceSeenState.ServiceRequested();
-                        break;
                     }
                 }
 
                 void SomeIpSdClient::StopAgent()
                 {
-                    mServiceReadyState.ServiceNotRequested();
-                    mStoppedState.ServiceNotRequested();
-
                     if (mValidState)
                     {
                         // Send a synchronized cancel signal to all the state
-                        mTtlTimer.Cancel();
+                        mTtlTimer.SetRequested(false);
                     }
                     else
                     {
+                        // Dispose the entry point state to stop the service offer monitoring
+                        mServiceNotseenState.Dispose();
                         // Dispose the TTL timer to singal all the states for stopping immediately
                         mTtlTimer.Dispose();
-                        // Dipose the entry point state to stop the service offer monitoring
-                        mServiceNotseenState.Dispose();
                     }
                 }
 

@@ -22,16 +22,18 @@ namespace ara
                     template <typename T>
                     class RepetitionState : public TimerSetState<T>
                     {
-                    private:
-                        const int mRepetitionsMax;
-                        const int mRepetitionsBaseDelay;
-
                     protected:
-                        void SetTimer() override
+                        /// @brief Maximum iteration in repetition phase
+                        const int RepetitionsMax;
+
+                        /// @brief Repetition iteration delay in milliseconds
+                        const int RepetitionsBaseDelay;
+
+                        virtual void SetTimer() override
                         {
-                            for (uint32_t i = 0; i < mRepetitionsMax; ++i)
+                            for (uint32_t i = 0; i < RepetitionsMax; ++i)
                             {
-                                int _doubledDelay = std::pow(2, i) * mRepetitionsBaseDelay;
+                                int _doubledDelay = std::pow(2, i) * RepetitionsBaseDelay;
                                 auto _delay = std::chrono::milliseconds(_doubledDelay);
                                 bool _interrupted = this->WaitFor(_delay);
 
@@ -63,8 +65,8 @@ namespace ara
                             uint32_t repetitionsMax,
                             int repetitionsBaseDelay) : helper::MachineState<T>(currentState),
                                                         TimerSetState<T>(nextState, stoppedState, onTimerExpired),
-                                                        mRepetitionsMax{static_cast<int>(repetitionsMax)},
-                                                        mRepetitionsBaseDelay{repetitionsBaseDelay}
+                                                        RepetitionsMax{static_cast<int>(repetitionsMax)},
+                                                        RepetitionsBaseDelay{repetitionsBaseDelay}
                         {
                             if (repetitionsBaseDelay < 0)
                             {

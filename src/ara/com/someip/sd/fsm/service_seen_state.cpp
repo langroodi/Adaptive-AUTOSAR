@@ -14,68 +14,42 @@ namespace ara
                         helper::TtlTimer *ttlTimer,
                         std::condition_variable *conditionVariable) noexcept : helper::MachineState<helper::SdClientState>(helper::SdClientState::ServiceSeen),
                                                                                ClientServiceState(ttlTimer),
-                                                                               mConditionVariable{conditionVariable},
-                                                                               mNextState{helper::SdClientState::ServiceSeen}
+                                                                               mConditionVariable{conditionVariable}
                     {
                     }
 
-                    void ServiceSeenState::waitForCountdown()
+                    helper::SdClientState ServiceSeenState::waitForNextState()
                     {
-                        // Wait while the next state equals to the current state
-                        while (mNextState == GetState())
+                        while (!Timer->GetRequested() && Timer->GetOffered())
                         {
-                            bool _timeout = !Timer->Wait();
+                            bool _expired = Timer->WaitForExpiration();
 
-                            if (_timeout)
+                            if (_expired)
                             {
-                                // TTL is expired.
-                                mNextState = helper::SdClientState::ServiceNotSeen;
+                                break;
                             }
+                        }
+
+                        if (Timer->GetRequested())
+                        {
+                            return helper::SdClientState::ServiceReady;
+                        }
+                        else
+                        {
+                            // The service is not offering anymore or the TTL is expired:
+                            return helper::SdClientState::ServiceNotSeen;
                         }
                     }
 
                     void ServiceSeenState::Activate(helper::SdClientState previousState)
                     {
                         mConditionVariable->notify_one();
-                        waitForCountdown();
-                        Transit(mNextState);
-                    }
-
-                    void ServiceSeenState::ServiceRequested()
-                    {
-                        // Only set the next state if it has not been set yet from the default value
-                        if (mNextState == GetState())
-                        {
-                            mNextState = helper::SdClientState::ServiceReady;
-                            Timer->Cancel();
-                        }
-                    }
-
-                    void ServiceSeenState::ServiceOffered(uint32_t ttl) noexcept
-                    {
-                        // Only set the TTL timer if the next state has not been set yet from the default value
-                        if (mNextState == GetState())
-                        {
-                            // Just reset the TTL, but stay in the same state
-                            // because the client is still not requested
-                            Timer->Set(ttl);
-                        }
-                    }
-
-                    void ServiceSeenState::ServiceStopped() noexcept
-                    {
-                        // Only set the next state if it has not been set yet from the default value
-                        if (mNextState == GetState())
-                        {
-                            mNextState = helper::SdClientState::ServiceNotSeen;
-                            Timer->Cancel();
-                        }
+                        helper::SdClientState _nextState = waitForNextState();
+                        Transit(_nextState);
                     }
 
                     void ServiceSeenState::Deactivate(helper::SdClientState nextState)
                     {
-                        // Reset the next state variable to prevent en undefined behaviour in the next activation
-                        mNextState = GetState();
                     }
                 }
             }

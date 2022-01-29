@@ -44,8 +44,7 @@ namespace ara
                     void sendFind();
                     bool matchRequestedService(
                         const SomeIpSdMessage &message, uint32_t &ttl) const;
-                    void onServiceOffered(uint32_t ttl);
-                    void onServiceOfferStopped();
+                    void onOfferChanged(uint32_t ttl);
                     void receiveSdMessage(SomeIpSdMessage &&message);
 
                 protected:

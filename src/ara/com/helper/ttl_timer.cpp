@@ -8,9 +8,32 @@ namespace ara
         namespace helper
         {
             TtlTimer::TtlTimer() noexcept : mLock(mMutex, std::defer_lock),
+                                            mRequested{false},
                                             mDisposing{false},
                                             mTtl{0}
             {
+            }
+
+            bool TtlTimer::GetRequested() const noexcept
+            {
+                return mRequested;
+            }
+
+            void TtlTimer::SetRequested(bool requested) noexcept
+            {
+                mRequested = requested;
+                mConditionVariable.notify_one();
+            }
+
+            bool TtlTimer::GetOffered() const noexcept
+            {
+                return mTtl > 0;
+            }
+
+            void TtlTimer::SetOffered(uint32_t ttl) noexcept
+            {
+                mTtl = ttl;
+                mConditionVariable.notify_one();
             }
 
             void TtlTimer::WaitForSignal()
@@ -28,12 +51,12 @@ namespace ara
                 }
             }
 
-            bool TtlTimer::Wait()
+            bool TtlTimer::WaitForExpiration()
             {
                 // If disposing, return timeout immediately
                 if (mDisposing)
                 {
-                    return false;
+                    return true;
                 }
                 else
                 {
@@ -43,20 +66,20 @@ namespace ara
                             mLock, std::chrono::seconds(mTtl));
                     mLock.unlock();
 
-                    bool _result = _status == std::cv_status::no_timeout;
-                    return _result;
+                    if (_status == std::cv_status::timeout)
+                    {
+                        mTtl = 0;
+                        return true;
+                    }
+                    else if (mTtl == 0 || mDisposing)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-            }
-
-            void TtlTimer::Set(uint32_t ttl) noexcept
-            {
-                mTtl = ttl;
-                mConditionVariable.notify_one();
-            }
-
-            void TtlTimer::Cancel() noexcept
-            {
-                mConditionVariable.notify_one();
             }
 
             void TtlTimer::Dispose() noexcept

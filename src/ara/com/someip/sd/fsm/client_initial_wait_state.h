@@ -19,6 +19,7 @@ namespace ara
                     {
                     protected:
                         void Activate(helper::SdClientState previousState) override;
+                        void SetTimer() override;
 
                     public:
                         /// @brief Constructor
@@ -35,8 +36,6 @@ namespace ara
                         ClientInitialWaitState() = delete;
                         ClientInitialWaitState(const ClientInitialWaitState &) = delete;
                         ClientInitialWaitState &operator=(const ClientInitialWaitState &) = delete;
-
-                        void ServiceOffered(uint32_t ttl) noexcept override;
                     };
                 }
             }
