@@ -70,20 +70,20 @@ namespace ara
 
                 TEST_F(SomeIpSdTest, ServerStart)
                 {
-                    const helper::SdServerState cServerStoppedState =
+                    const helper::SdServerState cNotReadyState =
                         helper::SdServerState::NotReady;
 
-                    EXPECT_EQ(Server.GetState(), cServerStoppedState);
+                    EXPECT_EQ(Server.GetState(), cNotReadyState);
                     EXPECT_NO_THROW(Server.Start());
                     EXPECT_THROW(Server.Start(), std::logic_error);
                 }
 
                 TEST_F(SomeIpSdTest, ClientStart)
                 {
-                    const helper::SdClientState cClientStoppedState =
+                    const helper::SdClientState cServiceNotSeenState =
                         helper::SdClientState::ServiceNotSeen;
 
-                    EXPECT_EQ(Client.GetState(), cClientStoppedState);
+                    EXPECT_EQ(Client.GetState(), cServiceNotSeenState);
                     EXPECT_NO_THROW(Client.Start());
                     EXPECT_THROW(Client.Start(), std::logic_error);
                 }
@@ -116,7 +116,7 @@ namespace ara
 
                 TEST_F(SomeIpSdTest, ServerStopScenario)
                 {
-                    const helper::SdClientState cServiceStoppedState =
+                    const helper::SdClientState cStoppedState =
                         helper::SdClientState::Stopped;
 
                     Server.Start();
@@ -125,7 +125,7 @@ namespace ara
                     Server.Stop();
                     Client.TryWaitUntiServiceOfferStopped(WaitDuration);
 
-                    EXPECT_EQ(Client.GetState(), cServiceStoppedState);
+                    EXPECT_EQ(Client.GetState(), cStoppedState);
                 }
 
                 TEST_F(SomeIpSdTest, StopScenario)
