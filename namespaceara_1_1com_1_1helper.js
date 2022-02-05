@@ -1,6 +1,7 @@
 var namespaceara_1_1com_1_1helper =
 [
     [ "AbstractStateMachine", "classara_1_1com_1_1helper_1_1AbstractStateMachine.html", "classara_1_1com_1_1helper_1_1AbstractStateMachine" ],
+    [ "ConcurrentQueue", "classara_1_1com_1_1helper_1_1ConcurrentQueue.html", "classara_1_1com_1_1helper_1_1ConcurrentQueue" ],
     [ "FiniteStateMachine", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", "classara_1_1com_1_1helper_1_1FiniteStateMachine" ],
     [ "Ipv4Address", "structara_1_1com_1_1helper_1_1Ipv4Address.html", "structara_1_1com_1_1helper_1_1Ipv4Address" ],
     [ "MachineState", "classara_1_1com_1_1helper_1_1MachineState.html", "classara_1_1com_1_1helper_1_1MachineState" ],

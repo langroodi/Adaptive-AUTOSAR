@@ -10,6 +10,7 @@ var hierarchy =
     [ "ara::diag::CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],
     [ "ara::com::cg::CommunicationGroupClient< T, R >", "classara_1_1com_1_1cg_1_1CommunicationGroupClient.html", null ],
     [ "ara::com::cg::CommunicationGroupServer< T, R >", "classara_1_1com_1_1cg_1_1CommunicationGroupServer.html", null ],
+    [ "ara::com::helper::ConcurrentQueue< T >", "classara_1_1com_1_1helper_1_1ConcurrentQueue.html", null ],
     [ "ara::diag::Condition", "classara_1_1diag_1_1Condition.html", null ],
     [ "ara::diag::Conversation", "classara_1_1diag_1_1Conversation.html", null ],
     [ "ara::diag::ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],

@@ -15,10 +15,12 @@ var searchData=
   ['triggerin_12',['TriggerIn',['../classara_1_1sm_1_1TriggerIn.html',1,'ara::sm::TriggerIn&lt; T &gt;'],['../classara_1_1sm_1_1TriggerIn.html#a5420c68bc867c6e6dcb1fcc200654098',1,'ara::sm::TriggerIn::TriggerIn()']]],
   ['triggerinout_13',['TriggerInOut',['../classara_1_1sm_1_1TriggerInOut.html',1,'ara::sm::TriggerInOut&lt; T &gt;'],['../classara_1_1sm_1_1TriggerInOut.html#aa8b6bc737b5a8ef2ba331dca7fa52407',1,'ara::sm::TriggerInOut::TriggerInOut()']]],
   ['triggerout_14',['TriggerOut',['../classara_1_1sm_1_1TriggerOut.html',1,'ara::sm::TriggerOut&lt; T &gt;'],['../classara_1_1sm_1_1TriggerOut.html#a0940405fadc0bd5475376637368ca13e',1,'ara::sm::TriggerOut::TriggerOut()']]],
-  ['trygetprocessedsubscription_15',['TryGetProcessedSubscription',['../classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient.html#a0c949e437ca4b6a2c0090856b06ea435',1,'ara::com::someip::pubsub::SomeIpPubSubClient']]],
-  ['trywaituntiserviceoffered_16',['TryWaitUntiServiceOffered',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abdb7c4021aa5984f1c2ad6009a011679',1,'ara::com::someip::sd::SomeIpSdClient']]],
-  ['trywaituntiserviceofferstopped_17',['TryWaitUntiServiceOfferStopped',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a851ea1298705ef8e8e3a272915aa78b8',1,'ara::com::someip::sd::SomeIpSdClient']]],
-  ['ttl_18',['TTL',['../classara_1_1com_1_1entry_1_1Entry.html#a075705f87c458a532adf96d644290c27',1,'ara::com::entry::Entry']]],
-  ['ttltimer_19',['TtlTimer',['../classara_1_1com_1_1helper_1_1TtlTimer.html',1,'ara::com::helper']]],
-  ['type_20',['Type',['../classara_1_1com_1_1entry_1_1Entry.html#a04cbc058f079ae37e873db0e8aeee376',1,'ara::com::entry::Entry::Type()'],['../classara_1_1com_1_1option_1_1Option.html#ada63a14a0609072da952abc4e75cd0e4',1,'ara::com::option::Option::Type()']]]
+  ['trydequeue_15',['TryDequeue',['../classara_1_1com_1_1helper_1_1ConcurrentQueue.html#a19b108806c442f5db9f9de6f932abbd7',1,'ara::com::helper::ConcurrentQueue']]],
+  ['tryenqueue_16',['TryEnqueue',['../classara_1_1com_1_1helper_1_1ConcurrentQueue.html#a31e322dc3f9c4759b4eb1ffb411af4ea',1,'ara::com::helper::ConcurrentQueue']]],
+  ['trygetprocessedsubscription_17',['TryGetProcessedSubscription',['../classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient.html#a0c949e437ca4b6a2c0090856b06ea435',1,'ara::com::someip::pubsub::SomeIpPubSubClient']]],
+  ['trywaituntiserviceoffered_18',['TryWaitUntiServiceOffered',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abdb7c4021aa5984f1c2ad6009a011679',1,'ara::com::someip::sd::SomeIpSdClient']]],
+  ['trywaituntiserviceofferstopped_19',['TryWaitUntiServiceOfferStopped',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a851ea1298705ef8e8e3a272915aa78b8',1,'ara::com::someip::sd::SomeIpSdClient']]],
+  ['ttl_20',['TTL',['../classara_1_1com_1_1entry_1_1Entry.html#a075705f87c458a532adf96d644290c27',1,'ara::com::entry::Entry']]],
+  ['ttltimer_21',['TtlTimer',['../classara_1_1com_1_1helper_1_1TtlTimer.html',1,'ara::com::helper']]],
+  ['type_22',['Type',['../classara_1_1com_1_1entry_1_1Entry.html#a04cbc058f079ae37e873db0e8aeee376',1,'ara::com::entry::Entry::Type()'],['../classara_1_1com_1_1option_1_1Option.html#ada63a14a0609072da952abc4e75cd0e4',1,'ara::com::option::Option::Type()']]]
 ];
