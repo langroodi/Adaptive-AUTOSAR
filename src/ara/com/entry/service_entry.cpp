@@ -16,6 +16,19 @@ namespace ara
             {
             }
 
+            ServiceEntry::ServiceEntry(ServiceEntry &&other) : Entry{std::move(other)},
+                                                               mMinorVersion{other.mMinorVersion}
+            {
+            }
+
+            ServiceEntry &ServiceEntry::operator=(ServiceEntry &&other)
+            {
+                Entry::operator=(std::move(other));
+                mMinorVersion = other.mMinorVersion;
+
+                return *this;
+            }
+
             bool ServiceEntry::ValidateOption(
                 const option::Option *option) const noexcept
             {

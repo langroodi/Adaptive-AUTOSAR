@@ -73,6 +73,29 @@ namespace ara
                 }
             }
 
+            SomeIpMessage::SomeIpMessage(SomeIpMessage &&other) noexcept : mMessageId{other.mMessageId},
+                                                                           mClientId{other.mClientId},
+                                                                           mSessionId{other.mSessionId},
+                                                                           mProtocolVersion{other.mProtocolVersion},
+                                                                           mInterfaceVersion{other.mInterfaceVersion},
+                                                                           mMessageType{other.mMessageType},
+                                                                           mReturnCode{other.mReturnCode}
+            {
+            }
+
+            SomeIpMessage &SomeIpMessage::operator=(SomeIpMessage &&other)
+            {
+                mMessageId = other.mMessageId;
+                mClientId = other.mClientId;
+                mSessionId = other.mSessionId;
+                mProtocolVersion = other.mProtocolVersion;
+                mInterfaceVersion = other.mInterfaceVersion;
+                mMessageType = other.mMessageType;
+                mReturnCode = other.mReturnCode;
+
+                return *this;
+            }
+
             void SomeIpMessage::Deserialize(
                 SomeIpMessage *message,
                 const std::vector<uint8_t> &payload)

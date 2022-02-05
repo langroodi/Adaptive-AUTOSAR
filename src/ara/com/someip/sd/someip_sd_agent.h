@@ -82,8 +82,8 @@ namespace ara
                     /// @note It is safe to recall the function if the agent has been already stopped.
                     void Stop()
                     {
-                        StopAgent();
                         CommunicationLayer->ResetReceiver(this);
+                        StopAgent();
                     }
 
                     virtual ~SomeIpSdAgent() noexcept = default;
@@ -92,4 +92,5 @@ namespace ara
         }
     }
 }
+
 #endif

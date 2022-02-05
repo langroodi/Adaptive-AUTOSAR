@@ -34,6 +34,9 @@ namespace ara
                 static const uint32_t cAnyMinorVersion = 0xffffffff;
 
                 ServiceEntry() = delete;
+                ServiceEntry(ServiceEntry &&other);
+
+                ServiceEntry &operator=(ServiceEntry &&other);
 
                 /// @brief Get minor version
                 /// @returns Service minor version

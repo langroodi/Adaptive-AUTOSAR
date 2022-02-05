@@ -35,6 +35,9 @@ namespace ara
 
             public:
                 EventgroupEntry() = delete;
+                EventgroupEntry(EventgroupEntry &&other);
+
+                EventgroupEntry &operator=(EventgroupEntry &&other);
 
                 /// @brief Get the subscriber counter
                 /// @returns A 4-bit unsinged integer wrapped as a byte
@@ -80,13 +83,13 @@ namespace ara
                 /// @param eventgroupEntry Received subscribe event-group entry
                 /// @returns Acknowledge event-group subscription entry
                 static std::unique_ptr<EventgroupEntry> CreateAcknowledgeEntry(
-                    const EventgroupEntry* eventgroupEntry);
+                    const EventgroupEntry *eventgroupEntry);
 
                 /// @brief Negative acknowledge of an event-group entry factory
                 /// @param eventgroupEntry Received subscribe event-group entry
                 /// @returns Negative acknowledge event-group subscription entry
                 static std::unique_ptr<EventgroupEntry> CreateNegativeAcknowledgeEntry(
-                    const EventgroupEntry* eventgroupEntry);
+                    const EventgroupEntry *eventgroupEntry);
 
                 /// @brief Deserialize a entry payload
                 /// @param payload Serialized entry payload byte array

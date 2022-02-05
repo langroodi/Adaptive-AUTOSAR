@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <thread>
 #include "./someip_sd_server.h"
 
 namespace ara
@@ -123,26 +124,31 @@ namespace ara
 
                 void SomeIpSdServer::sendOffer()
                 {
-                    if (!mMessageBuffer.empty())
+                    // Avoid starvation
+                    while (!mMessageBuffer.Empty())
                     {
-                        SomeIpSdMessage _message = std::move(mMessageBuffer.front());
-
-                        bool _matches = matchOfferingService(_message);
-                        // Send the offer if the finding matches the service
-                        if (_matches)
+                        SomeIpSdMessage _message;
+                        if (mMessageBuffer.TryDequeue(_message))
                         {
                             this->CommunicationLayer->Send(mOfferServiceMessage);
                             mOfferServiceMessage.IncrementSessionId();
                         }
 
-                        // Remove the message from the buffer after the processing
-                        mMessageBuffer.pop();
+                        std::this_thread::yield();
                     }
                 }
 
                 void SomeIpSdServer::receiveFind(SomeIpSdMessage &&message)
                 {
-                    mMessageBuffer.push(std::move(message));
+                    bool _matches = matchOfferingService(message);
+                    // Enqueue the offer if the finding message matches the service
+                    if (_matches)
+                    {
+                        while (!mMessageBuffer.TryEnqueue(std::move(message)))
+                        {
+                            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+                        }
+                    }
                 }
 
                 void SomeIpSdServer::onServiceStopped()

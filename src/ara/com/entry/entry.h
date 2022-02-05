@@ -71,7 +71,10 @@ namespace ara
                 /// @brief Option number field bit size
                 static const uint8_t cOptionSizeBitLength = 4;
 
+                Entry(Entry &&other);
                 virtual ~Entry() noexcept = default;
+                
+                Entry &operator=(Entry &&other);
 
                 /// @brief Get entry type
                 /// @returns Entry type

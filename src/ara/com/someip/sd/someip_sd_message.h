@@ -33,6 +33,9 @@ namespace ara
 
                 public:
                     SomeIpSdMessage();
+                    SomeIpSdMessage(SomeIpSdMessage&& other);
+
+                    SomeIpSdMessage& operator=(SomeIpSdMessage&& other);
 
                     /// @brief Get entries
                     /// @returns Exisiting message entries

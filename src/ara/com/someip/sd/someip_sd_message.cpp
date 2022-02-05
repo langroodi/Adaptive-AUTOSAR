@@ -20,6 +20,21 @@ namespace ara
                 {
                 }
 
+                SomeIpSdMessage::SomeIpSdMessage(SomeIpSdMessage &&other) : SomeIpMessage{std::move(other)},
+                                                                            mRebooted{other.mRebooted},
+                                                                            mEntries{std::move(other.mEntries)}
+                {
+                }
+
+                SomeIpSdMessage &SomeIpSdMessage::operator=(SomeIpSdMessage &&other)
+                {
+                    SomeIpMessage::operator=(std::move(other));
+                    mRebooted = other.mRebooted;
+                    mEntries = std::move(other.mEntries);
+
+                    return *this;
+                }
+
                 uint32_t SomeIpSdMessage::getEntriesLength() const noexcept
                 {
                     const uint32_t cEntrySize = 16;
@@ -190,7 +205,7 @@ namespace ara
                     {
                         uint8_t _numberOfFirstOptions;
                         uint8_t _numberOfSecondOptions;
-                        
+
                         auto _entry{
                             entry::EntryDeserializer::Deserialize(
                                 payload,

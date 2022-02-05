@@ -23,6 +23,21 @@ namespace ara
                 }
             }
 
+            EventgroupEntry::EventgroupEntry(EventgroupEntry &&entry) : Entry{std::move(entry)},
+                                                                        mCounter{entry.mCounter},
+                                                                        mEventgroupId{entry.mEventgroupId}
+            {
+            }
+
+            EventgroupEntry &EventgroupEntry::operator=(EventgroupEntry &&other)
+            {
+                Entry::operator=(std::move(other));
+                mCounter = other.mCounter;
+                mEventgroupId = other.mEventgroupId;
+
+                return *this;
+            }
+
             bool EventgroupEntry::isAcknowledge() const noexcept
             {
                 bool _result =

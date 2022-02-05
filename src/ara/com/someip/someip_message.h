@@ -108,7 +108,10 @@ namespace ara
                     const std::vector<uint8_t> &payload);
 
             public:
+                SomeIpMessage(SomeIpMessage&& other) noexcept;
                 virtual ~SomeIpMessage() noexcept = default;
+
+                SomeIpMessage& operator=(SomeIpMessage&& other);
 
                 /// @brief Get message ID
                 /// @returns Message ID consisting service and method/event ID
@@ -158,4 +161,5 @@ namespace ara
         }
     }
 }
+
 #endif

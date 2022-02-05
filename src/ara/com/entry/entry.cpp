@@ -18,6 +18,29 @@ namespace ara
             {
             }
 
+            Entry::Entry(Entry &&other) : mType{other.mType},
+                                          mFirstOptions{std::move(other.mFirstOptions)},
+                                          mSecondOptions{std::move(other.mSecondOptions)},
+                                          mServiceId{other.mServiceId},
+                                          mInstanceId{other.mInstanceId},
+                                          mTTL{other.mTTL},
+                                          mMajorVersion{other.mMajorVersion}
+            {
+            }
+
+            Entry &Entry::operator=(Entry &&other)
+            {
+                mType = other.mType;
+                mFirstOptions = std::move(other.mFirstOptions);
+                mSecondOptions = std::move(other.mSecondOptions);
+                mServiceId = other.mServiceId;
+                mInstanceId = other.mInstanceId;
+                mTTL = other.mTTL;
+                mMajorVersion = other.mMajorVersion;
+
+                return *this;
+            }
+
             bool Entry::ValidateOption(const option::Option *option) const noexcept
             {
                 bool _result;

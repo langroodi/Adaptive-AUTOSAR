@@ -1,7 +1,7 @@
 #ifndef SOMEIP_SD_SERVER
 #define SOMEIP_SD_SERVER
 
-#include <queue>
+#include "../../helper/concurrent_queue.h"
 #include "../../helper/ipv4_address.h"
 #include "../../entry/service_entry.h"
 #include "../../option/ipv4_endpoint_option.h"
@@ -23,7 +23,7 @@ namespace ara
                 class SomeIpSdServer : public SomeIpSdAgent<helper::SdServerState>
                 {
                 private:
-                    std::queue<SomeIpSdMessage> mMessageBuffer;
+                    helper::ConcurrentQueue<SomeIpSdMessage> mMessageBuffer;
                     SomeIpSdMessage mOfferServiceMessage;
                     SomeIpSdMessage mStopOfferMessage;
                     fsm::NotReadyState mNotReadyState;
