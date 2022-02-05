@@ -72,11 +72,13 @@ namespace ara
                     /// @brief Try to wait unitl the server offers the service
                     /// @param duration Waiting timeout in milliseconds
                     /// @returns True, if the service is offered before the timeout; otherwise false
+                    /// @note Zero duration means wait until the service is offered.
                     bool TryWaitUntiServiceOffered(int duration);
 
                     /// @brief Try to wait unitl the server stops offering the service
                     /// @param duration Waiting timeout in milliseconds
                     /// @returns True, if the service offering is stopped before the timeout; otherwise false
+                    /// @note Zero duration means wait until the service offering stops.
                     bool TryWaitUntiServiceOfferStopped(int duration);
 
                     ~SomeIpSdClient() override;

@@ -141,10 +141,19 @@ namespace ara
 
                     if (mValidState)
                     {
+                        std::cv_status _cvStatus;
+
                         mOfferingLock.lock();
-                        std::cv_status _cvStatus =
-                            mOfferingConditionVariable.wait_for(
+                        if (duration > 0)
+                        {
+                            _cvStatus = mOfferingConditionVariable.wait_for(
                                 mOfferingLock, std::chrono::milliseconds(duration));
+                        }
+                        else
+                        {
+                            mOfferingConditionVariable.wait(mOfferingLock);
+                            _cvStatus = std::cv_status::no_timeout;
+                        }
                         mOfferingLock.unlock();
 
                         // Get the state in case of being already in the desired state
@@ -170,10 +179,21 @@ namespace ara
 
                     if (mValidState)
                     {
+                        std::cv_status _cvStatus;
+
                         mStopOfferingLock.lock();
-                        std::cv_status _cvStatus =
-                            mStopOfferingConditionVariable.wait_for(
-                                mStopOfferingLock, std::chrono::milliseconds(duration));
+                        if (duration > 0)
+                        {
+                            _cvStatus =
+                                mStopOfferingConditionVariable.wait_for(
+                                    mStopOfferingLock, std::chrono::milliseconds(duration));
+                        }
+                        else
+                        {
+                            mStopOfferingConditionVariable.wait(mStopOfferingLock);
+                            _cvStatus = std::cv_status::no_timeout;
+                        }
+
                         mStopOfferingLock.unlock();
 
                         // Get the state in case of being already in the desired state
