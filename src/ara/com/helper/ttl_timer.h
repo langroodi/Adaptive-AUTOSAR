@@ -3,6 +3,7 @@
 
 #include <mutex>
 #include <condition_variable>
+#include <atomic>
 
 namespace ara
 {
@@ -20,6 +21,7 @@ namespace ara
                 std::condition_variable mConditionVariable;
                 bool mRequested;
                 bool mDisposing;
+                std::atomic_bool mSignalFlag;
                 uint32_t mTtl;
 
             public:
@@ -56,7 +58,6 @@ namespace ara
 
                 /// @brief Wait for the timer to expire or reset
                 /// @returns True if the TTL is expired, otherwise false in case of timer reset
-                /// @note As the method side effect, the TTL will be set to zero in case of expiration.
                 bool WaitForExpiration();
 
                 /// @brief Dispose the timer which causes all the waitings return immediately

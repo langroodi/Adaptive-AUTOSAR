@@ -22,6 +22,7 @@ namespace ara
             void TtlTimer::SetRequested(bool requested) noexcept
             {
                 mRequested = requested;
+                mSignalFlag = true;
                 mConditionVariable.notify_one();
             }
 
@@ -33,6 +34,7 @@ namespace ara
             void TtlTimer::SetOffered(uint32_t ttl) noexcept
             {
                 mTtl = ttl;
+                mSignalFlag = true;
                 mConditionVariable.notify_one();
             }
 
@@ -46,7 +48,8 @@ namespace ara
                 else
                 {
                     mLock.lock();
-                    mConditionVariable.wait(mLock);
+                    mConditionVariable.wait(mLock, [this]{ return mSignalFlag.load(); });
+                    mSignalFlag = false;
                     mLock.unlock();
                 }
             }
@@ -54,7 +57,7 @@ namespace ara
             bool TtlTimer::WaitForExpiration()
             {
                 // If disposing, return timeout immediately
-                if (mDisposing)
+                if (mTtl == 0 || mDisposing)
                 {
                     return true;
                 }
@@ -64,14 +67,11 @@ namespace ara
                     std::cv_status _status =
                         mConditionVariable.wait_for(
                             mLock, std::chrono::seconds(mTtl));
+                    mSignalFlag = false;
                     mLock.unlock();
 
-                    if (_status == std::cv_status::timeout)
-                    {
-                        mTtl = 0;
-                        return true;
-                    }
-                    else if (mTtl == 0 || mDisposing)
+                    // Due to the TTL delay above, re-check the TTL and disposing values
+                    if (_status == std::cv_status::timeout || mTtl == 0 || mDisposing)
                     {
                         return true;
                     }
