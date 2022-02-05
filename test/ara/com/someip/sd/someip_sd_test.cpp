@@ -62,8 +62,8 @@ namespace ara
                                           cRepetitionBaseDelay * (std::pow(2, cRepetitionMax) - 1) +
                                           // Main main first cycle delay
                                           cCycleOfferDelay) *
-                                         // Apply minimum Nyquist–Shannon margin (make the duration twice longer)
-                                         2)}
+                                         // Apply high Nyquist–Shannon margin (make the duration twice longer)
+                                         10)}
                     {
                     }
                 };
