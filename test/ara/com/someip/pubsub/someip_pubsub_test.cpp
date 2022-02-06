@@ -23,6 +23,7 @@ namespace ara
                     static const uint16_t cInstanceId = 1;
                     static const uint8_t cMajorVersion = 1;
                     static const uint16_t cEventgroupId = 0;
+                    static const uint16_t cPort = 10001;
                     static const int cWaitingDuration = 100;
 
                     SomeIpPubSubServer Server;
@@ -32,7 +33,9 @@ namespace ara
                                                 cServiceId,
                                                 cInstanceId,
                                                 cMajorVersion,
-                                                cEventgroupId),
+                                                cEventgroupId,
+                                                helper::Ipv4Address(224, 0, 0, 0),
+                                                cPort),
                                          Client(
                                              &mNetworkLayer,
                                              cCounter)
@@ -75,6 +78,9 @@ namespace ara
                 {
                     const helper::PubSubState cExpectedState =
                         helper::PubSubState::Subscribed;
+                    const option::OptionType cExpectedOptionType =
+                        option::OptionType::IPv4Multicast;
+                    const uint16_t cExpectedPort{cPort};
                     sd::SomeIpSdMessage _message;
 
                     Server.Start();
@@ -90,6 +96,15 @@ namespace ara
                             _message.Entries().at(0).get());
 
                     EXPECT_GT(_eventgroupEntry->TTL(), 0);
+                    EXPECT_EQ(_eventgroupEntry->FirstOptions().size(), 1);
+
+                    auto _endpointOption =
+                        dynamic_cast<option::Ipv4EndpointOption *>(
+                            _eventgroupEntry->FirstOptions().at(0).get());
+
+                    EXPECT_EQ(_endpointOption->Type(), cExpectedOptionType);
+                    EXPECT_EQ(_endpointOption->Port(), cExpectedPort);
+
                     EXPECT_EQ(cExpectedState, Server.GetState());
                 }
 

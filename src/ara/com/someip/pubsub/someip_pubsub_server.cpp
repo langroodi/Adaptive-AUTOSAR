@@ -14,11 +14,15 @@ namespace ara
                     uint16_t serviceId,
                     uint16_t instanceId,
                     uint8_t majorVersion,
-                    uint16_t eventgroupId) : mCommunicationLayer{networkLayer},
-                                             mServiceId{serviceId},
-                                             mInstanceId{instanceId},
-                                             mMajorVersion{majorVersion},
-                                             mEventgroupId{eventgroupId}
+                    uint16_t eventgroupId,
+                    helper::Ipv4Address ipAddress,
+                    uint16_t port) : mCommunicationLayer{networkLayer},
+                                     mServiceId{serviceId},
+                                     mInstanceId{instanceId},
+                                     mMajorVersion{majorVersion},
+                                     mEventgroupId{eventgroupId},
+                                     mEndpointIp{ipAddress},
+                                     mEndpointPort{port}
                 {
                     mStateMachine.Initialize({&mServiceDownState,
                                               &mNotSubscribedState,
@@ -74,6 +78,8 @@ namespace ara
 
                 void SomeIpPubSubServer::processEntry(const entry::EventgroupEntry *entry)
                 {
+                    const bool cDiscardableEndpoint{true};
+
                     sd::SomeIpSdMessage _acknowledgeMessage;
 
                     helper::PubSubState _state = GetState();
@@ -92,7 +98,16 @@ namespace ara
                                                                          entry)
                                                                    : entry::EventgroupEntry::CreateAcknowledgeEntry(
                                                                          entry);
-                    /// @todo Add multicast endpoint option to the entry before sending
+
+                    // If the service is not down, add a multicast endpoint option to the acknowledgement entry
+                    if (_state != helper::PubSubState::ServiceDown)
+                    {
+                        auto _multicastEndpoint =
+                            option::Ipv4EndpointOption::CreateMulticastEndpoint(
+                                cDiscardableEndpoint, mEndpointIp, mEndpointPort);
+                        _acknowledgeEntry->AddFirstOption(std::move(_multicastEndpoint));
+                    }
+
                     _acknowledgeMessage.AddEntry(std::move(_acknowledgeEntry));
                     mCommunicationLayer->Send(_acknowledgeMessage);
                 }

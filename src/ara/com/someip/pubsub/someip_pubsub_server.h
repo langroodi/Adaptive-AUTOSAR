@@ -28,6 +28,8 @@ namespace ara
                     const uint16_t mInstanceId;
                     const uint8_t mMajorVersion;
                     const uint16_t mEventgroupId;
+                    const helper::Ipv4Address mEndpointIp;
+                    const uint16_t mEndpointPort;
                     fsm::ServiceDownState mServiceDownState;
                     fsm::NotSubscribedState mNotSubscribedState;
                     fsm::SubscribedState mSubscribedState;
@@ -45,12 +47,16 @@ namespace ara
                     /// @param instanceId Service instance ID
                     /// @param majorVersion Service major version
                     /// @param eventgroupId Service event-group ID
+                    /// @param ipAddress Multicast IP address that clients should listen to for receiving events
+                    /// @param port Multicast port number that clients should listen to for receiving events
                     SomeIpPubSubServer(
                         helper::NetworkLayer<sd::SomeIpSdMessage> *networkLayer,
                         uint16_t serviceId,
                         uint16_t instanceId,
                         uint8_t majorVersion,
-                        uint16_t eventgroupId);
+                        uint16_t eventgroupId,
+                        helper::Ipv4Address ipAddress,
+                        uint16_t port);
 
                     /// @brief Start the server
                     void Start();
