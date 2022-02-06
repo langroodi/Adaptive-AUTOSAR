@@ -30,8 +30,12 @@ namespace ara
                     {
                         if (entry->Type() == entry::EntryType::Acknowledging)
                         {
-                            mMessageBuffer.push(std::move(message));
-                            mSubscriptionConditionVariable.notify_one();
+                            bool _enqueued = mMessageBuffer.TryEnqueue(std::move(message));
+
+                            if (_enqueued)
+                            {
+                                mSubscriptionConditionVariable.notify_one();
+                            }
                         }
                     }
                 }
@@ -74,7 +78,7 @@ namespace ara
                 {
                     bool _result;
 
-                    if (mMessageBuffer.empty())
+                    if (mMessageBuffer.Empty())
                     {
                         mSubscriptionLock.lock();
                         std::cv_status _status =
@@ -92,9 +96,7 @@ namespace ara
                     // In the case of successful get, set the first processed subscription to the output argument
                     if (_result)
                     {
-                        message = std::move(mMessageBuffer.front());
-                        // Remove the message from the buffer after the copy assignment
-                        mMessageBuffer.pop();
+                        _result = mMessageBuffer.TryDequeue(message);
                     }
 
                     return _result;

@@ -1,11 +1,10 @@
 #ifndef SOMEIP_PUBSUB_CLIENT
 #define SOMEIP_PUBSUB_CLIENT
 
-#include <queue>
-#include <mutex>
 #include <condition_variable>
 #include "../../entry/eventgroup_entry.h"
 #include "../../helper/network_layer.h"
+#include "../../helper/concurrent_queue.h"
 #include "../sd/someip_sd_message.h"
 
 namespace ara
@@ -20,7 +19,7 @@ namespace ara
                 class SomeIpPubSubClient
                 {
                 private:
-                    std::queue<sd::SomeIpSdMessage> mMessageBuffer;
+                    helper::ConcurrentQueue<sd::SomeIpSdMessage> mMessageBuffer;
                     std::mutex mSubscriptionMutex;
                     std::unique_lock<std::mutex> mSubscriptionLock;
                     std::condition_variable mSubscriptionConditionVariable;
