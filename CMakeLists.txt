@@ -24,7 +24,17 @@ FetchContent_Declare(
   URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/96b00d3a33fe03dfb3d7606fe9fcc28488e9e431.zip
 )
 
-FetchContent_MakeAvailable(googletest Async-BSD-Socket-Lib)
+# Fetching  OBD-II-Emulator for OBD2 CAN bus communication
+FetchContent_Declare(
+  OBD-II-Emulator
+  URL https://github.com/langroodi/OBD-II-Emulator/archive/da922b9c02f5e4d1db6236ccd1d482fc4326bfba.zip
+)
+
+FetchContent_MakeAvailable(
+  googletest
+  Async-BSD-Socket-Lib
+  OBD-II-Emulator
+)
 
 ########################################################################
 #
@@ -116,8 +126,11 @@ set(test_ara_com_someip_sd_fsm_dir
 set(test_ara_exec_dir
   "${CMAKE_SOURCE_DIR}/test/ara/exec")
 
-  set(test_ara_exec_helper_dir
+set(test_ara_exec_helper_dir
   "${CMAKE_SOURCE_DIR}/test/ara/exec/helper")
+
+set(test_ara_diag_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/diag")
 
 ########################################################################
 
@@ -315,12 +328,14 @@ if(build_tests)
     ${test_ara_core_dir}/error_domain_test.cpp
     ${test_ara_core_dir}/error_code_test.cpp
     ${test_ara_core_dir}/instance_specifier_test.cpp
+    ${test_ara_diag_dir}/obd_communication_test.cpp
   )
 
   target_link_libraries(
     ara_unit_test
     gtest_main
     async_bsd_socket_lib
+    obd_ii_emulator
     ara_log
     ara_sm
     ara_exec

@@ -14,7 +14,7 @@ It will be tried to use minimum number of dependencies as much as possible. The 
     - Clang C/C++ Compiler (x86-64 PC Linux GNU): 10.0.0
 - Google Test: v1.11.0
 - [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary)
-- [OBD-II Emulator](https://github.com/langroodi/OBD-II-Emulator) (in-house under development C++ emulator)
+- [OBD-II Emulator](https://github.com/langroodi/OBD-II-Emulator) (in-house C++ emulator)
 
 
 ## Build
