@@ -1,3 +1,0 @@
-repository='external project URL'
-module='https://github.com/langroodi/OBD-II-Emulator/archive/da922b9c02f5e4d1db6236ccd1d482fc4326bfba.zip'
-tag=''

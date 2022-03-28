@@ -68,7 +68,7 @@ var annotated_dup =
         [ "Result", "classara_1_1core_1_1Result.html", "classara_1_1core_1_1Result" ],
         [ "Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", "classara_1_1core_1_1Result_3_01void_00_01E_01_4" ]
       ] ],
-      [ "diag", null, [
+      [ "diag", "namespaceara_1_1diag.html", [
         [ "CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", null ],
         [ "ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
         [ "CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],
@@ -90,7 +90,7 @@ var annotated_dup =
         [ "GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],
         [ "GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],
         [ "Inidcator", "classara_1_1diag_1_1Inidcator.html", null ],
-        [ "MetaInfo", "classara_1_1diag_1_1MetaInfo.html", null ],
+        [ "MetaInfo", "classara_1_1diag_1_1MetaInfo.html", "classara_1_1diag_1_1MetaInfo" ],
         [ "Mointor", "classara_1_1diag_1_1Mointor.html", null ],
         [ "OperationCycle", "classara_1_1diag_1_1OperationCycle.html", null ],
         [ "OperationOutput", "structara_1_1diag_1_1OperationOutput.html", null ],
