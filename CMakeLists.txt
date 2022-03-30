@@ -91,6 +91,9 @@ set(source_ara_exec_dir
 set(source_ara_exec_helper_dir
   "${CMAKE_SOURCE_DIR}/src/ara/exec/helper")
 
+set(source_ara_diag_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/diag")
+
 # Test Directories:
 
 set(test_ara_core_dir
@@ -273,6 +276,12 @@ add_library(
   ${source_ara_exec_helper_dir}/fifo_layer.h
 )
 
+add_library(
+  ara_diag
+  ${source_ara_diag_dir}/meta_info.h
+  ${source_ara_diag_dir}/meta_info.cpp
+)
+
 target_link_libraries(
   ara_exec
   ara_core
@@ -282,6 +291,11 @@ target_link_libraries(
   ara_log
   ara_core
   ara_com
+)
+
+target_link_libraries(
+  ara_diag
+  ara_core
 )
 
 if(build_tests)
@@ -329,6 +343,7 @@ if(build_tests)
     ${test_ara_core_dir}/error_code_test.cpp
     ${test_ara_core_dir}/instance_specifier_test.cpp
     ${test_ara_diag_dir}/obd_communication_test.cpp
+    ${test_ara_diag_dir}/meta_info_test.cpp
   )
 
   target_link_libraries(
@@ -339,6 +354,7 @@ if(build_tests)
     ara_log
     ara_sm
     ara_exec
+    ara_diag
   )
 
   include(GoogleTest)
