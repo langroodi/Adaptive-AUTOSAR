@@ -104,23 +104,29 @@ $(document).ready(function(){initNavTree('reentrancy_8h_source.html',''); initRe
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">namespace </span>diag</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">enum class</span> ReentrancyType : std::uint8_t</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>            kFully = 0x00,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            kNot = 0x01</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        };</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html">   16</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html">DataIdentifierReentrancyType</a></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            ReentrancyType read;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            ReentrancyType write;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            ReentrancyType readWrite;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        };</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astructara_1_1diag_1_1DataIdentifierReentrancyType_html"><div class="ttname"><a href="structara_1_1diag_1_1DataIdentifierReentrancyType.html">ara::diag::DataIdentifierReentrancyType</a></div><div class="ttdef"><b>Definition:</b> reentrancy.h:17</div></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">   11</a></span>        <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> : int8_t</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            <a class="code hl_enumvalue" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40">kFully</a> = 0x00, </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <a class="code hl_enumvalue" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4">kNot</a> = 0x01    </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        };</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html">   18</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html">DataIdentifierReentrancyType</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#a639b70f41bad6dcf36520d1aa7323dee">   21</a></span>            <a class="code hl_enumeration" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> <a class="code hl_variable" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#a639b70f41bad6dcf36520d1aa7323dee">read</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#ae86efef600b8ea6dc0dcd2096753ffae">   23</a></span>            <a class="code hl_enumeration" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> <a class="code hl_variable" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#ae86efef600b8ea6dc0dcd2096753ffae">write</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#a74c24368a894cc0816cc73dc5d236bb6">   25</a></span>            <a class="code hl_enumeration" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> <a class="code hl_variable" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#a74c24368a894cc0816cc73dc5d236bb6">readWrite</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        };</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespaceara_1_1diag_html_af2a103a6cbe91eae53da2a57b2274bdb"><div class="ttname"><a href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ara::diag::ReentrancyType</a></div><div class="ttdeci">ReentrancyType</div><div class="ttdoc">Reentrancy type of an instance.</div><div class="ttdef"><b>Definition:</b> reentrancy.h:12</div></div>
+<div class="ttc" id="anamespaceara_1_1diag_html_af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4"><div class="ttname"><a href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4">ara::diag::ReentrancyType::kNot</a></div><div class="ttdeci">@ kNot</div><div class="ttdoc">Not reentrant instance.</div></div>
+<div class="ttc" id="anamespaceara_1_1diag_html_af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40"><div class="ttname"><a href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40">ara::diag::ReentrancyType::kFully</a></div><div class="ttdeci">@ kFully</div><div class="ttdoc">Fully reentrant instance.</div></div>
+<div class="ttc" id="astructara_1_1diag_1_1DataIdentifierReentrancyType_html"><div class="ttname"><a href="structara_1_1diag_1_1DataIdentifierReentrancyType.html">ara::diag::DataIdentifierReentrancyType</a></div><div class="ttdoc">Reentrancy type of a data ID IO.</div><div class="ttdef"><b>Definition:</b> reentrancy.h:19</div></div>
+<div class="ttc" id="astructara_1_1diag_1_1DataIdentifierReentrancyType_html_a639b70f41bad6dcf36520d1aa7323dee"><div class="ttname"><a href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#a639b70f41bad6dcf36520d1aa7323dee">ara::diag::DataIdentifierReentrancyType::read</a></div><div class="ttdeci">ReentrancyType read</div><div class="ttdoc">Reentrancy of the data ID reading.</div><div class="ttdef"><b>Definition:</b> reentrancy.h:21</div></div>
+<div class="ttc" id="astructara_1_1diag_1_1DataIdentifierReentrancyType_html_a74c24368a894cc0816cc73dc5d236bb6"><div class="ttname"><a href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#a74c24368a894cc0816cc73dc5d236bb6">ara::diag::DataIdentifierReentrancyType::readWrite</a></div><div class="ttdeci">ReentrancyType readWrite</div><div class="ttdoc">Reentrancy of the data ID reading and writing.</div><div class="ttdef"><b>Definition:</b> reentrancy.h:25</div></div>
+<div class="ttc" id="astructara_1_1diag_1_1DataIdentifierReentrancyType_html_ae86efef600b8ea6dc0dcd2096753ffae"><div class="ttname"><a href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#ae86efef600b8ea6dc0dcd2096753ffae">ara::diag::DataIdentifierReentrancyType::write</a></div><div class="ttdeci">ReentrancyType write</div><div class="ttdoc">Reentrancy of the data ID writing.</div><div class="ttdef"><b>Definition:</b> reentrancy.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

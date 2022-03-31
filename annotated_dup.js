@@ -76,7 +76,7 @@ var annotated_dup =
         [ "Conversation", "classara_1_1diag_1_1Conversation.html", null ],
         [ "ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],
         [ "CounterBased", "structara_1_1diag_1_1CounterBased.html", null ],
-        [ "DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", null ],
+        [ "DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", "structara_1_1diag_1_1DataIdentifierReentrancyType" ],
         [ "DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", "classara_1_1diag_1_1DiagErrorDomain" ],
         [ "DiagException", "classara_1_1diag_1_1DiagException.html", null ],
         [ "DiagOfferErrorDomain", "classara_1_1diag_1_1DiagOfferErrorDomain.html", "classara_1_1diag_1_1DiagOfferErrorDomain" ],

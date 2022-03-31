@@ -7,7 +7,7 @@ var namespaceara_1_1diag =
     [ "Conversation", "classara_1_1diag_1_1Conversation.html", null ],
     [ "ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],
     [ "CounterBased", "structara_1_1diag_1_1CounterBased.html", null ],
-    [ "DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", null ],
+    [ "DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", "structara_1_1diag_1_1DataIdentifierReentrancyType" ],
     [ "DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", "classara_1_1diag_1_1DiagErrorDomain" ],
     [ "DiagException", "classara_1_1diag_1_1DiagException.html", null ],
     [ "DiagOfferErrorDomain", "classara_1_1diag_1_1DiagOfferErrorDomain.html", "classara_1_1diag_1_1DiagOfferErrorDomain" ],
@@ -35,5 +35,9 @@ var namespaceara_1_1diag =
       [ "kDiagnosticCommunication", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4a67d4821e8f0ae7196e3338074a8a210f", null ],
       [ "kFaultMemory", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b", null ],
       [ "kDoIP", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931", null ]
+    ] ],
+    [ "ReentrancyType", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb", [
+      [ "kFully", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40", null ],
+      [ "kNot", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4", null ]
     ] ]
 ];

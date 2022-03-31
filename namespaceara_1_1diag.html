@@ -119,6 +119,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1CounterBased.html">CounterBased</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html">DataIdentifierReentrancyType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reentrancy type of a data ID IO.  <a href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DiagErrorDomain.html">DiagErrorDomain</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -358,10 +359,11 @@ Enumerations</h2></td></tr>
 , <b>kOperationCycleEnd</b> = 0x01
  }</td></tr>
 <tr class="separator:a4983ee4509818d0ee4df454e63191d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79882f608dbcc3516bd207bd418dcbc4"><td class="memItemLeft" align="right" valign="top"><a id="a79882f608dbcc3516bd207bd418dcbc4" name="a79882f608dbcc3516bd207bd418dcbc4"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>ReentrancyType</b> : std::uint8_t { <b>kFully</b> = 0x00
-, <b>kNot</b> = 0x01
+<tr class="memitem:af2a103a6cbe91eae53da2a57b2274bdb"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> : int8_t { <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40">kFully</a> = 0x00
+, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4">kNot</a> = 0x01
  }</td></tr>
-<tr class="separator:a79882f608dbcc3516bd207bd418dcbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:af2a103a6cbe91eae53da2a57b2274bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reentrancy type of an instance.  <a href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">More...</a><br /></td></tr>
+<tr class="separator:af2a103a6cbe91eae53da2a57b2274bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8f2558d3d6e137640870e06f396ec2a"><td class="memItemLeft" align="right" valign="top"><a id="aa8f2558d3d6e137640870e06f396ec2a" name="aa8f2558d3d6e137640870e06f396ec2a"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>KeyCompareResultType</b> { <b>kKeyValid</b> = 0x00
 , <b>kKeyInvalid</b> = 0x01
  }</td></tr>
@@ -410,6 +412,36 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b" name="a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b"></a>kFaultMemory&#160;</td><td class="fielddoc"><p >For Data IDentifier (DID) according to ISO 14229-1 in diagnostic snapshots. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931" name="a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931"></a>kDoIP&#160;</td><td class="fielddoc"><p >For reading Vehicle Identifier Number (VIN) according to ISO 3779. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="af2a103a6cbe91eae53da2a57b2274bdb" name="af2a103a6cbe91eae53da2a57b2274bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2a103a6cbe91eae53da2a57b2274bdb">&#9670;&nbsp;</a></span>ReentrancyType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ara::diag::ReentrancyType</a> : int8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reentrancy type of an instance. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40" name="af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40"></a>kFully&#160;</td><td class="fielddoc"><p >Fully reentrant instance. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4" name="af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4"></a>kNot&#160;</td><td class="fielddoc"><p >Not reentrant instance. </p>
 </td></tr>
 </table>
 
