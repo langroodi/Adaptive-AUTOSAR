@@ -63,14 +63,14 @@ namespace ara
         };
 
         /// @brief A class to monitor the correct functionality of a system part
-        class Mointor final
+        class Monitor final
         {
         public:
             /// @brief Monitor constructor with an internal debouncing
             /// @param specifier Instance specifer that owns the monitor
             /// @param initMonitor Monitor re-initialization callback
             /// @param getFaultDetectionCounter Delegate to get the event Fault Detection Counter (FDC)
-            Mointor(
+            Monitor(
                 const ara::core::InstanceSpecifier &specifier,
                 std::function<void(InitMonitorReason)> initMonitor,
                 std::function<int8_t()> getFaultDetectionCounter);
