@@ -4,5 +4,7 @@ var searchData=
   ['udsdtcstatusbytetype_1',['UdsDtcStatusByteType',['../structara_1_1diag_1_1UdsDtcStatusByteType.html',1,'ara::diag']]],
   ['unsubscribe_2',['Unsubscribe',['../classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient.html#abbaee3c99a64c5f2c5d34f4d144903b3',1,'ara::com::someip::pubsub::SomeIpPubSubClient']]],
   ['unsubscribed_3',['Unsubscribed',['../classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html#a76debb0fbecb95ef5753bc7a328b0b12',1,'ara::com::someip::pubsub::fsm::SubscribedState']]],
-  ['uploadservice_4',['UploadService',['../classara_1_1diag_1_1UploadService.html',1,'ara::diag']]]
+  ['uploadservice_4',['UploadService',['../classara_1_1diag_1_1UploadService.html',1,'ara::diag']]],
+  ['usejumptofailed_5',['useJumpToFailed',['../structara_1_1diag_1_1CounterBased.html#ab50dd3b68fffa577d0eb24324714496c',1,'ara::diag::CounterBased']]],
+  ['usejumptopassed_6',['useJumpToPassed',['../structara_1_1diag_1_1CounterBased.html#aaa4d446682e12f608ddbab21ae1eaaf8',1,'ara::diag::CounterBased']]]
 ];

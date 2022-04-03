@@ -117,6 +117,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1ConversationIdentifierType.html">ConversationIdentifierType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1CounterBased.html">CounterBased</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contour-based debouncing parameters.  <a href="structara_1_1diag_1_1CounterBased.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1DataIdentifierReentrancyType.html">DataIdentifierReentrancyType</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reentrancy type of a data ID IO.  <a href="structara_1_1diag_1_1DataIdentifierReentrancyType.html#details">More...</a><br /></td></tr>
@@ -150,7 +151,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic metainfo in different context.  <a href="classara_1_1diag_1_1MetaInfo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Mointor.html">Mointor</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Monitor.html">Monitor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to monitor the correct functionality of a system part.  <a href="classara_1_1diag_1_1Monitor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1OperationCycle.html">OperationCycle</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,6 +165,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1SnapshotRecordUpdatedType.html">SnapshotRecordUpdatedType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1TimeBased.html">TimeBased</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time-based debouncing parameters.  <a href="structara_1_1diag_1_1TimeBased.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -337,24 +340,27 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a3d5515c0dc3e3633c67896c5478e52c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic metainfo context.  <a href="namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4">More...</a><br /></td></tr>
 <tr class="separator:a3d5515c0dc3e3633c67896c5478e52c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c657db19c6ef08f91ef8eb3cb354395"><td class="memItemLeft" align="right" valign="top"><a id="a8c657db19c6ef08f91ef8eb3cb354395" name="a8c657db19c6ef08f91ef8eb3cb354395"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>InitMonitorReason</b> { <b>kClear</b> = 0x00
-, <b>kRestart</b> = 0x01
-, <b>kReenabled</b> = 0x02
+<tr class="memitem:ac61bdf1fa5645bc96c1588f4b359641c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641c">InitMonitorReason</a> : uint32_t { <a class="el" href="namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641cafb40ba5ffb9b51df54135ccaeb0fc48c">kClear</a> = 0x00
+, <a class="el" href="namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641ca10b027f9e2db79a78b68b36eca360470">kRestart</a> = 0x01
+, <a class="el" href="namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641ca8dd09e46fa28d20b83d1b055bf5190f2">kReenabled</a> = 0x02
+, <a class="el" href="namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641ca7b04d8795f5fd03c761ce70dab985fee">kDisabled</a> = 0x03
  }</td></tr>
-<tr class="separator:a8c657db19c6ef08f91ef8eb3cb354395"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22bd0b5891f5f767fe62f74c13eb61f7"><td class="memItemLeft" align="right" valign="top"><a id="a22bd0b5891f5f767fe62f74c13eb61f7" name="a22bd0b5891f5f767fe62f74c13eb61f7"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>MonitorAction</b> { <br />
-&#160;&#160;<b>kPassed</b> = 0x00
-, <b>kFailed</b> = 0x01
-, <b>kPrepassed</b> = 0x02
-, <b>kPrefailed</b> = 0x03
+<tr class="memdesc:ac61bdf1fa5645bc96c1588f4b359641c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Monitoring re-initialization reason.  <a href="namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641c">More...</a><br /></td></tr>
+<tr class="separator:ac61bdf1fa5645bc96c1588f4b359641c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa51fd7e83f7ff8d69fb38e64a0938213"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213">MonitorAction</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213a2e1165dab7cbb5e985ea3b1e5d64f619">kPassed</a> = 0x00
+, <a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213ab62fa3c9492b6dae76c23d6dfa466611">kFailed</a> = 0x01
+, <a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213ac7bce46254089e12c3c6c2f14640d8b1">kPrepassed</a> = 0x02
+, <a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213a49b04d5685f462574adfe6bdd3007618">kPrefailed</a> = 0x03
 , <br />
-&#160;&#160;<b>kFdcThresholdReached</b> = 0x04
-, <b>kResetTestFailed</b> = 0x05
-, <b>kFreezeDebouncing</b> = 0x06
-, <b>kResetDebouncing</b> = 0x07
+&#160;&#160;<a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213aedb2a0bcc52e808008e177c02224259b">kFdcThresholdReached</a> = 0x04
+, <a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213aa409d8f8985e91441e31a88e4934c912">kResetTestFailed</a> = 0x05
+, <a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213a26d5e47364bb5a5fd6c62469ab803e1f">kFreezeDebouncing</a> = 0x06
+, <a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213a2a0148a4eb4eb775090dd23deeb5debb">kResetDebouncing</a> = 0x07
 <br />
  }</td></tr>
-<tr class="separator:a22bd0b5891f5f767fe62f74c13eb61f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:aa51fd7e83f7ff8d69fb38e64a0938213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic monitor action type reported by an adpative application.  <a href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213">More...</a><br /></td></tr>
+<tr class="separator:aa51fd7e83f7ff8d69fb38e64a0938213"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4983ee4509818d0ee4df454e63191d12"><td class="memItemLeft" align="right" valign="top"><a id="a4983ee4509818d0ee4df454e63191d12" name="a4983ee4509818d0ee4df454e63191d12"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>OperationCycleType</b> { <b>kOperationCycleStart</b> = 0x00
 , <b>kOperationCycleEnd</b> = 0x01
  }</td></tr>
@@ -412,6 +418,82 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b" name="a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b"></a>kFaultMemory&#160;</td><td class="fielddoc"><p >For Data IDentifier (DID) according to ISO 14229-1 in diagnostic snapshots. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931" name="a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931"></a>kDoIP&#160;</td><td class="fielddoc"><p >For reading Vehicle Identifier Number (VIN) according to ISO 3779. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ac61bdf1fa5645bc96c1588f4b359641c" name="ac61bdf1fa5645bc96c1588f4b359641c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac61bdf1fa5645bc96c1588f4b359641c">&#9670;&nbsp;</a></span>InitMonitorReason</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641c">ara::diag::InitMonitorReason</a> : uint32_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Monitoring re-initialization reason. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641cafb40ba5ffb9b51df54135ccaeb0fc48c" name="ac61bdf1fa5645bc96c1588f4b359641cafb40ba5ffb9b51df54135ccaeb0fc48c"></a>kClear&#160;</td><td class="fielddoc"><p ><a class="el" href="classara_1_1diag_1_1Event.html">Event</a> was cleared. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641ca10b027f9e2db79a78b68b36eca360470" name="ac61bdf1fa5645bc96c1588f4b359641ca10b027f9e2db79a78b68b36eca360470"></a>kRestart&#160;</td><td class="fielddoc"><p >Operation cycle of the event was restarted. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641ca8dd09e46fa28d20b83d1b055bf5190f2" name="ac61bdf1fa5645bc96c1588f4b359641ca8dd09e46fa28d20b83d1b055bf5190f2"></a>kReenabled&#160;</td><td class="fielddoc"><p >Enable conditions (if set) are fullfilled. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641ca7b04d8795f5fd03c761ce70dab985fee" name="ac61bdf1fa5645bc96c1588f4b359641ca7b04d8795f5fd03c761ce70dab985fee"></a>kDisabled&#160;</td><td class="fielddoc"><p >Enable conditions (if set) are no longer fullfilled. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="aa51fd7e83f7ff8d69fb38e64a0938213" name="aa51fd7e83f7ff8d69fb38e64a0938213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa51fd7e83f7ff8d69fb38e64a0938213">&#9670;&nbsp;</a></span>MonitorAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213">ara::diag::MonitorAction</a> : uint32_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Diagnostic monitor action type reported by an adpative application. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa51fd7e83f7ff8d69fb38e64a0938213a2e1165dab7cbb5e985ea3b1e5d64f619" name="aa51fd7e83f7ff8d69fb38e64a0938213a2e1165dab7cbb5e985ea3b1e5d64f619"></a>kPassed&#160;</td><td class="fielddoc"><p >Monitoring passed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51fd7e83f7ff8d69fb38e64a0938213ab62fa3c9492b6dae76c23d6dfa466611" name="aa51fd7e83f7ff8d69fb38e64a0938213ab62fa3c9492b6dae76c23d6dfa466611"></a>kFailed&#160;</td><td class="fielddoc"><p >Monitoring failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51fd7e83f7ff8d69fb38e64a0938213ac7bce46254089e12c3c6c2f14640d8b1" name="aa51fd7e83f7ff8d69fb38e64a0938213ac7bce46254089e12c3c6c2f14640d8b1"></a>kPrepassed&#160;</td><td class="fielddoc"><p >Monitoring pre-passed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51fd7e83f7ff8d69fb38e64a0938213a49b04d5685f462574adfe6bdd3007618" name="aa51fd7e83f7ff8d69fb38e64a0938213a49b04d5685f462574adfe6bdd3007618"></a>kPrefailed&#160;</td><td class="fielddoc"><p >Monitoring pre-failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51fd7e83f7ff8d69fb38e64a0938213aedb2a0bcc52e808008e177c02224259b" name="aa51fd7e83f7ff8d69fb38e64a0938213aedb2a0bcc52e808008e177c02224259b"></a>kFdcThresholdReached&#160;</td><td class="fielddoc"><p >Fault Detection Counter (FDC) threshold has been reached. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51fd7e83f7ff8d69fb38e64a0938213aa409d8f8985e91441e31a88e4934c912" name="aa51fd7e83f7ff8d69fb38e64a0938213aa409d8f8985e91441e31a88e4934c912"></a>kResetTestFailed&#160;</td><td class="fielddoc"><p >Reset TestFailed bit in UDS DTC status. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51fd7e83f7ff8d69fb38e64a0938213a26d5e47364bb5a5fd6c62469ab803e1f" name="aa51fd7e83f7ff8d69fb38e64a0938213a26d5e47364bb5a5fd6c62469ab803e1f"></a>kFreezeDebouncing&#160;</td><td class="fielddoc"><p >Freeze the internal debouncing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa51fd7e83f7ff8d69fb38e64a0938213a2a0148a4eb4eb775090dd23deeb5debb" name="aa51fd7e83f7ff8d69fb38e64a0938213a2a0148a4eb4eb775090dd23deeb5debb"></a>kResetDebouncing&#160;</td><td class="fielddoc"><p >Reset the internal debouncing. </p>
 </td></tr>
 </table>
 

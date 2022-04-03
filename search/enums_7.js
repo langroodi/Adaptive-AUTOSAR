@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reentrancytype_0',['ReentrancyType',['../namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb',1,'ara::diag']]]
+  ['optiontype_0',['OptionType',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0',1,'ara::com::option']]]
 ];

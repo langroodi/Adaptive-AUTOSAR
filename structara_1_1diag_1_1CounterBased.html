@@ -98,35 +98,50 @@ $(document).ready(function(){initNavTree('structara_1_1diag_1_1CounterBased.html
   <div class="headertitle"><div class="title">ara::diag::CounterBased Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Contour-based debouncing parameters.  
+ <a href="structara_1_1diag_1_1CounterBased.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="monitor_8h_source.html">monitor.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aef5859b41cf349bea3e5267e2e11deb9"><td class="memItemLeft" align="right" valign="top"><a id="aef5859b41cf349bea3e5267e2e11deb9" name="aef5859b41cf349bea3e5267e2e11deb9"></a>
-std::int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>failedThreshold</b></td></tr>
-<tr class="separator:aef5859b41cf349bea3e5267e2e11deb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5532f93c1adb77c05b67c04b47a6591"><td class="memItemLeft" align="right" valign="top"><a id="af5532f93c1adb77c05b67c04b47a6591" name="af5532f93c1adb77c05b67c04b47a6591"></a>
-std::int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>passedThreshold</b></td></tr>
-<tr class="separator:af5532f93c1adb77c05b67c04b47a6591"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5205f6513930a5a6fa8ccfb5e49286f"><td class="memItemLeft" align="right" valign="top"><a id="ad5205f6513930a5a6fa8ccfb5e49286f" name="ad5205f6513930a5a6fa8ccfb5e49286f"></a>
-std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>failedStepsize</b></td></tr>
-<tr class="separator:ad5205f6513930a5a6fa8ccfb5e49286f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfad1ebb61f859db611317e977955d77"><td class="memItemLeft" align="right" valign="top"><a id="adfad1ebb61f859db611317e977955d77" name="adfad1ebb61f859db611317e977955d77"></a>
-std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>passedStepsize</b></td></tr>
-<tr class="separator:adfad1ebb61f859db611317e977955d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60fe3491ec3a3b4db63caf3f3c7a579f"><td class="memItemLeft" align="right" valign="top"><a id="a60fe3491ec3a3b4db63caf3f3c7a579f" name="a60fe3491ec3a3b4db63caf3f3c7a579f"></a>
-std::int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>failedJumpValue</b></td></tr>
-<tr class="separator:a60fe3491ec3a3b4db63caf3f3c7a579f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad905d2a5545edc248db3c6a12eecf660"><td class="memItemLeft" align="right" valign="top"><a id="ad905d2a5545edc248db3c6a12eecf660" name="ad905d2a5545edc248db3c6a12eecf660"></a>
-std::int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>passedJumpValue</b></td></tr>
-<tr class="separator:ad905d2a5545edc248db3c6a12eecf660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b4bead84aac3a70f42230d351dd0d5"><td class="memItemLeft" align="right" valign="top"><a id="aa0b4bead84aac3a70f42230d351dd0d5" name="aa0b4bead84aac3a70f42230d351dd0d5"></a>
+int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>failedThreshold</b></td></tr>
+<tr class="memdesc:aa0b4bead84aac3a70f42230d351dd0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold to report failure. <br /></td></tr>
+<tr class="separator:aa0b4bead84aac3a70f42230d351dd0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19cd0e2f483531c35900dacc7a2aebd"><td class="memItemLeft" align="right" valign="top"><a id="ab19cd0e2f483531c35900dacc7a2aebd" name="ab19cd0e2f483531c35900dacc7a2aebd"></a>
+int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>passedThreshold</b></td></tr>
+<tr class="memdesc:ab19cd0e2f483531c35900dacc7a2aebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threshold to report passing. <br /></td></tr>
+<tr class="separator:ab19cd0e2f483531c35900dacc7a2aebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7085ed762a20acacd0da434f7438a024"><td class="memItemLeft" align="right" valign="top"><a id="a7085ed762a20acacd0da434f7438a024" name="a7085ed762a20acacd0da434f7438a024"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>failedStepsize</b></td></tr>
+<tr class="memdesc:a7085ed762a20acacd0da434f7438a024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debounce counter increment step. <br /></td></tr>
+<tr class="separator:a7085ed762a20acacd0da434f7438a024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45fdd1791c770a0475f5019b68186c9d"><td class="memItemLeft" align="right" valign="top"><a id="a45fdd1791c770a0475f5019b68186c9d" name="a45fdd1791c770a0475f5019b68186c9d"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>passedStepsize</b></td></tr>
+<tr class="memdesc:a45fdd1791c770a0475f5019b68186c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debounce counter decrement step. <br /></td></tr>
+<tr class="separator:a45fdd1791c770a0475f5019b68186c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafeaff5b1de7c8caa5563c6d819d2870"><td class="memItemLeft" align="right" valign="top"><a id="aafeaff5b1de7c8caa5563c6d819d2870" name="aafeaff5b1de7c8caa5563c6d819d2870"></a>
+int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>failedJumpValue</b></td></tr>
+<tr class="memdesc:aafeaff5b1de7c8caa5563c6d819d2870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debounce counter jump on a pre-failed report. <br /></td></tr>
+<tr class="separator:aafeaff5b1de7c8caa5563c6d819d2870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28315e694e0b878b50b1cc8b48ea27de"><td class="memItemLeft" align="right" valign="top"><a id="a28315e694e0b878b50b1cc8b48ea27de" name="a28315e694e0b878b50b1cc8b48ea27de"></a>
+int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>passedJumpValue</b></td></tr>
+<tr class="memdesc:a28315e694e0b878b50b1cc8b48ea27de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debounce counter jump on a pre-passed report. <br /></td></tr>
+<tr class="separator:a28315e694e0b878b50b1cc8b48ea27de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab50dd3b68fffa577d0eb24324714496c"><td class="memItemLeft" align="right" valign="top"><a id="ab50dd3b68fffa577d0eb24324714496c" name="ab50dd3b68fffa577d0eb24324714496c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>useJumpToFailed</b></td></tr>
+<tr class="memdesc:ab50dd3b68fffa577d0eb24324714496c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether debounce counter should jump or not on a pre-failed report. <br /></td></tr>
 <tr class="separator:ab50dd3b68fffa577d0eb24324714496c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa4d446682e12f608ddbab21ae1eaaf8"><td class="memItemLeft" align="right" valign="top"><a id="aaa4d446682e12f608ddbab21ae1eaaf8" name="aaa4d446682e12f608ddbab21ae1eaaf8"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>useJumpToPassed</b></td></tr>
+<tr class="memdesc:aaa4d446682e12f608ddbab21ae1eaaf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether debounce counter should jump or not on a pre-passed report. <br /></td></tr>
 <tr class="separator:aaa4d446682e12f608ddbab21ae1eaaf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Contour-based debouncing parameters. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
