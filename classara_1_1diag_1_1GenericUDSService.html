@@ -98,22 +98,156 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1GenericUDSService.
   <div class="headertitle"><div class="title">ara::diag::GenericUDSService Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>An abstract class to handle generic UDS messages.  
+ <a href="classara_1_1diag_1_1GenericUDSService.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="generic__uds__service_8h_source.html">generic_uds_service.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9e1a24b3363ffc45f37f2b846574e2a4"><td class="memItemLeft" align="right" valign="top"><a id="a9e1a24b3363ffc45f37f2b846574e2a4" name="a9e1a24b3363ffc45f37f2b846574e2a4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GenericUDSService</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancyType)</td></tr>
+<tr class="memitem:a9e1a24b3363ffc45f37f2b846574e2a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1GenericUDSService.html#a9e1a24b3363ffc45f37f2b846574e2a4">GenericUDSService</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancyType)</td></tr>
+<tr class="memdesc:a9e1a24b3363ffc45f37f2b846574e2a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1GenericUDSService.html#a9e1a24b3363ffc45f37f2b846574e2a4">More...</a><br /></td></tr>
 <tr class="separator:a9e1a24b3363ffc45f37f2b846574e2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a201a903673d82879e48c295e4877af2e"><td class="memItemLeft" align="right" valign="top"><a id="a201a903673d82879e48c295e4877af2e" name="a201a903673d82879e48c295e4877af2e"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Offer</b> ()</td></tr>
+<tr class="memitem:a201a903673d82879e48c295e4877af2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1GenericUDSService.html#a201a903673d82879e48c295e4877af2e">Offer</a> ()</td></tr>
+<tr class="memdesc:a201a903673d82879e48c295e4877af2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offer handling DM requests.  <a href="classara_1_1diag_1_1GenericUDSService.html#a201a903673d82879e48c295e4877af2e">More...</a><br /></td></tr>
 <tr class="separator:a201a903673d82879e48c295e4877af2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab479a89afa22b67e51931408eca2c286"><td class="memItemLeft" align="right" valign="top"><a id="ab479a89afa22b67e51931408eca2c286" name="ab479a89afa22b67e51931408eca2c286"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> ()</td></tr>
+<tr class="memdesc:ab479a89afa22b67e51931408eca2c286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop offering request handling. <br /></td></tr>
 <tr class="separator:ab479a89afa22b67e51931408eca2c286"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa92b3090e5cc99d2dd9f164c19ecb819"><td class="memItemLeft" align="right" valign="top"><a id="aa92b3090e5cc99d2dd9f164c19ecb819" name="aa92b3090e5cc99d2dd9f164c19ecb819"></a>
-virtual std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>HandleMessage</b> (std::uint8_t sid, std::vector&lt; std::uint8_t &gt; requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cancellationHandler)=0</td></tr>
+<tr class="memitem:aa92b3090e5cc99d2dd9f164c19ecb819"><td class="memItemLeft" align="right" valign="top">virtual std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1GenericUDSService.html#aa92b3090e5cc99d2dd9f164c19ecb819">HandleMessage</a> (std::uint8_t sid, std::vector&lt; std::uint8_t &gt; requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cancellationHandler)=0</td></tr>
+<tr class="memdesc:aa92b3090e5cc99d2dd9f164c19ecb819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1GenericUDSService.html#aa92b3090e5cc99d2dd9f164c19ecb819">More...</a><br /></td></tr>
 <tr class="separator:aa92b3090e5cc99d2dd9f164c19ecb819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >An abstract class to handle generic UDS messages. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9e1a24b3363ffc45f37f2b846574e2a4" name="a9e1a24b3363ffc45f37f2b846574e2a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e1a24b3363ffc45f37f2b846574e2a4">&#9670;&nbsp;</a></span>GenericUDSService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::diag::GenericUDSService::GenericUDSService </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>specifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a>&#160;</td>
+          <td class="paramname"><em>reentrancyType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">specifier</td><td>Owner instance specifier </td></tr>
+    <tr><td class="paramname">reentrancyType</td><td>Service reentrancy type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa92b3090e5cc99d2dd9f164c19ecb819" name="aa92b3090e5cc99d2dd9f164c19ecb819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92b3090e5cc99d2dd9f164c19ecb819">&#9670;&nbsp;</a></span>HandleMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt; ara::diag::GenericUDSService::HandleMessage </td>
+          <td>(</td>
+          <td class="paramtype">std::uint8_t&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>requestData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>metaInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a>&#160;</td>
+          <td class="paramname"><em>cancellationHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle an UDS request message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sid</td><td>UDS service ID </td></tr>
+    <tr><td class="paramname">requestData</td><td>Request message byte array </td></tr>
+    <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
+    <tr><td class="paramname">cancellationHandler</td><td>Callack to be invoked when the current conversation is cancelled </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a201a903673d82879e48c295e4877af2e" name="a201a903673d82879e48c295e4877af2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a201a903673d82879e48c295e4877af2e">&#9670;&nbsp;</a></span>Offer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::GenericUDSService::Offer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offer handling DM requests. </p>
+<dl class="section return"><dt>Returns</dt><dd>Error result if the service has been already offered </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

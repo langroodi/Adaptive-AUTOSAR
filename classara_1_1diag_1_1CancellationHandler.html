@@ -98,6 +98,11 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1CancellationHandle
   <div class="headertitle"><div class="title">ara::diag::CancellationHandler Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A wrapper class around a conversation cancellation handler callback.  
+ <a href="classara_1_1diag_1_1CancellationHandler.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="cancellation__handler_8h_source.html">cancellation_handler.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -113,13 +118,92 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a35410a7d283a511994548631ea15eae8"><td class="memItemLeft" align="right" valign="top"><a id="a35410a7d283a511994548631ea15eae8" name="a35410a7d283a511994548631ea15eae8"></a>
 <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;)=delete</td></tr>
 <tr class="separator:a35410a7d283a511994548631ea15eae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add02f58ead4cbd4aaaeddb3b1f598b70"><td class="memItemLeft" align="right" valign="top"><a id="add02f58ead4cbd4aaaeddb3b1f598b70" name="add02f58ead4cbd4aaaeddb3b1f598b70"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsCanceled</b> () const</td></tr>
+<tr class="memitem:add02f58ead4cbd4aaaeddb3b1f598b70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html#add02f58ead4cbd4aaaeddb3b1f598b70">IsCanceled</a> () const</td></tr>
+<tr class="memdesc:add02f58ead4cbd4aaaeddb3b1f598b70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get conversation cancellation status.  <a href="classara_1_1diag_1_1CancellationHandler.html#add02f58ead4cbd4aaaeddb3b1f598b70">More...</a><br /></td></tr>
 <tr class="separator:add02f58ead4cbd4aaaeddb3b1f598b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab01f8dfdd71d0843496ae0d0de5819b6"><td class="memItemLeft" align="right" valign="top"><a id="ab01f8dfdd71d0843496ae0d0de5819b6" name="ab01f8dfdd71d0843496ae0d0de5819b6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetNotifier</b> (std::function&lt; void()&gt; notifier)</td></tr>
+<tr class="memitem:a34e7ea6a2fa7dcfad9f4756fc1973327"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html#a34e7ea6a2fa7dcfad9f4756fc1973327">SetIsCanceled</a> (bool isCanceled)</td></tr>
+<tr class="memdesc:a34e7ea6a2fa7dcfad9f4756fc1973327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set conversation cancellation status.  <a href="classara_1_1diag_1_1CancellationHandler.html#a34e7ea6a2fa7dcfad9f4756fc1973327">More...</a><br /></td></tr>
+<tr class="separator:a34e7ea6a2fa7dcfad9f4756fc1973327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab01f8dfdd71d0843496ae0d0de5819b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html#ab01f8dfdd71d0843496ae0d0de5819b6">SetNotifier</a> (std::function&lt; void()&gt; notifier)</td></tr>
+<tr class="memdesc:ab01f8dfdd71d0843496ae0d0de5819b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback to be invoked when DM canceled the conversation.  <a href="classara_1_1diag_1_1CancellationHandler.html#ab01f8dfdd71d0843496ae0d0de5819b6">More...</a><br /></td></tr>
 <tr class="separator:ab01f8dfdd71d0843496ae0d0de5819b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A wrapper class around a conversation cancellation handler callback. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="add02f58ead4cbd4aaaeddb3b1f598b70" name="add02f58ead4cbd4aaaeddb3b1f598b70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add02f58ead4cbd4aaaeddb3b1f598b70">&#9670;&nbsp;</a></span>IsCanceled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::diag::CancellationHandler::IsCanceled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get conversation cancellation status. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if DM canceled the conversation, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a34e7ea6a2fa7dcfad9f4756fc1973327" name="a34e7ea6a2fa7dcfad9f4756fc1973327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e7ea6a2fa7dcfad9f4756fc1973327">&#9670;&nbsp;</a></span>SetIsCanceled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::CancellationHandler::SetIsCanceled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isCanceled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set conversation cancellation status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">isCanceled</td><td>Current conversation cancellation status </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The method is not ARA compatible. </dd></dl>
+
+</div>
+</div>
+<a id="ab01f8dfdd71d0843496ae0d0de5819b6" name="ab01f8dfdd71d0843496ae0d0de5819b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab01f8dfdd71d0843496ae0d0de5819b6">&#9670;&nbsp;</a></span>SetNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::CancellationHandler::SetNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a callback to be invoked when DM canceled the conversation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>A callback to be notified after the cancellation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
