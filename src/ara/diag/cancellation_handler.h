@@ -12,6 +12,7 @@ namespace ara
         {
         private:
             bool mIsCanceled;
+            std::function<void()> mNotifier;
 
         public:
             CancellationHandler() = delete;
@@ -19,6 +20,11 @@ namespace ara
             CancellationHandler(CancellationHandler &) = delete;
             CancellationHandler &operator=(CancellationHandler &&) noexcept = default;
             CancellationHandler &operator=(CancellationHandler &) = delete;
+
+            /// @brief Constructor
+            /// @param isCanceled Initial cancellation status
+            /// @note The constructor is not ARA compatible.
+            CancellationHandler(bool isCanceled) noexcept;
 
             /// @brief Get conversation cancellation status
             /// @returns True if DM canceled the conversation, otherwise false

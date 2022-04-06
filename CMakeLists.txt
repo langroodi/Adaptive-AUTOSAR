@@ -280,6 +280,8 @@ add_library(
   ara_diag
   ${source_ara_diag_dir}/meta_info.h
   ${source_ara_diag_dir}/meta_info.cpp
+  ${source_ara_diag_dir}/cancellation_handler.h
+  ${source_ara_diag_dir}/cancellation_handler.cpp
 )
 
 target_link_libraries(
@@ -344,6 +346,7 @@ if(build_tests)
     ${test_ara_core_dir}/instance_specifier_test.cpp
     ${test_ara_diag_dir}/obd_communication_test.cpp
     ${test_ara_diag_dir}/meta_info_test.cpp
+    ${test_ara_diag_dir}/cancellation_handler_test.cpp
   )
 
   target_link_libraries(
