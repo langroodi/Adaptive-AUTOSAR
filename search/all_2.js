@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['cancellationhandler_0',['CancellationHandler',['../classara_1_1diag_1_1CancellationHandler.html',1,'ara::diag']]],
+  ['cancellationhandler_0',['CancellationHandler',['../classara_1_1diag_1_1CancellationHandler.html',1,'ara::diag::CancellationHandler'],['../classara_1_1diag_1_1CancellationHandler.html#a3915f9a3d55b2b75e71bee7b9b4bbf12',1,'ara::diag::CancellationHandler::CancellationHandler()']]],
   ['canyinstanceid_1',['cAnyInstanceId',['../classara_1_1com_1_1entry_1_1Entry.html#a50948690cd72b56f2b9d9c7b80ce7e7f',1,'ara::com::entry::Entry']]],
   ['canymajorversion_2',['cAnyMajorVersion',['../classara_1_1com_1_1entry_1_1Entry.html#a963394f3b8bef4e5bf81311bbe8561c1',1,'ara::com::entry::Entry']]],
   ['canyminorversion_3',['cAnyMinorVersion',['../classara_1_1com_1_1entry_1_1ServiceEntry.html#a518196121769117b605cb39b4db57838',1,'ara::com::entry::ServiceEntry']]],
