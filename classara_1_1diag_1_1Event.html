@@ -93,49 +93,269 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1Event.html',''); i
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classara_1_1diag_1_1Event-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ara::diag::Event Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Diagnostic event class that represents a fault path of a system.  
+ <a href="classara_1_1diag_1_1Event.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="event_8h_source.html">event.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a9df78720dbee6f7c12ce64c90555ddf3"><td class="memItemLeft" align="right" valign="top"><a id="a9df78720dbee6f7c12ce64c90555ddf3" name="a9df78720dbee6f7c12ce64c90555ddf3"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>EventStatusByte</b> = std::uint8_t</td></tr>
-<tr class="separator:a9df78720dbee6f7c12ce64c90555ddf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac8274a532720d47ca2f51d31959da0b6"><td class="memItemLeft" align="right" valign="top"><a id="ac8274a532720d47ca2f51d31959da0b6" name="ac8274a532720d47ca2f51d31959da0b6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Event</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier)</td></tr>
+<tr class="memitem:ac8274a532720d47ca2f51d31959da0b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#ac8274a532720d47ca2f51d31959da0b6">Event</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier)</td></tr>
+<tr class="memdesc:ac8274a532720d47ca2f51d31959da0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1Event.html#ac8274a532720d47ca2f51d31959da0b6">More...</a><br /></td></tr>
 <tr class="separator:ac8274a532720d47ca2f51d31959da0b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac38247435e6427e51ee619280ede3e07"><td class="memItemLeft" align="right" valign="top"><a id="ac38247435e6427e51ee619280ede3e07" name="ac38247435e6427e51ee619280ede3e07"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; EventStatusByte &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetEventStatus</b> ()</td></tr>
+<tr class="memitem:ac38247435e6427e51ee619280ede3e07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#ac38247435e6427e51ee619280ede3e07">GetEventStatus</a> ()</td></tr>
+<tr class="memdesc:ac38247435e6427e51ee619280ede3e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the event status.  <a href="classara_1_1diag_1_1Event.html#ac38247435e6427e51ee619280ede3e07">More...</a><br /></td></tr>
 <tr class="separator:ac38247435e6427e51ee619280ede3e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2831a052b3ec9978518167fbfe903b9b"><td class="memItemLeft" align="right" valign="top"><a id="a2831a052b3ec9978518167fbfe903b9b" name="a2831a052b3ec9978518167fbfe903b9b"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetEventStatusChangedNotifier</b> (std::function&lt; void(EventStatusByte)&gt; notifier)</td></tr>
+<tr class="memitem:a2831a052b3ec9978518167fbfe903b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a2831a052b3ec9978518167fbfe903b9b">SetEventStatusChangedNotifier</a> (std::function&lt; void(<a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a>)&gt; notifier)</td></tr>
+<tr class="memdesc:a2831a052b3ec9978518167fbfe903b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a notifier on the event status changed.  <a href="classara_1_1diag_1_1Event.html#a2831a052b3ec9978518167fbfe903b9b">More...</a><br /></td></tr>
 <tr class="separator:a2831a052b3ec9978518167fbfe903b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeee03e79834257ca85562092afb76f2d"><td class="memItemLeft" align="right" valign="top"><a id="aeee03e79834257ca85562092afb76f2d" name="aeee03e79834257ca85562092afb76f2d"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetLatchedWIRStatus</b> ()</td></tr>
+<tr class="memitem:aeee03e79834257ca85562092afb76f2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#aeee03e79834257ca85562092afb76f2d">GetLatchedWIRStatus</a> ()</td></tr>
+<tr class="memdesc:aeee03e79834257ca85562092afb76f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Warning Indicator Requested bit status.  <a href="classara_1_1diag_1_1Event.html#aeee03e79834257ca85562092afb76f2d">More...</a><br /></td></tr>
 <tr class="separator:aeee03e79834257ca85562092afb76f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad57e550a593da60041bf172aafd0fcf8"><td class="memItemLeft" align="right" valign="top"><a id="ad57e550a593da60041bf172aafd0fcf8" name="ad57e550a593da60041bf172aafd0fcf8"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetLatchedWIRStatus</b> (bool status)</td></tr>
+<tr class="memitem:ad57e550a593da60041bf172aafd0fcf8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#ad57e550a593da60041bf172aafd0fcf8">SetLatchedWIRStatus</a> (bool status)</td></tr>
+<tr class="memdesc:ad57e550a593da60041bf172aafd0fcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Warning Indicator Requested bit status.  <a href="classara_1_1diag_1_1Event.html#ad57e550a593da60041bf172aafd0fcf8">More...</a><br /></td></tr>
 <tr class="separator:ad57e550a593da60041bf172aafd0fcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf549bb098aaa45e34758ebdf7b9ca96"><td class="memItemLeft" align="right" valign="top"><a id="aaf549bb098aaa45e34758ebdf7b9ca96" name="aaf549bb098aaa45e34758ebdf7b9ca96"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetDTCNumber</b> (DTCFormatType dtcFormat)</td></tr>
-<tr class="separator:aaf549bb098aaa45e34758ebdf7b9ca96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd9cfb8ea06cd8a081f49be4646bac60"><td class="memItemLeft" align="right" valign="top"><a id="afd9cfb8ea06cd8a081f49be4646bac60" name="afd9cfb8ea06cd8a081f49be4646bac60"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; DebouncingState &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetDebouncingStatus</b> ()</td></tr>
+<tr class="memitem:a5f5e5339113cd8ae041a44aff757875c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a5f5e5339113cd8ae041a44aff757875c">GetDTCNumber</a> (<a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf">DTCFormatType</a> dtcFormat)</td></tr>
+<tr class="memdesc:a5f5e5339113cd8ae041a44aff757875c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Diagnostic Trouble Code (DTC) number relates to the event.  <a href="classara_1_1diag_1_1Event.html#a5f5e5339113cd8ae041a44aff757875c">More...</a><br /></td></tr>
+<tr class="separator:a5f5e5339113cd8ae041a44aff757875c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9cfb8ea06cd8a081f49be4646bac60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745">DebouncingState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#afd9cfb8ea06cd8a081f49be4646bac60">GetDebouncingStatus</a> ()</td></tr>
+<tr class="memdesc:afd9cfb8ea06cd8a081f49be4646bac60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the event debounding state.  <a href="classara_1_1diag_1_1Event.html#afd9cfb8ea06cd8a081f49be4646bac60">More...</a><br /></td></tr>
 <tr class="separator:afd9cfb8ea06cd8a081f49be4646bac60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe70ef940174c50d0534087fd92c6f3b"><td class="memItemLeft" align="right" valign="top"><a id="afe70ef940174c50d0534087fd92c6f3b" name="afe70ef940174c50d0534087fd92c6f3b"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetTestComplete</b> ()</td></tr>
+<tr class="memitem:afe70ef940174c50d0534087fd92c6f3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#afe70ef940174c50d0534087fd92c6f3b">GetTestComplete</a> ()</td></tr>
+<tr class="memdesc:afe70ef940174c50d0534087fd92c6f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the event has matured to test completed or not.  <a href="classara_1_1diag_1_1Event.html#afe70ef940174c50d0534087fd92c6f3b">More...</a><br /></td></tr>
 <tr class="separator:afe70ef940174c50d0534087fd92c6f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7887cbb5770cc394091b82fc7c9d0fc"><td class="memItemLeft" align="right" valign="top"><a id="ab7887cbb5770cc394091b82fc7c9d0fc" name="ab7887cbb5770cc394091b82fc7c9d0fc"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetFaultDetectionCounter</b> ()</td></tr>
-<tr class="separator:ab7887cbb5770cc394091b82fc7c9d0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec0ff5d870168af715317633a5b8327"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a6ec0ff5d870168af715317633a5b8327">GetFaultDetectionCounter</a> ()</td></tr>
+<tr class="memdesc:a6ec0ff5d870168af715317633a5b8327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the event Fault Detection Counter (FDC) value.  <a href="classara_1_1diag_1_1Event.html#a6ec0ff5d870168af715317633a5b8327">More...</a><br /></td></tr>
+<tr class="separator:a6ec0ff5d870168af715317633a5b8327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Diagnostic event class that represents a fault path of a system. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1diag_1_1Monitor.html" title="A class to monitor the correct functionality of a system part.">Monitor</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The class interface is not fully compatible with the ARA standard. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac8274a532720d47ca2f51d31959da0b6" name="ac8274a532720d47ca2f51d31959da0b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8274a532720d47ca2f51d31959da0b6">&#9670;&nbsp;</a></span>Event()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::diag::Event::Event </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>specifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">specifier</td><td>Instance specifier which owns the event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afd9cfb8ea06cd8a081f49be4646bac60" name="afd9cfb8ea06cd8a081f49be4646bac60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9cfb8ea06cd8a081f49be4646bac60">&#9670;&nbsp;</a></span>GetDebouncingStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745">DebouncingState</a> &gt; ara::diag::Event::GetDebouncingStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the event debounding state. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1diag_1_1Event.html" title="Diagnostic event class that represents a fault path of a system.">Event</a> current debouncing state </dd></dl>
+
+</div>
+</div>
+<a id="a5f5e5339113cd8ae041a44aff757875c" name="a5f5e5339113cd8ae041a44aff757875c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f5e5339113cd8ae041a44aff757875c">&#9670;&nbsp;</a></span>GetDTCNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; uint32_t &gt; ara::diag::Event::GetDTCNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf">DTCFormatType</a>&#160;</td>
+          <td class="paramname"><em>dtcFormat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Diagnostic Trouble Code (DTC) number relates to the event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dtcFormat</td><td>DTC number format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>DTC number in the requested format </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Currently only the UDS format is supported. </dd></dl>
+
+</div>
+</div>
+<a id="ac38247435e6427e51ee619280ede3e07" name="ac38247435e6427e51ee619280ede3e07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38247435e6427e51ee619280ede3e07">&#9670;&nbsp;</a></span>GetEventStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a> &gt; ara::diag::Event::GetEventStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the event status. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current event status </dd></dl>
+
+</div>
+</div>
+<a id="a6ec0ff5d870168af715317633a5b8327" name="a6ec0ff5d870168af715317633a5b8327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ec0ff5d870168af715317633a5b8327">&#9670;&nbsp;</a></span>GetFaultDetectionCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; int8_t &gt; ara::diag::Event::GetFaultDetectionCounter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the event Fault Detection Counter (FDC) value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current FDC value byte </dd></dl>
+
+</div>
+</div>
+<a id="aeee03e79834257ca85562092afb76f2d" name="aeee03e79834257ca85562092afb76f2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee03e79834257ca85562092afb76f2d">&#9670;&nbsp;</a></span>GetLatchedWIRStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt; ara::diag::Event::GetLatchedWIRStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Warning Indicator Requested bit status. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current warning indicator status </dd></dl>
+
+</div>
+</div>
+<a id="afe70ef940174c50d0534087fd92c6f3b" name="afe70ef940174c50d0534087fd92c6f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe70ef940174c50d0534087fd92c6f3b">&#9670;&nbsp;</a></span>GetTestComplete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt; ara::diag::Event::GetTestComplete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the event has matured to test completed or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the debouncing state is finally healed or defective, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a2831a052b3ec9978518167fbfe903b9b" name="a2831a052b3ec9978518167fbfe903b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2831a052b3ec9978518167fbfe903b9b">&#9670;&nbsp;</a></span>SetEventStatusChangedNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::Event::SetEventStatusChangedNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a>)&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a notifier on the event status changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked when the event status is changed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Invalid argument result if the callback pointer is invalid </dd></dl>
+
+</div>
+</div>
+<a id="ad57e550a593da60041bf172aafd0fcf8" name="ad57e550a593da60041bf172aafd0fcf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57e550a593da60041bf172aafd0fcf8">&#9670;&nbsp;</a></span>SetLatchedWIRStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::Event::SetLatchedWIRStatus </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Warning Indicator Requested bit status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>Current warning indicator status </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>No error nor exception </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

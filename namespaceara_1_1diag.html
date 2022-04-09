@@ -142,6 +142,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html">EcuResetRequest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html">Event</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic event class that represents a fault path of a system.  <a href="classara_1_1diag_1_1Event.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte that specifies an event status.  <a href="structara_1_1diag_1_1EventStatusByte.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1GenericRoutine.html">GenericRoutine</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -309,21 +313,29 @@ Enumerations</h2></td></tr>
 , <b>kCustomReset</b> = 4
  }</td></tr>
 <tr class="separator:a3a5c78a6ce2d712ace0fbf66595f6c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9ab8ff4be4e4229bb8e4c834550532b"><td class="memItemLeft" align="right" valign="top"><a id="ac9ab8ff4be4e4229bb8e4c834550532b" name="ac9ab8ff4be4e4229bb8e4c834550532b"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>DTCFormatType</b> : std::uint8_t { <b>kDTCFormatOBD</b> = 0
-, <b>kDTCFormatUDS</b> = 1
-, <b>kDTCFormatJ1939</b> = 2
+<tr class="memitem:a40aff279462e4598fd2c7340cfd5a6bf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf">DTCFormatType</a> : uint8_t { <a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfad301ecf4a0d78f177a9c093fac9feded">kDTCFormatOBD</a> = 0
+, <a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfa7f08b740e3bbd682e00a1bd449d1bf7f">kDTCFormatUDS</a> = 1
+, <a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfabf4f0cc7ffa03bd9e2855a71c83de9dd">kDTCFormatJ1939</a> = 2
  }</td></tr>
-<tr class="separator:ac9ab8ff4be4e4229bb8e4c834550532b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5119b02dc6837111ddb68746a9fc296e"><td class="memItemLeft" align="right" valign="top"><a id="a5119b02dc6837111ddb68746a9fc296e" name="a5119b02dc6837111ddb68746a9fc296e"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>DebouncingState</b> : std::uint8_t { <br />
-&#160;&#160;<b>kNeutral</b> = 0x00
-, <b>kTemporarilyDefective</b> = 0x01
-, <b>kFinallyDefective</b> = 0x02
-, <b>kTemporarilyHealed</b> = 0x04
+<tr class="memdesc:a40aff279462e4598fd2c7340cfd5a6bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic Trouble Code (DTC) number format.  <a href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf">More...</a><br /></td></tr>
+<tr class="separator:a40aff279462e4598fd2c7340cfd5a6bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a1d7a09f73acdd58b75089e9a5d52e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">EventStatusBit</a> : uint8_t { <a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52ea34bf4f659dcfaba9de70885646d8f225">kTestFailed</a> = 0
+, <a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52eaab2307ee88e1a27a4e6a82b1301bb204">kTestFailedThisOperationCycle</a> = 1
+, <a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52eaea6f4955fc205c171ae56b663f66d1cc">kTestNotCompletedThisOperationCycle</a> = 6
+ }</td></tr>
+<tr class="memdesc:ab2a1d7a09f73acdd58b75089e9a5d52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specific bit of the event status byte.  <a href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">More...</a><br /></td></tr>
+<tr class="separator:ab2a1d7a09f73acdd58b75089e9a5d52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456a505aa0b90d8e791298686aed5745"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745">DebouncingState</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a5c9755c01963e8444ea5ee1802139851">kNeutral</a> = 0x00
+, <a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a63bb1a00f2bbdf680ad2785d55f7138c">kTemporarilyDefective</a> = 0x01
+, <a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a2d2d7d107597b6d242ce4d8a6d3f8203">kFinallyDefective</a> = 0x02
+, <a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a2c4a85443b40967d49aa897c3c09e5e8">kTemporarilyHealed</a> = 0x04
 , <br />
-&#160;&#160;<b>kFinallyHealed</b> = 0x08
+&#160;&#160;<a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a187410c602a80f55e84cf69099aee509">kFinallyHealed</a> = 0x08
 <br />
  }</td></tr>
-<tr class="separator:a5119b02dc6837111ddb68746a9fc296e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a456a505aa0b90d8e791298686aed5745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debouncing state of an event.  <a href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745">More...</a><br /></td></tr>
+<tr class="separator:a456a505aa0b90d8e791298686aed5745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb83590a59952acf66c0ba0b2abdc9cd"><td class="memItemLeft" align="right" valign="top"><a id="aeb83590a59952acf66c0ba0b2abdc9cd" name="aeb83590a59952acf66c0ba0b2abdc9cd"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>IndicatorType</b> { <br />
 &#160;&#160;<b>kOff</b> = 0x00
 , <b>kContinuous</b> = 0x01
@@ -426,6 +438,108 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="a456a505aa0b90d8e791298686aed5745" name="a456a505aa0b90d8e791298686aed5745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a456a505aa0b90d8e791298686aed5745">&#9670;&nbsp;</a></span>DebouncingState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745">ara::diag::DebouncingState</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Debouncing state of an event. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a456a505aa0b90d8e791298686aed5745a5c9755c01963e8444ea5ee1802139851" name="a456a505aa0b90d8e791298686aed5745a5c9755c01963e8444ea5ee1802139851"></a>kNeutral&#160;</td><td class="fielddoc"><p >Zero Fault Detection Counter (FDC) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a456a505aa0b90d8e791298686aed5745a63bb1a00f2bbdf680ad2785d55f7138c" name="a456a505aa0b90d8e791298686aed5745a63bb1a00f2bbdf680ad2785d55f7138c"></a>kTemporarilyDefective&#160;</td><td class="fielddoc"><p >FDC greater than zero and less than 127. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a456a505aa0b90d8e791298686aed5745a2d2d7d107597b6d242ce4d8a6d3f8203" name="a456a505aa0b90d8e791298686aed5745a2d2d7d107597b6d242ce4d8a6d3f8203"></a>kFinallyDefective&#160;</td><td class="fielddoc"><p >FDC equal to 127. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a456a505aa0b90d8e791298686aed5745a2c4a85443b40967d49aa897c3c09e5e8" name="a456a505aa0b90d8e791298686aed5745a2c4a85443b40967d49aa897c3c09e5e8"></a>kTemporarilyHealed&#160;</td><td class="fielddoc"><p >FDC less than zero and greater than -128. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a456a505aa0b90d8e791298686aed5745a187410c602a80f55e84cf69099aee509" name="a456a505aa0b90d8e791298686aed5745a187410c602a80f55e84cf69099aee509"></a>kFinallyHealed&#160;</td><td class="fielddoc"><p >FDC equal to -128. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a40aff279462e4598fd2c7340cfd5a6bf" name="a40aff279462e4598fd2c7340cfd5a6bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40aff279462e4598fd2c7340cfd5a6bf">&#9670;&nbsp;</a></span>DTCFormatType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf">ara::diag::DTCFormatType</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Diagnostic Trouble Code (DTC) number format. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a40aff279462e4598fd2c7340cfd5a6bfad301ecf4a0d78f177a9c093fac9feded" name="a40aff279462e4598fd2c7340cfd5a6bfad301ecf4a0d78f177a9c093fac9feded"></a>kDTCFormatOBD&#160;</td><td class="fielddoc"><p >ISO 15031-6 format. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a40aff279462e4598fd2c7340cfd5a6bfa7f08b740e3bbd682e00a1bd449d1bf7f" name="a40aff279462e4598fd2c7340cfd5a6bfa7f08b740e3bbd682e00a1bd449d1bf7f"></a>kDTCFormatUDS&#160;</td><td class="fielddoc"><p >ISO 14229-1 format. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a40aff279462e4598fd2c7340cfd5a6bfabf4f0cc7ffa03bd9e2855a71c83de9dd" name="a40aff279462e4598fd2c7340cfd5a6bfabf4f0cc7ffa03bd9e2855a71c83de9dd"></a>kDTCFormatJ1939&#160;</td><td class="fielddoc"><p >SAE J1939-73 format. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="ab2a1d7a09f73acdd58b75089e9a5d52e" name="ab2a1d7a09f73acdd58b75089e9a5d52e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a1d7a09f73acdd58b75089e9a5d52e">&#9670;&nbsp;</a></span>EventStatusBit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">ara::diag::EventStatusBit</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specific bit of the event status byte. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structara_1_1diag_1_1EventStatusByte.html" title="Byte that specifies an event status.">EventStatusByte</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Enum numeric values are not compatible with the ARA standard. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab2a1d7a09f73acdd58b75089e9a5d52ea34bf4f659dcfaba9de70885646d8f225" name="ab2a1d7a09f73acdd58b75089e9a5d52ea34bf4f659dcfaba9de70885646d8f225"></a>kTestFailed&#160;</td><td class="fielddoc"><p >Bit 0: Failed test. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab2a1d7a09f73acdd58b75089e9a5d52eaab2307ee88e1a27a4e6a82b1301bb204" name="ab2a1d7a09f73acdd58b75089e9a5d52eaab2307ee88e1a27a4e6a82b1301bb204"></a>kTestFailedThisOperationCycle&#160;</td><td class="fielddoc"><p >Bit 1: Failed test during the current operation cycle. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab2a1d7a09f73acdd58b75089e9a5d52eaea6f4955fc205c171ae56b663f66d1cc" name="ab2a1d7a09f73acdd58b75089e9a5d52eaea6f4955fc205c171ae56b663f66d1cc"></a>kTestNotCompletedThisOperationCycle&#160;</td><td class="fielddoc"><p >Bit 6: Incomplete test during the current operation cyle. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="ac61bdf1fa5645bc96c1588f4b359641c" name="ac61bdf1fa5645bc96c1588f4b359641c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac61bdf1fa5645bc96c1588f4b359641c">&#9670;&nbsp;</a></span>InitMonitorReason</h2>
 
@@ -448,7 +562,7 @@ Enumerations</h2></td></tr>
 
 <p>Monitoring re-initialization reason. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641cafb40ba5ffb9b51df54135ccaeb0fc48c" name="ac61bdf1fa5645bc96c1588f4b359641cafb40ba5ffb9b51df54135ccaeb0fc48c"></a>kClear&#160;</td><td class="fielddoc"><p ><a class="el" href="classara_1_1diag_1_1Event.html">Event</a> was cleared. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641cafb40ba5ffb9b51df54135ccaeb0fc48c" name="ac61bdf1fa5645bc96c1588f4b359641cafb40ba5ffb9b51df54135ccaeb0fc48c"></a>kClear&#160;</td><td class="fielddoc"><p ><a class="el" href="classara_1_1diag_1_1Event.html" title="Diagnostic event class that represents a fault path of a system.">Event</a> was cleared. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641ca10b027f9e2db79a78b68b36eca360470" name="ac61bdf1fa5645bc96c1588f4b359641ca10b027f9e2db79a78b68b36eca360470"></a>kRestart&#160;</td><td class="fielddoc"><p >Operation cycle of the event was restarted. </p>
 </td></tr>

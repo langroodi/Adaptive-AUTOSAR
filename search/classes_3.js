@@ -7,8 +7,9 @@ var searchData=
   ['errordomain_4',['ErrorDomain',['../classara_1_1core_1_1ErrorDomain.html',1,'ara::core']]],
   ['event_5',['Event',['../classara_1_1diag_1_1Event.html',1,'ara::diag']]],
   ['eventgroupentry_6',['EventgroupEntry',['../classara_1_1com_1_1entry_1_1EventgroupEntry.html',1,'ara::com::entry']]],
-  ['execerrordomain_7',['ExecErrorDomain',['../classara_1_1exec_1_1ExecErrorDomain.html',1,'ara::exec']]],
-  ['execexception_8',['ExecException',['../classara_1_1exec_1_1ExecException.html',1,'ara::exec']]],
-  ['executionclient_9',['ExecutionClient',['../classara_1_1exec_1_1ExecutionClient.html',1,'ara::exec']]],
-  ['executionerrorevent_10',['ExecutionErrorEvent',['../structara_1_1exec_1_1ExecutionErrorEvent.html',1,'ara::exec']]]
+  ['eventstatusbyte_7',['EventStatusByte',['../structara_1_1diag_1_1EventStatusByte.html',1,'ara::diag']]],
+  ['execerrordomain_8',['ExecErrorDomain',['../classara_1_1exec_1_1ExecErrorDomain.html',1,'ara::exec']]],
+  ['execexception_9',['ExecException',['../classara_1_1exec_1_1ExecException.html',1,'ara::exec']]],
+  ['executionclient_10',['ExecutionClient',['../classara_1_1exec_1_1ExecutionClient.html',1,'ara::exec']]],
+  ['executionerrorevent_11',['ExecutionErrorEvent',['../structara_1_1exec_1_1ExecutionErrorEvent.html',1,'ara::exec']]]
 ];

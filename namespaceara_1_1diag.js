@@ -17,7 +17,8 @@ var namespaceara_1_1diag =
     [ "DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],
     [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
     [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
-    [ "Event", "classara_1_1diag_1_1Event.html", null ],
+    [ "Event", "classara_1_1diag_1_1Event.html", "classara_1_1diag_1_1Event" ],
+    [ "EventStatusByte", "structara_1_1diag_1_1EventStatusByte.html", "structara_1_1diag_1_1EventStatusByte" ],
     [ "GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],
     [ "GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", "classara_1_1diag_1_1GenericUDSService" ],
     [ "Inidcator", "classara_1_1diag_1_1Inidcator.html", null ],
@@ -35,6 +36,23 @@ var namespaceara_1_1diag =
       [ "kDiagnosticCommunication", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4a67d4821e8f0ae7196e3338074a8a210f", null ],
       [ "kFaultMemory", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b", null ],
       [ "kDoIP", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931", null ]
+    ] ],
+    [ "DebouncingState", "namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745", [
+      [ "kNeutral", "namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a5c9755c01963e8444ea5ee1802139851", null ],
+      [ "kTemporarilyDefective", "namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a63bb1a00f2bbdf680ad2785d55f7138c", null ],
+      [ "kFinallyDefective", "namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a2d2d7d107597b6d242ce4d8a6d3f8203", null ],
+      [ "kTemporarilyHealed", "namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a2c4a85443b40967d49aa897c3c09e5e8", null ],
+      [ "kFinallyHealed", "namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a187410c602a80f55e84cf69099aee509", null ]
+    ] ],
+    [ "DTCFormatType", "namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf", [
+      [ "kDTCFormatOBD", "namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfad301ecf4a0d78f177a9c093fac9feded", null ],
+      [ "kDTCFormatUDS", "namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfa7f08b740e3bbd682e00a1bd449d1bf7f", null ],
+      [ "kDTCFormatJ1939", "namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfabf4f0cc7ffa03bd9e2855a71c83de9dd", null ]
+    ] ],
+    [ "EventStatusBit", "namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e", [
+      [ "kTestFailed", "namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52ea34bf4f659dcfaba9de70885646d8f225", null ],
+      [ "kTestFailedThisOperationCycle", "namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52eaab2307ee88e1a27a4e6a82b1301bb204", null ],
+      [ "kTestNotCompletedThisOperationCycle", "namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52eaea6f4955fc205c171ae56b663f66d1cc", null ]
     ] ],
     [ "InitMonitorReason", "namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641c", [
       [ "kClear", "namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641cafb40ba5ffb9b51df54135ccaeb0fc48c", null ],
