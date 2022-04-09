@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac38247435e6427e51ee619280ede3e07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#ac38247435e6427e51ee619280ede3e07">GetEventStatus</a> ()</td></tr>
 <tr class="memdesc:ac38247435e6427e51ee619280ede3e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the event status.  <a href="classara_1_1diag_1_1Event.html#ac38247435e6427e51ee619280ede3e07">More...</a><br /></td></tr>
 <tr class="separator:ac38247435e6427e51ee619280ede3e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c8f0472d3be5af50fe157ce731fed7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a05c8f0472d3be5af50fe157ce731fed7">SetEventStatusBit</a> (<a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">EventStatusBit</a> bit, bool status)</td></tr>
+<tr class="memdesc:a05c8f0472d3be5af50fe157ce731fed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a bit of the event status.  <a href="classara_1_1diag_1_1Event.html#a05c8f0472d3be5af50fe157ce731fed7">More...</a><br /></td></tr>
+<tr class="separator:a05c8f0472d3be5af50fe157ce731fed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2831a052b3ec9978518167fbfe903b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a2831a052b3ec9978518167fbfe903b9b">SetEventStatusChangedNotifier</a> (std::function&lt; void(<a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a>)&gt; notifier)</td></tr>
 <tr class="memdesc:a2831a052b3ec9978518167fbfe903b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a notifier on the event status changed.  <a href="classara_1_1diag_1_1Event.html#a2831a052b3ec9978518167fbfe903b9b">More...</a><br /></td></tr>
 <tr class="separator:a2831a052b3ec9978518167fbfe903b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,6 +127,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f5e5339113cd8ae041a44aff757875c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a5f5e5339113cd8ae041a44aff757875c">GetDTCNumber</a> (<a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf">DTCFormatType</a> dtcFormat)</td></tr>
 <tr class="memdesc:a5f5e5339113cd8ae041a44aff757875c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Diagnostic Trouble Code (DTC) number relates to the event.  <a href="classara_1_1diag_1_1Event.html#a5f5e5339113cd8ae041a44aff757875c">More...</a><br /></td></tr>
 <tr class="separator:a5f5e5339113cd8ae041a44aff757875c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb9a1f46e2551594f8c2af0bfd794c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#addb9a1f46e2551594f8c2af0bfd794c1">SetDTCNumber</a> (uint32_t dtcNumber) noexcept</td></tr>
+<tr class="memdesc:addb9a1f46e2551594f8c2af0bfd794c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Diagnostic Trouble Code (DTC) number relates to the event.  <a href="classara_1_1diag_1_1Event.html#addb9a1f46e2551594f8c2af0bfd794c1">More...</a><br /></td></tr>
+<tr class="separator:addb9a1f46e2551594f8c2af0bfd794c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd9cfb8ea06cd8a081f49be4646bac60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745">DebouncingState</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#afd9cfb8ea06cd8a081f49be4646bac60">GetDebouncingStatus</a> ()</td></tr>
 <tr class="memdesc:afd9cfb8ea06cd8a081f49be4646bac60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the event debounding state.  <a href="classara_1_1diag_1_1Event.html#afd9cfb8ea06cd8a081f49be4646bac60">More...</a><br /></td></tr>
 <tr class="separator:afd9cfb8ea06cd8a081f49be4646bac60"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,6 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6ec0ff5d870168af715317633a5b8327"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a6ec0ff5d870168af715317633a5b8327">GetFaultDetectionCounter</a> ()</td></tr>
 <tr class="memdesc:a6ec0ff5d870168af715317633a5b8327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the event Fault Detection Counter (FDC) value.  <a href="classara_1_1diag_1_1Event.html#a6ec0ff5d870168af715317633a5b8327">More...</a><br /></td></tr>
 <tr class="separator:a6ec0ff5d870168af715317633a5b8327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a149bb55b0030803de64f8ba353c39056"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a149bb55b0030803de64f8ba353c39056">SetFaultDetectionCounter</a> (int8_t fdc) noexcept</td></tr>
+<tr class="memdesc:a149bb55b0030803de64f8ba353c39056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the event Fault Detection Counter (FDC) value.  <a href="classara_1_1diag_1_1Event.html#a149bb55b0030803de64f8ba353c39056">More...</a><br /></td></tr>
+<tr class="separator:a149bb55b0030803de64f8ba353c39056"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Diagnostic event class that represents a fault path of a system. </p>
@@ -302,6 +311,85 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="addb9a1f46e2551594f8c2af0bfd794c1" name="addb9a1f46e2551594f8c2af0bfd794c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb9a1f46e2551594f8c2af0bfd794c1">&#9670;&nbsp;</a></span>SetDTCNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::Event::SetDTCNumber </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>dtcNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the Diagnostic Trouble Code (DTC) number relates to the event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dtcNumber</td><td>DTC number in the UDS format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The function is not ARA compatible. </dd></dl>
+
+</div>
+</div>
+<a id="a05c8f0472d3be5af50fe157ce731fed7" name="a05c8f0472d3be5af50fe157ce731fed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05c8f0472d3be5af50fe157ce731fed7">&#9670;&nbsp;</a></span>SetEventStatusBit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::Event::SetEventStatusBit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">EventStatusBit</a>&#160;</td>
+          <td class="paramname"><em>bit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>status</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a bit of the event status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bit</td><td><a class="el" href="classara_1_1diag_1_1Event.html" title="Diagnostic event class that represents a fault path of a system.">Event</a> status bit to be set </td></tr>
+    <tr><td class="paramname">staut</td><td>Request bit status </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>Throws if the bit argument is out of range </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The function is not ARA compatible. </dd></dl>
+
+</div>
+</div>
 <a id="a2831a052b3ec9978518167fbfe903b9b" name="a2831a052b3ec9978518167fbfe903b9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2831a052b3ec9978518167fbfe903b9b">&#9670;&nbsp;</a></span>SetEventStatusChangedNotifier()</h2>
 
@@ -326,6 +414,41 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Invalid argument result if the callback pointer is invalid </dd></dl>
+
+</div>
+</div>
+<a id="a149bb55b0030803de64f8ba353c39056" name="a149bb55b0030803de64f8ba353c39056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a149bb55b0030803de64f8ba353c39056">&#9670;&nbsp;</a></span>SetFaultDetectionCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::Event::SetFaultDetectionCounter </td>
+          <td>(</td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>fdc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the event Fault Detection Counter (FDC) value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fdc</td><td>Current FDC value byte </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The function is not ARA compatible. </dd></dl>
 
 </div>
 </div>
