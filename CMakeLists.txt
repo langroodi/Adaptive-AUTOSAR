@@ -282,6 +282,8 @@ add_library(
   ${source_ara_diag_dir}/meta_info.cpp
   ${source_ara_diag_dir}/cancellation_handler.h
   ${source_ara_diag_dir}/cancellation_handler.cpp
+  ${source_ara_diag_dir}/event.h
+  ${source_ara_diag_dir}/event.cpp
 )
 
 target_link_libraries(
@@ -347,6 +349,7 @@ if(build_tests)
     ${test_ara_diag_dir}/obd_communication_test.cpp
     ${test_ara_diag_dir}/meta_info_test.cpp
     ${test_ara_diag_dir}/cancellation_handler_test.cpp
+    ${test_ara_diag_dir}/event_test.cpp
   )
 
   target_link_libraries(

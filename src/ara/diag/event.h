@@ -20,12 +20,11 @@ namespace ara
 
         /// @brief Specific bit of the event status byte
         /// @see EventStatusByte
-        /// @note Enum numeric values are not compatible with the ARA standard.
         enum class EventStatusBit : uint8_t
         {
-            kTestFailed = 0,                        ///< Bit 0: Failed test
-            kTestFailedThisOperationCycle = 1,      ///< Bit 1: Failed test during the current operation cycle
-            kTestNotCompletedThisOperationCycle = 6 ///< Bit 6: Incomplete test during the current operation cyle
+            kTestFailed,                        ///< Bit 0: Failed test
+            kTestFailedThisOperationCycle,      ///< Bit 1: Failed test during the current operation cycle
+            kTestNotCompletedThisOperationCycle ///< Bit 6: Incomplete test during the current operation cyle
         };
 
         /// @brief Byte that specifies an event status
@@ -50,6 +49,16 @@ namespace ara
         /// @note The class interface is not fully compatible with the ARA standard.
         class Event
         {
+        private:
+            const uint8_t cDefaultEventStatus{0x02};
+
+            const ara::core::InstanceSpecifier &mSpecifier;
+            EventStatusByte mEventStatus;
+            std::function<void(EventStatusByte)> mNotifier;
+            bool mWirStatus;
+            uint32_t mDtcNumber;
+            int8_t mFdc;
+
         public:
             /// @brief Constructor
             /// @param specifier Instance specifier which owns the event
@@ -60,6 +69,13 @@ namespace ara
             /// @brief Get the event status
             /// @return Current event status
             ara::core::Result<EventStatusByte> GetEventStatus();
+
+            /// @brief Set a bit of the event status
+            /// @param bit Event status bit to be set
+            /// @param staut Request bit status
+            /// @throws std::out_of_range Throws if the bit argument is out of range
+            /// @note The function is not ARA compatible.
+            void SetEventStatusBit(EventStatusBit bit, bool status);
 
             /// @brief Set a notifier on the event status changed
             /// @param notifier Callback to be invoked when the event status is changed
@@ -82,6 +98,11 @@ namespace ara
             /// @warning Currently only the UDS format is supported.
             ara::core::Result<uint32_t> GetDTCNumber(DTCFormatType dtcFormat);
 
+            /// @brief Set the Diagnostic Trouble Code (DTC) number relates to the event
+            /// @param dtcNumber DTC number in the UDS format
+            /// @note The function is not ARA compatible.
+            void SetDTCNumber(uint32_t dtcNumber) noexcept;
+
             /// @brief Get the event debounding state
             /// @returns Event current debouncing state
             ara::core::Result<DebouncingState> GetDebouncingStatus();
@@ -93,6 +114,11 @@ namespace ara
             /// @brief Get the event Fault Detection Counter (FDC) value
             /// @returns Current FDC value byte
             ara::core::Result<int8_t> GetFaultDetectionCounter();
+
+            /// @brief Set the event Fault Detection Counter (FDC) value
+            /// @param fdc Current FDC value byte
+            /// @note The function is not ARA compatible.
+            void SetFaultDetectionCounter(int8_t fdc) noexcept;
         };
     }
 }
