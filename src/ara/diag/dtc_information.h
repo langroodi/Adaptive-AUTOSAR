@@ -10,41 +10,92 @@ namespace ara
 {
     namespace diag
     {
-        enum class ControlDtcStatusType : std::uint8_t
+        /// UDS Diagnostic Trouble Code (DTC) status byte updating state
+        enum class ControlDtcStatusType : uint8_t
         {
-            kDTCSettingOn = 0x00,
-            kDTCSettingOff = 0x01
+            kDTCSettingOn = 0x00, ///< Enabled USD DTC status byte update
+            kDTCSettingOff = 0x01 ///< Disable USD DTC status byte update
         };
 
+        /// @brief Specific bit flag of the UDS DTC status byte
+        /// @see UdsDtcStatusByteType
+        enum class UdsDtcStatusBitType : uint8_t
+        {
+            kTestFailed = 0x01,                         ///< DTC test is failed at the request time
+            kTestFailedThisOperationCycle = 0x02,       ///< DTC test is failed at the current operation cycle
+            kPendingDTC = 0x04,                         ///< DTC test is failed at the current/preivious operation cycle
+            kConfirmedDTC = 0x08,                       ///< DTC is confirmed at the request time
+            kTestNotCompletedSinceLastClear = 0x10,     ///< DTC test is not completed since the last error codes clearing
+            kTestFailedSinceLastClear = 0x20,           ///< DTC test is failed since the last error codes clearing
+            kTestNotCompletedThisOperationCycle = 0x40, ///< DTC test is not completed at the current operation cycle
+            kWarningIndicatorRequested = 0x80           ///< Warning Indicator Requested (WIR)
+        };
+
+        /// @brief Byte that specifies an UDS DTC status
         struct UdsDtcStatusByteType
         {
-            /* data */
+            /// @brief UDS DTC status byte containing the UdsDtcStatusBitType
+            uint8_t encodedBits;
         };
 
-        struct SnapshotRecordUpdatedType
-        {
-            /* data */
-        };
-
+        /// @brief A class to process Diagnostic Trouble Code (DTC) information
+        /// @note Despite of the ARA standard, snapshots are not supported within this class.
         class DTCInformation
         {
         public:
+            /// @brief Constructor
+            /// @param specifier Instance specifier that owns the DTC information
             explicit DTCInformation(const ara::core::InstanceSpecifier &specifier);
+
             ~DTCInformation() noexcept = default;
-            ara::core::Result<UdsDtcStatusByteType> GetCurrentStatus(std::uint32_t dtc);
+
+            /// @brief Get UDS DTC status byte of a certain DTC
+            /// @param dtc DTC ID of interest
+            /// @returns Requested USD DTC status byte if the DTC ID exists, otherwise an error
+            ara::core::Result<UdsDtcStatusByteType> GetCurrentStatus(uint32_t dtc);
+
+            /// @brief Set a notifer on any DTC status change
+            /// @param notifier Callback to be invoked if the status of any DTC is changed
+            /// @returns Error in case of invalid callback pointer
             ara::core::Result<void> SetDTCStatusChangedNotifier(
-                std::function<void(std::uint32_t, UdsDtcStatusByteType, UdsDtcStatusByteType)> notifier);
-            ara::core::Result<void> SetSnapshotRecordUpdatedNotifier(
-                std::function<void(SnapshotRecordUpdatedType)> notifier);
-            ara::core::Result<std::uint32_t> GetNumberOfStoredEntries();
+                std::function<void(uint32_t, UdsDtcStatusByteType, UdsDtcStatusByteType)> notifier);
+
+            /// @brief Get the number of stored DTC
+            /// @returns Number of currently stored DTC in the primary fault memory
+            ara::core::Result<uint32_t> GetNumberOfStoredEntries();
+
+            /// @brief Set a notifer on the number of stored DTC change
+            /// @param notifier Callback to be invoked if the number of stored DTC is changed
+            /// @returns Error in case of invalid callback pointer
             ara::core::Result<void> SetNumberOfStoredEntriesNotifier(
-                std::function<void(std::uint32_t)> notifier);
-            ara::core::Result<void> Clear(std::uint32_t dtcGroup);
+                std::function<void(uint32_t)> notifier);
+            
+            /// @brief Clear a DTC
+            /// @param dtc ID of the DTC that should be removed
+            /// @returns Error if the requested DTC ID does not exist
+            ara::core::Result<void> Clear(uint32_t dtc);
+
+            /// @brief Indicate whether the UDS DTC byte update is enabled or not
+            /// @returns Control UDS status relates to the UDS service 0x85
             ara::core::Result<ControlDtcStatusType> GetControlDTCStatus();
+
+            /// @brief Set a notifer on the control DTC status change
+            /// @param notifier Callback to be invoked if the control DTC status is changed
+            /// @returns Error in case of invalid callback pointer
             ara::core::Result<void> SetControlDtcStatusNotifier(
                 std::function<void(ControlDtcStatusType)> notifier);
+            
+            /// @brief Enforce enabling the USD DTC status byte update
+            /// @returns No error
             ara::core::Result<void> EnableControlDtc();
+
+            /// @brief Indicate whether the primary fault memory is overflowed or not
+            /// @returns True if the memory is overflowed, otherwise false
             ara::core::Result<bool> GetEventMemoryOverflow();
+
+            /// @brief Set a notifer on the primary fault memory overflow
+            /// @param notifier Callback to be invoked if the memory is overflowed
+            /// @returns Error in case of invalid callback pointer
             ara::core::Result<void> SetEventMemoryOverflowNotifier(
                 std::function<void(bool)> notifier);
         };
