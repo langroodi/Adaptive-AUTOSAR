@@ -15,7 +15,7 @@ var namespaceara_1_1diag =
     [ "DiagUdsNrcErrorDomain", "classara_1_1diag_1_1DiagUdsNrcErrorDomain.html", "classara_1_1diag_1_1DiagUdsNrcErrorDomain" ],
     [ "DiagUdsNrcException", "classara_1_1diag_1_1DiagUdsNrcException.html", null ],
     [ "DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],
-    [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
+    [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", "classara_1_1diag_1_1DTCInformation" ],
     [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
     [ "Event", "classara_1_1diag_1_1Event.html", "classara_1_1diag_1_1Event" ],
     [ "EventStatusByte", "structara_1_1diag_1_1EventStatusByte.html", "structara_1_1diag_1_1EventStatusByte" ],
@@ -28,14 +28,17 @@ var namespaceara_1_1diag =
     [ "OperationOutput", "structara_1_1diag_1_1OperationOutput.html", "structara_1_1diag_1_1OperationOutput" ],
     [ "SecuirtyAccess", "classara_1_1diag_1_1SecuirtyAccess.html", null ],
     [ "ServiceValidation", "classara_1_1diag_1_1ServiceValidation.html", null ],
-    [ "SnapshotRecordUpdatedType", "structara_1_1diag_1_1SnapshotRecordUpdatedType.html", null ],
     [ "TimeBased", "structara_1_1diag_1_1TimeBased.html", "structara_1_1diag_1_1TimeBased" ],
-    [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", null ],
+    [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", "structara_1_1diag_1_1UdsDtcStatusByteType" ],
     [ "UploadService", "classara_1_1diag_1_1UploadService.html", null ],
     [ "Context", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4", [
       [ "kDiagnosticCommunication", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4a67d4821e8f0ae7196e3338074a8a210f", null ],
       [ "kFaultMemory", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b", null ],
       [ "kDoIP", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931", null ]
+    ] ],
+    [ "ControlDtcStatusType", "namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338", [
+      [ "kDTCSettingOn", "namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338a701df98481ba0548fe0a07e6d979f672", null ],
+      [ "kDTCSettingOff", "namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338afd2cd2f78242f101f7e7de362f9a1178", null ]
     ] ],
     [ "DebouncingState", "namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745", [
       [ "kNeutral", "namespaceara_1_1diag.html#a456a505aa0b90d8e791298686aed5745a5c9755c01963e8444ea5ee1802139851", null ],
@@ -73,5 +76,15 @@ var namespaceara_1_1diag =
     [ "ReentrancyType", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb", [
       [ "kFully", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40", null ],
       [ "kNot", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4", null ]
+    ] ],
+    [ "UdsDtcStatusBitType", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226", [
+      [ "kTestFailed", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a34bf4f659dcfaba9de70885646d8f225", null ],
+      [ "kTestFailedThisOperationCycle", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226aab2307ee88e1a27a4e6a82b1301bb204", null ],
+      [ "kPendingDTC", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226af23da09a6c87e91e1ae6c7fc916036a0", null ],
+      [ "kConfirmedDTC", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a34598cb21265df5cd5ba2db0174f1ea4", null ],
+      [ "kTestNotCompletedSinceLastClear", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a8b9f885c1dac5953e999312d9dc3bd13", null ],
+      [ "kTestFailedSinceLastClear", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a28235b7f8ac565738eb785b8b6b213ea", null ],
+      [ "kTestNotCompletedThisOperationCycle", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226aea6f4955fc205c171ae56b663f66d1cc", null ],
+      [ "kWarningIndicatorRequested", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a0fa248b607f92770b70dd5061d9e5c3d", null ]
     ] ]
 ];

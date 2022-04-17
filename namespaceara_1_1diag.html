@@ -138,6 +138,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DownloadService.html">DownloadService</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html">DTCInformation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to process Diagnostic Trouble Code (DTC) information.  <a href="classara_1_1diag_1_1DTCInformation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html">EcuResetRequest</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,12 +170,11 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1ServiceValidation.html">ServiceValidation</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1SnapshotRecordUpdatedType.html">SnapshotRecordUpdatedType</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1TimeBased.html">TimeBased</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time-based debouncing parameters.  <a href="structara_1_1diag_1_1TimeBased.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte that specifies an UDS DTC status.  <a href="structara_1_1diag_1_1UdsDtcStatusByteType.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1UploadService.html">UploadService</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -292,10 +292,25 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a790dc3c1fb2f78437e2bf12eeda82b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacfb01a2f114d5e7785b67ced91dd820"><td class="memItemLeft" align="right" valign="top"><a id="aacfb01a2f114d5e7785b67ced91dd820" name="aacfb01a2f114d5e7785b67ced91dd820"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>ControlDtcStatusType</b> : std::uint8_t { <b>kDTCSettingOn</b> = 0x00
-, <b>kDTCSettingOff</b> = 0x01
+<tr class="memitem:a9c1445216ee8da91560f120c6107a338"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338">ControlDtcStatusType</a> : uint8_t { <a class="el" href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338a701df98481ba0548fe0a07e6d979f672">kDTCSettingOn</a> = 0x00
+, <a class="el" href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338afd2cd2f78242f101f7e7de362f9a1178">kDTCSettingOff</a> = 0x01
  }</td></tr>
-<tr class="separator:aacfb01a2f114d5e7785b67ced91dd820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a9c1445216ee8da91560f120c6107a338"><td class="mdescLeft">&#160;</td><td class="mdescRight">UDS Diagnostic Trouble Code (DTC) status byte updating state.  <a href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338">More...</a><br /></td></tr>
+<tr class="separator:a9c1445216ee8da91560f120c6107a338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2845c730f655f40709420dea077d226"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226">UdsDtcStatusBitType</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a34bf4f659dcfaba9de70885646d8f225">kTestFailed</a> = 0x01
+, <a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226aab2307ee88e1a27a4e6a82b1301bb204">kTestFailedThisOperationCycle</a> = 0x02
+, <a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226af23da09a6c87e91e1ae6c7fc916036a0">kPendingDTC</a> = 0x04
+, <a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a34598cb21265df5cd5ba2db0174f1ea4">kConfirmedDTC</a> = 0x08
+, <br />
+&#160;&#160;<a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a8b9f885c1dac5953e999312d9dc3bd13">kTestNotCompletedSinceLastClear</a> = 0x10
+, <a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a28235b7f8ac565738eb785b8b6b213ea">kTestFailedSinceLastClear</a> = 0x20
+, <a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226aea6f4955fc205c171ae56b663f66d1cc">kTestNotCompletedThisOperationCycle</a> = 0x40
+, <a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a0fa248b607f92770b70dd5061d9e5c3d">kWarningIndicatorRequested</a> = 0x80
+<br />
+ }</td></tr>
+<tr class="memdesc:aa2845c730f655f40709420dea077d226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specific bit flag of the UDS DTC status byte.  <a href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226">More...</a><br /></td></tr>
+<tr class="separator:aa2845c730f655f40709420dea077d226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac27c592a492758a291294c5ab318d005"><td class="memItemLeft" align="right" valign="top"><a id="ac27c592a492758a291294c5ab318d005" name="ac27c592a492758a291294c5ab318d005"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>LastResetType</b> : std::uint32_t { <br />
 &#160;&#160;<b>kRegular</b> = 0
 , <b>kUnexpected</b> = 1
@@ -433,6 +448,36 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b" name="a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b"></a>kFaultMemory&#160;</td><td class="fielddoc"><p >For Data IDentifier (DID) according to ISO 14229-1 in diagnostic snapshots. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931" name="a3d5515c0dc3e3633c67896c5478e52c4ab2755249b6eea11b13e3f546b29b4931"></a>kDoIP&#160;</td><td class="fielddoc"><p >For reading Vehicle Identifier Number (VIN) according to ISO 3779. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a9c1445216ee8da91560f120c6107a338" name="a9c1445216ee8da91560f120c6107a338"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c1445216ee8da91560f120c6107a338">&#9670;&nbsp;</a></span>ControlDtcStatusType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338">ara::diag::ControlDtcStatusType</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>UDS Diagnostic Trouble Code (DTC) status byte updating state. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9c1445216ee8da91560f120c6107a338a701df98481ba0548fe0a07e6d979f672" name="a9c1445216ee8da91560f120c6107a338a701df98481ba0548fe0a07e6d979f672"></a>kDTCSettingOn&#160;</td><td class="fielddoc"><p >Enabled USD DTC status byte update. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9c1445216ee8da91560f120c6107a338afd2cd2f78242f101f7e7de362f9a1178" name="a9c1445216ee8da91560f120c6107a338afd2cd2f78242f101f7e7de362f9a1178"></a>kDTCSettingOff&#160;</td><td class="fielddoc"><p >Disable USD DTC status byte update. </p>
 </td></tr>
 </table>
 
@@ -640,6 +685,49 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40" name="af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40"></a>kFully&#160;</td><td class="fielddoc"><p >Fully reentrant instance. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4" name="af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4"></a>kNot&#160;</td><td class="fielddoc"><p >Not reentrant instance. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="aa2845c730f655f40709420dea077d226" name="aa2845c730f655f40709420dea077d226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2845c730f655f40709420dea077d226">&#9670;&nbsp;</a></span>UdsDtcStatusBitType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226">ara::diag::UdsDtcStatusBitType</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specific bit flag of the UDS DTC status byte. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html" title="Byte that specifies an UDS DTC status.">UdsDtcStatusByteType</a> </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa2845c730f655f40709420dea077d226a34bf4f659dcfaba9de70885646d8f225" name="aa2845c730f655f40709420dea077d226a34bf4f659dcfaba9de70885646d8f225"></a>kTestFailed&#160;</td><td class="fielddoc"><p >DTC test is failed at the request time. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa2845c730f655f40709420dea077d226aab2307ee88e1a27a4e6a82b1301bb204" name="aa2845c730f655f40709420dea077d226aab2307ee88e1a27a4e6a82b1301bb204"></a>kTestFailedThisOperationCycle&#160;</td><td class="fielddoc"><p >DTC test is failed at the current operation cycle. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa2845c730f655f40709420dea077d226af23da09a6c87e91e1ae6c7fc916036a0" name="aa2845c730f655f40709420dea077d226af23da09a6c87e91e1ae6c7fc916036a0"></a>kPendingDTC&#160;</td><td class="fielddoc"><p >DTC test is failed at the current/preivious operation cycle. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa2845c730f655f40709420dea077d226a34598cb21265df5cd5ba2db0174f1ea4" name="aa2845c730f655f40709420dea077d226a34598cb21265df5cd5ba2db0174f1ea4"></a>kConfirmedDTC&#160;</td><td class="fielddoc"><p >DTC is confirmed at the request time. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa2845c730f655f40709420dea077d226a8b9f885c1dac5953e999312d9dc3bd13" name="aa2845c730f655f40709420dea077d226a8b9f885c1dac5953e999312d9dc3bd13"></a>kTestNotCompletedSinceLastClear&#160;</td><td class="fielddoc"><p >DTC test is not completed since the last error codes clearing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa2845c730f655f40709420dea077d226a28235b7f8ac565738eb785b8b6b213ea" name="aa2845c730f655f40709420dea077d226a28235b7f8ac565738eb785b8b6b213ea"></a>kTestFailedSinceLastClear&#160;</td><td class="fielddoc"><p >DTC test is failed since the last error codes clearing. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa2845c730f655f40709420dea077d226aea6f4955fc205c171ae56b663f66d1cc" name="aa2845c730f655f40709420dea077d226aea6f4955fc205c171ae56b663f66d1cc"></a>kTestNotCompletedThisOperationCycle&#160;</td><td class="fielddoc"><p >DTC test is not completed at the current operation cycle. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa2845c730f655f40709420dea077d226a0fa248b607f92770b70dd5061d9e5c3d" name="aa2845c730f655f40709420dea077d226a0fa248b607f92770b70dd5061d9e5c3d"></a>kWarningIndicatorRequested&#160;</td><td class="fielddoc"><p >Warning Indicator Requested (WIR) </p>
 </td></tr>
 </table>
 

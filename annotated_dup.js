@@ -84,7 +84,7 @@ var annotated_dup =
         [ "DiagUdsNrcErrorDomain", "classara_1_1diag_1_1DiagUdsNrcErrorDomain.html", "classara_1_1diag_1_1DiagUdsNrcErrorDomain" ],
         [ "DiagUdsNrcException", "classara_1_1diag_1_1DiagUdsNrcException.html", null ],
         [ "DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],
-        [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
+        [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", "classara_1_1diag_1_1DTCInformation" ],
         [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
         [ "Event", "classara_1_1diag_1_1Event.html", "classara_1_1diag_1_1Event" ],
         [ "EventStatusByte", "structara_1_1diag_1_1EventStatusByte.html", "structara_1_1diag_1_1EventStatusByte" ],
@@ -97,9 +97,8 @@ var annotated_dup =
         [ "OperationOutput", "structara_1_1diag_1_1OperationOutput.html", "structara_1_1diag_1_1OperationOutput" ],
         [ "SecuirtyAccess", "classara_1_1diag_1_1SecuirtyAccess.html", null ],
         [ "ServiceValidation", "classara_1_1diag_1_1ServiceValidation.html", null ],
-        [ "SnapshotRecordUpdatedType", "structara_1_1diag_1_1SnapshotRecordUpdatedType.html", null ],
         [ "TimeBased", "structara_1_1diag_1_1TimeBased.html", "structara_1_1diag_1_1TimeBased" ],
-        [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", null ],
+        [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", "structara_1_1diag_1_1UdsDtcStatusByteType" ],
         [ "UploadService", "classara_1_1diag_1_1UploadService.html", null ]
       ] ],
       [ "exec", "namespaceara_1_1exec.html", [

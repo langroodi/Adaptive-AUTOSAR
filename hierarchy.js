@@ -106,7 +106,6 @@ var hierarchy =
     [ "ara::core::Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", null ],
     [ "ara::diag::SecuirtyAccess", "classara_1_1diag_1_1SecuirtyAccess.html", null ],
     [ "ara::diag::ServiceValidation", "classara_1_1diag_1_1ServiceValidation.html", null ],
-    [ "ara::diag::SnapshotRecordUpdatedType", "structara_1_1diag_1_1SnapshotRecordUpdatedType.html", null ],
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [
       [ "ara::com::someip::sd::SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", null ]
     ] ],

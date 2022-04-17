@@ -98,46 +98,329 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1DTCInformation.htm
   <div class="headertitle"><div class="title">ara::diag::DTCInformation Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class to process Diagnostic Trouble Code (DTC) information.  
+ <a href="classara_1_1diag_1_1DTCInformation.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="dtc__information_8h_source.html">dtc_information.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7403244428976d2bdeb0df7bb336b9ec"><td class="memItemLeft" align="right" valign="top"><a id="a7403244428976d2bdeb0df7bb336b9ec" name="a7403244428976d2bdeb0df7bb336b9ec"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DTCInformation</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier)</td></tr>
+<tr class="memitem:a7403244428976d2bdeb0df7bb336b9ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#a7403244428976d2bdeb0df7bb336b9ec">DTCInformation</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier)</td></tr>
+<tr class="memdesc:a7403244428976d2bdeb0df7bb336b9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1DTCInformation.html#a7403244428976d2bdeb0df7bb336b9ec">More...</a><br /></td></tr>
 <tr class="separator:a7403244428976d2bdeb0df7bb336b9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a317e5d1818454b319e820e113f7c596d"><td class="memItemLeft" align="right" valign="top"><a id="a317e5d1818454b319e820e113f7c596d" name="a317e5d1818454b319e820e113f7c596d"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentStatus</b> (std::uint32_t dtc)</td></tr>
-<tr class="separator:a317e5d1818454b319e820e113f7c596d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe0fd5522ef7b9a79513dba81ed52a84"><td class="memItemLeft" align="right" valign="top"><a id="abe0fd5522ef7b9a79513dba81ed52a84" name="abe0fd5522ef7b9a79513dba81ed52a84"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetDTCStatusChangedNotifier</b> (std::function&lt; void(std::uint32_t, <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a>, <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a>)&gt; notifier)</td></tr>
-<tr class="separator:abe0fd5522ef7b9a79513dba81ed52a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afece32225107b266ea2ce6de19907c52"><td class="memItemLeft" align="right" valign="top"><a id="afece32225107b266ea2ce6de19907c52" name="afece32225107b266ea2ce6de19907c52"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetSnapshotRecordUpdatedNotifier</b> (std::function&lt; void(<a class="el" href="structara_1_1diag_1_1SnapshotRecordUpdatedType.html">SnapshotRecordUpdatedType</a>)&gt; notifier)</td></tr>
-<tr class="separator:afece32225107b266ea2ce6de19907c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e85a789f0daac77090e2591a1ab180b"><td class="memItemLeft" align="right" valign="top"><a id="a3e85a789f0daac77090e2591a1ab180b" name="a3e85a789f0daac77090e2591a1ab180b"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetNumberOfStoredEntries</b> ()</td></tr>
-<tr class="separator:a3e85a789f0daac77090e2591a1ab180b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0eb67636c314326b1bb876b04114324"><td class="memItemLeft" align="right" valign="top"><a id="ac0eb67636c314326b1bb876b04114324" name="ac0eb67636c314326b1bb876b04114324"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetNumberOfStoredEntriesNotifier</b> (std::function&lt; void(std::uint32_t)&gt; notifier)</td></tr>
-<tr class="separator:ac0eb67636c314326b1bb876b04114324"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2ddadc52c94208f12aefc23feb4b6b0"><td class="memItemLeft" align="right" valign="top"><a id="ab2ddadc52c94208f12aefc23feb4b6b0" name="ab2ddadc52c94208f12aefc23feb4b6b0"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Clear</b> (std::uint32_t dtcGroup)</td></tr>
-<tr class="separator:ab2ddadc52c94208f12aefc23feb4b6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a699d730d4a65bfaacbc5d72c04ad7c7d"><td class="memItemLeft" align="right" valign="top"><a id="a699d730d4a65bfaacbc5d72c04ad7c7d" name="a699d730d4a65bfaacbc5d72c04ad7c7d"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; ControlDtcStatusType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetControlDTCStatus</b> ()</td></tr>
+<tr class="memitem:ac36ee85c8b0a12384aece98362508751"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#ac36ee85c8b0a12384aece98362508751">GetCurrentStatus</a> (uint32_t dtc)</td></tr>
+<tr class="memdesc:ac36ee85c8b0a12384aece98362508751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get UDS DTC status byte of a certain DTC.  <a href="classara_1_1diag_1_1DTCInformation.html#ac36ee85c8b0a12384aece98362508751">More...</a><br /></td></tr>
+<tr class="separator:ac36ee85c8b0a12384aece98362508751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4942e98172cf98940aee81c423d61201"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#a4942e98172cf98940aee81c423d61201">SetDTCStatusChangedNotifier</a> (std::function&lt; void(uint32_t, <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a>, <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a>)&gt; notifier)</td></tr>
+<tr class="memdesc:a4942e98172cf98940aee81c423d61201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a notifer on any DTC status change.  <a href="classara_1_1diag_1_1DTCInformation.html#a4942e98172cf98940aee81c423d61201">More...</a><br /></td></tr>
+<tr class="separator:a4942e98172cf98940aee81c423d61201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8331d5a6182213d737f7eb9a7b56a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#a3d8331d5a6182213d737f7eb9a7b56a9">GetNumberOfStoredEntries</a> ()</td></tr>
+<tr class="memdesc:a3d8331d5a6182213d737f7eb9a7b56a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of stored DTC.  <a href="classara_1_1diag_1_1DTCInformation.html#a3d8331d5a6182213d737f7eb9a7b56a9">More...</a><br /></td></tr>
+<tr class="separator:a3d8331d5a6182213d737f7eb9a7b56a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07637657b4402e50e4f6c3e3a86b6331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#a07637657b4402e50e4f6c3e3a86b6331">SetNumberOfStoredEntriesNotifier</a> (std::function&lt; void(uint32_t)&gt; notifier)</td></tr>
+<tr class="memdesc:a07637657b4402e50e4f6c3e3a86b6331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a notifer on the number of stored DTC change.  <a href="classara_1_1diag_1_1DTCInformation.html#a07637657b4402e50e4f6c3e3a86b6331">More...</a><br /></td></tr>
+<tr class="separator:a07637657b4402e50e4f6c3e3a86b6331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03b6abc72204b82d220076d83040189"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#ac03b6abc72204b82d220076d83040189">Clear</a> (uint32_t dtc)</td></tr>
+<tr class="memdesc:ac03b6abc72204b82d220076d83040189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear a DTC.  <a href="classara_1_1diag_1_1DTCInformation.html#ac03b6abc72204b82d220076d83040189">More...</a><br /></td></tr>
+<tr class="separator:ac03b6abc72204b82d220076d83040189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a699d730d4a65bfaacbc5d72c04ad7c7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338">ControlDtcStatusType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#a699d730d4a65bfaacbc5d72c04ad7c7d">GetControlDTCStatus</a> ()</td></tr>
+<tr class="memdesc:a699d730d4a65bfaacbc5d72c04ad7c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the UDS DTC byte update is enabled or not.  <a href="classara_1_1diag_1_1DTCInformation.html#a699d730d4a65bfaacbc5d72c04ad7c7d">More...</a><br /></td></tr>
 <tr class="separator:a699d730d4a65bfaacbc5d72c04ad7c7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a286a2a4408c9ff8152da1186c4f590a2"><td class="memItemLeft" align="right" valign="top"><a id="a286a2a4408c9ff8152da1186c4f590a2" name="a286a2a4408c9ff8152da1186c4f590a2"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetControlDtcStatusNotifier</b> (std::function&lt; void(ControlDtcStatusType)&gt; notifier)</td></tr>
+<tr class="memitem:a286a2a4408c9ff8152da1186c4f590a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#a286a2a4408c9ff8152da1186c4f590a2">SetControlDtcStatusNotifier</a> (std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338">ControlDtcStatusType</a>)&gt; notifier)</td></tr>
+<tr class="memdesc:a286a2a4408c9ff8152da1186c4f590a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a notifer on the control DTC status change.  <a href="classara_1_1diag_1_1DTCInformation.html#a286a2a4408c9ff8152da1186c4f590a2">More...</a><br /></td></tr>
 <tr class="separator:a286a2a4408c9ff8152da1186c4f590a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb807775800fb55118e8622b983478fe"><td class="memItemLeft" align="right" valign="top"><a id="aeb807775800fb55118e8622b983478fe" name="aeb807775800fb55118e8622b983478fe"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>EnableControlDtc</b> ()</td></tr>
+<tr class="memitem:aeb807775800fb55118e8622b983478fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#aeb807775800fb55118e8622b983478fe">EnableControlDtc</a> ()</td></tr>
+<tr class="memdesc:aeb807775800fb55118e8622b983478fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enforce enabling the USD DTC status byte update.  <a href="classara_1_1diag_1_1DTCInformation.html#aeb807775800fb55118e8622b983478fe">More...</a><br /></td></tr>
 <tr class="separator:aeb807775800fb55118e8622b983478fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39120fa95b7e04dc826d16a4d27cd5b7"><td class="memItemLeft" align="right" valign="top"><a id="a39120fa95b7e04dc826d16a4d27cd5b7" name="a39120fa95b7e04dc826d16a4d27cd5b7"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetEventMemoryOverflow</b> ()</td></tr>
+<tr class="memitem:a39120fa95b7e04dc826d16a4d27cd5b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#a39120fa95b7e04dc826d16a4d27cd5b7">GetEventMemoryOverflow</a> ()</td></tr>
+<tr class="memdesc:a39120fa95b7e04dc826d16a4d27cd5b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the primary fault memory is overflowed or not.  <a href="classara_1_1diag_1_1DTCInformation.html#a39120fa95b7e04dc826d16a4d27cd5b7">More...</a><br /></td></tr>
 <tr class="separator:a39120fa95b7e04dc826d16a4d27cd5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a5652059e0c3d76ed108d287f953fa7"><td class="memItemLeft" align="right" valign="top"><a id="a1a5652059e0c3d76ed108d287f953fa7" name="a1a5652059e0c3d76ed108d287f953fa7"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetEventMemoryOverflowNotifier</b> (std::function&lt; void(bool)&gt; notifier)</td></tr>
+<tr class="memitem:a1a5652059e0c3d76ed108d287f953fa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DTCInformation.html#a1a5652059e0c3d76ed108d287f953fa7">SetEventMemoryOverflowNotifier</a> (std::function&lt; void(bool)&gt; notifier)</td></tr>
+<tr class="memdesc:a1a5652059e0c3d76ed108d287f953fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a notifer on the primary fault memory overflow.  <a href="classara_1_1diag_1_1DTCInformation.html#a1a5652059e0c3d76ed108d287f953fa7">More...</a><br /></td></tr>
 <tr class="separator:a1a5652059e0c3d76ed108d287f953fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A class to process Diagnostic Trouble Code (DTC) information. </p>
+<dl class="section note"><dt>Note</dt><dd>Despite of the ARA standard, snapshots are not supported within this class. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7403244428976d2bdeb0df7bb336b9ec" name="a7403244428976d2bdeb0df7bb336b9ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7403244428976d2bdeb0df7bb336b9ec">&#9670;&nbsp;</a></span>DTCInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::diag::DTCInformation::DTCInformation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>specifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">specifier</td><td>Instance specifier that owns the DTC information </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac03b6abc72204b82d220076d83040189" name="ac03b6abc72204b82d220076d83040189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03b6abc72204b82d220076d83040189">&#9670;&nbsp;</a></span>Clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::DTCInformation::Clear </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>dtc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear a DTC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dtc</td><td>ID of the DTC that should be removed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error if the requested DTC ID does not exist </dd></dl>
+
+</div>
+</div>
+<a id="aeb807775800fb55118e8622b983478fe" name="aeb807775800fb55118e8622b983478fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb807775800fb55118e8622b983478fe">&#9670;&nbsp;</a></span>EnableControlDtc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::DTCInformation::EnableControlDtc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enforce enabling the USD DTC status byte update. </p>
+<dl class="section return"><dt>Returns</dt><dd>No error </dd></dl>
+
+</div>
+</div>
+<a id="a699d730d4a65bfaacbc5d72c04ad7c7d" name="a699d730d4a65bfaacbc5d72c04ad7c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a699d730d4a65bfaacbc5d72c04ad7c7d">&#9670;&nbsp;</a></span>GetControlDTCStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338">ControlDtcStatusType</a> &gt; ara::diag::DTCInformation::GetControlDTCStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicate whether the UDS DTC byte update is enabled or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>Control UDS status relates to the UDS service 0x85 </dd></dl>
+
+</div>
+</div>
+<a id="ac36ee85c8b0a12384aece98362508751" name="ac36ee85c8b0a12384aece98362508751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36ee85c8b0a12384aece98362508751">&#9670;&nbsp;</a></span>GetCurrentStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a> &gt; ara::diag::DTCInformation::GetCurrentStatus </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>dtc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get UDS DTC status byte of a certain DTC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dtc</td><td>DTC ID of interest </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Requested USD DTC status byte if the DTC ID exists, otherwise an error </dd></dl>
+
+</div>
+</div>
+<a id="a39120fa95b7e04dc826d16a4d27cd5b7" name="a39120fa95b7e04dc826d16a4d27cd5b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39120fa95b7e04dc826d16a4d27cd5b7">&#9670;&nbsp;</a></span>GetEventMemoryOverflow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; bool &gt; ara::diag::DTCInformation::GetEventMemoryOverflow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicate whether the primary fault memory is overflowed or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the memory is overflowed, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a3d8331d5a6182213d737f7eb9a7b56a9" name="a3d8331d5a6182213d737f7eb9a7b56a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8331d5a6182213d737f7eb9a7b56a9">&#9670;&nbsp;</a></span>GetNumberOfStoredEntries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; uint32_t &gt; ara::diag::DTCInformation::GetNumberOfStoredEntries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of stored DTC. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of currently stored DTC in the primary fault memory </dd></dl>
+
+</div>
+</div>
+<a id="a286a2a4408c9ff8152da1186c4f590a2" name="a286a2a4408c9ff8152da1186c4f590a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a286a2a4408c9ff8152da1186c4f590a2">&#9670;&nbsp;</a></span>SetControlDtcStatusNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::DTCInformation::SetControlDtcStatusNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#a9c1445216ee8da91560f120c6107a338">ControlDtcStatusType</a>)&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a notifer on the control DTC status change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked if the control DTC status is changed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error in case of invalid callback pointer </dd></dl>
+
+</div>
+</div>
+<a id="a4942e98172cf98940aee81c423d61201" name="a4942e98172cf98940aee81c423d61201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4942e98172cf98940aee81c423d61201">&#9670;&nbsp;</a></span>SetDTCStatusChangedNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::DTCInformation::SetDTCStatusChangedNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(uint32_t, <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a>, <a class="el" href="structara_1_1diag_1_1UdsDtcStatusByteType.html">UdsDtcStatusByteType</a>)&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a notifer on any DTC status change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked if the status of any DTC is changed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error in case of invalid callback pointer </dd></dl>
+
+</div>
+</div>
+<a id="a1a5652059e0c3d76ed108d287f953fa7" name="a1a5652059e0c3d76ed108d287f953fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a5652059e0c3d76ed108d287f953fa7">&#9670;&nbsp;</a></span>SetEventMemoryOverflowNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::DTCInformation::SetEventMemoryOverflowNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(bool)&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a notifer on the primary fault memory overflow. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked if the memory is overflowed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error in case of invalid callback pointer </dd></dl>
+
+</div>
+</div>
+<a id="a07637657b4402e50e4f6c3e3a86b6331" name="a07637657b4402e50e4f6c3e3a86b6331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07637657b4402e50e4f6c3e3a86b6331">&#9670;&nbsp;</a></span>SetNumberOfStoredEntriesNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::DTCInformation::SetNumberOfStoredEntriesNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(uint32_t)&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a notifer on the number of stored DTC change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked if the number of stored DTC is changed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error in case of invalid callback pointer </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

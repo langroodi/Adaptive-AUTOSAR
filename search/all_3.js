@@ -16,5 +16,5 @@ var searchData=
   ['domain_13',['Domain',['../classara_1_1core_1_1ErrorCode.html#aa452d9fe447a099f35a0ba71dfd9cd7e',1,'ara::core::ErrorCode']]],
   ['downloadservice_14',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
   ['dtcformattype_15',['DTCFormatType',['../namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf',1,'ara::diag']]],
-  ['dtcinformation_16',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
+  ['dtcinformation_16',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag::DTCInformation'],['../classara_1_1diag_1_1DTCInformation.html#a7403244428976d2bdeb0df7bb336b9ec',1,'ara::diag::DTCInformation::DTCInformation()']]]
 ];
