@@ -2,6 +2,7 @@
 #define DTC_INFORMATION_H
 
 #include <stdint.h>
+#include <map>
 #include <functional>
 #include "../core/instance_specifier.h"
 #include "../core/result.h"
@@ -39,9 +40,17 @@ namespace ara
         };
 
         /// @brief A class to process Diagnostic Trouble Code (DTC) information
-        /// @note Despite of the ARA standard, snapshots are not supported within this class.
+        /// @note Despite of the ARA standard, snapshots and overflow are not supported within this class.
         class DTCInformation
         {
+        private:
+            const ara::core::InstanceSpecifier &mSpecifier;
+            std::map<uint32_t, UdsDtcStatusByteType> mStatuses;
+            std::function<void(uint32_t, UdsDtcStatusByteType, UdsDtcStatusByteType)> mDtcStatusChangedNotifier;
+            std::function<void(uint32_t)> mNumberOfStoredEntriesNotifier;
+            ControlDtcStatusType mControlDtcStatus;
+            std::function<void(ControlDtcStatusType)> mControlDtcStatusNotifier;
+
         public:
             /// @brief Constructor
             /// @param specifier Instance specifier that owns the DTC information
@@ -53,6 +62,13 @@ namespace ara
             /// @param dtc DTC ID of interest
             /// @returns Requested USD DTC status byte if the DTC ID exists, otherwise an error
             ara::core::Result<UdsDtcStatusByteType> GetCurrentStatus(uint32_t dtc);
+
+            /// @brief Set UDS DTC status byte of a certain DTC
+            /// @param dtc DTC ID of interest
+            /// @param mask DTC status byte mask
+            /// @param status DTC status byte
+            /// @note The function is not ARA compatible.
+            void SetCurrentStatus(uint32_t dtc, UdsDtcStatusBitType mask, UdsDtcStatusByteType status);
 
             /// @brief Set a notifer on any DTC status change
             /// @param notifier Callback to be invoked if the status of any DTC is changed
@@ -69,7 +85,7 @@ namespace ara
             /// @returns Error in case of invalid callback pointer
             ara::core::Result<void> SetNumberOfStoredEntriesNotifier(
                 std::function<void(uint32_t)> notifier);
-            
+
             /// @brief Clear a DTC
             /// @param dtc ID of the DTC that should be removed
             /// @returns Error if the requested DTC ID does not exist
@@ -84,20 +100,10 @@ namespace ara
             /// @returns Error in case of invalid callback pointer
             ara::core::Result<void> SetControlDtcStatusNotifier(
                 std::function<void(ControlDtcStatusType)> notifier);
-            
+
             /// @brief Enforce enabling the USD DTC status byte update
             /// @returns No error
             ara::core::Result<void> EnableControlDtc();
-
-            /// @brief Indicate whether the primary fault memory is overflowed or not
-            /// @returns True if the memory is overflowed, otherwise false
-            ara::core::Result<bool> GetEventMemoryOverflow();
-
-            /// @brief Set a notifer on the primary fault memory overflow
-            /// @param notifier Callback to be invoked if the memory is overflowed
-            /// @returns Error in case of invalid callback pointer
-            ara::core::Result<void> SetEventMemoryOverflowNotifier(
-                std::function<void(bool)> notifier);
         };
     }
 }
