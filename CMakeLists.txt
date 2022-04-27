@@ -284,6 +284,8 @@ add_library(
   ${source_ara_diag_dir}/cancellation_handler.cpp
   ${source_ara_diag_dir}/event.h
   ${source_ara_diag_dir}/event.cpp
+  ${source_ara_diag_dir}/dtc_information.h
+  ${source_ara_diag_dir}/dtc_information.cpp
 )
 
 target_link_libraries(
@@ -350,6 +352,7 @@ if(build_tests)
     ${test_ara_diag_dir}/meta_info_test.cpp
     ${test_ara_diag_dir}/cancellation_handler_test.cpp
     ${test_ara_diag_dir}/event_test.cpp
+    ${test_ara_diag_dir}/dtc_information_test.cpp
   )
 
   target_link_libraries(

@@ -18,6 +18,53 @@ namespace ara
             return _result;
         }
 
+        void DTCInformation::SetCurrentStatus(
+            uint32_t dtc, UdsDtcStatusBitType mask, UdsDtcStatusByteType status)
+        {
+            auto _iterator{mStatuses.find(dtc)};
+
+            if (_iterator == mStatuses.end())
+            {
+                // Add the DTC status
+                mStatuses[dtc] = status;
+
+                if (mNumberOfStoredEntriesNotifier)
+                {
+                    auto _size{static_cast<uint32_t>(mStatuses.size())};
+                    mNumberOfStoredEntriesNotifier(_size);
+                }
+            }
+            else
+            {
+                // Edit the DTC status
+                UdsDtcStatusByteType _currentStatus{_iterator->second};
+                auto _differenceByte{
+                    static_cast<uint8_t>(
+                        _currentStatus.encodedBits ^ status.encodedBits)};
+
+                auto _maskByte{static_cast<uint8_t>(mask)};
+                auto _maskedDifferenceByte{
+                    static_cast<uint8_t>(_differenceByte & _maskByte)};
+
+                // Edit the status byte if there is any difference
+                if (_maskedDifferenceByte)
+                {
+                    // Flip the current status bits
+                    auto _newStatusBits{
+                        static_cast<uint8_t>(
+                            _currentStatus.encodedBits ^ _maskedDifferenceByte)};
+
+                    _iterator->second.encodedBits = _newStatusBits;
+
+                    if (mDtcStatusChangedNotifier)
+                    {
+                        mDtcStatusChangedNotifier(
+                            dtc, _currentStatus, _iterator->second);
+                    }
+                }
+            }
+        }
+
         ara::core::Result<void> DTCInformation::SetDTCStatusChangedNotifier(
             std::function<void(uint32_t, UdsDtcStatusByteType, UdsDtcStatusByteType)> notifier)
         {
@@ -30,7 +77,9 @@ namespace ara
 
         ara::core::Result<uint32_t> DTCInformation::GetNumberOfStoredEntries()
         {
-            ara::core::Result<uint32_t> _result{mStatuses.size()};
+            auto _size{static_cast<uint32_t>(mStatuses.size())};
+            ara::core::Result<uint32_t> _result{_size};
+
             return _result;
         }
 

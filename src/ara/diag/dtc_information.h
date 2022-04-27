@@ -68,7 +68,8 @@ namespace ara
             /// @param mask DTC status byte mask
             /// @param status DTC status byte
             /// @note The function is not ARA compatible.
-            void SetCurrentStatus(uint32_t dtc, UdsDtcStatusBitType mask, UdsDtcStatusByteType status);
+            void SetCurrentStatus(
+                uint32_t dtc, UdsDtcStatusBitType mask, UdsDtcStatusByteType status);
 
             /// @brief Set a notifer on any DTC status change
             /// @param notifier Callback to be invoked if the status of any DTC is changed
