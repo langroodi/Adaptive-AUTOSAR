@@ -72,7 +72,7 @@ var annotated_dup =
         [ "CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", "classara_1_1diag_1_1CancellationHandler" ],
         [ "ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
         [ "CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],
-        [ "Condition", "classara_1_1diag_1_1Condition.html", null ],
+        [ "Condition", "classara_1_1diag_1_1Condition.html", "classara_1_1diag_1_1Condition" ],
         [ "Conversation", "classara_1_1diag_1_1Conversation.html", null ],
         [ "ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],
         [ "CounterBased", "structara_1_1diag_1_1CounterBased.html", "structara_1_1diag_1_1CounterBased" ],

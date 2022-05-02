@@ -112,6 +112,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1CommunicationControl.html">CommunicationControl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Condition.html">Condition</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that represents an enable condition for processing an event by DM.  <a href="classara_1_1diag_1_1Condition.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,9 +182,10 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a3624dcc4aa393504732960699c2b488e"><td class="memItemLeft" align="right" valign="top"><a id="a3624dcc4aa393504732960699c2b488e" name="a3624dcc4aa393504732960699c2b488e"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>ConditionType</b> { <b>kConditionFalse</b> = 0x00
-, <b>kConditionTrue</b> = 0x01
+<tr class="memitem:a3624dcc4aa393504732960699c2b488e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e">ConditionType</a> { <a class="el" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea2ba0cfbca32a628edc829e5d95ec2563">kConditionFalse</a> = 0x00
+, <a class="el" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea8444566bf02ba4117222eb7d8913ef34">kConditionTrue</a> = 0x01
  }</td></tr>
+<tr class="memdesc:a3624dcc4aa393504732960699c2b488e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Condition status type.  <a href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e">More...</a><br /></td></tr>
 <tr class="separator:a3624dcc4aa393504732960699c2b488e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1185d46aae8e09cfe8e8b98ef8cfd8d"><td class="memItemLeft" align="right" valign="top"><a id="ab1185d46aae8e09cfe8e8b98ef8cfd8d" name="ab1185d46aae8e09cfe8e8b98ef8cfd8d"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>ActivityStatusType</b> : std::uint8_t { <b>kActive</b> = 0x00
 , <b>kInactive</b> = 0x01
@@ -421,6 +423,36 @@ Enumerations</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >ARA diagnostic management. </p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a3624dcc4aa393504732960699c2b488e" name="a3624dcc4aa393504732960699c2b488e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3624dcc4aa393504732960699c2b488e">&#9670;&nbsp;</a></span>ConditionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e">ara::diag::ConditionType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classara_1_1diag_1_1Condition.html" title="A class that represents an enable condition for processing an event by DM.">Condition</a> status type. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3624dcc4aa393504732960699c2b488ea2ba0cfbca32a628edc829e5d95ec2563" name="a3624dcc4aa393504732960699c2b488ea2ba0cfbca32a628edc829e5d95ec2563"></a>kConditionFalse&#160;</td><td class="fielddoc"><p >Disabled condition. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3624dcc4aa393504732960699c2b488ea8444566bf02ba4117222eb7d8913ef34" name="a3624dcc4aa393504732960699c2b488ea8444566bf02ba4117222eb7d8913ef34"></a>kConditionTrue&#160;</td><td class="fielddoc"><p >Enabled condition. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="a3d5515c0dc3e3633c67896c5478e52c4" name="a3d5515c0dc3e3633c67896c5478e52c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d5515c0dc3e3633c67896c5478e52c4">&#9670;&nbsp;</a></span>Context</h2>
 

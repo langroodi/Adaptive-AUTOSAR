@@ -3,7 +3,7 @@ var namespaceara_1_1diag =
     [ "CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", "classara_1_1diag_1_1CancellationHandler" ],
     [ "ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
     [ "CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],
-    [ "Condition", "classara_1_1diag_1_1Condition.html", null ],
+    [ "Condition", "classara_1_1diag_1_1Condition.html", "classara_1_1diag_1_1Condition" ],
     [ "Conversation", "classara_1_1diag_1_1Conversation.html", null ],
     [ "ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],
     [ "CounterBased", "structara_1_1diag_1_1CounterBased.html", "structara_1_1diag_1_1CounterBased" ],
@@ -31,6 +31,10 @@ var namespaceara_1_1diag =
     [ "TimeBased", "structara_1_1diag_1_1TimeBased.html", "structara_1_1diag_1_1TimeBased" ],
     [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", "structara_1_1diag_1_1UdsDtcStatusByteType" ],
     [ "UploadService", "classara_1_1diag_1_1UploadService.html", null ],
+    [ "ConditionType", "namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e", [
+      [ "kConditionFalse", "namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea2ba0cfbca32a628edc829e5d95ec2563", null ],
+      [ "kConditionTrue", "namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea8444566bf02ba4117222eb7d8913ef34", null ]
+    ] ],
     [ "Context", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4", [
       [ "kDiagnosticCommunication", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4a67d4821e8f0ae7196e3338074a8a210f", null ],
       [ "kFaultMemory", "namespaceara_1_1diag.html#a3d5515c0dc3e3633c67896c5478e52c4a55cfee0c71325ff36b2781ea69c9d37b", null ],

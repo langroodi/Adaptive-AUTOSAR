@@ -105,27 +105,40 @@ $(document).ready(function(){initNavTree('condition_8h_source.html',''); initRes
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">namespace </span>diag</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <span class="keyword">enum class</span> ConditionType</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>            kConditionFalse = 0x00,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            kConditionTrue = 0x01</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        };</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classara_1_1diag_1_1Condition.html">   17</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classara_1_1diag_1_1Condition.html">Condition</a></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keyword">explicit</span> <a class="code hl_class" href="classara_1_1diag_1_1Condition.html">Condition</a>(<span class="keyword">const</span> <a class="code hl_class" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <a class="code hl_class" href="classara_1_1diag_1_1Condition.html">~Condition</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;ConditionType&gt;</a> GetCondition();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> SetCondition(ConditionType condition);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        };</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e">   12</a></span>        <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e">ConditionType</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            <a class="code hl_enumvalue" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea2ba0cfbca32a628edc829e5d95ec2563">kConditionFalse</a> = 0x00, </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            <a class="code hl_enumvalue" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea8444566bf02ba4117222eb7d8913ef34">kConditionTrue</a> = 0x01   </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        };</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classara_1_1diag_1_1Condition.html">   19</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classara_1_1diag_1_1Condition.html">Condition</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keyword">const</span> <a class="code hl_class" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;mSpecifier;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_enumeration" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e">ConditionType</a> mCondition;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keyword">explicit</span> <a class="code hl_function" href="classara_1_1diag_1_1Condition.html#a979450a92fe30771ee330cee38c2f46b">Condition</a>(<span class="keyword">const</span> <a class="code hl_class" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <a class="code hl_class" href="classara_1_1diag_1_1Condition.html">~Condition</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;ConditionType&gt;</a> <a class="code hl_function" href="classara_1_1diag_1_1Condition.html#a0dea011e05d6c5012e529a87b11973cc">GetCondition</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> <a class="code hl_function" href="classara_1_1diag_1_1Condition.html#a22d2423d2edd1df683a82e57673fc937">SetCondition</a>(<a class="code hl_enumeration" href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e">ConditionType</a> condition);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1core_1_1InstanceSpecifier_html"><div class="ttname"><a href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a></div><div class="ttdoc">AUTOSAR shortname-path wrapper.</div><div class="ttdef"><b>Definition:</b> instance_specifier.h:13</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1Result_html"><div class="ttname"><a href="classara_1_1core_1_1Result.html">ara::core::Result</a></div><div class="ttdoc">A wrapper around the callee's return value and its possible error.</div><div class="ttdef"><b>Definition:</b> result.h:16</div></div>
-<div class="ttc" id="aclassara_1_1diag_1_1Condition_html"><div class="ttname"><a href="classara_1_1diag_1_1Condition.html">ara::diag::Condition</a></div><div class="ttdef"><b>Definition:</b> condition.h:18</div></div>
+<div class="ttc" id="aclassara_1_1diag_1_1Condition_html"><div class="ttname"><a href="classara_1_1diag_1_1Condition.html">ara::diag::Condition</a></div><div class="ttdoc">A class that represents an enable condition for processing an event by DM.</div><div class="ttdef"><b>Definition:</b> condition.h:20</div></div>
+<div class="ttc" id="aclassara_1_1diag_1_1Condition_html_a0dea011e05d6c5012e529a87b11973cc"><div class="ttname"><a href="classara_1_1diag_1_1Condition.html#a0dea011e05d6c5012e529a87b11973cc">ara::diag::Condition::GetCondition</a></div><div class="ttdeci">ara::core::Result&lt; ConditionType &gt; GetCondition()</div><div class="ttdoc">Get the current condition status.</div><div class="ttdef"><b>Definition:</b> condition.cpp:12</div></div>
+<div class="ttc" id="aclassara_1_1diag_1_1Condition_html_a22d2423d2edd1df683a82e57673fc937"><div class="ttname"><a href="classara_1_1diag_1_1Condition.html#a22d2423d2edd1df683a82e57673fc937">ara::diag::Condition::SetCondition</a></div><div class="ttdeci">ara::core::Result&lt; void &gt; SetCondition(ConditionType condition)</div><div class="ttdoc">Set the current condtion status.</div><div class="ttdef"><b>Definition:</b> condition.cpp:18</div></div>
+<div class="ttc" id="aclassara_1_1diag_1_1Condition_html_a979450a92fe30771ee330cee38c2f46b"><div class="ttname"><a href="classara_1_1diag_1_1Condition.html#a979450a92fe30771ee330cee38c2f46b">ara::diag::Condition::Condition</a></div><div class="ttdeci">Condition(const ara::core::InstanceSpecifier &amp;specifier)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> condition.cpp:7</div></div>
+<div class="ttc" id="anamespaceara_1_1diag_html_a3624dcc4aa393504732960699c2b488e"><div class="ttname"><a href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e">ara::diag::ConditionType</a></div><div class="ttdeci">ConditionType</div><div class="ttdoc">Condition status type.</div><div class="ttdef"><b>Definition:</b> condition.h:13</div></div>
+<div class="ttc" id="anamespaceara_1_1diag_html_a3624dcc4aa393504732960699c2b488ea2ba0cfbca32a628edc829e5d95ec2563"><div class="ttname"><a href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea2ba0cfbca32a628edc829e5d95ec2563">ara::diag::ConditionType::kConditionFalse</a></div><div class="ttdeci">@ kConditionFalse</div><div class="ttdoc">Disabled condition.</div></div>
+<div class="ttc" id="anamespaceara_1_1diag_html_a3624dcc4aa393504732960699c2b488ea8444566bf02ba4117222eb7d8913ef34"><div class="ttname"><a href="namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea8444566bf02ba4117222eb7d8913ef34">ara::diag::ConditionType::kConditionTrue</a></div><div class="ttdeci">@ kConditionTrue</div><div class="ttdoc">Enabled condition.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
