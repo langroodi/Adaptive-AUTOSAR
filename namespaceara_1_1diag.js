@@ -24,7 +24,7 @@ var namespaceara_1_1diag =
     [ "Inidcator", "classara_1_1diag_1_1Inidcator.html", null ],
     [ "MetaInfo", "classara_1_1diag_1_1MetaInfo.html", "classara_1_1diag_1_1MetaInfo" ],
     [ "Monitor", "classara_1_1diag_1_1Monitor.html", "classara_1_1diag_1_1Monitor" ],
-    [ "OperationCycle", "classara_1_1diag_1_1OperationCycle.html", null ],
+    [ "OperationCycle", "classara_1_1diag_1_1OperationCycle.html", "classara_1_1diag_1_1OperationCycle" ],
     [ "OperationOutput", "structara_1_1diag_1_1OperationOutput.html", "structara_1_1diag_1_1OperationOutput" ],
     [ "SecuirtyAccess", "classara_1_1diag_1_1SecuirtyAccess.html", null ],
     [ "ServiceValidation", "classara_1_1diag_1_1ServiceValidation.html", null ],

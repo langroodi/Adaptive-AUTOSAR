@@ -7,11 +7,12 @@ var searchData=
   ['reportexecutionstate_4',['ReportExecutionState',['../classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd',1,'ara::exec::ExecutionClient']]],
   ['reportmonitoraction_5',['ReportMonitorAction',['../classara_1_1diag_1_1Monitor.html#aa79907fff713897bdc411b238c86140c',1,'ara::diag::Monitor']]],
   ['requestservice_6',['RequestService',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ServiceNotseenState.html#a2245dd47f35eec0048792a19225b3a0c',1,'ara::com::someip::sd::fsm::ServiceNotseenState']]],
-  ['reset_7',['Reset',['../classara_1_1exec_1_1helper_1_1AtomicOptional.html#aac0556eaa3a753b42fca12e0735061b4',1,'ara::exec::helper::AtomicOptional::Reset()'],['../classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b',1,'ara::core::Optional::Reset()']]],
+  ['reset_7',['Reset',['../classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b',1,'ara::core::Optional::Reset()'],['../classara_1_1exec_1_1helper_1_1AtomicOptional.html#aac0556eaa3a753b42fca12e0735061b4',1,'ara::exec::helper::AtomicOptional::Reset()']]],
   ['resetreceiver_8',['ResetReceiver',['../classara_1_1com_1_1helper_1_1NetworkLayer.html#ac891b0698ab66b7950122755cc3c679b',1,'ara::com::helper::NetworkLayer']]],
   ['resolve_9',['Resolve',['../classara_1_1core_1_1Result.html#a60fde32930cb8ad251f6501fe6b23d6d',1,'ara::core::Result::Resolve()'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aba8710f3e39c53ea7c759b0e3b916cc9',1,'ara::core::Result&lt; void, E &gt;::Resolve()']]],
   ['response_10',['Response',['../classara_1_1com_1_1cg_1_1CommunicationGroupClient.html#ab004a4275726c02e643d0f4fe3c542fb',1,'ara::com::cg::CommunicationGroupClient::Response()'],['../classara_1_1com_1_1cg_1_1CommunicationGroupServer.html#a8426cd0b14236b2f29c0d8c5d1e7d38d',1,'ara::com::cg::CommunicationGroupServer::Response()']]],
-  ['returncode_11',['ReturnCode',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a4b4fe7d97368ba806d781eb8b97ef712',1,'ara::com::someip::SomeIpMessage']]],
-  ['run_12',['Run',['../classara_1_1exec_1_1WorkerRunnable.html#ac555cd342884df281130c40894379c1d',1,'ara::exec::WorkerRunnable']]],
-  ['runworkerpool_13',['RunWorkerPool',['../classara_1_1exec_1_1DeterministicClient.html#ad78e318dc2ccc95877675d7ac27a1811',1,'ara::exec::DeterministicClient']]]
+  ['restartoperationcycle_11',['RestartOperationCycle',['../classara_1_1diag_1_1OperationCycle.html#a6731ddb53859fb3555ba0aef9cf4d791',1,'ara::diag::OperationCycle']]],
+  ['returncode_12',['ReturnCode',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a4b4fe7d97368ba806d781eb8b97ef712',1,'ara::com::someip::SomeIpMessage']]],
+  ['run_13',['Run',['../classara_1_1exec_1_1WorkerRunnable.html#ac555cd342884df281130c40894379c1d',1,'ara::exec::WorkerRunnable']]],
+  ['runworkerpool_14',['RunWorkerPool',['../classara_1_1exec_1_1DeterministicClient.html#ad78e318dc2ccc95877675d7ac27a1811',1,'ara::exec::DeterministicClient']]]
 ];

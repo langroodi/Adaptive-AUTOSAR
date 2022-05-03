@@ -106,29 +106,31 @@ $(document).ready(function(){initNavTree('operation__cycle_8h_source.html',''); 
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">namespace </span>diag</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keyword">enum class</span> OperationCycleType</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            kOperationCycleStart = 0x00,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>            kOperationCycleEnd = 0x01</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        };</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classara_1_1diag_1_1OperationCycle.html">   18</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classara_1_1diag_1_1OperationCycle.html">OperationCycle</a></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keyword">explicit</span> <a class="code hl_class" href="classara_1_1diag_1_1OperationCycle.html">OperationCycle</a>(<span class="keyword">const</span> <a class="code hl_class" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <a class="code hl_class" href="classara_1_1diag_1_1OperationCycle.html">~OperationCycle</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;OperationCycleType&gt;</a> GetOperationCycle();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> SetNotifier(</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                std::function&lt;<span class="keywordtype">void</span>(OperationCycleType)&gt; nofifier);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> SetOperationCycle(OperationCycleType operatuionCycle);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        };</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classara_1_1diag_1_1OperationCycle.html">   13</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classara_1_1diag_1_1OperationCycle.html">OperationCycle</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keyword">const</span> <a class="code hl_class" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;mSpecifier;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            std::function&lt;void()&gt; mNotifier;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keyword">explicit</span> <a class="code hl_function" href="classara_1_1diag_1_1OperationCycle.html#afbbe7d3efe2ead93330548f01b84e88b">OperationCycle</a>(<span class="keyword">const</span> <a class="code hl_class" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_class" href="classara_1_1diag_1_1OperationCycle.html">~OperationCycle</a>() <span class="keyword">noexcept</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> <a class="code hl_function" href="classara_1_1diag_1_1OperationCycle.html#a2c2f1d5959bd80b28c364859f5908ef1">SetNotifier</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; notifier);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <a class="code hl_class" href="classara_1_1core_1_1Result.html">ara::core::Result&lt;void&gt;</a> <a class="code hl_function" href="classara_1_1diag_1_1OperationCycle.html#a6731ddb53859fb3555ba0aef9cf4d791">RestartOperationCycle</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1core_1_1InstanceSpecifier_html"><div class="ttname"><a href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a></div><div class="ttdoc">AUTOSAR shortname-path wrapper.</div><div class="ttdef"><b>Definition:</b> instance_specifier.h:13</div></div>
 <div class="ttc" id="aclassara_1_1core_1_1Result_html"><div class="ttname"><a href="classara_1_1core_1_1Result.html">ara::core::Result</a></div><div class="ttdoc">A wrapper around the callee's return value and its possible error.</div><div class="ttdef"><b>Definition:</b> result.h:16</div></div>
-<div class="ttc" id="aclassara_1_1diag_1_1OperationCycle_html"><div class="ttname"><a href="classara_1_1diag_1_1OperationCycle.html">ara::diag::OperationCycle</a></div><div class="ttdef"><b>Definition:</b> operation_cycle.h:19</div></div>
+<div class="ttc" id="aclassara_1_1diag_1_1OperationCycle_html"><div class="ttname"><a href="classara_1_1diag_1_1OperationCycle.html">ara::diag::OperationCycle</a></div><div class="ttdoc">A class for handling a monitoring operation cycle.</div><div class="ttdef"><b>Definition:</b> operation_cycle.h:14</div></div>
+<div class="ttc" id="aclassara_1_1diag_1_1OperationCycle_html_a2c2f1d5959bd80b28c364859f5908ef1"><div class="ttname"><a href="classara_1_1diag_1_1OperationCycle.html#a2c2f1d5959bd80b28c364859f5908ef1">ara::diag::OperationCycle::SetNotifier</a></div><div class="ttdeci">ara::core::Result&lt; void &gt; SetNotifier(std::function&lt; void()&gt; notifier)</div><div class="ttdoc">Set a callback to be invoked when the operation cycle is restarted.</div><div class="ttdef"><b>Definition:</b> operation_cycle.cpp:11</div></div>
+<div class="ttc" id="aclassara_1_1diag_1_1OperationCycle_html_a6731ddb53859fb3555ba0aef9cf4d791"><div class="ttname"><a href="classara_1_1diag_1_1OperationCycle.html#a6731ddb53859fb3555ba0aef9cf4d791">ara::diag::OperationCycle::RestartOperationCycle</a></div><div class="ttdeci">ara::core::Result&lt; void &gt; RestartOperationCycle()</div><div class="ttdoc">Restart the operation cycle.</div><div class="ttdef"><b>Definition:</b> operation_cycle.cpp:19</div></div>
+<div class="ttc" id="aclassara_1_1diag_1_1OperationCycle_html_afbbe7d3efe2ead93330548f01b84e88b"><div class="ttname"><a href="classara_1_1diag_1_1OperationCycle.html#afbbe7d3efe2ead93330548f01b84e88b">ara::diag::OperationCycle::OperationCycle</a></div><div class="ttdeci">OperationCycle(const ara::core::InstanceSpecifier &amp;specifier)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> operation_cycle.cpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

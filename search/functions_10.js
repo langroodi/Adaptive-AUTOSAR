@@ -20,7 +20,7 @@ var searchData=
   ['setiscanceled_17',['SetIsCanceled',['../classara_1_1diag_1_1CancellationHandler.html#a34e7ea6a2fa7dcfad9f4756fc1973327',1,'ara::diag::CancellationHandler']]],
   ['setlatchedwirstatus_18',['SetLatchedWIRStatus',['../classara_1_1diag_1_1Event.html#ad57e550a593da60041bf172aafd0fcf8',1,'ara::diag::Event']]],
   ['setnextstate_19',['SetNextState',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a9b52a24dbf9936361b4cc3a8aff811bf',1,'ara::com::someip::sd::fsm::TimerSetState']]],
-  ['setnotifier_20',['SetNotifier',['../classara_1_1diag_1_1CancellationHandler.html#ab01f8dfdd71d0843496ae0d0de5819b6',1,'ara::diag::CancellationHandler']]],
+  ['setnotifier_20',['SetNotifier',['../classara_1_1diag_1_1CancellationHandler.html#ab01f8dfdd71d0843496ae0d0de5819b6',1,'ara::diag::CancellationHandler::SetNotifier()'],['../classara_1_1diag_1_1OperationCycle.html#a2c2f1d5959bd80b28c364859f5908ef1',1,'ara::diag::OperationCycle::SetNotifier()']]],
   ['setnumberofstoredentriesnotifier_21',['SetNumberOfStoredEntriesNotifier',['../classara_1_1diag_1_1DTCInformation.html#a07637657b4402e50e4f6c3e3a86b6331',1,'ara::diag::DTCInformation']]],
   ['setoffered_22',['SetOffered',['../classara_1_1com_1_1helper_1_1TtlTimer.html#a61112daee30cf732fd8826221973e765',1,'ara::com::helper::TtlTimer']]],
   ['setrandomseed_23',['SetRandomSeed',['../classara_1_1exec_1_1DeterministicClient.html#a5a300f2f6d49582ca46239c6242e5c26',1,'ara::exec::DeterministicClient']]],

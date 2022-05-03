@@ -98,22 +98,110 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1OperationCycle.htm
   <div class="headertitle"><div class="title">ara::diag::OperationCycle Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class for handling a monitoring operation cycle.  
+ <a href="classara_1_1diag_1_1OperationCycle.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="operation__cycle_8h_source.html">operation_cycle.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afbbe7d3efe2ead93330548f01b84e88b"><td class="memItemLeft" align="right" valign="top"><a id="afbbe7d3efe2ead93330548f01b84e88b" name="afbbe7d3efe2ead93330548f01b84e88b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>OperationCycle</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier)</td></tr>
+<tr class="memitem:afbbe7d3efe2ead93330548f01b84e88b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1OperationCycle.html#afbbe7d3efe2ead93330548f01b84e88b">OperationCycle</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier)</td></tr>
+<tr class="memdesc:afbbe7d3efe2ead93330548f01b84e88b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1OperationCycle.html#afbbe7d3efe2ead93330548f01b84e88b">More...</a><br /></td></tr>
 <tr class="separator:afbbe7d3efe2ead93330548f01b84e88b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f1e416a43e08513f863d9005495f43d"><td class="memItemLeft" align="right" valign="top"><a id="a6f1e416a43e08513f863d9005495f43d" name="a6f1e416a43e08513f863d9005495f43d"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; OperationCycleType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetOperationCycle</b> ()</td></tr>
-<tr class="separator:a6f1e416a43e08513f863d9005495f43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40e5eaa9742fceb0e131721f25d2b59e"><td class="memItemLeft" align="right" valign="top"><a id="a40e5eaa9742fceb0e131721f25d2b59e" name="a40e5eaa9742fceb0e131721f25d2b59e"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetNotifier</b> (std::function&lt; void(OperationCycleType)&gt; nofifier)</td></tr>
-<tr class="separator:a40e5eaa9742fceb0e131721f25d2b59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1da310b9432f76ed320e853fba038b1"><td class="memItemLeft" align="right" valign="top"><a id="ac1da310b9432f76ed320e853fba038b1" name="ac1da310b9432f76ed320e853fba038b1"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetOperationCycle</b> (OperationCycleType operatuionCycle)</td></tr>
-<tr class="separator:ac1da310b9432f76ed320e853fba038b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c2f1d5959bd80b28c364859f5908ef1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1OperationCycle.html#a2c2f1d5959bd80b28c364859f5908ef1">SetNotifier</a> (std::function&lt; void()&gt; notifier)</td></tr>
+<tr class="memdesc:a2c2f1d5959bd80b28c364859f5908ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback to be invoked when the operation cycle is restarted.  <a href="classara_1_1diag_1_1OperationCycle.html#a2c2f1d5959bd80b28c364859f5908ef1">More...</a><br /></td></tr>
+<tr class="separator:a2c2f1d5959bd80b28c364859f5908ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6731ddb53859fb3555ba0aef9cf4d791"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1OperationCycle.html#a6731ddb53859fb3555ba0aef9cf4d791">RestartOperationCycle</a> ()</td></tr>
+<tr class="memdesc:a6731ddb53859fb3555ba0aef9cf4d791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart the operation cycle.  <a href="classara_1_1diag_1_1OperationCycle.html#a6731ddb53859fb3555ba0aef9cf4d791">More...</a><br /></td></tr>
+<tr class="separator:a6731ddb53859fb3555ba0aef9cf4d791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A class for handling a monitoring operation cycle. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afbbe7d3efe2ead93330548f01b84e88b" name="afbbe7d3efe2ead93330548f01b84e88b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbbe7d3efe2ead93330548f01b84e88b">&#9670;&nbsp;</a></span>OperationCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::diag::OperationCycle::OperationCycle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>specifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">specifier</td><td>Instance specifier that owns the operation cycle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6731ddb53859fb3555ba0aef9cf4d791" name="a6731ddb53859fb3555ba0aef9cf4d791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6731ddb53859fb3555ba0aef9cf4d791">&#9670;&nbsp;</a></span>RestartOperationCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::OperationCycle::RestartOperationCycle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restart the operation cycle. </p>
+<dl class="section return"><dt>Returns</dt><dd>No error </dd></dl>
+
+</div>
+</div>
+<a id="a2c2f1d5959bd80b28c364859f5908ef1" name="a2c2f1d5959bd80b28c364859f5908ef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2f1d5959bd80b28c364859f5908ef1">&#9670;&nbsp;</a></span>SetNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::OperationCycle::SetNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a callback to be invoked when the operation cycle is restarted. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked after the operation cycle restart </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>No error </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classara_1_1diag_1_1OperationCycle.html#a6731ddb53859fb3555ba0aef9cf4d791" title="Restart the operation cycle.">RestartOperationCycle</a> </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
