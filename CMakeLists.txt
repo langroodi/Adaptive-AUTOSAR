@@ -288,6 +288,8 @@ add_library(
   ${source_ara_diag_dir}/dtc_information.cpp
   ${source_ara_diag_dir}/condition.h
   ${source_ara_diag_dir}/condition.cpp
+  ${source_ara_diag_dir}/operation_cycle.h
+  ${source_ara_diag_dir}/operation_cycle.cpp
 )
 
 target_link_libraries(
@@ -356,6 +358,7 @@ if(build_tests)
     ${test_ara_diag_dir}/event_test.cpp
     ${test_ara_diag_dir}/dtc_information_test.cpp
     ${test_ara_diag_dir}/condition_test.cpp
+    ${test_ara_diag_dir}/operation_cycle_test.cpp
   )
 
   target_link_libraries(
