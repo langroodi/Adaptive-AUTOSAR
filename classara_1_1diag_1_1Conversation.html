@@ -99,52 +99,387 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1Conversation.html'
   <div class="headertitle"><div class="title">ara::diag::Conversation Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A wrapper around the communication between a diagnostic client and a diagnostic server.  
+ <a href="classara_1_1diag_1_1Conversation.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="conversation_8h_source.html">conversation.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a07aaafc268ee6bbb8e038b784307287a"><td class="memItemLeft" align="right" valign="top"><a id="a07aaafc268ee6bbb8e038b784307287a" name="a07aaafc268ee6bbb8e038b784307287a"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; ActivityStatusType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetActivityStatus</b> ()</td></tr>
+<tr class="memitem:a07aaafc268ee6bbb8e038b784307287a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394caf">ActivityStatusType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a07aaafc268ee6bbb8e038b784307287a">GetActivityStatus</a> ()</td></tr>
+<tr class="memdesc:a07aaafc268ee6bbb8e038b784307287a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activity status property getter.  <a href="classara_1_1diag_1_1Conversation.html#a07aaafc268ee6bbb8e038b784307287a">More...</a><br /></td></tr>
 <tr class="separator:a07aaafc268ee6bbb8e038b784307287a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a3690a78dbfae697b651133f6066b57"><td class="memItemLeft" align="right" valign="top"><a id="a3a3690a78dbfae697b651133f6066b57" name="a3a3690a78dbfae697b651133f6066b57"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetActivityNotifier</b> (std::function&lt; void(ActivityStatusType)&gt; notifier)</td></tr>
+<tr class="memitem:a3a3690a78dbfae697b651133f6066b57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a3a3690a78dbfae697b651133f6066b57">SetActivityNotifier</a> (std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394caf">ActivityStatusType</a>)&gt; notifier)</td></tr>
+<tr class="memdesc:a3a3690a78dbfae697b651133f6066b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an activity status change callback.  <a href="classara_1_1diag_1_1Conversation.html#a3a3690a78dbfae697b651133f6066b57">More...</a><br /></td></tr>
 <tr class="separator:a3a3690a78dbfae697b651133f6066b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f3875646cf9483d38d275f81afa038e"><td class="memItemLeft" align="right" valign="top"><a id="a4f3875646cf9483d38d275f81afa038e" name="a4f3875646cf9483d38d275f81afa038e"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1ConversationIdentifierType.html">ConversationIdentifierType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetConversationIdentifier</b> ()</td></tr>
+<tr class="memitem:a4f3875646cf9483d38d275f81afa038e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1ConversationIdentifierType.html">ConversationIdentifierType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a4f3875646cf9483d38d275f81afa038e">GetConversationIdentifier</a> ()</td></tr>
+<tr class="memdesc:a4f3875646cf9483d38d275f81afa038e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1diag_1_1Conversation.html" title="A wrapper around the communication between a diagnostic client and a diagnostic server.">Conversation</a> ID property getter.  <a href="classara_1_1diag_1_1Conversation.html#a4f3875646cf9483d38d275f81afa038e">More...</a><br /></td></tr>
 <tr class="separator:a4f3875646cf9483d38d275f81afa038e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a851876a8c2fcfb14caf0369ec2d91af6"><td class="memItemLeft" align="right" valign="top"><a id="a851876a8c2fcfb14caf0369ec2d91af6" name="a851876a8c2fcfb14caf0369ec2d91af6"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; SessionControlType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetDiagnosticSession</b> ()</td></tr>
+<tr class="memitem:a851876a8c2fcfb14caf0369ec2d91af6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a851876a8c2fcfb14caf0369ec2d91af6">GetDiagnosticSession</a> ()</td></tr>
+<tr class="memdesc:a851876a8c2fcfb14caf0369ec2d91af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic session property getter.  <a href="classara_1_1diag_1_1Conversation.html#a851876a8c2fcfb14caf0369ec2d91af6">More...</a><br /></td></tr>
 <tr class="separator:a851876a8c2fcfb14caf0369ec2d91af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0c52e39bba61cac442f2d00f7b09b4b"><td class="memItemLeft" align="right" valign="top"><a id="aa0c52e39bba61cac442f2d00f7b09b4b" name="aa0c52e39bba61cac442f2d00f7b09b4b"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetDiagnosticSessionNotifier</b> (std::function&lt; void(SessionControlType)&gt; notifier)</td></tr>
+<tr class="memitem:aa0c52e39bba61cac442f2d00f7b09b4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#aa0c52e39bba61cac442f2d00f7b09b4b">SetDiagnosticSessionNotifier</a> (std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a>)&gt; notifier)</td></tr>
+<tr class="memdesc:aa0c52e39bba61cac442f2d00f7b09b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a diagnostic session change callback.  <a href="classara_1_1diag_1_1Conversation.html#aa0c52e39bba61cac442f2d00f7b09b4b">More...</a><br /></td></tr>
 <tr class="separator:aa0c52e39bba61cac442f2d00f7b09b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a301f30f136f9e99dec91e2b17452ef21"><td class="memItemLeft" align="right" valign="top"><a id="a301f30f136f9e99dec91e2b17452ef21" name="a301f30f136f9e99dec91e2b17452ef21"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::string_view &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetDiagnosticSessionShortName</b> (SessionControlType session)</td></tr>
-<tr class="separator:a301f30f136f9e99dec91e2b17452ef21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3128d39dd1e92603b19a98f6b32dffa5"><td class="memItemLeft" align="right" valign="top"><a id="a3128d39dd1e92603b19a98f6b32dffa5" name="a3128d39dd1e92603b19a98f6b32dffa5"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; SecurityLevelType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetDiagnosticSecurityLevel</b> ()</td></tr>
+<tr class="memitem:ae0f29b2978fdf8a614e2964b92cc1dab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#ae0f29b2978fdf8a614e2964b92cc1dab">GetDiagnosticSessionShortName</a> (<a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a> session)</td></tr>
+<tr class="memdesc:ae0f29b2978fdf8a614e2964b92cc1dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a given session to a short name.  <a href="classara_1_1diag_1_1Conversation.html#ae0f29b2978fdf8a614e2964b92cc1dab">More...</a><br /></td></tr>
+<tr class="separator:ae0f29b2978fdf8a614e2964b92cc1dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3128d39dd1e92603b19a98f6b32dffa5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41">SecurityLevelType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a3128d39dd1e92603b19a98f6b32dffa5">GetDiagnosticSecurityLevel</a> ()</td></tr>
+<tr class="memdesc:a3128d39dd1e92603b19a98f6b32dffa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Security level property getter.  <a href="classara_1_1diag_1_1Conversation.html#a3128d39dd1e92603b19a98f6b32dffa5">More...</a><br /></td></tr>
 <tr class="separator:a3128d39dd1e92603b19a98f6b32dffa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad156f36d198944ba86bad2202bffc21a"><td class="memItemLeft" align="right" valign="top"><a id="ad156f36d198944ba86bad2202bffc21a" name="ad156f36d198944ba86bad2202bffc21a"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>SetSecurityLevelNotifier</b> (std::function&lt; void(SecurityLevelType)&gt; notifier)</td></tr>
+<tr class="memitem:ad156f36d198944ba86bad2202bffc21a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#ad156f36d198944ba86bad2202bffc21a">SetSecurityLevelNotifier</a> (std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41">SecurityLevelType</a>)&gt; notifier)</td></tr>
+<tr class="memdesc:ad156f36d198944ba86bad2202bffc21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a security level change callback.  <a href="classara_1_1diag_1_1Conversation.html#ad156f36d198944ba86bad2202bffc21a">More...</a><br /></td></tr>
 <tr class="separator:ad156f36d198944ba86bad2202bffc21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ea09fb59a9e31d2eff3381011ea8428"><td class="memItemLeft" align="right" valign="top"><a id="a6ea09fb59a9e31d2eff3381011ea8428" name="a6ea09fb59a9e31d2eff3381011ea8428"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::string_view &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetDiagnosticSecurityLevelShortName</b> (SecurityLevelType securityLevel)</td></tr>
-<tr class="separator:a6ea09fb59a9e31d2eff3381011ea8428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26ec5f46e6cb2323ace601659201044d"><td class="memItemLeft" align="right" valign="top"><a id="a26ec5f46e6cb2323ace601659201044d" name="a26ec5f46e6cb2323ace601659201044d"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ResetToDefaultSession</b> ()</td></tr>
+<tr class="memitem:ad839732a910a5a83dfaaed46ff417a8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#ad839732a910a5a83dfaaed46ff417a8f">GetDiagnosticSecurityLevelShortName</a> (<a class="el" href="namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41">SecurityLevelType</a> securityLevel)</td></tr>
+<tr class="memdesc:ad839732a910a5a83dfaaed46ff417a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a given security level to a short name.  <a href="classara_1_1diag_1_1Conversation.html#ad839732a910a5a83dfaaed46ff417a8f">More...</a><br /></td></tr>
+<tr class="separator:ad839732a910a5a83dfaaed46ff417a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ec5f46e6cb2323ace601659201044d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a26ec5f46e6cb2323ace601659201044d">ResetToDefaultSession</a> ()</td></tr>
+<tr class="memdesc:a26ec5f46e6cb2323ace601659201044d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the ongoing session to default.  <a href="classara_1_1diag_1_1Conversation.html#a26ec5f46e6cb2323ace601659201044d">More...</a><br /></td></tr>
 <tr class="separator:a26ec5f46e6cb2323ace601659201044d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3744675c3fb78bab69d4b80f288fcd8b"><td class="memItemLeft" align="right" valign="top"><a id="a3744675c3fb78bab69d4b80f288fcd8b" name="a3744675c3fb78bab69d4b80f288fcd8b"></a>
-static <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetConversation</b> (<a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo)</td></tr>
+<tr class="memitem:a3744675c3fb78bab69d4b80f288fcd8b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a3744675c3fb78bab69d4b80f288fcd8b">GetConversation</a> (<a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo)</td></tr>
+<tr class="memdesc:a3744675c3fb78bab69d4b80f288fcd8b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classara_1_1diag_1_1Conversation.html" title="A wrapper around the communication between a diagnostic client and a diagnostic server.">Conversation</a> factory.  <a href="classara_1_1diag_1_1Conversation.html#a3744675c3fb78bab69d4b80f288fcd8b">More...</a><br /></td></tr>
 <tr class="separator:a3744675c3fb78bab69d4b80f288fcd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c2ad6e716750371cbc25480e14b372d"><td class="memItemLeft" align="right" valign="top"><a id="a9c2ad6e716750371cbc25480e14b372d" name="a9c2ad6e716750371cbc25480e14b372d"></a>
-static std::vector&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetAllConversations</b> ()</td></tr>
-<tr class="separator:a9c2ad6e716750371cbc25480e14b372d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fee12af3b3cbcd435dcce8c06bc0c62"><td class="memItemLeft" align="right" valign="top"><a id="a1fee12af3b3cbcd435dcce8c06bc0c62" name="a1fee12af3b3cbcd435dcce8c06bc0c62"></a>
-static std::vector&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentActiveConversations</b> ()</td></tr>
-<tr class="separator:a1fee12af3b3cbcd435dcce8c06bc0c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e84fe7cac5dd541af8b05536d10a5ee"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a0e84fe7cac5dd541af8b05536d10a5ee">GetAllConversations</a> ()</td></tr>
+<tr class="memdesc:a0e84fe7cac5dd541af8b05536d10a5ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the existing conversations.  <a href="classara_1_1diag_1_1Conversation.html#a0e84fe7cac5dd541af8b05536d10a5ee">More...</a><br /></td></tr>
+<tr class="separator:a0e84fe7cac5dd541af8b05536d10a5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228c7f0cf5f35111024505fd14dbc575"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a228c7f0cf5f35111024505fd14dbc575">GetCurrentActiveConversations</a> ()</td></tr>
+<tr class="memdesc:a228c7f0cf5f35111024505fd14dbc575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the active conversations.  <a href="classara_1_1diag_1_1Conversation.html#a228c7f0cf5f35111024505fd14dbc575">More...</a><br /></td></tr>
+<tr class="separator:a228c7f0cf5f35111024505fd14dbc575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A wrapper around the communication between a diagnostic client and a diagnostic server. </p>
+<dl class="section note"><dt>Note</dt><dd>The class is not fully aligned with the ARA standard. </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a07aaafc268ee6bbb8e038b784307287a" name="a07aaafc268ee6bbb8e038b784307287a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07aaafc268ee6bbb8e038b784307287a">&#9670;&nbsp;</a></span>GetActivityStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394caf">ActivityStatusType</a> &gt; ara::diag::Conversation::GetActivityStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Activity status property getter. </p>
+<dl class="section return"><dt>Returns</dt><dd>Active or inactive status </dd></dl>
+
+</div>
+</div>
+<a id="a0e84fe7cac5dd541af8b05536d10a5ee" name="a0e84fe7cac5dd541af8b05536d10a5ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e84fe7cac5dd541af8b05536d10a5ee">&#9670;&nbsp;</a></span>GetAllConversations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &gt; &gt; ara::diag::Conversation::GetAllConversations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get all the existing conversations. </p>
+<dl class="section return"><dt>Returns</dt><dd>Active and inactive conversations collection </dd></dl>
+
+</div>
+</div>
+<a id="a3744675c3fb78bab69d4b80f288fcd8b" name="a3744675c3fb78bab69d4b80f288fcd8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3744675c3fb78bab69d4b80f288fcd8b">&#9670;&nbsp;</a></span>GetConversation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &amp; &gt; ara::diag::Conversation::GetConversation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>metaInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classara_1_1diag_1_1Conversation.html" title="A wrapper around the communication between a diagnostic client and a diagnostic server.">Conversation</a> factory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metaInfo</td><td>Additional information to create a conversation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the created conversation in case of a valid meta information </dd></dl>
+
+</div>
+</div>
+<a id="a4f3875646cf9483d38d275f81afa038e" name="a4f3875646cf9483d38d275f81afa038e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f3875646cf9483d38d275f81afa038e">&#9670;&nbsp;</a></span>GetConversationIdentifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1ConversationIdentifierType.html">ConversationIdentifierType</a> &gt; ara::diag::Conversation::GetConversationIdentifier </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classara_1_1diag_1_1Conversation.html" title="A wrapper around the communication between a diagnostic client and a diagnostic server.">Conversation</a> ID property getter. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classara_1_1diag_1_1Conversation.html" title="A wrapper around the communication between a diagnostic client and a diagnostic server.">Conversation</a> ID </dd></dl>
+
+</div>
+</div>
+<a id="a228c7f0cf5f35111024505fd14dbc575" name="a228c7f0cf5f35111024505fd14dbc575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228c7f0cf5f35111024505fd14dbc575">&#9670;&nbsp;</a></span>GetCurrentActiveConversations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt; std::reference_wrapper&lt; <a class="el" href="classara_1_1diag_1_1Conversation.html">Conversation</a> &gt; &gt; ara::diag::Conversation::GetCurrentActiveConversations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get all the active conversations. </p>
+<dl class="section return"><dt>Returns</dt><dd>Active conversations collection </dd></dl>
+
+</div>
+</div>
+<a id="a3128d39dd1e92603b19a98f6b32dffa5" name="a3128d39dd1e92603b19a98f6b32dffa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3128d39dd1e92603b19a98f6b32dffa5">&#9670;&nbsp;</a></span>GetDiagnosticSecurityLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41">SecurityLevelType</a> &gt; ara::diag::Conversation::GetDiagnosticSecurityLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Security level property getter. </p>
+<dl class="section return"><dt>Returns</dt><dd>Status of the active security level </dd></dl>
+
+</div>
+</div>
+<a id="ad839732a910a5a83dfaaed46ff417a8f" name="ad839732a910a5a83dfaaed46ff417a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad839732a910a5a83dfaaed46ff417a8f">&#9670;&nbsp;</a></span>GetDiagnosticSecurityLevelShortName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::string &gt; ara::diag::Conversation::GetDiagnosticSecurityLevelShortName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41">SecurityLevelType</a>&#160;</td>
+          <td class="paramname"><em>securityLevel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a given security level to a short name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">securityLevel</td><td>Security level to be converted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Given security level short name </dd></dl>
+
+</div>
+</div>
+<a id="a851876a8c2fcfb14caf0369ec2d91af6" name="a851876a8c2fcfb14caf0369ec2d91af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851876a8c2fcfb14caf0369ec2d91af6">&#9670;&nbsp;</a></span>GetDiagnosticSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a> &gt; ara::diag::Conversation::GetDiagnosticSession </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Diagnostic session property getter. </p>
+<dl class="section return"><dt>Returns</dt><dd>Coversation active session </dd></dl>
+
+</div>
+</div>
+<a id="ae0f29b2978fdf8a614e2964b92cc1dab" name="ae0f29b2978fdf8a614e2964b92cc1dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f29b2978fdf8a614e2964b92cc1dab">&#9670;&nbsp;</a></span>GetDiagnosticSessionShortName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; std::string &gt; ara::diag::Conversation::GetDiagnosticSessionShortName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a>&#160;</td>
+          <td class="paramname"><em>session</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a given session to a short name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">session</td><td>Session to be converted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Given session short name </dd></dl>
+
+</div>
+</div>
+<a id="a26ec5f46e6cb2323ace601659201044d" name="a26ec5f46e6cb2323ace601659201044d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26ec5f46e6cb2323ace601659201044d">&#9670;&nbsp;</a></span>ResetToDefaultSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::Conversation::ResetToDefaultSession </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the ongoing session to default. </p>
+<dl class="section return"><dt>Returns</dt><dd>No error in case of a successful reset </dd></dl>
+
+</div>
+</div>
+<a id="a3a3690a78dbfae697b651133f6066b57" name="a3a3690a78dbfae697b651133f6066b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a3690a78dbfae697b651133f6066b57">&#9670;&nbsp;</a></span>SetActivityNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::Conversation::SetActivityNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394caf">ActivityStatusType</a>)&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register an activity status change callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked when the activity status changed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>No error will be returned </dd></dl>
+
+</div>
+</div>
+<a id="aa0c52e39bba61cac442f2d00f7b09b4b" name="aa0c52e39bba61cac442f2d00f7b09b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0c52e39bba61cac442f2d00f7b09b4b">&#9670;&nbsp;</a></span>SetDiagnosticSessionNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::Conversation::SetDiagnosticSessionNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a>)&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register a diagnostic session change callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked when the diagnostic session changed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>No error will be returned </dd></dl>
+
+</div>
+</div>
+<a id="ad156f36d198944ba86bad2202bffc21a" name="ad156f36d198944ba86bad2202bffc21a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad156f36d198944ba86bad2202bffc21a">&#9670;&nbsp;</a></span>SetSecurityLevelNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt; ara::diag::Conversation::SetSecurityLevelNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41">SecurityLevelType</a>)&gt;&#160;</td>
+          <td class="paramname"><em>notifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register a security level change callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">notifier</td><td>Callback to be invoked when the security level status changed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>No error will be returned </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

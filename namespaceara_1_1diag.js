@@ -4,8 +4,8 @@ var namespaceara_1_1diag =
     [ "ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
     [ "CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],
     [ "Condition", "classara_1_1diag_1_1Condition.html", "classara_1_1diag_1_1Condition" ],
-    [ "Conversation", "classara_1_1diag_1_1Conversation.html", null ],
-    [ "ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],
+    [ "Conversation", "classara_1_1diag_1_1Conversation.html", "classara_1_1diag_1_1Conversation" ],
+    [ "ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", "structara_1_1diag_1_1ConversationIdentifierType" ],
     [ "CounterBased", "structara_1_1diag_1_1CounterBased.html", "structara_1_1diag_1_1CounterBased" ],
     [ "DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", "structara_1_1diag_1_1DataIdentifierReentrancyType" ],
     [ "DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", "classara_1_1diag_1_1DiagErrorDomain" ],
@@ -31,6 +31,10 @@ var namespaceara_1_1diag =
     [ "TimeBased", "structara_1_1diag_1_1TimeBased.html", "structara_1_1diag_1_1TimeBased" ],
     [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", "structara_1_1diag_1_1UdsDtcStatusByteType" ],
     [ "UploadService", "classara_1_1diag_1_1UploadService.html", null ],
+    [ "ActivityStatusType", "namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394caf", [
+      [ "kActive", "namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394cafa9791a40615dbcc7316e7b890a13fb241", null ],
+      [ "kInactive", "namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394cafad7cd20f3a390a0843aa6f98d51918b16", null ]
+    ] ],
     [ "ConditionType", "namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488e", [
       [ "kConditionFalse", "namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea2ba0cfbca32a628edc829e5d95ec2563", null ],
       [ "kConditionTrue", "namespaceara_1_1diag.html#a3624dcc4aa393504732960699c2b488ea8444566bf02ba4117222eb7d8913ef34", null ]
@@ -80,6 +84,15 @@ var namespaceara_1_1diag =
     [ "ReentrancyType", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb", [
       [ "kFully", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40", null ],
       [ "kNot", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4", null ]
+    ] ],
+    [ "SecurityLevelType", "namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41", [
+      [ "kLocked", "namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41aadef232ba6c055ef7c282d6e42b4112d", null ]
+    ] ],
+    [ "SessionControlType", "namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222", [
+      [ "kDefaultSession", "namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222ae2f85145e86f3f00347bed5e71ed08c3", null ],
+      [ "kProgrammingSession", "namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222adab91c21d81f4fa464bb874191d85817", null ],
+      [ "kExtendedDiagnosticSession", "namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222ab9a40ba075114df4b9b0872d9e2f5dff", null ],
+      [ "kSafetySystemDiagnosticSession", "namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222a7276ce02d8dd1fd4dddfee6df916e3ba", null ]
     ] ],
     [ "UdsDtcStatusBitType", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226", [
       [ "kTestFailed", "namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226a34bf4f659dcfaba9de70885646d8f225", null ],
