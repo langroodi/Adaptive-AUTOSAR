@@ -5,6 +5,8 @@ namespace ara
 {
     namespace diag
     {
+        std::vector<Conversation> Conversation::mConversations;
+
         Conversation::Conversation(const MetaInfo &metaInfo) : mMetaInfo{metaInfo},
                                                                mActivityStatus{ActivityStatusType::kInactive},
                                                                mDiagnosticSession{SessionControlType::kDefaultSession},
@@ -17,7 +19,7 @@ namespace ara
         {
             Conversation _conversation(metaInfo);
             mConversations.push_back(std::move(_conversation));
-            std::reference_wrapper<Conversation> _conversationRef(_conversation);
+            std::reference_wrapper<Conversation> _conversationRef(mConversations.back());
             ara::core::Result<std::reference_wrapper<Conversation>> _result(_conversationRef);
 
             return _result;
@@ -71,6 +73,18 @@ namespace ara
         {
             ara::core::Result<SessionControlType> _result(mDiagnosticSession);
             return _result;
+        }
+
+        void Conversation::SetDiagnosticSession(SessionControlType diagnosticSession)
+        {
+            if (mDiagnosticSession != diagnosticSession)
+            {
+                mDiagnosticSession = diagnosticSession;
+                if (mDiagnosticSessionNotifier)
+                {
+                    mDiagnosticSessionNotifier(mDiagnosticSession);
+                }
+            }
         }
 
         ara::core::Result<void> Conversation::SetDiagnosticSessionNotifier(
@@ -149,14 +163,7 @@ namespace ara
 
         ara::core::Result<void> Conversation::ResetToDefaultSession()
         {
-            if (mDiagnosticSession != SessionControlType::kDefaultSession)
-            {
-                mDiagnosticSession = SessionControlType::kDefaultSession;
-                if (mDiagnosticSessionNotifier)
-                {
-                    mDiagnosticSessionNotifier(mDiagnosticSession);
-                }
-            }
+            SetDiagnosticSession(SessionControlType::kDefaultSession);
 
             if (mDiagnosticSecurityLevel != SecurityLevelType::kLocked)
             {

@@ -361,6 +361,7 @@ if(build_tests)
     ${test_ara_diag_dir}/dtc_information_test.cpp
     ${test_ara_diag_dir}/condition_test.cpp
     ${test_ara_diag_dir}/operation_cycle_test.cpp
+    ${test_ara_diag_dir}/conversation_test.cpp
   )
 
   target_link_libraries(

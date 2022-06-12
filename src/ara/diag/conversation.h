@@ -63,6 +63,7 @@ namespace ara
             /// @brief Conversation factory
             /// @param metaInfo Additional information to create a conversation
             /// @returns Reference to the created conversation in case of a valid meta information
+            /// @note Return type signature is not compatible with ARA standard.
             static ara::core::Result<std::reference_wrapper<Conversation>> GetConversation(MetaInfo &metaInfo);
 
             /// @brief Get all the existing conversations
@@ -72,6 +73,8 @@ namespace ara
             /// @brief Get all the active conversations
             /// @returns Active conversations collection
             static std::vector<std::reference_wrapper<Conversation>> GetCurrentActiveConversations();
+
+            Conversation() = delete;
 
             /// @brief Activity status property getter
             /// @returns Active or inactive status
@@ -90,6 +93,11 @@ namespace ara
             /// @brief Diagnostic session property getter
             /// @returns Coversation active session
             ara::core::Result<SessionControlType> GetDiagnosticSession();
+
+            /// @brief Diagnostic session property setter
+            /// @param diagnosticSession New diagnostic session
+            /// @note The method is not ARA specific.
+            void SetDiagnosticSession(SessionControlType diagnosticSession);
 
             /// @brief Register a diagnostic session change callback
             /// @param notifier Callback to be invoked when the diagnostic session changed
