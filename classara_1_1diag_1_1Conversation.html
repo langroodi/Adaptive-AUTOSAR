@@ -119,6 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a851876a8c2fcfb14caf0369ec2d91af6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a851876a8c2fcfb14caf0369ec2d91af6">GetDiagnosticSession</a> ()</td></tr>
 <tr class="memdesc:a851876a8c2fcfb14caf0369ec2d91af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic session property getter.  <a href="classara_1_1diag_1_1Conversation.html#a851876a8c2fcfb14caf0369ec2d91af6">More...</a><br /></td></tr>
 <tr class="separator:a851876a8c2fcfb14caf0369ec2d91af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a275e8e35e94dea9467479685330ef184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#a275e8e35e94dea9467479685330ef184">SetDiagnosticSession</a> (<a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a> diagnosticSession)</td></tr>
+<tr class="memdesc:a275e8e35e94dea9467479685330ef184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic session property setter.  <a href="classara_1_1diag_1_1Conversation.html#a275e8e35e94dea9467479685330ef184">More...</a><br /></td></tr>
+<tr class="separator:a275e8e35e94dea9467479685330ef184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0c52e39bba61cac442f2d00f7b09b4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Conversation.html#aa0c52e39bba61cac442f2d00f7b09b4b">SetDiagnosticSessionNotifier</a> (std::function&lt; void(<a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a>)&gt; notifier)</td></tr>
 <tr class="memdesc:aa0c52e39bba61cac442f2d00f7b09b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a diagnostic session change callback.  <a href="classara_1_1diag_1_1Conversation.html#aa0c52e39bba61cac442f2d00f7b09b4b">More...</a><br /></td></tr>
 <tr class="separator:aa0c52e39bba61cac442f2d00f7b09b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,6 +237,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the created conversation in case of a valid meta information </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Return type signature is not compatible with ARA standard. </dd></dl>
 
 </div>
 </div>
@@ -423,6 +427,33 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>No error will be returned </dd></dl>
+
+</div>
+</div>
+<a id="a275e8e35e94dea9467479685330ef184" name="a275e8e35e94dea9467479685330ef184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a275e8e35e94dea9467479685330ef184">&#9670;&nbsp;</a></span>SetDiagnosticSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::Conversation::SetDiagnosticSession </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#a74801837b9e79785570685f608c9d222">SessionControlType</a>&#160;</td>
+          <td class="paramname"><em>diagnosticSession</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Diagnostic session property setter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">diagnosticSession</td><td>New diagnostic session </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The method is not ARA specific. </dd></dl>
 
 </div>
 </div>
