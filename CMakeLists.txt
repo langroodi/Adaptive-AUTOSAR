@@ -290,6 +290,8 @@ add_library(
   ${source_ara_diag_dir}/condition.cpp
   ${source_ara_diag_dir}/operation_cycle.h
   ${source_ara_diag_dir}/operation_cycle.cpp
+  ${source_ara_diag_dir}/conversation.h
+  ${source_ara_diag_dir}/conversation.cpp
 )
 
 target_link_libraries(

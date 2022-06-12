@@ -45,11 +45,25 @@ namespace ara
         /// @note The class is not fully aligned with the ARA standard.
         class Conversation
         {
+        private:
+            static std::vector<Conversation> mConversations;
+
+            const MetaInfo &mMetaInfo;
+            ActivityStatusType mActivityStatus;
+            std::function<void(ActivityStatusType)> mActivityNotifier;
+            ConversationIdentifierType mConversationIdentifier;
+            SessionControlType mDiagnosticSession;
+            std::function<void(SessionControlType)> mDiagnosticSessionNotifier;
+            SecurityLevelType mDiagnosticSecurityLevel;
+            std::function<void(SecurityLevelType)> mSecurityLevelNotifier;
+
+            Conversation(const MetaInfo &metaInfo);
+
         public:
             /// @brief Conversation factory
             /// @param metaInfo Additional information to create a conversation
             /// @returns Reference to the created conversation in case of a valid meta information
-            static ara::core::Result<Conversation &> GetConversation(MetaInfo &metaInfo);
+            static ara::core::Result<std::reference_wrapper<Conversation>> GetConversation(MetaInfo &metaInfo);
 
             /// @brief Get all the existing conversations
             /// @returns Active and inactive conversations collection
@@ -82,7 +96,7 @@ namespace ara
             /// @returns No error will be returned
             ara::core::Result<void> SetDiagnosticSessionNotifier(
                 std::function<void(SessionControlType)> notifier);
-            
+
             /// @brief Convert a given session to a short name
             /// @param session Session to be converted
             /// @returns Given session short name
@@ -104,7 +118,7 @@ namespace ara
             /// @returns Given security level short name
             ara::core::Result<std::string> GetDiagnosticSecurityLevelShortName(
                 SecurityLevelType securityLevel);
-            
+
             /// @brief Reset the ongoing session to default
             /// @returns No error in case of a successful reset
             ara::core::Result<void> ResetToDefaultSession();
