@@ -78,11 +78,6 @@ var annotated_dup =
         [ "CounterBased", "structara_1_1diag_1_1CounterBased.html", "structara_1_1diag_1_1CounterBased" ],
         [ "DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", "structara_1_1diag_1_1DataIdentifierReentrancyType" ],
         [ "DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", "classara_1_1diag_1_1DiagErrorDomain" ],
-        [ "DiagException", "classara_1_1diag_1_1DiagException.html", null ],
-        [ "DiagOfferErrorDomain", "classara_1_1diag_1_1DiagOfferErrorDomain.html", "classara_1_1diag_1_1DiagOfferErrorDomain" ],
-        [ "DiagReportingErrorDomain", "classara_1_1diag_1_1DiagReportingErrorDomain.html", "classara_1_1diag_1_1DiagReportingErrorDomain" ],
-        [ "DiagUdsNrcErrorDomain", "classara_1_1diag_1_1DiagUdsNrcErrorDomain.html", "classara_1_1diag_1_1DiagUdsNrcErrorDomain" ],
-        [ "DiagUdsNrcException", "classara_1_1diag_1_1DiagUdsNrcException.html", null ],
         [ "DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],
         [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", "classara_1_1diag_1_1DTCInformation" ],
         [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
@@ -135,5 +130,6 @@ var annotated_dup =
         [ "TriggerInOut", "classara_1_1sm_1_1TriggerInOut.html", "classara_1_1sm_1_1TriggerInOut" ],
         [ "TriggerOut", "classara_1_1sm_1_1TriggerOut.html", "classara_1_1sm_1_1TriggerOut" ]
       ] ]
-    ] ]
+    ] ],
+    [ "Diagnostic", "classDiagnostic.html", null ]
 ];

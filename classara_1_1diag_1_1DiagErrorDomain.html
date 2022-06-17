@@ -116,14 +116,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b1d4731a154627362e4f921daef648c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DiagErrorDomain.html#a4b1d4731a154627362e4f921daef648c">Message</a> (<a class="el" href="classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752">ara::core::ErrorDomain::CodeType</a> errorCode) const noexcept override</td></tr>
 <tr class="memdesc:a4b1d4731a154627362e4f921daef648c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error message of a specific error code.  <a href="classara_1_1diag_1_1DiagErrorDomain.html#a4b1d4731a154627362e4f921daef648c">More...</a><br /></td></tr>
 <tr class="separator:a4b1d4731a154627362e4f921daef648c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b679e8bfa21110e4d10352554d52d44"><td class="memItemLeft" align="right" valign="top"><a id="a1b679e8bfa21110e4d10352554d52d44" name="a1b679e8bfa21110e4d10352554d52d44"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ThrowAsException</b> (const <a class="el" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a> &amp;errorCode) const noexcept(false) override</td></tr>
-<tr class="separator:a1b679e8bfa21110e4d10352554d52d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b6648e050708848b808fd60574f7aee"><td class="memItemLeft" align="right" valign="top"><a id="a1b6648e050708848b808fd60574f7aee" name="a1b6648e050708848b808fd60574f7aee"></a>
-constexpr const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetDiagDomain</b> () noexcept</td></tr>
+<tr class="memitem:a1b6648e050708848b808fd60574f7aee"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DiagErrorDomain.html#a1b6648e050708848b808fd60574f7aee">GetDiagDomain</a> () noexcept</td></tr>
+<tr class="memdesc:a1b6648e050708848b808fd60574f7aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the global diagnostic error domain.  <a href="classara_1_1diag_1_1DiagErrorDomain.html#a1b6648e050708848b808fd60574f7aee">More...</a><br /></td></tr>
 <tr class="separator:a1b6648e050708848b808fd60574f7aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2222bd9f4ca9eb8391e8e0fba90fa01f"><td class="memItemLeft" align="right" valign="top"><a id="a2222bd9f4ca9eb8391e8e0fba90fa01f" name="a2222bd9f4ca9eb8391e8e0fba90fa01f"></a>
-constexpr <a class="el" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>MakeErrorCode</b> (DiagErrc code) noexcept</td></tr>
+<tr class="memitem:a2222bd9f4ca9eb8391e8e0fba90fa01f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DiagErrorDomain.html#a2222bd9f4ca9eb8391e8e0fba90fa01f">MakeErrorCode</a> (<a class="el" href="namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43">DiagErrc</a> code) noexcept</td></tr>
+<tr class="memdesc:a2222bd9f4ca9eb8391e8e0fba90fa01f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make an error code based on the given giagnostic error type.  <a href="classara_1_1diag_1_1DiagErrorDomain.html#a2222bd9f4ca9eb8391e8e0fba90fa01f">More...</a><br /></td></tr>
 <tr class="separator:a2222bd9f4ca9eb8391e8e0fba90fa01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classara_1_1core_1_1ErrorDomain"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1core_1_1ErrorDomain')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a></td></tr>
 <tr class="memitem:ad925cb5f4a7516b26231e2929c1c7a82 inherit pub_methods_classara_1_1core_1_1ErrorDomain"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82">ErrorDomain</a> (<a class="el" href="classara_1_1core_1_1ErrorDomain.html#a2293fffefc45549aa2d0e4d88d7b5e9d">IdType</a> id) noexcept</td></tr>
@@ -164,6 +161,70 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>CodeType</b> = uint3
 <tr class="separator:a858bd680c1af572fa31fcfb6cf5f4752 inherit pub_types_classara_1_1core_1_1ErrorDomain"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1b6648e050708848b808fd60574f7aee" name="a1b6648e050708848b808fd60574f7aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b6648e050708848b808fd60574f7aee">&#9670;&nbsp;</a></span>GetDiagDomain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const <a class="el" href="classara_1_1core_1_1ErrorDomain.html">ara::core::ErrorDomain</a> &amp; ara::diag::DiagErrorDomain::GetDiagDomain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the global diagnostic error domain. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the singleton diagnostic error domain </dd></dl>
+
+</div>
+</div>
+<a id="a2222bd9f4ca9eb8391e8e0fba90fa01f" name="a2222bd9f4ca9eb8391e8e0fba90fa01f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2222bd9f4ca9eb8391e8e0fba90fa01f">&#9670;&nbsp;</a></span>MakeErrorCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classara_1_1core_1_1ErrorCode.html">ara::core::ErrorCode</a> ara::diag::DiagErrorDomain::MakeErrorCode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43">DiagErrc</a>&#160;</td>
+          <td class="paramname"><em>code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make an error code based on the given giagnostic error type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td><a class="el" href="classDiagnostic.html" title="error type">Diagnostic</a> error code input </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Created error code </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Vendor specific data is not supported. </dd></dl>
+
+</div>
+</div>
 <a id="a4b1d4731a154627362e4f921daef648c" name="a4b1d4731a154627362e4f921daef648c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b1d4731a154627362e4f921daef648c">&#9670;&nbsp;</a></span>Message()</h2>
 

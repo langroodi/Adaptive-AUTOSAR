@@ -17,6 +17,7 @@ var hierarchy =
     [ "ara::diag::CounterBased", "structara_1_1diag_1_1CounterBased.html", null ],
     [ "ara::diag::DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", null ],
     [ "ara::exec::DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", null ],
+    [ "Diagnostic", "classDiagnostic.html", null ],
     [ "ara::diag::DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],
     [ "ara::diag::DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
     [ "ara::diag::EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
@@ -28,16 +29,11 @@ var hierarchy =
     [ "ara::core::ErrorCode", "classara_1_1core_1_1ErrorCode.html", null ],
     [ "ara::core::ErrorDomain", "classara_1_1core_1_1ErrorDomain.html", [
       [ "ara::diag::DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", null ],
-      [ "ara::diag::DiagOfferErrorDomain", "classara_1_1diag_1_1DiagOfferErrorDomain.html", null ],
-      [ "ara::diag::DiagReportingErrorDomain", "classara_1_1diag_1_1DiagReportingErrorDomain.html", null ],
-      [ "ara::diag::DiagUdsNrcErrorDomain", "classara_1_1diag_1_1DiagUdsNrcErrorDomain.html", null ],
       [ "ara::exec::ExecErrorDomain", "classara_1_1exec_1_1ExecErrorDomain.html", null ]
     ] ],
     [ "ara::diag::Event", "classara_1_1diag_1_1Event.html", null ],
     [ "ara::diag::EventStatusByte", "structara_1_1diag_1_1EventStatusByte.html", null ],
     [ "std::exception", null, [
-      [ "ara::diag::DiagException", "classara_1_1diag_1_1DiagException.html", null ],
-      [ "ara::diag::DiagUdsNrcException", "classara_1_1diag_1_1DiagUdsNrcException.html", null ],
       [ "ara::exec::ExecException", "classara_1_1exec_1_1ExecException.html", null ]
     ] ],
     [ "ara::exec::ExecutionClient", "classara_1_1exec_1_1ExecutionClient.html", null ],
