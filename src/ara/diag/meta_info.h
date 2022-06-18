@@ -23,7 +23,7 @@ namespace ara
         class MetaInfo final
         {
         private:
-            const Context mContext;
+            Context mContext;
             std::map<std::string, std::string> mValues;
 
         public:
