@@ -292,6 +292,8 @@ add_library(
   ${source_ara_diag_dir}/operation_cycle.cpp
   ${source_ara_diag_dir}/conversation.h
   ${source_ara_diag_dir}/conversation.cpp
+  ${source_ara_diag_dir}/diag_error_domain.h
+  ${source_ara_diag_dir}/diag_error_domain.cpp
 )
 
 target_link_libraries(
@@ -362,6 +364,7 @@ if(build_tests)
     ${test_ara_diag_dir}/condition_test.cpp
     ${test_ara_diag_dir}/operation_cycle_test.cpp
     ${test_ara_diag_dir}/conversation_test.cpp
+    ${test_ara_diag_dir}/diag_error_domain_test.cpp
   )
 
   target_link_libraries(

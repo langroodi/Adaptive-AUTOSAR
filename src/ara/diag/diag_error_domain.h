@@ -33,20 +33,33 @@ namespace ara
         /// @note The class is not fully aligned with ARA standard.
         class DiagErrorDomain final : public ara::core::ErrorDomain
         {
+        private:
+            const ara::core::ErrorDomain::IdType cId{0x8000000000000401};
+            const char *cName{"Diag"};
+
+            static DiagErrorDomain *mInstnace;
+
+            constexpr DiagErrorDomain() noexcept : ara::core::ErrorDomain(cId)
+            {
+            }
+
         public:
-            constexpr DiagErrorDomain() noexcept;
+            DiagErrorDomain(DiagErrorDomain &other) = delete;
+            void operator=(const DiagErrorDomain &) = delete;
+
             const char *Name() const noexcept override;
             const char *Message(ara::core::ErrorDomain::CodeType errorCode) const noexcept override;
 
             /// @brief Get the global diagnostic error domain
-            /// @returns Reference to the singleton diagnostic error domain
-            constexpr const ara::core::ErrorDomain &GetDiagDomain() noexcept;
+            /// @returns Pointer to the singleton diagnostic error domain
+            /// @note The signature does not match with ARA standard.
+            static ara::core::ErrorDomain *GetDiagDomain();
 
             /// @brief Make an error code based on the given giagnostic error type
             /// @param code Diagnostic error code input
             /// @returns Created error code
             /// @note Vendor specific data is not supported.
-            constexpr ara::core::ErrorCode MakeErrorCode(DiagErrc code) noexcept;
+            ara::core::ErrorCode MakeErrorCode(DiagErrc code) noexcept;
         };
     }
 }
