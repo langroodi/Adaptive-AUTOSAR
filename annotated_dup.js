@@ -69,6 +69,9 @@ var annotated_dup =
         [ "Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", "classara_1_1core_1_1Result_3_01void_00_01E_01_4" ]
       ] ],
       [ "diag", "namespaceara_1_1diag.html", [
+        [ "routing", "namespaceara_1_1diag_1_1routing.html", [
+          [ "RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", "classara_1_1diag_1_1routing_1_1RoutableUdsService" ]
+        ] ],
         [ "CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", "classara_1_1diag_1_1CancellationHandler" ],
         [ "ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
         [ "CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],

@@ -100,6 +100,7 @@ var hierarchy =
     [ "ara::com::option::OptionDeserializer", "classara_1_1com_1_1option_1_1OptionDeserializer.html", null ],
     [ "ara::core::Result< T, E >", "classara_1_1core_1_1Result.html", null ],
     [ "ara::core::Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", null ],
+    [ "ara::diag::routing::RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", null ],
     [ "ara::diag::SecuirtyAccess", "classara_1_1diag_1_1SecuirtyAccess.html", null ],
     [ "ara::diag::ServiceValidation", "classara_1_1diag_1_1ServiceValidation.html", null ],
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [

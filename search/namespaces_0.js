@@ -8,5 +8,6 @@ var searchData=
   ['helper_5',['helper',['../namespaceara_1_1com_1_1helper.html',1,'ara::com::helper'],['../namespaceara_1_1exec_1_1helper.html',1,'ara::exec::helper']]],
   ['log_6',['log',['../namespaceara_1_1log.html',1,'ara']]],
   ['option_7',['option',['../namespaceara_1_1com_1_1option.html',1,'ara::com']]],
-  ['sm_8',['sm',['../namespaceara_1_1sm.html',1,'ara']]]
+  ['routing_8',['routing',['../namespaceara_1_1diag_1_1routing.html',1,'ara::diag']]],
+  ['sm_9',['sm',['../namespaceara_1_1sm.html',1,'ara']]]
 ];

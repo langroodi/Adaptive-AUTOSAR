@@ -1,5 +1,6 @@
 var namespaceara_1_1diag =
 [
+    [ "routing", "namespaceara_1_1diag_1_1routing.html", "namespaceara_1_1diag_1_1routing" ],
     [ "CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", "classara_1_1diag_1_1CancellationHandler" ],
     [ "ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
     [ "CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],
