@@ -2,6 +2,7 @@
 #define ROUTABLE_USD_SERVICE_H
 
 #include <functional>
+#include "../../core/instance_specifier.h"
 #include "../../core/result.h"
 
 namespace ara
@@ -18,24 +19,30 @@ namespace ara
             private:
                 const uint8_t mSid;
                 bool mOffered;
-                std::function<void(uint8_t)> mNotifier;
+                std::function<void(uint8_t, bool)> mNotifier;
 
             protected:
+                /// @brief Instance specifier that owns the service
+                const ara::core::InstanceSpecifier &Specifier;
+
                 /// @brief Constructor
+                /// @param specifier Owner instance specifier
                 /// @param sid UDS service ID
-                explicit RoutableUdsService(uint8_t sid) noexcept;
+                RoutableUdsService(
+                    const ara::core::InstanceSpecifier &specifier,
+                    uint8_t sid) noexcept;
 
             public:
                 /// @brief Offer handling DM requests
                 /// @returns Error result if the service has been already offered
-                virtual ara::core::Result<void> Offer();
+                ara::core::Result<void> Offer();
 
-                /// @brief Set a callback to be invoked when the service has been offered
-                /// @param notifier A callback to be invoked after the service offer
-                void SetOfferNotifier(std::function<void(uint8_t)> notifier);
+                /// @brief Set a callback to be invoked when the service offering state changed
+                /// @param notifier A callback to be invoked after the service being offered or stop being offered
+                void SetOfferNotifier(std::function<void(uint8_t, bool)> notifier);
 
                 /// @brief Stop offering request handling
-                virtual void StopOffer();
+                void StopOffer();
 
                 virtual ~RoutableUdsService();
             };

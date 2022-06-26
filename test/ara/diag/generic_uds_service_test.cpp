@@ -1,0 +1,88 @@
+#include <gtest/gtest.h>
+#include "../../../src/ara/diag/diag_error_domain.h"
+#include "../../../src/ara/diag/generic_uds_service.h"
+
+namespace ara
+{
+    namespace diag
+    {
+        static const ara::core::InstanceSpecifier cSpecifier("Instance0");
+
+        class GenericUdsServiceTest : public testing::Test, public GenericUDSService
+        {
+        protected:
+            static const ReentrancyType cReentrancy{ReentrancyType::kNot};
+            static const uint8_t cSid{0x22};
+
+            bool Offering;
+
+        public:
+            GenericUdsServiceTest() : GenericUDSService(cSpecifier, cReentrancy, cSid),
+                                      Offering{false}
+            {
+            }
+
+            void OnOfferingChanged(uint8_t sid, bool offered)
+            {
+                if (sid == cSid)
+                {
+                    Offering = offered;
+                }
+            }
+
+            std::future<OperationOutput> HandleMessage(
+                std::vector<std::uint8_t> requestData,
+                MetaInfo &metaInfo,
+                CancellationHandler cancellationHandler) override
+            {
+                std::future<OperationOutput> _result;
+                return _result;
+            }
+        };
+
+        TEST_F(GenericUdsServiceTest, OfferScenario)
+        {
+            auto _callback{
+                std::bind(&GenericUdsServiceTest::OnOfferingChanged, this,
+                          std::placeholders::_1, std::placeholders::_2)};
+
+            SetOfferNotifier(_callback);
+            auto _result{Offer()};
+
+            EXPECT_TRUE(_result.HasValue());
+            EXPECT_TRUE(Offering);
+        }
+
+        TEST_F(GenericUdsServiceTest, ReOfferScenario)
+        {
+            const DiagErrc cExpectedResult{DiagErrc::kAlreadyOffered};
+
+            auto _callback{
+                std::bind(&GenericUdsServiceTest::OnOfferingChanged, this,
+                          std::placeholders::_1, std::placeholders::_2)};
+
+            SetOfferNotifier(_callback);
+            Offer();
+            // Re-offer
+            auto _result{Offer()};
+            EXPECT_TRUE(Offering);
+            EXPECT_FALSE(_result.HasValue());
+            auto _actualResult{static_cast<DiagErrc>(_result.Error().Value())};
+
+            EXPECT_EQ(cExpectedResult, _actualResult);
+        }
+
+        TEST_F(GenericUdsServiceTest, StopOfferScenario)
+        {
+            auto _callback{
+                std::bind(&GenericUdsServiceTest::OnOfferingChanged, this,
+                          std::placeholders::_1, std::placeholders::_2)};
+
+            SetOfferNotifier(_callback);
+            Offer();
+            StopOffer();
+
+            EXPECT_FALSE(Offering);
+        }
+    }
+}
