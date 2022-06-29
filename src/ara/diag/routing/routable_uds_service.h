@@ -1,14 +1,24 @@
 #ifndef ROUTABLE_USD_SERVICE_H
 #define ROUTABLE_USD_SERVICE_H
 
-#include <functional>
+#include <future>
+#include <vector>
 #include "../../core/instance_specifier.h"
 #include "../../core/result.h"
+#include "../meta_info.h"
+#include "../cancellation_handler.h"
 
 namespace ara
 {
     namespace diag
     {
+        /// @brief Positive response of a handled UDS request
+        struct OperationOutput
+        {
+            /// @brief Response byte array
+            std::vector<uint8_t> responseData;
+        };
+
         /// @brief UDS services routing namespace
         /// @note The namespace is not part of the ARA standard
         namespace routing
@@ -19,12 +29,9 @@ namespace ara
             private:
                 const uint8_t mSid;
                 bool mOffered;
-                std::function<void(uint8_t, bool)> mNotifier;
+                const ara::core::InstanceSpecifier &mSpecifier;
 
             protected:
-                /// @brief Instance specifier that owns the service
-                const ara::core::InstanceSpecifier &Specifier;
-
                 /// @brief Constructor
                 /// @param specifier Owner instance specifier
                 /// @param sid UDS service ID
@@ -37,14 +44,24 @@ namespace ara
                 /// @returns Error result if the service has been already offered
                 ara::core::Result<void> Offer();
 
-                /// @brief Set a callback to be invoked when the service offering state changed
-                /// @param notifier A callback to be invoked after the service being offered or stop being offered
-                void SetOfferNotifier(std::function<void(uint8_t, bool)> notifier);
+                /// @brief Get offering status of the service
+                /// @returns True if the service has been offered, otherwise false
+                bool IsOffered() const noexcept;
+
+                /// @brief Handle an UDS request message
+                /// @param requestData Request message byte array
+                /// @param metaInfo Request message metainfo
+                /// @param cancellationHandler Callack to be invoked when the current conversation is cancelled
+                /// @returns Response byte array
+                virtual std::future<OperationOutput> HandleMessage(
+                    std::vector<uint8_t> requestData,
+                    MetaInfo &metaInfo,
+                    CancellationHandler cancellationHandler) = 0;
 
                 /// @brief Stop offering request handling
-                void StopOffer();
+                void StopOffer() noexcept;
 
-                virtual ~RoutableUdsService();
+                virtual ~RoutableUdsService() noexcept = default;
             };
         }
     }

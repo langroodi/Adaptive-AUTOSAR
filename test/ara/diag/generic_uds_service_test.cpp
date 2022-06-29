@@ -14,24 +14,13 @@ namespace ara
             static const ReentrancyType cReentrancy{ReentrancyType::kNot};
             static const uint8_t cSid{0x22};
 
-            bool Offering;
-
         public:
-            GenericUdsServiceTest() : GenericUDSService(cSpecifier, cReentrancy, cSid),
-                                      Offering{false}
+            GenericUdsServiceTest() : GenericUDSService(cSpecifier, cReentrancy, cSid)
             {
-            }
-
-            void OnOfferingChanged(uint8_t sid, bool offered)
-            {
-                if (sid == cSid)
-                {
-                    Offering = offered;
-                }
             }
 
             std::future<OperationOutput> HandleMessage(
-                std::vector<std::uint8_t> requestData,
+                std::vector<uint8_t> requestData,
                 MetaInfo &metaInfo,
                 CancellationHandler cancellationHandler) override
             {
@@ -42,30 +31,20 @@ namespace ara
 
         TEST_F(GenericUdsServiceTest, OfferScenario)
         {
-            auto _callback{
-                std::bind(&GenericUdsServiceTest::OnOfferingChanged, this,
-                          std::placeholders::_1, std::placeholders::_2)};
-
-            SetOfferNotifier(_callback);
             auto _result{Offer()};
 
             EXPECT_TRUE(_result.HasValue());
-            EXPECT_TRUE(Offering);
+            EXPECT_TRUE(IsOffered());
         }
 
         TEST_F(GenericUdsServiceTest, ReOfferScenario)
         {
             const DiagErrc cExpectedResult{DiagErrc::kAlreadyOffered};
-
-            auto _callback{
-                std::bind(&GenericUdsServiceTest::OnOfferingChanged, this,
-                          std::placeholders::_1, std::placeholders::_2)};
-
-            SetOfferNotifier(_callback);
             Offer();
             // Re-offer
             auto _result{Offer()};
-            EXPECT_TRUE(Offering);
+
+            EXPECT_TRUE(IsOffered());
             EXPECT_FALSE(_result.HasValue());
             auto _actualResult{static_cast<DiagErrc>(_result.Error().Value())};
 
@@ -74,15 +53,10 @@ namespace ara
 
         TEST_F(GenericUdsServiceTest, StopOfferScenario)
         {
-            auto _callback{
-                std::bind(&GenericUdsServiceTest::OnOfferingChanged, this,
-                          std::placeholders::_1, std::placeholders::_2)};
-
-            SetOfferNotifier(_callback);
             Offer();
             StopOffer();
 
-            EXPECT_FALSE(Offering);
+            EXPECT_FALSE(IsOffered());
         }
     }
 }

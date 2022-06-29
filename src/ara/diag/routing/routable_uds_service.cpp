@@ -9,7 +9,7 @@ namespace ara
         {
             RoutableUdsService::RoutableUdsService(
                 const ara::core::InstanceSpecifier &specifier,
-                uint8_t sid) noexcept : Specifier{specifier},
+                uint8_t sid) noexcept : mSpecifier{specifier},
                                         mSid{sid},
                                         mOffered{false}
             {
@@ -29,38 +29,20 @@ namespace ara
                 else
                 {
                     mOffered = true;
-
-                    if (mNotifier)
-                    {
-                        mNotifier(mSid, mOffered);
-                    }
-
                     ara::core::Result<void> _result;
+
                     return _result;
                 }
             }
 
-            void RoutableUdsService::SetOfferNotifier(std::function<void(uint8_t, bool)> notifier)
+            bool RoutableUdsService::IsOffered() const noexcept
             {
-                mNotifier = notifier;
+                return mOffered;
             }
 
-            void RoutableUdsService::StopOffer()
+            void RoutableUdsService::StopOffer() noexcept
             {
-                if (mOffered)
-                {
-                    mOffered = false;
-
-                    if (mNotifier)
-                    {
-                        mNotifier(mSid, mOffered);
-                    }
-                }
-            }
-
-            RoutableUdsService::~RoutableUdsService()
-            {
-                StopOffer();
+                mOffered = false;
             }
         }
     }
