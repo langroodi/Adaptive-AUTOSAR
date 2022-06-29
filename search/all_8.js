@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['id_0',['Id',['../classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552',1,'ara::core::ErrorDomain']]],
-  ['id_1',['id',['../structara_1_1diag_1_1ConversationIdentifierType.html#aa9a89f86bae7abef665375e771ae006c',1,'ara::diag::ConversationIdentifierType']]],
+  ['id_0',['id',['../structara_1_1diag_1_1ConversationIdentifierType.html#aa9a89f86bae7abef665375e771ae006c',1,'ara::diag::ConversationIdentifierType']]],
+  ['id_1',['Id',['../classara_1_1core_1_1ErrorDomain.html#a7ee36496ab0a52ea706b4c2f474c6552',1,'ara::core::ErrorDomain']]],
   ['idtype_2',['IdType',['../classara_1_1core_1_1ErrorDomain.html#a2293fffefc45549aa2d0e4d88d7b5e9d',1,'ara::core::ErrorDomain']]],
   ['incrementsessionid_3',['IncrementSessionId',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a80622d7379a3927c7ce37d9e74aa54d8',1,'ara::com::someip::sd::SomeIpSdMessage::IncrementSessionId()'],['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a91dbaa9522edf627a4df964e40826bc4',1,'ara::com::someip::SomeIpMessage::IncrementSessionId()']]],
   ['inidcator_4',['Inidcator',['../classara_1_1diag_1_1Inidcator.html',1,'ara::diag']]],
@@ -27,5 +27,6 @@ var searchData=
   ['ipv6multicast_24',['IPv6Multicast',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a3e34996498407f1d53a73ae380432925',1,'ara::com::option']]],
   ['ipv6sdendpoint_25',['IPv6SdEndpoint',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0acc59ff8ac1d5a920bcd32d97d47d9850',1,'ara::com::option']]],
   ['iscanceled_26',['IsCanceled',['../classara_1_1diag_1_1CancellationHandler.html#add02f58ead4cbd4aaaeddb3b1f598b70',1,'ara::diag::CancellationHandler']]],
-  ['isenabled_27',['IsEnabled',['../classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d',1,'ara::log::Logger']]]
+  ['isenabled_27',['IsEnabled',['../classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d',1,'ara::log::Logger']]],
+  ['isoffered_28',['IsOffered',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3',1,'ara::diag::routing::RoutableUdsService']]]
 ];

@@ -20,12 +20,13 @@ var searchData=
   ['resettodefaultsession_17',['ResetToDefaultSession',['../classara_1_1diag_1_1Conversation.html#a26ec5f46e6cb2323ace601659201044d',1,'ara::diag::Conversation']]],
   ['resolve_18',['Resolve',['../classara_1_1core_1_1Result.html#a60fde32930cb8ad251f6501fe6b23d6d',1,'ara::core::Result::Resolve()'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aba8710f3e39c53ea7c759b0e3b916cc9',1,'ara::core::Result&lt; void, E &gt;::Resolve()']]],
   ['response_19',['Response',['../classara_1_1com_1_1cg_1_1CommunicationGroupServer.html#a8426cd0b14236b2f29c0d8c5d1e7d38d',1,'ara::com::cg::CommunicationGroupServer::Response()'],['../classara_1_1com_1_1cg_1_1CommunicationGroupClient.html#ab004a4275726c02e643d0f4fe3c542fb',1,'ara::com::cg::CommunicationGroupClient::Response()']]],
-  ['responsedata_20',['responseData',['../structara_1_1diag_1_1OperationOutput.html#ac6a0f312f834bb4e4f54f0507b645884',1,'ara::diag::OperationOutput']]],
+  ['responsedata_20',['responseData',['../structara_1_1diag_1_1OperationOutput.html#ab7988fed20eefa8c5ce4e517f5b2a370',1,'ara::diag::OperationOutput']]],
   ['restartoperationcycle_21',['RestartOperationCycle',['../classara_1_1diag_1_1OperationCycle.html#a6731ddb53859fb3555ba0aef9cf4d791',1,'ara::diag::OperationCycle']]],
   ['result_22',['Result',['../classara_1_1core_1_1Result.html',1,'ara::core']]],
   ['result_3c_20void_2c_20e_20_3e_23',['Result&lt; void, E &gt;',['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html',1,'ara::core']]],
   ['returncode_24',['ReturnCode',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a4b4fe7d97368ba806d781eb8b97ef712',1,'ara::com::someip::SomeIpMessage']]],
   ['routableudsservice_25',['RoutableUdsService',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html',1,'ara::diag::routing::RoutableUdsService'],['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c',1,'ara::diag::routing::RoutableUdsService::RoutableUdsService()']]],
-  ['run_26',['Run',['../classara_1_1exec_1_1WorkerRunnable.html#ac555cd342884df281130c40894379c1d',1,'ara::exec::WorkerRunnable']]],
-  ['runworkerpool_27',['RunWorkerPool',['../classara_1_1exec_1_1DeterministicClient.html#ad78e318dc2ccc95877675d7ac27a1811',1,'ara::exec::DeterministicClient']]]
+  ['route_26',['Route',['../classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#ac3920c2d6a8367e3b3714d4031b0f247',1,'ara::diag::routing::UdsServiceRouter']]],
+  ['run_27',['Run',['../classara_1_1exec_1_1WorkerRunnable.html#ac555cd342884df281130c40894379c1d',1,'ara::exec::WorkerRunnable']]],
+  ['runworkerpool_28',['RunWorkerPool',['../classara_1_1exec_1_1DeterministicClient.html#ad78e318dc2ccc95877675d7ac27a1811',1,'ara::exec::DeterministicClient']]]
 ];

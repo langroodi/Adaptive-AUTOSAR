@@ -95,9 +95,8 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1routing_1_1Routabl
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ara::diag::routing::RoutableUdsService Class Reference</div></div>
+  <div class="headertitle"><div class="title">ara::diag::routing::RoutableUdsService Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -120,26 +119,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4ce68cf422bf4d40bf66ee8489f9a21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ab4ce68cf422bf4d40bf66ee8489f9a21">Offer</a> ()</td></tr>
 <tr class="memdesc:ab4ce68cf422bf4d40bf66ee8489f9a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offer handling DM requests.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ab4ce68cf422bf4d40bf66ee8489f9a21">More...</a><br /></td></tr>
 <tr class="separator:ab4ce68cf422bf4d40bf66ee8489f9a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0dea5c7a0eb18527916331d168fa2f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac0dea5c7a0eb18527916331d168fa2f7">SetOfferNotifier</a> (std::function&lt; void(uint8_t, bool)&gt; notifier)</td></tr>
-<tr class="memdesc:ac0dea5c7a0eb18527916331d168fa2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback to be invoked when the service offering state changed.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac0dea5c7a0eb18527916331d168fa2f7">More...</a><br /></td></tr>
-<tr class="separator:ac0dea5c7a0eb18527916331d168fa2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacf2573f50872f445f4c66d00c5bc38e"><td class="memItemLeft" align="right" valign="top"><a id="aacf2573f50872f445f4c66d00c5bc38e" name="aacf2573f50872f445f4c66d00c5bc38e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> ()</td></tr>
-<tr class="memdesc:aacf2573f50872f445f4c66d00c5bc38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop offering request handling. <br /></td></tr>
-<tr class="separator:aacf2573f50872f445f4c66d00c5bc38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b63da584774099509246fa53eb9ad3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3">IsOffered</a> () const noexcept</td></tr>
+<tr class="memdesc:ac8b63da584774099509246fa53eb9ad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get offering status of the service.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3">More...</a><br /></td></tr>
+<tr class="separator:ac8b63da584774099509246fa53eb9ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d6a3045d31ea2026bdffcd21b4c85b7"><td class="memItemLeft" align="right" valign="top">virtual std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a9d6a3045d31ea2026bdffcd21b4c85b7">HandleMessage</a> (std::vector&lt; uint8_t &gt; requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cancellationHandler)=0</td></tr>
+<tr class="memdesc:a9d6a3045d31ea2026bdffcd21b4c85b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a9d6a3045d31ea2026bdffcd21b4c85b7">More...</a><br /></td></tr>
+<tr class="separator:a9d6a3045d31ea2026bdffcd21b4c85b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c07cafb0fb1d8bc51a75bd3cc1924cd"><td class="memItemLeft" align="right" valign="top"><a id="a4c07cafb0fb1d8bc51a75bd3cc1924cd" name="a4c07cafb0fb1d8bc51a75bd3cc1924cd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> () noexcept</td></tr>
+<tr class="memdesc:a4c07cafb0fb1d8bc51a75bd3cc1924cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop offering request handling. <br /></td></tr>
+<tr class="separator:a4c07cafb0fb1d8bc51a75bd3cc1924cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aeea9ba87678ee6bd9c920f044310143c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">RoutableUdsService</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, uint8_t sid) noexcept</td></tr>
 <tr class="memdesc:aeea9ba87678ee6bd9c920f044310143c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">More...</a><br /></td></tr>
 <tr class="separator:aeea9ba87678ee6bd9c920f044310143c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a91ef284e3becfc819886ef0f7eea8d8d"><td class="memItemLeft" align="right" valign="top"><a id="a91ef284e3becfc819886ef0f7eea8d8d" name="a91ef284e3becfc819886ef0f7eea8d8d"></a>
-const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Specifier</b></td></tr>
-<tr class="memdesc:a91ef284e3becfc819886ef0f7eea8d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance specifier that owns the service. <br /></td></tr>
-<tr class="separator:a91ef284e3becfc819886ef0f7eea8d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >An UDS service to handle a diagnostic request by offering itself to a router. </p>
@@ -190,6 +185,87 @@ const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core:
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9d6a3045d31ea2026bdffcd21b4c85b7" name="a9d6a3045d31ea2026bdffcd21b4c85b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d6a3045d31ea2026bdffcd21b4c85b7">&#9670;&nbsp;</a></span>HandleMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt; ara::diag::routing::RoutableUdsService::HandleMessage </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>requestData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>metaInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a>&#160;</td>
+          <td class="paramname"><em>cancellationHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle an UDS request message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requestData</td><td>Request message byte array </td></tr>
+    <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
+    <tr><td class="paramname">cancellationHandler</td><td>Callack to be invoked when the current conversation is cancelled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Response byte array </dd></dl>
+
+</div>
+</div>
+<a id="ac8b63da584774099509246fa53eb9ad3" name="ac8b63da584774099509246fa53eb9ad3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b63da584774099509246fa53eb9ad3">&#9670;&nbsp;</a></span>IsOffered()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::diag::routing::RoutableUdsService::IsOffered </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get offering status of the service. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the service has been offered, otherwise false </dd></dl>
+
+</div>
+</div>
 <a id="ab4ce68cf422bf4d40bf66ee8489f9a21" name="ab4ce68cf422bf4d40bf66ee8489f9a21"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4ce68cf422bf4d40bf66ee8489f9a21">&#9670;&nbsp;</a></span>Offer()</h2>
 
@@ -207,32 +283,6 @@ const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core:
 
 <p>Offer handling DM requests. </p>
 <dl class="section return"><dt>Returns</dt><dd>Error result if the service has been already offered </dd></dl>
-
-</div>
-</div>
-<a id="ac0dea5c7a0eb18527916331d168fa2f7" name="ac0dea5c7a0eb18527916331d168fa2f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0dea5c7a0eb18527916331d168fa2f7">&#9670;&nbsp;</a></span>SetOfferNotifier()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ara::diag::routing::RoutableUdsService::SetOfferNotifier </td>
-          <td>(</td>
-          <td class="paramtype">std::function&lt; void(uint8_t, bool)&gt;&#160;</td>
-          <td class="paramname"><em>notifier</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set a callback to be invoked when the service offering state changed. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">notifier</td><td>A callback to be invoked after the service being offered or stop being offered </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
