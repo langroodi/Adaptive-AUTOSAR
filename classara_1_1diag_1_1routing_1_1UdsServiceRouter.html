@@ -109,9 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac3dc37de8796e4a1bda34527e93f12bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#ac3dc37de8796e4a1bda34527e93f12bc">UdsServiceRouter</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier)</td></tr>
 <tr class="memdesc:ac3dc37de8796e4a1bda34527e93f12bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#ac3dc37de8796e4a1bda34527e93f12bc">More...</a><br /></td></tr>
 <tr class="separator:ac3dc37de8796e4a1bda34527e93f12bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3920c2d6a8367e3b3714d4031b0f247"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#ac3920c2d6a8367e3b3714d4031b0f247">Route</a> (std::uint8_t sid, std::vector&lt; std::uint8_t &gt; requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cancellationHandler)</td></tr>
-<tr class="memdesc:ac3920c2d6a8367e3b3714d4031b0f247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Route an UDS request message to a service.  <a href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#ac3920c2d6a8367e3b3714d4031b0f247">More...</a><br /></td></tr>
-<tr class="separator:ac3920c2d6a8367e3b3714d4031b0f247"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd92742815760194f5703f3a11a085a"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#a6dd92742815760194f5703f3a11a085a">Route</a> (std::uint8_t sid, const std::vector&lt; std::uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
+<tr class="memdesc:a6dd92742815760194f5703f3a11a085a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Route an UDS request message to a service.  <a href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#a6dd92742815760194f5703f3a11a085a">More...</a><br /></td></tr>
+<tr class="separator:a6dd92742815760194f5703f3a11a085a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class to route an UDS request to the proper service for handling. </p>
@@ -151,8 +151,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac3920c2d6a8367e3b3714d4031b0f247" name="ac3920c2d6a8367e3b3714d4031b0f247"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3920c2d6a8367e3b3714d4031b0f247">&#9670;&nbsp;</a></span>Route()</h2>
+<a id="a6dd92742815760194f5703f3a11a085a" name="a6dd92742815760194f5703f3a11a085a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd92742815760194f5703f3a11a085a">&#9670;&nbsp;</a></span>Route()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +166,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::uint8_t &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; std::uint8_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>requestData</em>, </td>
         </tr>
         <tr>
@@ -178,7 +178,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>cancellationHandler</em>&#160;</td>
         </tr>
         <tr>
