@@ -54,9 +54,9 @@ namespace ara
                 /// @param cancellationHandler Callack to be invoked when the current conversation is cancelled
                 /// @returns Response byte array
                 virtual std::future<OperationOutput> HandleMessage(
-                    std::vector<uint8_t> requestData,
+                    const std::vector<uint8_t> &requestData,
                     MetaInfo &metaInfo,
-                    CancellationHandler cancellationHandler) = 0;
+                    CancellationHandler &&cancellationHandler) = 0;
 
                 /// @brief Stop offering request handling
                 void StopOffer() noexcept;

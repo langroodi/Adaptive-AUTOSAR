@@ -138,6 +138,9 @@ set(test_ara_exec_helper_dir
 set(test_ara_diag_dir
   "${CMAKE_SOURCE_DIR}/test/ara/diag")
 
+set(test_ara_diag_routing_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/diag/routing")
+
 ########################################################################
 
 add_library(
@@ -297,9 +300,11 @@ add_library(
   ${source_ara_diag_dir}/conversation.cpp
   ${source_ara_diag_dir}/diag_error_domain.h
   ${source_ara_diag_dir}/diag_error_domain.cpp
+  ${source_ara_diag_dir}/generic_uds_service.h
   ${source_ara_diag_routing_dir}/routable_uds_service.h
   ${source_ara_diag_routing_dir}/routable_uds_service.cpp
-  ${source_ara_diag_dir}/generic_uds_service.h
+  ${source_ara_diag_routing_dir}/uds_service_router.h
+  ${source_ara_diag_routing_dir}/uds_service_router.cpp
 )
 
 target_link_libraries(
@@ -372,6 +377,7 @@ if(build_tests)
     ${test_ara_diag_dir}/conversation_test.cpp
     ${test_ara_diag_dir}/diag_error_domain_test.cpp
     ${test_ara_diag_dir}/generic_uds_service_test.cpp
+    ${test_ara_diag_routing_dir}/uds_service_router_test.cpp
   )
 
   target_link_libraries(

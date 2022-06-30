@@ -1,5 +1,5 @@
-#ifndef SERVICE_ROUTER_H
-#define SERVICE_ROUTER_H
+#ifndef UDS_SERVICE_ROUTER_H
+#define UDS_SERVICE_ROUTER_H
 
 #include "./routable_uds_service.h"
 
@@ -13,7 +13,11 @@ namespace ara
             class UdsServiceRouter
             {
             private:
+                const uint8_t cNegativeResponseSid{0x7f};
+                const uint8_t cServiceNotSupportedNrc{0x11};
+
                 std::map<uint8_t, RoutableUdsService *> mServices;
+                const ara::core::InstanceSpecifier &mSpecifier;
 
             public:
                 /// @brief Constructor
@@ -28,11 +32,11 @@ namespace ara
                 /// @returns Response byte array
                 std::future<OperationOutput> Route(
                     std::uint8_t sid,
-                    std::vector<std::uint8_t> requestData,
+                    const std::vector<std::uint8_t> &requestData,
                     MetaInfo &metaInfo,
-                    CancellationHandler cancellationHandler);
+                    CancellationHandler &&cancellationHandler);
 
-                ~UdsServiceRouter();
+                ~UdsServiceRouter() = default;
             };
         }
     }

@@ -20,9 +20,9 @@ namespace ara
             }
 
             std::future<OperationOutput> HandleMessage(
-                std::vector<uint8_t> requestData,
+                const std::vector<uint8_t> &requestData,
                 MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) override
+                CancellationHandler &&cancellationHandler) override
             {
                 std::future<OperationOutput> _result;
                 return _result;
