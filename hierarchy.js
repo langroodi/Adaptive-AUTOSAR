@@ -6,8 +6,6 @@ var hierarchy =
     [ "ara::log::Argument< T >", "classara_1_1log_1_1Argument.html", null ],
     [ "ara::exec::helper::AtomicOptional< T >", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", null ],
     [ "ara::diag::CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", null ],
-    [ "ara::diag::ComCtrlRequestParamsType", "structara_1_1diag_1_1ComCtrlRequestParamsType.html", null ],
-    [ "ara::diag::CommunicationControl", "classara_1_1diag_1_1CommunicationControl.html", null ],
     [ "ara::com::cg::CommunicationGroupClient< T, R >", "classara_1_1com_1_1cg_1_1CommunicationGroupClient.html", null ],
     [ "ara::com::cg::CommunicationGroupServer< T, R >", "classara_1_1com_1_1cg_1_1CommunicationGroupServer.html", null ],
     [ "ara::com::helper::ConcurrentQueue< T >", "classara_1_1com_1_1helper_1_1ConcurrentQueue.html", null ],
@@ -42,7 +40,6 @@ var hierarchy =
     [ "ara::exec::FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", null ],
     [ "ara::exec::FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", null ],
     [ "ara::diag::GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],
-    [ "ara::diag::Inidcator", "classara_1_1diag_1_1Inidcator.html", null ],
     [ "ara::core::InstanceSpecifier", "classara_1_1core_1_1InstanceSpecifier.html", null ],
     [ "ara::com::helper::Ipv4Address", "structara_1_1com_1_1helper_1_1Ipv4Address.html", null ],
     [ "ara::log::Logger", "classara_1_1log_1_1Logger.html", null ],
@@ -103,7 +100,6 @@ var hierarchy =
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ]
     ] ],
     [ "ara::diag::SecuirtyAccess", "classara_1_1diag_1_1SecuirtyAccess.html", null ],
-    [ "ara::diag::ServiceValidation", "classara_1_1diag_1_1ServiceValidation.html", null ],
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [
       [ "ara::com::someip::sd::SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", null ]
     ] ],
