@@ -161,7 +161,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positive response of a handled UDS request.  <a href="structara_1_1diag_1_1OperationOutput.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecuirtyAccess.html">SecuirtyAccess</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html">SecurityAccess</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to evaluate the security access to the data among diagnostic services.  <a href="classara_1_1diag_1_1SecurityAccess.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structara_1_1diag_1_1TimeBased.html">TimeBased</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time-based debouncing parameters.  <a href="structara_1_1diag_1_1TimeBased.html#details">More...</a><br /></td></tr>
@@ -308,9 +309,10 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:af2a103a6cbe91eae53da2a57b2274bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reentrancy type of an instance.  <a href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">More...</a><br /></td></tr>
 <tr class="separator:af2a103a6cbe91eae53da2a57b2274bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8f2558d3d6e137640870e06f396ec2a"><td class="memItemLeft" align="right" valign="top"><a id="aa8f2558d3d6e137640870e06f396ec2a" name="aa8f2558d3d6e137640870e06f396ec2a"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>KeyCompareResultType</b> { <b>kKeyValid</b> = 0x00
-, <b>kKeyInvalid</b> = 0x01
+<tr class="memitem:aa8f2558d3d6e137640870e06f396ec2a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2a">KeyCompareResultType</a> { <a class="el" href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2aa5d772c933f843a667b04f19fba1a995d">kKeyValid</a> = 0x00
+, <a class="el" href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2aa8ec6d01a136287fefc636c7feece18d0">kKeyInvalid</a> = 0x01
  }</td></tr>
+<tr class="memdesc:aa8f2558d3d6e137640870e06f396ec2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Security key comparison result.  <a href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2a">More...</a><br /></td></tr>
 <tr class="separator:aa8f2558d3d6e137640870e06f396ec2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -620,6 +622,36 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641ca8dd09e46fa28d20b83d1b055bf5190f2" name="ac61bdf1fa5645bc96c1588f4b359641ca8dd09e46fa28d20b83d1b055bf5190f2"></a>kReenabled&#160;</td><td class="fielddoc"><p >Enable conditions (if set) are fullfilled. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ac61bdf1fa5645bc96c1588f4b359641ca7b04d8795f5fd03c761ce70dab985fee" name="ac61bdf1fa5645bc96c1588f4b359641ca7b04d8795f5fd03c761ce70dab985fee"></a>kDisabled&#160;</td><td class="fielddoc"><p >Enable conditions (if set) are no longer fullfilled. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="aa8f2558d3d6e137640870e06f396ec2a" name="aa8f2558d3d6e137640870e06f396ec2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f2558d3d6e137640870e06f396ec2a">&#9670;&nbsp;</a></span>KeyCompareResultType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2a">ara::diag::KeyCompareResultType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Security key comparison result. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa8f2558d3d6e137640870e06f396ec2aa5d772c933f843a667b04f19fba1a995d" name="aa8f2558d3d6e137640870e06f396ec2aa5d772c933f843a667b04f19fba1a995d"></a>kKeyValid&#160;</td><td class="fielddoc"><p >Valid security key. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa8f2558d3d6e137640870e06f396ec2aa8ec6d01a136287fefc636c7feece18d0" name="aa8f2558d3d6e137640870e06f396ec2aa8ec6d01a136287fefc636c7feece18d0"></a>kKeyInvalid&#160;</td><td class="fielddoc"><p >Invalid security key. </p>
 </td></tr>
 </table>
 

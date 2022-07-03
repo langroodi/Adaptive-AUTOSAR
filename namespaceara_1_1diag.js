@@ -19,7 +19,7 @@ var namespaceara_1_1diag =
     [ "Monitor", "classara_1_1diag_1_1Monitor.html", "classara_1_1diag_1_1Monitor" ],
     [ "OperationCycle", "classara_1_1diag_1_1OperationCycle.html", "classara_1_1diag_1_1OperationCycle" ],
     [ "OperationOutput", "structara_1_1diag_1_1OperationOutput.html", "structara_1_1diag_1_1OperationOutput" ],
-    [ "SecuirtyAccess", "classara_1_1diag_1_1SecuirtyAccess.html", null ],
+    [ "SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", "classara_1_1diag_1_1SecurityAccess" ],
     [ "TimeBased", "structara_1_1diag_1_1TimeBased.html", "structara_1_1diag_1_1TimeBased" ],
     [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", "structara_1_1diag_1_1UdsDtcStatusByteType" ],
     [ "UploadService", "classara_1_1diag_1_1UploadService.html", null ],
@@ -79,6 +79,10 @@ var namespaceara_1_1diag =
       [ "kRestart", "namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641ca10b027f9e2db79a78b68b36eca360470", null ],
       [ "kReenabled", "namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641ca8dd09e46fa28d20b83d1b055bf5190f2", null ],
       [ "kDisabled", "namespaceara_1_1diag.html#ac61bdf1fa5645bc96c1588f4b359641ca7b04d8795f5fd03c761ce70dab985fee", null ]
+    ] ],
+    [ "KeyCompareResultType", "namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2a", [
+      [ "kKeyValid", "namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2aa5d772c933f843a667b04f19fba1a995d", null ],
+      [ "kKeyInvalid", "namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2aa8ec6d01a136287fefc636c7feece18d0", null ]
     ] ],
     [ "MonitorAction", "namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213", [
       [ "kPassed", "namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213a2e1165dab7cbb5e985ea3b1e5d64f619", null ],
