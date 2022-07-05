@@ -15,9 +15,22 @@ namespace ara
 {
     namespace diag
     {
-        /// @brief Security key comparison result
-        enum class KeyCompareResultType
+        /// @brief A data model that contains the status of a security level
+        /// @note The structure is not ARA compatible.
+        struct SecurityLevel
         {
+            /// @brief Indicate whether the security level has been unlocked or not
+            bool Unlocked;
+            /// @brief Seed that corresponds to the security level for key comparison
+            uint16_t Seed;
+
+            SecurityLevel() noexcept : Unlocked{false}, Seed{0}
+            {
+            }
+        };
+
+        /// @brief Security key comparison result
+        enum class KeyCompareResultType {
             kKeyValid = 0x00,  ///< Valid security key
             kKeyInvalid = 0x01 ///< Invalid security key
         };
@@ -30,6 +43,7 @@ namespace ara
             static const uint8_t cSid{0x27};
 
             const ReentrancyType mReentrancy;
+            std::map<uint8_t, SecurityLevel> mSecurityLevels;
 
         public:
             /// @brief Constructor
