@@ -100,6 +100,7 @@ var hierarchy =
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],
       [ "ara::diag::SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", null ]
     ] ],
+    [ "ara::diag::SecurityLevel", "structara_1_1diag_1_1SecurityLevel.html", null ],
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [
       [ "ara::com::someip::sd::SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", null ]
     ] ],
