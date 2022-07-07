@@ -301,6 +301,8 @@ add_library(
   ${source_ara_diag_dir}/diag_error_domain.h
   ${source_ara_diag_dir}/diag_error_domain.cpp
   ${source_ara_diag_dir}/generic_uds_service.h
+  ${source_ara_diag_dir}/security_access.h
+  ${source_ara_diag_dir}/security_access.cpp
   ${source_ara_diag_routing_dir}/routable_uds_service.h
   ${source_ara_diag_routing_dir}/routable_uds_service.cpp
   ${source_ara_diag_routing_dir}/uds_service_router.h
@@ -377,6 +379,7 @@ if(build_tests)
     ${test_ara_diag_dir}/conversation_test.cpp
     ${test_ara_diag_dir}/diag_error_domain_test.cpp
     ${test_ara_diag_dir}/generic_uds_service_test.cpp
+    ${test_ara_diag_dir}/security_access_test.cpp
     ${test_ara_diag_routing_dir}/uds_service_router_test.cpp
   )
 

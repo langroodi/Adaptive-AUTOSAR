@@ -24,13 +24,14 @@ namespace ara
             /// @brief Seed that corresponds to the security level for key comparison
             uint16_t Seed;
 
-            SecurityLevel() noexcept : Unlocked{false}, Seed{0}
+            explicit SecurityLevel(uint16_t seed = 0) noexcept : Unlocked{false}, Seed{seed}
             {
             }
         };
 
         /// @brief Security key comparison result
-        enum class KeyCompareResultType {
+        enum class KeyCompareResultType
+        {
             kKeyValid = 0x00,  ///< Valid security key
             kKeyInvalid = 0x01 ///< Invalid security key
         };
@@ -41,39 +42,53 @@ namespace ara
         {
         private:
             static const uint8_t cSid{0x27};
+            static const uint16_t cInitialSeed{1};
 
             const ReentrancyType mReentrancy;
+            uint16_t mSeed;
             std::map<uint8_t, SecurityLevel> mSecurityLevels;
+
+            bool tryFetchSeed(uint8_t level, uint16_t &seed) const;
+            uint16_t addLevel(uint8_t level);
 
         public:
             /// @brief Constructor
             /// @param specifier Owner instance specifier
             /// @param reentrancyType Service reentrancy type
             explicit SecurityAccess(
-                const ara::core::InstanceSpecifier &specifier,
+                const core::InstanceSpecifier &specifier,
                 ReentrancyType reentrancyType);
 
-            virtual ~SecurityAccess() noexcept = default;
+            ~SecurityAccess() noexcept = default;
+
+            std::future<OperationOutput> HandleMessage(
+                const std::vector<uint8_t> &requestData,
+                MetaInfo &metaInfo,
+                CancellationHandler &&cancellationHandler) override;
 
             /// @brief Request a seed from the client side to provide a security key
+            /// @param subFunction Security level sub-function
             /// @param securityAccessDataRecord Seed request parameters payload
             /// @param metaInfo Request message metainfo
             /// @param cancellationHandler Callback to be invoked when the current conversation is cancelled
             /// @returns Provided key by the server
-            virtual std::future<std::vector<uint8_t>> GetSeed(
+            std::future<std::vector<uint8_t>> GetSeed(
+                uint8_t subFunction,
                 std::vector<uint8_t> securityAccessDataRecord,
                 MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler);
+                CancellationHandler &&cancellationHandler);
 
             /// @brief Evaluate the key provided by a client
+            /// @param subFunction Security level sub-function
             /// @param key Provided key
             /// @param metaInfo Request message metainfo
             /// @param cancellationHandler Callback to be invoked when the current conversation is cancelled
             /// @returns Key evaluation result from the server
-            virtual std::future<KeyCompareResultType> CompareKey(
+            std::future<KeyCompareResultType> CompareKey(
+                uint8_t subFunction,
                 std::vector<uint8_t> key,
                 MetaInfo &metaInfo,
-                CancellationHandler cacellationHandler);
+                CancellationHandler &&cacellationHandler);
         };
     }
 }
