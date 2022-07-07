@@ -115,22 +115,25 @@ Inheritance diagram for ara::diag::SecurityAccess:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac9217a282fd98d369299a60a5266f93a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#ac9217a282fd98d369299a60a5266f93a">SecurityAccess</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancyType)</td></tr>
-<tr class="memdesc:ac9217a282fd98d369299a60a5266f93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1SecurityAccess.html#ac9217a282fd98d369299a60a5266f93a">More...</a><br /></td></tr>
-<tr class="separator:ac9217a282fd98d369299a60a5266f93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a187dce88138cc24fe2f6589776dc8429"><td class="memItemLeft" align="right" valign="top">virtual std::future&lt; std::vector&lt; uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#a187dce88138cc24fe2f6589776dc8429">GetSeed</a> (std::vector&lt; uint8_t &gt; securityAccessDataRecord, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cancellationHandler)</td></tr>
-<tr class="memdesc:a187dce88138cc24fe2f6589776dc8429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a seed from the client side to provide a security key.  <a href="classara_1_1diag_1_1SecurityAccess.html#a187dce88138cc24fe2f6589776dc8429">More...</a><br /></td></tr>
-<tr class="separator:a187dce88138cc24fe2f6589776dc8429"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13015c81bdafae3079a5fccaeb363263"><td class="memItemLeft" align="right" valign="top">virtual std::future&lt; <a class="el" href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2a">KeyCompareResultType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#a13015c81bdafae3079a5fccaeb363263">CompareKey</a> (std::vector&lt; uint8_t &gt; key, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cacellationHandler)</td></tr>
-<tr class="memdesc:a13015c81bdafae3079a5fccaeb363263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the key provided by a client.  <a href="classara_1_1diag_1_1SecurityAccess.html#a13015c81bdafae3079a5fccaeb363263">More...</a><br /></td></tr>
-<tr class="separator:a13015c81bdafae3079a5fccaeb363263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b25d56400a79973017168b551949990"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#a8b25d56400a79973017168b551949990">SecurityAccess</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancyType)</td></tr>
+<tr class="memdesc:a8b25d56400a79973017168b551949990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1SecurityAccess.html#a8b25d56400a79973017168b551949990">More...</a><br /></td></tr>
+<tr class="separator:a8b25d56400a79973017168b551949990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc24ae3759f3d716143177a50fcdda27"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#acc24ae3759f3d716143177a50fcdda27">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
+<tr class="memdesc:acc24ae3759f3d716143177a50fcdda27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1SecurityAccess.html#acc24ae3759f3d716143177a50fcdda27">More...</a><br /></td></tr>
+<tr class="separator:acc24ae3759f3d716143177a50fcdda27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3be24018d79e93bd84431e2371a48d"><td class="memItemLeft" align="right" valign="top">std::future&lt; std::vector&lt; uint8_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#abc3be24018d79e93bd84431e2371a48d">GetSeed</a> (uint8_t subFunction, std::vector&lt; uint8_t &gt; securityAccessDataRecord, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
+<tr class="memdesc:abc3be24018d79e93bd84431e2371a48d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a seed from the client side to provide a security key.  <a href="classara_1_1diag_1_1SecurityAccess.html#abc3be24018d79e93bd84431e2371a48d">More...</a><br /></td></tr>
+<tr class="separator:abc3be24018d79e93bd84431e2371a48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bbba34b3542ac58dc64eed213d03b54"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2a">KeyCompareResultType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#a3bbba34b3542ac58dc64eed213d03b54">CompareKey</a> (uint8_t subFunction, std::vector&lt; uint8_t &gt; key, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cacellationHandler)</td></tr>
+<tr class="memdesc:a3bbba34b3542ac58dc64eed213d03b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the key provided by a client.  <a href="classara_1_1diag_1_1SecurityAccess.html#a3bbba34b3542ac58dc64eed213d03b54">More...</a><br /></td></tr>
+<tr class="separator:a3bbba34b3542ac58dc64eed213d03b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class to evaluate the security access to the data among diagnostic services. </p>
 <dl class="section note"><dt>Note</dt><dd>In contrast with the ARA standard, the class is NOT abstract. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac9217a282fd98d369299a60a5266f93a" name="ac9217a282fd98d369299a60a5266f93a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9217a282fd98d369299a60a5266f93a">&#9670;&nbsp;</a></span>SecurityAccess()</h2>
+<a id="a8b25d56400a79973017168b551949990" name="a8b25d56400a79973017168b551949990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b25d56400a79973017168b551949990">&#9670;&nbsp;</a></span>SecurityAccess()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +144,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">ara::diag::SecurityAccess::SecurityAccess </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> &amp;&#160;</td>
           <td class="paramname"><em>specifier</em>, </td>
         </tr>
         <tr>
@@ -175,18 +178,21 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a13015c81bdafae3079a5fccaeb363263" name="a13015c81bdafae3079a5fccaeb363263"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13015c81bdafae3079a5fccaeb363263">&#9670;&nbsp;</a></span>CompareKey()</h2>
+<a id="a3bbba34b3542ac58dc64eed213d03b54" name="a3bbba34b3542ac58dc64eed213d03b54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bbba34b3542ac58dc64eed213d03b54">&#9670;&nbsp;</a></span>CompareKey()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::future&lt; <a class="el" href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2a">KeyCompareResultType</a> &gt; ara::diag::SecurityAccess::CompareKey </td>
+          <td class="memname">std::future&lt; <a class="el" href="namespaceara_1_1diag.html#aa8f2558d3d6e137640870e06f396ec2a">KeyCompareResultType</a> &gt; ara::diag::SecurityAccess::CompareKey </td>
           <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>subFunction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
         </tr>
@@ -199,7 +205,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>cacellationHandler</em>&#160;</td>
         </tr>
         <tr>
@@ -208,16 +214,12 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Evaluate the key provided by a client. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">subFunction</td><td>Security level sub-function </td></tr>
     <tr><td class="paramname">key</td><td>Provided key </td></tr>
     <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
     <tr><td class="paramname">cancellationHandler</td><td>Callback to be invoked when the current conversation is cancelled </td></tr>
@@ -228,18 +230,21 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a187dce88138cc24fe2f6589776dc8429" name="a187dce88138cc24fe2f6589776dc8429"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a187dce88138cc24fe2f6589776dc8429">&#9670;&nbsp;</a></span>GetSeed()</h2>
+<a id="abc3be24018d79e93bd84431e2371a48d" name="abc3be24018d79e93bd84431e2371a48d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3be24018d79e93bd84431e2371a48d">&#9670;&nbsp;</a></span>GetSeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::future&lt; std::vector&lt; uint8_t &gt; &gt; ara::diag::SecurityAccess::GetSeed </td>
+          <td class="memname">std::future&lt; std::vector&lt; uint8_t &gt; &gt; ara::diag::SecurityAccess::GetSeed </td>
           <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>subFunction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
           <td class="paramname"><em>securityAccessDataRecord</em>, </td>
         </tr>
@@ -252,7 +257,56 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>cancellationHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Request a seed from the client side to provide a security key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">subFunction</td><td>Security level sub-function </td></tr>
+    <tr><td class="paramname">securityAccessDataRecord</td><td>Seed request parameters payload </td></tr>
+    <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
+    <tr><td class="paramname">cancellationHandler</td><td>Callback to be invoked when the current conversation is cancelled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Provided key by the server </dd></dl>
+
+</div>
+</div>
+<a id="acc24ae3759f3d716143177a50fcdda27" name="acc24ae3759f3d716143177a50fcdda27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc24ae3759f3d716143177a50fcdda27">&#9670;&nbsp;</a></span>HandleMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt; ara::diag::SecurityAccess::HandleMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>requestData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>metaInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>cancellationHandler</em>&#160;</td>
         </tr>
         <tr>
@@ -263,21 +317,23 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Request a seed from the client side to provide a security key. </p>
+<p>Handle an UDS request message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">securityAccessDataRecord</td><td>Seed request parameters payload </td></tr>
+    <tr><td class="paramname">requestData</td><td>Request message byte array </td></tr>
     <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
-    <tr><td class="paramname">cancellationHandler</td><td>Callback to be invoked when the current conversation is cancelled </td></tr>
+    <tr><td class="paramname">cancellationHandler</td><td>Callack to be invoked when the current conversation is cancelled </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Provided key by the server </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Response byte array </dd></dl>
+
+<p>Implements <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a817acd3234c6e4c5c8cf5bfbd917f28e">ara::diag::routing::RoutableUdsService</a>.</p>
 
 </div>
 </div>
