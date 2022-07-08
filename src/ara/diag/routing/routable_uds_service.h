@@ -51,7 +51,7 @@ namespace ara
                 /// @brief Handle an UDS request message
                 /// @param requestData Request message byte array
                 /// @param metaInfo Request message metainfo
-                /// @param cancellationHandler Callack to be invoked when the current conversation is cancelled
+                /// @param cancellationHandler Callback to be invoked when the current conversation is cancelled
                 /// @returns Response byte array
                 virtual std::future<OperationOutput> HandleMessage(
                     const std::vector<uint8_t> &requestData,

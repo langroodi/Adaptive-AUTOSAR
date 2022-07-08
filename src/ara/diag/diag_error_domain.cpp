@@ -4,6 +4,7 @@ namespace ara
 {
     namespace diag
     {
+        const ara::core::ErrorDomain::IdType DiagErrorDomain::cId;
         DiagErrorDomain *DiagErrorDomain::mInstnace = nullptr;
 
         const char *DiagErrorDomain::Name() const noexcept

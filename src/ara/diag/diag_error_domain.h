@@ -34,7 +34,7 @@ namespace ara
         class DiagErrorDomain final : public ara::core::ErrorDomain
         {
         private:
-            const ara::core::ErrorDomain::IdType cId{0x8000000000000401};
+            static const ara::core::ErrorDomain::IdType cId{0x8000000000000401};
             const char *cName{"Diag"};
 
             static DiagErrorDomain *mInstnace;

@@ -57,7 +57,7 @@ namespace ara
             /// @param reentrancyType Service reentrancy type
             explicit SecurityAccess(
                 const core::InstanceSpecifier &specifier,
-                ReentrancyType reentrancyType);
+                ReentrancyType reentrancyType) noexcept;
 
             ~SecurityAccess() noexcept = default;
 

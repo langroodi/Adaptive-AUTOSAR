@@ -9,9 +9,9 @@ namespace ara
 
         SecurityAccess::SecurityAccess(
             const core::InstanceSpecifier &specifier,
-            ReentrancyType reentrancyType) : routing::RoutableUdsService(specifier, cSid),
-                                             mReentrancy{reentrancyType},
-                                             mSeed{cInitialSeed}
+            ReentrancyType reentrancyType) noexcept : routing::RoutableUdsService(specifier, cSid),
+                                                      mReentrancy{reentrancyType},
+                                                      mSeed{cInitialSeed}
         {
         }
 
