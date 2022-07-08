@@ -115,9 +115,9 @@ Inheritance diagram for ara::diag::SecurityAccess:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b25d56400a79973017168b551949990"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#a8b25d56400a79973017168b551949990">SecurityAccess</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancyType)</td></tr>
-<tr class="memdesc:a8b25d56400a79973017168b551949990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1SecurityAccess.html#a8b25d56400a79973017168b551949990">More...</a><br /></td></tr>
-<tr class="separator:a8b25d56400a79973017168b551949990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664fc1eba24e2954fa948e4894a61aef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#a664fc1eba24e2954fa948e4894a61aef">SecurityAccess</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancyType) noexcept</td></tr>
+<tr class="memdesc:a664fc1eba24e2954fa948e4894a61aef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1SecurityAccess.html#a664fc1eba24e2954fa948e4894a61aef">More...</a><br /></td></tr>
+<tr class="separator:a664fc1eba24e2954fa948e4894a61aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc24ae3759f3d716143177a50fcdda27"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1SecurityAccess.html#acc24ae3759f3d716143177a50fcdda27">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
 <tr class="memdesc:acc24ae3759f3d716143177a50fcdda27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1SecurityAccess.html#acc24ae3759f3d716143177a50fcdda27">More...</a><br /></td></tr>
 <tr class="separator:acc24ae3759f3d716143177a50fcdda27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,8 +132,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p >A class to evaluate the security access to the data among diagnostic services. </p>
 <dl class="section note"><dt>Note</dt><dd>In contrast with the ARA standard, the class is NOT abstract. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8b25d56400a79973017168b551949990" name="a8b25d56400a79973017168b551949990"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b25d56400a79973017168b551949990">&#9670;&nbsp;</a></span>SecurityAccess()</h2>
+<a id="a664fc1eba24e2954fa948e4894a61aef" name="a664fc1eba24e2954fa948e4894a61aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664fc1eba24e2954fa948e4894a61aef">&#9670;&nbsp;</a></span>SecurityAccess()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +161,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -327,7 +327,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">requestData</td><td>Request message byte array </td></tr>
     <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
-    <tr><td class="paramname">cancellationHandler</td><td>Callack to be invoked when the current conversation is cancelled </td></tr>
+    <tr><td class="paramname">cancellationHandler</td><td>Callback to be invoked when the current conversation is cancelled </td></tr>
   </table>
   </dd>
 </dl>
