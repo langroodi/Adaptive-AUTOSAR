@@ -20,13 +20,49 @@ namespace ara
             MetaInfo &metaInfo,
             CancellationHandler &&cancellationHandler)
         {
-            std::future_errc _exception;
-            std::exception_ptr _exceptionPtr{std::make_exception_ptr(_exception)};
             std::promise<OperationOutput> _resultPromise;
-            _resultPromise.set_exception(_exceptionPtr);
+            uint8_t _subFunction{requestData.at(cSubFunctionIndex)};
+
+            bool _isOdd{(_subFunction % 2) == 1};
+
+            if (_isOdd)
+            {
+                OperationOutput _response;
+                handleRequestSeed(
+                    _response, requestData, metaInfo, std::move(cancellationHandler));
+
+                _resultPromise.set_value(_response);
+            }
+            else
+            {
+                std::future_errc _exception;
+                std::exception_ptr _exceptionPtr{std::make_exception_ptr(_exception)};
+
+                _resultPromise.set_exception(_exceptionPtr);
+            }
+
             std::future<OperationOutput> _result{_resultPromise.get_future()};
 
             return _result;
+        }
+
+        bool SecurityAccess::validate(uint8_t subFunction)
+        {
+            // Ignore suppressPosRspMsgIndicationBit
+            auto _neutralSubFunction{
+                static_cast<uint8_t>(subFunction & (~cSuppressPosRspMask))};
+
+            // Check whether or not the sub-function has been reserved for ISO or the supplier
+            if ((_neutralSubFunction == cIsoReservedSubFunction) ||
+                (_neutralSubFunction >= cIsoReservedLBound && _neutralSubFunction <= cIsoReservedHBound) ||
+                (_neutralSubFunction >= cSupplierReservedLBound && _neutralSubFunction <= cSupplierReservedHBound))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         bool SecurityAccess::tryFetchSeed(uint8_t level, uint16_t &seed) const
@@ -76,6 +112,44 @@ namespace ara
             }
 
             return _result;
+        }
+
+        void SecurityAccess::handleRequestSeed(
+            OperationOutput &response,
+            const std::vector<uint8_t> &requestData,
+            MetaInfo &metaInfo,
+            CancellationHandler &&cancellationHandler)
+        {
+            uint8_t _subFunction{requestData.at(cSubFunctionIndex)};
+            bool _validSubFunction{validate(_subFunction)};
+
+            if (_validSubFunction)
+            {
+                auto _dataRecordBeginItr{requestData.cbegin() + cDataRecordOffset};
+                auto _dataRecordEndItr{requestData.cend()};
+                std::vector<uint8_t> _dataRecord(_dataRecordBeginItr, _dataRecordEndItr);
+
+                auto _seed{
+                    GetSeed(
+                        _subFunction, _dataRecord, metaInfo, std::move(cancellationHandler))};
+
+                auto _suppressPositiveResponse{
+                    static_cast<bool>(_subFunction & cSuppressPosRspMask)};
+
+                if (!_suppressPositiveResponse)
+                {
+                    response.responseData = _seed.get();
+                    auto _sidItr{response.responseData.begin() + cSidIndex};
+                    response.responseData.insert(_sidItr, cSid);
+                }
+            }
+            else
+            {
+                response.responseData =
+                    {cNegativeResponseCodeSid,
+                     cSid,
+                     cSubFunctionNotSupportedNrc};
+            }
         }
 
         std::future<std::vector<uint8_t>> SecurityAccess::GetSeed(

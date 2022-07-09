@@ -44,12 +44,32 @@ namespace ara
             static const uint8_t cSid{0x27};
             static const uint16_t cInitialSeed{1};
 
+            const size_t cSidIndex{0};
+            const size_t cSubFunctionIndex{1};
+            const size_t cDataRecordOffset{2};
+
+            const uint8_t cSuppressPosRspMask{0x80};
+            const uint8_t cNegativeResponseCodeSid{0x7f};
+            const uint8_t cSubFunctionNotSupportedNrc{0x12};
+
+            const uint8_t cIsoReservedSubFunction{0x00};
+            const uint8_t cIsoReservedLBound{0x43};
+            const uint8_t cIsoReservedHBound{0x5e};
+            const uint8_t cSupplierReservedLBound{0x61};
+            const uint8_t cSupplierReservedHBound{0x7f};
+
             const ReentrancyType mReentrancy;
             uint16_t mSeed;
             std::map<uint8_t, SecurityLevel> mSecurityLevels;
 
+            bool validate(uint8_t subFunction);
             bool tryFetchSeed(uint8_t level, uint16_t &seed) const;
             uint16_t addLevel(uint8_t level);
+            void handleRequestSeed(
+                OperationOutput &response,
+                const std::vector<uint8_t> &requestData,
+                MetaInfo &metaInfo,
+                CancellationHandler &&cancellationHandler);
 
         public:
             /// @brief Constructor
