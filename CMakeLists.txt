@@ -307,6 +307,8 @@ add_library(
   ${source_ara_diag_routing_dir}/routable_uds_service.cpp
   ${source_ara_diag_routing_dir}/uds_service_router.h
   ${source_ara_diag_routing_dir}/uds_service_router.cpp
+  ${source_ara_diag_routing_dir}/delay_timer.h
+  ${source_ara_diag_routing_dir}/delay_timer.cpp
 )
 
 target_link_libraries(
@@ -381,6 +383,7 @@ if(build_tests)
     ${test_ara_diag_dir}/generic_uds_service_test.cpp
     ${test_ara_diag_dir}/security_access_test.cpp
     ${test_ara_diag_routing_dir}/uds_service_router_test.cpp
+    ${test_ara_diag_routing_dir}/delay_timer_test.cpp
   )
 
   target_link_libraries(
