@@ -14,6 +14,7 @@ var hierarchy =
     [ "ara::diag::ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],
     [ "ara::diag::CounterBased", "structara_1_1diag_1_1CounterBased.html", null ],
     [ "ara::diag::DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", null ],
+    [ "ara::diag::routing::DelayTimer", "classara_1_1diag_1_1routing_1_1DelayTimer.html", null ],
     [ "ara::exec::DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", null ],
     [ "Diagnostic", "classDiagnostic.html", null ],
     [ "ara::diag::DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],

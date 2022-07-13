@@ -25,7 +25,8 @@ var searchData=
   ['ipv6endpoint_22',['IPv6Endpoint',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a04b446236b9b61298c62828ac55d2555',1,'ara::com::option']]],
   ['ipv6multicast_23',['IPv6Multicast',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a3e34996498407f1d53a73ae380432925',1,'ara::com::option']]],
   ['ipv6sdendpoint_24',['IPv6SdEndpoint',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0acc59ff8ac1d5a920bcd32d97d47d9850',1,'ara::com::option']]],
-  ['iscanceled_25',['IsCanceled',['../classara_1_1diag_1_1CancellationHandler.html#add02f58ead4cbd4aaaeddb3b1f598b70',1,'ara::diag::CancellationHandler']]],
-  ['isenabled_26',['IsEnabled',['../classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d',1,'ara::log::Logger']]],
-  ['isoffered_27',['IsOffered',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3',1,'ara::diag::routing::RoutableUdsService']]]
+  ['isactive_25',['IsActive',['../classara_1_1diag_1_1routing_1_1DelayTimer.html#a2ad8123828b61b5c2a9ba7c523e8854c',1,'ara::diag::routing::DelayTimer']]],
+  ['iscanceled_26',['IsCanceled',['../classara_1_1diag_1_1CancellationHandler.html#add02f58ead4cbd4aaaeddb3b1f598b70',1,'ara::diag::CancellationHandler']]],
+  ['isenabled_27',['IsEnabled',['../classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d',1,'ara::log::Logger']]],
+  ['isoffered_28',['IsOffered',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3',1,'ara::diag::routing::RoutableUdsService']]]
 ];

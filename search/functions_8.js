@@ -11,7 +11,8 @@ var searchData=
   ['interrupt_8',['Interrupt',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a4d4b71e1d5f177f7adfdf64579b28a56',1,'ara::com::someip::sd::fsm::TimerSetState']]],
   ['ipaddress_9',['IpAddress',['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a254677dbfe729c5be5fddc26ca38233f',1,'ara::com::option::Ipv4EndpointOption']]],
   ['ipv4address_10',['Ipv4Address',['../structara_1_1com_1_1helper_1_1Ipv4Address.html#aecbf13142f21f4902495ba2c1fd7d8f2',1,'ara::com::helper::Ipv4Address']]],
-  ['iscanceled_11',['IsCanceled',['../classara_1_1diag_1_1CancellationHandler.html#add02f58ead4cbd4aaaeddb3b1f598b70',1,'ara::diag::CancellationHandler']]],
-  ['isenabled_12',['IsEnabled',['../classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d',1,'ara::log::Logger']]],
-  ['isoffered_13',['IsOffered',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3',1,'ara::diag::routing::RoutableUdsService']]]
+  ['isactive_11',['IsActive',['../classara_1_1diag_1_1routing_1_1DelayTimer.html#a2ad8123828b61b5c2a9ba7c523e8854c',1,'ara::diag::routing::DelayTimer']]],
+  ['iscanceled_12',['IsCanceled',['../classara_1_1diag_1_1CancellationHandler.html#add02f58ead4cbd4aaaeddb3b1f598b70',1,'ara::diag::CancellationHandler']]],
+  ['isenabled_13',['IsEnabled',['../classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d',1,'ara::log::Logger']]],
+  ['isoffered_14',['IsOffered',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3',1,'ara::diag::routing::RoutableUdsService']]]
 ];
