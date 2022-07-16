@@ -5,23 +5,38 @@ namespace ara
 {
     namespace diag
     {
-        TEST(SecurityAccessTest, HandleRequestSeedMessage)
+        class SecurityAccessTest : public testing::Test
+        {
+        private:
+            static core::InstanceSpecifier mSpecifier;
+            static const ReentrancyType cReentrancy{ReentrancyType::kNot};
+
+        protected:
+            SecurityAccess Service;
+
+        public:
+            SecurityAccessTest() : Service{mSpecifier, cReentrancy}
+            {
+            }
+        };
+
+        core::InstanceSpecifier SecurityAccessTest::mSpecifier{"Instance0"};
+        const ReentrancyType SecurityAccessTest::cReentrancy;
+
+        TEST_F(SecurityAccessTest, HandleRequestSeedMessage)
         {
             const uint8_t cSid{0x27};
             const size_t cSidIndex{1};
             const uint8_t cNrc{0x12};
             const size_t cNrcIndex{2};
             const uint8_t cSubFunction{0x43};
-            const ReentrancyType cReentrancy{ReentrancyType::kNot};
 
-            core::InstanceSpecifier _specifier("Instance0");
             std::vector<uint8_t> _requestData{cSid, cSubFunction};
             MetaInfo _metaInfo(Context::kDoIP);
             CancellationHandler _cancellationHandler(false);
-            SecurityAccess _securityAccess(_specifier, cReentrancy);
 
             std::future<OperationOutput> _responseFuture{
-                _securityAccess.HandleMessage(
+                Service.HandleMessage(
                     _requestData,
                     _metaInfo,
                     std::move(_cancellationHandler))};
@@ -35,20 +50,17 @@ namespace ara
             EXPECT_EQ(cNrc, _nrc);
         }
 
-        TEST(SecurityAccessTest, GetSeedMethod)
+        TEST_F(SecurityAccessTest, GetSeedMethod)
         {
             const size_t cSeedOffset{0};
             const uint8_t cSubFunction{0x01};
-            const ReentrancyType cReentrancy{ReentrancyType::kNot};
 
-            core::InstanceSpecifier _specifier("Instance0");
             std::vector<uint8_t> _securityAccessDataRecord;
             MetaInfo _metaInfo(Context::kDoIP);
             CancellationHandler _cancellationHandler(false);
-            SecurityAccess _securityAccess(_specifier, cReentrancy);
 
             std::future<std::vector<uint8_t>> _seedByteArrFuture{
-                _securityAccess.GetSeed(
+                Service.GetSeed(
                     cSubFunction,
                     _securityAccessDataRecord,
                     _metaInfo,
@@ -64,7 +76,7 @@ namespace ara
 
             CancellationHandler _newCancellationHandler(false);
             _seedByteArrFuture =
-                _securityAccess.GetSeed(
+                Service.GetSeed(
                     cSubFunction,
                     _securityAccessDataRecord,
                     _metaInfo,

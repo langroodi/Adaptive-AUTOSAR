@@ -11,8 +11,56 @@ namespace ara
             const core::InstanceSpecifier &specifier,
             ReentrancyType reentrancyType) noexcept : routing::RoutableUdsService(specifier, cSid),
                                                       mReentrancy{reentrancyType},
-                                                      mSeed{cInitialSeed}
+                                                      mSeed{cInitialSeed},
+                                                      mFailedUnlockAttempt{0}
         {
+        }
+
+        bool SecurityAccess::hasProblem(
+            const std::vector<uint8_t> &requestData, uint8_t &nrc) const
+        {
+            if (requestData.size() > cSubFunctionIndex)
+            {
+                uint8_t _subFunction{requestData.at(cSubFunctionIndex)};
+
+                // Ignore suppressPosRspMsgIndicationBit
+                auto _neutralSubFunction{
+                    static_cast<uint8_t>(_subFunction & (~cSuppressPosRspMask))};
+
+                if ((_neutralSubFunction == cIsoReservedSubFunction) ||
+                    (_neutralSubFunction >= cIsoReservedLBound && _neutralSubFunction <= cIsoReservedHBound) ||
+                    (_neutralSubFunction >= cSupplierReservedLBound && _neutralSubFunction <= cSupplierReservedHBound))
+                {
+                    // The sub-function has been reserved for ISO or the supplier.
+                    nrc = cSubFunctionNotSupportedNrc;
+                    return true;
+                }
+                else if (mDelayTimer.IsActive())
+                {
+                    // The delay timer is active due to exceeding the number of unlock attempts.
+                    nrc = cExceededNumberOfAttempts;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                // The request payload length is incorrect.
+                nrc = cIncorrectMessageLength;
+                return true;
+            }
+        }
+
+        void SecurityAccess::generateNegativeResponse(
+            OperationOutput &response, uint8_t nrc) const
+        {
+            response.responseData =
+                {cNegativeResponseCodeSid,
+                 cSid,
+                 nrc};
         }
 
         std::future<OperationOutput> SecurityAccess::HandleMessage(
@@ -20,49 +68,55 @@ namespace ara
             MetaInfo &metaInfo,
             CancellationHandler &&cancellationHandler)
         {
+            /// @todo Consider the cancellation handler
+            uint8_t _nrc;
+            OperationOutput _response;
             std::promise<OperationOutput> _resultPromise;
-            uint8_t _subFunction{requestData.at(cSubFunctionIndex)};
 
-            bool _isOdd{(_subFunction % 2) == 1};
+            bool _validRequest{!hasProblem(requestData, _nrc)};
 
-            if (_isOdd)
+            if (_validRequest)
             {
-                OperationOutput _response;
-                handleRequestSeed(
-                    _response, requestData, metaInfo, std::move(cancellationHandler));
+                uint8_t _subFunction{requestData.at(cSubFunctionIndex)};
+                auto _parametersBeginItr{requestData.cbegin() + cDataRecordOffset};
+                auto _parametersEndItr{requestData.cend()};
+                std::vector<uint8_t> _parameters(_parametersBeginItr, _parametersEndItr);
 
-                _resultPromise.set_value(_response);
+                auto _suppressPositiveResponse{
+                    static_cast<bool>(_subFunction & cSuppressPosRspMask)};
+
+                bool _isOdd{(_subFunction % 2) == 1};
+
+                if (_isOdd)
+                {
+                    handleRequestSeed(
+                        _response,
+                        _subFunction,
+                        _parameters,
+                        metaInfo,
+                        std::move(cancellationHandler),
+                        _suppressPositiveResponse);
+                }
+                else
+                {
+                    handleSendKey(
+                        _response,
+                        _subFunction,
+                        _parameters,
+                        metaInfo,
+                        std::move(cancellationHandler),
+                        _suppressPositiveResponse);
+                }
             }
             else
             {
-                std::future_errc _exception;
-                std::exception_ptr _exceptionPtr{std::make_exception_ptr(_exception)};
-
-                _resultPromise.set_exception(_exceptionPtr);
+                generateNegativeResponse(_response, _nrc);
             }
 
+            _resultPromise.set_value(_response);
             std::future<OperationOutput> _result{_resultPromise.get_future()};
 
             return _result;
-        }
-
-        bool SecurityAccess::validate(uint8_t subFunction)
-        {
-            // Ignore suppressPosRspMsgIndicationBit
-            auto _neutralSubFunction{
-                static_cast<uint8_t>(subFunction & (~cSuppressPosRspMask))};
-
-            // Check whether or not the sub-function has been reserved for ISO or the supplier
-            if ((_neutralSubFunction == cIsoReservedSubFunction) ||
-                (_neutralSubFunction >= cIsoReservedLBound && _neutralSubFunction <= cIsoReservedHBound) ||
-                (_neutralSubFunction >= cSupplierReservedLBound && _neutralSubFunction <= cSupplierReservedHBound))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
 
         bool SecurityAccess::tryFetchSeed(uint8_t level, uint16_t &seed) const
@@ -116,39 +170,24 @@ namespace ara
 
         void SecurityAccess::handleRequestSeed(
             OperationOutput &response,
-            const std::vector<uint8_t> &requestData,
+            uint8_t subFunction,
+            const std::vector<uint8_t> &securityAccessDataRecord,
             MetaInfo &metaInfo,
-            CancellationHandler &&cancellationHandler)
+            CancellationHandler &&cancellationHandler,
+            bool suppressPositiveResponse)
         {
-            uint8_t _subFunction{requestData.at(cSubFunctionIndex)};
-            bool _validSubFunction{validate(_subFunction)};
+            auto _seed{
+                GetSeed(
+                    subFunction,
+                    securityAccessDataRecord,
+                    metaInfo,
+                    std::move(cancellationHandler))};
 
-            if (_validSubFunction)
+            if (!suppressPositiveResponse)
             {
-                auto _dataRecordBeginItr{requestData.cbegin() + cDataRecordOffset};
-                auto _dataRecordEndItr{requestData.cend()};
-                std::vector<uint8_t> _dataRecord(_dataRecordBeginItr, _dataRecordEndItr);
-
-                auto _seed{
-                    GetSeed(
-                        _subFunction, _dataRecord, metaInfo, std::move(cancellationHandler))};
-
-                auto _suppressPositiveResponse{
-                    static_cast<bool>(_subFunction & cSuppressPosRspMask)};
-
-                if (!_suppressPositiveResponse)
-                {
-                    response.responseData = _seed.get();
-                    auto _sidItr{response.responseData.begin() + cSidIndex};
-                    response.responseData.insert(_sidItr, cSid);
-                }
-            }
-            else
-            {
-                response.responseData =
-                    {cNegativeResponseCodeSid,
-                     cSid,
-                     cSubFunctionNotSupportedNrc};
+                response.responseData = _seed.get();
+                auto _sidItr{response.responseData.begin() + cSidIndex};
+                response.responseData.insert(_sidItr, cSid);
             }
         }
 
@@ -174,6 +213,144 @@ namespace ara
             std::promise<std::vector<uint8_t>> _resultPromise;
             _resultPromise.set_value(_seedByteArray);
             std::future<std::vector<uint8_t>> _result{_resultPromise.get_future()};
+
+            return _result;
+        }
+
+        void SecurityAccess::handlePassedAttempt(
+            std::map<uint8_t, SecurityLevel>::iterator securityLevelItr)
+        {
+            // Lock all the security levels expect the recentlly unlocked one
+            for (auto _securityLevel : mSecurityLevels)
+            {
+                _securityLevel.second.Unlocked = false;
+            }
+
+            securityLevelItr->second.Unlocked = true;
+        }
+
+        void SecurityAccess::handleFailedAttempt(MetaInfo &metaInfo)
+        {
+            // If the delay timer has been already activated, no need to handle the failed attempt
+            if (mDelayTimer.IsActive())
+            {
+                return;
+            }
+
+            core::Optional<std::string> _optionalAttemptThreshold{
+                metaInfo.GetValue(cAttemptThresholdKey)};
+
+            core::Optional<std::string> _optionalExceededAttemptDelay{
+                metaInfo.GetValue(cExceededAttemptDelayKey)};
+
+            if (_optionalAttemptThreshold.HasValue() &&
+                _optionalExceededAttemptDelay.HasValue())
+            {
+                // Increment the failed attempt
+                ++mFailedUnlockAttempt;
+
+                std::string _attemptThresholdStr{_optionalAttemptThreshold.Value()};
+                int _attemptThresholdInt{std::stoi(_attemptThresholdStr)};
+                auto _attemptThreshold{static_cast<uint8_t>(_attemptThresholdInt)};
+
+                if (mFailedUnlockAttempt > _attemptThreshold)
+                {
+                    std ::string _exceededAttemptDelayStr{_optionalExceededAttemptDelay.Value()};
+                    int _exceededAttemptDelayInt{std::stoi(_exceededAttemptDelayStr)};
+                    std::chrono::seconds _exceededAttemptDelay(_exceededAttemptDelayInt);
+
+                    mDelayTimer.Start(_exceededAttemptDelay);
+                    // Reset the number of failed attempts
+                    mFailedUnlockAttempt = 0;
+                }
+            }
+        }
+
+        void SecurityAccess::handleSendKey(
+            OperationOutput &response,
+            uint8_t subFunction,
+            const std::vector<uint8_t> &key,
+            MetaInfo &metaInfo,
+            CancellationHandler &&cancellationHandler,
+            bool suppressPositiveResponse)
+        {
+            if (key.size() == cKeyLength)
+            {
+                // Corresponding request seed sub-function is always one before the send key sub-function.
+                auto _requestSeedSubFunction{static_cast<uint8_t>(subFunction - 1)};
+                auto _securityLevelItr{mSecurityLevels.find(_requestSeedSubFunction)};
+
+                if (_securityLevelItr != mSecurityLevels.end())
+                {
+                    std::future<KeyCompareResultType> _keyCompareResultFuture{
+                        CompareKey(
+                            _requestSeedSubFunction,
+                            key,
+                            metaInfo,
+                            std::move(cancellationHandler))};
+
+                    KeyCompareResultType _keyCompareResult{_keyCompareResultFuture.get()};
+
+                    if (_keyCompareResult == KeyCompareResultType::kKeyValid)
+                    {
+                        handlePassedAttempt(_securityLevelItr);
+                        if (!suppressPositiveResponse)
+                        {
+                            response.responseData = {cSid, subFunction};
+                        }
+                    }
+                    else
+                    {
+                        handleFailedAttempt(metaInfo);
+                        // Sent key is invalid.
+                        generateNegativeResponse(response, cInvalidKey);
+                    }
+                }
+                else
+                {
+                    // Send key request is received before the request seed.
+                    generateNegativeResponse(response, cRequestSequenceError);
+                }
+            }
+            else
+            {
+                // Key length is incorrect.
+                generateNegativeResponse(response, cIncorrectMessageLength);
+            }
+        }
+
+        std::future<KeyCompareResultType> SecurityAccess::CompareKey(
+            uint8_t subFunction,
+            std::vector<uint8_t> key,
+            MetaInfo &metaInfo,
+            CancellationHandler &&cacellationHandler)
+        {
+            std::promise<KeyCompareResultType> _resultPromise;
+            core::Optional<std::string> _optionalEncryptor{metaInfo.GetValue(cEncryptorKey)};
+
+            if (_optionalEncryptor.HasValue())
+            {
+                std::string _encryptorStr{_optionalEncryptor.Value()};
+                int _encryptorInt{std::stoi(_encryptorStr)};
+                auto _encryptor{static_cast<uint16_t>(_encryptorInt)};
+                SecurityLevel _securityLevel{mSecurityLevels.at(subFunction)};
+                uint16_t _seed{_securityLevel.Seed};
+
+                // Compute XOR expected cipher
+                auto _expectedCipher{static_cast<uint16_t>(_seed ^ _encryptor)};
+                // Recover the received cipher from the byte array
+                auto _receivedCipher{static_cast<uint16_t>(key.at(0)) << 8};
+                _receivedCipher |= key.at(1);
+
+                _resultPromise.set_value(
+                    (_expectedCipher == _receivedCipher) ? KeyCompareResultType::kKeyValid : KeyCompareResultType::kKeyInvalid);
+            }
+            else
+            {
+                _resultPromise.set_value(KeyCompareResultType::kKeyInvalid);
+            }
+
+            std::future<KeyCompareResultType> _result{_resultPromise.get_future()};
 
             return _result;
         }

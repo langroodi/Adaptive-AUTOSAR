@@ -7,6 +7,7 @@
 #include "../core/instance_specifier.h"
 #include "../core/result.h"
 #include "./routing/routable_uds_service.h"
+#include "./routing/delay_timer.h"
 #include "./reentrancy.h"
 #include "./meta_info.h"
 #include "./cancellation_handler.h"
@@ -47,10 +48,15 @@ namespace ara
             const size_t cSidIndex{0};
             const size_t cSubFunctionIndex{1};
             const size_t cDataRecordOffset{2};
+            const size_t cKeyLength{2};
 
             const uint8_t cSuppressPosRspMask{0x80};
             const uint8_t cNegativeResponseCodeSid{0x7f};
             const uint8_t cSubFunctionNotSupportedNrc{0x12};
+            const uint8_t cIncorrectMessageLength{0x13};
+            const uint8_t cRequestSequenceError{0x24};
+            const uint8_t cInvalidKey{0x35};
+            const uint8_t cExceededNumberOfAttempts{0x36};
 
             const uint8_t cIsoReservedSubFunction{0x00};
             const uint8_t cIsoReservedLBound{0x43};
@@ -58,18 +64,42 @@ namespace ara
             const uint8_t cSupplierReservedLBound{0x61};
             const uint8_t cSupplierReservedHBound{0x7f};
 
+            const std::string cEncryptorKey{"Encryptor"};
+            const std::string cAttemptThresholdKey{"AttemptThreshold"};
+            const std::string cExceededAttemptDelayKey{"ExceededAttemptDelay"};
+
             const ReentrancyType mReentrancy;
             uint16_t mSeed;
             std::map<uint8_t, SecurityLevel> mSecurityLevels;
+            routing::DelayTimer mDelayTimer;
+            uint8_t mFailedUnlockAttempt;
 
-            bool validate(uint8_t subFunction);
+            bool hasProblem(
+                const std::vector<uint8_t> &requestData, uint8_t &nrc) const;
+
+            void generateNegativeResponse(
+                OperationOutput &response, uint8_t nrc) const;
+
             bool tryFetchSeed(uint8_t level, uint16_t &seed) const;
             uint16_t addLevel(uint8_t level);
             void handleRequestSeed(
                 OperationOutput &response,
-                const std::vector<uint8_t> &requestData,
+                uint8_t subFunction,
+                const std::vector<uint8_t> &securityAccessDataRecord,
                 MetaInfo &metaInfo,
-                CancellationHandler &&cancellationHandler);
+                CancellationHandler &&cancellationHandler,
+                bool suppressPositiveResponse);
+            
+            void handlePassedAttempt(
+                std::map<uint8_t, SecurityLevel>::iterator securityLevelItr);
+            void handleFailedAttempt(MetaInfo &metaInfo);
+            void handleSendKey(
+                OperationOutput &response,
+                uint8_t subFunction,
+                const std::vector<uint8_t> &key,
+                MetaInfo &metaInfo,
+                CancellationHandler &&cancellationHandler,
+                bool suppressPositiveResponse);
 
         public:
             /// @brief Constructor
