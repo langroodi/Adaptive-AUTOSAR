@@ -303,7 +303,7 @@ namespace ara
                     {
                         handleFailedAttempt(metaInfo);
                         // Sent key is invalid.
-                        generateNegativeResponse(response, cInvalidKey);
+                        generateNegativeResponse(response, mDelayTimer.IsActive() ? cExceededNumberOfAttempts : cInvalidKey);
                     }
                 }
                 else
