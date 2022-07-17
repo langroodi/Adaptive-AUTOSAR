@@ -11,17 +11,16 @@ namespace ara
 
         core::Optional<std::string> MetaInfo::GetValue(std::string key)
         {
-            core::Optional<std::string> _result;
-
             try
             {
-                _result = mValues.at(key);
+                core::Optional<std::string> _result{mValues.at(key)};
+                return _result;
             }
             catch (std::out_of_range)
             {
+                core::Optional<std::string> _result;
+                return _result;
             }
-
-            return _result;
         }
 
         void MetaInfo::SetValue(std::string key, std::string value)

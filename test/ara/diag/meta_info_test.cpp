@@ -24,14 +24,14 @@ namespace ara
             MetaInfo _metaInfo(cContext);
             _metaInfo.SetValue(cValidKey, cExpectedValue);
 
-            core::Optional<std::string> _optionalValue = _metaInfo.GetValue(cValidKey);
-            EXPECT_TRUE(_optionalValue.HasValue());
+            core::Optional<std::string> _validOptionalValue{_metaInfo.GetValue(cValidKey)};
+            EXPECT_TRUE(_validOptionalValue.HasValue());
 
-            std::string _actualValue = _optionalValue.Value();
+            std::string _actualValue = _validOptionalValue.Value();
             EXPECT_EQ(cExpectedValue, _actualValue);
 
-            _optionalValue = _metaInfo.GetValue(cInvalidKey);
-            EXPECT_FALSE(_optionalValue.HasValue());
+            core::Optional<std::string> _invalidOptionalValue{_metaInfo.GetValue(cInvalidKey)};
+            EXPECT_FALSE(_invalidOptionalValue.HasValue());
         }
 
         TEST(MetaInfoTest, SetValueMethod)
@@ -45,7 +45,7 @@ namespace ara
             _metaInfo.SetValue(cKey, cExpectedValue);
             _metaInfo.SetValue(cKey, cInvalidValue);
 
-            core::Optional<std::string> _optionalValue = _metaInfo.GetValue(cKey);
+            core::Optional<std::string> _optionalValue{_metaInfo.GetValue(cKey)};
             EXPECT_TRUE(_optionalValue.HasValue());
 
             std::string _actualValue = _optionalValue.Value();
