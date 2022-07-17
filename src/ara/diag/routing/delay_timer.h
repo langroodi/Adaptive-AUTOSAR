@@ -29,7 +29,7 @@ namespace ara
 
                 /// @brief Start the timer if it has not been started yet
                 /// @param delayDuration Timer delay duration in [sec]
-                /// @note The caller won't be blocked by invoking the function.
+                /// @note The caller will be blocked until the timer has been started.
                 void Start(std::chrono::seconds delayDuration);
 
                 /// @brief Indicate whether the timer is active or not

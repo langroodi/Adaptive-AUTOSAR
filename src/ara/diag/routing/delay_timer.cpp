@@ -22,6 +22,11 @@ namespace ara
                 if (!IsActive())
                 {
                     mThread = std::thread(&DelayTimer::delay, this, delayDuration);
+                    // Spinning till the timer become activated.
+                    while (!IsActive())
+                    {
+                        std::this_thread::yield();
+                    }
                 }
             }
 
