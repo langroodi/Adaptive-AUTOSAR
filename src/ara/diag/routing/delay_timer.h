@@ -14,6 +14,8 @@ namespace ara
             class DelayTimer
             {
             private:
+                const std::chrono::microseconds cSpinWait{1};
+
                 std::mutex mMutex;
                 std::unique_lock<std::mutex> mLock;
                 std::condition_variable mConditionVariable;

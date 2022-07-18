@@ -25,7 +25,7 @@ namespace ara
                     // Spinning till the timer become activated.
                     while (!IsActive())
                     {
-                        std::this_thread::yield();
+                        std::this_thread::sleep_for(cSpinWait);
                     }
                 }
             }
