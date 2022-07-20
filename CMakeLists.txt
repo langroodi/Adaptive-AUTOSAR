@@ -309,6 +309,7 @@ add_library(
   ${source_ara_diag_routing_dir}/uds_service_router.cpp
   ${source_ara_diag_routing_dir}/delay_timer.h
   ${source_ara_diag_routing_dir}/delay_timer.cpp
+  ${source_ara_diag_routing_dir}/transfer_data.h
 )
 
 target_link_libraries(
