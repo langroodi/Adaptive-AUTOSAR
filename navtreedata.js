@@ -56,7 +56,7 @@ var NAVTREEINDEX =
 "classara_1_1core_1_1Result.html#a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a",
 "classara_1_1diag_1_1routing_1_1UdsServiceRouter.html",
 "functions_n.html",
-"structara_1_1diag_1_1OperationOutput.html"
+"structara_1_1diag_1_1EventStatusByte.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
