@@ -110,17 +110,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">RoutableUdsService</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An UDS service to handle a diagnostic request by offering itself to a router.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html">TransferData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to transfer data between diagnostic clients and the server.  <a href="classara_1_1diag_1_1routing_1_1TransferData.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html">UdsServiceRouter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to route an UDS request to the proper service for handling.  <a href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a7caf115adbe63216683bfdc8cf66a1b2"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2">TransferDirection</a> : uint8_t { <a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2a6adf97f83acf6453d4a6a4b1070f3754">None</a> = 0x00
-, <a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2a801ab24683a4a8c433c6eb40c48bcd9d">Download</a> = 0x01
-, <a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2a91412465ea9169dfd901dd5e7c96dd99">Upload</a> = 0x02
+<tr class="memitem:a7caf115adbe63216683bfdc8cf66a1b2"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2">TransferDirection</a> : uint8_t { <a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2a35c3ace1970663a16e5c65baa5941b13">kNone</a> = 0x00
+, <a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2a55595f9045c4f4f4465679e536a30a97">kDownload</a> = 0x01
+, <a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2a89cb3ba2c186aed799d30f79c5faa762">kUpload</a> = 0x02
  }</td></tr>
-<tr class="memdesc:a7caf115adbe63216683bfdc8cf66a1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfer data direction between diagnostic client and server.  <a href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2">More...</a><br /></td></tr>
+<tr class="memdesc:a7caf115adbe63216683bfdc8cf66a1b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfer data direction between diagnostic clients and the server.  <a href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2">More...</a><br /></td></tr>
 <tr class="separator:a7caf115adbe63216683bfdc8cf66a1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -147,13 +150,13 @@ Enumerations</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Transfer data direction between diagnostic client and server. </p>
+<p>Transfer data direction between diagnostic clients and the server. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7caf115adbe63216683bfdc8cf66a1b2a6adf97f83acf6453d4a6a4b1070f3754" name="a7caf115adbe63216683bfdc8cf66a1b2a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"><p >Not specified transfer data direction. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7caf115adbe63216683bfdc8cf66a1b2a35c3ace1970663a16e5c65baa5941b13" name="a7caf115adbe63216683bfdc8cf66a1b2a35c3ace1970663a16e5c65baa5941b13"></a>kNone&#160;</td><td class="fielddoc"><p >Not specified transfer data direction. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a7caf115adbe63216683bfdc8cf66a1b2a801ab24683a4a8c433c6eb40c48bcd9d" name="a7caf115adbe63216683bfdc8cf66a1b2a801ab24683a4a8c433c6eb40c48bcd9d"></a>Download&#160;</td><td class="fielddoc"><p >Transfer data from client to server. </p>
+<tr><td class="fieldname"><a id="a7caf115adbe63216683bfdc8cf66a1b2a55595f9045c4f4f4465679e536a30a97" name="a7caf115adbe63216683bfdc8cf66a1b2a55595f9045c4f4f4465679e536a30a97"></a>kDownload&#160;</td><td class="fielddoc"><p >Transfer data from client to server. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a7caf115adbe63216683bfdc8cf66a1b2a91412465ea9169dfd901dd5e7c96dd99" name="a7caf115adbe63216683bfdc8cf66a1b2a91412465ea9169dfd901dd5e7c96dd99"></a>Upload&#160;</td><td class="fielddoc"><p >Transfer data from server to client. </p>
+<tr><td class="fieldname"><a id="a7caf115adbe63216683bfdc8cf66a1b2a89cb3ba2c186aed799d30f79c5faa762" name="a7caf115adbe63216683bfdc8cf66a1b2a89cb3ba2c186aed799d30f79c5faa762"></a>kUpload&#160;</td><td class="fielddoc"><p >Transfer data from server to client. </p>
 </td></tr>
 </table>
 

@@ -99,7 +99,8 @@ var hierarchy =
     [ "ara::core::Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", null ],
     [ "ara::diag::routing::RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", [
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],
-      [ "ara::diag::SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", null ]
+      [ "ara::diag::SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", null ],
+      [ "ara::diag::routing::TransferData", "classara_1_1diag_1_1routing_1_1TransferData.html", null ]
     ] ],
     [ "ara::diag::SecurityLevel", "structara_1_1diag_1_1SecurityLevel.html", null ],
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [

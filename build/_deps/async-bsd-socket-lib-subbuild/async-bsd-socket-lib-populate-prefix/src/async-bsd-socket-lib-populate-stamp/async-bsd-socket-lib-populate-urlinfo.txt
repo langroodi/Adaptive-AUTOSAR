@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/local/bin/cmake;-P;/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-subbuild/async-bsd-socket-lib-populate-prefix/src/async-bsd-socket-lib-populate-stamp/download-async-bsd-socket-lib-populate.cmake;COMMAND;/usr/local/bin/cmake;-P;/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-subbuild/async-bsd-socket-lib-populate-prefix/src/async-bsd-socket-lib-populate-stamp/verify-async-bsd-socket-lib-populate.cmake;COMMAND;/usr/local/bin/cmake;-P;/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-subbuild/async-bsd-socket-lib-populate-prefix/src/async-bsd-socket-lib-populate-stamp/extract-async-bsd-socket-lib-populate.cmake
+source_dir=/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/async-bsd-socket-lib-src
+work_dir=/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps
+url(s)=https://github.com/langroodi/Async-BSD-Socket-Lib/archive/96b00d3a33fe03dfb3d7606fe9fcc28488e9e431.zip
+hash=
+no_extract=
+
