@@ -99,9 +99,9 @@ namespace ara
                     return false;
                 }
 
-                if ((memoryAddress + memorySize) > cMemoryPoolSize)
+                if ((memorySize == 0) || ((memoryAddress + memorySize) > cMemoryPoolSize))
                 {
-                    // Memory size exceeds the memory pool.
+                    // Memory size is zero or it exceeds the memory pool.
                     return false;
                 }
 
@@ -110,6 +110,19 @@ namespace ara
                 mMemorySize = memorySize;
 
                 return true;
+            }
+
+            bool TransferData::TryResetTransferConfiguration() noexcept
+            {
+                if (mTransferDirection == TransferDirection::kNone)
+                {
+                    return false;
+                }
+                else
+                {
+                    mTransferDirection = TransferDirection::kNone;
+                    return true;
+                }
             }
         }
     }

@@ -45,6 +45,7 @@ namespace ara
                 const TransferDirection cInvalidTransferDirection{TransferDirection::kNone};
                 const size_t cInvalidMemoryAddress{2048};
                 const size_t cInvalidMemorySize{1024};
+                const size_t cZeroMemorySize{0};
 
                 EXPECT_FALSE(
                     Service.TrySetTransferConfiguration(
@@ -53,10 +54,28 @@ namespace ara
                 EXPECT_FALSE(
                     Service.TrySetTransferConfiguration(
                         cValidTransferDirection, cInvalidMemoryAddress, cValidMemorySize));
+                
+                EXPECT_FALSE(
+                    Service.TrySetTransferConfiguration(
+                        cValidTransferDirection, cValidMemoryAddress, cZeroMemorySize));
 
                 EXPECT_FALSE(
                     Service.TrySetTransferConfiguration(
                         cValidTransferDirection, cValidMemoryAddress, cInvalidMemorySize));
+            }
+
+            TEST_F(TransferDataTest, TransferConfigurationReset)
+            {
+                const TransferDirection cTransferDirection{TransferDirection::kDownload};
+                const size_t cMemoryAddress{512};
+                const size_t cMemorySize{64};
+
+                EXPECT_FALSE(Service.TryResetTransferConfiguration());
+
+                Service.TrySetTransferConfiguration(
+                        cTransferDirection, cMemoryAddress, cMemorySize);
+
+                EXPECT_TRUE(Service.TryResetTransferConfiguration());
             }
         }
     }

@@ -53,6 +53,10 @@ namespace ara
                     TransferDirection transferDirection,
                     size_t memoryAddress,
                     size_t memorySize) noexcept;
+                
+                /// @brief Try to reset the service transfer data configuration to default
+                /// @returns False if the data transfer configuration has been already reset, otherwise true
+                bool TryResetTransferConfiguration() noexcept;
 
                 std::future<OperationOutput> HandleMessage(
                     const std::vector<uint8_t> &requestData,
