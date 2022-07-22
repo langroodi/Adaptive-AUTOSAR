@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa636dfcddd29d5f1927d42c989691956"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html#aa636dfcddd29d5f1927d42c989691956">TrySetTransferConfiguration</a> (<a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2">TransferDirection</a> transferDirection, size_t memoryAddress, size_t memorySize) noexcept</td></tr>
 <tr class="memdesc:aa636dfcddd29d5f1927d42c989691956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to set the service transfer data configuration.  <a href="classara_1_1diag_1_1routing_1_1TransferData.html#aa636dfcddd29d5f1927d42c989691956">More...</a><br /></td></tr>
 <tr class="separator:aa636dfcddd29d5f1927d42c989691956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad678fbc936878757814c0788cffe77ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html#ad678fbc936878757814c0788cffe77ad">TryResetTransferConfiguration</a> () noexcept</td></tr>
+<tr class="memdesc:ad678fbc936878757814c0788cffe77ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to reset the service transfer data configuration to default.  <a href="classara_1_1diag_1_1routing_1_1TransferData.html#ad678fbc936878757814c0788cffe77ad">More...</a><br /></td></tr>
+<tr class="separator:ad678fbc936878757814c0788cffe77ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6feee4b55e7b646fcf36b23ee131780"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html#aa6feee4b55e7b646fcf36b23ee131780">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
 <tr class="memdesc:aa6feee4b55e7b646fcf36b23ee131780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1routing_1_1TransferData.html#aa6feee4b55e7b646fcf36b23ee131780">More...</a><br /></td></tr>
 <tr class="separator:aa6feee4b55e7b646fcf36b23ee131780"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,6 +218,34 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Response byte array </dd></dl>
 
 <p>Implements <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a817acd3234c6e4c5c8cf5bfbd917f28e">ara::diag::routing::RoutableUdsService</a>.</p>
+
+</div>
+</div>
+<a id="ad678fbc936878757814c0788cffe77ad" name="ad678fbc936878757814c0788cffe77ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad678fbc936878757814c0788cffe77ad">&#9670;&nbsp;</a></span>TryResetTransferConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::diag::routing::TransferData::TryResetTransferConfiguration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to reset the service transfer data configuration to default. </p>
+<dl class="section return"><dt>Returns</dt><dd>False if the data transfer configuration has been already reset, otherwise true </dd></dl>
 
 </div>
 </div>
