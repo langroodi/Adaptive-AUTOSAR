@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"structara_1_1diag_1_1CounterBased.html#ab19cd0e2f483531c35900dacc7a2aebd":[2,0,0,2,5,5],
+"structara_1_1diag_1_1CounterBased.html#ab19cd0e2f483531c35900dacc7a2aebd":[1,0,0,2,5,5],
 "structara_1_1diag_1_1CounterBased.html#ab50dd3b68fffa577d0eb24324714496c":[2,0,0,2,5,6],
 "structara_1_1diag_1_1CounterBased.html#ab50dd3b68fffa577d0eb24324714496c":[1,0,0,2,5,6],
 "structara_1_1diag_1_1DataIdentifierReentrancyType.html":[2,0,0,2,6],

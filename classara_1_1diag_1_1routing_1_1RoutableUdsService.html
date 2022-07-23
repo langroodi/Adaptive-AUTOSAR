@@ -137,6 +137,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aeea9ba87678ee6bd9c920f044310143c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">RoutableUdsService</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, uint8_t sid) noexcept</td></tr>
 <tr class="memdesc:aeea9ba87678ee6bd9c920f044310143c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">More...</a><br /></td></tr>
 <tr class="separator:aeea9ba87678ee6bd9c920f044310143c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f5bbb9fd96f568790d5463e7348306f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a2f5bbb9fd96f568790d5463e7348306f">GenerateNegativeResponse</a> (<a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &amp;response, uint8_t nrc) const</td></tr>
+<tr class="memdesc:a2f5bbb9fd96f568790d5463e7348306f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a negative response with a specific NRC.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a2f5bbb9fd96f568790d5463e7348306f">More...</a><br /></td></tr>
+<tr class="separator:a2f5bbb9fd96f568790d5463e7348306f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >An UDS service to handle a diagnostic request by offering itself to a router. </p>
@@ -187,6 +190,51 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2f5bbb9fd96f568790d5463e7348306f" name="a2f5bbb9fd96f568790d5463e7348306f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f5bbb9fd96f568790d5463e7348306f">&#9670;&nbsp;</a></span>GenerateNegativeResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::routing::RoutableUdsService::GenerateNegativeResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &amp;&#160;</td>
+          <td class="paramname"><em>response</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>nrc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate a negative response with a specific NRC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Generated negative response </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">nrc</td><td>Given Negative Response Code (NRC) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a817acd3234c6e4c5c8cf5bfbd917f28e" name="a817acd3234c6e4c5c8cf5bfbd917f28e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a817acd3234c6e4c5c8cf5bfbd917f28e">&#9670;&nbsp;</a></span>HandleMessage()</h2>
 
