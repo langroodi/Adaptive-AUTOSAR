@@ -15,6 +15,12 @@ namespace ara
             {
             }
 
+            void RoutableUdsService::GenerateNegativeResponse(
+                OperationOutput &response, uint8_t nrc) const
+            {
+                response.responseData = {cNegativeResponseCodeSid, mSid, nrc};
+            }
+
             ara::core::Result<void> RoutableUdsService::Offer()
             {
                 if (mOffered)

@@ -1,16 +1,9 @@
 #ifndef SECURITY_ACCESS_H
 #define SECURITY_ACCESS_H
 
-#include <stdint.h>
-#include <future>
-#include <vector>
-#include "../core/instance_specifier.h"
-#include "../core/result.h"
-#include "./routing/routable_uds_service.h"
-#include "./routing/delay_timer.h"
 #include "./reentrancy.h"
-#include "./meta_info.h"
-#include "./cancellation_handler.h"
+#include "./routing/delay_timer.h"
+#include "./routing/routable_uds_service.h"
 
 namespace ara
 {
@@ -51,7 +44,6 @@ namespace ara
             const size_t cKeyLength{2};
 
             const uint8_t cSuppressPosRspMask{0x80};
-            const uint8_t cNegativeResponseCodeSid{0x7f};
             const uint8_t cSubFunctionNotSupportedNrc{0x12};
             const uint8_t cIncorrectMessageLength{0x13};
             const uint8_t cRequestSequenceError{0x24};
@@ -76,9 +68,6 @@ namespace ara
 
             bool hasProblem(
                 const std::vector<uint8_t> &requestData, uint8_t &nrc) const;
-
-            void generateNegativeResponse(
-                OperationOutput &response, uint8_t nrc) const;
 
             bool tryFetchSeed(uint8_t level, uint16_t &seed) const;
             uint16_t addLevel(uint8_t level);

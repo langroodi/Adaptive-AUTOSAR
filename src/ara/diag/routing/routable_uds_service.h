@@ -27,6 +27,8 @@ namespace ara
             class RoutableUdsService
             {
             private:
+                const uint8_t cNegativeResponseCodeSid{0x7f};
+
                 const uint8_t mSid;
                 bool mOffered;
                 const ara::core::InstanceSpecifier &mSpecifier;
@@ -38,6 +40,12 @@ namespace ara
                 RoutableUdsService(
                     const ara::core::InstanceSpecifier &specifier,
                     uint8_t sid) noexcept;
+
+                /// @brief Generate a negative response with a specific NRC
+                /// @param[out] response Generated negative response
+                /// @param nrc Given Negative Response Code (NRC)
+                void GenerateNegativeResponse(
+                    OperationOutput &response, uint8_t nrc) const;
 
             public:
                 /// @brief Offer handling DM requests

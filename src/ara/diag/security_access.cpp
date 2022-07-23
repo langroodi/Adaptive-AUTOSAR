@@ -54,15 +54,6 @@ namespace ara
             }
         }
 
-        void SecurityAccess::generateNegativeResponse(
-            OperationOutput &response, uint8_t nrc) const
-        {
-            response.responseData =
-                {cNegativeResponseCodeSid,
-                 cSid,
-                 nrc};
-        }
-
         std::future<OperationOutput> SecurityAccess::HandleMessage(
             const std::vector<uint8_t> &requestData,
             MetaInfo &metaInfo,
@@ -110,7 +101,7 @@ namespace ara
             }
             else
             {
-                generateNegativeResponse(_response, _nrc);
+                GenerateNegativeResponse(_response, _nrc);
             }
 
             _resultPromise.set_value(_response);
@@ -303,19 +294,19 @@ namespace ara
                     {
                         handleFailedAttempt(metaInfo);
                         // Sent key is invalid.
-                        generateNegativeResponse(response, mDelayTimer.IsActive() ? cExceededNumberOfAttempts : cInvalidKey);
+                        GenerateNegativeResponse(response, mDelayTimer.IsActive() ? cExceededNumberOfAttempts : cInvalidKey);
                     }
                 }
                 else
                 {
                     // Send key request is received before the request seed.
-                    generateNegativeResponse(response, cRequestSequenceError);
+                    GenerateNegativeResponse(response, cRequestSequenceError);
                 }
             }
             else
             {
                 // Key length is incorrect.
-                generateNegativeResponse(response, cIncorrectMessageLength);
+                GenerateNegativeResponse(response, cIncorrectMessageLength);
             }
         }
 
