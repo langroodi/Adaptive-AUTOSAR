@@ -34,6 +34,11 @@ namespace ara
                 const ara::core::InstanceSpecifier &mSpecifier;
 
             protected:
+                /// @brief Incorrect message length NRC
+                const uint8_t cIncorrectMessageLength{0x13};
+                /// @brief Incorrect request sequence NRC
+                const uint8_t cRequestSequenceError{0x24};
+
                 /// @brief Constructor
                 /// @param specifier Owner instance specifier
                 /// @param sid UDS service ID

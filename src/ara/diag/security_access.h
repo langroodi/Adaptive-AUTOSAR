@@ -45,8 +45,6 @@ namespace ara
 
             const uint8_t cSuppressPosRspMask{0x80};
             const uint8_t cSubFunctionNotSupportedNrc{0x12};
-            const uint8_t cIncorrectMessageLength{0x13};
-            const uint8_t cRequestSequenceError{0x24};
             const uint8_t cInvalidKey{0x35};
             const uint8_t cExceededNumberOfAttempts{0x36};
 

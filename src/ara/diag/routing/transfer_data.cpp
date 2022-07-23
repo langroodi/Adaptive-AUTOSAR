@@ -9,11 +9,29 @@ namespace ara
         {
             const uint8_t TransferData::cSid;
             const size_t TransferData::cMemoryPoolSize;
+            const uint8_t TransferData::cInitialBlockSequenceCounter;
 
             TransferData::TransferData(
                 const ara::core::InstanceSpecifier &specifier) noexcept : RoutableUdsService(specifier, cSid),
-                                                                          mTransferDirection{TransferDirection::kNone}
+                                                                          mTransferDirection{TransferDirection::kNone},
+                                                                          mCurrentBlockSequenceCounter{cInitialBlockSequenceCounter},
+                                                                          mNextBlockSequenceCounter{cInitialBlockSequenceCounter}
             {
+            }
+
+            bool TransferData::tryValidateSequenceCounter(
+                OperationOutput &response, uint8_t counter) const
+            {
+                if (counter == mCurrentBlockSequenceCounter ||
+                    counter == mNextBlockSequenceCounter)
+                {
+                    return true;
+                }
+                else
+                {
+                    GenerateNegativeResponse(response, cWrongBlockSequenceCounter);
+                    return false;
+                }
             }
 
             bool TransferData::tryTransfer(
@@ -27,23 +45,32 @@ namespace ara
                 switch (mTransferDirection)
                 {
                 case TransferDirection::kDownload:
-                    std::copy(transferRequestParameterRecord.cbegin(),
-                              transferRequestParameterRecord.cbegin() + mMemorySize,
-                              mMemoryPool.begin() + mMemoryAddress);
+                    _result = tryValidateSequenceCounter(_response, blockSequenceCounter);
 
-                    _result = true;
+                    if (_result)
+                    {
+                        std::copy(transferRequestParameterRecord.cbegin(),
+                                  transferRequestParameterRecord.cbegin() + mMemorySize,
+                                  mMemoryPool.begin() + mMemoryAddress);
+                    }
+
                     break;
 
                 case TransferDirection::kUpload:
-                    _response.responseData =
-                        std::vector<uint8_t>(
-                            mMemoryPool.cbegin() + mMemoryAddress,
-                            mMemoryPool.cbegin() + mMemoryAddress + mMemorySize);
+                    _result = tryValidateSequenceCounter(_response, blockSequenceCounter);
 
-                    _result = true;
+                    if (_result)
+                    {
+                        _response.responseData =
+                            std::vector<uint8_t>(
+                                mMemoryPool.cbegin() + mMemoryAddress,
+                                mMemoryPool.cbegin() + mMemoryAddress + mMemorySize);
+                    }
+
                     break;
 
                 default:
+                    GenerateNegativeResponse(_response, cRequestSequenceError);
                     _result = false;
                 }
 
@@ -55,9 +82,8 @@ namespace ara
                     // Insert the SID to the start of the positive response
                     _response.responseData.insert(
                         _response.responseData.begin(), cSid);
-
-                    responsePromise.set_value(_response);
                 }
+                responsePromise.set_value(_response);
 
                 return _result;
             }
@@ -68,14 +94,31 @@ namespace ara
                 CancellationHandler &&cancellationHandler)
             {
                 std::promise<OperationOutput> _resultPromise;
-                uint8_t _blockSeqenceCounter{requestData.at(cSequenceCounterIndex)};
-                std::vector<std::uint8_t> _transferRequestParameterRecord(
-                    requestData.cbegin() + cRequestParameterOffset, requestData.cend());
 
-                tryTransfer(
-                    _blockSeqenceCounter,
-                    _transferRequestParameterRecord,
-                    _resultPromise);
+                if (requestData.size() > cSequenceCounterIndex)
+                {
+                    uint8_t _blockSeqenceCounter{requestData.at(cSequenceCounterIndex)};
+                    std::vector<std::uint8_t> _transferRequestParameterRecord(
+                        requestData.cbegin() + cRequestParameterOffset, requestData.cend());
+
+                    bool _succeed{tryTransfer(
+                        _blockSeqenceCounter,
+                        _transferRequestParameterRecord,
+                        _resultPromise)};
+
+                    if (_succeed)
+                    {
+                        // Expect the current received counter or the incremented by one next time
+                        mCurrentBlockSequenceCounter = _blockSeqenceCounter;
+                        mNextBlockSequenceCounter = _blockSeqenceCounter + 1;
+                    }
+                }
+                else
+                {
+                    OperationOutput _response;
+                    GenerateNegativeResponse(_response, cIncorrectMessageLength);
+                    _resultPromise.set_value(_response);
+                }
 
                 std::future<OperationOutput> _result{_resultPromise.get_future()};
 
@@ -121,6 +164,9 @@ namespace ara
                 else
                 {
                     mTransferDirection = TransferDirection::kNone;
+                    mCurrentBlockSequenceCounter = cInitialBlockSequenceCounter;
+                    mNextBlockSequenceCounter = cInitialBlockSequenceCounter;
+
                     return true;
                 }
             }

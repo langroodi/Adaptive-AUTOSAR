@@ -13,8 +13,37 @@ namespace ara
                 static core::InstanceSpecifier mSpecifier;
 
             protected:
+                const uint8_t cSid{0x36};
+
                 TransferData Service;
                 MetaInfo GeneralMetaInfo;
+
+                bool TryGetNrc(const std::vector<uint8_t> &requestData, uint8_t &nrc)
+                {
+                    const size_t cRejectedSidIndex{1};
+                    const size_t cNrcIndex{2};
+
+                    CancellationHandler _cancellationHandler(false);
+
+                    std::future<OperationOutput> _responseFuture{
+                        Service.HandleMessage(
+                            requestData,
+                            GeneralMetaInfo,
+                            std::move(_cancellationHandler))};
+
+                    OperationOutput _response{_responseFuture.get()};
+
+                    uint8_t _sid{_response.responseData.at(cRejectedSidIndex)};
+                    if (_sid == cSid)
+                    {
+                        nrc = _response.responseData.at(cNrcIndex);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
 
             public:
                 TransferDataTest() : Service{mSpecifier},
@@ -54,7 +83,7 @@ namespace ara
                 EXPECT_FALSE(
                     Service.TrySetTransferConfiguration(
                         cValidTransferDirection, cInvalidMemoryAddress, cValidMemorySize));
-                
+
                 EXPECT_FALSE(
                     Service.TrySetTransferConfiguration(
                         cValidTransferDirection, cValidMemoryAddress, cZeroMemorySize));
@@ -73,9 +102,34 @@ namespace ara
                 EXPECT_FALSE(Service.TryResetTransferConfiguration());
 
                 Service.TrySetTransferConfiguration(
-                        cTransferDirection, cMemoryAddress, cMemorySize);
+                    cTransferDirection, cMemoryAddress, cMemorySize);
 
                 EXPECT_TRUE(Service.TryResetTransferConfiguration());
+            }
+
+            TEST_F(TransferDataTest, IncorrectMessageLengthScenario)
+            {
+                const uint8_t cExpectedNrc{0x13};
+
+                uint8_t _actualNrc;
+                std::vector<uint8_t> _requestData{cSid};
+                bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+
+                EXPECT_TRUE(_hasNrc);
+                EXPECT_EQ(cExpectedNrc, _actualNrc);
+            }
+
+            TEST_F(TransferDataTest, RequestSequenceErrorScenario)
+            {
+                const uint8_t cExpectedNrc{0x24};
+                const uint8_t cBlockSequenceCounter{1};
+
+                uint8_t _actualNrc;
+                std::vector<uint8_t> _requestData{cSid, cBlockSequenceCounter};
+                bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+
+                EXPECT_TRUE(_hasNrc);
+                EXPECT_EQ(cExpectedNrc, _actualNrc);
             }
         }
     }

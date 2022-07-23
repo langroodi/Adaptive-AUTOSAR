@@ -24,15 +24,22 @@ namespace ara
             private:
                 static const uint8_t cSid{0x36};
                 static const size_t cMemoryPoolSize{1024};
+                static const uint8_t cInitialBlockSequenceCounter{1};
 
                 const size_t cSequenceCounterIndex{1};
                 const size_t cRequestParameterOffset{2};
+
+                const uint8_t cWrongBlockSequenceCounter{0x73};
 
                 TransferDirection mTransferDirection;
                 size_t mMemoryAddress;
                 size_t mMemorySize;
                 std::array<uint8_t, cMemoryPoolSize> mMemoryPool;
+                uint8_t mCurrentBlockSequenceCounter;
+                uint8_t mNextBlockSequenceCounter;
 
+                bool tryValidateSequenceCounter(
+                    OperationOutput &response, uint8_t counter) const;
                 bool tryTransfer(
                     uint8_t blockSequenceCounter,
                     const std::vector<std::uint8_t> &transferRequestParameterRecord,
@@ -53,7 +60,7 @@ namespace ara
                     TransferDirection transferDirection,
                     size_t memoryAddress,
                     size_t memorySize) noexcept;
-                
+
                 /// @brief Try to reset the service transfer data configuration to default
                 /// @returns False if the data transfer configuration has been already reset, otherwise true
                 bool TryResetTransferConfiguration() noexcept;
