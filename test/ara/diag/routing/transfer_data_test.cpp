@@ -131,6 +131,32 @@ namespace ara
                 EXPECT_TRUE(_hasNrc);
                 EXPECT_EQ(cExpectedNrc, _actualNrc);
             }
+
+            TEST_F(TransferDataTest, WrongBlockSequenceCounterScenario)
+            {
+                const TransferDirection cTransferDirection{TransferDirection::kDownload};
+                const size_t cMemoryAddress{512};
+                const size_t cMemorySize{64};
+                const uint8_t cExpectedNrc{0x73};
+                const uint8_t cSmallerBlockSequenceCounter{0};
+                const uint8_t cGreaterBlockSequenceCounter{2};
+
+                Service.TrySetTransferConfiguration(
+                    cTransferDirection, cMemoryAddress, cMemorySize);
+
+                uint8_t _actualNrc;
+                std::vector<uint8_t> _requestData{cSid, cSmallerBlockSequenceCounter};
+                bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+
+                EXPECT_TRUE(_hasNrc);
+                EXPECT_EQ(cExpectedNrc, _actualNrc);
+
+                _requestData = {cSid, cGreaterBlockSequenceCounter};
+                _hasNrc = TryGetNrc(_requestData, _actualNrc);
+
+                EXPECT_TRUE(_hasNrc);
+                EXPECT_EQ(cExpectedNrc, _actualNrc);
+            }
         }
     }
 }
