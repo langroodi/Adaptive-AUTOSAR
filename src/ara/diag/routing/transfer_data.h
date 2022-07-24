@@ -19,7 +19,7 @@ namespace ara
             };
 
             /// @brief A class to transfer data between diagnostic clients and the server
-            class TransferData : RoutableUdsService
+            class TransferData : public RoutableUdsService
             {
             private:
                 static const uint8_t cSid{0x36};

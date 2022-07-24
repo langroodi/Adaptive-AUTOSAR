@@ -21,6 +21,11 @@ namespace ara
                 response.responseData = {cNegativeResponseCodeSid, mSid, nrc};
             }
 
+            uint8_t RoutableUdsService::GetSid() const noexcept
+            {
+                return mSid;
+            }
+
             ara::core::Result<void> RoutableUdsService::Offer()
             {
                 if (mOffered)

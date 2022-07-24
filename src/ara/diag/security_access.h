@@ -32,7 +32,7 @@ namespace ara
 
         /// @brief A class to evaluate the security access to the data among diagnostic services
         /// @note In contrast with the ARA standard, the class is NOT abstract.
-        class SecurityAccess : routing::RoutableUdsService
+        class SecurityAccess : public routing::RoutableUdsService
         {
         private:
             static const uint8_t cSid{0x27};

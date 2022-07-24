@@ -1,11 +1,11 @@
-#include <gtest/gtest.h>
+#include "./routing/testable_uds_service.h"
 #include "../../../src/ara/diag/security_access.h"
 
 namespace ara
 {
     namespace diag
     {
-        class SecurityAccessTest : public testing::Test
+        class SecurityAccessTest : public routing::TestableUdsService
         {
         private:
             static core::InstanceSpecifier mSpecifier;
@@ -19,15 +19,12 @@ namespace ara
             const std::string cExceededAttemptDelayKey{"ExceededAttemptDelay"};
 
         protected:
-            const uint8_t cSid{0x27};
             const uint16_t cEncryptor{0x1234};
 
             SecurityAccess Service;
-            MetaInfo GeneralMetaInfo;
 
         public:
-            SecurityAccessTest() : Service{mSpecifier, cReentrancy},
-                                   GeneralMetaInfo(Context::kDoIP)
+            SecurityAccessTest() : Service{mSpecifier, cReentrancy}
             {
                 std::string _encryptorStr{std::to_string(cEncryptor)};
                 GeneralMetaInfo.SetValue(cEncryptorKey, _encryptorStr);
@@ -61,33 +58,6 @@ namespace ara
 
                 return _result;
             }
-
-            bool TryGetNrc(const std::vector<uint8_t> &requestData, uint8_t &nrc)
-            {
-                const size_t cRejectedSidIndex{1};
-                const size_t cNrcIndex{2};
-
-                CancellationHandler _cancellationHandler(false);
-
-                std::future<OperationOutput> _responseFuture{
-                    Service.HandleMessage(
-                        requestData,
-                        GeneralMetaInfo,
-                        std::move(_cancellationHandler))};
-
-                OperationOutput _response{_responseFuture.get()};
-
-                uint8_t _sid{_response.responseData.at(cRejectedSidIndex)};
-                if (_sid == cSid)
-                {
-                    nrc = _response.responseData.at(cNrcIndex);
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
         };
 
         core::InstanceSpecifier SecurityAccessTest::mSpecifier{"Instance0"};
@@ -98,8 +68,8 @@ namespace ara
             const uint8_t cExpectedNrc{0x13};
 
             uint8_t _actualNrc;
-            std::vector<uint8_t> _requestData{cSid};
-            bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+            std::vector<uint8_t> _requestData{Service.GetSid()};
+            bool _hasNrc{TryGetNrc(&Service, _requestData, _actualNrc)};
 
             EXPECT_TRUE(_hasNrc);
             EXPECT_EQ(cExpectedNrc, _actualNrc);
@@ -111,8 +81,8 @@ namespace ara
             const uint8_t cSubFunction{0x43};
 
             uint8_t _actualNrc;
-            std::vector<uint8_t> _requestData{cSid, cSubFunction};
-            bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+            std::vector<uint8_t> _requestData{Service.GetSid(), cSubFunction};
+            bool _hasNrc{TryGetNrc(&Service, _requestData, _actualNrc)};
 
             EXPECT_TRUE(_hasNrc);
             EXPECT_EQ(cExpectedNrc, _actualNrc);
@@ -135,8 +105,8 @@ namespace ara
             const uint8_t cExpectedNrc{0x13};
 
             uint8_t _actualNrc;
-            std::vector<uint8_t> _requestData{cSid, cSubFunction};
-            bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+            std::vector<uint8_t> _requestData{Service.GetSid(), cSubFunction};
+            bool _hasNrc{TryGetNrc(&Service, _requestData, _actualNrc)};
 
             EXPECT_TRUE(_hasNrc);
             EXPECT_EQ(cExpectedNrc, _actualNrc);
@@ -199,9 +169,9 @@ namespace ara
             const uint8_t cKeyMsb{0x00};
             const uint8_t cKeyLsb{0x00};
 
-            std::vector<uint8_t> _requestData{cSid, cSubFunction, cKeyMsb, cKeyLsb};
+            std::vector<uint8_t> _requestData{Service.GetSid(), cSubFunction, cKeyMsb, cKeyLsb};
             uint8_t _actualNrc;
-            bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+            bool _hasNrc{TryGetNrc(&Service, _requestData, _actualNrc)};
 
             EXPECT_TRUE(_hasNrc);
             EXPECT_EQ(cExpectedNrc, _actualNrc);
@@ -217,9 +187,9 @@ namespace ara
             GetSeed(cSubFunction);
 
             auto _keyCompareSubFunction{static_cast<uint8_t>(cSubFunction + 1)};
-            std::vector<uint8_t> _requestData{cSid, _keyCompareSubFunction, cKeyMsb, cKeyLsb};
+            std::vector<uint8_t> _requestData{Service.GetSid(), _keyCompareSubFunction, cKeyMsb, cKeyLsb};
             uint8_t _actualNrc;
-            bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+            bool _hasNrc{TryGetNrc(&Service, _requestData, _actualNrc)};
 
             EXPECT_TRUE(_hasNrc);
             EXPECT_EQ(cExpectedNrc, _actualNrc);
@@ -235,10 +205,10 @@ namespace ara
             GetSeed(cSubFunction);
 
             auto _keyCompareSubFunction{static_cast<uint8_t>(cSubFunction + 1)};
-            std::vector<uint8_t> _requestData{cSid, _keyCompareSubFunction, cKeyMsb, cKeyLsb};
+            std::vector<uint8_t> _requestData{Service.GetSid(), _keyCompareSubFunction, cKeyMsb, cKeyLsb};
             uint8_t _actualNrc;
-            TryGetNrc(_requestData, _actualNrc);
-            bool _hasNrc{TryGetNrc(_requestData, _actualNrc)};
+            TryGetNrc(&Service, _requestData, _actualNrc);
+            bool _hasNrc{TryGetNrc(&Service, _requestData, _actualNrc)};
 
             EXPECT_TRUE(_hasNrc);
             EXPECT_EQ(cExpectedNrc, _actualNrc);
@@ -256,7 +226,7 @@ namespace ara
             auto _keyLsb{static_cast<uint8_t>(_key)};
 
             auto _keyCompareSubFunction{static_cast<uint8_t>(cSubFunction + 1)};
-            std::vector<uint8_t> _requestData{cSid, _keyCompareSubFunction, _keyMsb, _keyLsb};
+            std::vector<uint8_t> _requestData{Service.GetSid(), _keyCompareSubFunction, _keyMsb, _keyLsb};
             CancellationHandler _cancellationHandler(false);
 
             std::future<OperationOutput> _responseFuture{
@@ -266,7 +236,7 @@ namespace ara
             OperationOutput _response{_responseFuture.get()};
 
             uint8_t _sid{_response.responseData.at(cSidIndex)};
-            EXPECT_EQ(cSid, _sid);
+            EXPECT_EQ(Service.GetSid(), _sid);
 
             uint8_t _subFunction{_response.responseData.at(cSubFunctionIndex)};
             EXPECT_EQ(_keyCompareSubFunction, _subFunction);
@@ -283,7 +253,7 @@ namespace ara
             auto _keyLsb{static_cast<uint8_t>(_key)};
 
             auto _keyCompareSubFunction{static_cast<uint8_t>(cSubFunction + 1)};
-            std::vector<uint8_t> _requestData{cSid, _keyCompareSubFunction, _keyMsb, _keyLsb};
+            std::vector<uint8_t> _requestData{Service.GetSid(), _keyCompareSubFunction, _keyMsb, _keyLsb};
             CancellationHandler _cancellationHandler(false);
 
             Service.HandleMessage(_requestData, GeneralMetaInfo, std::move(_cancellationHandler));

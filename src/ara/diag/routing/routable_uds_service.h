@@ -53,6 +53,10 @@ namespace ara
                     OperationOutput &response, uint8_t nrc) const;
 
             public:
+                /// @brief Get SID
+                /// @returns Service identification
+                uint8_t GetSid() const noexcept;
+
                 /// @brief Offer handling DM requests
                 /// @returns Error result if the service has been already offered
                 ara::core::Result<void> Offer();
