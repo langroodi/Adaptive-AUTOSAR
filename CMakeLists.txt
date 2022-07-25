@@ -311,6 +311,8 @@ add_library(
   ${source_ara_diag_routing_dir}/delay_timer.cpp
   ${source_ara_diag_routing_dir}/transfer_data.h
   ${source_ara_diag_routing_dir}/transfer_data.cpp
+  ${source_ara_diag_routing_dir}/request_transfer_exit.h
+  ${source_ara_diag_routing_dir}/request_transfer_exit.cpp
 )
 
 target_link_libraries(
@@ -388,6 +390,7 @@ if(build_tests)
     ${test_ara_diag_routing_dir}/uds_service_router_test.cpp
     ${test_ara_diag_routing_dir}/delay_timer_test.cpp
     ${test_ara_diag_routing_dir}/transfer_data_test.cpp
+    ${test_ara_diag_routing_dir}/request_transfer_exit_test.cpp
   )
 
   target_link_libraries(
