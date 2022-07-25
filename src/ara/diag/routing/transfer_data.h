@@ -54,7 +54,7 @@ namespace ara
                 /// @brief Try to set the service transfer data configuration
                 /// @param transferDirection Desired transfer data direction
                 /// @param memoryAddress Memory segment address used for transfering data
-                /// @param memoryAddress Memory segment size used for transfering data
+                /// @param memorySize Memory segment size used for transfering data
                 /// @returns True if the data transfer configuration is set successfully, otherwise false
                 bool TrySetTransferConfiguration(
                     TransferDirection transferDirection,

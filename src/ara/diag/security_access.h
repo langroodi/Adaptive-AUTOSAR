@@ -18,6 +18,8 @@ namespace ara
             /// @brief Seed that corresponds to the security level for key comparison
             uint16_t Seed;
 
+            /// @brief Constructor
+            /// @param seed Initial seed
             explicit SecurityLevel(uint16_t seed = 0) noexcept : Unlocked{false}, Seed{seed}
             {
             }
@@ -125,7 +127,7 @@ namespace ara
                 uint8_t subFunction,
                 std::vector<uint8_t> key,
                 MetaInfo &metaInfo,
-                CancellationHandler &&cacellationHandler);
+                CancellationHandler &&cancellationHandler);
         };
     }
 }

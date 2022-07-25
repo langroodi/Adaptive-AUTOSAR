@@ -314,7 +314,7 @@ namespace ara
             uint8_t subFunction,
             std::vector<uint8_t> key,
             MetaInfo &metaInfo,
-            CancellationHandler &&cacellationHandler)
+            CancellationHandler &&cancellationHandler)
         {
             std::promise<KeyCompareResultType> _resultPromise;
             core::Optional<std::string> _optionalEncryptor{metaInfo.GetValue(cEncryptorKey)};

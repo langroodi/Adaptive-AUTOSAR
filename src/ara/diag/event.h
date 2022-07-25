@@ -72,7 +72,7 @@ namespace ara
 
             /// @brief Set a bit of the event status
             /// @param bit Event status bit to be set
-            /// @param staut Request bit status
+            /// @param status Request bit status
             /// @throws std::out_of_range Throws if the bit argument is out of range
             /// @note The function is not ARA compatible.
             void SetEventStatusBit(EventStatusBit bit, bool status);
