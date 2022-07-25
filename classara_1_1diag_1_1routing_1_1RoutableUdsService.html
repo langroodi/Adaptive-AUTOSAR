@@ -113,12 +113,16 @@ Inheritance diagram for ara::diag::routing::RoutableUdsService:</div>
   <map id="ara::diag::routing::RoutableUdsService_map" name="ara::diag::routing::RoutableUdsService_map">
 <area href="classara_1_1diag_1_1GenericUDSService.html" title="An abstract class to handle generic UDS messages." alt="ara::diag::GenericUDSService" shape="rect" coords="0,56,226,80"/>
 <area href="classara_1_1diag_1_1SecurityAccess.html" title="A class to evaluate the security access to the data among diagnostic services." alt="ara::diag::SecurityAccess" shape="rect" coords="236,56,462,80"/>
-<area href="classara_1_1diag_1_1routing_1_1TransferData.html" title="A class to transfer data between diagnostic clients and the server." alt="ara::diag::routing::TransferData" shape="rect" coords="472,56,698,80"/>
+<area href="classara_1_1diag_1_1routing_1_1RequestTransferExit.html" title="A class to end transfer data between diagnostic clients and the server." alt="ara::diag::routing::RequestTransferExit" shape="rect" coords="472,56,698,80"/>
+<area href="classara_1_1diag_1_1routing_1_1TransferData.html" title="A class to transfer data between diagnostic clients and the server." alt="ara::diag::routing::TransferData" shape="rect" coords="708,56,934,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a23be8ed1fb72df2d1ee725cd059302eb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a23be8ed1fb72df2d1ee725cd059302eb">GetSid</a> () const noexcept</td></tr>
+<tr class="memdesc:a23be8ed1fb72df2d1ee725cd059302eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get SID.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a23be8ed1fb72df2d1ee725cd059302eb">More...</a><br /></td></tr>
+<tr class="separator:a23be8ed1fb72df2d1ee725cd059302eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4ce68cf422bf4d40bf66ee8489f9a21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ab4ce68cf422bf4d40bf66ee8489f9a21">Offer</a> ()</td></tr>
 <tr class="memdesc:ab4ce68cf422bf4d40bf66ee8489f9a21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offer handling DM requests.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ab4ce68cf422bf4d40bf66ee8489f9a21">More...</a><br /></td></tr>
 <tr class="separator:ab4ce68cf422bf4d40bf66ee8489f9a21"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,6 +251,34 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 
 </div>
 </div>
+<a id="a23be8ed1fb72df2d1ee725cd059302eb" name="a23be8ed1fb72df2d1ee725cd059302eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23be8ed1fb72df2d1ee725cd059302eb">&#9670;&nbsp;</a></span>GetSid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t ara::diag::routing::RoutableUdsService::GetSid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get SID. </p>
+<dl class="section return"><dt>Returns</dt><dd>Service identification </dd></dl>
+
+</div>
+</div>
 <a id="a817acd3234c6e4c5c8cf5bfbd917f28e" name="a817acd3234c6e4c5c8cf5bfbd917f28e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a817acd3234c6e4c5c8cf5bfbd917f28e">&#9670;&nbsp;</a></span>HandleMessage()</h2>
 
@@ -298,7 +330,7 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Response byte array </dd></dl>
 
-<p>Implemented in <a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html#aa6feee4b55e7b646fcf36b23ee131780">ara::diag::routing::TransferData</a>, and <a class="el" href="classara_1_1diag_1_1SecurityAccess.html#acc24ae3759f3d716143177a50fcdda27">ara::diag::SecurityAccess</a>.</p>
+<p>Implemented in <a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransferExit.html#ad51000d9f0f91ff34b985115f094ce50">ara::diag::routing::RequestTransferExit</a>, <a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html#aa6feee4b55e7b646fcf36b23ee131780">ara::diag::routing::TransferData</a>, and <a class="el" href="classara_1_1diag_1_1SecurityAccess.html#acc24ae3759f3d716143177a50fcdda27">ara::diag::SecurityAccess</a>.</p>
 
 </div>
 </div>
