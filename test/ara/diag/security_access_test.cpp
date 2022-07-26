@@ -235,8 +235,9 @@ namespace ara
 
             OperationOutput _response{_responseFuture.get()};
 
-            uint8_t _sid{_response.responseData.at(cSidIndex)};
-            EXPECT_EQ(Service.GetSid(), _sid);
+            auto _expectedSid{static_cast<uint8_t>(Service.GetSid() + cPositiveResponseSidIncrement)};
+            uint8_t _actualSid{_response.responseData.at(cSidIndex)};
+            EXPECT_EQ(_expectedSid, _actualSid);
 
             uint8_t _subFunction{_response.responseData.at(cSubFunctionIndex)};
             EXPECT_EQ(_keyCompareSubFunction, _subFunction);

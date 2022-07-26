@@ -34,6 +34,8 @@ namespace ara
                 const ara::core::InstanceSpecifier &mSpecifier;
 
             protected:
+                /// @brief SID increment for a positive response
+                const uint8_t cPositiveResponseSidIncrement{0x40};
                 /// @brief Incorrect message length NRC
                 const uint8_t cIncorrectMessageLength{0x13};
                 /// @brief Incorrect request sequence NRC

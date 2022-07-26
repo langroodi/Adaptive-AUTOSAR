@@ -287,7 +287,8 @@ namespace ara
                         handlePassedAttempt(_securityLevelItr);
                         if (!suppressPositiveResponse)
                         {
-                            response.responseData = {cSid, subFunction};
+                            auto _sid{static_cast<uint8_t>(cSid + cPositiveResponseSidIncrement)};
+                            response.responseData = {_sid, subFunction};
                         }
                     }
                     else

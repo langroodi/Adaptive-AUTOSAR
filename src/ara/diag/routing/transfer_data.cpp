@@ -79,9 +79,9 @@ namespace ara
                     // Echo the block sequence counter
                     _response.responseData.insert(
                         _response.responseData.begin(), blockSequenceCounter);
-                    // Insert the SID to the start of the positive response
-                    _response.responseData.insert(
-                        _response.responseData.begin(), cSid);
+                    // Insert the SID with the increment to the start of the positive response
+                    auto _sid{static_cast<uint8_t>(cSid + cPositiveResponseSidIncrement)};
+                    _response.responseData.insert(_response.responseData.begin(), _sid);
                 }
                 responsePromise.set_value(_response);
 

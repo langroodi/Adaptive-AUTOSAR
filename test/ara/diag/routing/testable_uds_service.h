@@ -13,6 +13,8 @@ namespace ara
             class TestableUdsService : public testing::Test
             {
             protected:
+                const uint8_t cPositiveResponseSidIncrement{0x40};
+
                 MetaInfo GeneralMetaInfo;
 
                 TestableUdsService() noexcept : GeneralMetaInfo(Context::kDoIP)
