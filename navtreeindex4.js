@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"functions_func_b.html":[2,3,1,1],
+"functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
 "functions_func_e.html":[2,3,1,4],
 "functions_func_f.html":[2,3,1,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "structara_1_1diag_1_1ConversationIdentifierType.html":[1,0,0,2,4],
 "structara_1_1diag_1_1ConversationIdentifierType.html":[2,0,0,2,4],
 "structara_1_1diag_1_1ConversationIdentifierType.html#aa9a89f86bae7abef665375e771ae006c":[1,0,0,2,4,0],
-"structara_1_1diag_1_1ConversationIdentifierType.html#aa9a89f86bae7abef665375e771ae006c":[2,0,0,2,4,0],
-"structara_1_1diag_1_1CounterBased.html":[1,0,0,2,5],
-"structara_1_1diag_1_1CounterBased.html":[2,0,0,2,5]
+"structara_1_1diag_1_1ConversationIdentifierType.html#aa9a89f86bae7abef665375e771ae006c":[2,0,0,2,4,0]
 };
