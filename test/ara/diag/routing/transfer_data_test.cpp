@@ -32,6 +32,10 @@ namespace ara
                 EXPECT_TRUE(
                     Service.TrySetTransferConfiguration(
                         cTransferDirection, cMemoryAddress, cMemorySize));
+
+                EXPECT_FALSE(
+                    Service.TrySetTransferConfiguration(
+                        cTransferDirection, cMemoryAddress, cMemorySize));
             }
 
             TEST_F(TransferDataTest, InvalidTransferConfiguration)

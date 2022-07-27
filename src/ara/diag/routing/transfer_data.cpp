@@ -148,6 +148,12 @@ namespace ara
                     return false;
                 }
 
+                if (mTransferDirection != TransferDirection::kNone)
+                {
+                    // A transfer direction has been already set.
+                    return false;
+                }
+
                 mTransferDirection = transferDirection;
                 mMemoryAddress = memoryAddress;
                 mMemorySize = memorySize;
