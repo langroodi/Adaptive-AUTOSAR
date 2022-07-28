@@ -33,6 +33,7 @@ var hierarchy =
     [ "ara::diag::Event", "classara_1_1diag_1_1Event.html", null ],
     [ "ara::diag::EventStatusByte", "structara_1_1diag_1_1EventStatusByte.html", null ],
     [ "std::exception", null, [
+      [ "ara::diag::routing::NrcExecption", "classara_1_1diag_1_1routing_1_1NrcExecption.html", null ],
       [ "ara::exec::ExecException", "classara_1_1exec_1_1ExecException.html", null ]
     ] ],
     [ "ara::exec::ExecutionClient", "classara_1_1exec_1_1ExecutionClient.html", null ],
