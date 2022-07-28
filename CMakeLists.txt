@@ -313,6 +313,8 @@ add_library(
   ${source_ara_diag_routing_dir}/transfer_data.cpp
   ${source_ara_diag_routing_dir}/request_transfer_exit.h
   ${source_ara_diag_routing_dir}/request_transfer_exit.cpp
+  ${source_ara_diag_routing_dir}/nrc_exception.h
+  ${source_ara_diag_routing_dir}/nrc_exception.cpp
 )
 
 target_link_libraries(
@@ -391,6 +393,7 @@ if(build_tests)
     ${test_ara_diag_routing_dir}/delay_timer_test.cpp
     ${test_ara_diag_routing_dir}/transfer_data_test.cpp
     ${test_ara_diag_routing_dir}/request_transfer_exit_test.cpp
+    ${test_ara_diag_routing_dir}/nrc_exception_test.cpp
   )
 
   target_link_libraries(
