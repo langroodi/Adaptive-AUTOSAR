@@ -101,6 +101,7 @@ var hierarchy =
     [ "ara::diag::routing::RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", [
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],
       [ "ara::diag::SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", null ],
+      [ "ara::diag::routing::RequestTransfer", "classara_1_1diag_1_1routing_1_1RequestTransfer.html", null ],
       [ "ara::diag::routing::RequestTransferExit", "classara_1_1diag_1_1routing_1_1RequestTransferExit.html", null ],
       [ "ara::diag::routing::TransferData", "classara_1_1diag_1_1routing_1_1TransferData.html", null ]
     ] ],
