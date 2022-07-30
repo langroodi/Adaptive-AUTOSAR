@@ -228,28 +228,27 @@ namespace ara
                 return;
             }
 
-            core::Optional<std::string> _optionalAttemptThreshold{
-                metaInfo.GetValue(cAttemptThresholdKey)};
+            uint8_t _attemptThreshold;
+            std::chrono::seconds _exceededAttemptDelay;
 
-            core::Optional<std::string> _optionalExceededAttemptDelay{
-                metaInfo.GetValue(cExceededAttemptDelayKey)};
+            bool _succeed{
+                TryExtractValue(
+                    metaInfo, cAttemptThresholdKey, _attemptThreshold)};
 
-            if (_optionalAttemptThreshold.HasValue() &&
-                _optionalExceededAttemptDelay.HasValue())
+            if (_succeed)
+            {
+                _succeed =
+                    TryExtractValue(
+                        metaInfo, cExceededAttemptDelayKey, _exceededAttemptDelay);
+            }
+
+            if (_succeed)
             {
                 // Increment the failed attempt
                 ++mFailedUnlockAttempt;
 
-                std::string _attemptThresholdStr{_optionalAttemptThreshold.Value()};
-                int _attemptThresholdInt{std::stoi(_attemptThresholdStr)};
-                auto _attemptThreshold{static_cast<uint8_t>(_attemptThresholdInt)};
-
                 if (mFailedUnlockAttempt > _attemptThreshold)
                 {
-                    std ::string _exceededAttemptDelayStr{_optionalExceededAttemptDelay.Value()};
-                    int _exceededAttemptDelayInt{std::stoi(_exceededAttemptDelayStr)};
-                    std::chrono::seconds _exceededAttemptDelay(_exceededAttemptDelayInt);
-
                     mDelayTimer.Start(_exceededAttemptDelay);
                     // Reset the number of failed attempts
                     mFailedUnlockAttempt = 0;
@@ -318,13 +317,12 @@ namespace ara
             CancellationHandler &&cancellationHandler)
         {
             std::promise<KeyCompareResultType> _resultPromise;
-            core::Optional<std::string> _optionalEncryptor{metaInfo.GetValue(cEncryptorKey)};
 
-            if (_optionalEncryptor.HasValue())
+            uint16_t _encryptor;
+            bool _succeed{TryExtractValue(metaInfo, cEncryptorKey, _encryptor)};
+
+            if (_succeed)
             {
-                std::string _encryptorStr{_optionalEncryptor.Value()};
-                int _encryptorInt{std::stoi(_encryptorStr)};
-                auto _encryptor{static_cast<uint16_t>(_encryptorInt)};
                 SecurityLevel _securityLevel{mSecurityLevels.at(subFunction)};
                 uint16_t _seed{_securityLevel.Seed};
 

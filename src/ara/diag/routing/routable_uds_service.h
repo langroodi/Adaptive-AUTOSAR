@@ -54,6 +54,31 @@ namespace ara
                 void GenerateNegativeResponse(
                     OperationOutput &response, uint8_t nrc) const;
 
+                /// @brief Try to extract a value from the given meta-info
+                /// @tparam T Extracted value integer type
+                /// @param metaInfo Given meta-info for value extraction
+                /// @param key Value key within the given meta-info
+                /// @param[out] value Extracted value
+                /// @returns True if the value is extracted successfully, otherwise false
+                template <class T>
+                bool TryExtractValue(MetaInfo &metaInfo, std::string key, T &value) const
+                {
+                    core::Optional<std::string> _optionalValue{metaInfo.GetValue(key)};
+
+                    if (_optionalValue.HasValue())
+                    {
+                        std::string _valueStr{_optionalValue.Value()};
+                        int _valueInt{std::stoi(_valueStr)};
+                        value = static_cast<T>(_valueInt);
+
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
             public:
                 /// @brief Get SID
                 /// @returns Service identification
