@@ -14,7 +14,6 @@ namespace ara
             class RequestTransfer : public RoutableUdsService
             {
             private:
-                const uint8_t cDataFormatIdentifier{0x00};
                 const uint8_t cMemoryAddressLength{2};
                 const uint8_t cMemorySizeLength{2};
 
@@ -22,30 +21,60 @@ namespace ara
 
                 const ReentrancyType mReentrancy;
                 TransferData &mTransferData;
+                const TransferDirection mTransferDirection;
 
             protected:
+                /// @brief Valid data transfer encryption and/or compression format ID
+                const uint8_t cDataFormatIdentifier{0x00};
+
                 /// @brief Constructor
                 /// @param specifier Owner instance specifier
                 /// @param reentrancyType Service reentrancy type
-                /// @param transferData Reference to a TransferData service
                 /// @param sid UDS service ID
+                /// @param transferData Reference to a TransferData service
+                /// @param transferDirection Data transfer direction
+                /// @throws std::invalid_argument Throws when the transfer direction is not determined
                 RequestTransfer(
                     const ara::core::InstanceSpecifier &specifier,
                     ReentrancyType reentrancyType,
+                    uint8_t sid,
                     TransferData &transferData,
-                    uint8_t sid);
+                    TransferDirection transferDirection);
+
+                /// @brief Try to parse a transfer request
+                /// @param[in] requestData Transfer request byte array to be parsed
+                /// @param[out] dataFormatIdentifier Parsed data transfer format ID
+                /// @param[out] addressAndLengthFormatIdentifier Parsed memory address and size format ID
+                /// @param[out] memoryAddressAndSize Parsed memory and size length byte array
+                /// @returns True if the request is parsed successfully, otherwise false
+                bool TryParseRequest(
+                    const std::vector<uint8_t> &requestData,
+                    uint8_t &dataFormatIdentifier,
+                    uint8_t &addressAndLengthFormatIdentifier,
+                    std::vector<uint8_t> &memoryAddressAndSize) const;
+
+                /// @brief Try to parse a memory length format
+                /// @param[in] memoryAddressAndSize Memory address and size length byte array to be parsed
+                /// @param[out] memoryAddress Parsed memory address for data transfer
+                /// @param[out] memorySize Parsed memory size for data transfer
+                /// @returns True if the length format is parsed successfully, otherwise false
+                bool TryParseLengthFormat(
+                    const std::vector<uint8_t> &memoryAddressAndSize,
+                    size_t &memoryAddress,
+                    size_t &memorySize) const;
 
                 /// @brief Try to request a transfer in a certain direction (download/upload)
-                /// @param dataFormatIdentifier Data encryption and/or compression format ID
-                /// @param addressAndLengthFormatIdentifier Memory address and size length format ID
                 /// @param memoryAddress Memory address for transfer
                 /// @param memorySize Memory size for transfer
                 /// @returns True if the request accepted, otherwise false
-                bool TryRequestTransfer(
-                    uint8_t dataFormatIdentifier,
-                    uint8_t addressAndLengthFormatIdentifier,
-                    size_t memoryAddress,
-                    size_t memorySize);
+                bool TryRequestTransfer(size_t memoryAddress, size_t memorySize);
+
+                /// @brief Try to generate a positive response to a transfer request
+                /// @param[in] metaInfo Message handling meta-info
+                /// @param[out] response Generated positive response
+                /// @returns True if the positive response is generated successfully, otherwise false
+                bool TryGeneratePositiveResponse(
+                    MetaInfo &metaInfo, std::vector<uint8_t> &response) const;
             };
         }
     }
