@@ -315,6 +315,8 @@ add_library(
   ${source_ara_diag_routing_dir}/request_transfer_exit.cpp
   ${source_ara_diag_routing_dir}/nrc_exception.h
   ${source_ara_diag_routing_dir}/nrc_exception.cpp
+  ${source_ara_diag_routing_dir}/request_transfer.h
+  ${source_ara_diag_routing_dir}/request_transfer.cpp
 )
 
 target_link_libraries(
@@ -394,6 +396,7 @@ if(build_tests)
     ${test_ara_diag_routing_dir}/transfer_data_test.cpp
     ${test_ara_diag_routing_dir}/request_transfer_exit_test.cpp
     ${test_ara_diag_routing_dir}/nrc_exception_test.cpp
+    ${test_ara_diag_routing_dir}/request_transfer_test.cpp
   )
 
   target_link_libraries(
