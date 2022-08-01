@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1routing_1_1Request
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classara_1_1diag_1_1routing_1_1RequestTransfer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ara::diag::routing::RequestTransfer Class Reference</div></div>
 </div><!--header-->
@@ -115,12 +116,21 @@ Inheritance diagram for ara::diag::routing::RequestTransfer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae4dab9042ba9ee79a85359fb039c8623"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#ae4dab9042ba9ee79a85359fb039c8623">RequestTransfer</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancyType, <a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html">TransferData</a> &amp;transferData, uint8_t sid)</td></tr>
-<tr class="memdesc:ae4dab9042ba9ee79a85359fb039c8623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#ae4dab9042ba9ee79a85359fb039c8623">More...</a><br /></td></tr>
-<tr class="separator:ae4dab9042ba9ee79a85359fb039c8623"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2026625d983d66ebb51b9dc202d05fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#aa2026625d983d66ebb51b9dc202d05fc">TryRequestTransfer</a> (uint8_t dataFormatIdentifier, uint8_t addressAndLengthFormatIdentifier, size_t memoryAddress, size_t memorySize)</td></tr>
-<tr class="memdesc:aa2026625d983d66ebb51b9dc202d05fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to request a transfer in a certain direction (download/upload)  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#aa2026625d983d66ebb51b9dc202d05fc">More...</a><br /></td></tr>
-<tr class="separator:aa2026625d983d66ebb51b9dc202d05fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd843322339c810d081f59f88ca338d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#abcd843322339c810d081f59f88ca338d">RequestTransfer</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancyType, uint8_t sid, <a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html">TransferData</a> &amp;transferData, <a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2">TransferDirection</a> transferDirection)</td></tr>
+<tr class="memdesc:abcd843322339c810d081f59f88ca338d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#abcd843322339c810d081f59f88ca338d">More...</a><br /></td></tr>
+<tr class="separator:abcd843322339c810d081f59f88ca338d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb4fe803037d022994371f4b800fc4a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#aeb4fe803037d022994371f4b800fc4a6">TryParseRequest</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, uint8_t &amp;dataFormatIdentifier, uint8_t &amp;addressAndLengthFormatIdentifier, std::vector&lt; uint8_t &gt; &amp;memoryAddressAndSize) const</td></tr>
+<tr class="memdesc:aeb4fe803037d022994371f4b800fc4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to parse a transfer request.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#aeb4fe803037d022994371f4b800fc4a6">More...</a><br /></td></tr>
+<tr class="separator:aeb4fe803037d022994371f4b800fc4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6310ba40b3a6415f9608c41ead8ef0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#ae6310ba40b3a6415f9608c41ead8ef0a">TryParseLengthFormat</a> (uint8_t addressAndLengthFormatIdentifier, const std::vector&lt; uint8_t &gt; &amp;memoryAddressAndSize, size_t &amp;memoryAddress, size_t &amp;memorySize) const</td></tr>
+<tr class="memdesc:ae6310ba40b3a6415f9608c41ead8ef0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to parse a memory length format.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#ae6310ba40b3a6415f9608c41ead8ef0a">More...</a><br /></td></tr>
+<tr class="separator:ae6310ba40b3a6415f9608c41ead8ef0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4dec1b34a5ac8f1b5af0f2dda9eea7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#acc4dec1b34a5ac8f1b5af0f2dda9eea7">TryRequestTransfer</a> (size_t memoryAddress, size_t memorySize)</td></tr>
+<tr class="memdesc:acc4dec1b34a5ac8f1b5af0f2dda9eea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to request a transfer in a certain direction (download/upload)  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#acc4dec1b34a5ac8f1b5af0f2dda9eea7">More...</a><br /></td></tr>
+<tr class="separator:acc4dec1b34a5ac8f1b5af0f2dda9eea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5befefb7259993f2977f5aaa4768a0cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#a5befefb7259993f2977f5aaa4768a0cb">TryGeneratePositiveResponse</a> (<a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, std::vector&lt; uint8_t &gt; &amp;response) const</td></tr>
+<tr class="memdesc:a5befefb7259993f2977f5aaa4768a0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to generate a positive response to a transfer request.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#a5befefb7259993f2977f5aaa4768a0cb">More...</a><br /></td></tr>
+<tr class="separator:a5befefb7259993f2977f5aaa4768a0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">ara::diag::routing::RoutableUdsService</a></td></tr>
 <tr class="memitem:aeea9ba87678ee6bd9c920f044310143c inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">RoutableUdsService</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, uint8_t sid) noexcept</td></tr>
 <tr class="memdesc:aeea9ba87678ee6bd9c920f044310143c inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">More...</a><br /></td></tr>
@@ -132,6 +142,26 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a26604061bc686140f24fbf3ccb08d85e inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a26604061bc686140f24fbf3ccb08d85e">TryExtractValue</a> (<a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, std::string key, T &amp;value) const</td></tr>
 <tr class="memdesc:a26604061bc686140f24fbf3ccb08d85e inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to extract a value from the given meta-info.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a26604061bc686140f24fbf3ccb08d85e">More...</a><br /></td></tr>
 <tr class="separator:a26604061bc686140f24fbf3ccb08d85e inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a62249b2bafb0d1b7502cfe9ae4be1001"><td class="memItemLeft" align="right" valign="top"><a id="a62249b2bafb0d1b7502cfe9ae4be1001" name="a62249b2bafb0d1b7502cfe9ae4be1001"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cDataFormatIdentifier</b> {0x00}</td></tr>
+<tr class="memdesc:a62249b2bafb0d1b7502cfe9ae4be1001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valid data transfer encryption and/or compression format ID. <br /></td></tr>
+<tr class="separator:a62249b2bafb0d1b7502cfe9ae4be1001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">ara::diag::routing::RoutableUdsService</a></td></tr>
+<tr class="memitem:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a7aa4c72f66b2c5f195854d6b6780d1cd" name="a7aa4c72f66b2c5f195854d6b6780d1cd"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cPositiveResponseSidIncrement</b> {0x40}</td></tr>
+<tr class="memdesc:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">SID increment for a positive response. <br /></td></tr>
+<tr class="separator:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a087c55c7c89993c3f6a639975d522f78 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a087c55c7c89993c3f6a639975d522f78" name="a087c55c7c89993c3f6a639975d522f78"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cIncorrectMessageLength</b> {0x13}</td></tr>
+<tr class="memdesc:a087c55c7c89993c3f6a639975d522f78 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incorrect message length NRC. <br /></td></tr>
+<tr class="separator:a087c55c7c89993c3f6a639975d522f78 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a465bd9449f464d1f122251cc9a893422 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a465bd9449f464d1f122251cc9a893422" name="a465bd9449f464d1f122251cc9a893422"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequenceError</b> {0x24}</td></tr>
+<tr class="memdesc:a465bd9449f464d1f122251cc9a893422 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incorrect request sequence NRC. <br /></td></tr>
+<tr class="separator:a465bd9449f464d1f122251cc9a893422 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -152,25 +182,12 @@ Additional Inherited Members</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> () noexcept</td></tr>
 <tr class="memdesc:a4c07cafb0fb1d8bc51a75bd3cc1924cd inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop offering request handling. <br /></td></tr>
 <tr class="separator:a4c07cafb0fb1d8bc51a75bd3cc1924cd inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">ara::diag::routing::RoutableUdsService</a></td></tr>
-<tr class="memitem:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a7aa4c72f66b2c5f195854d6b6780d1cd" name="a7aa4c72f66b2c5f195854d6b6780d1cd"></a>
-const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cPositiveResponseSidIncrement</b> {0x40}</td></tr>
-<tr class="memdesc:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">SID increment for a positive response. <br /></td></tr>
-<tr class="separator:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a087c55c7c89993c3f6a639975d522f78 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a087c55c7c89993c3f6a639975d522f78" name="a087c55c7c89993c3f6a639975d522f78"></a>
-const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cIncorrectMessageLength</b> {0x13}</td></tr>
-<tr class="memdesc:a087c55c7c89993c3f6a639975d522f78 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incorrect message length NRC. <br /></td></tr>
-<tr class="separator:a087c55c7c89993c3f6a639975d522f78 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a465bd9449f464d1f122251cc9a893422 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a465bd9449f464d1f122251cc9a893422" name="a465bd9449f464d1f122251cc9a893422"></a>
-const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequenceError</b> {0x24}</td></tr>
-<tr class="memdesc:a465bd9449f464d1f122251cc9a893422 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incorrect request sequence NRC. <br /></td></tr>
-<tr class="separator:a465bd9449f464d1f122251cc9a893422 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Request data transfer in a certian direction (download/upload) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae4dab9042ba9ee79a85359fb039c8623" name="ae4dab9042ba9ee79a85359fb039c8623"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4dab9042ba9ee79a85359fb039c8623">&#9670;&nbsp;</a></span>RequestTransfer()</h2>
+<a id="abcd843322339c810d081f59f88ca338d" name="abcd843322339c810d081f59f88ca338d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd843322339c810d081f59f88ca338d">&#9670;&nbsp;</a></span>RequestTransfer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,14 +210,20 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>sid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html">TransferData</a> &amp;&#160;</td>
           <td class="paramname"><em>transferData</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>sid</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag_1_1routing.html#a7caf115adbe63216683bfdc8cf66a1b2">TransferDirection</a>&#160;</td>
+          <td class="paramname"><em>transferDirection</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -220,8 +243,15 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
   <table class="params">
     <tr><td class="paramname">specifier</td><td>Owner instance specifier </td></tr>
     <tr><td class="paramname">reentrancyType</td><td>Service reentrancy type </td></tr>
-    <tr><td class="paramname">transferData</td><td>Reference to a <a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html" title="A class to transfer data between diagnostic clients and the server.">TransferData</a> service </td></tr>
     <tr><td class="paramname">sid</td><td>UDS service ID </td></tr>
+    <tr><td class="paramname">transferData</td><td>Reference to a <a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html" title="A class to transfer data between diagnostic clients and the server.">TransferData</a> service </td></tr>
+    <tr><td class="paramname">transferDirection</td><td>Data transfer direction </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Throws when the transfer direction is not determined </td></tr>
   </table>
   </dd>
 </dl>
@@ -229,8 +259,174 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa2026625d983d66ebb51b9dc202d05fc" name="aa2026625d983d66ebb51b9dc202d05fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2026625d983d66ebb51b9dc202d05fc">&#9670;&nbsp;</a></span>TryRequestTransfer()</h2>
+<a id="a5befefb7259993f2977f5aaa4768a0cb" name="a5befefb7259993f2977f5aaa4768a0cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5befefb7259993f2977f5aaa4768a0cb">&#9670;&nbsp;</a></span>TryGeneratePositiveResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::diag::routing::RequestTransfer::TryGeneratePositiveResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>metaInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>response</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to generate a positive response to a transfer request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">metaInfo</td><td>Message handling meta-info </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">response</td><td>Generated positive response </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the positive response is generated successfully, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="ae6310ba40b3a6415f9608c41ead8ef0a" name="ae6310ba40b3a6415f9608c41ead8ef0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6310ba40b3a6415f9608c41ead8ef0a">&#9670;&nbsp;</a></span>TryParseLengthFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::diag::routing::RequestTransfer::TryParseLengthFormat </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>addressAndLengthFormatIdentifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>memoryAddressAndSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>memoryAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>memorySize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to parse a memory length format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addressAndLengthFormatIdentifier</td><td>Parsed memory address and size format ID </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">memoryAddressAndSize</td><td>Memory address and size length byte array to be parsed </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">memoryAddress</td><td>Parsed memory address for data transfer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">memorySize</td><td>Parsed memory size for data transfer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the length format is parsed successfully, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="aeb4fe803037d022994371f4b800fc4a6" name="aeb4fe803037d022994371f4b800fc4a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb4fe803037d022994371f4b800fc4a6">&#9670;&nbsp;</a></span>TryParseRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::diag::routing::RequestTransfer::TryParseRequest </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>requestData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t &amp;&#160;</td>
+          <td class="paramname"><em>dataFormatIdentifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t &amp;&#160;</td>
+          <td class="paramname"><em>addressAndLengthFormatIdentifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>memoryAddressAndSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to parse a transfer request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">requestData</td><td>Transfer request byte array to be parsed </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dataFormatIdentifier</td><td>Parsed data transfer format ID </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">addressAndLengthFormatIdentifier</td><td>Parsed memory address and size format ID </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">memoryAddressAndSize</td><td>Parsed memory and size length byte array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the request is parsed successfully, otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="acc4dec1b34a5ac8f1b5af0f2dda9eea7" name="acc4dec1b34a5ac8f1b5af0f2dda9eea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4dec1b34a5ac8f1b5af0f2dda9eea7">&#9670;&nbsp;</a></span>TryRequestTransfer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,18 +437,6 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
         <tr>
           <td class="memname">bool ara::diag::routing::RequestTransfer::TryRequestTransfer </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>dataFormatIdentifier</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>addressAndLengthFormatIdentifier</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>memoryAddress</em>, </td>
         </tr>
@@ -278,8 +462,6 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 <p>Try to request a transfer in a certain direction (download/upload) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dataFormatIdentifier</td><td>Data encryption and/or compression format ID </td></tr>
-    <tr><td class="paramname">addressAndLengthFormatIdentifier</td><td>Memory address and size length format ID </td></tr>
     <tr><td class="paramname">memoryAddress</td><td>Memory address for transfer </td></tr>
     <tr><td class="paramname">memorySize</td><td>Memory size for transfer </td></tr>
   </table>
