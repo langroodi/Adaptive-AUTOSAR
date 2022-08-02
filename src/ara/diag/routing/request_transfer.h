@@ -21,6 +21,8 @@ namespace ara
             protected:
                 /// @brief Valid data transfer encryption and/or compression format ID
                 const uint8_t cDataFormatIdentifier{0x00};
+                /// @brief Maximum data trandfer packet length meta-info key
+                const std::string cMaxNumberOfBlockLengthKey{"MaxNumberOfBlockLength"};
 
                 /// @brief Constructor
                 /// @param specifier Owner instance specifier

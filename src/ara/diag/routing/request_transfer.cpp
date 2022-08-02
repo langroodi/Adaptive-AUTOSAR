@@ -106,8 +106,6 @@ namespace ara
             bool RequestTransfer::TryGeneratePositiveResponse(
                 MetaInfo &metaInfo, std::vector<uint8_t> &response) const
             {
-                const std::string cMaxNumberOfBlockLengthKey{"MaxNumberOfBlockLength"};
-
                 uint8_t _maxNumberOfBlockLength;
                 bool _result{
                     TryExtractValue<uint8_t>(
