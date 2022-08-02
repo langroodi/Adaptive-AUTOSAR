@@ -5,5 +5,6 @@ var classara_1_1diag_1_1routing_1_1RequestTransfer =
     [ "TryParseLengthFormat", "classara_1_1diag_1_1routing_1_1RequestTransfer.html#ae6310ba40b3a6415f9608c41ead8ef0a", null ],
     [ "TryParseRequest", "classara_1_1diag_1_1routing_1_1RequestTransfer.html#aeb4fe803037d022994371f4b800fc4a6", null ],
     [ "TryRequestTransfer", "classara_1_1diag_1_1routing_1_1RequestTransfer.html#acc4dec1b34a5ac8f1b5af0f2dda9eea7", null ],
-    [ "cDataFormatIdentifier", "classara_1_1diag_1_1routing_1_1RequestTransfer.html#a62249b2bafb0d1b7502cfe9ae4be1001", null ]
+    [ "cDataFormatIdentifier", "classara_1_1diag_1_1routing_1_1RequestTransfer.html#a62249b2bafb0d1b7502cfe9ae4be1001", null ],
+    [ "cMaxNumberOfBlockLengthKey", "classara_1_1diag_1_1routing_1_1RequestTransfer.html#a8a559fdb6b8dcc9174903d8f7d056383", null ]
 ];
