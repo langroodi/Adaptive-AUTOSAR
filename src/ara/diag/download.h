@@ -1,47 +1,49 @@
 #ifndef DOWNLOAD_H
 #define DOWNLOAD_H
 
-#include <stdint.h>
-#include <vector>
-#include <future>
-#include "../core/instance_specifier.h"
-#include "../core/result.h"
-#include "./reentrancy.h"
-#include "./meta_info.h"
-#include "./cancellation_handler.h"
+#include "./routing/request_transfer.h"
 
 namespace ara
 {
     namespace diag
     {
-        struct OperationOutput
+        /// @brief A class to request diagnostic data transfer from a client to the server
+        /// @note The class is not compatible with the ARA standard.
+        class DownloadService : routing::RequestTransfer
         {
-            /* data */
-        };
+        private:
+            static const uint8_t cSid{0x34};
+            static const routing::TransferDirection cTransferDirection{
+                routing::TransferDirection::kDownload};
 
-        class DownloadService
-        {
         public:
-            std::vector<std::uint8_t> responseData;
+            /// @brief Constructor
+            /// @param specifier Instance specifier that owns the service
+            /// @param reentrancy Service reentrancy type
+            /// @param transferData Reference to the transfer data service
+            explicit DownloadService(
+                const core::InstanceSpecifier &specifier,
+                ReentrancyType reentrancy,
+                routing::TransferData &transferData);
 
-            explicit DownloadService(const ara::core::InstanceSpecifier &specifier, ReentrancyType reentrancy);
-            virtual ~DownloadService() noexcept = default;
-            virtual std::future<void> RequestDownload(
-                std::uint8_t dataFormatIdentifier,
-                std::uint8_t addressAndLengthFormatIdentifier,
-                std::vector<std::uint8_t> memoryAddressAndSize,
+            std::future<OperationOutput> HandleMessage(
+                const std::vector<uint8_t> &requestData,
                 MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;
-            virtual std::vector<OperationOutput> DownloadData(
-                std::vector<std::uint8_t> transferRequestParameterRecord,
+                CancellationHandler &&cancellationHandler) override;
+
+            /// @brief Request diagnostic data download
+            /// @param dataFormatIdentifier Diagnostic data compression and/or encryption format ID
+            /// @param addressAndLengthFormatIdentifier Memory address and size length format ID
+            /// @param memoryAddressAndSize Memory address and size length byte array
+            /// @param metaInfo Message handling meta-info
+            /// @param cancellationHandler Message handling cancellation token
+            /// @returns Future with a NRC exception in case of error
+            std::future<void> RequestDownload(
+                uint8_t dataFormatIdentifier,
+                uint8_t addressAndLengthFormatIdentifier,
+                std::vector<uint8_t> memoryAddressAndSize,
                 MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;
-            virtual std::future<OperationOutput> RequestDownloadExit(
-                std::vector<std::uint8_t> transferRequestParameterRecord,
-                MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;
-            ara::core::Result<void> Offer();
-            void StopOffer();      
+                CancellationHandler &&cancellationHandler);
         };
     }
 }
