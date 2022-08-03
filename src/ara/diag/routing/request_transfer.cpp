@@ -57,7 +57,6 @@ namespace ara
             {
                 const size_t cExpectedMemoryAddressLength{2};
                 const size_t cExpectedMemorySizeLength{2};
-                const size_t cNibbleBitLength{4};
                 const uint8_t cNibbleMask{0x0f};
                 const size_t cByteBitLength{8};
 
@@ -106,6 +105,9 @@ namespace ara
             bool RequestTransfer::TryGeneratePositiveResponse(
                 MetaInfo &metaInfo, std::vector<uint8_t> &response) const
             {
+                const auto cLengthFormatIdentifier{
+                    static_cast<uint8_t>(sizeof(uint8_t) << cNibbleBitLength)};
+
                 uint8_t _maxNumberOfBlockLength;
                 bool _result{
                     TryExtractValue<uint8_t>(
@@ -119,7 +121,9 @@ namespace ara
 
                     response =
                         std::vector<uint8_t>{
-                            _positiveResponseSid, _maxNumberOfBlockLength};
+                            _positiveResponseSid,
+                            cLengthFormatIdentifier,
+                            _maxNumberOfBlockLength};
 
                     return true;
                 }

@@ -14,6 +14,8 @@ namespace ara
             class RequestTransfer : public RoutableUdsService
             {
             private:
+                const size_t cNibbleBitLength{4};
+
                 const ReentrancyType mReentrancy;
                 TransferData &mTransferData;
                 const TransferDirection mTransferDirection;

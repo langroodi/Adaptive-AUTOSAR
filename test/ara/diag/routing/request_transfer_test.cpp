@@ -183,8 +183,10 @@ namespace ara
             TEST_F(RequestTransferTest, PositiveResponseGeneration)
             {
                 const size_t cSidIndex{0};
-                const size_t cMaxNumberOfBlockLengthIndex{1};
+                const size_t cLengthFormatIdIndex{1};
+                const size_t cMaxNumberOfBlockLengthIndex{2};
                 const auto cExpectedSid{static_cast<uint8_t>(cSid + cPositiveResponseSidIncrement)};
+                const uint8_t cExpectedLengthFormat{0x10};
 
                 std::vector<uint8_t> _response;
 
@@ -192,6 +194,9 @@ namespace ara
 
                 uint8_t _actualSid{_response.at(cSidIndex)};
                 EXPECT_EQ(cExpectedSid, _actualSid);
+
+                uint8_t _actualLengthFormat{_response.at(cLengthFormatIdIndex)};
+                EXPECT_EQ(_actualLengthFormat, cExpectedLengthFormat);
 
                 uint8_t _actualMaxNumberOfBlockLength{_response.at(cMaxNumberOfBlockLengthIndex)};
                 EXPECT_EQ(cMaxNumberOfBlockLength, _actualMaxNumberOfBlockLength);
