@@ -94,39 +94,208 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1DownloadService.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classara_1_1diag_1_1DownloadService-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ara::diag::DownloadService Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">ara::diag::DownloadService Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class to request diagnostic data transfer from a client to the server.  
+ <a href="classara_1_1diag_1_1DownloadService.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="download_8h_source.html">download.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ara::diag::DownloadService:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classara_1_1diag_1_1DownloadService.png" usemap="#ara::diag::DownloadService_map" alt=""/>
+  <map id="ara::diag::DownloadService_map" name="ara::diag::DownloadService_map">
+<area href="classara_1_1diag_1_1routing_1_1RequestTransfer.html" title="Request data transfer in a certian direction (download/upload)" alt="ara::diag::routing::RequestTransfer" shape="rect" coords="0,0,204,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad420faaf04b2d8151db2caa4ecd97a3c"><td class="memItemLeft" align="right" valign="top"><a id="ad420faaf04b2d8151db2caa4ecd97a3c" name="ad420faaf04b2d8151db2caa4ecd97a3c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DownloadService</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancy)</td></tr>
-<tr class="separator:ad420faaf04b2d8151db2caa4ecd97a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9748f5df7e544ce50724b966ec094cf0"><td class="memItemLeft" align="right" valign="top"><a id="a9748f5df7e544ce50724b966ec094cf0" name="a9748f5df7e544ce50724b966ec094cf0"></a>
-virtual std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RequestDownload</b> (std::uint8_t dataFormatIdentifier, std::uint8_t addressAndLengthFormatIdentifier, std::vector&lt; std::uint8_t &gt; memoryAddressAndSize, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cancellationHandler)=0</td></tr>
-<tr class="separator:a9748f5df7e544ce50724b966ec094cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a1d665ba1121e57260d3c8d8ad02322"><td class="memItemLeft" align="right" valign="top"><a id="a2a1d665ba1121e57260d3c8d8ad02322" name="a2a1d665ba1121e57260d3c8d8ad02322"></a>
-virtual std::vector&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DownloadData</b> (std::vector&lt; std::uint8_t &gt; transferRequestParameterRecord, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cancellationHandler)=0</td></tr>
-<tr class="separator:a2a1d665ba1121e57260d3c8d8ad02322"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae96675981506a6e00aa82460e41f41d1"><td class="memItemLeft" align="right" valign="top"><a id="ae96675981506a6e00aa82460e41f41d1" name="ae96675981506a6e00aa82460e41f41d1"></a>
-virtual std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>RequestDownloadExit</b> (std::vector&lt; std::uint8_t &gt; transferRequestParameterRecord, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> cancellationHandler)=0</td></tr>
-<tr class="separator:ae96675981506a6e00aa82460e41f41d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d983607526a31042809b8fd10e420f5"><td class="memItemLeft" align="right" valign="top"><a id="a5d983607526a31042809b8fd10e420f5" name="a5d983607526a31042809b8fd10e420f5"></a>
-<a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Offer</b> ()</td></tr>
-<tr class="separator:a5d983607526a31042809b8fd10e420f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af31b3b899668883169fb9bb2b86a5fd7"><td class="memItemLeft" align="right" valign="top"><a id="af31b3b899668883169fb9bb2b86a5fd7" name="af31b3b899668883169fb9bb2b86a5fd7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> ()</td></tr>
-<tr class="separator:af31b3b899668883169fb9bb2b86a5fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ae032430f4e49c5fab56d9aa6d47ef0b7"><td class="memItemLeft" align="right" valign="top"><a id="ae032430f4e49c5fab56d9aa6d47ef0b7" name="ae032430f4e49c5fab56d9aa6d47ef0b7"></a>
-std::vector&lt; std::uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>responseData</b></td></tr>
-<tr class="separator:ae032430f4e49c5fab56d9aa6d47ef0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a0308d7b288cb82fdcf5c7bc32e4ce1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DownloadService.html#a2a0308d7b288cb82fdcf5c7bc32e4ce1">DownloadService</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancy, <a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html">routing::TransferData</a> &amp;transferData)</td></tr>
+<tr class="memdesc:a2a0308d7b288cb82fdcf5c7bc32e4ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1DownloadService.html#a2a0308d7b288cb82fdcf5c7bc32e4ce1">More...</a><br /></td></tr>
+<tr class="separator:a2a0308d7b288cb82fdcf5c7bc32e4ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe42b8bc8d35338883a140d9ddfb5cce"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DownloadService.html#afe42b8bc8d35338883a140d9ddfb5cce">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
+<tr class="memdesc:afe42b8bc8d35338883a140d9ddfb5cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1DownloadService.html#afe42b8bc8d35338883a140d9ddfb5cce">More...</a><br /></td></tr>
+<tr class="separator:afe42b8bc8d35338883a140d9ddfb5cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa84d0867604a13c8160c4e934ac04d4"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DownloadService.html#afa84d0867604a13c8160c4e934ac04d4">RequestDownload</a> (uint8_t dataFormatIdentifier, uint8_t addressAndLengthFormatIdentifier, std::vector&lt; uint8_t &gt; memoryAddressAndSize, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
+<tr class="memdesc:afa84d0867604a13c8160c4e934ac04d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request diagnostic data download.  <a href="classara_1_1diag_1_1DownloadService.html#afa84d0867604a13c8160c4e934ac04d4">More...</a><br /></td></tr>
+<tr class="separator:afa84d0867604a13c8160c4e934ac04d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A class to request diagnostic data transfer from a client to the server. </p>
+<dl class="section note"><dt>Note</dt><dd>The class is not compatible with the ARA standard. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2a0308d7b288cb82fdcf5c7bc32e4ce1" name="a2a0308d7b288cb82fdcf5c7bc32e4ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a0308d7b288cb82fdcf5c7bc32e4ce1">&#9670;&nbsp;</a></span>DownloadService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::diag::DownloadService::DownloadService </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>specifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a>&#160;</td>
+          <td class="paramname"><em>reentrancy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html">routing::TransferData</a> &amp;&#160;</td>
+          <td class="paramname"><em>transferData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">specifier</td><td>Instance specifier that owns the service </td></tr>
+    <tr><td class="paramname">reentrancy</td><td>Service reentrancy type </td></tr>
+    <tr><td class="paramname">transferData</td><td>Reference to the transfer data service </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afe42b8bc8d35338883a140d9ddfb5cce" name="afe42b8bc8d35338883a140d9ddfb5cce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe42b8bc8d35338883a140d9ddfb5cce">&#9670;&nbsp;</a></span>HandleMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt; ara::diag::DownloadService::HandleMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>requestData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>metaInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>cancellationHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle an UDS request message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requestData</td><td>Request message byte array </td></tr>
+    <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
+    <tr><td class="paramname">cancellationHandler</td><td>Callback to be invoked when the current conversation is cancelled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Response byte array </dd></dl>
+
+<p>Implements <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a817acd3234c6e4c5c8cf5bfbd917f28e">ara::diag::routing::RoutableUdsService</a>.</p>
+
+</div>
+</div>
+<a id="afa84d0867604a13c8160c4e934ac04d4" name="afa84d0867604a13c8160c4e934ac04d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa84d0867604a13c8160c4e934ac04d4">&#9670;&nbsp;</a></span>RequestDownload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; void &gt; ara::diag::DownloadService::RequestDownload </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>dataFormatIdentifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>addressAndLengthFormatIdentifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>memoryAddressAndSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>metaInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>cancellationHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Request diagnostic data download. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataFormatIdentifier</td><td><a class="el" href="classDiagnostic.html" title="error type">Diagnostic</a> data compression and/or encryption format ID </td></tr>
+    <tr><td class="paramname">addressAndLengthFormatIdentifier</td><td>Memory address and size length format ID </td></tr>
+    <tr><td class="paramname">memoryAddressAndSize</td><td>Memory address and size length byte array </td></tr>
+    <tr><td class="paramname">metaInfo</td><td>Message handling meta-info </td></tr>
+    <tr><td class="paramname">cancellationHandler</td><td>Message handling cancellation token </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Future with a NRC exception in case of error </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

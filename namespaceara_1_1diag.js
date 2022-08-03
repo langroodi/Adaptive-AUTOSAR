@@ -8,7 +8,7 @@ var namespaceara_1_1diag =
     [ "CounterBased", "structara_1_1diag_1_1CounterBased.html", "structara_1_1diag_1_1CounterBased" ],
     [ "DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", "structara_1_1diag_1_1DataIdentifierReentrancyType" ],
     [ "DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", "classara_1_1diag_1_1DiagErrorDomain" ],
-    [ "DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],
+    [ "DownloadService", "classara_1_1diag_1_1DownloadService.html", "classara_1_1diag_1_1DownloadService" ],
     [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", "classara_1_1diag_1_1DTCInformation" ],
     [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
     [ "Event", "classara_1_1diag_1_1Event.html", "classara_1_1diag_1_1Event" ],

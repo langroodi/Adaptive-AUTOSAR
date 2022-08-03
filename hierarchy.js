@@ -17,7 +17,6 @@ var hierarchy =
     [ "ara::diag::routing::DelayTimer", "classara_1_1diag_1_1routing_1_1DelayTimer.html", null ],
     [ "ara::exec::DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", null ],
     [ "Diagnostic", "classDiagnostic.html", null ],
-    [ "ara::diag::DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],
     [ "ara::diag::DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
     [ "ara::diag::EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
     [ "ara::com::entry::Entry", "classara_1_1com_1_1entry_1_1Entry.html", [
@@ -101,7 +100,9 @@ var hierarchy =
     [ "ara::diag::routing::RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", [
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],
       [ "ara::diag::SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", null ],
-      [ "ara::diag::routing::RequestTransfer", "classara_1_1diag_1_1routing_1_1RequestTransfer.html", null ],
+      [ "ara::diag::routing::RequestTransfer", "classara_1_1diag_1_1routing_1_1RequestTransfer.html", [
+        [ "ara::diag::DownloadService", "classara_1_1diag_1_1DownloadService.html", null ]
+      ] ],
       [ "ara::diag::routing::RequestTransferExit", "classara_1_1diag_1_1routing_1_1RequestTransferExit.html", null ],
       [ "ara::diag::routing::TransferData", "classara_1_1diag_1_1routing_1_1TransferData.html", null ]
     ] ],
