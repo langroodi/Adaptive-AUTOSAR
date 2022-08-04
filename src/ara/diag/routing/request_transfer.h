@@ -21,6 +21,10 @@ namespace ara
                 const TransferDirection mTransferDirection;
 
             protected:
+                /// @brief Invalid request NRC due to mismatches in format IDs
+                const uint8_t cRequestOutOfRange{0x31};
+                /// @brief Internal error NRC while processing the request
+                const uint8_t cUploadDownloadNotAccepted{0x70};
                 /// @brief Maximum data trandfer packet length meta-info key
                 const std::string cMaxNumberOfBlockLengthKey{"MaxNumberOfBlockLength"};
 
@@ -75,7 +79,7 @@ namespace ara
                 /// @param[out] response Generated positive response
                 /// @returns True if the positive response is generated successfully, otherwise false
                 bool TryGeneratePositiveResponse(
-                    MetaInfo &metaInfo, std::vector<uint8_t> &response) const;
+                    MetaInfo &metaInfo, OperationOutput &response) const;
             };
         }
     }

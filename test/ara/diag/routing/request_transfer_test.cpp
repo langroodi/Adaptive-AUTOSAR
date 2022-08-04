@@ -206,17 +206,20 @@ namespace ara
                 const auto cExpectedSid{static_cast<uint8_t>(cSid + cPositiveResponseSidIncrement)};
                 const uint8_t cExpectedLengthFormat{0x10};
 
-                std::vector<uint8_t> _response;
+                OperationOutput _response;
 
                 EXPECT_TRUE(TryGeneratePositiveResponse(GeneralMetaInfo, _response));
 
-                uint8_t _actualSid{_response.at(cSidIndex)};
+                uint8_t _actualSid{
+                    _response.responseData.at(cSidIndex)};
                 EXPECT_EQ(cExpectedSid, _actualSid);
 
-                uint8_t _actualLengthFormat{_response.at(cLengthFormatIdIndex)};
+                uint8_t _actualLengthFormat{
+                    _response.responseData.at(cLengthFormatIdIndex)};
                 EXPECT_EQ(_actualLengthFormat, cExpectedLengthFormat);
 
-                uint8_t _actualMaxNumberOfBlockLength{_response.at(cMaxNumberOfBlockLengthIndex)};
+                uint8_t _actualMaxNumberOfBlockLength{
+                    _response.responseData.at(cMaxNumberOfBlockLengthIndex)};
                 EXPECT_EQ(cMaxNumberOfBlockLength, _actualMaxNumberOfBlockLength);
             }
         }

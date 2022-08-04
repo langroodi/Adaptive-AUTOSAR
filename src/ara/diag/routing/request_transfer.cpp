@@ -111,7 +111,7 @@ namespace ara
             }
 
             bool RequestTransfer::TryGeneratePositiveResponse(
-                MetaInfo &metaInfo, std::vector<uint8_t> &response) const
+                MetaInfo &metaInfo, OperationOutput &response) const
             {
                 const auto cLengthFormatIdentifier{
                     static_cast<uint8_t>(sizeof(uint8_t) << cNibbleBitLength)};
@@ -127,7 +127,7 @@ namespace ara
                         static_cast<uint8_t>(
                             GetSid() + cPositiveResponseSidIncrement)};
 
-                    response =
+                    response.responseData =
                         std::vector<uint8_t>{
                             _positiveResponseSid,
                             cLengthFormatIdentifier,
