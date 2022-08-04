@@ -21,8 +21,6 @@ namespace ara
                 const TransferDirection mTransferDirection;
 
             protected:
-                /// @brief Valid data transfer encryption and/or compression format ID
-                const uint8_t cDataFormatIdentifier{0x00};
                 /// @brief Maximum data trandfer packet length meta-info key
                 const std::string cMaxNumberOfBlockLengthKey{"MaxNumberOfBlockLength"};
 
@@ -53,12 +51,14 @@ namespace ara
                     std::vector<uint8_t> &memoryAddressAndSize) const;
 
                 /// @brief Try to parse a memory length format
+                /// @param[in] dataFormatIdentifier Data transfer encryption and/or compression format ID
                 /// @param[in] addressAndLengthFormatIdentifier Parsed memory address and size format ID
                 /// @param[in] memoryAddressAndSize Memory address and size length byte array to be parsed
                 /// @param[out] memoryAddress Parsed memory address for data transfer
                 /// @param[out] memorySize Parsed memory size for data transfer
                 /// @returns True if the length format is parsed successfully, otherwise false
                 bool TryParseLengthFormat(
+                    uint8_t dataFormatIdentifier,
                     uint8_t addressAndLengthFormatIdentifier,
                     const std::vector<uint8_t> &memoryAddressAndSize,
                     size_t &memoryAddress,

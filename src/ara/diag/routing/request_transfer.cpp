@@ -50,15 +50,23 @@ namespace ara
             }
 
             bool RequestTransfer::TryParseLengthFormat(
+                uint8_t dataFormatIdentifier,
                 uint8_t addressAndLengthFormatIdentifier,
                 const std::vector<uint8_t> &memoryAddressAndSize,
                 size_t &memoryAddress,
                 size_t &memorySize) const
             {
+                const uint8_t cDataFormatIdentifier{0x00};
                 const size_t cExpectedMemoryAddressLength{2};
                 const size_t cExpectedMemorySizeLength{2};
                 const uint8_t cNibbleMask{0x0f};
                 const size_t cByteBitLength{8};
+
+                if (dataFormatIdentifier != cDataFormatIdentifier)
+                {
+                    // Data encryption and/or compression is not supported.
+                    return false;
+                }
 
                 auto _actualMemoryAddressLength{
                     static_cast<size_t>(

@@ -58,6 +58,7 @@ namespace ara
             protected:
                 static const uint8_t cSid{0x34};
                 const uint8_t cMaxNumberOfBlockLength{64};
+                const uint8_t cDataFormatIdentifier{0x00};
 
                 MetaInfo GeneralMetaInfo;
                 TransferData TransferDataService;
@@ -146,7 +147,9 @@ namespace ara
 
                 EXPECT_TRUE(
                     TryParseLengthFormat(
-                        cAddressAndLengthFormatIdentifier, cMemoryAddressAndSize,
+                        cDataFormatIdentifier,
+                        cAddressAndLengthFormatIdentifier,
+                        cMemoryAddressAndSize,
                         _actualAddress, _actualSize));
 
                 EXPECT_EQ(cExpectedAddress, _actualAddress);
@@ -155,6 +158,8 @@ namespace ara
 
             TEST_F(RequestTransferTest, InvalidLengthFormatParsing)
             {
+                const uint8_t cValidDataFormatIdentifier{cDataFormatIdentifier};
+                const uint8_t cInvalidDataFormatIdentifier{0xff};
                 const uint8_t cValidAddressAndLengthFormatId{0x22};
                 const uint8_t cValidAddressAndInvalidLengthFormatId{0x21};
                 const uint8_t cInvalidAddressAndValidLengthFormatId{0x12};
@@ -166,17 +171,30 @@ namespace ara
 
                 EXPECT_FALSE(
                     TryParseLengthFormat(
-                        cValidAddressAndInvalidLengthFormatId, cValidMemoryAddressAndSize,
+                        cInvalidDataFormatIdentifier,
+                        cValidAddressAndLengthFormatId,
+                        cValidMemoryAddressAndSize,
                         _actualAddress, _actualSize));
 
                 EXPECT_FALSE(
                     TryParseLengthFormat(
-                        cInvalidAddressAndValidLengthFormatId, cValidMemoryAddressAndSize,
+                        cValidDataFormatIdentifier,
+                        cValidAddressAndInvalidLengthFormatId,
+                        cValidMemoryAddressAndSize,
                         _actualAddress, _actualSize));
 
                 EXPECT_FALSE(
                     TryParseLengthFormat(
-                        cValidAddressAndLengthFormatId, cInvalidMemoryAddressAndSize,
+                        cValidDataFormatIdentifier,
+                        cInvalidAddressAndValidLengthFormatId,
+                        cValidMemoryAddressAndSize,
+                        _actualAddress, _actualSize));
+
+                EXPECT_FALSE(
+                    TryParseLengthFormat(
+                        cValidDataFormatIdentifier,
+                        cValidAddressAndLengthFormatId,
+                        cInvalidMemoryAddressAndSize,
                         _actualAddress, _actualSize));
             }
 
