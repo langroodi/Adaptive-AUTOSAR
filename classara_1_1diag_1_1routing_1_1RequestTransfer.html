@@ -129,9 +129,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:acc4dec1b34a5ac8f1b5af0f2dda9eea7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#acc4dec1b34a5ac8f1b5af0f2dda9eea7">TryRequestTransfer</a> (size_t memoryAddress, size_t memorySize)</td></tr>
 <tr class="memdesc:acc4dec1b34a5ac8f1b5af0f2dda9eea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to request a transfer in a certain direction (download/upload)  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#acc4dec1b34a5ac8f1b5af0f2dda9eea7">More...</a><br /></td></tr>
 <tr class="separator:acc4dec1b34a5ac8f1b5af0f2dda9eea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5befefb7259993f2977f5aaa4768a0cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#a5befefb7259993f2977f5aaa4768a0cb">TryGeneratePositiveResponse</a> (<a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, std::vector&lt; uint8_t &gt; &amp;response) const</td></tr>
-<tr class="memdesc:a5befefb7259993f2977f5aaa4768a0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to generate a positive response to a transfer request.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#a5befefb7259993f2977f5aaa4768a0cb">More...</a><br /></td></tr>
-<tr class="separator:a5befefb7259993f2977f5aaa4768a0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd511923152e54b0b296f7abf410a8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#a9bd511923152e54b0b296f7abf410a8d">TryGeneratePositiveResponse</a> (<a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &amp;response) const</td></tr>
+<tr class="memdesc:a9bd511923152e54b0b296f7abf410a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to generate a positive response to a transfer request.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#a9bd511923152e54b0b296f7abf410a8d">More...</a><br /></td></tr>
+<tr class="separator:a9bd511923152e54b0b296f7abf410a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">ara::diag::routing::RoutableUdsService</a></td></tr>
 <tr class="memitem:aeea9ba87678ee6bd9c920f044310143c inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">RoutableUdsService</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, uint8_t sid) noexcept</td></tr>
 <tr class="memdesc:aeea9ba87678ee6bd9c920f044310143c inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">More...</a><br /></td></tr>
@@ -146,6 +146,14 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a32781de8da3c5901d1bce38ae655829b"><td class="memItemLeft" align="right" valign="top"><a id="a32781de8da3c5901d1bce38ae655829b" name="a32781de8da3c5901d1bce38ae655829b"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestOutOfRange</b> {0x31}</td></tr>
+<tr class="memdesc:a32781de8da3c5901d1bce38ae655829b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid request NRC due to mismatches in format IDs. <br /></td></tr>
+<tr class="separator:a32781de8da3c5901d1bce38ae655829b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af951db1043ce78028c8f05f1492d0cee"><td class="memItemLeft" align="right" valign="top"><a id="af951db1043ce78028c8f05f1492d0cee" name="af951db1043ce78028c8f05f1492d0cee"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cUploadDownloadNotAccepted</b> {0x70}</td></tr>
+<tr class="memdesc:af951db1043ce78028c8f05f1492d0cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal error NRC while processing the request. <br /></td></tr>
+<tr class="separator:af951db1043ce78028c8f05f1492d0cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a559fdb6b8dcc9174903d8f7d056383"><td class="memItemLeft" align="right" valign="top"><a id="a8a559fdb6b8dcc9174903d8f7d056383" name="a8a559fdb6b8dcc9174903d8f7d056383"></a>
 const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>cMaxNumberOfBlockLengthKey</b> {&quot;MaxNumberOfBlockLength&quot;}</td></tr>
 <tr class="memdesc:a8a559fdb6b8dcc9174903d8f7d056383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum data trandfer packet length meta-info key. <br /></td></tr>
@@ -260,8 +268,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> () noex
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5befefb7259993f2977f5aaa4768a0cb" name="a5befefb7259993f2977f5aaa4768a0cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5befefb7259993f2977f5aaa4768a0cb">&#9670;&nbsp;</a></span>TryGeneratePositiveResponse()</h2>
+<a id="a9bd511923152e54b0b296f7abf410a8d" name="a9bd511923152e54b0b296f7abf410a8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd511923152e54b0b296f7abf410a8d">&#9670;&nbsp;</a></span>TryGeneratePositiveResponse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -278,7 +286,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> () noex
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &amp;&#160;</td>
           <td class="paramname"><em>response</em>&#160;</td>
         </tr>
         <tr>
