@@ -303,6 +303,8 @@ add_library(
   ${source_ara_diag_dir}/generic_uds_service.h
   ${source_ara_diag_dir}/security_access.h
   ${source_ara_diag_dir}/security_access.cpp
+  ${source_ara_diag_dir}/download.h
+  ${source_ara_diag_dir}/download.cpp
   ${source_ara_diag_routing_dir}/routable_uds_service.h
   ${source_ara_diag_routing_dir}/routable_uds_service.cpp
   ${source_ara_diag_routing_dir}/uds_service_router.h
