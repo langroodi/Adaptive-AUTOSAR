@@ -57,6 +57,7 @@ namespace ara
                 }
                 catch (const routing::NrcExecption &ex)
                 {
+                    _succeed = false;
                     _nrc = ex.GetNrc();
                 }
             }
@@ -67,7 +68,7 @@ namespace ara
 
             if (!_succeed)
             {
-                GenerateNegativeResponse(_response, cUploadDownloadNotAccepted);
+                GenerateNegativeResponse(_response, _nrc);
             }
 
             _resultPromise.set_value(_response);
@@ -95,29 +96,29 @@ namespace ara
                     memoryAddressAndSize,
                     _memoryAddress, _memorySize)};
 
-            if (_succeed)
+            try
             {
-                _succeed = TryRequestTransfer(_memoryAddress, _memorySize);
-
-                if (!_succeed)
+                if (_succeed)
                 {
-                    _nrc = cUploadDownloadNotAccepted;
-                }
-            }
-            else
-            {
-                _nrc = cRequestOutOfRange;
-            }
+                    _succeed = TryRequestTransfer(_memoryAddress, _memorySize);
 
-            if (_succeed)
-            {
+                    if (!_succeed)
+                    {
+                        routing::NrcExecption _exception(cUploadDownloadNotAccepted);
+                        throw _exception;
+                    }
+                }
+                else
+                {
+                    routing::NrcExecption _exception(cRequestOutOfRange);
+                    throw _exception;
+                }
+
                 _resultPromise.set_value();
             }
-            else
+            catch (const routing::NrcExecption &ex)
             {
-                routing::NrcExecption _exception(_nrc);
-                std::exception_ptr _exceptionPtr{std::make_exception_ptr(_exception)};
-                _resultPromise.set_exception(_exceptionPtr);
+                _resultPromise.set_exception(std::current_exception());
             }
 
             std::future<void> _result{_resultPromise.get_future()};

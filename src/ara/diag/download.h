@@ -9,7 +9,7 @@ namespace ara
     {
         /// @brief A class to request diagnostic data transfer from a client to the server
         /// @note The class is not compatible with the ARA standard.
-        class DownloadService : routing::RequestTransfer
+        class DownloadService : public routing::RequestTransfer
         {
         private:
             static const uint8_t cSid{0x34};
