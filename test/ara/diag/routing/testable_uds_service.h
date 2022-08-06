@@ -1,5 +1,5 @@
 #ifndef TESTABLE_UDS_SERVICE_H
-#define TESTALBE_UDS_SERVICE_H
+#define TESTABLE_UDS_SERVICE_H
 
 #include <gtest/gtest.h>
 #include "../../../../src/ara/diag/routing/routable_uds_service.h"
