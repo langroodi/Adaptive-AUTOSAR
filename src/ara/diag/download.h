@@ -26,11 +26,6 @@ namespace ara
                 ReentrancyType reentrancy,
                 routing::TransferData &transferData);
 
-            std::future<OperationOutput> HandleMessage(
-                const std::vector<uint8_t> &requestData,
-                MetaInfo &metaInfo,
-                CancellationHandler &&cancellationHandler) override;
-
             /// @brief Request diagnostic data download
             /// @param dataFormatIdentifier Diagnostic data compression and/or encryption format ID
             /// @param addressAndLengthFormatIdentifier Memory address and size length format ID

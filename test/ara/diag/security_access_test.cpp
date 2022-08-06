@@ -219,6 +219,7 @@ namespace ara
             const uint8_t cSubFunction{0x01};
             const size_t cSidIndex{0};
             const size_t cSubFunctionIndex{1};
+            const uint8_t cPositiveResponseSidIncrement{0x40};
 
             uint16_t _seed{GetSeed(cSubFunction)};
             auto _key{static_cast<uint16_t>(_seed ^ cEncryptor)};

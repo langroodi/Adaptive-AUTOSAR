@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+#include "./testable_uds_service.h"
 #include "../../../../src/ara/diag/routing/request_transfer.h"
 
 namespace ara
@@ -48,42 +48,29 @@ namespace ara
                 EXPECT_THROW(DummyRequestTransfer _dummy, std::invalid_argument);
             }
 
-            class RequestTransferTest : public RequestTransfer, public testing::Test
+            class RequestTransferTest : public RequestTransfer, public TestableUdsService
             {
             private:
                 static core::InstanceSpecifier mSpecifier;
                 static const ReentrancyType cReentrancy{ReentrancyType::kNot};
                 static const TransferDirection cTransferDirection{TransferDirection::kDownload};
 
+                const std::string cMaxNumberOfBlockLengthKey{"MaxNumberOfBlockLength"};
+
+                TransferData mTransferData;
+
             protected:
                 static const uint8_t cSid{0x34};
                 const uint8_t cMaxNumberOfBlockLength{64};
                 const uint8_t cDataFormatIdentifier{0x00};
 
-                MetaInfo GeneralMetaInfo;
-                TransferData TransferDataService;
-
             public:
-                RequestTransferTest() : RequestTransfer(mSpecifier, cReentrancy, cSid, TransferDataService, cTransferDirection),
-                                        GeneralMetaInfo(Context::kDoIP),
-                                        TransferDataService(mSpecifier)
+                RequestTransferTest() : mTransferData(mSpecifier),
+                                        RequestTransfer(mSpecifier, cReentrancy, cSid, mTransferData, cTransferDirection)
+
                 {
                     std::string _maxNumberOfBlockLengthStr{std::to_string(cMaxNumberOfBlockLength)};
                     GeneralMetaInfo.SetValue(cMaxNumberOfBlockLengthKey, _maxNumberOfBlockLengthStr);
-                }
-
-                std::future<OperationOutput> HandleMessage(
-                    const std::vector<uint8_t> &requestData,
-                    MetaInfo &metaInfo,
-                    CancellationHandler &&cancellationHandler) override
-                {
-                    std::promise<OperationOutput> _resultPromise;
-                    std::logic_error _resultException("Not implemented");
-                    auto _resultExceptionPtr{std::make_exception_ptr(_resultException)};
-                    _resultPromise.set_exception(_resultExceptionPtr);
-                    std::future<OperationOutput> _result{_resultPromise.get_future()};
-
-                    return _result;
                 }
             };
 
@@ -221,6 +208,51 @@ namespace ara
                 uint8_t _actualMaxNumberOfBlockLength{
                     _response.responseData.at(cMaxNumberOfBlockLengthIndex)};
                 EXPECT_EQ(cMaxNumberOfBlockLength, _actualMaxNumberOfBlockLength);
+            }
+
+            TEST_F(RequestTransferTest, IncorrectRequestScenario)
+            {
+                const uint8_t cExpectedNrc{0x13};
+
+                uint8_t _actualNrc;
+                std::vector<uint8_t> _requestData{GetSid()};
+                bool _hasNrc{TryGetNrc(this, _requestData, _actualNrc)};
+
+                EXPECT_TRUE(_hasNrc);
+                EXPECT_EQ(cExpectedNrc, _actualNrc);
+            }
+
+            TEST_F(RequestTransferTest, OutOfRangeRequestScenario)
+            {
+                const uint8_t cExpectedNrc{0x31};
+
+                uint8_t _actualNrc;
+                std::vector<uint8_t> _requestData{GetSid(), 0xff, 0x22, 0x00};
+                bool _hasNrc{TryGetNrc(this, _requestData, _actualNrc)};
+
+                EXPECT_TRUE(_hasNrc);
+                EXPECT_EQ(cExpectedNrc, _actualNrc);
+            }
+
+            TEST_F(RequestTransferTest, NotAcceptedRequestScenario)
+            {
+                const uint8_t cExpectedNrc{0x70};
+
+                uint8_t _actualNrc;
+                std::vector<uint8_t> _requestData{GetSid(), 0x00, 0x22, 0xff, 0xff, 0xff, 0xff};
+                bool _hasNrc{TryGetNrc(this, _requestData, _actualNrc)};
+
+                EXPECT_TRUE(_hasNrc);
+                EXPECT_EQ(cExpectedNrc, _actualNrc);
+            }
+
+            TEST_F(RequestTransferTest, AcceptedRequestScenario)
+            {
+                uint8_t _actualNrc;
+                std::vector<uint8_t> _requestData{GetSid(), 0x00, 0x22, 0x00, 0x01, 0x00, 0x01};
+                bool _hasNrc{TryGetNrc(this, _requestData, _actualNrc)};
+
+                EXPECT_FALSE(_hasNrc);
             }
         }
     }

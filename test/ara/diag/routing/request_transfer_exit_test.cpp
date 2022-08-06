@@ -53,6 +53,7 @@ namespace ara
             TEST_F(RequestTransferExitTest, PositiveResponseScenario)
             {
                 const size_t cSidIndex{0};
+                const uint8_t cPositiveResponseSidIncrement{0x40};
                 const auto cExpectedResult{
                     static_cast<uint8_t>(
                         Service.GetSid() + cPositiveResponseSidIncrement)};

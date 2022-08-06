@@ -15,19 +15,15 @@ namespace ara
             {
             private:
                 const size_t cNibbleBitLength{4};
+                const uint8_t cRequestOutOfRange{0x31};
+                const uint8_t cUploadDownloadNotAccepted{0x70};
+                const std::string cMaxNumberOfBlockLengthKey{"MaxNumberOfBlockLength"};
 
                 const ReentrancyType mReentrancy;
                 TransferData &mTransferData;
                 const TransferDirection mTransferDirection;
 
             protected:
-                /// @brief Invalid request NRC due to mismatches in format IDs
-                const uint8_t cRequestOutOfRange{0x31};
-                /// @brief Internal error NRC while processing the request
-                const uint8_t cUploadDownloadNotAccepted{0x70};
-                /// @brief Maximum data trandfer packet length meta-info key
-                const std::string cMaxNumberOfBlockLengthKey{"MaxNumberOfBlockLength"};
-
                 /// @brief Constructor
                 /// @param specifier Owner instance specifier
                 /// @param reentrancyType Service reentrancy type
@@ -80,6 +76,28 @@ namespace ara
                 /// @returns True if the positive response is generated successfully, otherwise false
                 bool TryGeneratePositiveResponse(
                     MetaInfo &metaInfo, OperationOutput &response) const;
+
+                /// @brief Request diagnostic data transfer
+                /// @param dataFormatIdentifier Diagnostic data compression and/or encryption format ID
+                /// @param addressAndLengthFormatIdentifier Memory address and size length format ID
+                /// @param memoryAddressAndSize Memory address and size length byte array
+                /// @param metaInfo Message handling meta-info
+                /// @param cancellationHandler Message handling cancellation token
+                /// @returns Future with a NRC exception in case of error
+                std::future<void> RequestDataTransfer(
+                    uint8_t dataFormatIdentifier,
+                    uint8_t addressAndLengthFormatIdentifier,
+                    std::vector<uint8_t> memoryAddressAndSize,
+                    MetaInfo &metaInfo,
+                    CancellationHandler &&cancellationHandler);
+
+            public:
+                std::future<OperationOutput> HandleMessage(
+                    const std::vector<uint8_t> &requestData,
+                    MetaInfo &metaInfo,
+                    CancellationHandler &&cancellationHandler) override;
+
+                RequestTransfer() = delete;
             };
         }
     }
