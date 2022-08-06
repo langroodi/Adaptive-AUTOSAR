@@ -100,7 +100,7 @@ var annotated_dup =
         [ "SecurityLevel", "structara_1_1diag_1_1SecurityLevel.html", "structara_1_1diag_1_1SecurityLevel" ],
         [ "TimeBased", "structara_1_1diag_1_1TimeBased.html", "structara_1_1diag_1_1TimeBased" ],
         [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", "structara_1_1diag_1_1UdsDtcStatusByteType" ],
-        [ "UploadService", "classara_1_1diag_1_1UploadService.html", null ]
+        [ "UploadService", "classara_1_1diag_1_1UploadService.html", "classara_1_1diag_1_1UploadService" ]
       ] ],
       [ "exec", "namespaceara_1_1exec.html", [
         [ "helper", "namespaceara_1_1exec_1_1helper.html", [

@@ -101,7 +101,8 @@ var hierarchy =
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],
       [ "ara::diag::SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", null ],
       [ "ara::diag::routing::RequestTransfer", "classara_1_1diag_1_1routing_1_1RequestTransfer.html", [
-        [ "ara::diag::DownloadService", "classara_1_1diag_1_1DownloadService.html", null ]
+        [ "ara::diag::DownloadService", "classara_1_1diag_1_1DownloadService.html", null ],
+        [ "ara::diag::UploadService", "classara_1_1diag_1_1UploadService.html", null ]
       ] ],
       [ "ara::diag::routing::RequestTransferExit", "classara_1_1diag_1_1routing_1_1RequestTransferExit.html", null ],
       [ "ara::diag::routing::TransferData", "classara_1_1diag_1_1routing_1_1TransferData.html", null ]
@@ -128,7 +129,6 @@ var hierarchy =
     [ "ara::com::helper::TtlTimer", "classara_1_1com_1_1helper_1_1TtlTimer.html", null ],
     [ "ara::diag::UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", null ],
     [ "ara::diag::routing::UdsServiceRouter", "classara_1_1diag_1_1routing_1_1UdsServiceRouter.html", null ],
-    [ "ara::diag::UploadService", "classara_1_1diag_1_1UploadService.html", null ],
     [ "ara::exec::WorkerRunnable< ValueType >", "classara_1_1exec_1_1WorkerRunnable.html", null ],
     [ "ara::exec::WorkerThread", "classara_1_1exec_1_1WorkerThread.html", null ]
 ];

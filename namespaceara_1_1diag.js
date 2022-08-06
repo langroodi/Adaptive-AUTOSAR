@@ -23,7 +23,7 @@ var namespaceara_1_1diag =
     [ "SecurityLevel", "structara_1_1diag_1_1SecurityLevel.html", "structara_1_1diag_1_1SecurityLevel" ],
     [ "TimeBased", "structara_1_1diag_1_1TimeBased.html", "structara_1_1diag_1_1TimeBased" ],
     [ "UdsDtcStatusByteType", "structara_1_1diag_1_1UdsDtcStatusByteType.html", "structara_1_1diag_1_1UdsDtcStatusByteType" ],
-    [ "UploadService", "classara_1_1diag_1_1UploadService.html", null ],
+    [ "UploadService", "classara_1_1diag_1_1UploadService.html", "classara_1_1diag_1_1UploadService" ],
     [ "ActivityStatusType", "namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394caf", [
       [ "kActive", "namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394cafa9791a40615dbcc7316e7b890a13fb241", null ],
       [ "kInactive", "namespaceara_1_1diag.html#a7f1deaac9ae3d975116e466a9b394cafad7cd20f3a390a0843aa6f98d51918b16", null ]
