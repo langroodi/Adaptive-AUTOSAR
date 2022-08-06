@@ -119,12 +119,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a0308d7b288cb82fdcf5c7bc32e4ce1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DownloadService.html#a2a0308d7b288cb82fdcf5c7bc32e4ce1">DownloadService</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb">ReentrancyType</a> reentrancy, <a class="el" href="classara_1_1diag_1_1routing_1_1TransferData.html">routing::TransferData</a> &amp;transferData)</td></tr>
 <tr class="memdesc:a2a0308d7b288cb82fdcf5c7bc32e4ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1DownloadService.html#a2a0308d7b288cb82fdcf5c7bc32e4ce1">More...</a><br /></td></tr>
 <tr class="separator:a2a0308d7b288cb82fdcf5c7bc32e4ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe42b8bc8d35338883a140d9ddfb5cce"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DownloadService.html#afe42b8bc8d35338883a140d9ddfb5cce">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
-<tr class="memdesc:afe42b8bc8d35338883a140d9ddfb5cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1DownloadService.html#afe42b8bc8d35338883a140d9ddfb5cce">More...</a><br /></td></tr>
-<tr class="separator:afe42b8bc8d35338883a140d9ddfb5cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa84d0867604a13c8160c4e934ac04d4"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1DownloadService.html#afa84d0867604a13c8160c4e934ac04d4">RequestDownload</a> (uint8_t dataFormatIdentifier, uint8_t addressAndLengthFormatIdentifier, std::vector&lt; uint8_t &gt; memoryAddressAndSize, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
 <tr class="memdesc:afa84d0867604a13c8160c4e934ac04d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request diagnostic data download.  <a href="classara_1_1diag_1_1DownloadService.html#afa84d0867604a13c8160c4e934ac04d4">More...</a><br /></td></tr>
 <tr class="separator:afa84d0867604a13c8160c4e934ac04d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1diag_1_1routing_1_1RequestTransfer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html">ara::diag::routing::RequestTransfer</a></td></tr>
+<tr class="memitem:ac9b8d456d38dc1eab7b264f80d8780a3 inherit pub_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#ac9b8d456d38dc1eab7b264f80d8780a3">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
+<tr class="memdesc:ac9b8d456d38dc1eab7b264f80d8780a3 inherit pub_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#ac9b8d456d38dc1eab7b264f80d8780a3">More...</a><br /></td></tr>
+<tr class="separator:ac9b8d456d38dc1eab7b264f80d8780a3 inherit pub_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">ara::diag::routing::RoutableUdsService</a></td></tr>
 <tr class="memitem:a23be8ed1fb72df2d1ee725cd059302eb inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a23be8ed1fb72df2d1ee725cd059302eb">GetSid</a> () const noexcept</td></tr>
 <tr class="memdesc:a23be8ed1fb72df2d1ee725cd059302eb inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get SID.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a23be8ed1fb72df2d1ee725cd059302eb">More...</a><br /></td></tr>
@@ -158,6 +159,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a9bd511923152e54b0b296f7abf410a8d inherit pro_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#a9bd511923152e54b0b296f7abf410a8d">TryGeneratePositiveResponse</a> (<a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &amp;response) const</td></tr>
 <tr class="memdesc:a9bd511923152e54b0b296f7abf410a8d inherit pro_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to generate a positive response to a transfer request.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#a9bd511923152e54b0b296f7abf410a8d">More...</a><br /></td></tr>
 <tr class="separator:a9bd511923152e54b0b296f7abf410a8d inherit pro_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf449702bb0d8e00c10fcbcfd47df75f inherit pro_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#abf449702bb0d8e00c10fcbcfd47df75f">RequestDataTransfer</a> (uint8_t dataFormatIdentifier, uint8_t addressAndLengthFormatIdentifier, std::vector&lt; uint8_t &gt; memoryAddressAndSize, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
+<tr class="memdesc:abf449702bb0d8e00c10fcbcfd47df75f inherit pro_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request diagnostic data transfer.  <a href="classara_1_1diag_1_1routing_1_1RequestTransfer.html#abf449702bb0d8e00c10fcbcfd47df75f">More...</a><br /></td></tr>
+<tr class="separator:abf449702bb0d8e00c10fcbcfd47df75f inherit pro_methods_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">ara::diag::routing::RoutableUdsService</a></td></tr>
 <tr class="memitem:aeea9ba87678ee6bd9c920f044310143c inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">RoutableUdsService</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, uint8_t sid) noexcept</td></tr>
 <tr class="memdesc:aeea9ba87678ee6bd9c920f044310143c inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c">More...</a><br /></td></tr>
@@ -169,19 +173,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a26604061bc686140f24fbf3ccb08d85e inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a26604061bc686140f24fbf3ccb08d85e">TryExtractValue</a> (<a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, std::string key, T &amp;value) const</td></tr>
 <tr class="memdesc:a26604061bc686140f24fbf3ccb08d85e inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to extract a value from the given meta-info.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a26604061bc686140f24fbf3ccb08d85e">More...</a><br /></td></tr>
 <tr class="separator:a26604061bc686140f24fbf3ccb08d85e inherit pro_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RequestTransfer.html">ara::diag::routing::RequestTransfer</a></td></tr>
-<tr class="memitem:a32781de8da3c5901d1bce38ae655829b inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memItemLeft" align="right" valign="top"><a id="a32781de8da3c5901d1bce38ae655829b" name="a32781de8da3c5901d1bce38ae655829b"></a>
-const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestOutOfRange</b> {0x31}</td></tr>
-<tr class="memdesc:a32781de8da3c5901d1bce38ae655829b inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid request NRC due to mismatches in format IDs. <br /></td></tr>
-<tr class="separator:a32781de8da3c5901d1bce38ae655829b inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af951db1043ce78028c8f05f1492d0cee inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memItemLeft" align="right" valign="top"><a id="af951db1043ce78028c8f05f1492d0cee" name="af951db1043ce78028c8f05f1492d0cee"></a>
-const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cUploadDownloadNotAccepted</b> {0x70}</td></tr>
-<tr class="memdesc:af951db1043ce78028c8f05f1492d0cee inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal error NRC while processing the request. <br /></td></tr>
-<tr class="separator:af951db1043ce78028c8f05f1492d0cee inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a559fdb6b8dcc9174903d8f7d056383 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memItemLeft" align="right" valign="top"><a id="a8a559fdb6b8dcc9174903d8f7d056383" name="a8a559fdb6b8dcc9174903d8f7d056383"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>cMaxNumberOfBlockLengthKey</b> {&quot;MaxNumberOfBlockLength&quot;}</td></tr>
-<tr class="memdesc:a8a559fdb6b8dcc9174903d8f7d056383 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum data trandfer packet length meta-info key. <br /></td></tr>
-<tr class="separator:a8a559fdb6b8dcc9174903d8f7d056383 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RequestTransfer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">ara::diag::routing::RoutableUdsService</a></td></tr>
 <tr class="memitem:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a7aa4c72f66b2c5f195854d6b6780d1cd" name="a7aa4c72f66b2c5f195854d6b6780d1cd"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cPositiveResponseSidIncrement</b> {0x40}</td></tr>
@@ -253,61 +244,6 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afe42b8bc8d35338883a140d9ddfb5cce" name="afe42b8bc8d35338883a140d9ddfb5cce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe42b8bc8d35338883a140d9ddfb5cce">&#9670;&nbsp;</a></span>HandleMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt; ara::diag::DownloadService::HandleMessage </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>requestData</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>metaInfo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;&#160;</td>
-          <td class="paramname"><em>cancellationHandler</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Handle an UDS request message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">requestData</td><td>Request message byte array </td></tr>
-    <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
-    <tr><td class="paramname">cancellationHandler</td><td>Callback to be invoked when the current conversation is cancelled </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Response byte array </dd></dl>
-
-<p>Implements <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a817acd3234c6e4c5c8cf5bfbd917f28e">ara::diag::routing::RoutableUdsService</a>.</p>
-
-</div>
-</div>
 <a id="afa84d0867604a13c8160c4e934ac04d4" name="afa84d0867604a13c8160c4e934ac04d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa84d0867604a13c8160c4e934ac04d4">&#9670;&nbsp;</a></span>RequestDownload()</h2>
 
