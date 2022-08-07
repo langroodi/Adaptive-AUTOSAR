@@ -18,7 +18,6 @@ var hierarchy =
     [ "ara::exec::DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", null ],
     [ "Diagnostic", "classDiagnostic.html", null ],
     [ "ara::diag::DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
-    [ "ara::diag::EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
     [ "ara::com::entry::Entry", "classara_1_1com_1_1entry_1_1Entry.html", [
       [ "ara::com::entry::EventgroupEntry", "classara_1_1com_1_1entry_1_1EventgroupEntry.html", null ],
       [ "ara::com::entry::ServiceEntry", "classara_1_1com_1_1entry_1_1ServiceEntry.html", null ]
@@ -98,6 +97,7 @@ var hierarchy =
     [ "ara::core::Result< T, E >", "classara_1_1core_1_1Result.html", null ],
     [ "ara::core::Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", null ],
     [ "ara::diag::routing::RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", [
+      [ "ara::diag::EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],
       [ "ara::diag::SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", null ],
       [ "ara::diag::routing::RequestTransfer", "classara_1_1diag_1_1routing_1_1RequestTransfer.html", [

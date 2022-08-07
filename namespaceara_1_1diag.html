@@ -138,6 +138,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to process <a class="el" href="classDiagnostic.html" title="error type">Diagnostic</a> Trouble Code (DTC) information.  <a href="classara_1_1diag_1_1DTCInformation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html">EcuResetRequest</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ECU reset request handling service.  <a href="classara_1_1diag_1_1EcuResetRequest.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html">Event</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classDiagnostic.html" title="error type">Diagnostic</a> event class that represents a fault path of a system.  <a href="classara_1_1diag_1_1Event.html#details">More...</a><br /></td></tr>
@@ -242,23 +243,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:aa2845c730f655f40709420dea077d226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specific bit flag of the UDS DTC status byte.  <a href="namespaceara_1_1diag.html#aa2845c730f655f40709420dea077d226">More...</a><br /></td></tr>
 <tr class="separator:aa2845c730f655f40709420dea077d226"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac27c592a492758a291294c5ab318d005"><td class="memItemLeft" align="right" valign="top"><a id="ac27c592a492758a291294c5ab318d005" name="ac27c592a492758a291294c5ab318d005"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>LastResetType</b> : std::uint32_t { <br />
-&#160;&#160;<b>kRegular</b> = 0
-, <b>kUnexpected</b> = 1
-, <b>kSoftReset</b> = 2
-, <b>kHardReset</b> = 3
-, <br />
-&#160;&#160;<b>kKeyOffOnReset</b> = 4
-, <b>kCustomReset</b> = 5
-<br />
+<tr class="memitem:abb3f1d09f4db06eecc3ab69b3f0e275e"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275e">ResetRequestType</a> : uint32_t { <b>kSoftReset</b> = 1
+, <a class="el" href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea476a892ab6cf1d534041adb441284c31">kHardReset</a> = 2
+, <a class="el" href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea3be80cbbfd1361d905bd999ee711bd3b">kKeyOffOnReset</a> = 3
+, <a class="el" href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275eab5d0fb31ab62b8bbef8ae51d2af8120d">kCustomReset</a> = 4
  }</td></tr>
-<tr class="separator:ac27c592a492758a291294c5ab318d005"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a5c78a6ce2d712ace0fbf66595f6c40"><td class="memItemLeft" align="right" valign="top"><a id="a3a5c78a6ce2d712ace0fbf66595f6c40" name="a3a5c78a6ce2d712ace0fbf66595f6c40"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>ResetRequestType</b> : std::uint32_t { <b>kSoftReset</b> = 1
-, <b>kHardReset</b> = 2
-, <b>kKeyOffOnReset</b> = 3
-, <b>kCustomReset</b> = 4
- }</td></tr>
-<tr class="separator:a3a5c78a6ce2d712ace0fbf66595f6c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:abb3f1d09f4db06eecc3ab69b3f0e275e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ECU reset request type.  <a href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275e">More...</a><br /></td></tr>
+<tr class="separator:abb3f1d09f4db06eecc3ab69b3f0e275e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40aff279462e4598fd2c7340cfd5a6bf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bf">DTCFormatType</a> : uint8_t { <a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfad301ecf4a0d78f177a9c093fac9feded">kDTCFormatOBD</a> = 0
 , <a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfa7f08b740e3bbd682e00a1bd449d1bf7f">kDTCFormatUDS</a> = 1
 , <a class="el" href="namespaceara_1_1diag.html#a40aff279462e4598fd2c7340cfd5a6bfabf4f0cc7ffa03bd9e2855a71c83de9dd">kDTCFormatJ1939</a> = 2
@@ -729,6 +720,38 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40" name="af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40"></a>kFully&#160;</td><td class="fielddoc"><p >Fully reentrant instance. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4" name="af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4"></a>kNot&#160;</td><td class="fielddoc"><p >Not reentrant instance. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="abb3f1d09f4db06eecc3ab69b3f0e275e" name="abb3f1d09f4db06eecc3ab69b3f0e275e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3f1d09f4db06eecc3ab69b3f0e275e">&#9670;&nbsp;</a></span>ResetRequestType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275e">ara::diag::ResetRequestType</a> : uint32_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ECU reset request type. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abb3f1d09f4db06eecc3ab69b3f0e275ea476a892ab6cf1d534041adb441284c31" name="abb3f1d09f4db06eecc3ab69b3f0e275ea476a892ab6cf1d534041adb441284c31"></a>kHardReset&#160;</td><td class="fielddoc"><p >!&lt; ECU reset due to an application request </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb3f1d09f4db06eecc3ab69b3f0e275ea3be80cbbfd1361d905bd999ee711bd3b" name="abb3f1d09f4db06eecc3ab69b3f0e275ea3be80cbbfd1361d905bd999ee711bd3b"></a>kKeyOffOnReset&#160;</td><td class="fielddoc"><p >!&lt; ECU reset due to disconnecting and re-connecting the power supply </p>
+</td></tr>
+<tr><td class="fieldname"><a id="abb3f1d09f4db06eecc3ab69b3f0e275eab5d0fb31ab62b8bbef8ae51d2af8120d" name="abb3f1d09f4db06eecc3ab69b3f0e275eab5d0fb31ab62b8bbef8ae51d2af8120d"></a>kCustomReset&#160;</td><td class="fielddoc"><p >!&lt; ECU reset due to the ignition key off and on </p>
 </td></tr>
 </table>
 

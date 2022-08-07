@@ -87,7 +87,7 @@ var annotated_dup =
         [ "DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", "classara_1_1diag_1_1DiagErrorDomain" ],
         [ "DownloadService", "classara_1_1diag_1_1DownloadService.html", "classara_1_1diag_1_1DownloadService" ],
         [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", "classara_1_1diag_1_1DTCInformation" ],
-        [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
+        [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", "classara_1_1diag_1_1EcuResetRequest" ],
         [ "Event", "classara_1_1diag_1_1Event.html", "classara_1_1diag_1_1Event" ],
         [ "EventStatusByte", "structara_1_1diag_1_1EventStatusByte.html", "structara_1_1diag_1_1EventStatusByte" ],
         [ "GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],

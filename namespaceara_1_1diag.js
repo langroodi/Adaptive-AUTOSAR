@@ -10,7 +10,7 @@ var namespaceara_1_1diag =
     [ "DiagErrorDomain", "classara_1_1diag_1_1DiagErrorDomain.html", "classara_1_1diag_1_1DiagErrorDomain" ],
     [ "DownloadService", "classara_1_1diag_1_1DownloadService.html", "classara_1_1diag_1_1DownloadService" ],
     [ "DTCInformation", "classara_1_1diag_1_1DTCInformation.html", "classara_1_1diag_1_1DTCInformation" ],
-    [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
+    [ "EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", "classara_1_1diag_1_1EcuResetRequest" ],
     [ "Event", "classara_1_1diag_1_1Event.html", "classara_1_1diag_1_1Event" ],
     [ "EventStatusByte", "structara_1_1diag_1_1EventStatusByte.html", "structara_1_1diag_1_1EventStatusByte" ],
     [ "GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],
@@ -98,6 +98,12 @@ var namespaceara_1_1diag =
     [ "ReentrancyType", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdb", [
       [ "kFully", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbac427846f20d3cab3e850d513515b9a40", null ],
       [ "kNot", "namespaceara_1_1diag.html#af2a103a6cbe91eae53da2a57b2274bdbab7d431618e9218819789f11bc63ae0a4", null ]
+    ] ],
+    [ "ResetRequestType", "namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275e", [
+      [ "kSoftReset", "namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea8de531ce661d3cf203b10707af7ba930", null ],
+      [ "kHardReset", "namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea476a892ab6cf1d534041adb441284c31", null ],
+      [ "kKeyOffOnReset", "namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea3be80cbbfd1361d905bd999ee711bd3b", null ],
+      [ "kCustomReset", "namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275eab5d0fb31ab62b8bbef8ae51d2af8120d", null ]
     ] ],
     [ "SecurityLevelType", "namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41", [
       [ "kLocked", "namespaceara_1_1diag.html#ad0018137d5dbbc8f8703249a74a96d41aadef232ba6c055ef7c282d6e42b4112d", null ]
