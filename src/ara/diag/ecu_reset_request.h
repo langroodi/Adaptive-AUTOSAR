@@ -1,54 +1,61 @@
 #ifndef ECU_RESET_REQUEST_H
 #define ECU_RESET_REQUEST_H
 
-#include <stdint.h>
-#include <future>
-#include "../core/instance_specifier.h"
-#include "../core/result.h"
-#include "../core/optional.h"
-#include "./meta_info.h"
-#include "./cancellation_handler.h"
+#include "./routing/routable_uds_service.h"
 
 namespace ara
 {
     namespace diag
     {
-        enum class LastResetType : std::uint32_t
+        /// @brief ECU reset request type
+        enum class ResetRequestType : uint32_t
         {
-            kRegular = 0,
-            kUnexpected = 1,
-            kSoftReset = 2,
-            kHardReset = 3,
-            kKeyOffOnReset = 4,
-            kCustomReset = 5
+            kSoftReset = 1,     ///!< ECU reset due to an application request
+            kHardReset = 2,     ///!< ECU reset due to disconnecting and re-connecting the power supply
+            kKeyOffOnReset = 3, ///!< ECU reset due to the ignition key off and on
+            kCustomReset = 4    ///!< Manufacture specific reset type
         };
 
-        enum class ResetRequestType : std::uint32_t
+        /// @brief ECU reset request handling service
+        class EcuResetRequest : public routing::RoutableUdsService
         {
-            kSoftReset = 1,
-            kHardReset = 2,
-            kKeyOffOnReset = 3,
-            kCustomReset = 4
-        };
+        private:
+            static const uint8_t cSid{0x11};
 
-        class EcuResetRequest
-        {
         public:
-            explicit EcuResetRequest(const ara::core::InstanceSpecifier &specifier);
-            virtual ~EcuResetRequest() noexcept = default;
-            ara::core::Result<void> Offer();
-            void StopOffer();
-            virtual ara::core::Result<LastResetType> GetLastResetCause() = 0;
-            virtual std::future<void> RequestReset(
+            /// @brief Constructor
+            /// @param specifier Instance specifier that owns the service
+            explicit EcuResetRequest(const core::InstanceSpecifier &specifier);
+
+            /// @brief Request the ECU to reset
+            /// @param resetType ECU reset type
+            /// @param id Type of the custom ECU reset ID (if applicable)
+            /// @param metaInfo Request handling meta-info
+            /// @param cancellationHandler Request cancellation token
+            /// @returns NRC exception in case of error occurrence
+            /// @note The method is not compatible with the ARA standard.
+            std::future<void> RequestReset(
                 ResetRequestType resetType,
-                ara::core::Optional<std::uint8_t> id,
+                core::Optional<std::uint8_t> id,
                 const MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;
-            virtual void ExecuteReset(MetaInfo metaInfo) = 0;
+                CancellationHandler &&cancellationHandler);
+
+            /// @brief Execute the ECU reset after the request handling
+            /// @param metaInfo ECU reset execution meta-info
+            /// @note The method is not compatible with the ARA standard.
+            /// @remarks The method will be called via DM after RequestReset is being triggered.
+            void ExecuteReset(const MetaInfo &metaInfo);
+
+            /// @brief Set enable state of the rapid shutdown (stand-by) mode
+            /// @param enable Indicate whether or not the rapid shutdown should be enabled
+            /// @param metaInfo Request handling meta-info
+            /// @param cancellationHandler Request cancellation token
+            /// @returns NRC exception in case of error occurrence
+            /// @note The method is not compatible with the ARA standard.
             virtual std::future<void> EnableRapidShutdown(
                 bool enable,
                 const MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;
+                CancellationHandler &&cancellationHandler) = 0;
         };
     }
 }
