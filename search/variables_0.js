@@ -9,5 +9,6 @@ var searchData=
   ['coptionsizebitlength_6',['cOptionSizeBitLength',['../classara_1_1com_1_1entry_1_1Entry.html#a59c3728118ccb6c20a40745b0d345be7',1,'ara::com::entry::Entry']]],
   ['cpositiveresponsesidincrement_7',['cPositiveResponseSidIncrement',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a7aa4c72f66b2c5f195854d6b6780d1cd',1,'ara::diag::routing::RoutableUdsService']]],
   ['crequestsequenceerror_8',['cRequestSequenceError',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a465bd9449f464d1f122251cc9a893422',1,'ara::diag::routing::RoutableUdsService']]],
-  ['cwhitespace_9',['cWhitespace',['../classara_1_1log_1_1sink_1_1LogSink.html#a5d42cda50194ea40439b7d819f07dd60',1,'ara::log::sink::LogSink']]]
+  ['csubfunctionnotsupported_9',['cSubFunctionNotSupported',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a71bcb0d08d8f2a8ddd7c1f0e698b1fac',1,'ara::diag::routing::RoutableUdsService']]],
+  ['cwhitespace_10',['cWhitespace',['../classara_1_1log_1_1sink_1_1LogSink.html#a5d42cda50194ea40439b7d819f07dd60',1,'ara::log::sink::LogSink']]]
 ];

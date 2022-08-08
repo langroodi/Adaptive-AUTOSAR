@@ -46,5 +46,6 @@ var searchData=
   ['createunitcastendpoint_43',['CreateUnitcastEndpoint',['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a9a28444a608ea181cec43a9433847107',1,'ara::com::option::Ipv4EndpointOption']]],
   ['createunsubscribeevententry_44',['CreateUnsubscribeEventEntry',['../classara_1_1com_1_1entry_1_1EventgroupEntry.html#a90041adcb510a638e4d7e6ad5d8e35be',1,'ara::com::entry::EventgroupEntry']]],
   ['crequestsequenceerror_45',['cRequestSequenceError',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a465bd9449f464d1f122251cc9a893422',1,'ara::diag::routing::RoutableUdsService']]],
-  ['cwhitespace_46',['cWhitespace',['../classara_1_1log_1_1sink_1_1LogSink.html#a5d42cda50194ea40439b7d819f07dd60',1,'ara::log::sink::LogSink']]]
+  ['csubfunctionnotsupported_46',['cSubFunctionNotSupported',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a71bcb0d08d8f2a8ddd7c1f0e698b1fac',1,'ara::diag::routing::RoutableUdsService']]],
+  ['cwhitespace_47',['cWhitespace',['../classara_1_1log_1_1sink_1_1LogSink.html#a5d42cda50194ea40439b7d819f07dd60',1,'ara::log::sink::LogSink']]]
 ];

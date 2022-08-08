@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1EcuResetRequest.ht
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classara_1_1diag_1_1EcuResetRequest-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ara::diag::EcuResetRequest Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">ara::diag::EcuResetRequest Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -118,15 +118,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adf37e7561d83e37ba3b1b340018f430a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#adf37e7561d83e37ba3b1b340018f430a">EcuResetRequest</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> &amp;specifier)</td></tr>
 <tr class="memdesc:adf37e7561d83e37ba3b1b340018f430a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1EcuResetRequest.html#adf37e7561d83e37ba3b1b340018f430a">More...</a><br /></td></tr>
 <tr class="separator:adf37e7561d83e37ba3b1b340018f430a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d43ae5fa10c2f560240e97f8b769a8"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#a46d43ae5fa10c2f560240e97f8b769a8">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
+<tr class="memdesc:a46d43ae5fa10c2f560240e97f8b769a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1EcuResetRequest.html#a46d43ae5fa10c2f560240e97f8b769a8">More...</a><br /></td></tr>
+<tr class="separator:a46d43ae5fa10c2f560240e97f8b769a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6dbe15d173fc6d07217cf21c6d37f71"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#ae6dbe15d173fc6d07217cf21c6d37f71">RequestReset</a> (<a class="el" href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275e">ResetRequestType</a> resetType, <a class="el" href="classara_1_1core_1_1Optional.html">core::Optional</a>&lt; std::uint8_t &gt; id, const <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
 <tr class="memdesc:ae6dbe15d173fc6d07217cf21c6d37f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request the ECU to reset.  <a href="classara_1_1diag_1_1EcuResetRequest.html#ae6dbe15d173fc6d07217cf21c6d37f71">More...</a><br /></td></tr>
 <tr class="separator:ae6dbe15d173fc6d07217cf21c6d37f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5f432c22a97ede3fd669dcc9689ca28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#ae5f432c22a97ede3fd669dcc9689ca28">ExecuteReset</a> (const <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo)</td></tr>
 <tr class="memdesc:ae5f432c22a97ede3fd669dcc9689ca28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the ECU reset after the request handling.  <a href="classara_1_1diag_1_1EcuResetRequest.html#ae5f432c22a97ede3fd669dcc9689ca28">More...</a><br /></td></tr>
 <tr class="separator:ae5f432c22a97ede3fd669dcc9689ca28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad646abe28c3696f85da3608c751b5621"><td class="memItemLeft" align="right" valign="top">virtual std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#ad646abe28c3696f85da3608c751b5621">EnableRapidShutdown</a> (bool enable, const <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)=0</td></tr>
-<tr class="memdesc:ad646abe28c3696f85da3608c751b5621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set enable state of the rapid shutdown (stand-by) mode.  <a href="classara_1_1diag_1_1EcuResetRequest.html#ad646abe28c3696f85da3608c751b5621">More...</a><br /></td></tr>
-<tr class="separator:ad646abe28c3696f85da3608c751b5621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad893f6350e0c5e281b73ab091472324a"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#ad893f6350e0c5e281b73ab091472324a">EnableRapidShutdown</a> (bool enable, const <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
+<tr class="memdesc:ad893f6350e0c5e281b73ab091472324a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set enable state of the rapid shutdown (stand-by) mode.  <a href="classara_1_1diag_1_1EcuResetRequest.html#ad893f6350e0c5e281b73ab091472324a">More...</a><br /></td></tr>
+<tr class="separator:ad893f6350e0c5e281b73ab091472324a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">ara::diag::routing::RoutableUdsService</a></td></tr>
 <tr class="memitem:a23be8ed1fb72df2d1ee725cd059302eb inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a23be8ed1fb72df2d1ee725cd059302eb">GetSid</a> () const noexcept</td></tr>
 <tr class="memdesc:a23be8ed1fb72df2d1ee725cd059302eb inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get SID.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a23be8ed1fb72df2d1ee725cd059302eb">More...</a><br /></td></tr>
@@ -137,9 +140,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8b63da584774099509246fa53eb9ad3 inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3">IsOffered</a> () const noexcept</td></tr>
 <tr class="memdesc:ac8b63da584774099509246fa53eb9ad3 inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get offering status of the service.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3">More...</a><br /></td></tr>
 <tr class="separator:ac8b63da584774099509246fa53eb9ad3 inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a817acd3234c6e4c5c8cf5bfbd917f28e inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top">virtual std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a817acd3234c6e4c5c8cf5bfbd917f28e">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)=0</td></tr>
-<tr class="memdesc:a817acd3234c6e4c5c8cf5bfbd917f28e inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a817acd3234c6e4c5c8cf5bfbd917f28e">More...</a><br /></td></tr>
-<tr class="separator:a817acd3234c6e4c5c8cf5bfbd917f28e inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c07cafb0fb1d8bc51a75bd3cc1924cd inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a4c07cafb0fb1d8bc51a75bd3cc1924cd" name="a4c07cafb0fb1d8bc51a75bd3cc1924cd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> () noexcept</td></tr>
 <tr class="memdesc:a4c07cafb0fb1d8bc51a75bd3cc1924cd inherit pub_methods_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop offering request handling. <br /></td></tr>
@@ -163,6 +163,10 @@ Additional Inherited Members</h2></td></tr>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cPositiveResponseSidIncrement</b> {0x40}</td></tr>
 <tr class="memdesc:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">SID increment for a positive response. <br /></td></tr>
 <tr class="separator:a7aa4c72f66b2c5f195854d6b6780d1cd inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71bcb0d08d8f2a8ddd7c1f0e698b1fac inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a71bcb0d08d8f2a8ddd7c1f0e698b1fac" name="a71bcb0d08d8f2a8ddd7c1f0e698b1fac"></a>
+const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cSubFunctionNotSupported</b> {0x12}</td></tr>
+<tr class="memdesc:a71bcb0d08d8f2a8ddd7c1f0e698b1fac inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsupported sub-function NRC. <br /></td></tr>
+<tr class="separator:a71bcb0d08d8f2a8ddd7c1f0e698b1fac inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a087c55c7c89993c3f6a639975d522f78 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="memItemLeft" align="right" valign="top"><a id="a087c55c7c89993c3f6a639975d522f78" name="a087c55c7c89993c3f6a639975d522f78"></a>
 const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cIncorrectMessageLength</b> {0x13}</td></tr>
 <tr class="memdesc:a087c55c7c89993c3f6a639975d522f78 inherit pro_attribs_classara_1_1diag_1_1routing_1_1RoutableUdsService"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incorrect message length NRC. <br /></td></tr>
@@ -210,17 +214,14 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad646abe28c3696f85da3608c751b5621" name="ad646abe28c3696f85da3608c751b5621"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad646abe28c3696f85da3608c751b5621">&#9670;&nbsp;</a></span>EnableRapidShutdown()</h2>
+<a id="ad893f6350e0c5e281b73ab091472324a" name="ad893f6350e0c5e281b73ab091472324a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad893f6350e0c5e281b73ab091472324a">&#9670;&nbsp;</a></span>EnableRapidShutdown()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::future&lt; void &gt; ara::diag::EcuResetRequest::EnableRapidShutdown </td>
+          <td class="memname">std::future&lt; void &gt; ara::diag::EcuResetRequest::EnableRapidShutdown </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>enable</em>, </td>
@@ -243,11 +244,6 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Set enable state of the rapid shutdown (stand-by) mode. </p>
@@ -259,7 +255,7 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NRC exception in case of error occurrence </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Valid future without any exception </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The method is not compatible with the ARA standard. </dd></dl>
 
 </div>
@@ -289,6 +285,61 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The method is not compatible with the ARA standard. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The method will be called via DM after RequestReset is being triggered. </dd></dl>
+
+</div>
+</div>
+<a id="a46d43ae5fa10c2f560240e97f8b769a8" name="a46d43ae5fa10c2f560240e97f8b769a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d43ae5fa10c2f560240e97f8b769a8">&#9670;&nbsp;</a></span>HandleMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt; ara::diag::EcuResetRequest::HandleMessage </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>requestData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>metaInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>cancellationHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle an UDS request message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requestData</td><td>Request message byte array </td></tr>
+    <tr><td class="paramname">metaInfo</td><td>Request message metainfo </td></tr>
+    <tr><td class="paramname">cancellationHandler</td><td>Callback to be invoked when the current conversation is cancelled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Response byte array </dd></dl>
+
+<p>Implements <a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a817acd3234c6e4c5c8cf5bfbd917f28e">ara::diag::routing::RoutableUdsService</a>.</p>
 
 </div>
 </div>
@@ -340,7 +391,7 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NRC exception in case of error occurrence </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Valid future without any exception </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The method is not compatible with the ARA standard. </dd></dl>
 
 </div>
