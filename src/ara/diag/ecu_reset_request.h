@@ -22,17 +22,26 @@ namespace ara
         private:
             static const uint8_t cSid{0x11};
 
+            std::promise<ResetRequestType> mResetTypePromise;
+            std::future<ResetRequestType> mResetTypeFuture;
+            bool mRapidShutdownEnabled;
+
         public:
             /// @brief Constructor
             /// @param specifier Instance specifier that owns the service
             explicit EcuResetRequest(const core::InstanceSpecifier &specifier);
+
+            std::future<OperationOutput> HandleMessage(
+                const std::vector<uint8_t> &requestData,
+                MetaInfo &metaInfo,
+                CancellationHandler &&cancellationHandler) override;
 
             /// @brief Request the ECU to reset
             /// @param resetType ECU reset type
             /// @param id Type of the custom ECU reset ID (if applicable)
             /// @param metaInfo Request handling meta-info
             /// @param cancellationHandler Request cancellation token
-            /// @returns NRC exception in case of error occurrence
+            /// @returns Valid future without any exception
             /// @note The method is not compatible with the ARA standard.
             std::future<void> RequestReset(
                 ResetRequestType resetType,
@@ -50,13 +59,14 @@ namespace ara
             /// @param enable Indicate whether or not the rapid shutdown should be enabled
             /// @param metaInfo Request handling meta-info
             /// @param cancellationHandler Request cancellation token
-            /// @returns NRC exception in case of error occurrence
+            /// @returns Valid future without any exception
             /// @note The method is not compatible with the ARA standard.
-            virtual std::future<void> EnableRapidShutdown(
+            std::future<void> EnableRapidShutdown(
                 bool enable,
                 const MetaInfo &metaInfo,
-                CancellationHandler &&cancellationHandler) = 0;
+                CancellationHandler &&cancellationHandler);
         };
     }
 }
+
 #endif

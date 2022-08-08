@@ -32,7 +32,7 @@ namespace ara
                     (_neutralSubFunction >= cSupplierReservedLBound && _neutralSubFunction <= cSupplierReservedHBound))
                 {
                     // The sub-function has been reserved for ISO or the supplier.
-                    nrc = cSubFunctionNotSupportedNrc;
+                    nrc = cSubFunctionNotSupported;
                     return true;
                 }
                 else if (mDelayTimer.IsActive())

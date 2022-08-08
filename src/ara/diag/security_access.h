@@ -46,7 +46,6 @@ namespace ara
             const size_t cKeyLength{2};
 
             const uint8_t cSuppressPosRspMask{0x80};
-            const uint8_t cSubFunctionNotSupportedNrc{0x12};
             const uint8_t cInvalidKey{0x35};
             const uint8_t cExceededNumberOfAttempts{0x36};
 
