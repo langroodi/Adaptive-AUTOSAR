@@ -26,6 +26,12 @@ namespace ara
             std::future<ResetRequestType> mResetTypeFuture;
             bool mRapidShutdownEnabled;
 
+            bool TryHandleSubFunction(
+                uint8_t subFunction,
+                const MetaInfo &metaInfo,
+                CancellationHandler &&cancellationHandler,
+                bool &powerDownTimeRequired);
+
         public:
             /// @brief Constructor
             /// @param specifier Instance specifier that owns the service
@@ -45,13 +51,14 @@ namespace ara
             /// @note The method is not compatible with the ARA standard.
             std::future<void> RequestReset(
                 ResetRequestType resetType,
-                core::Optional<std::uint8_t> id,
+                core::Optional<uint8_t> id,
                 const MetaInfo &metaInfo,
                 CancellationHandler &&cancellationHandler);
 
             /// @brief Execute the ECU reset after the request handling
             /// @param metaInfo ECU reset execution meta-info
             /// @note The method is not compatible with the ARA standard.
+            /// @throws std::logic_error Throws when the reset has not been requested
             /// @remarks The method will be called via DM after RequestReset is being triggered.
             void ExecuteReset(const MetaInfo &metaInfo);
 
