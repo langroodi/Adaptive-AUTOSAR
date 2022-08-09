@@ -4,5 +4,5 @@ var classara_1_1diag_1_1EcuResetRequest =
     [ "EnableRapidShutdown", "classara_1_1diag_1_1EcuResetRequest.html#ad893f6350e0c5e281b73ab091472324a", null ],
     [ "ExecuteReset", "classara_1_1diag_1_1EcuResetRequest.html#ae5f432c22a97ede3fd669dcc9689ca28", null ],
     [ "HandleMessage", "classara_1_1diag_1_1EcuResetRequest.html#a46d43ae5fa10c2f560240e97f8b769a8", null ],
-    [ "RequestReset", "classara_1_1diag_1_1EcuResetRequest.html#ae6dbe15d173fc6d07217cf21c6d37f71", null ]
+    [ "RequestReset", "classara_1_1diag_1_1EcuResetRequest.html#ae04da9e1d048a92a8139e7abe1cf38d9", null ]
 ];

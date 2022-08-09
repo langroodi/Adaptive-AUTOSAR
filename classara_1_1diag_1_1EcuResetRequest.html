@@ -121,9 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a46d43ae5fa10c2f560240e97f8b769a8"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#a46d43ae5fa10c2f560240e97f8b769a8">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
 <tr class="memdesc:a46d43ae5fa10c2f560240e97f8b769a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classara_1_1diag_1_1EcuResetRequest.html#a46d43ae5fa10c2f560240e97f8b769a8">More...</a><br /></td></tr>
 <tr class="separator:a46d43ae5fa10c2f560240e97f8b769a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6dbe15d173fc6d07217cf21c6d37f71"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#ae6dbe15d173fc6d07217cf21c6d37f71">RequestReset</a> (<a class="el" href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275e">ResetRequestType</a> resetType, <a class="el" href="classara_1_1core_1_1Optional.html">core::Optional</a>&lt; std::uint8_t &gt; id, const <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
-<tr class="memdesc:ae6dbe15d173fc6d07217cf21c6d37f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request the ECU to reset.  <a href="classara_1_1diag_1_1EcuResetRequest.html#ae6dbe15d173fc6d07217cf21c6d37f71">More...</a><br /></td></tr>
-<tr class="separator:ae6dbe15d173fc6d07217cf21c6d37f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04da9e1d048a92a8139e7abe1cf38d9"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#ae04da9e1d048a92a8139e7abe1cf38d9">RequestReset</a> (<a class="el" href="namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275e">ResetRequestType</a> resetType, <a class="el" href="classara_1_1core_1_1Optional.html">core::Optional</a>&lt; uint8_t &gt; id, const <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
+<tr class="memdesc:ae04da9e1d048a92a8139e7abe1cf38d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request the ECU to reset.  <a href="classara_1_1diag_1_1EcuResetRequest.html#ae04da9e1d048a92a8139e7abe1cf38d9">More...</a><br /></td></tr>
+<tr class="separator:ae04da9e1d048a92a8139e7abe1cf38d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5f432c22a97ede3fd669dcc9689ca28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1EcuResetRequest.html#ae5f432c22a97ede3fd669dcc9689ca28">ExecuteReset</a> (const <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo)</td></tr>
 <tr class="memdesc:ae5f432c22a97ede3fd669dcc9689ca28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute the ECU reset after the request handling.  <a href="classara_1_1diag_1_1EcuResetRequest.html#ae5f432c22a97ede3fd669dcc9689ca28">More...</a><br /></td></tr>
 <tr class="separator:ae5f432c22a97ede3fd669dcc9689ca28"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -284,7 +284,14 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The method is not compatible with the ARA standard. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::logic_error</td><td>Throws when the reset has not been requested </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The method will be called via DM after RequestReset is being triggered. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Reset the ECU based on the requested reset type </dd></dl>
 
 </div>
 </div>
@@ -343,8 +350,8 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 
 </div>
 </div>
-<a id="ae6dbe15d173fc6d07217cf21c6d37f71" name="ae6dbe15d173fc6d07217cf21c6d37f71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6dbe15d173fc6d07217cf21c6d37f71">&#9670;&nbsp;</a></span>RequestReset()</h2>
+<a id="ae04da9e1d048a92a8139e7abe1cf38d9" name="ae04da9e1d048a92a8139e7abe1cf38d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae04da9e1d048a92a8139e7abe1cf38d9">&#9670;&nbsp;</a></span>RequestReset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +365,7 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1core_1_1Optional.html">core::Optional</a>&lt; std::uint8_t &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="classara_1_1core_1_1Optional.html">core::Optional</a>&lt; uint8_t &gt;&#160;</td>
           <td class="paramname"><em>id</em>, </td>
         </tr>
         <tr>
