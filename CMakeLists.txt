@@ -396,6 +396,7 @@ if(build_tests)
     ${test_ara_diag_dir}/diag_error_domain_test.cpp
     ${test_ara_diag_dir}/generic_uds_service_test.cpp
     ${test_ara_diag_dir}/security_access_test.cpp
+    ${test_ara_diag_dir}/ecu_reset_request_test.cpp
     ${test_ara_diag_routing_dir}/testable_uds_service.h
     ${test_ara_diag_routing_dir}/uds_service_router_test.cpp
     ${test_ara_diag_routing_dir}/delay_timer_test.cpp
