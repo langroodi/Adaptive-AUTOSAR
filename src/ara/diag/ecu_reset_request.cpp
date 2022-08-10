@@ -9,7 +9,6 @@ namespace ara
 
         EcuResetRequest::EcuResetRequest(
             const core::InstanceSpecifier &specifier) : routing::RoutableUdsService(specifier, cSid),
-                                                        mResetTypeFuture{mResetTypePromise.get_future()},
                                                         mRapidShutdownEnabled{false}
         {
         }
@@ -26,7 +25,7 @@ namespace ara
             const uint8_t cEnableRapidShutdownSubFunction{0x04};
             const uint8_t cDisableRapidShutdownSubFunction{0x05};
 
-            core::Optional<uint8_t> _id;
+            core::Optional<uint8_t> _id{0x00};
             std::future<void> _succeedFuture;
 
             switch (subFunction)
@@ -149,12 +148,15 @@ namespace ara
             CancellationHandler &&cancellationHandler)
         {
             std::promise<void> _resultPromise;
-            std::future<void> _result{_resultPromise.get_future()};
+            std::future<void> _result;
 
             // Set the requested reset type if it has not been requested yet
             if (!mResetTypeFuture.valid())
             {
+                mResetTypeFuture = mResetTypePromise.get_future();
                 mResetTypePromise.set_value(resetType);
+
+                _result = _resultPromise.get_future();
                 _resultPromise.set_value();
             }
 
