@@ -1,48 +1,67 @@
 #ifndef GENERIC_ROUTINE_H
 #define GENERIC_ROUTINE_H
 
-#include <stdint.h>
-#include <vector>
-#include <future>
-#include "../core/instance_specifier.h"
-#include "../core/result.h"
+#include "./routing/routable_uds_service.h"
 #include "./reentrancy.h"
-#include "./meta_info.h"
-#include "./cancellation_handler.h"
 
 namespace ara
 {
     namespace diag
     {
-        struct OperationOutput
+        /// @brief A service to execute a specific sequence of instructions (routine) and obtain the result
+        /// @note The class is not fully compatible with the ARA standard.
+        class GenericRoutine : public routing::RoutableUdsService
         {
-            std::vector<std::uint8_t> responseData;
-        };
+        private:
+            static const uint8_t cSid{0x31};
 
-        class GenericRoutine
-        {
+            ReentrancyType mReentrancy;
+
         public:
+            /// @brief Constructor
+            /// @param specifier Instance specifier that owns the service
+            /// @param reentrancyType Service reentrancy type in a multi-threading contex
             explicit GenericRoutine(
-                const ara::core::InstanceSpecifier &specifier,
+                const core::InstanceSpecifier &specifier,
                 ReentrancyType reentrancyType);
-            virtual ~GenericRoutine() noexcept = default;
-            ara::core::Result<void> Offer();
-            void StopOffer();
+
+            std::future<OperationOutput> HandleMessage(
+                const std::vector<uint8_t> &requestData,
+                MetaInfo &metaInfo,
+                CancellationHandler &&cancellationHandler) override;
+
+            /// @brief Request starting a routine
+            /// @param routineId Routine ID to be started
+            /// @param requestData Start request byte array
+            /// @param metaInfo Request handling meta-info
+            /// @param cancellationHandler Request cancellation token
             virtual std::future<OperationOutput> Start(
-                std::uint16_t routineId,
-                std::vector<std::uint8_t> requestData,
+                uint16_t routineId,
+                std::vector<uint8_t> requestData,
                 MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;
+                CancellationHandler &&cancellationHandler) = 0;
+
+            /// @brief Request stopping a routine
+            /// @param routineId Routine ID to be stopped
+            /// @param requestData Stop request byte array
+            /// @param metaInfo Request handling meta-info
+            /// @param cancellationHandler Request cancellation token
             virtual std::future<OperationOutput> Stop(
-                std::uint16_t routineId,
-                std::vector<std::uint8_t> requestData,
+                uint16_t routineId,
+                std::vector<uint8_t> requestData,
                 MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;
+                CancellationHandler &&cancellationHandler) = 0;
+
+            /// @brief Request the results of a routine
+            /// @param routineId Routine ID for the results request
+            /// @param requestData Results request byte array
+            /// @param metaInfo Request handling meta-info
+            /// @param cancellationHandler Request cancellation token
             virtual std::future<OperationOutput> RequestResults(
-                std::uint16_t routineId,
-                std::vector<std::uint8_t> requestData,
+                uint16_t routineId,
+                std::vector<uint8_t> requestData,
                 MetaInfo &metaInfo,
-                CancellationHandler cancellationHandler) = 0;
+                CancellationHandler &&cancellationHandler) = 0;
         };
     }
 }
