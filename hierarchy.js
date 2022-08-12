@@ -39,7 +39,6 @@ var hierarchy =
     [ "ara::exec::helper::FifoLayer< T >", "classara_1_1exec_1_1helper_1_1FifoLayer.html", null ],
     [ "ara::exec::FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", null ],
     [ "ara::exec::FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", null ],
-    [ "ara::diag::GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],
     [ "ara::core::InstanceSpecifier", "classara_1_1core_1_1InstanceSpecifier.html", null ],
     [ "ara::com::helper::Ipv4Address", "structara_1_1com_1_1helper_1_1Ipv4Address.html", null ],
     [ "ara::log::Logger", "classara_1_1log_1_1Logger.html", null ],
@@ -98,6 +97,7 @@ var hierarchy =
     [ "ara::core::Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", null ],
     [ "ara::diag::routing::RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", [
       [ "ara::diag::EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
+      [ "ara::diag::GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],
       [ "ara::diag::SecurityAccess", "classara_1_1diag_1_1SecurityAccess.html", null ],
       [ "ara::diag::routing::RequestTransfer", "classara_1_1diag_1_1routing_1_1RequestTransfer.html", [
