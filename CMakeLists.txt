@@ -309,6 +309,8 @@ add_library(
   ${source_ara_diag_dir}/upload.cpp
   ${source_ara_diag_dir}/ecu_reset_request.h
   ${source_ara_diag_dir}/ecu_reset_request.cpp
+  ${source_ara_diag_dir}/generic_routine.h
+  ${source_ara_diag_dir}/generic_routine.cpp
   ${source_ara_diag_routing_dir}/routable_uds_service.h
   ${source_ara_diag_routing_dir}/routable_uds_service.cpp
   ${source_ara_diag_routing_dir}/uds_service_router.h
