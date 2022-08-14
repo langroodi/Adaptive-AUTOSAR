@@ -10,9 +10,9 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 - Cpp Standard: 14
 - Cmake mimimum version: 3.14
 - Compiler:
-    - GCC C/C++ Compiler (x86-64 Linux GNU): 9.3.0; or
-    - Clang C/C++ Compiler (x86-64 PC Linux GNU): 10.0.0
-- Google Test: v1.11.0
+    - GCC C/C++ Compiler (x86-64 Linux GNU): 11.2.0; or
+    - Clang C/C++ Compiler (x86-64 PC Linux GNU): 14.0.0
+- Google Test: v1.12.1
 - [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary)
 - [OBD-II Emulator](https://github.com/langroodi/OBD-II-Emulator) (in-house C++ emulator)
 

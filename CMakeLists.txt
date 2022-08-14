@@ -12,22 +12,22 @@ set(CMAKE_ENABLE_EXPORTS 1)
 
 include(FetchContent)
 
-# Fetching GoogleTest 1.11.0 for unit testing
+# Fetching GoogleTest 1.12.1 for unit testing
 FetchContent_Declare(
   googletest
-  URL https://github.com/google/googletest/archive/8d51ffdfab10b3fba636ae69bc03da4b54f8c235.zip
+  URL https://github.com/google/googletest/archive/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip
 )
 
 # Fetching Async-BSD-Socket-Lib for network abstraction
 FetchContent_Declare(
   Async-BSD-Socket-Lib
-  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/96b00d3a33fe03dfb3d7606fe9fcc28488e9e431.zip
+  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/2fe1f151c109a89e245529954d3f8d969fbedfd2.zip
 )
 
 # Fetching  OBD-II-Emulator for OBD2 CAN bus communication
 FetchContent_Declare(
   OBD-II-Emulator
-  URL https://github.com/langroodi/OBD-II-Emulator/archive/da922b9c02f5e4d1db6236ccd1d482fc4326bfba.zip
+  URL https://github.com/langroodi/OBD-II-Emulator/archive/26537a1ad495e69353e16b3e32683f5e5fe8bcc1.zip
 )
 
 FetchContent_MakeAvailable(

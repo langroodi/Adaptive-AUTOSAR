@@ -1,6 +1,7 @@
 #ifndef SUBSCRIBED_STATE_H
 #define SUBSCRIBED_STATE_H
 
+#include <cstdint>
 #include "../../../helper/machine_state.h"
 
 namespace ara
