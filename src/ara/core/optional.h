@@ -34,10 +34,7 @@ namespace ara
 
             Optional(const Optional &other)
             {
-                if (other.HasValue())
-                {
-                    mValuePtr = new T{*other.mValuePtr};
-                }
+                mValuePtr = other.HasValue() ? new T{*other.mValuePtr} : nullptr;
             }
 
             Optional(Optional &&other) noexcept(
@@ -47,6 +44,10 @@ namespace ara
                 {
                     mValuePtr = other.mValuePtr;
                     other.mValuePtr = nullptr;
+                }
+                else
+                {
+                    mValuePtr = nullptr;
                 }
             }
 
