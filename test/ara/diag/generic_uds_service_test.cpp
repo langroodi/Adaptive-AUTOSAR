@@ -10,7 +10,7 @@ namespace ara
 
         class GenericUdsServiceTest : public testing::Test, public GenericUDSService
         {
-        protected:
+        private:
             static const ReentrancyType cReentrancy{ReentrancyType::kNot};
             static const uint8_t cSid{0x22};
 
@@ -28,6 +28,8 @@ namespace ara
                 return _result;
             }
         };
+
+        const ReentrancyType GenericUdsServiceTest::cReentrancy;
 
         TEST_F(GenericUdsServiceTest, OfferScenario)
         {
