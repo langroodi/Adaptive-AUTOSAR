@@ -1,5 +1,6 @@
 var namespaceara_1_1diag =
 [
+    [ "debouncing", "namespaceara_1_1diag_1_1debouncing.html", "namespaceara_1_1diag_1_1debouncing" ],
     [ "routing", "namespaceara_1_1diag_1_1routing.html", "namespaceara_1_1diag_1_1routing" ],
     [ "CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", "classara_1_1diag_1_1CancellationHandler" ],
     [ "Condition", "classara_1_1diag_1_1Condition.html", "classara_1_1diag_1_1Condition" ],

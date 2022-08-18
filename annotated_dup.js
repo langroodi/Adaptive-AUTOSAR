@@ -69,6 +69,9 @@ var annotated_dup =
         [ "Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", "classara_1_1core_1_1Result_3_01void_00_01E_01_4" ]
       ] ],
       [ "diag", "namespaceara_1_1diag.html", [
+        [ "debouncing", "namespaceara_1_1diag_1_1debouncing.html", [
+          [ "Debouncer", "classara_1_1diag_1_1debouncing_1_1Debouncer.html", "classara_1_1diag_1_1debouncing_1_1Debouncer" ]
+        ] ],
         [ "routing", "namespaceara_1_1diag_1_1routing.html", [
           [ "DelayTimer", "classara_1_1diag_1_1routing_1_1DelayTimer.html", "classara_1_1diag_1_1routing_1_1DelayTimer" ],
           [ "NrcExecption", "classara_1_1diag_1_1routing_1_1NrcExecption.html", "classara_1_1diag_1_1routing_1_1NrcExecption" ],
