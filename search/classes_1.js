@@ -11,5 +11,6 @@ var searchData=
   ['consolelogsink_8',['ConsoleLogSink',['../classara_1_1log_1_1sink_1_1ConsoleLogSink.html',1,'ara::log::sink']]],
   ['conversation_9',['Conversation',['../classara_1_1diag_1_1Conversation.html',1,'ara::diag']]],
   ['conversationidentifiertype_10',['ConversationIdentifierType',['../structara_1_1diag_1_1ConversationIdentifierType.html',1,'ara::diag']]],
-  ['counterbased_11',['CounterBased',['../structara_1_1diag_1_1CounterBased.html',1,'ara::diag']]]
+  ['counterbased_11',['CounterBased',['../structara_1_1diag_1_1CounterBased.html',1,'ara::diag']]],
+  ['counterbaseddebouncer_12',['CounterBasedDebouncer',['../classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html',1,'ara::diag::debouncing']]]
 ];

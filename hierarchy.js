@@ -14,7 +14,10 @@ var hierarchy =
     [ "ara::diag::ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],
     [ "ara::diag::CounterBased", "structara_1_1diag_1_1CounterBased.html", null ],
     [ "ara::diag::DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", null ],
-    [ "ara::diag::debouncing::Debouncer", "classara_1_1diag_1_1debouncing_1_1Debouncer.html", null ],
+    [ "ara::diag::debouncing::Debouncer", "classara_1_1diag_1_1debouncing_1_1Debouncer.html", [
+      [ "ara::diag::debouncing::CounterBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html", null ],
+      [ "ara::diag::debouncing::TimerBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html", null ]
+    ] ],
     [ "ara::diag::routing::DelayTimer", "classara_1_1diag_1_1routing_1_1DelayTimer.html", null ],
     [ "ara::exec::DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", null ],
     [ "Diagnostic", "classDiagnostic.html", null ],

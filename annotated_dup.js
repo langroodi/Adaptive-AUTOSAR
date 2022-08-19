@@ -70,7 +70,9 @@ var annotated_dup =
       ] ],
       [ "diag", "namespaceara_1_1diag.html", [
         [ "debouncing", "namespaceara_1_1diag_1_1debouncing.html", [
-          [ "Debouncer", "classara_1_1diag_1_1debouncing_1_1Debouncer.html", "classara_1_1diag_1_1debouncing_1_1Debouncer" ]
+          [ "CounterBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html", "classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer" ],
+          [ "Debouncer", "classara_1_1diag_1_1debouncing_1_1Debouncer.html", "classara_1_1diag_1_1debouncing_1_1Debouncer" ],
+          [ "TimerBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer" ]
         ] ],
         [ "routing", "namespaceara_1_1diag_1_1routing.html", [
           [ "DelayTimer", "classara_1_1diag_1_1routing_1_1DelayTimer.html", "classara_1_1diag_1_1routing_1_1DelayTimer" ],

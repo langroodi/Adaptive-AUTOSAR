@@ -93,7 +93,8 @@ $(document).ready(function(){initNavTree('namespaceara_1_1diag_1_1debouncing.htm
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">ara::diag::debouncing Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -103,14 +104,58 @@ $(document).ready(function(){initNavTree('namespaceara_1_1diag_1_1debouncing.htm
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html">CounterBasedDebouncer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1debouncing_1_1Debouncer.html">Debouncer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debouncing mechanism interface.  <a href="classara_1_1diag_1_1debouncing_1_1Debouncer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html">TimerBasedDebouncer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a61fd73b72af3f90ce187162db0d71b57"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1diag_1_1debouncing.html#a61fd73b72af3f90ce187162db0d71b57">EventStatus</a> : int8_t { <b>kPassed</b> = -1
+, <a class="el" href="namespaceara_1_1diag_1_1debouncing.html#a61fd73b72af3f90ce187162db0d71b57aa09be96128822643f3487a1415eb861c">kPending</a> = 0
+, <a class="el" href="namespaceara_1_1diag_1_1debouncing.html#a61fd73b72af3f90ce187162db0d71b57ab62fa3c9492b6dae76c23d6dfa466611">kFailed</a> = 1
+ }</td></tr>
+<tr class="memdesc:a61fd73b72af3f90ce187162db0d71b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Monitored event status.  <a href="namespaceara_1_1diag_1_1debouncing.html#a61fd73b72af3f90ce187162db0d71b57">More...</a><br /></td></tr>
+<tr class="separator:a61fd73b72af3f90ce187162db0d71b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Namespace of debouncing mechanism components. </p>
 <dl class="section note"><dt>Note</dt><dd>The namespace is not part of the ARA standard. </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a61fd73b72af3f90ce187162db0d71b57" name="a61fd73b72af3f90ce187162db0d71b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61fd73b72af3f90ce187162db0d71b57">&#9670;&nbsp;</a></span>EventStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1diag_1_1debouncing.html#a61fd73b72af3f90ce187162db0d71b57">ara::diag::debouncing::EventStatus</a> : int8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Monitored event status. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a61fd73b72af3f90ce187162db0d71b57aa09be96128822643f3487a1415eb861c" name="a61fd73b72af3f90ce187162db0d71b57aa09be96128822643f3487a1415eb861c"></a>kPending&#160;</td><td class="fielddoc"><p >!&lt; Finally healed event </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a61fd73b72af3f90ce187162db0d71b57ab62fa3c9492b6dae76c23d6dfa466611" name="a61fd73b72af3f90ce187162db0d71b57ab62fa3c9492b6dae76c23d6dfa466611"></a>kFailed&#160;</td><td class="fielddoc"><p >!&lt; Pending status event </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
