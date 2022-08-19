@@ -1,45 +1,16 @@
 #ifndef MONITOR_H
 #define MONITOR_H
 
-#include <stdint.h>
 #include <functional>
 #include "../core/instance_specifier.h"
 #include "../core/result.h"
+#include "./debouncing/counter_based_debouncer.h"
+#include "./debouncing/timer_based_debouncer.h"
 
 namespace ara
 {
     namespace diag
     {
-        /// @brief Contour-based debouncing parameters
-        struct CounterBased
-        {
-            /// @brief Threshold to report failure
-            int16_t failedThreshold;
-            /// @brief Threshold to report passing
-            int16_t passedThreshold;
-            /// @brief Debounce counter increment step
-            uint16_t failedStepsize;
-            /// @brief Debounce counter decrement step
-            uint16_t passedStepsize;
-            /// @brief Debounce counter jump on a pre-failed report
-            int16_t failedJumpValue;
-            /// @brief Debounce counter jump on a pre-passed report
-            int16_t passedJumpValue;
-            /// @brief Indicates whether debounce counter should jump or not on a pre-failed report
-            bool useJumpToFailed;
-            /// @brief Indicates whether debounce counter should jump or not on a pre-passed report
-            bool useJumpToPassed;
-        };
-
-        /// @brief Time-based debouncing parameters
-        struct TimeBased
-        {
-            /// @brief Time threshold in milliseconds to report passing
-            uint32_t passedMs;
-            /// @brief Time threshold in milliseconds to report failure
-            uint32_t failedMs;
-        };
-
         /// @brief Monitoring re-initialization reason
         enum class InitMonitorReason : uint32_t
         {
@@ -65,6 +36,9 @@ namespace ara
         /// @brief A class to monitor the correct functionality of a system part
         class Monitor final
         {
+        private:
+            debouncing::Debouncer *mDebouncer;
+            
         public:
             /// @brief Monitor constructor with an internal debouncing
             /// @param specifier Instance specifer that owns the monitor

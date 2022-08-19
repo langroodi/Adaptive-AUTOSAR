@@ -11,6 +11,14 @@ namespace ara
         /// @note The namespace is not part of the ARA standard.
         namespace debouncing
         {
+            /// @brief Monitored event status
+            enum class EventStatus : int8_t
+            {
+                kPassed = -1,   ///!< Finally healed event
+                kPending = 0,   ///!< Pending status event
+                kFailed = 1     ///!< Finally defective event
+            };
+
             /// @brief Debouncing mechanism interface
             class Debouncer
             {
