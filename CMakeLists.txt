@@ -144,6 +144,9 @@ set(test_ara_diag_dir
 set(test_ara_diag_routing_dir
   "${CMAKE_SOURCE_DIR}/test/ara/diag/routing")
 
+set(test_ara_diag_debouncing_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/diag/debouncing")
+
 ########################################################################
 
 add_library(
@@ -330,6 +333,7 @@ add_library(
   ${source_ara_diag_routing_dir}/request_transfer.cpp
   ${source_ara_diag_debouncing_dir}/debouncer.h
   ${source_ara_diag_debouncing_dir}/counter_based_debouncer.h
+  ${source_ara_diag_debouncing_dir}/counter_based_debouncer.cpp
   ${source_ara_diag_debouncing_dir}/timer_based_debouncer.h
 )
 
@@ -413,6 +417,7 @@ if(build_tests)
     ${test_ara_diag_routing_dir}/request_transfer_exit_test.cpp
     ${test_ara_diag_routing_dir}/nrc_exception_test.cpp
     ${test_ara_diag_routing_dir}/request_transfer_test.cpp
+    ${test_ara_diag_debouncing_dir}/counter_based_debouncer_test.cpp
   )
 
   target_link_libraries(
