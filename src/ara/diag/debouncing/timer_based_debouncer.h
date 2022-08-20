@@ -2,6 +2,9 @@
 #define TIMER_BASED_DEBOUNCER_H
 
 #include <stdint.h>
+#include <thread>
+#include <condition_variable>
+#include <atomic>
 #include "./debouncer.h"
 
 namespace ara
@@ -24,6 +27,16 @@ namespace ara
             private:
                 const TimeBased &mDefaultValues;
 
+                std::mutex mMutex;
+                std::unique_lock<std::mutex> mLock;
+                std::condition_variable mConditionVariable;
+                std::thread mThread;
+                std::atomic_uint32_t mElapsedMs;
+                bool mIsPassing;
+
+                void tick(std::chrono::milliseconds duration, bool passing);
+                void start(uint32_t threshold);
+
             public:
                 /// @brief Constructor
                 /// @param callback Callback to be triggered at the monitored event status change
@@ -31,6 +44,8 @@ namespace ara
                 TimerBasedDebouncer(
                     std::function<void(bool)> callback,
                     const TimeBased &defaultValues);
+                
+                virtual ~TimerBasedDebouncer() override;
 
                 virtual void ReportPrepassed() override;
 

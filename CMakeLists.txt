@@ -336,6 +336,7 @@ add_library(
   ${source_ara_diag_debouncing_dir}/counter_based_debouncer.h
   ${source_ara_diag_debouncing_dir}/counter_based_debouncer.cpp
   ${source_ara_diag_debouncing_dir}/timer_based_debouncer.h
+  ${source_ara_diag_debouncing_dir}/timer_based_debouncer.cpp
 )
 
 target_link_libraries(
@@ -419,6 +420,7 @@ if(build_tests)
     ${test_ara_diag_routing_dir}/nrc_exception_test.cpp
     ${test_ara_diag_routing_dir}/request_transfer_test.cpp
     ${test_ara_diag_debouncing_dir}/counter_based_debouncer_test.cpp
+    ${test_ara_diag_debouncing_dir}/timer_based_debouncer_test.cpp
   )
 
   target_link_libraries(
