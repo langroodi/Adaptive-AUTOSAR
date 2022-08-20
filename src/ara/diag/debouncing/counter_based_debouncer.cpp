@@ -10,34 +10,8 @@ namespace ara
                 std::function<void(bool)> callback,
                 const CounterBased &defaultValues) : Debouncer(callback),
                                                      mDefaultValues{defaultValues},
-                                                     mEventStatus{EventStatus::kPending},
                                                      mFdc{0}
             {
-            }
-
-            void CounterBasedDebouncer::SetEventStatus(EventStatus status)
-            {
-                if (mEventStatus != status)
-                {
-                    mEventStatus = status;
-
-                    if (OnEventStatusChanged)
-                    {
-                        switch (mEventStatus)
-                        {
-                        case EventStatus::kPassed:
-                            OnEventStatusChanged(true);
-                            break;
-
-                        case EventStatus::kFailed:
-                            OnEventStatusChanged(false);
-                            break;
-
-                        default:
-                            break;
-                        }
-                    }
-                }
             }
 
             void CounterBasedDebouncer::ReportPrepassed()
@@ -82,7 +56,7 @@ namespace ara
             void CounterBasedDebouncer::Reset()
             {
                 mFdc = 0;
-                mEventStatus = EventStatus::kPending;
+                SetEventStatus(EventStatus::kPending);
             }
         }
     }

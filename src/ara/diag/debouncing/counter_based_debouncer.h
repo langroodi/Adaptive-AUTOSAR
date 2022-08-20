@@ -35,11 +35,8 @@ namespace ara
             {
             private:
                 const CounterBased &mDefaultValues;
-                EventStatus mEventStatus;
                 int16_t mFdc;
-
-                void SetEventStatus(EventStatus status);
-
+                
             public:
                 /// @brief Constructor
                 /// @param callback Callback to be triggered at the monitored event status change

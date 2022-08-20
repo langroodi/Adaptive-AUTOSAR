@@ -332,6 +332,7 @@ add_library(
   ${source_ara_diag_routing_dir}/request_transfer.h
   ${source_ara_diag_routing_dir}/request_transfer.cpp
   ${source_ara_diag_debouncing_dir}/debouncer.h
+  ${source_ara_diag_debouncing_dir}/debouncer.cpp
   ${source_ara_diag_debouncing_dir}/counter_based_debouncer.h
   ${source_ara_diag_debouncing_dir}/counter_based_debouncer.cpp
   ${source_ara_diag_debouncing_dir}/timer_based_debouncer.h

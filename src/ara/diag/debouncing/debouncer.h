@@ -12,25 +12,29 @@ namespace ara
         namespace debouncing
         {
             /// @brief Monitored event status
-            enum class EventStatus : int8_t
+            enum EventStatus
             {
-                kPassed = -1,   ///!< Finally healed event
-                kPending = 0,   ///!< Pending status event
-                kFailed = 1     ///!< Finally defective event
+                kPassed = -1, ///!< Finally healed event
+                kPending = 0, ///!< Pending status event
+                kFailed = 1   ///!< Finally defective event
             };
 
             /// @brief Debouncing mechanism interface
             class Debouncer
             {
-            protected:
-                /// @brief Delegate to be called when the event status is changed via the debouncing
-                std::function<void(bool)> OnEventStatusChanged;
+            private:
+                EventStatus mEventStatus;
 
+                std::function<void(bool)> onEventStatusChanged;
+
+            protected:
                 /// @brief Constructor
                 /// @param callback Callback to be triggered at the monitored event status change
-                explicit Debouncer(std::function<void(bool)> callback) : OnEventStatusChanged{callback}
-                {
-                }
+                explicit Debouncer(std::function<void(bool)> callback);
+
+                /// @brief Set the monitored event status
+                /// @param status Monitored event new status
+                void SetEventStatus(EventStatus status);
 
             public:
                 /// @brief Report pre-passed of the monitored event
