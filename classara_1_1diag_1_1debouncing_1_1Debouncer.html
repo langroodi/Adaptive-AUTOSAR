@@ -95,7 +95,6 @@ $(document).ready(function(){initNavTree('classara_1_1diag_1_1debouncing_1_1Debo
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classara_1_1diag_1_1debouncing_1_1Debouncer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ara::diag::debouncing::Debouncer Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -136,13 +135,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aeb0c25be46e6670f042a0942ab3138bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1debouncing_1_1Debouncer.html#aeb0c25be46e6670f042a0942ab3138bf">Debouncer</a> (std::function&lt; void(bool)&gt; callback)</td></tr>
 <tr class="memdesc:aeb0c25be46e6670f042a0942ab3138bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1debouncing_1_1Debouncer.html#aeb0c25be46e6670f042a0942ab3138bf">More...</a><br /></td></tr>
 <tr class="separator:aeb0c25be46e6670f042a0942ab3138bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a686f8140d99e586b7ffb88f68b4a01c7"><td class="memItemLeft" align="right" valign="top"><a id="a686f8140d99e586b7ffb88f68b4a01c7" name="a686f8140d99e586b7ffb88f68b4a01c7"></a>
-std::function&lt; void(bool)&gt;&#160;</td><td class="memItemRight" valign="bottom"><b>OnEventStatusChanged</b></td></tr>
-<tr class="memdesc:a686f8140d99e586b7ffb88f68b4a01c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate to be called when the event status is changed via the debouncing. <br /></td></tr>
-<tr class="separator:a686f8140d99e586b7ffb88f68b4a01c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a9f113d7521cc17f5bcaccb12b9864"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1debouncing_1_1Debouncer.html#a02a9f113d7521cc17f5bcaccb12b9864">SetEventStatus</a> (<a class="el" href="namespaceara_1_1diag_1_1debouncing.html#a404fcfabca946298979834e648e35e96">EventStatus</a> status)</td></tr>
+<tr class="memdesc:a02a9f113d7521cc17f5bcaccb12b9864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the monitored event status.  <a href="classara_1_1diag_1_1debouncing_1_1Debouncer.html#a02a9f113d7521cc17f5bcaccb12b9864">More...</a><br /></td></tr>
+<tr class="separator:a02a9f113d7521cc17f5bcaccb12b9864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Debouncing mechanism interface. </p>
@@ -166,7 +161,7 @@ std::function&lt; void(bool)&gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -295,6 +290,40 @@ std::function&lt; void(bool)&gt;&#160;</td><td class="memItemRight" valign="bott
 <p>Reset the debouncing mechanism. </p>
 
 <p>Implemented in <a class="el" href="classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html#a6e9eb15ac0cc538c60cdfe4d1698fbf1">ara::diag::debouncing::CounterBasedDebouncer</a>, and <a class="el" href="classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html#a24eef9d546f7724f289488d519ba4e2c">ara::diag::debouncing::TimerBasedDebouncer</a>.</p>
+
+</div>
+</div>
+<a id="a02a9f113d7521cc17f5bcaccb12b9864" name="a02a9f113d7521cc17f5bcaccb12b9864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02a9f113d7521cc17f5bcaccb12b9864">&#9670;&nbsp;</a></span>SetEventStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::debouncing::Debouncer::SetEventStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1diag_1_1debouncing.html#a404fcfabca946298979834e648e35e96">EventStatus</a>&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the monitored event status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>Monitored event new status </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

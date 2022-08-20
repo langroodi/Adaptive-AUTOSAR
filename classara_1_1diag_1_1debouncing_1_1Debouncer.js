@@ -5,5 +5,5 @@ var classara_1_1diag_1_1debouncing_1_1Debouncer =
     [ "ReportPrefailed", "classara_1_1diag_1_1debouncing_1_1Debouncer.html#ab99b32b11c3a027af28b5cf98604e532", null ],
     [ "ReportPrepassed", "classara_1_1diag_1_1debouncing_1_1Debouncer.html#aa7aa70f68a783935f509902a133d527c", null ],
     [ "Reset", "classara_1_1diag_1_1debouncing_1_1Debouncer.html#ab545ebb4f6328497b762b5dba7671120", null ],
-    [ "OnEventStatusChanged", "classara_1_1diag_1_1debouncing_1_1Debouncer.html#a686f8140d99e586b7ffb88f68b4a01c7", null ]
+    [ "SetEventStatus", "classara_1_1diag_1_1debouncing_1_1Debouncer.html#a02a9f113d7521cc17f5bcaccb12b9864", null ]
 ];
