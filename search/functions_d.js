@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['offer_0',['Offer',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ab4ce68cf422bf4d40bf66ee8489f9a21',1,'ara::diag::routing::RoutableUdsService::Offer()'],['../classara_1_1diag_1_1Monitor.html#abf4bb452e089b19470c471539f794403',1,'ara::diag::Monitor::Offer()']]],
+  ['offer_0',['Offer',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ab4ce68cf422bf4d40bf66ee8489f9a21',1,'ara::diag::routing::RoutableUdsService::Offer()'],['../classara_1_1diag_1_1Monitor.html#a926e5dba4474f926e523992653bc18c3',1,'ara::diag::Monitor::Offer()']]],
   ['ok_1',['Ok',['../classara_1_1core_1_1Result.html#a10ecaeff47bc63671c194b8ca1007048',1,'ara::core::Result::Ok() const &amp;'],['../classara_1_1core_1_1Result.html#aff53c21ecfa366816905dfbac67df229',1,'ara::core::Result::Ok() &amp;&amp;']]],
   ['operationcycle_2',['OperationCycle',['../classara_1_1diag_1_1OperationCycle.html#afbbe7d3efe2ead93330548f01b84e88b',1,'ara::diag::OperationCycle']]],
   ['operator_20bool_3',['operator bool',['../classara_1_1core_1_1Optional.html#ad6bedb132da77a3789d3afe256c52cf7',1,'ara::core::Optional::operator bool()'],['../classara_1_1core_1_1Result.html#a88945485227813c2c7e3f82dbc0bdc89',1,'ara::core::Result::operator bool()'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aaa4716735f7910f6a7c127fa2689c5c4',1,'ara::core::Result&lt; void, E &gt;::operator bool()']]],

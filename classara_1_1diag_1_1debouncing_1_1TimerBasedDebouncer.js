@@ -1,6 +1,6 @@
 var classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer =
 [
-    [ "TimerBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html#abb727bdef53b2c5e1f65478383d7501d", null ],
+    [ "TimerBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html#ac906b2d82611f15d3c549f0de44619c4", null ],
     [ "Freeze", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html#a090ebcb627846df4b5b4832011b3f65f", null ],
     [ "ReportFailed", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html#af78f2eac546baffc18f09e6db4cb4143", null ],
     [ "ReportPassed", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html#a23ec1e9f1432e6439e6ac8aa335d2a25", null ],
