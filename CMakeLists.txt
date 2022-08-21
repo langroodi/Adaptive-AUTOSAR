@@ -317,6 +317,8 @@ add_library(
   ${source_ara_diag_dir}/ecu_reset_request.cpp
   ${source_ara_diag_dir}/generic_routine.h
   ${source_ara_diag_dir}/generic_routine.cpp
+  ${source_ara_diag_dir}/monitor.h
+  ${source_ara_diag_dir}/monitor.cpp
   ${source_ara_diag_routing_dir}/routable_uds_service.h
   ${source_ara_diag_routing_dir}/routable_uds_service.cpp
   ${source_ara_diag_routing_dir}/uds_service_router.h
@@ -412,6 +414,7 @@ if(build_tests)
     ${test_ara_diag_dir}/security_access_test.cpp
     ${test_ara_diag_dir}/ecu_reset_request_test.cpp
     ${test_ara_diag_dir}/generic_routine_test.cpp
+    ${test_ara_diag_dir}/monitor_test.cpp
     ${test_ara_diag_routing_dir}/testable_uds_service.h
     ${test_ara_diag_routing_dir}/uds_service_router_test.cpp
     ${test_ara_diag_routing_dir}/delay_timer_test.cpp

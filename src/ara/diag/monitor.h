@@ -34,27 +34,28 @@ namespace ara
         };
 
         /// @brief A class to monitor the correct functionality of a system part
+        /// @note In constrast with the ARA standard, internal debouncing is not supported.
         class Monitor final
         {
         private:
+            const core::InstanceSpecifier &mSpecifier;
+            const std::function<void(InitMonitorReason)> mInitMonitor;
+            bool mOffered;
             debouncing::Debouncer *mDebouncer;
-            
-        public:
-            /// @brief Monitor constructor with an internal debouncing
-            /// @param specifier Instance specifer that owns the monitor
-            /// @param initMonitor Monitor re-initialization callback
-            /// @param getFaultDetectionCounter Delegate to get the event Fault Detection Counter (FDC)
-            Monitor(
-                const ara::core::InstanceSpecifier &specifier,
-                std::function<void(InitMonitorReason)> initMonitor,
-                std::function<int8_t()> getFaultDetectionCounter);
 
+            Monitor(
+                const core::InstanceSpecifier &specifier,
+                std::function<void(InitMonitorReason)> initMonitor);
+
+            void onEventStatusChanged(bool passed);
+
+        public:
             /// @brief Monitor constructor with a counter-based debouncing
             /// @param specifier Instance specifer that owns the monitor
             /// @param initMonitor Monitor re-initialization callback
             /// @param defaultValues Counter-based debouncing default parameters
             Monitor(
-                const ara::core::InstanceSpecifier &specifier,
+                const core::InstanceSpecifier &specifier,
                 std::function<void(InitMonitorReason)> initMonitor,
                 CounterBased defaultValues);
 
@@ -63,9 +64,11 @@ namespace ara
             /// @param initMonitor Monitor re-initialization callback
             /// @param defaultValues Time-based debouncing default parameters
             Monitor(
-                const ara::core::InstanceSpecifier &specifier,
+                const core::InstanceSpecifier &specifier,
                 std::function<void(InitMonitorReason)> initMonitor,
                 TimeBased defaultValues);
+
+            ~Monitor() noexcept;
 
             /// @brief Report a monitor action
             /// @param action Latest diagnostic monitor action
@@ -73,7 +76,7 @@ namespace ara
 
             /// @brief Start offering monitoring requests handling
             /// @returns Error result if the handler has been already offered
-            ara::core::Result<void> Offer();
+            core::Result<void> Offer();
 
             /// @brief Stop offering monitoring requests handling
             void StopOffer();
