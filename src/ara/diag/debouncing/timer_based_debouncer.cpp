@@ -9,10 +9,10 @@ namespace ara
         {
             TimerBasedDebouncer::TimerBasedDebouncer(
                 std::function<void(bool)> callback,
-                const TimeBased &defaultValues) : Debouncer(callback),
-                                                  mLock(mMutex, std::defer_lock),
-                                                  mDefaultValues{defaultValues},
-                                                  mElapsedMs{0}
+                TimeBased defaultValues) : Debouncer(callback),
+                                           mLock(mMutex, std::defer_lock),
+                                           mDefaultValues{defaultValues},
+                                           mElapsedMs{0}
             {
             }
 
@@ -84,7 +84,7 @@ namespace ara
                 Freeze();
                 mElapsedMs = mDefaultValues.passedMs;
                 mIsPassing = true;
-                 SetEventStatus(EventStatus::kPassed);
+                SetEventStatus(EventStatus::kPassed);
             }
 
             void TimerBasedDebouncer::ReportPrefailed()

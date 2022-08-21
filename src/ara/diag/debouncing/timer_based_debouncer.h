@@ -25,7 +25,7 @@ namespace ara
             class TimerBasedDebouncer : public Debouncer
             {
             private:
-                const TimeBased &mDefaultValues;
+                const TimeBased mDefaultValues;
 
                 std::mutex mMutex;
                 std::unique_lock<std::mutex> mLock;
@@ -43,7 +43,7 @@ namespace ara
                 /// @param defaultValues Time-based debouncing default parameters
                 TimerBasedDebouncer(
                     std::function<void(bool)> callback,
-                    const TimeBased &defaultValues);
+                    TimeBased defaultValues);
                 
                 virtual ~TimerBasedDebouncer() override;
 

@@ -34,7 +34,7 @@ namespace ara
             class CounterBasedDebouncer : public Debouncer
             {
             private:
-                const CounterBased &mDefaultValues;
+                const CounterBased mDefaultValues;
                 int16_t mFdc;
                 
             public:
@@ -43,7 +43,7 @@ namespace ara
                 /// @param defaultValues Counter-based debouncing default parameters
                 CounterBasedDebouncer(
                     std::function<void(bool)> callback,
-                    const CounterBased &defaultValues);
+                    CounterBased defaultValues);
 
                 virtual void ReportPrepassed() override;
 

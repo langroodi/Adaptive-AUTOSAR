@@ -8,9 +8,9 @@ namespace ara
         {
             CounterBasedDebouncer::CounterBasedDebouncer(
                 std::function<void(bool)> callback,
-                const CounterBased &defaultValues) : Debouncer(callback),
-                                                     mDefaultValues{defaultValues},
-                                                     mFdc{0}
+                CounterBased defaultValues) : Debouncer(callback),
+                                              mDefaultValues{defaultValues},
+                                              mFdc{0}
             {
             }
 
