@@ -23,7 +23,7 @@ namespace ara
                 }
             };
 
-            TEST_F(TimerBasedDebouncerTest, PassScenario)
+            TEST_F(TimerBasedDebouncerTest, PrepassScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kPassed};
                 const uint32_t cThreshold{50};
@@ -39,6 +39,50 @@ namespace ara
                 TimerBasedDebouncer _debouncer(_callback, _defaultValues);
 
                 _debouncer.ReportPrepassed();
+                EXPECT_NE(cExpectedResult, Status);
+
+                // Wait twice the threshold according Nyquist theorem to check the result
+                std::chrono::milliseconds _ms(cThreshold * 2);
+                std::this_thread::sleep_for(_ms);
+
+                EXPECT_EQ(cExpectedResult, Status);
+            }
+
+            TEST_F(TimerBasedDebouncerTest, PassScenario)
+            {
+                const EventStatus cExpectedResult{EventStatus::kPassed};
+                const uint32_t cThreshold{50};
+
+                TimeBased _defaultValues;
+                _defaultValues.passedMs = cThreshold;
+
+                auto _callback{
+                    std::bind(
+                        &TimerBasedDebouncerTest::OnStatusChanged,
+                        this, std::placeholders::_1)};
+
+                TimerBasedDebouncer _debouncer(_callback, _defaultValues);
+
+                _debouncer.ReportPassed();
+                EXPECT_EQ(cExpectedResult, Status);
+            }
+
+            TEST_F(TimerBasedDebouncerTest, PrefailScenario)
+            {
+                const EventStatus cExpectedResult{EventStatus::kFailed};
+                const uint32_t cThreshold{50};
+
+                TimeBased _defaultValues;
+                _defaultValues.failedMs = cThreshold;
+
+                auto _callback{
+                    std::bind(
+                        &TimerBasedDebouncerTest::OnStatusChanged,
+                        this, std::placeholders::_1)};
+
+                TimerBasedDebouncer _debouncer(_callback, _defaultValues);
+
+                _debouncer.ReportPrefailed();
                 EXPECT_NE(cExpectedResult, Status);
 
                 // Wait twice the threshold according Nyquist theorem to check the result
@@ -63,17 +107,11 @@ namespace ara
 
                 TimerBasedDebouncer _debouncer(_callback, _defaultValues);
 
-                _debouncer.ReportPrefailed();
-                EXPECT_NE(cExpectedResult, Status);
-
-                // Wait twice the threshold according Nyquist theorem to check the result
-                std::chrono::milliseconds _ms(cThreshold * 2);
-                std::this_thread::sleep_for(_ms);
-
+                _debouncer.ReportFailed();
                 EXPECT_EQ(cExpectedResult, Status);
             }
 
-            TEST_F(TimerBasedDebouncerTest, PassPassScenario)
+            TEST_F(TimerBasedDebouncerTest, PrepassPrepassScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kPassed};
                 const uint32_t cThreshold{50};
@@ -99,7 +137,7 @@ namespace ara
                 EXPECT_EQ(cExpectedResult, Status);
             }
 
-            TEST_F(TimerBasedDebouncerTest, FailFailScenario)
+            TEST_F(TimerBasedDebouncerTest, PrefailPrefailScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kFailed};
                 const uint32_t cThreshold{50};
@@ -125,7 +163,7 @@ namespace ara
                 EXPECT_EQ(cExpectedResult, Status);
             }
 
-            TEST_F(TimerBasedDebouncerTest, PassFailScenario)
+            TEST_F(TimerBasedDebouncerTest, PrepassPrefailScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kFailed};
                 const uint32_t cThreshold{50};
@@ -153,7 +191,7 @@ namespace ara
                 EXPECT_EQ(cExpectedResult, Status);
             }
 
-            TEST_F(TimerBasedDebouncerTest, FailPassScenario)
+            TEST_F(TimerBasedDebouncerTest, PrefailPrepassScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kPassed};
                 const uint32_t cThreshold{50};

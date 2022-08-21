@@ -79,6 +79,14 @@ namespace ara
                 start(mDefaultValues.passedMs);
             }
 
+            void TimerBasedDebouncer::ReportPassed()
+            {
+                Freeze();
+                mElapsedMs = mDefaultValues.passedMs;
+                mIsPassing = true;
+                 SetEventStatus(EventStatus::kPassed);
+            }
+
             void TimerBasedDebouncer::ReportPrefailed()
             {
                 if (mIsPassing)
@@ -89,6 +97,14 @@ namespace ara
                 }
 
                 start(mDefaultValues.failedMs);
+            }
+
+            void TimerBasedDebouncer::ReportFailed()
+            {
+                Freeze();
+                mElapsedMs = mDefaultValues.failedMs;
+                mIsPassing = false;
+                SetEventStatus(EventStatus::kFailed);
             }
 
             void TimerBasedDebouncer::Freeze()

@@ -31,6 +31,12 @@ namespace ara
                 }
             }
 
+            void CounterBasedDebouncer::ReportPassed()
+            {
+                mFdc = mDefaultValues.passedThreshold;
+                SetEventStatus(EventStatus::kPassed);
+            }
+
             void CounterBasedDebouncer::ReportPrefailed()
             {
                 if ((mFdc + mDefaultValues.failedStepsize) >= mDefaultValues.failedThreshold)
@@ -46,6 +52,12 @@ namespace ara
                 {
                     mFdc += mDefaultValues.failedStepsize;
                 }
+            }
+
+            void CounterBasedDebouncer::ReportFailed()
+            {
+                mFdc = mDefaultValues.failedThreshold;
+                SetEventStatus(EventStatus::kFailed);
             }
 
             void CounterBasedDebouncer::Freeze()

@@ -40,8 +40,14 @@ namespace ara
                 /// @brief Report pre-passed of the monitored event
                 virtual void ReportPrepassed() = 0;
 
+                /// @brief Report finally passed of the monitored event
+                virtual void ReportPassed() = 0;
+
                 /// @brief Report pre-failed of the monitored event
                 virtual void ReportPrefailed() = 0;
+
+                /// @brief Report finally failed of the monitored event
+                virtual void ReportFailed() = 0;
 
                 /// @brief Freeze the debouncing mechanism
                 virtual void Freeze() = 0;

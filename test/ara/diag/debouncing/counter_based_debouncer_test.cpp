@@ -23,7 +23,7 @@ namespace ara
                 }
             };
 
-            TEST_F(CounterBasedDebouncerTest, PassWithoutJumpScenario)
+            TEST_F(CounterBasedDebouncerTest, PrepassWithoutJumpScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kPassed};
 
@@ -49,7 +49,7 @@ namespace ara
                 EXPECT_EQ(cExpectedResult, Status);
             }
 
-            TEST_F(CounterBasedDebouncerTest, PassWithJumpScenario)
+            TEST_F(CounterBasedDebouncerTest, PrepassWithJumpScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kPassed};
 
@@ -73,7 +73,25 @@ namespace ara
                 EXPECT_EQ(cExpectedResult, Status);
             }
 
-            TEST_F(CounterBasedDebouncerTest, FailWithoutJumpScenario)
+            TEST_F(CounterBasedDebouncerTest, PassScenario)
+            {
+                const EventStatus cExpectedResult{EventStatus::kPassed};
+
+                CounterBased _defaultValues;
+                _defaultValues.passedThreshold = -75;
+
+                auto _callback{
+                    std::bind(
+                        &CounterBasedDebouncerTest::OnStatusChanged,
+                        this, std::placeholders::_1)};
+
+                CounterBasedDebouncer _debouncer(_callback, _defaultValues);
+
+                _debouncer.ReportPassed(); // FDC: -75
+                EXPECT_EQ(cExpectedResult, Status);
+            }
+
+            TEST_F(CounterBasedDebouncerTest, PrefailWithoutJumpScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kFailed};
 
@@ -99,7 +117,7 @@ namespace ara
                 EXPECT_EQ(cExpectedResult, Status);
             }
 
-            TEST_F(CounterBasedDebouncerTest, FailWithJumpScenario)
+            TEST_F(CounterBasedDebouncerTest, PrefailWithJumpScenario)
             {
                 const EventStatus cExpectedResult{EventStatus::kFailed};
 
@@ -120,6 +138,24 @@ namespace ara
                 EXPECT_NE(cExpectedResult, Status);
 
                 _debouncer.ReportPrefailed(); // FDC: 75
+                EXPECT_EQ(cExpectedResult, Status);
+            }
+
+            TEST_F(CounterBasedDebouncerTest, FailScenario)
+            {
+                const EventStatus cExpectedResult{EventStatus::kFailed};
+
+                CounterBased _defaultValues;
+                _defaultValues.failedThreshold = 75;
+
+                auto _callback{
+                    std::bind(
+                        &CounterBasedDebouncerTest::OnStatusChanged,
+                        this, std::placeholders::_1)};
+
+                CounterBasedDebouncer _debouncer(_callback, _defaultValues);
+
+                _debouncer.ReportFailed(); // FDC: 75
                 EXPECT_EQ(cExpectedResult, Status);
             }
 

@@ -47,7 +47,11 @@ namespace ara
 
                 virtual void ReportPrepassed() override;
 
+                virtual void ReportPassed() override;
+
                 virtual void ReportPrefailed() override;
+
+                virtual void ReportFailed() override;
 
                 virtual void Freeze() override;
 
