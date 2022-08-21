@@ -56,8 +56,8 @@ var NAVTREEINDEX =
 "classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html#a858de139905f589fe488fbde0c42f512",
 "classara_1_1core_1_1Result.html#a5b3ac5f23fe8e0bf7d5bb2dda8e1de5a",
 "classara_1_1diag_1_1SecurityAccess.html#acc24ae3759f3d716143177a50fcdda27",
-"classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d",
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43ab9b3b45ec3363d0ed938e992b3012637"
+"classara_1_1log_1_1LogStream.html#ab02f802e67960b97f549ca3cffaf4696",
+"namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea476a892ab6cf1d534041adb441284c31"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

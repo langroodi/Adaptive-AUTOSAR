@@ -1,5 +1,17 @@
 var NAVTREEINDEX4 =
 {
+"classara_1_1log_1_1LogStream.html#ab02f802e67960b97f549ca3cffaf4696":[1,0,0,4,4,12],
+"classara_1_1log_1_1LogStream.html#ab02f802e67960b97f549ca3cffaf4696":[2,0,0,4,4,12],
+"classara_1_1log_1_1LogStream.html#ab8720260652e399474f8e779bc974351":[1,0,0,4,4,13],
+"classara_1_1log_1_1LogStream.html#ab8720260652e399474f8e779bc974351":[2,0,0,4,4,13],
+"classara_1_1log_1_1LogStream.html#ad2f31a924f549d1743fd709ef73edaa7":[1,0,0,4,4,11],
+"classara_1_1log_1_1LogStream.html#ad2f31a924f549d1743fd709ef73edaa7":[2,0,0,4,4,11],
+"classara_1_1log_1_1Logger.html":[1,0,0,4,2],
+"classara_1_1log_1_1Logger.html":[2,0,0,4,2],
+"classara_1_1log_1_1Logger.html#a041ef11cb2377a589e024ff4c755a371":[2,0,0,4,2,6],
+"classara_1_1log_1_1Logger.html#a041ef11cb2377a589e024ff4c755a371":[1,0,0,4,2,6],
+"classara_1_1log_1_1Logger.html#a071d1ab6f040fc37c25fc6bd995e2188":[2,0,0,4,2,1],
+"classara_1_1log_1_1Logger.html#a071d1ab6f040fc37c25fc6bd995e2188":[1,0,0,4,2,1],
 "classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d":[2,0,0,4,2,0],
 "classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d":[1,0,0,4,2,0],
 "classara_1_1log_1_1Logger.html#a59c1e35e0d653ede25635377e71d9aa3":[2,0,0,4,2,2],
@@ -237,17 +249,5 @@ var NAVTREEINDEX4 =
 "namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52eaab2307ee88e1a27a4e6a82b1301bb204":[1,0,0,2,32,1],
 "namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52eaea6f4955fc205c171ae56b663f66d1cc":[1,0,0,2,32,2],
 "namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275e":[1,0,0,2,37],
-"namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea3be80cbbfd1361d905bd999ee711bd3b":[1,0,0,2,37,2],
-"namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea476a892ab6cf1d534041adb441284c31":[1,0,0,2,37,1],
-"namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea8de531ce661d3cf203b10707af7ba930":[1,0,0,2,37,0],
-"namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275eab5d0fb31ab62b8bbef8ae51d2af8120d":[1,0,0,2,37,3],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43":[1,0,0,2,30],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43a11a98b2b7cfdf4871b0bfd4ef43d2ad3":[1,0,0,2,30,1],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43a2b3557a4cb83cc46f8ae44742113a862":[1,0,0,2,30,10],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43a56848487abce52a19cb4b81590b989e5":[1,0,0,2,30,3],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43a6248d0b28b9d145c1b72fb9e3b1aa6a6":[1,0,0,2,30,2],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43a80fdc050363ea6925fa2e7eb7f0a94a0":[1,0,0,2,30,4],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43a9dae9636360c15ec09edf4d78a9a2516":[1,0,0,2,30,8],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43aa499a25f05756ffda3cf9cb2dfd7016d":[1,0,0,2,30,6],
-"namespaceara_1_1diag.html#ac220d018fcb159ae701b819608c8bd43ab62fa3c9492b6dae76c23d6dfa466611":[1,0,0,2,30,9]
+"namespaceara_1_1diag.html#abb3f1d09f4db06eecc3ab69b3f0e275ea3be80cbbfd1361d905bd999ee711bd3b":[1,0,0,2,37,2]
 };
