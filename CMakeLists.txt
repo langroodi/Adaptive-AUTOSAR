@@ -30,10 +30,17 @@ FetchContent_Declare(
   URL https://github.com/langroodi/OBD-II-Emulator/archive/26537a1ad495e69353e16b3e32683f5e5fe8bcc1.zip
 )
 
+# Fetching  Doip-Lib for DoIP communication
+FetchContent_Declare(
+  Doip-Lib
+  URL https://github.com/langroodi/Doip-Lib/archive/269510a6c43b3754466ed93486fd7cc2c9deee2e.zip
+)
+
 FetchContent_MakeAvailable(
   googletest
   Async-BSD-Socket-Lib
   OBD-II-Emulator
+  Doip-Lib
 )
 
 ########################################################################
@@ -415,6 +422,7 @@ if(build_tests)
     ${test_ara_diag_dir}/ecu_reset_request_test.cpp
     ${test_ara_diag_dir}/generic_routine_test.cpp
     ${test_ara_diag_dir}/monitor_test.cpp
+    ${test_ara_diag_dir}/doip_lib_test.cpp
     ${test_ara_diag_routing_dir}/testable_uds_service.h
     ${test_ara_diag_routing_dir}/uds_service_router_test.cpp
     ${test_ara_diag_routing_dir}/delay_timer_test.cpp
@@ -431,6 +439,7 @@ if(build_tests)
     gtest_main
     async_bsd_socket_lib
     obd_ii_emulator
+    doip_lib
     ara_log
     ara_sm
     ara_exec

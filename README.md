@@ -15,7 +15,7 @@ It will be tried to use minimum number of dependencies as much as possible. The 
 - Google Test: v1.12.1
 - [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary)
 - [OBD-II Emulator](https://github.com/langroodi/OBD-II-Emulator) (in-house C++ emulator)
-
+- [DoIP Lib](https://github.com/langroodi/DoIP-Lib) (in-house C++ libary)
 
 ## Build
 
