@@ -10,7 +10,7 @@ namespace ara
         {
             kOn,        ///< Normal operation mode
             kOff,       ///< Preparation mode for shutdown
-            kSuspend,   ///< Preparation mode for RAM and/or disl suspension
+            kSuspend,   ///< Preparation mode for RAM and/or disk suspension
         };
 
         /// @brief Power mode response message
