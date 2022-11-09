@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1helper_1_1Modelled
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classara_1_1exec_1_1helper_1_1ModelledProcess-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ara::exec::helper::ModelledProcess Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -115,18 +116,117 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1helper_1_1Modelled
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0070928944a49ed4c24da3665f1496f4"><td class="memItemLeft" align="right" valign="top"><a id="a0070928944a49ed4c24da3665f1496f4" name="a0070928944a49ed4c24da3665f1496f4"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> ()=0</td></tr>
-<tr class="memdesc:a0070928944a49ed4c24da3665f1496f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the process model. <br /></td></tr>
-<tr class="separator:a0070928944a49ed4c24da3665f1496f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab415e100838943e59ed8f2b34a422ae3"><td class="memItemLeft" align="right" valign="top"><a id="ab415e100838943e59ed8f2b34a422ae3" name="ab415e100838943e59ed8f2b34a422ae3"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Terminate</b> ()=0</td></tr>
-<tr class="memdesc:ab415e100838943e59ed8f2b34a422ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminate the process model. <br /></td></tr>
-<tr class="separator:ab415e100838943e59ed8f2b34a422ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a61f503b5ef33d12dbb7d4d087c6da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#af1a61f503b5ef33d12dbb7d4d087c6da">Initialize</a> (const std::map&lt; std::string, std::string &gt; &amp;arguments)</td></tr>
+<tr class="memdesc:af1a61f503b5ef33d12dbb7d4d087c6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the process model to run the main block.  <a href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#af1a61f503b5ef33d12dbb7d4d087c6da">More...</a><br /></td></tr>
+<tr class="separator:af1a61f503b5ef33d12dbb7d4d087c6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c714ffce4a3c399a5e7d3a7c207135"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#a32c714ffce4a3c399a5e7d3a7c207135">Terminate</a> ()</td></tr>
+<tr class="memdesc:a32c714ffce4a3c399a5e7d3a7c207135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminate the process model.  <a href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#a32c714ffce4a3c399a5e7d3a7c207135">More...</a><br /></td></tr>
+<tr class="separator:a32c714ffce4a3c399a5e7d3a7c207135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a94fc5653cfa9a92dafd8f94c3568db88"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#a94fc5653cfa9a92dafd8f94c3568db88">Main</a> (const std::atomic_bool *cancellationToken, const std::map&lt; std::string, std::string &gt; &amp;arguments)=0</td></tr>
+<tr class="memdesc:a94fc5653cfa9a92dafd8f94c3568db88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main running block of the process.  <a href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#a94fc5653cfa9a92dafd8f94c3568db88">More...</a><br /></td></tr>
+<tr class="separator:a94fc5653cfa9a92dafd8f94c3568db88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class that models an instance of an Adaptive (Platform) Application executable. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af1a61f503b5ef33d12dbb7d4d087c6da" name="af1a61f503b5ef33d12dbb7d4d087c6da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a61f503b5ef33d12dbb7d4d087c6da">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::exec::helper::ModelledProcess::Initialize </td>
+          <td>(</td>
+          <td class="paramtype">const std::map&lt; std::string, std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arguments</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the process model to run the main block. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arguments</td><td>Initialization arguments keys and their corresponding values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>Main(const std::map&lt;std::string, std::string&gt; &amp;) </dd></dl>
+
+</div>
+</div>
+<a id="a94fc5653cfa9a92dafd8f94c3568db88" name="a94fc5653cfa9a92dafd8f94c3568db88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94fc5653cfa9a92dafd8f94c3568db88">&#9670;&nbsp;</a></span>Main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int ara::exec::helper::ModelledProcess::Main </td>
+          <td>(</td>
+          <td class="paramtype">const std::atomic_bool *&#160;</td>
+          <td class="paramname"><em>cancellationToken</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arguments</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Main running block of the process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arguments</td><td>Initialization arguments keys and their corresponding values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit code </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Exit code zero means the graceful shutdown of the process. </dd></dl>
+
+</div>
+</div>
+<a id="a32c714ffce4a3c399a5e7d3a7c207135" name="a32c714ffce4a3c399a5e7d3a7c207135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c714ffce4a3c399a5e7d3a7c207135">&#9670;&nbsp;</a></span>Terminate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ara::exec::helper::ModelledProcess::Terminate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Terminate the process model. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returned exit code from the main running block </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The caller will blocked until the termination be finished. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
