@@ -293,6 +293,8 @@ add_library(
   ${source_ara_exec_dir}/state_client.cpp
   ${source_ara_exec_helper_dir}/atomic_optional.h
   ${source_ara_exec_helper_dir}/fifo_layer.h
+  ${source_ara_exec_helper_dir}/modelled_process.h
+  ${source_ara_exec_helper_dir}/modelled_process.cpp
 )
 
 add_library(
@@ -402,6 +404,7 @@ if(build_tests)
     ${test_ara_exec_dir}/fifo_abstraction_test.cpp
     ${test_ara_exec_helper_dir}/atomic_optional_test.cpp
     ${test_ara_exec_helper_dir}/mockup_fifo_layer.h
+    ${test_ara_exec_helper_dir}/modelled_process_test.cpp
     ${test_ara_core_dir}/optional_test.cpp
     ${test_ara_core_dir}/result_test.cpp
     ${test_ara_core_dir}/result_void_test.cpp
