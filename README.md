@@ -13,6 +13,7 @@ It will be tried to use minimum number of dependencies as much as possible. The 
     - GCC C/C++ Compiler (x86-64 Linux GNU): 11.2.0; or
     - Clang C/C++ Compiler (x86-64 PC Linux GNU): 14.0.0
 - Google Test: v1.12.1
+- [pugixml 1.13](https://pugixml.org/) (3rd party C++ libary)
 - [Async BSD Socket Lib](https://github.com/langroodi/Async-BSD-Socket-Lib) (in-house C++ libary)
 - [OBD-II Emulator](https://github.com/langroodi/OBD-II-Emulator) (in-house C++ emulator)
 - [DoIP Lib](https://github.com/langroodi/DoIP-Lib) (in-house C++ libary)
