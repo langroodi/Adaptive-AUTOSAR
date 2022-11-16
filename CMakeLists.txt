@@ -53,6 +53,9 @@ option(build_tests "Build all the tests." ON)
 #
 # Source Directories:
 
+set(source_arxml_dir
+  "${CMAKE_SOURCE_DIR}/src/arxml")
+
 set(source_ara_core_dir
   "${CMAKE_SOURCE_DIR}/src/ara/core")
 
@@ -109,6 +112,9 @@ set(source_ara_diag_debouncing_dir
 
 # Test Directories:
 
+set(test_arxml_dir
+  "${CMAKE_SOURCE_DIR}/test/arxml")
+
 set(test_ara_core_dir
   "${CMAKE_SOURCE_DIR}/test/ara/core")
 
@@ -155,6 +161,15 @@ set(test_ara_diag_debouncing_dir
   "${CMAKE_SOURCE_DIR}/test/ara/diag/debouncing")
 
 ########################################################################
+
+add_library(
+  arxml
+  ${source_arxml_dir}/pugiconfig.hpp
+  ${source_arxml_dir}/pugixml.hpp
+  ${source_arxml_dir}/pugixml.cpp
+  ${source_arxml_dir}/arxml_reader.h
+  ${source_arxml_dir}/arxml_reader.cpp
+)
 
 add_library(
   ara_core
@@ -370,6 +385,11 @@ if(build_tests)
   enable_testing()
 
   add_executable(
+    arxml_unit_test
+    ${test_arxml_dir}/arxml_reader_test.cpp
+  )
+
+  add_executable(
     ara_unit_test
     ${test_ara_log_dir}/argument_test.cpp
     ${test_ara_log_dir}/log_stream_test.cpp
@@ -438,6 +458,12 @@ if(build_tests)
   )
 
   target_link_libraries(
+    arxml_unit_test
+    gtest_main
+    arxml
+  )
+
+  target_link_libraries(
     ara_unit_test
     gtest_main
     async_bsd_socket_lib
@@ -450,5 +476,6 @@ if(build_tests)
   )
 
   include(GoogleTest)
+  gtest_discover_tests(arxml_unit_test)
   gtest_discover_tests(ara_unit_test)
  endif()
