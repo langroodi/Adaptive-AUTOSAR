@@ -5,5 +5,6 @@ var searchData=
   ['addfirstoption_2',['AddFirstOption',['../classara_1_1com_1_1entry_1_1Entry.html#a25da81fc9993fc85a70c60e85fbb4861',1,'ara::com::entry::Entry']]],
   ['addsecondoption_3',['AddSecondOption',['../classara_1_1com_1_1entry_1_1Entry.html#a167270fade2dd5972610c4e2f99ecf47',1,'ara::com::entry::Entry']]],
   ['argument_4',['Argument',['../classara_1_1log_1_1Argument.html#a788647014d39391ac11572968419af23',1,'ara::log::Argument']]],
-  ['atomicoptional_5',['AtomicOptional',['../classara_1_1exec_1_1helper_1_1AtomicOptional.html#a039fc36aee09ccd898768e3dd47dc57c',1,'ara::exec::helper::AtomicOptional']]]
+  ['arxmlreader_5',['ArxmlReader',['../classarxml_1_1ArxmlReader.html#ab1867204e198bf7f68c9ffeefef7a2da',1,'arxml::ArxmlReader::ArxmlReader(const std::string &amp;filePath)'],['../classarxml_1_1ArxmlReader.html#a0677c7538ca92f0fbe2c8f5692d08b5e',1,'arxml::ArxmlReader::ArxmlReader(const char *content, std::size_t length)']]],
+  ['atomicoptional_6',['AtomicOptional',['../classara_1_1exec_1_1helper_1_1AtomicOptional.html#a039fc36aee09ccd898768e3dd47dc57c',1,'ara::exec::helper::AtomicOptional']]]
 ];
