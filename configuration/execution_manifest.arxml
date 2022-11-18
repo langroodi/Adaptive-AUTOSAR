@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_00050.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>ExecutionManifest</SHORT-NAME>
+            <ELEMENTS>
+                <FUNCTION-GROUPS>
+                    <FUNCTION-GROUP>
+                        <SHORT-NAME>MachineFG</SHORT-NAME>
+                        <MODE-DECLARATION-GROUP>
+                            <INITIAL-MODE-REF DEST="MODE-DECLARATION">Off</INITIAL-MODE-REF>
+                            <MODE-DECLARATIONS>
+                                <MODE-DECLARATION>
+                                    <SHORT-NAME>Off</SHORT-NAME>
+                                </MODE-DECLARATION>
+                                <MODE-DECLARATION>
+                                    <SHORT-NAME>StartUp</SHORT-NAME>
+                                </MODE-DECLARATION>
+                            <MODE-DECLARATIONS>
+                        </MODE-DECLARATION-GROUP>
+                    <FUNCTION-GROUP>
+                <FUNCTION-GROUPS>        
+            </ELEMENTS>
+        <AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>
