@@ -12,5 +12,6 @@ var searchData=
   ['execerrordomain_9',['ExecErrorDomain',['../classara_1_1exec_1_1ExecErrorDomain.html',1,'ara::exec']]],
   ['execexception_10',['ExecException',['../classara_1_1exec_1_1ExecException.html',1,'ara::exec']]],
   ['executionclient_11',['ExecutionClient',['../classara_1_1exec_1_1ExecutionClient.html',1,'ara::exec']]],
-  ['executionerrorevent_12',['ExecutionErrorEvent',['../structara_1_1exec_1_1ExecutionErrorEvent.html',1,'ara::exec']]]
+  ['executionerrorevent_12',['ExecutionErrorEvent',['../structara_1_1exec_1_1ExecutionErrorEvent.html',1,'ara::exec']]],
+  ['executionmanagement_13',['ExecutionManagement',['../classapplication_1_1platform_1_1ExecutionManagement.html',1,'application::platform']]]
 ];

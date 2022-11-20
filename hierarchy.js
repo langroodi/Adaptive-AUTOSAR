@@ -98,7 +98,10 @@ var hierarchy =
       [ "ara::com::someip::sd::fsm::NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", null ]
     ] ],
     [ "ara::diag::MetaInfo", "classara_1_1diag_1_1MetaInfo.html", null ],
-    [ "ara::exec::helper::ModelledProcess", "classara_1_1exec_1_1helper_1_1ModelledProcess.html", null ],
+    [ "ara::exec::helper::ModelledProcess", "classara_1_1exec_1_1helper_1_1ModelledProcess.html", [
+      [ "application::platform::ExecutionManagement", "classapplication_1_1platform_1_1ExecutionManagement.html", null ],
+      [ "application::platform::StateManagement", "classapplication_1_1platform_1_1StateManagement.html", null ]
+    ] ],
     [ "ara::diag::Monitor", "classara_1_1diag_1_1Monitor.html", null ],
     [ "name_null_sentry", "structname__null__sentry.html", null ],
     [ "namespace_uri_predicate", "structnamespace__uri__predicate.html", null ],

@@ -17,8 +17,9 @@ var searchData=
   ['someipsdmessage_14',['SomeIpSdMessage',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html',1,'ara::com::someip::sd']]],
   ['someipsdserver_15',['SomeIpSdServer',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdServer.html',1,'ara::com::someip::sd']]],
   ['stateclient_16',['StateClient',['../classara_1_1exec_1_1StateClient.html',1,'ara::exec']]],
-  ['stoppedstate_17',['StoppedState',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html',1,'ara::com::someip::sd::fsm']]],
-  ['strconv_5fattribute_5fimpl_18',['strconv_attribute_impl',['../structstrconv__attribute__impl.html',1,'']]],
-  ['strconv_5fpcdata_5fimpl_19',['strconv_pcdata_impl',['../structstrconv__pcdata__impl.html',1,'']]],
-  ['subscribedstate_20',['SubscribedState',['../classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html',1,'ara::com::someip::pubsub::fsm']]]
+  ['statemanagement_17',['StateManagement',['../classapplication_1_1platform_1_1StateManagement.html',1,'application::platform']]],
+  ['stoppedstate_18',['StoppedState',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html',1,'ara::com::someip::sd::fsm']]],
+  ['strconv_5fattribute_5fimpl_19',['strconv_attribute_impl',['../structstrconv__attribute__impl.html',1,'']]],
+  ['strconv_5fpcdata_5fimpl_20',['strconv_pcdata_impl',['../structstrconv__pcdata__impl.html',1,'']]],
+  ['subscribedstate_21',['SubscribedState',['../classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html',1,'ara::com::someip::pubsub::fsm']]]
 ];
