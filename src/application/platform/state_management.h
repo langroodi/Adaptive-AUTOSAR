@@ -9,6 +9,7 @@ namespace application
 {
     namespace platform
     {
+        /// @brief State managment modelled process
         class StateManagement : public ara::exec::helper::ModelledProcess
         {
         private:

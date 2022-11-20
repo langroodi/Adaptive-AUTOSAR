@@ -23,12 +23,17 @@ namespace application
 
             _logStream << "Execution management has been initialized.";
             mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
-            
+
             mStateManagement.Initialize(arguments);
 
-            while (!cancellationToken->load())
+            ara::exec::ActivationReturnType _activationReturn{
+                ara::exec::ActivationReturnType::kInit};
+
+            while (!cancellationToken->load() &&
+                   _activationReturn != ara::exec::ActivationReturnType::kTerminate)
             {
-                mDeterministicClient.WaitForActivation();
+                auto _activationReturnResult{mDeterministicClient.WaitForActivation()};
+                _activationReturn = _activationReturnResult.Value();
 
                 ///@todo Execution management logic here
             }

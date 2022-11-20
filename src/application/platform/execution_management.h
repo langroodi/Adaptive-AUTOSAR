@@ -3,10 +3,13 @@
 
 #include "./state_management.h"
 
+/// @brief AUTOSAR application namespace
 namespace application
 {
+    /// @brief AUTOSAR platform application namespace
     namespace platform
     {
+        /// @brief Execution managment modelled process
         class ExecutionManagement : public ara::exec::helper::ModelledProcess
         {
         private:
