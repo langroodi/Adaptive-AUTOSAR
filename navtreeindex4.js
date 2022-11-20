@@ -204,6 +204,8 @@ var NAVTREEINDEX4 =
 "functions_w.html":[2,3,0,20],
 "hierarchy.html":[2,2],
 "index.html":[],
+"namespaceapplication.html":[1,0,0],
+"namespaceapplication_1_1platform.html":[1,0,0,0],
 "namespaceara_1_1com_1_1entry.html":[1,0,1,0,1],
 "namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171e":[1,0,1,0,1,4],
 "namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171eaae54f8374e019ce8a7d61c839bd307b8":[1,0,1,0,1,4,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c":[1,0,1,0,3,4],
 "namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34ca30b7fdeebc36988717d0e274cc2e7520":[1,0,1,0,3,4,0],
 "namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34ca81baba40274ccb30f9fdfa2c73cf0482":[1,0,1,0,3,4,1],
-"namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html":[1,0,1,0,4,1,0],
-"namespaceara_1_1core.html":[1,0,1,1],
-"namespaceara_1_1core.html#a69909abdb2676d59dfad529520de9d76":[1,0,1,1,11]
+"namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html":[1,0,1,0,4,1,0]
 };
