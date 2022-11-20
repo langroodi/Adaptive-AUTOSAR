@@ -53,6 +53,9 @@ option(build_tests "Build all the tests." ON)
 #
 # Source Directories:
 
+set(source_dir
+  "${CMAKE_SOURCE_DIR}/src")
+
 set(source_arxml_dir
   "${CMAKE_SOURCE_DIR}/src/arxml")
 
@@ -109,6 +112,9 @@ set(source_ara_diag_routing_dir
 
 set(source_ara_diag_debouncing_dir
   "${CMAKE_SOURCE_DIR}/src/ara/diag/debouncing")
+
+set(source_application_platform_dir
+  "${CMAKE_SOURCE_DIR}/src/application/platform")
 
 # Test Directories:
 
@@ -379,6 +385,21 @@ target_link_libraries(
 target_link_libraries(
   ara_diag
   ara_core
+)
+
+add_executable(
+  adaptive_autosar
+  ${source_dir}/main.cpp
+  ${source_application_platform_dir}/state_management.h
+  ${source_application_platform_dir}/state_management.cpp
+  ${source_application_platform_dir}/execution_management.h
+  ${source_application_platform_dir}/execution_management.cpp
+)
+
+target_link_libraries(
+  adaptive_autosar
+  ara_exec
+  ara_log
 )
 
 if(build_tests)

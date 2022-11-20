@@ -1,5 +1,4 @@
 #include <stdexcept>
-#include <iostream>
 #include "./arxml_reader.h"
 
 namespace arxml
