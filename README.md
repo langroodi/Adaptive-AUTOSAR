@@ -41,6 +41,12 @@ cmake --build build
 cd build && ctest
 ```
 
+## Run
+To run the Adaptive AUTOSAR simulation, launch the following executable without any argument:
+```bash
+./build/adaptive_autosar
+```
+
 ## Documentation
 
 Please refer to [the project GitHub pages](https://langroodi.github.io/Adaptive-AUTOSAR/) powered by Doxygen.
