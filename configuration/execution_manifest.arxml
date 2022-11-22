@@ -16,11 +16,11 @@
                                 <MODE-DECLARATION>
                                     <SHORT-NAME>StartUp</SHORT-NAME>
                                 </MODE-DECLARATION>
-                            <MODE-DECLARATIONS>
+                            </MODE-DECLARATIONS>
                         </MODE-DECLARATION-GROUP>
-                    <FUNCTION-GROUP>
-                <FUNCTION-GROUPS>        
+                    </FUNCTION-GROUP>
+                </FUNCTION-GROUPS>        
             </ELEMENTS>
-        <AR-PACKAGE>
+        </AR-PACKAGE>
     </AR-PACKAGES>
 </AUTOSAR>
