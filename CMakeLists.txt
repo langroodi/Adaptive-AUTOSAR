@@ -398,6 +398,7 @@ add_executable(
 
 target_link_libraries(
   adaptive_autosar
+  arxml
   ara_exec
   ara_log
 )

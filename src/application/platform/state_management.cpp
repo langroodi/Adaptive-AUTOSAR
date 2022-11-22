@@ -1,4 +1,5 @@
 #include "./state_management.h"
+#include "../../arxml/arxml_reader.h"
 
 namespace application
 {
@@ -20,7 +21,12 @@ namespace application
             const std::map<std::string, std::string> &arguments)
         {
             const int cSuccessfulExitCode{0};
+            const std::string cConfigArgument{"config"};
+
             ara::log::LogStream _logStream;
+
+            std::string _configFilepath{arguments.at(cConfigArgument)};
+            arxml::ArxmlReader _arxmlReader(_configFilepath);
 
             _logStream << "State management has been initialized.";
             mLoggingFramework->Log(mLogger, cLogLevel, _logStream);

@@ -42,9 +42,9 @@ cd build && ctest
 ```
 
 ## Run
-To run the Adaptive AUTOSAR simulation, launch the following executable without any argument:
+To run the Adaptive AUTOSAR simulation, launch the following executable by passing the execution manifest file path as the argument:
 ```bash
-./build/adaptive_autosar
+./build/adaptive_autosar ./configuration/execution_manifest.arxml
 ```
 
 ## Documentation
