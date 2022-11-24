@@ -57,4 +57,18 @@ namespace arxml
 
         return _result;
     }
+
+    std::string ArxmlReader::GetText(
+        std::initializer_list<std::string> children) const
+    {
+        pugi::xml_node _root{mDocument.root()};
+
+        for (auto &&child : children)
+        {
+            _root = _root.child(child.c_str());
+        }
+
+        std::string _result{_root.text().as_string()};
+        return _result;
+    }
 }
