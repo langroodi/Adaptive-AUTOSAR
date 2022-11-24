@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0677c7538ca92f0fbe2c8f5692d08b5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlReader.html#a0677c7538ca92f0fbe2c8f5692d08b5e">ArxmlReader</a> (const char *content, std::size_t length)</td></tr>
 <tr class="memdesc:a0677c7538ca92f0fbe2c8f5692d08b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classarxml_1_1ArxmlReader.html#a0677c7538ca92f0fbe2c8f5692d08b5e">More...</a><br /></td></tr>
 <tr class="separator:a0677c7538ca92f0fbe2c8f5692d08b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71756ccff508d432558ecc4bfb14e3c2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlReader.html#a71756ccff508d432558ecc4bfb14e3c2">GetText</a> (std::initializer_list&lt; std::string &gt; children) const</td></tr>
+<tr class="memdesc:a71756ccff508d432558ecc4bfb14e3c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the XML text from down deep the childern nodes.  <a href="classarxml_1_1ArxmlReader.html#a71756ccff508d432558ecc4bfb14e3c2">More...</a><br /></td></tr>
+<tr class="separator:a71756ccff508d432558ecc4bfb14e3c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class to read ARXML configuration files. </p>
@@ -199,6 +202,34 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a71756ccff508d432558ecc4bfb14e3c2" name="a71756ccff508d432558ecc4bfb14e3c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71756ccff508d432558ecc4bfb14e3c2">&#9670;&nbsp;</a></span>GetText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string arxml::ArxmlReader::GetText </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>children</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the XML text from down deep the childern nodes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">children</td><td>Sequential children nodes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>XML end child textual value </dd></dl>
 
 </div>
 </div>

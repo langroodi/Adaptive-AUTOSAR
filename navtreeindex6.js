@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"structnot__equal__to.html":[2,0,16],
+"structopt__false.html":[2,0,17],
 "structopt__true.html":[2,0,18],
 "structpugi_1_1xml__attribute__struct.html":[2,0,3,2],
 "structpugi_1_1xml__attribute__struct.html":[1,0,3,2],
@@ -54,6 +56,6 @@ var NAVTREEINDEX6 =
 "":[1,0,1],
 "":[1,0,1,0,4,0,0],
 "":[1,0,1,0,4,1],
-"":[1,0,1,4,0],
-"":[1,0,3]
+"":[1,0,3],
+"":[1,0,1,4,0]
 };

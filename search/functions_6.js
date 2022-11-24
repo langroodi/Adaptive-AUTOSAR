@@ -41,7 +41,8 @@ var searchData=
   ['getsid_38',['GetSid',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#a23be8ed1fb72df2d1ee725cd059302eb',1,'ara::diag::routing::RoutableUdsService']]],
   ['getstate_39',['GetState',['../classara_1_1com_1_1helper_1_1FiniteStateMachine.html#a9fc253f218ce7ae02b7b47231eb8dd55',1,'ara::com::helper::FiniteStateMachine::GetState()'],['../classara_1_1com_1_1helper_1_1MachineState.html#a3a298e73b9863244e21ed83bb719f1c9',1,'ara::com::helper::MachineState::GetState()'],['../classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html#a2f2e39ca5ac0393957e26ab0c7cbb7d7',1,'ara::com::someip::pubsub::SomeIpPubSubServer::GetState()'],['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a4846674ca962facd2f182f277236b476',1,'ara::com::someip::sd::SomeIpSdAgent::GetState()'],['../classara_1_1exec_1_1FunctionGroupState.html#a4136074a9dd78eb219fe5f6e536fb325',1,'ara::exec::FunctionGroupState::GetState()']]],
   ['gettestcomplete_40',['GetTestComplete',['../classara_1_1diag_1_1Event.html#afe70ef940174c50d0534087fd92c6f3b',1,'ara::diag::Event']]],
-  ['gettimestamp_41',['GetTimestamp',['../classara_1_1log_1_1sink_1_1LogSink.html#a8b7aced88e5cef48d8403ffdb308989a',1,'ara::log::sink::LogSink']]],
-  ['gettrigger_42',['GetTrigger',['../classara_1_1sm_1_1TriggerIn.html#abf42f1da349ef8b50d8f9469caf8be06',1,'ara::sm::TriggerIn::GetTrigger()'],['../classara_1_1sm_1_1TriggerInOut.html#a26f09fc24e10efffb5dba1740d60dec8',1,'ara::sm::TriggerInOut::GetTrigger()']]],
-  ['getvalue_43',['GetValue',['../classara_1_1diag_1_1MetaInfo.html#a57fc19a42c52c33ae0778dfd47380401',1,'ara::diag::MetaInfo']]]
+  ['gettext_41',['GetText',['../classarxml_1_1ArxmlReader.html#a71756ccff508d432558ecc4bfb14e3c2',1,'arxml::ArxmlReader']]],
+  ['gettimestamp_42',['GetTimestamp',['../classara_1_1log_1_1sink_1_1LogSink.html#a8b7aced88e5cef48d8403ffdb308989a',1,'ara::log::sink::LogSink']]],
+  ['gettrigger_43',['GetTrigger',['../classara_1_1sm_1_1TriggerIn.html#abf42f1da349ef8b50d8f9469caf8be06',1,'ara::sm::TriggerIn::GetTrigger()'],['../classara_1_1sm_1_1TriggerInOut.html#a26f09fc24e10efffb5dba1740d60dec8',1,'ara::sm::TriggerInOut::GetTrigger()']]],
+  ['getvalue_44',['GetValue',['../classara_1_1diag_1_1MetaInfo.html#a57fc19a42c52c33ae0778dfd47380401',1,'ara::diag::MetaInfo']]]
 ];
