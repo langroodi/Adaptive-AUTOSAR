@@ -116,9 +116,9 @@ $(document).ready(function(){initNavTree('arxml__reader_8h_source.html',''); ini
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classarxml_1_1ArxmlReader.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classarxml_1_1ArxmlReader.html">ArxmlReader</a></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_class" href="classpugi_1_1xml__document.html">pugi::xml_document</a> mDocument;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        pugi::xml_document mDocument;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">bool</span> validate(<span class="keyword">const</span> <a class="code hl_struct" href="structpugi_1_1xml__parse__result.html">pugi::xml_parse_result</a> &amp;parseResult) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordtype">bool</span> validate(<span class="keyword">const</span> pugi::xml_parse_result &amp;parseResult) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">explicit</span> <a class="code hl_class" href="classarxml_1_1ArxmlReader.html">ArxmlReader</a>(<span class="keyword">const</span> std::string &amp;filePath);</div>
@@ -135,9 +135,7 @@ $(document).ready(function(){initNavTree('arxml__reader_8h_source.html',''); ini
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassarxml_1_1ArxmlReader_html"><div class="ttname"><a href="classarxml_1_1ArxmlReader.html">arxml::ArxmlReader</a></div><div class="ttdoc">A class to read ARXML configuration files.</div><div class="ttdef"><b>Definition:</b> arxml_reader.h:13</div></div>
 <div class="ttc" id="aclassarxml_1_1ArxmlReader_html_a71756ccff508d432558ecc4bfb14e3c2"><div class="ttname"><a href="classarxml_1_1ArxmlReader.html#a71756ccff508d432558ecc4bfb14e3c2">arxml::ArxmlReader::GetText</a></div><div class="ttdeci">std::string GetText(std::initializer_list&lt; std::string &gt; children) const</div><div class="ttdoc">Get the XML text from down deep the childern nodes.</div><div class="ttdef"><b>Definition:</b> arxml_reader.cpp:61</div></div>
-<div class="ttc" id="aclasspugi_1_1xml__document_html"><div class="ttname"><a href="classpugi_1_1xml__document.html">pugi::xml_document</a></div><div class="ttdef"><b>Definition:</b> pugixml.hpp:1030</div></div>
 <div class="ttc" id="anamespacearxml_html"><div class="ttname"><a href="namespacearxml.html">arxml</a></div><div class="ttdoc">AUTOSAR XML (ARXML) configuration files utilities namespace.</div><div class="ttdef"><b>Definition:</b> arxml_reader.cpp:5</div></div>
-<div class="ttc" id="astructpugi_1_1xml__parse__result_html"><div class="ttname"><a href="structpugi_1_1xml__parse__result.html">pugi::xml_parse_result</a></div><div class="ttdef"><b>Definition:</b> pugixml.hpp:1008</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

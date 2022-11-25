@@ -36,29 +36,5 @@ var namespaces_dup =
       [ "log", "namespaceara_1_1log.html", "namespaceara_1_1log" ],
       [ "sm", "namespaceara_1_1sm.html", "namespaceara_1_1sm" ]
     ] ],
-    [ "arxml", "namespacearxml.html", "namespacearxml" ],
-    [ "pugi", null, [
-      [ "xml_attribute", "classpugi_1_1xml__attribute.html", null ],
-      [ "xml_attribute_iterator", "classpugi_1_1xml__attribute__iterator.html", null ],
-      [ "xml_attribute_struct", "structpugi_1_1xml__attribute__struct.html", null ],
-      [ "xml_document", "classpugi_1_1xml__document.html", null ],
-      [ "xml_named_node_iterator", "classpugi_1_1xml__named__node__iterator.html", null ],
-      [ "xml_node", "classpugi_1_1xml__node.html", null ],
-      [ "xml_node_iterator", "classpugi_1_1xml__node__iterator.html", null ],
-      [ "xml_node_struct", "structpugi_1_1xml__node__struct.html", null ],
-      [ "xml_object_range", "classpugi_1_1xml__object__range.html", null ],
-      [ "xml_parse_result", "structpugi_1_1xml__parse__result.html", null ],
-      [ "xml_text", "classpugi_1_1xml__text.html", null ],
-      [ "xml_tree_walker", "classpugi_1_1xml__tree__walker.html", null ],
-      [ "xml_writer", "classpugi_1_1xml__writer.html", null ],
-      [ "xml_writer_file", "classpugi_1_1xml__writer__file.html", null ],
-      [ "xml_writer_stream", "classpugi_1_1xml__writer__stream.html", null ],
-      [ "xpath_exception", "classpugi_1_1xpath__exception.html", null ],
-      [ "xpath_node", "classpugi_1_1xpath__node.html", null ],
-      [ "xpath_node_set", "classpugi_1_1xpath__node__set.html", null ],
-      [ "xpath_parse_result", "structpugi_1_1xpath__parse__result.html", null ],
-      [ "xpath_query", "classpugi_1_1xpath__query.html", null ],
-      [ "xpath_variable", "classpugi_1_1xpath__variable.html", null ],
-      [ "xpath_variable_set", "classpugi_1_1xpath__variable__set.html", null ]
-    ] ]
+    [ "arxml", "namespacearxml.html", "namespacearxml" ]
 ];

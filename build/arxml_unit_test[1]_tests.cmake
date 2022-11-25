@@ -1,0 +1,7 @@
+add_test([=[ArmxlReaderTest.ValidConstruction]=]  /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/arxml_unit_test [==[--gtest_filter=ArmxlReaderTest.ValidConstruction]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ArmxlReaderTest.ValidConstruction]=]  PROPERTIES WORKING_DIRECTORY /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[ArmxlReaderTest.InvalidVersionConstruction]=]  /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/arxml_unit_test [==[--gtest_filter=ArmxlReaderTest.InvalidVersionConstruction]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ArmxlReaderTest.InvalidVersionConstruction]=]  PROPERTIES WORKING_DIRECTORY /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+add_test([=[ArmxlReaderTest.GetTextMethod]=]  /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/arxml_unit_test [==[--gtest_filter=ArmxlReaderTest.GetTextMethod]==] --gtest_also_run_disabled_tests)
+set_tests_properties([=[ArmxlReaderTest.GetTextMethod]=]  PROPERTIES WORKING_DIRECTORY /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
+set(  arxml_unit_test_TESTS ArmxlReaderTest.ValidConstruction ArmxlReaderTest.InvalidVersionConstruction ArmxlReaderTest.GetTextMethod)
