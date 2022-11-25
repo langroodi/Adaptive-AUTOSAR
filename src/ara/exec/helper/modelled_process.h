@@ -24,6 +24,7 @@ namespace ara
 
                 /// @brief Main running block of the process
                 /// @param arguments Initialization arguments keys and their corresponding values
+                /// @param cancellationToken Token to be for cancelling the main cycle
                 /// @return Exit code
                 /// @note Exit code zero means the graceful shutdown of the process.
                 virtual int Main(
