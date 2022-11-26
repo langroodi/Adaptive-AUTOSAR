@@ -173,6 +173,10 @@ add_library(
   ${source_arxml_dir}/pugiconfig.hpp
   ${source_arxml_dir}/pugixml.hpp
   ${source_arxml_dir}/pugixml.cpp
+  ${source_arxml_dir}/arxml_node.h
+  ${source_arxml_dir}/arxml_node.cpp
+  ${source_arxml_dir}/arxml_node_iterator.h
+  ${source_arxml_dir}/arxml_node_range.h
   ${source_arxml_dir}/arxml_reader.h
   ${source_arxml_dir}/arxml_reader.cpp
 )
@@ -408,6 +412,7 @@ if(build_tests)
 
   add_executable(
     arxml_unit_test
+    ${test_arxml_dir}/arxml_node_test.cpp
     ${test_arxml_dir}/arxml_reader_test.cpp
   )
 

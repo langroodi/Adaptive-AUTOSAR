@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <utility>
 #include "./arxml_reader.h"
 
 namespace arxml
@@ -40,6 +41,7 @@ namespace arxml
         {
             pugi::xml_node _declarationNode{mDocument.child(cXmlChild)};
 
+            // Check the XML version if the document root node is a declaration node
             if (_declarationNode.type() == pugi::xml_node_type::node_declaration)
             {
                 float _version{_declarationNode.attribute(cVersionAttrib).as_float()};
@@ -47,7 +49,7 @@ namespace arxml
             }
             else
             {
-                _result = false;
+                _result = true;
             }
         }
         else
@@ -58,7 +60,7 @@ namespace arxml
         return _result;
     }
 
-    std::string ArxmlReader::GetText(
+    ArxmlNode ArxmlReader::GetRootNode(
         std::initializer_list<std::string> children) const
     {
         pugi::xml_node _root{mDocument.root()};
@@ -68,7 +70,23 @@ namespace arxml
             _root = _root.child(child.c_str());
         }
 
-        std::string _result{_root.text().as_string()};
+        ArxmlNode _result(std::move(_root));
+        return _result;
+    }
+
+    ArxmlNodeRange ArxmlReader::GetNodes(
+        std::initializer_list<std::string> children) const
+    {
+        pugi::xml_node _root{mDocument.root()};
+
+        for (auto &&child : children)
+        {
+            _root = _root.child(child.c_str());
+        }
+
+        auto _range{_root.children()};
+        ArxmlNodeRange _result(_range.begin(), _range.end());
+
         return _result;
     }
 }
