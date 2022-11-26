@@ -1,2 +1,0 @@
-/usr/bin/ar qc libarxml.a CMakeFiles/arxml.dir/src/arxml/pugixml.cpp.o CMakeFiles/arxml.dir/src/arxml/arxml_reader.cpp.o
-/usr/bin/ranlib libarxml.a

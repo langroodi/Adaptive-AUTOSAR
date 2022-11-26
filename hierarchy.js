@@ -4,6 +4,9 @@ var hierarchy =
       [ "ara::com::helper::FiniteStateMachine< T >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ]
     ] ],
     [ "ara::log::Argument< T >", "classara_1_1log_1_1Argument.html", null ],
+    [ "arxml::ArxmlNode", "classarxml_1_1ArxmlNode.html", null ],
+    [ "arxml::ArxmlNodeIterator", "classarxml_1_1ArxmlNodeIterator.html", null ],
+    [ "arxml::ArxmlNodeRange", "classarxml_1_1ArxmlNodeRange.html", null ],
     [ "arxml::ArxmlReader", "classarxml_1_1ArxmlReader.html", null ],
     [ "ara::exec::helper::AtomicOptional< T >", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", null ],
     [ "ara::diag::CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", null ],
