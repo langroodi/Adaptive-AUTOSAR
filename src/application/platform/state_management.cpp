@@ -1,3 +1,4 @@
+#include <utility>
 #include "./state_management.h"
 #include "../../arxml/arxml_reader.h"
 
@@ -16,6 +17,27 @@ namespace application
         {
         }
 
+        void StateManagement::parseManifest(const std::string &configFilepath)
+        {
+            arxml::ArxmlReader _arxmlReader(configFilepath);
+
+            arxml::ArxmlNodeRange _functionGroupNodes{
+                _arxmlReader.GetNodes(
+                    {"AUTOSAR", "AR-PACKAGES", "AR-PACKAGE", "ELEMENTS", "FUNCTION-GROUPS"})};
+
+            for (auto functionGroupNode : _functionGroupNodes)
+            {
+                std::string _shortName{functionGroupNode.GetShortName()};
+
+                mFunctionGroups.push_back(
+                    std::move(ara::exec::FunctionGroup::Create(_shortName).Value()));
+
+                ara::log::LogStream _logStream;
+                _logStream << "Function group: " << _shortName << " is configured.";
+                mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+            }
+        }
+
         int StateManagement::Main(
             const std::atomic_bool *cancellationToken,
             const std::map<std::string, std::string> &arguments)
@@ -26,7 +48,7 @@ namespace application
             ara::log::LogStream _logStream;
 
             std::string _configFilepath{arguments.at(cConfigArgument)};
-            arxml::ArxmlReader _arxmlReader(_configFilepath);
+            parseManifest(_configFilepath);
 
             _logStream << "State management has been initialized.";
             mLoggingFramework->Log(mLogger, cLogLevel, _logStream);

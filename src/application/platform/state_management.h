@@ -3,6 +3,7 @@
 
 #include "../../ara/exec/helper/modelled_process.h"
 #include "../../ara/exec/deterministic_client.h"
+#include "../../ara/exec/state_client.h"
 #include "../../ara/log/logging_framework.h"
 
 namespace application
@@ -22,6 +23,9 @@ namespace application
             ara::exec::DeterministicClient mDeterministicClient;
             ara::log::LoggingFramework *mLoggingFramework;
             ara::log::Logger mLogger;
+            std::vector<ara::exec::FunctionGroup> mFunctionGroups;
+
+            void parseManifest(const std::string &configFilepath);
 
         protected:
             int Main(
