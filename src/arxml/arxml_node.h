@@ -32,6 +32,10 @@ namespace arxml
         bool TryGetReference(
             const std::string &sourceNode, const std::string &destinationType,
             std::string &referenceNode) const;
+
+        /// @brief Get XML content of the node
+        /// @return XML content including the node itself
+        std::string GetContent() const;
     };
 }
 

@@ -1,4 +1,5 @@
 #include <utility>
+#include <sstream>
 #include "./arxml_node.h"
 
 namespace arxml
@@ -34,6 +35,15 @@ namespace arxml
         {
             _result = false;
         }
+
+        return _result;
+    }
+
+    std::string ArxmlNode::GetContent() const
+    {
+        std::stringstream _stringStream;
+        mNode.print(_stringStream);
+        std::string _result{_stringStream.str()};
 
         return _result;
     }

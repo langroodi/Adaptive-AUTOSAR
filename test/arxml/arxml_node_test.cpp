@@ -60,4 +60,20 @@ namespace arxml
         std::string _actualResult;
         EXPECT_FALSE(_node.TryGetReference(cSourceNode, cDestinationType, _actualResult));
     }
+
+    TEST(ArmxlNodeTest, GetContentMethod)
+    {
+        const std::string cExpectedResult{
+            "<AR-PACKAGE>\n\t<SHORT-NAME>pkg</SHORT-NAME>\n</AR-PACKAGE>\n"};
+        const std::string cContent =
+            "<AR-PACKAGES>" + cExpectedResult + "</AR-PACKAGES>";
+
+        ArxmlReader _reader(cContent.c_str(), cContent.length());
+        ArxmlNode _node{
+            _reader.GetRootNode(
+                {"AR-PACKAGES", "AR-PACKAGE"})};
+        std::string _actualResult{_node.GetContent()};
+
+        EXPECT_EQ(cExpectedResult, _actualResult);
+    }
 }
