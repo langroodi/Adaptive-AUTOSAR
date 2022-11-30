@@ -24,8 +24,12 @@ namespace application
             ara::log::LoggingFramework *mLoggingFramework;
             ara::log::Logger mLogger;
             std::vector<ara::exec::FunctionGroup> mFunctionGroups;
+            std::vector<ara::exec::FunctionGroupState> mFunctionGroupStates;
 
-            void parseManifest(const std::string &configFilepath);
+            void configureStates(
+                const ara::exec::FunctionGroup &functionGroup,
+                std::string &&functionGroupContent);
+            void configureFunctionGroups(const std::string &configFilepath);
 
         protected:
             int Main(

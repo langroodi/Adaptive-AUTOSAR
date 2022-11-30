@@ -17,7 +17,35 @@ namespace application
         {
         }
 
-        void StateManagement::parseManifest(const std::string &configFilepath)
+        void StateManagement::configureStates(
+            const ara::exec::FunctionGroup &functionGroup,
+            std::string &&functionGroupContent)
+        {
+            arxml::ArxmlReader _arxmlReader(
+                functionGroupContent.c_str(), functionGroupContent.length());
+
+            arxml::ArxmlNodeRange _functionGroupStateNodes{
+                _arxmlReader.GetNodes(
+                    {"FUNCTION-GROUP", "MODE-DECLARATION-GROUP", "MODE-DECLARATIONS"})};
+
+            for (auto functionGroupStateNode : _functionGroupStateNodes)
+            {
+                std::string _shortName{functionGroupStateNode.GetShortName()};
+
+                mFunctionGroupStates.push_back(
+                    std::move(
+                        ara::exec::FunctionGroupState::Create(
+                            functionGroup, _shortName).Value()));
+
+                ara::log::LogStream _logStream;
+                std::string _functionGroupInstance{
+                    functionGroup.GetInstance().ToString()};
+                _logStream << "State: " << _shortName << " of function group: " << _functionGroupInstance << " is configured.";
+                mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+            }
+        }
+
+        void StateManagement::configureFunctionGroups(const std::string &configFilepath)
         {
             arxml::ArxmlReader _arxmlReader(configFilepath);
 
@@ -35,6 +63,9 @@ namespace application
                 ara::log::LogStream _logStream;
                 _logStream << "Function group: " << _shortName << " is configured.";
                 mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+
+                std::string _nodeContent{functionGroupNode.GetContent()};
+                configureStates(mFunctionGroups.back(), std::move(_nodeContent));
             }
         }
 
@@ -48,7 +79,7 @@ namespace application
             ara::log::LogStream _logStream;
 
             std::string _configFilepath{arguments.at(cConfigArgument)};
-            parseManifest(_configFilepath);
+            configureFunctionGroups(_configFilepath);
 
             _logStream << "State management has been initialized.";
             mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
