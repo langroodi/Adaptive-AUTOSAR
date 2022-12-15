@@ -20,6 +20,7 @@ var namespaces_dup =
             [ "SomeIpPubSubClient", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient.html", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient" ],
             [ "SomeIpPubSubServer", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer" ]
           ] ],
+          [ "rpc", "namespaceara_1_1com_1_1someip_1_1rpc.html", "namespaceara_1_1com_1_1someip_1_1rpc" ],
           [ "sd", null, [
             [ "fsm", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm" ],
             [ "SomeIpSdAgent", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent" ],

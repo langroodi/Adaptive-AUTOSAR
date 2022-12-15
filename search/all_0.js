@@ -27,5 +27,6 @@ var searchData=
   ['option_24',['option',['../namespaceara_1_1com_1_1option.html',1,'ara::com']]],
   ['platform_25',['platform',['../namespaceapplication_1_1platform.html',1,'application']]],
   ['routing_26',['routing',['../namespaceara_1_1diag_1_1routing.html',1,'ara::diag']]],
-  ['sm_27',['sm',['../namespaceara_1_1sm.html',1,'ara']]]
+  ['rpc_27',['rpc',['../namespaceara_1_1com_1_1someip_1_1rpc.html',1,'ara::com::someip']]],
+  ['sm_28',['sm',['../namespaceara_1_1sm.html',1,'ara']]]
 ];

@@ -27,6 +27,7 @@ var searchData=
   ['returncode_24',['ReturnCode',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a4b4fe7d97368ba806d781eb8b97ef712',1,'ara::com::someip::SomeIpMessage']]],
   ['routableudsservice_25',['RoutableUdsService',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c',1,'ara::diag::routing::RoutableUdsService']]],
   ['route_26',['Route',['../classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#a6dd92742815760194f5703f3a11a085a',1,'ara::diag::routing::UdsServiceRouter']]],
-  ['run_27',['Run',['../classara_1_1exec_1_1WorkerRunnable.html#ac555cd342884df281130c40894379c1d',1,'ara::exec::WorkerRunnable']]],
-  ['runworkerpool_28',['RunWorkerPool',['../classara_1_1exec_1_1DeterministicClient.html#ad78e318dc2ccc95877675d7ac27a1811',1,'ara::exec::DeterministicClient']]]
+  ['rpcserver_27',['RpcServer',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#aa6b2cef5d18a65dad459a1049ed3e674',1,'ara::com::someip::rpc::RpcServer']]],
+  ['run_28',['Run',['../classara_1_1exec_1_1WorkerRunnable.html#ac555cd342884df281130c40894379c1d',1,'ara::exec::WorkerRunnable']]],
+  ['runworkerpool_29',['RunWorkerPool',['../classara_1_1exec_1_1DeterministicClient.html#ad78e318dc2ccc95877675d7ac27a1811',1,'ara::exec::DeterministicClient']]]
 ];

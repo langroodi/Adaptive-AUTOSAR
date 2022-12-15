@@ -43,6 +43,9 @@ var annotated_dup =
             [ "SomeIpPubSubClient", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient.html", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient" ],
             [ "SomeIpPubSubServer", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer.html", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubServer" ]
           ] ],
+          [ "rpc", "namespaceara_1_1com_1_1someip_1_1rpc.html", [
+            [ "RpcServer", "classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html", "classara_1_1com_1_1someip_1_1rpc_1_1RpcServer" ]
+          ] ],
           [ "sd", null, [
             [ "fsm", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html", [
               [ "ClientInitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState" ],

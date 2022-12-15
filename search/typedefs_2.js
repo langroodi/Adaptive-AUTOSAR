@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['idtype_0',['IdType',['../classara_1_1core_1_1ErrorDomain.html#a2293fffefc45549aa2d0e4d88d7b5e9d',1,'ara::core::ErrorDomain']]]
+  ['handlertype_0',['HandlerType',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a640ec40b2e59ebd644c7b9392659de86',1,'ara::com::someip::rpc::RpcServer']]]
 ];

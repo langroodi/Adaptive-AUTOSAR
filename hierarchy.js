@@ -119,6 +119,7 @@ var hierarchy =
       [ "ara::diag::routing::RequestTransferExit", "classara_1_1diag_1_1routing_1_1RequestTransferExit.html", null ],
       [ "ara::diag::routing::TransferData", "classara_1_1diag_1_1routing_1_1TransferData.html", null ]
     ] ],
+    [ "ara::com::someip::rpc::RpcServer", "classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html", null ],
     [ "ara::diag::SecurityLevel", "structara_1_1diag_1_1SecurityLevel.html", null ],
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [
       [ "ara::com::someip::sd::SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", null ]
