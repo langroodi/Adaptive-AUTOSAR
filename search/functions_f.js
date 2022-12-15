@@ -21,13 +21,14 @@ var searchData=
   ['reset_18',['Reset',['../classara_1_1core_1_1Optional.html#a386a36862137c2beda1f5a5797900c9b',1,'ara::core::Optional::Reset()'],['../classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html#a6e9eb15ac0cc538c60cdfe4d1698fbf1',1,'ara::diag::debouncing::CounterBasedDebouncer::Reset()'],['../classara_1_1diag_1_1debouncing_1_1Debouncer.html#ab545ebb4f6328497b762b5dba7671120',1,'ara::diag::debouncing::Debouncer::Reset()'],['../classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html#a4371e632406620c7be0d48496c17c737',1,'ara::diag::debouncing::TimerBasedDebouncer::Reset()'],['../classara_1_1exec_1_1helper_1_1AtomicOptional.html#aac0556eaa3a753b42fca12e0735061b4',1,'ara::exec::helper::AtomicOptional::Reset()']]],
   ['resetreceiver_19',['ResetReceiver',['../classara_1_1com_1_1helper_1_1NetworkLayer.html#ac891b0698ab66b7950122755cc3c679b',1,'ara::com::helper::NetworkLayer']]],
   ['resettodefaultsession_20',['ResetToDefaultSession',['../classara_1_1diag_1_1Conversation.html#a26ec5f46e6cb2323ace601659201044d',1,'ara::diag::Conversation']]],
-  ['resolve_21',['Resolve',['../classara_1_1core_1_1Result.html#a60fde32930cb8ad251f6501fe6b23d6d',1,'ara::core::Result::Resolve()'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aba8710f3e39c53ea7c759b0e3b916cc9',1,'ara::core::Result&lt; void, E &gt;::Resolve()']]],
+  ['resolve_21',['Resolve',['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aba8710f3e39c53ea7c759b0e3b916cc9',1,'ara::core::Result&lt; void, E &gt;::Resolve()'],['../classara_1_1core_1_1Result.html#a60fde32930cb8ad251f6501fe6b23d6d',1,'ara::core::Result::Resolve()']]],
   ['response_22',['Response',['../classara_1_1com_1_1cg_1_1CommunicationGroupClient.html#ab004a4275726c02e643d0f4fe3c542fb',1,'ara::com::cg::CommunicationGroupClient::Response()'],['../classara_1_1com_1_1cg_1_1CommunicationGroupServer.html#a8426cd0b14236b2f29c0d8c5d1e7d38d',1,'ara::com::cg::CommunicationGroupServer::Response()']]],
   ['restartoperationcycle_23',['RestartOperationCycle',['../classara_1_1diag_1_1OperationCycle.html#a6731ddb53859fb3555ba0aef9cf4d791',1,'ara::diag::OperationCycle']]],
   ['returncode_24',['ReturnCode',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a4b4fe7d97368ba806d781eb8b97ef712',1,'ara::com::someip::SomeIpMessage']]],
   ['routableudsservice_25',['RoutableUdsService',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#aeea9ba87678ee6bd9c920f044310143c',1,'ara::diag::routing::RoutableUdsService']]],
   ['route_26',['Route',['../classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#a6dd92742815760194f5703f3a11a085a',1,'ara::diag::routing::UdsServiceRouter']]],
-  ['rpcserver_27',['RpcServer',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#aa6b2cef5d18a65dad459a1049ed3e674',1,'ara::com::someip::rpc::RpcServer']]],
-  ['run_28',['Run',['../classara_1_1exec_1_1WorkerRunnable.html#ac555cd342884df281130c40894379c1d',1,'ara::exec::WorkerRunnable']]],
-  ['runworkerpool_29',['RunWorkerPool',['../classara_1_1exec_1_1DeterministicClient.html#ad78e318dc2ccc95877675d7ac27a1811',1,'ara::exec::DeterministicClient']]]
+  ['rpcclient_27',['RpcClient',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#afd59c4bd522ba33e1afc21055bfedea8',1,'ara::com::someip::rpc::RpcClient']]],
+  ['rpcserver_28',['RpcServer',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#aa6b2cef5d18a65dad459a1049ed3e674',1,'ara::com::someip::rpc::RpcServer']]],
+  ['run_29',['Run',['../classara_1_1exec_1_1WorkerRunnable.html#ac555cd342884df281130c40894379c1d',1,'ara::exec::WorkerRunnable']]],
+  ['runworkerpool_30',['RunWorkerPool',['../classara_1_1exec_1_1DeterministicClient.html#ad78e318dc2ccc95877675d7ac27a1811',1,'ara::exec::DeterministicClient']]]
 ];
