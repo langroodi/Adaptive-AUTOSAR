@@ -40,7 +40,7 @@ namespace ara
 
                 TEST(SomeIpSdMessageTest, SessionIdWrapping)
                 {
-                    const uint16_t cOldSessionId = 255;
+                    const uint16_t cOldSessionId = 0xFFFF;
                     const uint16_t cNewSessionId = 1;
 
                     SomeIpSdMessage _message;
