@@ -140,8 +140,8 @@ namespace ara
 
             bool SomeIpMessage::IncrementSessionId() noexcept
             {
-                const uint8_t cSessionIdMin = 1;
-                constexpr uint8_t cSessionIdMax = std::numeric_limits<uint8_t>::max();
+                const uint16_t cSessionIdMin = 1;
+                constexpr uint16_t cSessionIdMax = std::numeric_limits<uint16_t>::max();
 
                 if (mSessionId == cSessionIdMax)
                 {
