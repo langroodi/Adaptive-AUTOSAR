@@ -86,6 +86,9 @@ set(source_ara_com_entry_dir
 set(source_ara_com_someip_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/someip")
 
+set(source_ara_com_someip_rpc_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/someip/rpc")
+
 set(source_ara_com_someip_sd_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/someip/sd")
 
@@ -144,6 +147,9 @@ set(test_ara_com_someip_pubsub_dir
 
 set(test_ara_com_someip_pubsub_fsm_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/someip/pubsub/fsm")
+
+set(test_ara_com_someip_rpc_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/com/someip/rpc")
 
 set(test_ara_com_someip_sd_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/someip/sd")
@@ -242,6 +248,8 @@ add_library(
   ${source_ara_com_option_dir}/option_deserializer.cpp
   ${source_ara_com_someip_dir}/someip_message.h
   ${source_ara_com_someip_dir}/someip_message.cpp
+  ${source_ara_com_someip_rpc_dir}/someip_rpc_message.h
+  ${source_ara_com_someip_rpc_dir}/someip_rpc_message.cpp
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_server.h
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_server.cpp
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_client.h
@@ -436,6 +444,7 @@ if(build_tests)
     ${test_ara_com_option_dir}/loadbalancing_option_test.cpp
     ${test_ara_com_someip_pubsub_dir}/someip_pubsub_test.cpp
     ${test_ara_com_someip_pubsub_fsm_dir}/pubsub_state_test.cpp
+    ${test_ara_com_someip_rpc_dir}/someip_rpc_message_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_message_test.cpp
     ${test_ara_com_someip_sd_dir}/network_abstraction_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_test.cpp
