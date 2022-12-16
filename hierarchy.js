@@ -123,6 +123,7 @@ var hierarchy =
     [ "ara::com::someip::rpc::RpcServer", "classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html", null ],
     [ "ara::diag::SecurityLevel", "structara_1_1diag_1_1SecurityLevel.html", null ],
     [ "ara::com::someip::SomeIpMessage", "classara_1_1com_1_1someip_1_1SomeIpMessage.html", [
+      [ "ara::com::someip::rpc::SomeIpRpcMessage", "classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html", null ],
       [ "ara::com::someip::sd::SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", null ]
     ] ],
     [ "ara::com::someip::pubsub::SomeIpPubSubClient", "classara_1_1com_1_1someip_1_1pubsub_1_1SomeIpPubSubClient.html", null ],
