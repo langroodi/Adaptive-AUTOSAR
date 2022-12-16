@@ -59,8 +59,8 @@ namespace ara
                                                                              messageType,
                                                                              returnCode)
             {
-                if ((messageType != SomeIpMessageType::Request) ||
-                    (messageType != SomeIpMessageType::Notification))
+                if ((messageType == SomeIpMessageType::Request) ||
+                    (messageType == SomeIpMessageType::Notification))
                 {
                     // E2E is not supported yet.
                     throw std::invalid_argument("Invalid message type.");
