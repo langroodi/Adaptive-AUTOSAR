@@ -6,6 +6,7 @@
 #include <set>
 #include <stdint.h>
 #include <vector>
+#include "./someip_rpc_message.h"
 
 namespace ara
 {
@@ -31,18 +32,35 @@ namespace ara
                     std::set<uint16_t> mServices;
                     std::map<uint32_t, HandlerType> mHandlers;
 
+                    SomeIpReturnCode validate(
+                        const SomeIpRpcMessage &request) const;
+
+                    void getResponsePayload(
+                        const SomeIpRpcMessage &request,
+                        SomeIpReturnCode returnCode,
+                        const std::vector<uint8_t>& rpcPayload,
+                        std::vector<uint8_t> &payload) const;
+
+                    void getResponsePayload(
+                        const SomeIpRpcMessage &request,
+                        SomeIpReturnCode returnCode,
+                        std::vector<uint8_t> &payload) const;
+
                 protected:
                     /// @brief Constructor
                     /// @param protocolVersion SOME/IP protocol header version
                     /// @param interfaceVersion Service interface version
-                    RpcServer(uint8_t protocolVersion, uint8_t interfaceVersion);
+                    RpcServer(
+                        uint8_t protocolVersion, uint8_t interfaceVersion) noexcept;
 
-                    /// @brief Invoke corresponding request handler at a message reception
+                    /// @brief Try to invoke corresponding request handler at a message reception
                     /// @param[in] requestPayload Serialized SOME/IP request payload byte vector
                     /// @param[out] responsePayload Serialized SOME/IP response payload byte vector
-                    void InvokeHandler(
+                    /// @returns True if the request is handled; otherwise false
+                    /// @remark The response payload will be untouched if the request is NOT handled.
+                    bool TryInvokeHandler(
                         const std::vector<uint8_t> &requestPayload,
-                        std::vector<uint8_t> &responsePayload);
+                        std::vector<uint8_t> &responsePayload) const;
 
                 public:
                     RpcServer() = delete;

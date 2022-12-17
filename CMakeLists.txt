@@ -250,6 +250,8 @@ add_library(
   ${source_ara_com_someip_dir}/someip_message.cpp
   ${source_ara_com_someip_rpc_dir}/someip_rpc_message.h
   ${source_ara_com_someip_rpc_dir}/someip_rpc_message.cpp
+  ${source_ara_com_someip_rpc_dir}/rpc_server.h
+  ${source_ara_com_someip_rpc_dir}/rpc_server.cpp
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_server.h
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_server.cpp
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_client.h
@@ -445,6 +447,7 @@ if(build_tests)
     ${test_ara_com_someip_pubsub_dir}/someip_pubsub_test.cpp
     ${test_ara_com_someip_pubsub_fsm_dir}/pubsub_state_test.cpp
     ${test_ara_com_someip_rpc_dir}/someip_rpc_message_test.cpp
+    ${test_ara_com_someip_rpc_dir}/rpc_server_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_message_test.cpp
     ${test_ara_com_someip_sd_dir}/network_abstraction_test.cpp
     ${test_ara_com_someip_sd_dir}/someip_sd_test.cpp
