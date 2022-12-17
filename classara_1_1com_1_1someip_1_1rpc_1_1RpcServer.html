@@ -133,18 +133,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:aa6b2cef5d18a65dad459a1049ed3e674"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#aa6b2cef5d18a65dad459a1049ed3e674">RpcServer</a> (uint8_t protocolVersion, uint8_t interfaceVersion)</td></tr>
-<tr class="memdesc:aa6b2cef5d18a65dad459a1049ed3e674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#aa6b2cef5d18a65dad459a1049ed3e674">More...</a><br /></td></tr>
-<tr class="separator:aa6b2cef5d18a65dad459a1049ed3e674"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27b09e35ec015a09ece573f0ecaaeefe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a27b09e35ec015a09ece573f0ecaaeefe">InvokeHandler</a> (const std::vector&lt; uint8_t &gt; &amp;requestPayload, std::vector&lt; uint8_t &gt; &amp;responsePayload)</td></tr>
-<tr class="memdesc:a27b09e35ec015a09ece573f0ecaaeefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoke corresponding request handler at a message reception.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a27b09e35ec015a09ece573f0ecaaeefe">More...</a><br /></td></tr>
-<tr class="separator:a27b09e35ec015a09ece573f0ecaaeefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd7cdfe181ed5ad32f23c5054728968"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a4dd7cdfe181ed5ad32f23c5054728968">RpcServer</a> (uint8_t protocolVersion, uint8_t interfaceVersion) noexcept</td></tr>
+<tr class="memdesc:a4dd7cdfe181ed5ad32f23c5054728968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a4dd7cdfe181ed5ad32f23c5054728968">More...</a><br /></td></tr>
+<tr class="separator:a4dd7cdfe181ed5ad32f23c5054728968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bdcc9258d5bfb63506fd43dcc44c29d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a0bdcc9258d5bfb63506fd43dcc44c29d">TryInvokeHandler</a> (const std::vector&lt; uint8_t &gt; &amp;requestPayload, std::vector&lt; uint8_t &gt; &amp;responsePayload) const</td></tr>
+<tr class="memdesc:a0bdcc9258d5bfb63506fd43dcc44c29d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to invoke corresponding request handler at a message reception.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a0bdcc9258d5bfb63506fd43dcc44c29d">More...</a><br /></td></tr>
+<tr class="separator:a0bdcc9258d5bfb63506fd43dcc44c29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >SOME/IP RPC server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa6b2cef5d18a65dad459a1049ed3e674" name="aa6b2cef5d18a65dad459a1049ed3e674"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6b2cef5d18a65dad459a1049ed3e674">&#9670;&nbsp;</a></span>RpcServer()</h2>
+<a id="a4dd7cdfe181ed5ad32f23c5054728968" name="a4dd7cdfe181ed5ad32f23c5054728968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd7cdfe181ed5ad32f23c5054728968">&#9670;&nbsp;</a></span>RpcServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +172,7 @@ Protected Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -189,51 +189,6 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a27b09e35ec015a09ece573f0ecaaeefe" name="a27b09e35ec015a09ece573f0ecaaeefe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27b09e35ec015a09ece573f0ecaaeefe">&#9670;&nbsp;</a></span>InvokeHandler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ara::com::someip::rpc::RpcServer::InvokeHandler </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>requestPayload</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>responsePayload</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Invoke corresponding request handler at a message reception. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">requestPayload</td><td>Serialized SOME/IP request payload byte vector </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">responsePayload</td><td>Serialized SOME/IP response payload byte vector </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a5e9f870a34582fcd8c60ad751616b9b3" name="a5e9f870a34582fcd8c60ad751616b9b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e9f870a34582fcd8c60ad751616b9b3">&#9670;&nbsp;</a></span>SetHandler()</h2>
 
@@ -275,6 +230,53 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a0bdcc9258d5bfb63506fd43dcc44c29d" name="a0bdcc9258d5bfb63506fd43dcc44c29d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bdcc9258d5bfb63506fd43dcc44c29d">&#9670;&nbsp;</a></span>TryInvokeHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::com::someip::rpc::RpcServer::TryInvokeHandler </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>requestPayload</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>responsePayload</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to invoke corresponding request handler at a message reception. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">requestPayload</td><td>Serialized SOME/IP request payload byte vector </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">responsePayload</td><td>Serialized SOME/IP response payload byte vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the request is handled; otherwise false </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The response payload will be untouched if the request is NOT handled. </dd></dl>
 
 </div>
 </div>

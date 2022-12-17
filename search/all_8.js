@@ -16,7 +16,7 @@ var searchData=
   ['instancespecifier_13',['InstanceSpecifier',['../classara_1_1core_1_1InstanceSpecifier.html',1,'ara::core::InstanceSpecifier'],['../classara_1_1core_1_1InstanceSpecifier.html#aab26f9b2dce48d6863ea31543b7b78ed',1,'ara::core::InstanceSpecifier::InstanceSpecifier()']]],
   ['interfaceversion_14',['InterfaceVersion',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a7260e0844d612244b77cbce9a0bcad60',1,'ara::com::someip::SomeIpMessage']]],
   ['interrupt_15',['Interrupt',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html#a4d4b71e1d5f177f7adfdf64579b28a56',1,'ara::com::someip::sd::fsm::TimerSetState']]],
-  ['invokehandler_16',['InvokeHandler',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a27b09e35ec015a09ece573f0ecaaeefe',1,'ara::com::someip::rpc::RpcServer::InvokeHandler()'],['../classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a8dcfbbd8519495c6bb6441ebccadb668',1,'ara::com::someip::rpc::RpcClient::InvokeHandler()']]],
+  ['invokehandler_16',['InvokeHandler',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a8dcfbbd8519495c6bb6441ebccadb668',1,'ara::com::someip::rpc::RpcClient']]],
   ['ipaddress_17',['IpAddress',['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a254677dbfe729c5be5fddc26ca38233f',1,'ara::com::option::Ipv4EndpointOption']]],
   ['ipv4address_18',['Ipv4Address',['../structara_1_1com_1_1helper_1_1Ipv4Address.html',1,'ara::com::helper::Ipv4Address'],['../structara_1_1com_1_1helper_1_1Ipv4Address.html#aecbf13142f21f4902495ba2c1fd7d8f2',1,'ara::com::helper::Ipv4Address::Ipv4Address()']]],
   ['ipv4endpoint_19',['IPv4Endpoint',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a08004d807e1fdb48b89eb0c45c72a240',1,'ara::com::option']]],
