@@ -5,7 +5,7 @@
 #include <map>
 #include <stdint.h>
 #include <vector>
-#include "../someip_message.h"
+#include "./someip_rpc_message.h"
 
 namespace ara
 {
@@ -20,12 +20,12 @@ namespace ara
                 {
                 public:
                     /// @brief SOME/IP RPC response handler type
-                    using HandlerType = std::function<void(const SomeIpMessage *)>;
+                    using HandlerType = std::function<void(const SomeIpMessage &)>;
 
                 private:
-                    uint8_t mProtocolVersion;
-                    uint8_t mInterfaceVersion;
-                    std::map<uint16_t, uint16_t> mSessionIds;
+                    const uint8_t mProtocolVersion;
+                    const uint8_t mInterfaceVersion;
+                    std::map<uint32_t, uint16_t> mSessionIds;
                     std::map<uint32_t, HandlerType> mHandlers;
 
                 protected:
@@ -33,11 +33,12 @@ namespace ara
                     /// @param protocolVersion SOME/IP protocol header version
                     /// @param interfaceVersion Service interface version
                     RpcClient(
-                        uint8_t protocolVersion, uint8_t interfaceVersion) noexcept;
+                        uint8_t protocolVersion,
+                        uint8_t interfaceVersion) noexcept;
 
                     /// @brief Invoke corresponding response handler at a message reception
                     /// @param payload Serialized SOME/IP response payload byte vector
-                    void InvokeHandler(const std::vector<uint8_t> &payload);
+                    void InvokeHandler(const std::vector<uint8_t> &payload) const;
 
                     /// @brief Send a SOME/IP request to the RPC server
                     /// @param payload Serialized SOME/IP request payload byte vector
@@ -61,6 +62,8 @@ namespace ara
                         uint16_t methodId,
                         uint16_t clientId,
                         const std::vector<uint8_t> &rpcPayload);
+
+                    virtual ~RpcClient() noexcept = default;
                 };
             }
         }
