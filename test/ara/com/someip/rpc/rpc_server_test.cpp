@@ -1,6 +1,4 @@
 #include <gtest/gtest.h>
-#include <algorithm>
-#include <array>
 #include "../../../../../src/ara/com/someip/rpc/rpc_server.h"
 
 namespace ara
@@ -14,14 +12,14 @@ namespace ara
                 class RpcServerTest : public testing::Test, public RpcServer
                 {
                 private:
-                    bool HandleWithTrue(
+                    bool handleWithTrue(
                         const std::vector<uint8_t> &rpcRequestPdu,
                         std::vector<uint8_t> &rpcResponsePdu) const
                     {
                         return true;
                     }
 
-                    bool HandleWithFalse(
+                    bool handleWithFalse(
                         const std::vector<uint8_t> &rpcRequestPdu,
                         std::vector<uint8_t> &rpcResponsePdu) const
                     {
@@ -42,7 +40,7 @@ namespace ara
                     {
                         auto _handleWithTrue{
                             std::bind(
-                                &RpcServerTest::HandleWithTrue,
+                                &RpcServerTest::handleWithTrue,
                                 this,
                                 std::placeholders::_1,
                                 std::placeholders::_2)};
@@ -50,7 +48,7 @@ namespace ara
 
                         auto _handleWithFalse{
                             std::bind(
-                                &RpcServerTest::HandleWithFalse,
+                                &RpcServerTest::handleWithFalse,
                                 this,
                                 std::placeholders::_1,
                                 std::placeholders::_2)};

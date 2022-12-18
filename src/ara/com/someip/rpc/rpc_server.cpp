@@ -75,7 +75,7 @@ namespace ara
                 {
                     try
                     {
-                        SomeIpRpcMessage _request{
+                        const SomeIpRpcMessage _request{
                             SomeIpRpcMessage::Deserialize(requestPayload)};
 
                         SomeIpReturnCode _returnCode{validate(_request)};

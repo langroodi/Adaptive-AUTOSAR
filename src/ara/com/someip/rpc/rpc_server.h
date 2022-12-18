@@ -27,8 +27,8 @@ namespace ara
                         std::function<bool(const std::vector<uint8_t> &, std::vector<uint8_t> &)>;
 
                 private:
-                    uint8_t mProtocolVersion;
-                    uint8_t mInterfaceVersion;
+                    const uint8_t mProtocolVersion;
+                    const uint8_t mInterfaceVersion;
                     std::set<uint16_t> mServices;
                     std::map<uint32_t, HandlerType> mHandlers;
 
@@ -72,6 +72,8 @@ namespace ara
                     /// @param handler Handler to be invoked at the request arrival
                     void SetHandler(
                         uint16_t serviceId, uint16_t methodId, HandlerType handler);
+
+                    virtual ~RpcServer() noexcept = default;
                 };
             }
         }
