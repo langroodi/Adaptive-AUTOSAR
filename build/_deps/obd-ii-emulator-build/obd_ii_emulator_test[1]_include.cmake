@@ -1,5 +1,0 @@
-if(EXISTS "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/obd-ii-emulator-build/obd_ii_emulator_test[1]_tests.cmake")
-  include("/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/obd-ii-emulator-build/obd_ii_emulator_test[1]_tests.cmake")
-else()
-  add_test(obd_ii_emulator_test_NOT_BUILT obd_ii_emulator_test_NOT_BUILT)
-endif()

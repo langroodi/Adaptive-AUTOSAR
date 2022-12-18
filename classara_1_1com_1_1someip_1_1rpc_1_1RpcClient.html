@@ -117,14 +117,14 @@ $(document).ready(function(){initNavTree('classara_1_1com_1_1someip_1_1rpc_1_1Rp
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a5e33cdbf71ece6646213ac7e1e7db0f3"><td class="memItemLeft" align="right" valign="top"><a id="a5e33cdbf71ece6646213ac7e1e7db0f3" name="a5e33cdbf71ece6646213ac7e1e7db0f3"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>HandlerType</b> = std::function&lt; void(const <a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html">SomeIpMessage</a> *)&gt;</td></tr>
-<tr class="memdesc:a5e33cdbf71ece6646213ac7e1e7db0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">SOME/IP RPC response handler type. <br /></td></tr>
-<tr class="separator:a5e33cdbf71ece6646213ac7e1e7db0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0387556a5a28c6bba1d6d2045e55bb10"><td class="memItemLeft" align="right" valign="top"><a id="a0387556a5a28c6bba1d6d2045e55bb10" name="a0387556a5a28c6bba1d6d2045e55bb10"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>HandlerType</b> = std::function&lt; void(const <a class="el" href="classara_1_1com_1_1someip_1_1SomeIpMessage.html">SomeIpMessage</a> &amp;)&gt;</td></tr>
+<tr class="memdesc:a0387556a5a28c6bba1d6d2045e55bb10"><td class="mdescLeft">&#160;</td><td class="mdescRight">SOME/IP RPC response handler type. <br /></td></tr>
+<tr class="separator:a0387556a5a28c6bba1d6d2045e55bb10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8afe7bfd5de717336d7dbfacbc926c0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a8afe7bfd5de717336d7dbfacbc926c0c">SetHandler</a> (uint16_t serviceId, uint16_t methodId, <a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a5e33cdbf71ece6646213ac7e1e7db0f3">HandlerType</a> handler)</td></tr>
+<tr class="memitem:a8afe7bfd5de717336d7dbfacbc926c0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a8afe7bfd5de717336d7dbfacbc926c0c">SetHandler</a> (uint16_t serviceId, uint16_t methodId, <a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a0387556a5a28c6bba1d6d2045e55bb10">HandlerType</a> handler)</td></tr>
 <tr class="memdesc:a8afe7bfd5de717336d7dbfacbc926c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a RPC response handler.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a8afe7bfd5de717336d7dbfacbc926c0c">More...</a><br /></td></tr>
 <tr class="separator:a8afe7bfd5de717336d7dbfacbc926c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4a235a4cfee006c9db4d8b9dc09d5eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#ab4a235a4cfee006c9db4d8b9dc09d5eb">Send</a> (uint16_t serviceId, uint16_t methodId, uint16_t clientId, const std::vector&lt; uint8_t &gt; &amp;rpcPayload)</td></tr>
@@ -136,9 +136,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:afd59c4bd522ba33e1afc21055bfedea8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#afd59c4bd522ba33e1afc21055bfedea8">RpcClient</a> (uint8_t protocolVersion, uint8_t interfaceVersion) noexcept</td></tr>
 <tr class="memdesc:afd59c4bd522ba33e1afc21055bfedea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#afd59c4bd522ba33e1afc21055bfedea8">More...</a><br /></td></tr>
 <tr class="separator:afd59c4bd522ba33e1afc21055bfedea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dcfbbd8519495c6bb6441ebccadb668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a8dcfbbd8519495c6bb6441ebccadb668">InvokeHandler</a> (const std::vector&lt; uint8_t &gt; &amp;payload)</td></tr>
-<tr class="memdesc:a8dcfbbd8519495c6bb6441ebccadb668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoke corresponding response handler at a message reception.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a8dcfbbd8519495c6bb6441ebccadb668">More...</a><br /></td></tr>
-<tr class="separator:a8dcfbbd8519495c6bb6441ebccadb668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a867ccd5c04ec957fc0b3b1088b66d053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a867ccd5c04ec957fc0b3b1088b66d053">InvokeHandler</a> (const std::vector&lt; uint8_t &gt; &amp;payload) const</td></tr>
+<tr class="memdesc:a867ccd5c04ec957fc0b3b1088b66d053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoke corresponding response handler at a message reception.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a867ccd5c04ec957fc0b3b1088b66d053">More...</a><br /></td></tr>
+<tr class="separator:a867ccd5c04ec957fc0b3b1088b66d053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64e23cd2b697f90ef5a9d9e0aaaeb38c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a64e23cd2b697f90ef5a9d9e0aaaeb38c">Send</a> (const std::vector&lt; uint8_t &gt; &amp;payload)=0</td></tr>
 <tr class="memdesc:a64e23cd2b697f90ef5a9d9e0aaaeb38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a SOME/IP request to the RPC server.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a64e23cd2b697f90ef5a9d9e0aaaeb38c">More...</a><br /></td></tr>
 <tr class="separator:a64e23cd2b697f90ef5a9d9e0aaaeb38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,8 +192,8 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8dcfbbd8519495c6bb6441ebccadb668" name="a8dcfbbd8519495c6bb6441ebccadb668"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dcfbbd8519495c6bb6441ebccadb668">&#9670;&nbsp;</a></span>InvokeHandler()</h2>
+<a id="a867ccd5c04ec957fc0b3b1088b66d053" name="a867ccd5c04ec957fc0b3b1088b66d053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a867ccd5c04ec957fc0b3b1088b66d053">&#9670;&nbsp;</a></span>InvokeHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +206,7 @@ Protected Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>payload</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -332,7 +332,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a5e33cdbf71ece6646213ac7e1e7db0f3">HandlerType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a0387556a5a28c6bba1d6d2045e55bb10">HandlerType</a>&#160;</td>
           <td class="paramname"><em>handler</em>&#160;</td>
         </tr>
         <tr>
