@@ -42,4 +42,4 @@ jobs:
         doxygenconf: './doc/doxygen.conf'
         htmloutput: './doc/html/'
         darkmode: true
-        customheader: 'https://raw.githubusercontent.com/langroodi/doxygenize/v1/header/freejadi.html'
+        customheader: 'https://raw.githubusercontent.com/langroodi/doxygenize/master/header/woman_life_freedom.html'
