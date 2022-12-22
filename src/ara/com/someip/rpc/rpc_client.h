@@ -20,7 +20,7 @@ namespace ara
                 {
                 public:
                     /// @brief SOME/IP RPC response handler type
-                    using HandlerType = std::function<void(const SomeIpMessage &)>;
+                    using HandlerType = std::function<void(const SomeIpRpcMessage &)>;
 
                 private:
                     const uint8_t mProtocolVersion;
