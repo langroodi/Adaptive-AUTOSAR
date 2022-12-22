@@ -30,6 +30,11 @@ namespace ara
             /// @param code EM error code number
             /// @returns Created error code with determined error number
             core::ErrorCode MakeErrorCode(ExecErrc code) noexcept;
+
+            /// @brief Get the error code
+            /// @return Exception error code reference
+            /// @note This is not an ARA specified property.
+            const core::ErrorCode &GetErrorCode() const noexcept;
         };
     }
 }

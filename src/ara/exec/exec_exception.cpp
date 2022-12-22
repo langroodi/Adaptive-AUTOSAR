@@ -21,5 +21,10 @@ namespace ara
 
             return _result;
         }
+
+        const core::ErrorCode &ExecException::GetErrorCode() const noexcept
+        {
+            return mErrorCode;
+        }
     }
 }
