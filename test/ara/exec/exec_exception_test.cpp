@@ -32,5 +32,16 @@ namespace ara
             EXPECT_TRUE(_failedErrorCode.Value() == _failedValue);
             EXPECT_TRUE(_failedErrorCode.Domain() == _errorDomain);
         }
+
+        TEST(ExecExceptionTest, ErrorCodeProperty)
+        {
+            const ExecErrorDomain cErrorDomain;
+            const ExecErrc cCode{ExecErrc::kGeneralError};
+            auto _value{static_cast<core::ErrorDomain::CodeType>(cCode)};
+            core::ErrorCode _errorCode(_value, cErrorDomain);
+            ExecException _exception(_errorCode);
+
+            EXPECT_TRUE(_exception.GetErrorCode() == _errorCode);
+        }
     }
 }
