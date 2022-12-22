@@ -49,12 +49,12 @@ namespace ara
             /// @brief Throw the error as an exception
             void ThrowAsException() const;
 
-            constexpr bool operator==(const ErrorCode &other) noexcept
+            constexpr bool operator==(const ErrorCode &other) const noexcept
             {
                 return mDomain == other.mDomain && mValue == other.mValue;
             }
 
-            constexpr bool operator!=(const ErrorCode &other) noexcept
+            constexpr bool operator!=(const ErrorCode &other) const noexcept
             {
                 return mDomain != other.mDomain || mValue != other.mValue;
             }
