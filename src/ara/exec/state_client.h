@@ -2,8 +2,7 @@
 #define STATE_CLIENT_H
 
 #include <future>
-#include <mutex>
-#include "./helper/fifo_layer.h"
+#include "../com/someip/rpc/rpc_client.h"
 #include "./execution_error_event.h"
 #include "./function_group_state.h"
 #include "./exec_exception.h"
@@ -16,24 +15,42 @@ namespace ara
         class StateClient final
         {
         private:
-            using SetStateMessage = std::pair<const FunctionGroup *, std::string>;
-
             static const ExecErrorDomain cErrorDomain;
-            std::function<void(const ExecutionErrorEvent &)> mUndefinedStateCallback;
-            helper::FifoLayer<SetStateMessage> *mCommunicationLayer;
-            std::mutex mInitializationMutex;
-            bool mInitialized;
+            const uint16_t cServiceId{3};
+            const uint16_t cSetStateId{1};
+            const uint16_t cStateTransition{2};
+            const uint16_t cClientId{4};
 
-            void setPromiseException(
-                std::promise<void>& promise, ExecErrc executionErrorCode) const;
+            std::function<void(const ExecutionErrorEvent &)> mUndefinedStateCallback;
+            com::someip::rpc::RpcClient *const mRpcClient;
+            std::promise<void> mSetStatePromise;
+            std::promise<void> mStateTransitionPromise;
+
+            static void setPromiseException(
+                std::promise<void> &promise, ExecErrc executionErrorCode);
+
+            static void genericHandler(
+                std::promise<void> &promise,
+                const com::someip::rpc::SomeIpRpcMessage &message);
+
+            void setStateHandler(
+                const com::someip::rpc::SomeIpRpcMessage &message);
+
+            void stateTransitionHandler(
+                const com::someip::rpc::SomeIpRpcMessage &message);
+
+            std::future<void> getFuture(
+                std::promise<void> &promise,
+                uint16_t methodId,
+                const std::vector<uint8_t> &rpcPayload);
 
         public:
             /// @brief Constructor
             /// @param undefinedStateCallback Callback to be invoked when a function group is unexpectedly terminated while state transition
-            /// @param communicationLayer FIFO IPC abstraction layer
+            /// @param rpcClient RPC client abstraction layer
             StateClient(
                 std::function<void(const ExecutionErrorEvent &)> undefinedStateCallback,
-                helper::FifoLayer<SetStateMessage> *communicationLayer);
+                com::someip::rpc::RpcClient *rpcClient);
 
             StateClient() = delete;
             ~StateClient() noexcept = default;

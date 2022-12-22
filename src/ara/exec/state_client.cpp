@@ -8,28 +8,26 @@ namespace ara
 
         StateClient::StateClient(
             std::function<void(const ExecutionErrorEvent &)> undefinedStateCallback,
-            helper::FifoLayer<SetStateMessage> *communicationLayer) : mUndefinedStateCallback{undefinedStateCallback},
-                                                                      mCommunicationLayer{communicationLayer},
-                                                                      mInitialized{false}
+            com::someip::rpc::RpcClient *rpcClient) : mUndefinedStateCallback{undefinedStateCallback},
+                                                      mRpcClient{rpcClient}
         {
-        }
+            auto _setStateHandler{
+                std::bind(
+                    &StateClient::setStateHandler,
+                    this, std::placeholders::_1)};
+            mRpcClient->SetHandler(
+                cServiceId, cSetStateId, _setStateHandler);
 
-        std::future<void> StateClient::SetState(
-            const FunctionGroupState &state)
-        {
-            std::promise<void> _promise;
-            std::future<void> _result{_promise.get_future()};
-            const FunctionGroup *_functionGroup = &state.GetFunctionGroup();
-            std::string _state = state.GetState();
-            SetStateMessage _message{std::make_pair(_functionGroup, _state)};
-            mCommunicationLayer->Send(_message);
-            _promise.set_value();
-
-            return _result;
+            auto _stateTransitionHandler{
+                std::bind(
+                    &StateClient::stateTransitionHandler,
+                    this, std::placeholders::_1)};
+            mRpcClient->SetHandler(
+                cServiceId, cStateTransition, _stateTransitionHandler);
         }
 
         void StateClient::setPromiseException(
-            std::promise<void> &promise, ExecErrc executionErrorCode) const
+            std::promise<void> &promise, ExecErrc executionErrorCode)
         {
             auto _errorValue{static_cast<core::ErrorDomain::CodeType>(executionErrorCode)};
             core::ErrorCode _errorCode{_errorValue, cErrorDomain};
@@ -38,28 +36,89 @@ namespace ara
             promise.set_exception(_exceptionPtr);
         }
 
-        std::future<void> StateClient::GetInitialMachineStateTransitionResult()
+        void StateClient::genericHandler(
+            std::promise<void> &promise,
+            const com::someip::rpc::SomeIpRpcMessage &message)
         {
-            std::unique_lock<std::mutex> _lock{mInitializationMutex, std::defer_lock};
-            std::promise<void> _promise;
-            std::future<void> _result{_promise.get_future()};
+            const std::vector<u_int8_t> &cRpcPayload{message.RpcPayload()};
 
-            if (mInitialized)
+            if (cRpcPayload.empty())
             {
-                // EM reinitialization shouldn't be possible:
-                setPromiseException(_promise, ExecErrc::kFailed);
-            }
-            else if (_lock.try_lock())
-            {
-                // EM is not intialized yet:
-                mInitialized = true;
-                _promise.set_value();
+                promise.set_value();
             }
             else
             {
-                // EM is initializing, so ignore the new request:
-                setPromiseException(_promise, ExecErrc::kGeneralError);
+                try
+                {
+                    size_t _offset{0};
+                    uint32_t _executionErrorCodeInt{
+                        com::helper::ExtractInteger(cRpcPayload, _offset)};
+                    auto _executionErrorCode{
+                        static_cast<ExecErrc>(_executionErrorCodeInt)};
+
+                    setPromiseException(promise, _executionErrorCode);
+                }
+                catch (std::out_of_range)
+                {
+                    const ExecErrc cCorruptedResponseCode{
+                        ExecErrc::kCommunicationError};
+
+                    setPromiseException(promise, cCorruptedResponseCode);
+                }
             }
+        }
+
+        void StateClient::setStateHandler(
+            const com::someip::rpc::SomeIpRpcMessage &message)
+        {
+            genericHandler(mSetStatePromise, message);
+        }
+
+        void StateClient::stateTransitionHandler(
+            const com::someip::rpc::SomeIpRpcMessage &message)
+        {
+            genericHandler(mStateTransitionPromise, message);
+        }
+
+        std::future<void> StateClient::getFuture(
+            std::promise<void> &promise,
+            uint16_t methodId,
+            const std::vector<uint8_t> &rpcPayload)
+        {
+            try
+            {
+                std::future<void> _result{promise.get_future()};
+                mRpcClient->Send(cServiceId, methodId, cClientId, rpcPayload);
+
+                return _result;
+            }
+            catch (std::future_error)
+            {
+                const ExecErrc cAlreadyRequestedCode{ExecErrc::kFailed};
+                std::promise<void> _promise;
+                setPromiseException(_promise, cAlreadyRequestedCode);
+                std::future<void> _result{_promise.get_future()};
+
+                return _result;
+            }
+        }
+
+        std::future<void> StateClient::SetState(
+            const FunctionGroupState &state)
+        {
+            std::vector<uint8_t> _rpcPayload;
+            state.Serialize(_rpcPayload);
+            std::future<void> _result{
+                getFuture(mSetStatePromise, cSetStateId,_rpcPayload)};
+
+            return _result;
+        }
+
+        std::future<void> StateClient::GetInitialMachineStateTransitionResult()
+        {
+            const std::vector<uint8_t> cRpcPayload;
+            std::future<void> _result{
+                getFuture(mStateTransitionPromise, cStateTransition, cRpcPayload)};
 
             return _result;
         }

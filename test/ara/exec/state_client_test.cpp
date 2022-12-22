@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "../../../src/ara/exec/state_client.h"
-#include "./helper/mockup_fifo_layer.h"
+#include "./helper/mock_rpc_client.h"
 
 namespace ara
 {
@@ -9,31 +9,18 @@ namespace ara
         class StateClientTest : public testing::Test
         {
         private:
-            using SetStateMessage = std::pair<const FunctionGroup *, std::string>;
-
-            helper::MockupFifoLayer<SetStateMessage> mCommunicationLayer;
+            helper::MockRpcClient mRpcClient;
             std::function<void(const ExecutionErrorEvent &)> mEmptyCallback;
 
-            void receiver(SetStateMessage message)
-            {
-                if (message.first->GetInstance() == cInstance)
-                {
-                    RequestedState = message.second;
-                }
-            }
-
         protected:
+            const std::future_status cTimeoutStatus{std::future_status::timeout};
             const core::InstanceSpecifier cInstance{"test_instance"};
+            const std::chrono::seconds cTimeout{30};
+
             StateClient Client;
-            std::string RequestedState;
 
-            StateClientTest() : Client{mEmptyCallback, &mCommunicationLayer}
+            StateClientTest() : Client{mEmptyCallback, &mRpcClient}
             {
-                auto _receiver =
-                    std::bind(
-                        &StateClientTest::receiver, this, std::placeholders::_1);
-
-                mCommunicationLayer.SetReceiver(_receiver);
             }
         };
 
@@ -46,25 +33,22 @@ namespace ara
             auto _functionGroupState =
                 FunctionGroupState::Create(_functionGroup, cState).Value();
 
-            Client.SetState(_functionGroupState);
+            std::future<void> _succeed{Client.SetState(_functionGroupState)};
+            EXPECT_TRUE(_succeed.valid());
 
-            EXPECT_EQ(cState, RequestedState);
+            std::future_status _status{_succeed.wait_for(cTimeout)};
+            EXPECT_NE(_status, cTimeoutStatus);
+            EXPECT_NO_THROW(_succeed.get());
         }
 
         TEST_F(StateClientTest, GetInitialMachineStateTransitionResultMehod)
         {
-            std::future<void> _succeed =
-                Client.GetInitialMachineStateTransitionResult();
-            EXPECT_TRUE(_succeed.valid());
+            std::future<void> _succeed{
+                Client.GetInitialMachineStateTransitionResult()};
 
-            _succeed.wait();
+            std::future_status _status{_succeed.wait_for(cTimeout)};
+            EXPECT_NE(_status, cTimeoutStatus);
             EXPECT_NO_THROW(_succeed.get());
-
-            _succeed = Client.GetInitialMachineStateTransitionResult();
-            EXPECT_TRUE(_succeed.valid());
-
-            _succeed.wait();
-            EXPECT_THROW(_succeed.get(), ExecException);
         }
 
         TEST_F(StateClientTest, GetExecutionErrorMethod)

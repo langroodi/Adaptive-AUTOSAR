@@ -1,9 +1,11 @@
 #ifndef EXECUTION_CLIENT_H
 #define EXECUTION_CLIENT_H
 
+#include <future>
 #include "../core/instance_specifier.h"
 #include "../core/result.h"
-#include "./helper/fifo_layer.h"
+#include "../com/someip/rpc/rpc_client.h"
+#include "./exec_exception.h"
 
 namespace ara
 {
@@ -19,20 +21,35 @@ namespace ara
         class ExecutionClient final
         {
         private:
-            using FifoMessageType = std::pair<core::InstanceSpecifier, ExecutionState>;
+            static const ExecErrorDomain cErrorDomain;
+            const uint16_t cServiceId{1};
+            const uint16_t cMethodId{1};
+            const uint16_t cClientId{2};
 
-            core::InstanceSpecifier mInstanceSpecifier;
-            helper::FifoLayer<FifoMessageType> *mCommunicationLayer;
+            mutable std::promise<void> mPromise;
+            mutable std::future<void> mFuture;
+
+            const core::InstanceSpecifier mInstanceSpecifier;
+            com::someip::rpc::RpcClient *const mRpcClient;
+            const std::chrono::seconds mTimeout;
+
+            ExecException generateException(ExecErrc executionErrorCode) const;
+
+            void reportExecutionStateHandler(
+                const com::someip::rpc::SomeIpRpcMessage &message);
 
         public:
             /// @brief Constructor
             /// @param instanceSpecifier Adaptive application instance shortname-path
-            /// @param communicationLayer IPC communication abstraction layer
+            /// @param rpcClient RPC client abstraction layer
+            /// @param timeout RPC request timeout in seconds
+            /// @throws std::invalid_argument Throws when timeout is not positive
             ExecutionClient(
                 core::InstanceSpecifier instanceSpecifier,
-                helper::FifoLayer<FifoMessageType> *communicationLayer);
+                com::someip::rpc::RpcClient *rpcClient,
+                int64_t timeout = 30);
 
-            ~ExecutionClient() noexcept = default;
+            ~ExecutionClient();
 
             /// @brief Report the application internal state to Execution Management
             /// @param state Application current internal state
