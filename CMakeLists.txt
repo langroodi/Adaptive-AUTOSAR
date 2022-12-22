@@ -462,7 +462,6 @@ if(build_tests)
     ${test_ara_exec_dir}/function_group_state_test.cpp
     ${test_ara_exec_dir}/exec_exception_test.cpp
     ${test_ara_exec_dir}/state_client_test.cpp
-    ${test_ara_exec_dir}/fifo_abstraction_test.cpp
     ${test_ara_exec_helper_dir}/atomic_optional_test.cpp
     ${test_ara_exec_helper_dir}/mock_rpc_client.h
     ${test_ara_exec_helper_dir}/modelled_process_test.cpp
