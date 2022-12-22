@@ -53,7 +53,7 @@ namespace ara
         {
             // According to AUTOSAR R22-11 SOME/IP Protocol Specification,
             // string fields should start with a field length (32-bit by default)
-            // and then the serialized string including null terminator.
+            // and then the serialized string.
             std::string _functionGroupStr{mFunctionGroup->GetInstance().ToString()};
             auto _functionGroupLength{
                 static_cast<uint32_t>(_functionGroupStr.length())};
@@ -61,7 +61,7 @@ namespace ara
             std::copy(
                 _functionGroupStr.cbegin(),
                 _functionGroupStr.cend(),
-                serializedObject.end());
+                std::back_inserter(serializedObject));
 
             auto _stateLength{
                 static_cast<uint32_t>(mStateMetaModel.length())};
@@ -69,7 +69,7 @@ namespace ara
             std::copy(
                 mStateMetaModel.cbegin(),
                 mStateMetaModel.cend(),
-                serializedObject.end());
+                std::back_inserter(serializedObject));
         }
     }
 }
