@@ -74,5 +74,24 @@ namespace ara
 
             EXPECT_TRUE(_functionGroupState != _otherFunctionGroupState);
         }
+
+        TEST(FunctionGroupStateTest, SerializeMethod)
+        {
+            const std::string cShortnamePath{"MachineFG"};
+            const std::string cState{"stateXYZ"};
+            const std::vector<u_int8_t> cExpectedResult(
+                {0, 0, 0, 9,
+                 77, 97, 99, 104, 105, 110, 101, 70, 71,
+                 0, 0, 0, 8,
+                 115, 116, 97, 116, 101, 88, 89, 90});
+            auto _functionGroup = FunctionGroup::Create(cShortnamePath).Value();
+
+            auto _functionGroupState =
+                FunctionGroupState::Create(_functionGroup, cState).Value();
+            std::vector<uint8_t> _actualResult;
+            _functionGroupState.Serialize(_actualResult);
+
+            EXPECT_EQ(cExpectedResult, _actualResult);
+        }
     }
 }
