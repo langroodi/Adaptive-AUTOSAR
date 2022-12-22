@@ -1,6 +1,7 @@
 #ifndef FUNCTION_GROUP_STATE_H
 #define FUNCTION_GROUP_STATE_H
 
+#include <vector>
 #include "./function_group.h"
 
 namespace ara
@@ -40,6 +41,11 @@ namespace ara
             /// @brief Get the state bound to the instance
             /// @returns Constant reference to the state meta-model
             const std::string &GetState() const noexcept;
+
+            /// @brief Serialized the object
+            /// @param[out] serializedObject Serialized object byte vector
+            /// @note This is not an ARA specified method.
+            void Serialize(std::vector<uint8_t> &serializedObject) const;
 
             inline bool operator==(const FunctionGroupState &other) const noexcept
             {
