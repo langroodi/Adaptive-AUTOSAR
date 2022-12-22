@@ -115,9 +115,9 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1ExecutionClient.ht
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a45e0a694071ec42ef31e4978978550a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">ExecutionClient</a> (<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> instanceSpecifier, <a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; FifoMessageType &gt; *communicationLayer)</td></tr>
-<tr class="memdesc:a45e0a694071ec42ef31e4978978550a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1ExecutionClient.html#a45e0a694071ec42ef31e4978978550a2">More...</a><br /></td></tr>
-<tr class="separator:a45e0a694071ec42ef31e4978978550a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e3ca662cb6950c051fb206b6bda974"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a02e3ca662cb6950c051fb206b6bda974">ExecutionClient</a> (<a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">core::InstanceSpecifier</a> instanceSpecifier, <a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html">com::someip::rpc::RpcClient</a> *rpcClient, int64_t timeout=30)</td></tr>
+<tr class="memdesc:a02e3ca662cb6950c051fb206b6bda974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1ExecutionClient.html#a02e3ca662cb6950c051fb206b6bda974">More...</a><br /></td></tr>
+<tr class="separator:a02e3ca662cb6950c051fb206b6bda974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a959e718835c368903c36d92b949071cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">ReportExecutionState</a> (<a class="el" href="namespaceara_1_1exec.html#a2cef995abddcd1737d4d80a4f016ab31">ExecutionState</a> state) const</td></tr>
 <tr class="memdesc:a959e718835c368903c36d92b949071cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the application internal state to Execution Management.  <a href="classara_1_1exec_1_1ExecutionClient.html#a959e718835c368903c36d92b949071cd">More...</a><br /></td></tr>
 <tr class="separator:a959e718835c368903c36d92b949071cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,8 +125,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class that enables an adaptive application to interact with Execution Management. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a45e0a694071ec42ef31e4978978550a2" name="a45e0a694071ec42ef31e4978978550a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45e0a694071ec42ef31e4978978550a2">&#9670;&nbsp;</a></span>ExecutionClient()</h2>
+<a id="a02e3ca662cb6950c051fb206b6bda974" name="a02e3ca662cb6950c051fb206b6bda974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e3ca662cb6950c051fb206b6bda974">&#9670;&nbsp;</a></span>ExecutionClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,8 +140,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; FifoMessageType &gt; *&#160;</td>
-          <td class="paramname"><em>communicationLayer</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html">com::someip::rpc::RpcClient</a> *&#160;</td>
+          <td class="paramname"><em>rpcClient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>30</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -155,7 +161,14 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">instanceSpecifier</td><td>Adaptive application instance shortname-path </td></tr>
-    <tr><td class="paramname">communicationLayer</td><td>IPC communication abstraction layer </td></tr>
+    <tr><td class="paramname">rpcClient</td><td>RPC client abstraction layer </td></tr>
+    <tr><td class="paramname">timeout</td><td>RPC request timeout in seconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Throws when timeout is not positive </td></tr>
   </table>
   </dd>
 </dl>

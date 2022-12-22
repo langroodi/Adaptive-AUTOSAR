@@ -115,9 +115,9 @@ $(document).ready(function(){initNavTree('classara_1_1exec_1_1StateClient.html',
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa8a3c43f22789e96737a74475e30239a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#aa8a3c43f22789e96737a74475e30239a">StateClient</a> (std::function&lt; void(const <a class="el" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &amp;)&gt; undefinedStateCallback, <a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; SetStateMessage &gt; *communicationLayer)</td></tr>
-<tr class="memdesc:aa8a3c43f22789e96737a74475e30239a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1StateClient.html#aa8a3c43f22789e96737a74475e30239a">More...</a><br /></td></tr>
-<tr class="separator:aa8a3c43f22789e96737a74475e30239a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5091f9c04cb523c65f9b12a331161693"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a5091f9c04cb523c65f9b12a331161693">StateClient</a> (std::function&lt; void(const <a class="el" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &amp;)&gt; undefinedStateCallback, <a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html">com::someip::rpc::RpcClient</a> *rpcClient)</td></tr>
+<tr class="memdesc:a5091f9c04cb523c65f9b12a331161693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1StateClient.html#a5091f9c04cb523c65f9b12a331161693">More...</a><br /></td></tr>
+<tr class="separator:a5091f9c04cb523c65f9b12a331161693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a587e445f0354557205be7fde3dc5a97e"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a587e445f0354557205be7fde3dc5a97e">SetState</a> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;state)</td></tr>
 <tr class="memdesc:a587e445f0354557205be7fde3dc5a97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a function group state.  <a href="classara_1_1exec_1_1StateClient.html#a587e445f0354557205be7fde3dc5a97e">More...</a><br /></td></tr>
 <tr class="separator:a587e445f0354557205be7fde3dc5a97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,8 +131,8 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class the enables State Management to interact with Execution Management. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa8a3c43f22789e96737a74475e30239a" name="aa8a3c43f22789e96737a74475e30239a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8a3c43f22789e96737a74475e30239a">&#9670;&nbsp;</a></span>StateClient()</h2>
+<a id="a5091f9c04cb523c65f9b12a331161693" name="a5091f9c04cb523c65f9b12a331161693"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5091f9c04cb523c65f9b12a331161693">&#9670;&nbsp;</a></span>StateClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,8 +146,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classara_1_1exec_1_1helper_1_1FifoLayer.html">helper::FifoLayer</a>&lt; SetStateMessage &gt; *&#160;</td>
-          <td class="paramname"><em>communicationLayer</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html">com::someip::rpc::RpcClient</a> *&#160;</td>
+          <td class="paramname"><em>rpcClient</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -161,7 +161,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">undefinedStateCallback</td><td>Callback to be invoked when a function group is unexpectedly terminated while state transition </td></tr>
-    <tr><td class="paramname">communicationLayer</td><td>FIFO IPC abstraction layer </td></tr>
+    <tr><td class="paramname">rpcClient</td><td>RPC client abstraction layer </td></tr>
   </table>
   </dd>
 </dl>
