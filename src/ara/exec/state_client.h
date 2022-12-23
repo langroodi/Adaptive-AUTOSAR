@@ -24,7 +24,9 @@ namespace ara
             std::function<void(const ExecutionErrorEvent &)> mUndefinedStateCallback;
             com::someip::rpc::RpcClient *const mRpcClient;
             std::promise<void> mSetStatePromise;
+            std::shared_future<void> mSetStateFuture;
             std::promise<void> mStateTransitionPromise;
+            std::shared_future<void> mStateTransitionFuture;
 
             static void setPromiseException(
                 std::promise<void> &promise, ExecErrc executionErrorCode);
@@ -39,7 +41,7 @@ namespace ara
             void stateTransitionHandler(
                 const com::someip::rpc::SomeIpRpcMessage &message);
 
-            std::future<void> getFuture(
+            std::shared_future<void> getFuture(
                 std::promise<void> &promise,
                 uint16_t methodId,
                 const std::vector<uint8_t> &rpcPayload);
@@ -58,11 +60,11 @@ namespace ara
             /// @brief Set a function group state
             /// @param state Function group-state of interest combination
             /// @returns Void future unless an error occurs
-            std::future<void> SetState(const FunctionGroupState &state);
+            std::shared_future<void> SetState(const FunctionGroupState &state);
 
             /// @brief Push the EM to its start-up state
             /// @returns Void future unless an error occurs
-            std::future<void> GetInitialMachineStateTransitionResult();
+            std::shared_future<void> GetInitialMachineStateTransitionResult();
 
             /// @brief Get the execution error made the state of function group undefined
             /// @param functionGroup Function group of interest

@@ -80,14 +80,14 @@ namespace ara
             genericHandler(mStateTransitionPromise, message);
         }
 
-        std::future<void> StateClient::getFuture(
+        std::shared_future<void> StateClient::getFuture(
             std::promise<void> &promise,
             uint16_t methodId,
             const std::vector<uint8_t> &rpcPayload)
         {
             try
             {
-                std::future<void> _result{promise.get_future()};
+                std::shared_future<void> _result{promise.get_future()};
                 mRpcClient->Send(cServiceId, methodId, cClientId, rpcPayload);
 
                 return _result;
@@ -97,30 +97,60 @@ namespace ara
                 const ExecErrc cAlreadyRequestedCode{ExecErrc::kFailed};
                 std::promise<void> _promise;
                 setPromiseException(_promise, cAlreadyRequestedCode);
-                std::future<void> _result{_promise.get_future()};
+                std::shared_future<void> _result{_promise.get_future()};
 
                 return _result;
             }
         }
 
-        std::future<void> StateClient::SetState(
+        std::shared_future<void> StateClient::SetState(
             const FunctionGroupState &state)
         {
+            if (mSetStateFuture.valid())
+            {
+                try
+                {
+                    const ExecErrc cExecErrc{ExecErrc::kCancelled};
+                    setPromiseException(mSetStatePromise, cExecErrc);
+                }
+                catch (std::future_error)
+                {
+                    // Catch the exception if the promise is already set
+                }
+
+                mSetStatePromise = std::promise<void>();
+            }
+
             std::vector<uint8_t> _rpcPayload;
             state.Serialize(_rpcPayload);
-            std::future<void> _result{
-                getFuture(mSetStatePromise, cSetStateId,_rpcPayload)};
+            mSetStateFuture =
+                getFuture(mSetStatePromise, cSetStateId, _rpcPayload);
 
-            return _result;
+            return mSetStateFuture;
         }
 
-        std::future<void> StateClient::GetInitialMachineStateTransitionResult()
+        std::shared_future<void> StateClient::GetInitialMachineStateTransitionResult()
         {
-            const std::vector<uint8_t> cRpcPayload;
-            std::future<void> _result{
-                getFuture(mStateTransitionPromise, cStateTransition, cRpcPayload)};
+            if (mStateTransitionFuture.valid())
+            {
+                try
+                {
+                    const ExecErrc cExecErrc{ExecErrc::kCancelled};
+                    setPromiseException(mStateTransitionPromise, cExecErrc);
+                }
+                catch (std::future_error)
+                {
+                    // Catch the exception if the promise is already set
+                }
 
-            return _result;
+                mStateTransitionPromise = std::promise<void>();
+            }
+
+            const std::vector<uint8_t> cRpcPayload;
+            mStateTransitionFuture =
+                getFuture(mStateTransitionPromise, cStateTransition, cRpcPayload);
+
+            return mStateTransitionFuture;
         }
 
         core::Result<ExecutionErrorEvent> StateClient::GetExecutionError(
