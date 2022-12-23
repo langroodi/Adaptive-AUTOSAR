@@ -40,6 +40,17 @@ namespace ara
             EXPECT_TRUE(_result.HasValue());
         }
 
+        TEST_F(ExecutionClientTest, RedundantRequestScenario)
+        {
+            const ExecutionState cState{ExecutionState::kRunning};
+
+            core::Result<void> _result{Client.ReportExecutionState(cState)};
+            EXPECT_TRUE(_result.HasValue());
+
+            core::Result<void> _redundantResult{Client.ReportExecutionState(cState)};
+            EXPECT_TRUE(_redundantResult.HasValue());
+        }
+
         TEST_F(ExecutionClientTest, TimeoutScenario)
         {
             const ExecErrc cExpectedResult{ExecErrc::kCommunicationError};
