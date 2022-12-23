@@ -118,12 +118,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5091f9c04cb523c65f9b12a331161693"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a5091f9c04cb523c65f9b12a331161693">StateClient</a> (std::function&lt; void(const <a class="el" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &amp;)&gt; undefinedStateCallback, <a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html">com::someip::rpc::RpcClient</a> *rpcClient)</td></tr>
 <tr class="memdesc:a5091f9c04cb523c65f9b12a331161693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1StateClient.html#a5091f9c04cb523c65f9b12a331161693">More...</a><br /></td></tr>
 <tr class="separator:a5091f9c04cb523c65f9b12a331161693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a587e445f0354557205be7fde3dc5a97e"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a587e445f0354557205be7fde3dc5a97e">SetState</a> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;state)</td></tr>
-<tr class="memdesc:a587e445f0354557205be7fde3dc5a97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a function group state.  <a href="classara_1_1exec_1_1StateClient.html#a587e445f0354557205be7fde3dc5a97e">More...</a><br /></td></tr>
-<tr class="separator:a587e445f0354557205be7fde3dc5a97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd99b1be907fe5f6fb58a12292fcd7bc"><td class="memItemLeft" align="right" valign="top">std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#acd99b1be907fe5f6fb58a12292fcd7bc">GetInitialMachineStateTransitionResult</a> ()</td></tr>
-<tr class="memdesc:acd99b1be907fe5f6fb58a12292fcd7bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push the EM to its start-up state.  <a href="classara_1_1exec_1_1StateClient.html#acd99b1be907fe5f6fb58a12292fcd7bc">More...</a><br /></td></tr>
-<tr class="separator:acd99b1be907fe5f6fb58a12292fcd7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9506ccd63f2cdfdbebca3281d6728508"><td class="memItemLeft" align="right" valign="top">std::shared_future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a9506ccd63f2cdfdbebca3281d6728508">SetState</a> (const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;state)</td></tr>
+<tr class="memdesc:a9506ccd63f2cdfdbebca3281d6728508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a function group state.  <a href="classara_1_1exec_1_1StateClient.html#a9506ccd63f2cdfdbebca3281d6728508">More...</a><br /></td></tr>
+<tr class="separator:a9506ccd63f2cdfdbebca3281d6728508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28538ffd6b81df16017514fc0c0ae0ef"><td class="memItemLeft" align="right" valign="top">std::shared_future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a28538ffd6b81df16017514fc0c0ae0ef">GetInitialMachineStateTransitionResult</a> ()</td></tr>
+<tr class="memdesc:a28538ffd6b81df16017514fc0c0ae0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push the EM to its start-up state.  <a href="classara_1_1exec_1_1StateClient.html#a28538ffd6b81df16017514fc0c0ae0ef">More...</a><br /></td></tr>
+<tr class="separator:a28538ffd6b81df16017514fc0c0ae0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36b5c30c5590db0078621c5d272df54d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; <a class="el" href="structara_1_1exec_1_1ExecutionErrorEvent.html">ExecutionErrorEvent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateClient.html#a36b5c30c5590db0078621c5d272df54d">GetExecutionError</a> (const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">FunctionGroup</a> &amp;functionGroup) noexcept</td></tr>
 <tr class="memdesc:a36b5c30c5590db0078621c5d272df54d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the execution error made the state of function group undefined.  <a href="classara_1_1exec_1_1StateClient.html#a36b5c30c5590db0078621c5d272df54d">More...</a><br /></td></tr>
 <tr class="separator:a36b5c30c5590db0078621c5d272df54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,14 +205,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acd99b1be907fe5f6fb58a12292fcd7bc" name="acd99b1be907fe5f6fb58a12292fcd7bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd99b1be907fe5f6fb58a12292fcd7bc">&#9670;&nbsp;</a></span>GetInitialMachineStateTransitionResult()</h2>
+<a id="a28538ffd6b81df16017514fc0c0ae0ef" name="a28538ffd6b81df16017514fc0c0ae0ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28538ffd6b81df16017514fc0c0ae0ef">&#9670;&nbsp;</a></span>GetInitialMachineStateTransitionResult()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::future&lt; void &gt; ara::exec::StateClient::GetInitialMachineStateTransitionResult </td>
+          <td class="memname">std::shared_future&lt; void &gt; ara::exec::StateClient::GetInitialMachineStateTransitionResult </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -225,14 +225,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a587e445f0354557205be7fde3dc5a97e" name="a587e445f0354557205be7fde3dc5a97e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a587e445f0354557205be7fde3dc5a97e">&#9670;&nbsp;</a></span>SetState()</h2>
+<a id="a9506ccd63f2cdfdbebca3281d6728508" name="a9506ccd63f2cdfdbebca3281d6728508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9506ccd63f2cdfdbebca3281d6728508">&#9670;&nbsp;</a></span>SetState()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::future&lt; void &gt; ara::exec::StateClient::SetState </td>
+          <td class="memname">std::shared_future&lt; void &gt; ara::exec::StateClient::SetState </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classara_1_1exec_1_1FunctionGroupState.html">FunctionGroupState</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em></td><td>)</td>
