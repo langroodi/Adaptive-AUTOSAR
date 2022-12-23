@@ -1,0 +1,2 @@
+/usr/bin/ar qc libasync_bsd_socket_lib.a CMakeFiles/async_bsd_socket_lib.dir/src/communicator.cpp.o CMakeFiles/async_bsd_socket_lib.dir/src/network_socket.cpp.o CMakeFiles/async_bsd_socket_lib.dir/src/poller.cpp.o CMakeFiles/async_bsd_socket_lib.dir/src/tcp_client.cpp.o CMakeFiles/async_bsd_socket_lib.dir/src/tcp_listener.cpp.o CMakeFiles/async_bsd_socket_lib.dir/src/udp_client.cpp.o CMakeFiles/async_bsd_socket_lib.dir/src/fifo_sender.cpp.o CMakeFiles/async_bsd_socket_lib.dir/src/fifo_receiver.cpp.o
+/usr/bin/ranlib libasync_bsd_socket_lib.a
