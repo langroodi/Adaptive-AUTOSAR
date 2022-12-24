@@ -2,6 +2,7 @@
 #define INSTANCE_SPECIFIER_H
 
 #include <string>
+#include <vector>
 #include "./result.h"
 
 namespace ara
@@ -66,6 +67,11 @@ namespace ara
             /// @brief Convert the instance to a string
             /// @returns Meta-model ID (Shortname-path)
             std::string ToString() const noexcept;
+
+            /// @brief Serialized the object
+            /// @param[out] serializedObject Serialized object byte vector
+            /// @note This is not an ARA specified method.
+            void Serialize(std::vector<uint8_t> &serializedObject) const;
         };
 
         inline bool operator==(std::string lhs, const InstanceSpecifier &rhs) noexcept

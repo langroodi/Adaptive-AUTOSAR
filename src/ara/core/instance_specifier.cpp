@@ -37,6 +37,35 @@ namespace ara
             return mMetaModelIdentifier;
         }
 
+        void InstanceSpecifier::Serialize(
+            std::vector<uint8_t> &serializedObject) const
+        {
+            // According to AUTOSAR R22-11 SOME/IP Protocol Specification,
+            // string fields should start with a field length (32-bit by default)
+            // and then the serialized string.
+            auto _metaModelIdLength{
+                static_cast<uint32_t>(mMetaModelIdentifier.length())};
+
+            uint8_t _byte;
+
+            _byte = _metaModelIdLength >> 24;
+            serializedObject.push_back(_byte);
+
+            _byte = _metaModelIdLength >> 16;
+            serializedObject.push_back(_byte);
+
+            _byte = _metaModelIdLength >> 8;
+            serializedObject.push_back(_byte);
+
+            _byte = _metaModelIdLength;
+            serializedObject.push_back(_byte);
+
+            std::copy(
+                mMetaModelIdentifier.cbegin(),
+                mMetaModelIdentifier.cend(),
+                std::back_inserter(serializedObject));
+        }
+
         Result<InstanceSpecifier> InstanceSpecifier::Create(
             std::string metaModelIdentifier)
         {

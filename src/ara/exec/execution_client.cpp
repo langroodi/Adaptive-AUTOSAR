@@ -81,12 +81,15 @@ namespace ara
                 }
                 else
                 {
+                    std::vector<uint8_t> _rpcPayload;
+                    mInstanceSpecifier.Serialize(_rpcPayload);
+
                     auto _stateByte{static_cast<uint8_t>(state)};
-                    const std::vector<uint8_t> cRpcPayload({_stateByte});
+                    _rpcPayload.push_back(_stateByte);
 
                     mPromise = std::promise<void>();
                     mFuture = std::move(mPromise.get_future());
-                    mRpcClient->Send(cServiceId, cMethodId, cClientId, cRpcPayload);
+                    mRpcClient->Send(cServiceId, cMethodId, cClientId, _rpcPayload);
                     std::future_status _status{mFuture.wait_for(mTimeout)};
 
                     if (_status == std::future_status::timeout)
