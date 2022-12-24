@@ -1,0 +1,5 @@
+if(EXISTS "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/doip-lib-build/doip_lib_test[1]_tests.cmake")
+  include("/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/doip-lib-build/doip_lib_test[1]_tests.cmake")
+else()
+  add_test(doip_lib_test_NOT_BUILT doip_lib_test_NOT_BUILT)
+endif()

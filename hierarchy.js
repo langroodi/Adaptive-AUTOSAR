@@ -44,6 +44,7 @@ var hierarchy =
     ] ],
     [ "ara::exec::ExecutionClient", "classara_1_1exec_1_1ExecutionClient.html", null ],
     [ "ara::exec::ExecutionErrorEvent", "structara_1_1exec_1_1ExecutionErrorEvent.html", null ],
+    [ "ara::exec::ExecutionServer", "classara_1_1exec_1_1ExecutionServer.html", null ],
     [ "ara::exec::FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", null ],
     [ "ara::exec::FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", null ],
     [ "ara::core::InstanceSpecifier", "classara_1_1core_1_1InstanceSpecifier.html", null ],
