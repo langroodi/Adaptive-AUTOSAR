@@ -21,5 +21,17 @@ namespace ara
 
             EXPECT_TRUE(_result.Value() == cMetaModelId);
         }
+
+        TEST(InstanceSpecifierTest, SerializeMethod)
+        {
+            const std::string cMetaModelId{"id"};
+            const std::vector<uint8_t> cExpectedResult({0, 0, 0, 2, 105, 100});
+            const InstanceSpecifier cInstanceSpecifier{cMetaModelId};
+
+            std::vector<uint8_t> _actualResult;
+            cInstanceSpecifier.Serialize(_actualResult);
+
+            EXPECT_EQ(cExpectedResult, _actualResult);
+        }
     }
 }
