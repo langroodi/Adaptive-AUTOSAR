@@ -16,8 +16,8 @@ namespace ara
         void ExecutionServer::injectErrorCode(
             std::vector<uint8_t> &payload, ExecErrc errorCode)
         {
-            const auto cErrorCodeInt{static_cast<uint8_t>(errorCode)};
-            payload = std::vector<uint8_t>({cErrorCodeInt});
+            const auto cErrorCodeInt{static_cast<uint32_t>(errorCode)};
+            com::helper::Inject(payload, cErrorCodeInt);
         }
 
         bool ExecutionServer::handleExecutionStateReport(
@@ -34,10 +34,10 @@ namespace ara
             if (rpcRequestPayload.size() < cMinimumPayloadLength)
             {
                 injectErrorCode(rpcResponsePayload, ExecErrc::kInvalidArguments);
-                return false;
+                return true;
             }
 
-            size_t _beginOffset = 0;
+            size_t _beginOffset{0};
             uint32_t _length{
                 com::helper::ExtractInteger(rpcRequestPayload, _beginOffset)};
 
@@ -46,7 +46,7 @@ namespace ara
             if (rpcRequestPayload.size() <= _endOffset)
             {
                 injectErrorCode(rpcResponsePayload, ExecErrc::kInvalidArguments);
-                return false;
+                return true;
             }
 
             uint8_t _executionStateByte{rpcRequestPayload.at(_endOffset)};
@@ -57,7 +57,7 @@ namespace ara
             if (_executionStateByte != cRunningStateInt)
             {
                 injectErrorCode(rpcResponsePayload, ExecErrc::kInvalidArguments);
-                return false;
+                return true;
             }
 
             std::string _id(
@@ -74,13 +74,13 @@ namespace ara
                 // react with an empty RPC response payload
                 mExecutionStates[_id] = _executionState;
                 rpcResponsePayload.clear();
-                return true;
             }
             else
             {
                 injectErrorCode(rpcResponsePayload, ExecErrc::kAlreadyInState);
-                return false;
             }
+
+            return true;
         }
 
         bool ExecutionServer::TryGetExecutionState(
