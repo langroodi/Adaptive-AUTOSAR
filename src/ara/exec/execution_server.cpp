@@ -4,8 +4,8 @@ namespace ara
 {
     namespace exec
     {
-        explicit ExecutionServer::ExecutionServer(
-            com::someip::rpc::RpcServer *rpcServer) : mRpcServer{mRpcServer}
+        ExecutionServer::ExecutionServer(
+            com::someip::rpc::RpcServer *rpcServer) : mRpcServer{rpcServer}
         {
             auto _handler{
                 std::bind(&ExecutionServer::handleExecutionStateReport,
@@ -37,7 +37,7 @@ namespace ara
                 return false;
             }
 
-            size_t _beginOffset;
+            size_t _beginOffset = 0;
             uint32_t _length{
                 com::helper::ExtractInteger(rpcRequestPayload, _beginOffset)};
 
@@ -49,7 +49,6 @@ namespace ara
                 return false;
             }
 
-            ++_endOffset;
             uint8_t _executionStateByte{rpcRequestPayload.at(_endOffset)};
 
             // Validate the reported execution state range
@@ -63,7 +62,7 @@ namespace ara
 
             std::string _id(
                 rpcRequestPayload.cbegin() + _beginOffset,
-                rpcRequestPayload.cend() + _endOffset);
+                rpcRequestPayload.cbegin() + _endOffset);
 
             auto _executionState{static_cast<ExecutionState>(_executionStateByte)};
 
