@@ -11,7 +11,7 @@ namespace ara
         {
             namespace rpc
             {
-                TEST(SomeIpRpcMessageTest, RequestConstructor)
+                TEST(SomeIpRpcMessageTest, RequestCopyPayloadConstructor)
                 {
                     const uint32_t cMessageId{0};
                     const uint16_t cClientId{0};
@@ -30,6 +30,28 @@ namespace ara
                         cRpcPayload);
 
                     EXPECT_EQ(_message.RpcPayload(), cRpcPayload);
+                    EXPECT_EQ(_message.MessageType(), cMessageType);
+                }
+
+                TEST(SomeIpRpcMessageTest, RequestMovePayloadConstructor)
+                {
+                    const uint32_t cMessageId{0};
+                    const uint16_t cClientId{0};
+                    const uint16_t cSessionId{1};
+                    const uint8_t cProtocolVersion{1};
+                    const uint8_t cInterfaceVersion{1};
+                    const uint8_t cRpcPayloadByte{255};
+                    const SomeIpMessageType cMessageType = SomeIpMessageType::Request;
+
+                    SomeIpRpcMessage _message(
+                        cMessageId,
+                        cClientId,
+                        cSessionId,
+                        cProtocolVersion,
+                        cInterfaceVersion,
+                        std::vector<uint8_t>({cRpcPayloadByte}));
+
+                    EXPECT_EQ(_message.RpcPayload().front(), cRpcPayloadByte);
                     EXPECT_EQ(_message.MessageType(), cMessageType);
                 }
 

@@ -18,8 +18,9 @@ namespace ara
                     std::vector<uint8_t> mRpcPayload;
 
                     SomeIpRpcMessage();
+
                 public:
-                    /// @brief Constructor for RPC request message
+                    /// @brief Constructor for RPC request message by copying the RPC payload
                     /// @param messageId Message ID consisting service and method/event ID
                     /// @param clientId Client ID including ID prefix
                     /// @param sessionId Active session ID
@@ -32,6 +33,20 @@ namespace ara
                                      uint8_t protocolVersion,
                                      uint8_t interfaceVersion,
                                      const std::vector<uint8_t> &rpcPayload);
+
+                    /// @brief Constructor for RPC request message by moving the RPC payload
+                    /// @param messageId Message ID consisting service and method/event ID
+                    /// @param clientId Client ID including ID prefix
+                    /// @param sessionId Active session ID
+                    /// @param protocolVersion SOME/IP protocol header version
+                    /// @param interfaceVersion Service interface version
+                    /// @param rpcPayload Serialized RPC request object byte vector
+                    SomeIpRpcMessage(uint32_t messageId,
+                                     uint16_t clientId,
+                                     uint16_t sessionId,
+                                     uint8_t protocolVersion,
+                                     uint8_t interfaceVersion,
+                                     std::vector<uint8_t> &&rpcPayload);
 
                     /// @brief Constructor for RPC response or error message
                     /// @param messageId Message ID consisting service and method/event ID

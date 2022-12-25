@@ -1,3 +1,4 @@
+#include <utility>
 #include "./someip_rpc_message.h"
 
 namespace ara
@@ -28,6 +29,21 @@ namespace ara
                                                                                                            SomeIpMessageType::Request,
                                                                                                            sessionId),
                                                                                              mRpcPayload{rpcPayload}
+                {
+                }
+
+                SomeIpRpcMessage::SomeIpRpcMessage(uint32_t messageId,
+                                                   uint16_t clientId,
+                                                   uint16_t sessionId,
+                                                   uint8_t protocolVersion,
+                                                   uint8_t interfaceVersion,
+                                                   std::vector<uint8_t> &&rpcPayload) : SomeIpMessage(messageId,
+                                                                                                      clientId,
+                                                                                                      protocolVersion,
+                                                                                                      interfaceVersion,
+                                                                                                      SomeIpMessageType::Request,
+                                                                                                      sessionId),
+                                                                                        mRpcPayload{std::move(rpcPayload)}
                 {
                 }
 
