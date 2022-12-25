@@ -126,8 +126,11 @@ Inheritance diagram for ara::com::someip::rpc::SomeIpRpcMessage:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8264b2b662f1a09038b4f012db9e7f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#ac8264b2b662f1a09038b4f012db9e7f5">SomeIpRpcMessage</a> (uint32_t messageId, uint16_t clientId, uint16_t sessionId, uint8_t protocolVersion, uint8_t interfaceVersion, const std::vector&lt; uint8_t &gt; &amp;rpcPayload)</td></tr>
-<tr class="memdesc:ac8264b2b662f1a09038b4f012db9e7f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for RPC request message.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#ac8264b2b662f1a09038b4f012db9e7f5">More...</a><br /></td></tr>
+<tr class="memdesc:ac8264b2b662f1a09038b4f012db9e7f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for RPC request message by copying the RPC payload.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#ac8264b2b662f1a09038b4f012db9e7f5">More...</a><br /></td></tr>
 <tr class="separator:ac8264b2b662f1a09038b4f012db9e7f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84cfb91d2656c86205e537535eb3951"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#ae84cfb91d2656c86205e537535eb3951">SomeIpRpcMessage</a> (uint32_t messageId, uint16_t clientId, uint16_t sessionId, uint8_t protocolVersion, uint8_t interfaceVersion, std::vector&lt; uint8_t &gt; &amp;&amp;rpcPayload)</td></tr>
+<tr class="memdesc:ae84cfb91d2656c86205e537535eb3951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for RPC request message by moving the RPC payload.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#ae84cfb91d2656c86205e537535eb3951">More...</a><br /></td></tr>
+<tr class="separator:ae84cfb91d2656c86205e537535eb3951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acaa2c02c53a56f1f7fb0ef3e9baf36e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#acaa2c02c53a56f1f7fb0ef3e9baf36e5">SomeIpRpcMessage</a> (uint32_t messageId, uint16_t clientId, uint16_t sessionId, uint8_t protocolVersion, uint8_t interfaceVersion, SomeIpReturnCode returnCode, const std::vector&lt; uint8_t &gt; &amp;rpcPayload)</td></tr>
 <tr class="memdesc:acaa2c02c53a56f1f7fb0ef3e9baf36e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for RPC response or error message.  <a href="classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#acaa2c02c53a56f1f7fb0ef3e9baf36e5">More...</a><br /></td></tr>
 <tr class="separator:acaa2c02c53a56f1f7fb0ef3e9baf36e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,7 +202,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p >SOME/IP remote procedure call message. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac8264b2b662f1a09038b4f012db9e7f5" name="ac8264b2b662f1a09038b4f012db9e7f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8264b2b662f1a09038b4f012db9e7f5">&#9670;&nbsp;</a></span>SomeIpRpcMessage() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8264b2b662f1a09038b4f012db9e7f5">&#9670;&nbsp;</a></span>SomeIpRpcMessage() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +251,72 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructor for RPC request message. </p>
+<p>Constructor for RPC request message by copying the RPC payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">messageId</td><td>Message ID consisting service and method/event ID </td></tr>
+    <tr><td class="paramname">clientId</td><td>Client ID including ID prefix </td></tr>
+    <tr><td class="paramname">sessionId</td><td>Active session ID </td></tr>
+    <tr><td class="paramname">protocolVersion</td><td>SOME/IP protocol header version </td></tr>
+    <tr><td class="paramname">interfaceVersion</td><td>Service interface version </td></tr>
+    <tr><td class="paramname">rpcPayload</td><td>Serialized RPC request object byte vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae84cfb91d2656c86205e537535eb3951" name="ae84cfb91d2656c86205e537535eb3951"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84cfb91d2656c86205e537535eb3951">&#9670;&nbsp;</a></span>SomeIpRpcMessage() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ara::com::someip::rpc::SomeIpRpcMessage::SomeIpRpcMessage </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>messageId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>clientId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>sessionId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>protocolVersion</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>interfaceVersion</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>rpcPayload</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor for RPC request message by moving the RPC payload. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">messageId</td><td>Message ID consisting service and method/event ID </td></tr>
@@ -264,7 +332,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="acaa2c02c53a56f1f7fb0ef3e9baf36e5" name="acaa2c02c53a56f1f7fb0ef3e9baf36e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaa2c02c53a56f1f7fb0ef3e9baf36e5">&#9670;&nbsp;</a></span>SomeIpRpcMessage() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa2c02c53a56f1f7fb0ef3e9baf36e5">&#9670;&nbsp;</a></span>SomeIpRpcMessage() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
