@@ -43,15 +43,48 @@ namespace ara
 
                 return _result;
             }
+
+            static bool TryGetErrorCode(
+                const com::someip::rpc::SomeIpRpcMessage &message,
+                ExecErrc &errorCode)
+            {
+                const size_t cPayloadSize{sizeof(uint32_t)};
+                const auto cMin{static_cast<uint32_t>(ExecErrc::kGeneralError)};
+                const auto cMax{static_cast<uint32_t>(ExecErrc::kCycleOverrun)};
+
+                if (message.RpcPayload().size() != cPayloadSize)
+                {
+                    return false;
+                }
+
+                size_t _offset{0};
+                uint32_t _errorCodeInt{
+                    com::helper::ExtractInteger(message.RpcPayload(), _offset)};
+                if (_errorCodeInt < cMin || _errorCodeInt > cMax)
+                {
+                    return false;
+                }
+
+                errorCode = static_cast<ExecErrc>(_errorCodeInt);
+                return true;
+            }
         };
 
         const uint8_t ExecutionServerTest::cProtocolVersion;
         const uint8_t ExecutionServerTest::cInterfaceVersion;
 
-        TEST_F(ExecutionServerTest, ReportExecutionStateMethod)
+        TEST_F(ExecutionServerTest, TryGetExecutionStateMethod)
+        {
+            const std::string cApplicationId{"id"};
+            ExecutionState _executionState;
+            EXPECT_FALSE(Server.TryGetExecutionState(cApplicationId, _executionState));
+        }
+
+        TEST_F(ExecutionServerTest, ReportExecutionStateScenario)
         {
             const auto cExpectedReturnCode{com::someip::SomeIpReturnCode::eOK};
             const ExecutionState cExpectedState{ExecutionState::kRunning};
+            const auto cExpectedErrorCode{ExecErrc::kAlreadyInState};
             const std::string cApplicationId{"id"};
 
             auto _response{Send(std::vector<uint8_t>({0, 0, 0, 2, 105, 100, 0}))};
@@ -62,6 +95,44 @@ namespace ara
             ExecutionState _actualState;
             EXPECT_TRUE(Server.TryGetExecutionState(cApplicationId, _actualState));
             EXPECT_EQ(cExpectedState, _actualState);
+
+            _response = Send(std::vector<uint8_t>({0, 0, 0, 2, 105, 100, 0}));
+            ExecErrc _actualErrorCode;
+            EXPECT_TRUE(TryGetErrorCode(_response, _actualErrorCode));
+            EXPECT_EQ(cExpectedErrorCode, _actualErrorCode);
+        }
+
+        TEST_F(ExecutionServerTest, ShortRpcPayloadScenario)
+        {
+            const ExecErrc cExpectedResult{ExecErrc::kInvalidArguments};
+
+            auto _response{Send(std::vector<uint8_t>({0}))};
+
+            ExecErrc _actualResult;
+            EXPECT_TRUE(TryGetErrorCode(_response, _actualResult));
+            EXPECT_EQ(cExpectedResult, _actualResult);
+        }
+
+        TEST_F(ExecutionServerTest, NoStateScenario)
+        {
+            const ExecErrc cExpectedResult{ExecErrc::kInvalidArguments};
+
+            auto _response{Send(std::vector<uint8_t>({0, 0, 0, 2, 105, 100}))};
+
+            ExecErrc _actualResult;
+            EXPECT_TRUE(TryGetErrorCode(_response, _actualResult));
+            EXPECT_EQ(cExpectedResult, _actualResult);
+        }
+
+        TEST_F(ExecutionServerTest, InvalidStateScenario)
+        {
+            const ExecErrc cExpectedResult{ExecErrc::kInvalidArguments};
+
+            auto _response{Send(std::vector<uint8_t>({0, 0, 0, 2, 105, 100, 255}))};
+
+            ExecErrc _actualResult;
+            EXPECT_TRUE(TryGetErrorCode(_response, _actualResult));
+            EXPECT_EQ(cExpectedResult, _actualResult);
         }
     }
 }
