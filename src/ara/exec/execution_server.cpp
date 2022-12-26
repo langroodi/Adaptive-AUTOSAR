@@ -34,7 +34,7 @@ namespace ara
             if (rpcRequestPayload.size() < cMinimumPayloadLength)
             {
                 injectErrorCode(rpcResponsePayload, ExecErrc::kInvalidArguments);
-                return true;
+                return false;
             }
 
             size_t _beginOffset{0};
@@ -46,7 +46,7 @@ namespace ara
             if (rpcRequestPayload.size() <= _endOffset)
             {
                 injectErrorCode(rpcResponsePayload, ExecErrc::kInvalidArguments);
-                return true;
+                return false;
             }
 
             uint8_t _executionStateByte{rpcRequestPayload.at(_endOffset)};
@@ -57,7 +57,7 @@ namespace ara
             if (_executionStateByte != cRunningStateInt)
             {
                 injectErrorCode(rpcResponsePayload, ExecErrc::kInvalidArguments);
-                return true;
+                return false;
             }
 
             std::string _id(
@@ -74,13 +74,13 @@ namespace ara
                 // react with an empty RPC response payload
                 mExecutionStates[_id] = _executionState;
                 rpcResponsePayload.clear();
+                return true;
             }
             else
             {
                 injectErrorCode(rpcResponsePayload, ExecErrc::kAlreadyInState);
+                return false;
             }
-
-            return true;
         }
 
         bool ExecutionServer::TryGetExecutionState(

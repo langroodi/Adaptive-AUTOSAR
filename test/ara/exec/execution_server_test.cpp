@@ -52,6 +52,11 @@ namespace ara
                 const auto cMin{static_cast<uint32_t>(ExecErrc::kGeneralError)};
                 const auto cMax{static_cast<uint32_t>(ExecErrc::kCycleOverrun)};
 
+                if (message.MessageType() != com::someip::SomeIpMessageType::Error)
+                {
+                    return false;
+                }
+
                 if (message.RpcPayload().size() != cPayloadSize)
                 {
                     return false;

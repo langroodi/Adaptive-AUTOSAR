@@ -104,7 +104,7 @@ namespace ara
                             else
                             {
                                 getResponsePayload(
-                                    _request, SomeIpReturnCode::eNotOk,
+                                    _request, SomeIpReturnCode::eNotOk, _rpcResponsePdu,
                                     responsePayload);
                             }
                         }
