@@ -86,13 +86,14 @@ namespace ara
         bool ExecutionServer::TryGetExecutionState(
             std::string id, ExecutionState &state)
         {
-            try
+            const std::lock_guard<std::mutex> _executionStatesLock(mMutex);
+            auto _itr{mExecutionStates.find(id)};
+            if (_itr != mExecutionStates.end())
             {
-                const std::lock_guard<std::mutex> _executionStatesLock(mMutex);
-                state = mExecutionStates.at(id);
+                state = _itr->second;
                 return true;
             }
-            catch (std::out_of_range)
+            else
             {
                 return false;
             }
