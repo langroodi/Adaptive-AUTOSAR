@@ -10,6 +10,7 @@ var namespaceara_1_1exec =
     [ "FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", "classara_1_1exec_1_1FunctionGroup" ],
     [ "FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", "classara_1_1exec_1_1FunctionGroupState" ],
     [ "StateClient", "classara_1_1exec_1_1StateClient.html", "classara_1_1exec_1_1StateClient" ],
+    [ "StateServer", "classara_1_1exec_1_1StateServer.html", "classara_1_1exec_1_1StateServer" ],
     [ "WorkerRunnable", "classara_1_1exec_1_1WorkerRunnable.html", "classara_1_1exec_1_1WorkerRunnable" ],
     [ "WorkerThread", "classara_1_1exec_1_1WorkerThread.html", "classara_1_1exec_1_1WorkerThread" ],
     [ "ExecutionError", "namespaceara_1_1exec.html#afc5c14bda0d256f751c3350c2a13e8d3", null ],
