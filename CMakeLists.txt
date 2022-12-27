@@ -254,6 +254,8 @@ add_library(
   ${source_ara_com_someip_rpc_dir}/rpc_server.cpp
   ${source_ara_com_someip_rpc_dir}/rpc_client.h
   ${source_ara_com_someip_rpc_dir}/rpc_client.cpp
+  ${source_ara_com_someip_rpc_dir}/socket_rpc_client.h
+  ${source_ara_com_someip_rpc_dir}/socket_rpc_client.cpp
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_server.h
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_server.cpp
   ${source_ara_com_someip_pubsub_dir}/someip_pubsub_client.h
@@ -391,6 +393,11 @@ add_library(
 )
 
 target_link_libraries(
+  ara_com
+  async_bsd_socket_lib
+)
+
+target_link_libraries(
   ara_exec
   ara_core
 )
@@ -513,7 +520,6 @@ if(build_tests)
   target_link_libraries(
     ara_unit_test
     gtest_main
-    async_bsd_socket_lib
     obd_ii_emulator
     doip_lib
     ara_log
