@@ -1,5 +1,13 @@
 var NAVTREEINDEX6 =
 {
+"structara_1_1diag_1_1EventStatusByte.html":[2,0,1,2,13],
+"structara_1_1diag_1_1EventStatusByte.html#ae18fcc2a37f00a9b6092ec012d448959":[2,0,1,2,13,0],
+"structara_1_1diag_1_1EventStatusByte.html#ae18fcc2a37f00a9b6092ec012d448959":[1,0,1,2,13,0],
+"structara_1_1diag_1_1OperationOutput.html":[1,0,1,2,19],
+"structara_1_1diag_1_1OperationOutput.html":[2,0,1,2,19],
+"structara_1_1diag_1_1OperationOutput.html#ab7988fed20eefa8c5ce4e517f5b2a370":[1,0,1,2,19,0],
+"structara_1_1diag_1_1OperationOutput.html#ab7988fed20eefa8c5ce4e517f5b2a370":[2,0,1,2,19,0],
+"structara_1_1diag_1_1SecurityLevel.html":[1,0,1,2,21],
 "structara_1_1diag_1_1SecurityLevel.html":[2,0,1,2,21],
 "structara_1_1diag_1_1SecurityLevel.html#a6a3fea08acc314d1503edba872196be6":[2,0,1,2,21,2],
 "structara_1_1diag_1_1SecurityLevel.html#a6a3fea08acc314d1503edba872196be6":[1,0,1,2,21,2],
