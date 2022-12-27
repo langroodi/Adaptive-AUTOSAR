@@ -37,7 +37,7 @@ namespace ara
                     return mSize == 0;
                 }
 
-                /// @brief Try to insert an element to the queue
+                /// @brief Try to insert an element to the queue via moving
                 /// @param[in] element Element to be moved into the queue
                 /// @return True if the element is moved to the queue successfully, otherwise false
                 /// @note The insertion is based on move constructor emplacement rather than pushing.
@@ -46,6 +46,25 @@ namespace ara
                     if (mLock.try_lock())
                     {
                         mQueue.emplace(std::move(element));
+                        ++mSize;
+                        mLock.unlock();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                /// @brief Try to insert an element to the queue via copying
+                /// @param[in] element Element to be moved into the queue
+                /// @return True if the element is moved to the queue successfully, otherwise false
+                /// @note The insertion is based on move constructor emplacement rather than pushing.
+                bool TryEnqueue(const T &element)
+                {
+                    if (mLock.try_lock())
+                    {
+                        mQueue.emplace(element);
                         ++mSize;
                         mLock.unlock();
                         return true;
