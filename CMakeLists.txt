@@ -252,6 +252,8 @@ add_library(
   ${source_ara_com_someip_rpc_dir}/someip_rpc_message.cpp
   ${source_ara_com_someip_rpc_dir}/rpc_server.h
   ${source_ara_com_someip_rpc_dir}/rpc_server.cpp
+  ${source_ara_com_someip_rpc_dir}/socket_rpc_server.h
+  ${source_ara_com_someip_rpc_dir}/socket_rpc_server.cpp
   ${source_ara_com_someip_rpc_dir}/rpc_client.h
   ${source_ara_com_someip_rpc_dir}/rpc_client.cpp
   ${source_ara_com_someip_rpc_dir}/socket_rpc_client.h
