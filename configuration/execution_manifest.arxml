@@ -4,24 +4,27 @@
         <AR-PACKAGE>
             <SHORT-NAME>ExecutionManifest</SHORT-NAME>
             <ELEMENTS>
-                <ETHERNET-PHYSICAL-CHANNEL>
-                    <SHORT-NAME>Localhost</SHORT-NAME>
-                    <NETWORK-ENDPOINTS>
-                        <NETWORK-ENDPOINT>
-                            <SHORT-NAME>RpcServerEP</SHORT-NAME>
-                            <NETWORK-ENDPOINT-ADDRESSES>
-                                <IPV-4-CONFIGURATION>
-                                    <IPV-4-ADDRESS>127.0.0.1</IPV-4-ADDRESS>
-                                </IPV-4-CONFIGURATION>
-                            </NETWORK-ENDPOINT-ADDRESSES>
-                        </NETWORK-ENDPOINT>
-                    </NETWORK-ENDPOINTS>
-                </ETHERNET-PHYSICAL-CHANNEL>
+                <COMMUNICATION-CLUSTER>
+                    <ETHERNET-PHYSICAL-CHANNEL>
+                        <SHORT-NAME>Localhost</SHORT-NAME>
+                        <NETWORK-ENDPOINTS>
+                            <NETWORK-ENDPOINT>
+                                <SHORT-NAME>RpcServerEP</SHORT-NAME>
+                                <NETWORK-ENDPOINT-ADDRESSES>
+                                    <IPV-4-CONFIGURATION>
+                                        <IPV-4-ADDRESS>127.0.0.1</IPV-4-ADDRESS>
+                                    </IPV-4-CONFIGURATION>
+                                </NETWORK-ENDPOINT-ADDRESSES>
+                            </NETWORK-ENDPOINT>
+                        </NETWORK-ENDPOINTS>
+                    </ETHERNET-PHYSICAL-CHANNEL>
+                    <PROTOCOL-VERSION>1</PROTOCOL-VERSION>
+                </COMMUNICATION-CLUSTER>
                 <ETHERNET-COMMUNICATION-CONNECTOR>
                     <SHORT-NAME>RpcServerConn</SHORT-NAME>
                     <AP-APPLICATION-ENDPOINTS>
                         <AP-APPLICATION-ENDPOINT>
-                        <SHORT-NAME>ServerUnicastTcp</SHORT-NAME>
+                            <SHORT-NAME>ServerUnicastTcp</SHORT-NAME>
                             <TP-CONFIGURATION>
                                 <TCP-TP>
                                     <TCP-TP-PORT>
