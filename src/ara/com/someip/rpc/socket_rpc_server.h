@@ -40,7 +40,7 @@ namespace ara
                         std::string ipAddress,
                         uint16_t port,
                         uint8_t protocolVersion,
-                        uint8_t interfaceVersion);
+                        uint8_t interfaceVersion = 1);
 
                     virtual ~SocketRpcServer() override;
                 };
