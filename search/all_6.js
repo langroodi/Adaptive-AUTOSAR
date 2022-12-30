@@ -48,5 +48,5 @@ var searchData=
   ['gettestcomplete_45',['GetTestComplete',['../classara_1_1diag_1_1Event.html#afe70ef940174c50d0534087fd92c6f3b',1,'ara::diag::Event']]],
   ['gettimestamp_46',['GetTimestamp',['../classara_1_1log_1_1sink_1_1LogSink.html#a8b7aced88e5cef48d8403ffdb308989a',1,'ara::log::sink::LogSink']]],
   ['gettrigger_47',['GetTrigger',['../classara_1_1sm_1_1TriggerIn.html#abf42f1da349ef8b50d8f9469caf8be06',1,'ara::sm::TriggerIn::GetTrigger()'],['../classara_1_1sm_1_1TriggerInOut.html#a26f09fc24e10efffb5dba1740d60dec8',1,'ara::sm::TriggerInOut::GetTrigger()']]],
-  ['getvalue_48',['GetValue',['../classara_1_1diag_1_1MetaInfo.html#a57fc19a42c52c33ae0778dfd47380401',1,'ara::diag::MetaInfo']]]
+  ['getvalue_48',['GetValue',['../classara_1_1diag_1_1MetaInfo.html#a57fc19a42c52c33ae0778dfd47380401',1,'ara::diag::MetaInfo::GetValue()'],['../classarxml_1_1ArxmlNode.html#a1ad34796fdd08f252708c15fe2d84e45',1,'arxml::ArxmlNode::GetValue()']]]
 ];

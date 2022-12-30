@@ -122,21 +122,35 @@ $(document).ready(function(){initNavTree('arxml__node_8h_source.html',''); initR
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">explicit</span> <a class="code hl_class" href="classarxml_1_1ArxmlNode.html">ArxmlNode</a>(pugi::xml_node &amp;&amp;node);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        std::string <a class="code hl_function" href="classarxml_1_1ArxmlNode.html#a3b0c1cbdc48ff8e376508aa25becde84">GetShortName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classarxml_1_1ArxmlNode.html#a6d18595d5093514f260ac27335bcb9d4">TryGetReference</a>(</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keyword">const</span> std::string &amp;sourceNode, <span class="keyword">const</span> std::string &amp;destinationType,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            std::string &amp;referenceNode) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classarxml_1_1ArxmlNode.html#a1ad34796fdd08f252708c15fe2d84e45">   27</a></span>        T <a class="code hl_function" href="classarxml_1_1ArxmlNode.html#a1ad34796fdd08f252708c15fe2d84e45">GetValue</a>(T defaultValue = {})</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keyword">auto</span> _defaultValueUInt{<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(defaultValue)};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _value{mNode.text().as_uint(_defaultValueUInt)};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keyword">auto</span> _result{<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(_value)};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">return</span> _result;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        std::string <a class="code hl_function" href="classarxml_1_1ArxmlNode.html#ace1bf1a388e7f6449ba464c928c40adc">GetContent</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    };</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        std::string <a class="code hl_function" href="classarxml_1_1ArxmlNode.html#a3b0c1cbdc48ff8e376508aa25becde84">GetShortName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classarxml_1_1ArxmlNode.html#a6d18595d5093514f260ac27335bcb9d4">TryGetReference</a>(</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keyword">const</span> std::string &amp;sourceNode, <span class="keyword">const</span> std::string &amp;destinationType,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            std::string &amp;referenceNode) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        std::string <a class="code hl_function" href="classarxml_1_1ArxmlNode.html#ace1bf1a388e7f6449ba464c928c40adc">GetContent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    };</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::string <a class="code hl_function" href="classarxml_1_1ArxmlNode.html#a1ad34796fdd08f252708c15fe2d84e45">ArxmlNode::GetValue</a>(std::string defaultValue);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassarxml_1_1ArxmlNode_html"><div class="ttname"><a href="classarxml_1_1ArxmlNode.html">arxml::ArxmlNode</a></div><div class="ttdoc">A class that represents a XML node within a ARXML configuration.</div><div class="ttdef"><b>Definition:</b> arxml_node.h:11</div></div>
+<div class="ttc" id="aclassarxml_1_1ArxmlNode_html_a1ad34796fdd08f252708c15fe2d84e45"><div class="ttname"><a href="classarxml_1_1ArxmlNode.html#a1ad34796fdd08f252708c15fe2d84e45">arxml::ArxmlNode::GetValue</a></div><div class="ttdeci">T GetValue(T defaultValue={})</div><div class="ttdoc">Get the node value.</div><div class="ttdef"><b>Definition:</b> arxml_node.h:27</div></div>
 <div class="ttc" id="aclassarxml_1_1ArxmlNode_html_a3b0c1cbdc48ff8e376508aa25becde84"><div class="ttname"><a href="classarxml_1_1ArxmlNode.html#a3b0c1cbdc48ff8e376508aa25becde84">arxml::ArxmlNode::GetShortName</a></div><div class="ttdeci">std::string GetShortName() const</div><div class="ttdoc">Get the node short name.</div><div class="ttdef"><b>Definition:</b> arxml_node.cpp:11</div></div>
-<div class="ttc" id="aclassarxml_1_1ArxmlNode_html_a6d18595d5093514f260ac27335bcb9d4"><div class="ttname"><a href="classarxml_1_1ArxmlNode.html#a6d18595d5093514f260ac27335bcb9d4">arxml::ArxmlNode::TryGetReference</a></div><div class="ttdeci">bool TryGetReference(const std::string &amp;sourceNode, const std::string &amp;destinationType, std::string &amp;referenceNode) const</div><div class="ttdoc">Try to get a reference node.</div><div class="ttdef"><b>Definition:</b> arxml_node.cpp:18</div></div>
-<div class="ttc" id="aclassarxml_1_1ArxmlNode_html_ace1bf1a388e7f6449ba464c928c40adc"><div class="ttname"><a href="classarxml_1_1ArxmlNode.html#ace1bf1a388e7f6449ba464c928c40adc">arxml::ArxmlNode::GetContent</a></div><div class="ttdeci">std::string GetContent() const</div><div class="ttdoc">Get XML content of the node.</div><div class="ttdef"><b>Definition:</b> arxml_node.cpp:42</div></div>
+<div class="ttc" id="aclassarxml_1_1ArxmlNode_html_a6d18595d5093514f260ac27335bcb9d4"><div class="ttname"><a href="classarxml_1_1ArxmlNode.html#a6d18595d5093514f260ac27335bcb9d4">arxml::ArxmlNode::TryGetReference</a></div><div class="ttdeci">bool TryGetReference(const std::string &amp;sourceNode, const std::string &amp;destinationType, std::string &amp;referenceNode) const</div><div class="ttdoc">Try to get a reference node.</div><div class="ttdef"><b>Definition:</b> arxml_node.cpp:27</div></div>
+<div class="ttc" id="aclassarxml_1_1ArxmlNode_html_ace1bf1a388e7f6449ba464c928c40adc"><div class="ttname"><a href="classarxml_1_1ArxmlNode.html#ace1bf1a388e7f6449ba464c928c40adc">arxml::ArxmlNode::GetContent</a></div><div class="ttdeci">std::string GetContent() const</div><div class="ttdoc">Get XML content of the node.</div><div class="ttdef"><b>Definition:</b> arxml_node.cpp:51</div></div>
 <div class="ttc" id="anamespacearxml_html"><div class="ttname"><a href="namespacearxml.html">arxml</a></div><div class="ttdoc">AUTOSAR XML (ARXML) configuration files utilities namespace.</div><div class="ttdef"><b>Definition:</b> arxml_node.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

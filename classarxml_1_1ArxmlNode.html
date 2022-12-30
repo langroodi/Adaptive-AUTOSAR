@@ -118,6 +118,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3bbbb7214d0457952f310032a928cdc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlNode.html#a3bbbb7214d0457952f310032a928cdc8">ArxmlNode</a> (pugi::xml_node &amp;&amp;node)</td></tr>
 <tr class="memdesc:a3bbbb7214d0457952f310032a928cdc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classarxml_1_1ArxmlNode.html#a3bbbb7214d0457952f310032a928cdc8">More...</a><br /></td></tr>
 <tr class="separator:a3bbbb7214d0457952f310032a928cdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ad34796fdd08f252708c15fe2d84e45"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a1ad34796fdd08f252708c15fe2d84e45"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlNode.html#a1ad34796fdd08f252708c15fe2d84e45">GetValue</a> (T defaultValue={})</td></tr>
+<tr class="memdesc:a1ad34796fdd08f252708c15fe2d84e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node value.  <a href="classarxml_1_1ArxmlNode.html#a1ad34796fdd08f252708c15fe2d84e45">More...</a><br /></td></tr>
+<tr class="separator:a1ad34796fdd08f252708c15fe2d84e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b0c1cbdc48ff8e376508aa25becde84"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlNode.html#a3b0c1cbdc48ff8e376508aa25becde84">GetShortName</a> () const</td></tr>
 <tr class="memdesc:a3b0c1cbdc48ff8e376508aa25becde84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the node short name.  <a href="classarxml_1_1ArxmlNode.html#a3b0c1cbdc48ff8e376508aa25becde84">More...</a><br /></td></tr>
 <tr class="separator:a3b0c1cbdc48ff8e376508aa25becde84"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,6 +131,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ace1bf1a388e7f6449ba464c928c40adc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlNode.html#ace1bf1a388e7f6449ba464c928c40adc">GetContent</a> () const</td></tr>
 <tr class="memdesc:ace1bf1a388e7f6449ba464c928c40adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get XML content of the node.  <a href="classarxml_1_1ArxmlNode.html#ace1bf1a388e7f6449ba464c928c40adc">More...</a><br /></td></tr>
 <tr class="separator:ace1bf1a388e7f6449ba464c928c40adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329d4c3321248c113993902fb14db4be"><td class="memItemLeft" align="right" valign="top"><a id="a329d4c3321248c113993902fb14db4be" name="a329d4c3321248c113993902fb14db4be"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a329d4c3321248c113993902fb14db4be"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><b>GetValue</b> (std::string defaultValue)</td></tr>
+<tr class="separator:a329d4c3321248c113993902fb14db4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class that represents a XML node within a ARXML configuration. </p>
@@ -203,6 +211,49 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the node short name. </p>
 <dl class="section return"><dt>Returns</dt><dd>Short name child text of the node </dd></dl>
+
+</div>
+</div>
+<a id="a1ad34796fdd08f252708c15fe2d84e45" name="a1ad34796fdd08f252708c15fe2d84e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ad34796fdd08f252708c15fe2d84e45">&#9670;&nbsp;</a></span>GetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T arxml::ArxmlNode::GetValue </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>defaultValue</em> = <code>{}</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the node value. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Value type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>Default value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Node value if exists; otherwise the default value </dd></dl>
 
 </div>
 </div>
