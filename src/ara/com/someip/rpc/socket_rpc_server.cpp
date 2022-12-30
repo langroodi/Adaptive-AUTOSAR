@@ -34,6 +34,17 @@ namespace ara
                         throw std::runtime_error(
                             "Adding TCP server socket listener failed.");
                     }
+                }
+
+                void SocketRpcServer::onAccept()
+                {
+                    bool _successful{mServer.TryAccept()};
+
+                    if (!_successful)
+                    {
+                        throw std::runtime_error(
+                            "Accepting RPC client TCP connection failed.");
+                    }
 
                     auto _receiver{std::bind(&SocketRpcServer::onReceive, this)};
                     _successful = mPoller->TryAddReceiver(&mServer, _receiver);
@@ -50,11 +61,6 @@ namespace ara
                         throw std::runtime_error(
                             "Adding TCP server socket sender failed.");
                     }
-                }
-
-                void SocketRpcServer::onAccept()
-                {
-                    mServer.TryAccept();
                 }
 
                 void SocketRpcServer::onReceive()
