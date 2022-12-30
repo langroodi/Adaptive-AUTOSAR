@@ -15,6 +15,15 @@ namespace arxml
         return _result;
     }
 
+    template <>
+    std::string ArxmlNode::GetValue(std::string defaultValue)
+    {
+        auto _value{mNode.text().as_string(defaultValue.c_str())};
+        std::string _result{_value};
+
+        return _result;
+    }
+
     bool ArxmlNode::TryGetReference(
         const std::string &sourceNode, const std::string &destinationType,
         std::string &referenceNode) const
