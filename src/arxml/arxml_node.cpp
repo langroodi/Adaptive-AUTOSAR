@@ -16,7 +16,7 @@ namespace arxml
     }
 
     template <>
-    std::string ArxmlNode::GetValue(std::string defaultValue)
+    std::string ArxmlNode::GetValue(std::string defaultValue) const
     {
         auto _value{mNode.text().as_string(defaultValue.c_str())};
         std::string _result{_value};

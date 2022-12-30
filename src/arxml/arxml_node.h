@@ -24,7 +24,7 @@ namespace arxml
         /// @param defaultValue Default value
         /// @return Node value if exists; otherwise the default value
         template <typename T>
-        T GetValue(T defaultValue = {})
+        T GetValue(T defaultValue = {}) const
         {
             auto _defaultValueUInt{static_cast<unsigned int>(defaultValue)};
             unsigned int _value{mNode.text().as_uint(_defaultValueUInt)};
@@ -53,7 +53,7 @@ namespace arxml
     };
 
     template <>
-    std::string ArxmlNode::GetValue(std::string defaultValue);
+    std::string ArxmlNode::GetValue(std::string defaultValue) const;
 }
 
 #endif
