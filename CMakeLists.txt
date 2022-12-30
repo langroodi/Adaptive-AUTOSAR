@@ -116,6 +116,9 @@ set(source_ara_diag_routing_dir
 set(source_ara_diag_debouncing_dir
   "${CMAKE_SOURCE_DIR}/src/ara/diag/debouncing")
 
+set(source_application_helper_dir
+  "${CMAKE_SOURCE_DIR}/src/application/helper")
+
 set(source_application_platform_dir
   "${CMAKE_SOURCE_DIR}/src/application/platform")
 
@@ -418,6 +421,8 @@ target_link_libraries(
 add_executable(
   adaptive_autosar
   ${source_dir}/main.cpp
+  ${source_application_helper_dir}/rpc_configuration.h
+  ${source_application_helper_dir}/rpc_configuration.cpp
   ${source_application_platform_dir}/state_management.h
   ${source_application_platform_dir}/state_management.cpp
   ${source_application_platform_dir}/execution_management.h
