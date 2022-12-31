@@ -1,5 +1,5 @@
 #include "../../ara/com/someip/rpc/socket_rpc_server.h"
-#include "../../ara/exec/state_server.h"
+#include "../../ara/exec/execution_server.h"
 #include "./execution_management.h"
 
 namespace application
@@ -60,6 +60,7 @@ namespace application
                     cRpcConfiguration.ipAddress,
                     cRpcConfiguration.portNumber,
                     cRpcConfiguration.protocolVersion);
+                ara::exec::ExecutionServer _executionServer(&_rpcServer);
 
                 _logStream << "Execution management has been initialized.";
                 mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
