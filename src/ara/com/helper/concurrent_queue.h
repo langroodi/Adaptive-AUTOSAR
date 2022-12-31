@@ -83,6 +83,7 @@ namespace ara
                     if (mLock.try_lock())
                     {
                         element = std::move(mQueue.front());
+                        mQueue.pop();
                         --mSize;
                         mLock.unlock();
                         return true;
