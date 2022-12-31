@@ -46,6 +46,13 @@ namespace ara
                             "Accepting RPC client TCP connection failed.");
                     }
 
+                    _successful = mServer.TryMakeConnectionNonblock();
+                    if (!_successful)
+                    {
+                        throw std::runtime_error(
+                            "Making non-blocking TCP connection failed.");
+                    }
+
                     auto _receiver{std::bind(&SocketRpcServer::onReceive, this)};
                     _successful = mPoller->TryAddReceiver(&mServer, _receiver);
                     if (!_successful)
