@@ -2,6 +2,7 @@
 #define STATE_MANAGEMENT_H
 
 #include <asyncbsdsocket/poller.h>
+#include "../../ara/com/someip/rpc/socket_rpc_client.h"
 #include "../../ara/exec/helper/modelled_process.h"
 #include "../../ara/exec/deterministic_client.h"
 #include "../../ara/exec/state_client.h"
@@ -29,6 +30,7 @@ namespace application
             std::vector<ara::exec::FunctionGroup> mFunctionGroups;
             std::vector<ara::exec::FunctionGroupState> mFunctionGroupStates;
             AsyncBsdSocketLib::Poller mPoller;
+            ara::core::InstanceSpecifier mInstanceSpecifier;
 
             static helper::RpcConfiguration getRpcConfiguration(
                 const std::string &configFilepath);
@@ -38,6 +40,11 @@ namespace application
                 std::string &&functionGroupContent);
 
             void configureFunctionGroups(const std::string &configFilepath);
+
+            void reportExecutionState(
+                ara::com::someip::rpc::RpcClient *rpcClient);
+
+            void checkExecutionStateReport(std::future<void> &future);
 
         protected:
             int Main(

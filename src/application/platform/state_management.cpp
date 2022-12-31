@@ -1,6 +1,6 @@
 #include <utility>
+#include "../../ara/exec/execution_client.h"
 #include "./state_management.h"
-#include "../../ara/com/someip/rpc/socket_rpc_client.h"
 
 namespace application
 {
@@ -14,7 +14,8 @@ namespace application
         const ara::log::LogLevel StateManagement::cErrorLevel{ara::log::LogLevel::kError};
 
         StateManagement::StateManagement() : mLoggingFramework{ara::log::LoggingFramework::Create(cAppId, cLogMode)},
-                                             mLogger{mLoggingFramework->CreateLogger(cContextId, cContextDescription, cLogLevel)}
+                                             mLogger{mLoggingFramework->CreateLogger(cContextId, cContextDescription, cLogLevel)},
+                                             mInstanceSpecifier{ara::core::InstanceSpecifier::Create(cAppId).Value()}
         {
         }
 
@@ -93,6 +94,43 @@ namespace application
             }
         }
 
+        void StateManagement::reportExecutionState(
+            ara::com::someip::rpc::RpcClient *rpcClient)
+        {
+            const auto cExecutionState{ara::exec::ExecutionState::kRunning};
+
+            ara::exec::ExecutionClient _executionClient(
+                mInstanceSpecifier, rpcClient);
+
+            ara::core::Result<void> _result{
+                _executionClient.ReportExecutionState(cExecutionState)};
+
+            if (!_result.HasValue())
+            {
+                std::string _errorMessage{_result.Error().Message()};
+                throw std::runtime_error(std::move(_errorMessage));
+            }
+        }
+
+        void StateManagement::checkExecutionStateReport(std::future<void> &future)
+        {
+            const std::chrono::seconds cDuration{0};
+
+            if (future.valid())
+            {
+                std::future_status _status{future.wait_for(cDuration)};
+
+                if (_status == std::future_status::ready)
+                {
+                    future.get();
+
+                    ara::log::LogStream _logStream;
+                    _logStream << "Execution state is reported successfully.";
+                    mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                }
+            }
+        }
+
         int StateManagement::Main(
             const std::atomic_bool *cancellationToken,
             const std::map<std::string, std::string> &arguments)
@@ -116,6 +154,12 @@ namespace application
                     cRpcConfiguration.protocolVersion);
 
                 configureFunctionGroups(_configFilepath);
+                std::future<void> _executionStateReport{
+                    std::async(
+                        std::launch::async,
+                        &StateManagement::reportExecutionState,
+                        this,
+                        &_rpcClient)};
 
                 _logStream << "State management has been initialized.";
                 mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
@@ -130,6 +174,7 @@ namespace application
                     _activationReturn = _activationReturnResult.Value();
 
                     mPoller.TryPoll();
+                    checkExecutionStateReport(_executionStateReport);
                 }
 
                 _logStream.Flush();
