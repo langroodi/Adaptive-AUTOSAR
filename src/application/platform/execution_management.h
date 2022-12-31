@@ -1,8 +1,7 @@
 #ifndef EXECUTION_MANAGEMENT_H
 #define EXECUTION_MANAGEMENT_H
 
-#include <asyncbsdsocket/poller.h>
-#include "../helper/rpc_configuration.h"
+#include <set>
 #include "./state_management.h"
 
 /// @brief AUTOSAR application namespace
@@ -29,7 +28,22 @@ namespace application
             AsyncBsdSocketLib::Poller mPoller;
 
             static helper::RpcConfiguration getRpcConfiguration(
-                const std::map<std::string, std::string> &arguments);
+                const std::string &configFilepath);
+
+            static void fillFunctionGroupStates(
+                std::string functionGroupShortName,
+                const std::string &functionGroupContent,
+                std::set<std::pair<std::string, std::string>> &functionGroupStates);
+
+            static void fillInitialStates(
+                std::string functionGroupShortName,
+                const std::string &functionGroupContent,
+                std::map<std::string, std::string> &initialStates);
+
+            static void fillStates(
+                const std::string &configFilepath,
+                std::set<std::pair<std::string, std::string>> &functionGroupStates,
+                std::map<std::string, std::string> &initialStates);
 
         protected:
             int Main(
