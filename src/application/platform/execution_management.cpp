@@ -75,7 +75,7 @@ namespace application
                     auto _activationReturnResult{mDeterministicClient.WaitForActivation()};
                     _activationReturn = _activationReturnResult.Value();
 
-                    ///@todo Execution management logic here
+                    mPoller.TryPoll();
                 }
 
                 int _result{mStateManagement.Terminate()};
