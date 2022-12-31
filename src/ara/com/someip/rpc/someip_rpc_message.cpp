@@ -91,13 +91,19 @@ namespace ara
                 SomeIpRpcMessage SomeIpRpcMessage::Deserialize(
                     const std::vector<uint8_t> &payload)
                 {
-                    const size_t cHeaderOffset{16};
+                    const size_t cHeaderSize{16};
+
+                    size_t _lengthOffset{4};
+                    uint32_t _lengthInt{
+                        helper::ExtractInteger(payload, _lengthOffset)};
+                    auto _length{static_cast<size_t>(_lengthInt)};
 
                     SomeIpRpcMessage _result;
                     SomeIpMessage::Deserialize(&_result, payload);
                     _result.mRpcPayload =
                         std::vector<uint8_t>(
-                            payload.cbegin() + cHeaderOffset, payload.cend());
+                            payload.cbegin() + cHeaderSize,
+                            payload.cbegin() + cHeaderSize + _length - _lengthOffset);
 
                     return _result;
                 }
