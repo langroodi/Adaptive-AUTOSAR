@@ -41,10 +41,41 @@ namespace application
 
             void configureFunctionGroups(const std::string &configFilepath);
 
+            void onUndefinedState(const ara::exec::ExecutionErrorEvent &event);
+
             void reportExecutionState(
                 ara::com::someip::rpc::RpcClient *rpcClient);
 
-            void checkExecutionStateReport(std::future<void> &future);
+            std::shared_future<void> transitToStartUpState(
+                ara::exec::StateClient &stateClient);
+
+            template <class Future>
+            void checkFuture(Future &future, std::string &&message)
+            {
+                const std::chrono::seconds cDuration{0};
+
+                if (future.valid())
+                {
+                    try
+                    {
+                        std::future_status _status{future.wait_for(cDuration)};
+
+                        if (_status == std::future_status::ready)
+                        {
+                            future.get();
+                            future = Future{};
+
+                            ara::log::LogStream _logStream;
+                            _logStream << message;
+                            mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                        }
+                    }
+                    catch (const ara::exec::ExecException &ex)
+                    {
+                        throw std::runtime_error(ex.what());
+                    }
+                }
+            }
 
         protected:
             int Main(

@@ -94,6 +94,18 @@ namespace application
             }
         }
 
+        void StateManagement::onUndefinedState(
+            const ara::exec::ExecutionErrorEvent &event)
+        {
+            ara::log::LogStream _logStream;
+            _logStream
+                << "Function group: "
+                << event.functionGroup->GetInstance().ToString()
+                << " has undefined state because of error code "
+                << event.executionError;
+            mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+        }
+
         void StateManagement::reportExecutionState(
             ara::com::someip::rpc::RpcClient *rpcClient)
         {
@@ -112,23 +124,24 @@ namespace application
             }
         }
 
-        void StateManagement::checkExecutionStateReport(std::future<void> &future)
+        std::shared_future<void> StateManagement::transitToStartUpState(
+            ara::exec::StateClient &stateClient)
         {
-            const std::chrono::seconds cDuration{0};
+            const std::string cFunctionGroup{"MachineFG"};
+            const std::string cState{"StartUp"};
 
-            if (future.valid())
+            for (auto &functionGroupState : mFunctionGroupStates)
             {
-                std::future_status _status{future.wait_for(cDuration)};
-
-                if (_status == std::future_status::ready)
+                if (functionGroupState.GetFunctionGroup().GetInstance().ToString() == cFunctionGroup &&
+                    functionGroupState.GetState() == cState)
                 {
-                    future.get();
-
-                    ara::log::LogStream _logStream;
-                    _logStream << "Execution state is reported successfully.";
-                    mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                    return stateClient.SetState(functionGroupState);
                 }
             }
+
+            std::string cErrorMessage{
+                "State: " + cState + " for function group " + cFunctionGroup + " cannot be found."};
+            throw std::runtime_error(cErrorMessage);
         }
 
         int StateManagement::Main(
@@ -154,12 +167,25 @@ namespace application
                     cRpcConfiguration.protocolVersion);
 
                 configureFunctionGroups(cConfigFilepath);
+
+                auto _undefinedStateCallback(
+                    std::bind(
+                        &StateManagement::onUndefinedState,
+                        this, std::placeholders::_1));
+                ara::exec::StateClient _stateClient(
+                    _undefinedStateCallback, &_rpcClient);
+
                 std::future<void> _executionStateReport{
                     std::async(
                         std::launch::async,
                         &StateManagement::reportExecutionState,
                         this,
                         &_rpcClient)};
+
+                std::shared_future<void> _initialMachineStateTransition{
+                    _stateClient.GetInitialMachineStateTransitionResult()};
+                std::shared_future<void> _startUpStateTransition{
+                    transitToStartUpState(_stateClient)};
 
                 _logStream << "State management has been initialized.";
                 mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
@@ -174,7 +200,16 @@ namespace application
                     _activationReturn = _activationReturnResult.Value();
 
                     mPoller.TryPoll();
-                    checkExecutionStateReport(_executionStateReport);
+
+                    checkFuture(
+                        _executionStateReport,
+                        "Execution state is reported successfully.");
+                    checkFuture(
+                        _initialMachineStateTransition,
+                        "EM initial machine state transition is fetched successfully.");
+                    checkFuture(
+                        _startUpStateTransition,
+                        "EM is transited to the start-up state successfully.");
                 }
 
                 _logStream.Flush();
