@@ -174,21 +174,22 @@ $(document).ready(function(){initNavTree('concurrent__queue_8h_source.html','');
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                    <span class="keywordflow">if</span> (mLock.try_lock())</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                    {</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                        element = std::move(mQueue.front());</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                        --mSize;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                        mLock.unlock();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            };</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                        mQueue.pop();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                        --mSize;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        mLock.unlock();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                    {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            };</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1ConcurrentQueue_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1ConcurrentQueue.html">ara::com::helper::ConcurrentQueue</a></div><div class="ttdoc">Thread-safe wrapper around STL queue using locking mechanism.</div><div class="ttdef"><b>Definition:</b> concurrent_queue.h:18</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1ConcurrentQueue_html_a1205405ee01cf6c38e0b93ed79b91b9d"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1ConcurrentQueue.html#a1205405ee01cf6c38e0b93ed79b91b9d">ara::com::helper::ConcurrentQueue::TryEnqueue</a></div><div class="ttdeci">bool TryEnqueue(const T &amp;element)</div><div class="ttdoc">Try to insert an element to the queue via copying.</div><div class="ttdef"><b>Definition:</b> concurrent_queue.h:63</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1ConcurrentQueue_html_a19b108806c442f5db9f9de6f932abbd7"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1ConcurrentQueue.html#a19b108806c442f5db9f9de6f932abbd7">ara::com::helper::ConcurrentQueue::TryDequeue</a></div><div class="ttdeci">bool TryDequeue(T &amp;element)</div><div class="ttdoc">Try to peek an element from the queue by removing it.</div><div class="ttdef"><b>Definition:</b> concurrent_queue.h:81</div></div>
