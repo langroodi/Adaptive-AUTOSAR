@@ -107,58 +107,76 @@ $(document).ready(function(){initNavTree('state__management_8h_source.html','');
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef STATE_MANAGEMENT_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define STATE_MANAGEMENT_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../../ara/exec/helper/modelled_process.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../../ara/exec/deterministic_client.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../../ara/exec/state_client.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../../ara/log/logging_framework.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceapplication.html">application</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">namespace </span>platform</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classapplication_1_1platform_1_1StateManagement.html">   14</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classapplication_1_1platform_1_1StateManagement.html">StateManagement</a> : <span class="keyword">public</span> <a class="code hl_class" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html">ara::exec::helper::ModelledProcess</a></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            <span class="keyword">static</span> <span class="keyword">const</span> std::string cAppId;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceara_1_1log.html#ad9c8298b018a7974eae31e7589be288d">ara::log::LogMode</a> cLogMode;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <span class="keyword">static</span> <span class="keyword">const</span> std::string cContextId;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keyword">static</span> <span class="keyword">const</span> std::string cContextDescription;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f">ara::log::LogLevel</a> cLogLevel;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_class" href="classara_1_1exec_1_1DeterministicClient.html">ara::exec::DeterministicClient</a> mDeterministicClient;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_class" href="classara_1_1log_1_1LoggingFramework.html">ara::log::LoggingFramework</a> *mLoggingFramework;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <a class="code hl_class" href="classara_1_1log_1_1Logger.html">ara::log::Logger</a> mLogger;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            std::vector&lt;ara::exec::FunctionGroup&gt; mFunctionGroups;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            std::vector&lt;ara::exec::FunctionGroupState&gt; mFunctionGroupStates;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordtype">void</span> configureStates(</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                <span class="keyword">const</span> <a class="code hl_class" href="classara_1_1exec_1_1FunctionGroup.html">ara::exec::FunctionGroup</a> &amp;functionGroup,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                std::string &amp;&amp;functionGroupContent);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordtype">void</span> configureFunctionGroups(<span class="keyword">const</span> std::string &amp;configFilepath);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordtype">int</span> <a class="code hl_function" href="classapplication_1_1platform_1_1StateManagement.html#a2c28ca0efc76b9e02ad94d1ba803dfad">Main</a>(</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <span class="keyword">const</span> std::atomic_bool *cancellationToken,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                <span class="keyword">const</span> std::map&lt;std::string, std::string&gt; &amp;arguments) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_class" href="classapplication_1_1platform_1_1StateManagement.html">StateManagement</a>();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_class" href="classapplication_1_1platform_1_1StateManagement.html">~StateManagement</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        };</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassapplication_1_1platform_1_1StateManagement_html"><div class="ttname"><a href="classapplication_1_1platform_1_1StateManagement.html">application::platform::StateManagement</a></div><div class="ttdoc">State managment modelled process.</div><div class="ttdef"><b>Definition:</b> state_management.h:15</div></div>
-<div class="ttc" id="aclassapplication_1_1platform_1_1StateManagement_html_a2c28ca0efc76b9e02ad94d1ba803dfad"><div class="ttname"><a href="classapplication_1_1platform_1_1StateManagement.html#a2c28ca0efc76b9e02ad94d1ba803dfad">application::platform::StateManagement::Main</a></div><div class="ttdeci">int Main(const std::atomic_bool *cancellationToken, const std::map&lt; std::string, std::string &gt; &amp;arguments) override</div><div class="ttdoc">Main running block of the process.</div><div class="ttdef"><b>Definition:</b> state_management.cpp:72</div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;asyncbsdsocket/poller.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../../ara/com/someip/rpc/socket_rpc_client.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../../ara/exec/helper/modelled_process.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../../ara/exec/deterministic_client.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../../ara/exec/state_client.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../../ara/log/logging_framework.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../helper/rpc_configuration.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceapplication.html">application</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">namespace </span>platform</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classapplication_1_1platform_1_1StateManagement.html">   17</a></span>        <span class="keyword">class </span><a class="code hl_class" href="classapplication_1_1platform_1_1StateManagement.html">StateManagement</a> : <span class="keyword">public</span> <a class="code hl_class" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html">ara::exec::helper::ModelledProcess</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keyword">static</span> <span class="keyword">const</span> std::string cAppId;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceara_1_1log.html#ad9c8298b018a7974eae31e7589be288d">ara::log::LogMode</a> cLogMode;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <span class="keyword">static</span> <span class="keyword">const</span> std::string cContextId;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <span class="keyword">static</span> <span class="keyword">const</span> std::string cContextDescription;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f">ara::log::LogLevel</a> cLogLevel;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f">ara::log::LogLevel</a> cErrorLevel;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <a class="code hl_class" href="classara_1_1exec_1_1DeterministicClient.html">ara::exec::DeterministicClient</a> mDeterministicClient;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <a class="code hl_class" href="classara_1_1log_1_1LoggingFramework.html">ara::log::LoggingFramework</a> *mLoggingFramework;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <a class="code hl_class" href="classara_1_1log_1_1Logger.html">ara::log::Logger</a> mLogger;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            std::vector&lt;ara::exec::FunctionGroup&gt; mFunctionGroups;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            std::vector&lt;ara::exec::FunctionGroupState&gt; mFunctionGroupStates;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            AsyncBsdSocketLib::Poller mPoller;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_class" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> mInstanceSpecifier;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keyword">static</span> <a class="code hl_struct" href="structapplication_1_1helper_1_1RpcConfiguration.html">helper::RpcConfiguration</a> getRpcConfiguration(</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                <span class="keyword">const</span> std::string &amp;configFilepath);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordtype">void</span> configureStates(</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keyword">const</span> <a class="code hl_class" href="classara_1_1exec_1_1FunctionGroup.html">ara::exec::FunctionGroup</a> &amp;functionGroup,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                std::string &amp;&amp;functionGroupContent);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordtype">void</span> configureFunctionGroups(<span class="keyword">const</span> std::string &amp;configFilepath);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordtype">void</span> reportExecutionState(</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                <a class="code hl_class" href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html">ara::com::someip::rpc::RpcClient</a> *rpcClient);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordtype">void</span> checkExecutionStateReport(std::future&lt;void&gt; &amp;future);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordtype">int</span> <a class="code hl_function" href="classapplication_1_1platform_1_1StateManagement.html#a2c28ca0efc76b9e02ad94d1ba803dfad">Main</a>(</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="keyword">const</span> std::atomic_bool *cancellationToken,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                <span class="keyword">const</span> std::map&lt;std::string, std::string&gt; &amp;arguments) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <a class="code hl_class" href="classapplication_1_1platform_1_1StateManagement.html">StateManagement</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <a class="code hl_class" href="classapplication_1_1platform_1_1StateManagement.html">~StateManagement</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        };</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassapplication_1_1platform_1_1StateManagement_html"><div class="ttname"><a href="classapplication_1_1platform_1_1StateManagement.html">application::platform::StateManagement</a></div><div class="ttdoc">State managment modelled process.</div><div class="ttdef"><b>Definition:</b> state_management.h:18</div></div>
+<div class="ttc" id="aclassapplication_1_1platform_1_1StateManagement_html_a2c28ca0efc76b9e02ad94d1ba803dfad"><div class="ttname"><a href="classapplication_1_1platform_1_1StateManagement.html#a2c28ca0efc76b9e02ad94d1ba803dfad">application::platform::StateManagement::Main</a></div><div class="ttdeci">int Main(const std::atomic_bool *cancellationToken, const std::map&lt; std::string, std::string &gt; &amp;arguments) override</div><div class="ttdoc">Main running block of the process.</div><div class="ttdef"><b>Definition:</b> state_management.cpp:134</div></div>
+<div class="ttc" id="aclassara_1_1com_1_1someip_1_1rpc_1_1RpcClient_html"><div class="ttname"><a href="classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html">ara::com::someip::rpc::RpcClient</a></div><div class="ttdoc">SOME/IP RPC abstract client.</div><div class="ttdef"><b>Definition:</b> rpc_client.h:20</div></div>
+<div class="ttc" id="aclassara_1_1core_1_1InstanceSpecifier_html"><div class="ttname"><a href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a></div><div class="ttdoc">AUTOSAR shortname-path wrapper.</div><div class="ttdef"><b>Definition:</b> instance_specifier.h:14</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1DeterministicClient_html"><div class="ttname"><a href="classara_1_1exec_1_1DeterministicClient.html">ara::exec::DeterministicClient</a></div><div class="ttdoc">Class that utilizes a client to have deterministic behaviour.</div><div class="ttdef"><b>Definition:</b> deterministic_client.h:29</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1FunctionGroup_html"><div class="ttname"><a href="classara_1_1exec_1_1FunctionGroup.html">ara::exec::FunctionGroup</a></div><div class="ttdoc">A function group representative based on a manifest.</div><div class="ttdef"><b>Definition:</b> function_group.h:14</div></div>
 <div class="ttc" id="aclassara_1_1exec_1_1helper_1_1ModelledProcess_html"><div class="ttname"><a href="classara_1_1exec_1_1helper_1_1ModelledProcess.html">ara::exec::helper::ModelledProcess</a></div><div class="ttdoc">A class that models an instance of an Adaptive (Platform) Application executable.</div><div class="ttdef"><b>Definition:</b> modelled_process.h:17</div></div>
 <div class="ttc" id="aclassara_1_1log_1_1Logger_html"><div class="ttname"><a href="classara_1_1log_1_1Logger.html">ara::log::Logger</a></div><div class="ttdoc">Logger of a specific context.</div><div class="ttdef"><b>Definition:</b> logger.h:12</div></div>
 <div class="ttc" id="aclassara_1_1log_1_1LoggingFramework_html"><div class="ttname"><a href="classara_1_1log_1_1LoggingFramework.html">ara::log::LoggingFramework</a></div><div class="ttdoc">Logging framework which links loggers to a log sink.</div><div class="ttdef"><b>Definition:</b> logging_framework.h:14</div></div>
-<div class="ttc" id="anamespaceapplication_html"><div class="ttname"><a href="namespaceapplication.html">application</a></div><div class="ttdoc">AUTOSAR application namespace.</div><div class="ttdef"><b>Definition:</b> execution_management.cpp:4</div></div>
+<div class="ttc" id="anamespaceapplication_html"><div class="ttname"><a href="namespaceapplication.html">application</a></div><div class="ttdoc">AUTOSAR application namespace.</div><div class="ttdef"><b>Definition:</b> rpc_configuration.cpp:4</div></div>
 <div class="ttc" id="anamespaceara_1_1log_html_a376ca4c2e74c74e42d6783982ab0388f"><div class="ttname"><a href="namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f">ara::log::LogLevel</a></div><div class="ttdeci">LogLevel</div><div class="ttdoc">Log severity level.</div><div class="ttdef"><b>Definition:</b> common.h:13</div></div>
 <div class="ttc" id="anamespaceara_1_1log_html_ad9c8298b018a7974eae31e7589be288d"><div class="ttname"><a href="namespaceara_1_1log.html#ad9c8298b018a7974eae31e7589be288d">ara::log::LogMode</a></div><div class="ttdeci">LogMode</div><div class="ttdoc">Log sink mode.</div><div class="ttdef"><b>Definition:</b> common.h:25</div></div>
+<div class="ttc" id="astructapplication_1_1helper_1_1RpcConfiguration_html"><div class="ttname"><a href="structapplication_1_1helper_1_1RpcConfiguration.html">application::helper::RpcConfiguration</a></div><div class="ttdoc">Data model for a remote procedure call connection configuration.</div><div class="ttdef"><b>Definition:</b> rpc_configuration.h:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

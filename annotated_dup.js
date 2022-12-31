@@ -1,6 +1,9 @@
 var annotated_dup =
 [
     [ "application", "namespaceapplication.html", [
+      [ "helper", "namespaceapplication_1_1helper.html", [
+        [ "RpcConfiguration", "structapplication_1_1helper_1_1RpcConfiguration.html", "structapplication_1_1helper_1_1RpcConfiguration" ]
+      ] ],
       [ "platform", "namespaceapplication_1_1platform.html", [
         [ "ExecutionManagement", "classapplication_1_1platform_1_1ExecutionManagement.html", "classapplication_1_1platform_1_1ExecutionManagement" ],
         [ "StateManagement", "classapplication_1_1platform_1_1StateManagement.html", "classapplication_1_1platform_1_1StateManagement" ]

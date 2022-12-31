@@ -122,6 +122,7 @@ var hierarchy =
     [ "ara::com::someip::rpc::RpcClient", "classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html", [
       [ "ara::com::someip::rpc::SocketRpcClient", "classara_1_1com_1_1someip_1_1rpc_1_1SocketRpcClient.html", null ]
     ] ],
+    [ "application::helper::RpcConfiguration", "structapplication_1_1helper_1_1RpcConfiguration.html", null ],
     [ "ara::com::someip::rpc::RpcServer", "classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html", [
       [ "ara::com::someip::rpc::SocketRpcServer", "classara_1_1com_1_1someip_1_1rpc_1_1SocketRpcServer.html", null ]
     ] ],
