@@ -45,16 +45,16 @@ namespace application
             const ara::exec::FunctionGroup &functionGroup,
             std::string &&functionGroupContent)
         {
-            arxml::ArxmlReader _arxmlReader(
+            const arxml::ArxmlReader cArxmlReader(
                 functionGroupContent.c_str(), functionGroupContent.length());
 
-            arxml::ArxmlNodeRange _functionGroupStateNodes{
-                _arxmlReader.GetNodes(
+            const arxml::ArxmlNodeRange cFunctionGroupStateNodes{
+                cArxmlReader.GetNodes(
                     {"FUNCTION-GROUP", "MODE-DECLARATION-GROUP", "MODE-DECLARATIONS"})};
 
-            for (auto functionGroupStateNode : _functionGroupStateNodes)
+            for (const auto cFunctionGroupStateNode : cFunctionGroupStateNodes)
             {
-                std::string _shortName{functionGroupStateNode.GetShortName()};
+                std::string _shortName{cFunctionGroupStateNode.GetShortName()};
 
                 mFunctionGroupStates.push_back(
                     std::move(
@@ -72,15 +72,15 @@ namespace application
 
         void StateManagement::configureFunctionGroups(const std::string &configFilepath)
         {
-            arxml::ArxmlReader _arxmlReader(configFilepath);
+            const arxml::ArxmlReader cArxmlReader(configFilepath);
 
-            arxml::ArxmlNodeRange _functionGroupNodes{
-                _arxmlReader.GetNodes(
+            const arxml::ArxmlNodeRange cFunctionGroupNodes{
+                cArxmlReader.GetNodes(
                     {"AUTOSAR", "AR-PACKAGES", "AR-PACKAGE", "ELEMENTS", "FUNCTION-GROUPS"})};
 
-            for (auto functionGroupNode : _functionGroupNodes)
+            for (const auto cFunctionGroupNode : cFunctionGroupNodes)
             {
-                std::string _shortName{functionGroupNode.GetShortName()};
+                std::string _shortName{cFunctionGroupNode.GetShortName()};
 
                 mFunctionGroups.push_back(
                     std::move(ara::exec::FunctionGroup::Create(_shortName).Value()));
@@ -89,7 +89,7 @@ namespace application
                 _logStream << "Function group: " << _shortName << " is configured.";
                 mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
 
-                std::string _nodeContent{functionGroupNode.GetContent()};
+                std::string _nodeContent{cFunctionGroupNode.GetContent()};
                 configureStates(mFunctionGroups.back(), std::move(_nodeContent));
             }
         }
@@ -143,17 +143,17 @@ namespace application
 
             try
             {
-                std::string _configFilepath{arguments.at(cConfigArgument)};
+                const std::string cConfigFilepath{arguments.at(cConfigArgument)};
 
                 const helper::RpcConfiguration cRpcConfiguration{
-                    getRpcConfiguration(_configFilepath)};
+                    getRpcConfiguration(cConfigFilepath)};
                 ara::com::someip::rpc::SocketRpcClient _rpcClient(
                     &mPoller,
                     cRpcConfiguration.ipAddress,
                     cRpcConfiguration.portNumber,
                     cRpcConfiguration.protocolVersion);
 
-                configureFunctionGroups(_configFilepath);
+                configureFunctionGroups(cConfigFilepath);
                 std::future<void> _executionStateReport{
                     std::async(
                         std::launch::async,
