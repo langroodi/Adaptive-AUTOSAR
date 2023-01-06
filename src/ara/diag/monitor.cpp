@@ -96,6 +96,10 @@ namespace ara
             {
                 mOffered = true;
                 core::Result<void> _result;
+                if (mInitMonitor)
+                {
+                    mInitMonitor(InitMonitorReason::kReenabled);
+                }
 
                 return _result;
             }
@@ -103,7 +107,15 @@ namespace ara
 
         void Monitor::StopOffer()
         {
-            mOffered = false;
+            if (mOffered)
+            {
+                mOffered = false;
+
+                if (mInitMonitor)
+                {
+                    mInitMonitor(InitMonitorReason::kDisabled);
+                }
+            }
         }
 
         Monitor::~Monitor() noexcept
