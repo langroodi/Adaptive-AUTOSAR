@@ -124,6 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa79907fff713897bdc411b238c86140c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Monitor.html#aa79907fff713897bdc411b238c86140c">ReportMonitorAction</a> (<a class="el" href="namespaceara_1_1diag.html#aa51fd7e83f7ff8d69fb38e64a0938213">MonitorAction</a> action)</td></tr>
 <tr class="memdesc:aa79907fff713897bdc411b238c86140c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report a monitor action.  <a href="classara_1_1diag_1_1Monitor.html#aa79907fff713897bdc411b238c86140c">More...</a><br /></td></tr>
 <tr class="separator:aa79907fff713897bdc411b238c86140c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86471a40781b0769e3c1ceab0b7428f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Monitor.html#a86471a40781b0769e3c1ceab0b7428f7">AttachEvent</a> (<a class="el" href="classara_1_1diag_1_1Event.html">Event</a> *event)</td></tr>
+<tr class="memdesc:a86471a40781b0769e3c1ceab0b7428f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach an event to the monitor object.  <a href="classara_1_1diag_1_1Monitor.html#a86471a40781b0769e3c1ceab0b7428f7">More...</a><br /></td></tr>
+<tr class="separator:a86471a40781b0769e3c1ceab0b7428f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a926e5dba4474f926e523992653bc18c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Monitor.html#a926e5dba4474f926e523992653bc18c3">Offer</a> ()</td></tr>
 <tr class="memdesc:a926e5dba4474f926e523992653bc18c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start offering monitoring requests handling.  <a href="classara_1_1diag_1_1Monitor.html#a926e5dba4474f926e523992653bc18c3">More...</a><br /></td></tr>
 <tr class="separator:a926e5dba4474f926e523992653bc18c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,6 +228,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> ()</td>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a86471a40781b0769e3c1ceab0b7428f7" name="a86471a40781b0769e3c1ceab0b7428f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86471a40781b0769e3c1ceab0b7428f7">&#9670;&nbsp;</a></span>AttachEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::Monitor::AttachEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1Event.html">Event</a> *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attach an event to the monitor object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td><a class="el" href="classara_1_1diag_1_1Event.html" title="Diagnostic event class that represents a fault path of a system.">Event</a> pointer to be attached </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function is not part of the ARA standard. </dd></dl>
+
+</div>
+</div>
 <a id="a926e5dba4474f926e523992653bc18c3" name="a926e5dba4474f926e523992653bc18c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a926e5dba4474f926e523992653bc18c3">&#9670;&nbsp;</a></span>Offer()</h2>
 
@@ -268,7 +298,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>StopOffer</b> ()</td>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>Consider other monitor actions </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Throws when the action is not supported </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
