@@ -9,13 +9,17 @@ namespace ara
             const core::InstanceSpecifier &specifier,
             std::function<void(InitMonitorReason)> initMonitor) : mSpecifier{specifier},
                                                                   mInitMonitor{initMonitor},
-                                                                  mOffered{false}
+                                                                  mOffered{false},
+                                                                  mEvent{nullptr}
         {
         }
 
         void Monitor::onEventStatusChanged(bool passed)
         {
-            /// @todo Update the corresponding diagnostic event
+            if (mEvent)
+            {
+                mEvent->SetEventStatusBit(EventStatusBit::kTestFailed, !passed);
+            }
         }
 
         Monitor::Monitor(
@@ -79,6 +83,11 @@ namespace ara
                     break;
                 }
             }
+        }
+
+        void Monitor::AttachEvent(Event *event)
+        {
+            mEvent = event;
         }
 
         core::Result<void> Monitor::Offer()

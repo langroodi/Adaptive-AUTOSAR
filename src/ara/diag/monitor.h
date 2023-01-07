@@ -6,6 +6,7 @@
 #include "../core/result.h"
 #include "./debouncing/counter_based_debouncer.h"
 #include "./debouncing/timer_based_debouncer.h"
+#include "./event.h"
 
 namespace ara
 {
@@ -42,6 +43,7 @@ namespace ara
             const std::function<void(InitMonitorReason)> mInitMonitor;
             bool mOffered;
             debouncing::Debouncer *mDebouncer;
+            Event *mEvent;
 
             Monitor(
                 const core::InstanceSpecifier &specifier,
@@ -73,6 +75,11 @@ namespace ara
             /// @brief Report a monitor action
             /// @param action Latest diagnostic monitor action
             void ReportMonitorAction(MonitorAction action);
+
+            /// @brief Attach an event to the monitor object
+            /// @param event Event pointer to be attached
+            /// @note This function is not part of the ARA standard.
+            void AttachEvent(Event *event);
 
             /// @brief Start offering monitoring requests handling
             /// @returns Error result if the handler has been already offered
