@@ -74,6 +74,7 @@ namespace ara
 
             /// @brief Report a monitor action
             /// @param action Latest diagnostic monitor action
+            /// @throws std::invalid_argument Throws when the action is not supported
             void ReportMonitorAction(MonitorAction action);
 
             /// @brief Attach an event to the monitor object

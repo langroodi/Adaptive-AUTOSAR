@@ -78,9 +78,15 @@ namespace ara
                     mDebouncer->Reset();
                     break;
 
-                default:
-                    /// @todo Consider other monitor actions
+                case MonitorAction::kResetTestFailed:
+                    if (mEvent)
+                    {
+                        mEvent->SetEventStatusBit(EventStatusBit::kTestFailed, false);
+                    }
                     break;
+
+                default:
+                    throw std::invalid_argument("Reported monitor action is not supported.");
                 }
             }
         }
