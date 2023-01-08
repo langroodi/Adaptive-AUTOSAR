@@ -6,6 +6,7 @@
 #include <mutex>
 #include <set>
 #include "../com/someip/rpc/rpc_server.h"
+#include "../sm/trigger.h"
 #include "./exec_exception.h"
 
 namespace ara
@@ -24,12 +25,15 @@ namespace ara
 
             com::someip::rpc::RpcServer *const mRpcServer;
             const std::set<std::pair<std::string, std::string>> mFunctionGroupStates;
+            std::map<std::string, sm::Trigger<std::string> *> mNotifiers;
             std::map<std::string, std::string> mCurrentStates;
             std::atomic_bool mInitialized;
             std::mutex mMutex;
 
             void injectErrorCode(
                 std::vector<uint8_t> &payload, ExecErrc errorCode);
+
+            void notify(std::string functionGroup, std::string state);
 
             bool handleSetState(
                 const std::vector<uint8_t> &rpcRequestPayload,
@@ -59,10 +63,19 @@ namespace ara
             bool TryGetState(
                 std::string functionGroup, std::string &state);
 
+            /// @brief Set a notifier at the state changed of a function group
+            /// @param functionGroup Function group of interest
+            /// @param callback Callback to be invoked at the state change
+            /// @throws std::out_of_range Throws when the function group does not exist
+            void SetNotifier(
+                std::string functionGroup, std::function<void()> callback);
+
             /// @brief Indicate whether or not EM has been initialized
             /// @return True if EM is initialized; otherwise false
             /// @remark The function call is atomic.
             bool Initialized() const noexcept;
+
+            ~StateServer();
         };
     }
 }

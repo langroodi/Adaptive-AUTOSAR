@@ -24,7 +24,7 @@ namespace ara
             /// @param state State
             /// @param handler Handler to be invoked after state change
             Trigger(T &state, TriggerHandler handler) : mState{state},
-                                                           mHandler{handler}
+                                                        mHandler{handler}
             {
             }
 

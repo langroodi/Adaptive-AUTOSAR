@@ -86,12 +86,10 @@ namespace ara
             const std::string cFunctionGroup{"MachineFG"};
             const auto cExpectedState{"StartUp"};
 
-            std::vector<uint8_t> _rpcPayload({
-                0, 0, 0, 9,
-                77, 97, 99, 104, 105, 110, 101, 70, 71,
-                0, 0, 0, 7,
-                83, 116, 97, 114, 116, 85, 112 
-            });
+            std::vector<uint8_t> _rpcPayload({0, 0, 0, 9,
+                                              77, 97, 99, 104, 105, 110, 101, 70, 71,
+                                              0, 0, 0, 7,
+                                              83, 116, 97, 114, 116, 85, 112});
             auto _response{Send(cSetStateMessageId, std::move(_rpcPayload))};
 
             com::someip::SomeIpReturnCode _acutalReturnCode{_response.ReturnCode()};
@@ -118,10 +116,8 @@ namespace ara
         {
             const ExecErrc cExpectedResult{ExecErrc::kInvalidArguments};
 
-            std::vector<uint8_t> _rpcPayload({
-                0, 0, 0, 9,
-                77, 97, 99, 104, 105, 110, 101, 70, 71
-            });
+            std::vector<uint8_t> _rpcPayload({0, 0, 0, 9,
+                                              77, 97, 99, 104, 105, 110, 101, 70, 71});
             auto _response{Send(cSetStateMessageId, std::move(_rpcPayload))};
 
             ExecErrc _actualResult;
@@ -134,11 +130,9 @@ namespace ara
         {
             const ExecErrc cExpectedResult{ExecErrc::kInvalidArguments};
 
-            std::vector<uint8_t> _rpcPayload({
-                0, 0, 0, 9,
-                77, 97, 99, 104, 105, 110, 101, 70, 71,
-                0, 0, 0, 4
-            });
+            std::vector<uint8_t> _rpcPayload({0, 0, 0, 9,
+                                              77, 97, 99, 104, 105, 110, 101, 70, 71,
+                                              0, 0, 0, 4});
             auto _response{Send(cSetStateMessageId, std::move(_rpcPayload))};
 
             ExecErrc _actualResult;
@@ -151,12 +145,10 @@ namespace ara
         {
             const ExecErrc cExpectedResult{ExecErrc::kInvalidTransition};
 
-            std::vector<uint8_t> _rpcPayload({
-                0, 0, 0, 9,
-                77, 97, 99, 104, 105, 110, 101, 70, 71,
-                0, 0, 0, 4,
-                68, 105, 97, 103
-            });
+            std::vector<uint8_t> _rpcPayload({0, 0, 0, 9,
+                                              77, 97, 99, 104, 105, 110, 101, 70, 71,
+                                              0, 0, 0, 4,
+                                              68, 105, 97, 103});
             auto _response{Send(cSetStateMessageId, std::move(_rpcPayload))};
 
             ExecErrc _actualResult;
@@ -169,12 +161,10 @@ namespace ara
         {
             const ExecErrc cExpectedResult{ExecErrc::kAlreadyInState};
 
-            std::vector<uint8_t> _rpcPayload({
-                0, 0, 0, 9,
-                77, 97, 99, 104, 105, 110, 101, 70, 71,
-                0, 0, 0, 3,
-                79, 102, 102
-            });
+            std::vector<uint8_t> _rpcPayload({0, 0, 0, 9,
+                                              77, 97, 99, 104, 105, 110, 101, 70, 71,
+                                              0, 0, 0, 3,
+                                              79, 102, 102});
             auto _response{Send(cSetStateMessageId, std::move(_rpcPayload))};
 
             ExecErrc _actualResult;
@@ -217,6 +207,25 @@ namespace ara
             EXPECT_EQ(cExpectedResult, _actualResult);
 
             EXPECT_FALSE(Server.Initialized());
+        }
+
+        TEST_F(StateServerTest, SetNotifierMethod)
+        {
+            const std::string cFunctionGroup{"MachineFG"};
+
+            bool _notified{false};
+            auto _callback{[&]()
+                           { _notified = true; }};
+            Server.SetNotifier(cFunctionGroup, _callback);
+
+            std::vector<uint8_t>
+                _rpcPayload({0, 0, 0, 9,
+                             77, 97, 99, 104, 105, 110, 101, 70, 71,
+                             0, 0, 0, 7,
+                             83, 116, 97, 114, 116, 85, 112});
+            auto _response{Send(cSetStateMessageId, std::move(_rpcPayload))};
+
+            EXPECT_TRUE(_notified);
         }
     }
 }

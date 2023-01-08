@@ -61,6 +61,16 @@ namespace ara
             com::helper::Inject(payload, cErrorCodeInt);
         }
 
+        void StateServer::notify(std::string funcitonGroup, std::string state)
+        {
+            auto _itr{mNotifiers.find(funcitonGroup)};
+
+            if (_itr != mNotifiers.end())
+            {
+                _itr->second->Write(state);
+            }
+        }
+
         bool StateServer::handleSetState(
             const std::vector<uint8_t> &rpcRequestPayload,
             std::vector<uint8_t> &rpcResponsePayload)
@@ -137,6 +147,7 @@ namespace ara
             {
                 // Update the newly reported state and
                 // react with an empty RPC response payload
+                notify(_functionGroup, _state);
                 mCurrentStates[_functionGroup] = _state;
                 rpcResponsePayload.clear();
                 return true;
@@ -184,9 +195,36 @@ namespace ara
             }
         }
 
+        void StateServer::SetNotifier(
+            std::string functionGroup, std::function<void()> callback)
+        {
+            std::reference_wrapper<std::string> _state{
+                std::ref(mCurrentStates.at(functionGroup))};
+
+            auto _notifier{new sm::Trigger<std::string>(_state, callback)};
+            auto _itr{mNotifiers.find(functionGroup)};
+            if (_itr != mNotifiers.end())
+            {
+                delete _itr->second;
+                _itr->second = _notifier;
+            }
+            else
+            {
+                mNotifiers[functionGroup] = _notifier;
+            }
+        }
+
         bool StateServer::Initialized() const noexcept
         {
             return mInitialized;
+        }
+
+        StateServer::~StateServer()
+        {
+            for (auto notifier : mNotifiers)
+            {
+                delete notifier.second;
+            }
         }
     }
 }
