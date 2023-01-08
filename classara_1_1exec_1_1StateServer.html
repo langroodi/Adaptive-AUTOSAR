@@ -121,6 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae4c656b583aa0e2bb35c097f9168bef2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateServer.html#ae4c656b583aa0e2bb35c097f9168bef2">TryGetState</a> (std::string functionGroup, std::string &amp;state)</td></tr>
 <tr class="memdesc:ae4c656b583aa0e2bb35c097f9168bef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get the state of a function group.  <a href="classara_1_1exec_1_1StateServer.html#ae4c656b583aa0e2bb35c097f9168bef2">More...</a><br /></td></tr>
 <tr class="separator:ae4c656b583aa0e2bb35c097f9168bef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd82c3ec8541bf6ccc6236b4bae05947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateServer.html#abd82c3ec8541bf6ccc6236b4bae05947">SetNotifier</a> (std::string functionGroup, std::function&lt; void()&gt; callback)</td></tr>
+<tr class="memdesc:abd82c3ec8541bf6ccc6236b4bae05947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a notifier at the state changed of a function group.  <a href="classara_1_1exec_1_1StateServer.html#abd82c3ec8541bf6ccc6236b4bae05947">More...</a><br /></td></tr>
+<tr class="separator:abd82c3ec8541bf6ccc6236b4bae05947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a521d6a49278ec8634c10152c47b9a81e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1StateServer.html#a521d6a49278ec8634c10152c47b9a81e">Initialized</a> () const noexcept</td></tr>
 <tr class="memdesc:a521d6a49278ec8634c10152c47b9a81e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether or not EM has been initialized.  <a href="classara_1_1exec_1_1StateServer.html#a521d6a49278ec8634c10152c47b9a81e">More...</a><br /></td></tr>
 <tr class="separator:a521d6a49278ec8634c10152c47b9a81e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,6 +211,49 @@ Public Member Functions</h2></td></tr>
 <p>Indicate whether or not EM has been initialized. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if EM is initialized; otherwise false </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The function call is atomic. </dd></dl>
+
+</div>
+</div>
+<a id="abd82c3ec8541bf6ccc6236b4bae05947" name="abd82c3ec8541bf6ccc6236b4bae05947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd82c3ec8541bf6ccc6236b4bae05947">&#9670;&nbsp;</a></span>SetNotifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::exec::StateServer::SetNotifier </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>functionGroup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a notifier at the state changed of a function group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">functionGroup</td><td>Function group of interest </td></tr>
+    <tr><td class="paramname">callback</td><td>Callback to be invoked at the state change </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>Throws when the function group does not exist </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
