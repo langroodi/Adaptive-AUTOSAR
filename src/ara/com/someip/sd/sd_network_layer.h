@@ -13,15 +13,21 @@ namespace ara
     {
         namespace someip
         {
+            /// @brief SOME/IP service discovery namespace
+            /// @note The namespace is not part of the ARA standard.
             namespace sd
             {
                 /// @brief SOME/IP service discovery multicast network layer
-                /// @note The class is not part of the ARA standard.
-                class SdNetworkLayer : helper::NetworkLayer<SomeIpMessage>
+                class SdNetworkLayer : public helper::NetworkLayer<SomeIpSdMessage>
                 {
                 private:
-                    static const size_t cBufferSize{256};
+                    static const size_t cBufferSize;
+                    static const std::string cAnyIpAddress;
 
+                    const std::string cNicIpAddress;
+                    const std::string cMulticastGroup;
+                    const uint16_t cPort;
+                    
                     helper::ConcurrentQueue<std::vector<uint8_t>> mSendingQueue;
                     AsyncBsdSocketLib::Poller *const mPoller;
                     AsyncBsdSocketLib::UdpClient mUdpSocket;
@@ -32,15 +38,19 @@ namespace ara
                 public:
                     /// @brief Constructor
                     /// @param poller BSD sockets poller
-                    /// @param ipAddress Multicast group IPv4 address
+                    /// @param nicIpAddress Network interface controller IPv4 address
+                    /// @param multicastGroup Multicast group IPv4 address
                     /// @param port Multicast UDP port number
                     /// @throws std::runtime_error Throws when the UDP socket configuration failed
                     SdNetworkLayer(
                         AsyncBsdSocketLib::Poller *poller,
-                        std::string ipAddress,
+                        std::string nicIpAddress,
+                        std::string multicastGroup,
                         uint16_t port);
 
-                    void Send(const SomeIpMessage &message) override;
+                    ~SdNetworkLayer() override;
+
+                    void Send(const SomeIpSdMessage &message) override;
                 };
             }
         }
