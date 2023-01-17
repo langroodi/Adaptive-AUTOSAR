@@ -53,7 +53,7 @@ var annotated_dup =
             [ "SocketRpcServer", "classara_1_1com_1_1someip_1_1rpc_1_1SocketRpcServer.html", "classara_1_1com_1_1someip_1_1rpc_1_1SocketRpcServer" ],
             [ "SomeIpRpcMessage", "classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html", "classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage" ]
           ] ],
-          [ "sd", null, [
+          [ "sd", "namespaceara_1_1com_1_1someip_1_1sd.html", [
             [ "fsm", "namespaceara_1_1com_1_1someip_1_1sd_1_1fsm.html", [
               [ "ClientInitialWaitState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientInitialWaitState" ],
               [ "ClientRepetitionState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientRepetitionState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1ClientRepetitionState" ],
@@ -68,6 +68,7 @@ var annotated_dup =
               [ "StoppedState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState" ],
               [ "TimerSetState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState.html", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1TimerSetState" ]
             ] ],
+            [ "SdNetworkLayer", "classara_1_1com_1_1someip_1_1sd_1_1SdNetworkLayer.html", "classara_1_1com_1_1someip_1_1sd_1_1SdNetworkLayer" ],
             [ "SomeIpSdAgent", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent" ],
             [ "SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient" ],
             [ "SomeIpSdMessage", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage" ],
