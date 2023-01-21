@@ -7,7 +7,8 @@ var annotated_dup =
       [ "platform", "namespaceapplication_1_1platform.html", [
         [ "ExecutionManagement", "classapplication_1_1platform_1_1ExecutionManagement.html", "classapplication_1_1platform_1_1ExecutionManagement" ],
         [ "StateManagement", "classapplication_1_1platform_1_1StateManagement.html", "classapplication_1_1platform_1_1StateManagement" ]
-      ] ]
+      ] ],
+      [ "ExtendedVehicle", "classapplication_1_1ExtendedVehicle.html", "classapplication_1_1ExtendedVehicle" ]
     ] ],
     [ "ara", null, [
       [ "com", null, [

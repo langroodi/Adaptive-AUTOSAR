@@ -18,7 +18,7 @@ var searchData=
   ['error_5ftype_15',['error_type',['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a16810845d1e2c4029812478a98c97e42',1,'ara::core::Result&lt; void, E &gt;::error_type()'],['../classara_1_1core_1_1Result.html#ae4075b56a0084b81172b1a1d00a2f4f9',1,'ara::core::Result::error_type()']]],
   ['errorcode_16',['ErrorCode',['../classara_1_1core_1_1ErrorCode.html',1,'ara::core::ErrorCode'],['../classara_1_1core_1_1ErrorCode.html#a91eee3dbbfca15a25784f1445f87d161',1,'ara::core::ErrorCode::ErrorCode()']]],
   ['errordomain_17',['ErrorDomain',['../classara_1_1core_1_1ErrorDomain.html',1,'ara::core::ErrorDomain'],['../classara_1_1core_1_1ErrorDomain.html#ad925cb5f4a7516b26231e2929c1c7a82',1,'ara::core::ErrorDomain::ErrorDomain()']]],
-  ['erroror_18',['ErrorOr',['../classara_1_1core_1_1Result.html#ac3e572f5a610743b4c995f28094a2d4f',1,'ara::core::Result::ErrorOr()'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a9b0d99bbeb56c967b2a545f08a214067',1,'ara::core::Result&lt; void, E &gt;::ErrorOr(G &amp;&amp;defaultError) const &amp;'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aa41251f86ed84989cd70f265979a5a0e',1,'ara::core::Result&lt; void, E &gt;::ErrorOr(G &amp;&amp;defaultError) &amp;&amp;'],['../classara_1_1core_1_1Result.html#a9fd03e82fbd6a723f0bb9215c7b97b2a',1,'ara::core::Result::ErrorOr()']]],
+  ['erroror_18',['ErrorOr',['../classara_1_1core_1_1Result.html#a9fd03e82fbd6a723f0bb9215c7b97b2a',1,'ara::core::Result::ErrorOr(G &amp;&amp;defaultError) const &amp;'],['../classara_1_1core_1_1Result.html#ac3e572f5a610743b4c995f28094a2d4f',1,'ara::core::Result::ErrorOr(G &amp;&amp;defaultError) &amp;&amp;'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a9b0d99bbeb56c967b2a545f08a214067',1,'ara::core::Result&lt; void, E &gt;::ErrorOr(G &amp;&amp;defaultError) const &amp;'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#aa41251f86ed84989cd70f265979a5a0e',1,'ara::core::Result&lt; void, E &gt;::ErrorOr(G &amp;&amp;defaultError) &amp;&amp;']]],
   ['event_19',['Event',['../classara_1_1diag_1_1Event.html',1,'ara::diag::Event'],['../classara_1_1diag_1_1Event.html#ac8274a532720d47ca2f51d31959da0b6',1,'ara::diag::Event::Event()']]],
   ['eventgroupentry_20',['EventgroupEntry',['../classara_1_1com_1_1entry_1_1EventgroupEntry.html',1,'ara::com::entry']]],
   ['eventgroupid_21',['EventgroupId',['../classara_1_1com_1_1entry_1_1EventgroupEntry.html#a700028675f87f32255064ce9de66c725',1,'ara::com::entry::EventgroupEntry']]],
@@ -36,7 +36,8 @@ var searchData=
   ['executionmanagement_33',['ExecutionManagement',['../classapplication_1_1platform_1_1ExecutionManagement.html',1,'application::platform']]],
   ['executionserver_34',['ExecutionServer',['../classara_1_1exec_1_1ExecutionServer.html',1,'ara::exec::ExecutionServer'],['../classara_1_1exec_1_1ExecutionServer.html#a796e9ee34b3c5d12d5d7b316aab5f7a0',1,'ara::exec::ExecutionServer::ExecutionServer()']]],
   ['executionstate_35',['ExecutionState',['../namespaceara_1_1exec.html#a2cef995abddcd1737d4d80a4f016ab31',1,'ara::exec']]],
-  ['extract_36',['Extract',['../structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba',1,'ara::com::helper::Ipv4Address']]],
-  ['extractinteger_37',['ExtractInteger',['../namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7',1,'ara::com::helper']]],
-  ['extractshort_38',['ExtractShort',['../namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb',1,'ara::com::helper']]]
+  ['extendedvehicle_36',['ExtendedVehicle',['../classapplication_1_1ExtendedVehicle.html',1,'application']]],
+  ['extract_37',['Extract',['../structara_1_1com_1_1helper_1_1Ipv4Address.html#a5a65971dd9576508bf7a065942ba31ba',1,'ara::com::helper::Ipv4Address']]],
+  ['extractinteger_38',['ExtractInteger',['../namespaceara_1_1com_1_1helper.html#aa27a7bec10719b8b7f1a14b539887ec7',1,'ara::com::helper']]],
+  ['extractshort_39',['ExtractShort',['../namespaceara_1_1com_1_1helper.html#aa12394e5c50bea2501342e09c1526fdb',1,'ara::com::helper']]]
 ];

@@ -13,5 +13,6 @@ var searchData=
   ['executionclient_10',['ExecutionClient',['../classara_1_1exec_1_1ExecutionClient.html',1,'ara::exec']]],
   ['executionerrorevent_11',['ExecutionErrorEvent',['../structara_1_1exec_1_1ExecutionErrorEvent.html',1,'ara::exec']]],
   ['executionmanagement_12',['ExecutionManagement',['../classapplication_1_1platform_1_1ExecutionManagement.html',1,'application::platform']]],
-  ['executionserver_13',['ExecutionServer',['../classara_1_1exec_1_1ExecutionServer.html',1,'ara::exec']]]
+  ['executionserver_13',['ExecutionServer',['../classara_1_1exec_1_1ExecutionServer.html',1,'ara::exec']]],
+  ['extendedvehicle_14',['ExtendedVehicle',['../classapplication_1_1ExtendedVehicle.html',1,'application']]]
 ];
