@@ -70,9 +70,9 @@ namespace ara
                         uint16_t port,
                         int initialDelayMin,
                         int initialDelayMax,
-                        int repetitionBaseDelay,
-                        int cycleOfferDelay,
-                        uint32_t repetitionMax);
+                        int repetitionBaseDelay = 30,
+                        int cycleOfferDelay = 1000,
+                        uint32_t repetitionMax = 3);
 
                     ~SomeIpSdServer() override;
                 };
