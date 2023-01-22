@@ -66,8 +66,8 @@ namespace ara
                         uint16_t serviceId,
                         int initialDelayMin,
                         int initialDelayMax,
-                        int repetitionBaseDelay,
-                        uint32_t repetitionMax);
+                        int repetitionBaseDelay = 30,
+                        uint32_t repetitionMax = 3);
 
                     /// @brief Try to wait unitl the server offers the service
                     /// @param duration Waiting timeout in milliseconds
