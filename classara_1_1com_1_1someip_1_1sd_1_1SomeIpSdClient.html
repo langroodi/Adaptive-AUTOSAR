@@ -125,9 +125,9 @@ Inheritance diagram for ara::com::someip::sd::SomeIpSdClient:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0eddb504d2e351803956fc03666df630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a0eddb504d2e351803956fc03666df630">SomeIpSdClient</a> (<a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer</a>&lt; <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &gt; *networkLayer, uint16_t serviceId, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay, uint32_t repetitionMax)</td></tr>
-<tr class="memdesc:a0eddb504d2e351803956fc03666df630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a0eddb504d2e351803956fc03666df630">More...</a><br /></td></tr>
-<tr class="separator:a0eddb504d2e351803956fc03666df630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef9224b7b071413a75c67e06307f45e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a7ef9224b7b071413a75c67e06307f45e">SomeIpSdClient</a> (<a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer</a>&lt; <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &gt; *networkLayer, uint16_t serviceId, int initialDelayMin, int initialDelayMax, int repetitionBaseDelay=30, uint32_t repetitionMax=3)</td></tr>
+<tr class="memdesc:a7ef9224b7b071413a75c67e06307f45e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a7ef9224b7b071413a75c67e06307f45e">More...</a><br /></td></tr>
+<tr class="separator:a7ef9224b7b071413a75c67e06307f45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdb7c4021aa5984f1c2ad6009a011679"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abdb7c4021aa5984f1c2ad6009a011679">TryWaitUntiServiceOffered</a> (int duration)</td></tr>
 <tr class="memdesc:abdb7c4021aa5984f1c2ad6009a011679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to wait unitl the server offers the service.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abdb7c4021aa5984f1c2ad6009a011679">More...</a><br /></td></tr>
 <tr class="separator:abdb7c4021aa5984f1c2ad6009a011679"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,8 +181,8 @@ std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >SOME/IP service discovery client. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0eddb504d2e351803956fc03666df630" name="a0eddb504d2e351803956fc03666df630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0eddb504d2e351803956fc03666df630">&#9670;&nbsp;</a></span>SomeIpSdClient()</h2>
+<a id="a7ef9224b7b071413a75c67e06307f45e" name="a7ef9224b7b071413a75c67e06307f45e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef9224b7b071413a75c67e06307f45e">&#9670;&nbsp;</a></span>SomeIpSdClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,13 +215,13 @@ std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>repetitionBaseDelay</em>, </td>
+          <td class="paramname"><em>repetitionBaseDelay</em> = <code>30</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>repetitionMax</em>&#160;</td>
+          <td class="paramname"><em>repetitionMax</em> = <code>3</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
