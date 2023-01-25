@@ -18,7 +18,6 @@
                             </NETWORK-ENDPOINT>
                         </NETWORK-ENDPOINTS>
                     </ETHERNET-PHYSICAL-CHANNEL>
-                    <PROTOCOL-VERSION>1</PROTOCOL-VERSION>
                 </COMMUNICATION-CLUSTER>
                 <ETHERNET-COMMUNICATION-CONNECTOR>
                     <SHORT-NAME>ExtendedVehicleConn</SHORT-NAME>
