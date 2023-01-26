@@ -15,16 +15,8 @@ namespace application
         {
         private:
             static const std::string cAppId;
-            static const ara::log::LogMode cLogMode;
-            static const std::string cContextId;
-            static const std::string cContextDescription;
-            static const ara::log::LogLevel cLogLevel;
-            static const ara::log::LogLevel cErrorLevel;
 
             StateManagement mStateManagement;
-            ara::exec::DeterministicClient mDeterministicClient;
-            ara::log::LoggingFramework *mLoggingFramework;
-            ara::log::Logger mLogger;
             AsyncBsdSocketLib::Poller mPoller;
 
             static helper::RpcConfiguration getRpcConfiguration(

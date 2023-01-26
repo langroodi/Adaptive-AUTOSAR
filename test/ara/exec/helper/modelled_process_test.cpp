@@ -26,6 +26,11 @@ namespace ara
 
                     return cExitCode;
                 }
+
+            public:
+                ModelledProcessTest() : ModelledProcess("TestApp")
+                {
+                }
             };
 
             TEST_F(ModelledProcessTest, InitializeMethod)

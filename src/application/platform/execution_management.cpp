@@ -8,14 +8,8 @@ namespace application
     namespace platform
     {
         const std::string ExecutionManagement::cAppId{"ExecutionManagement"};
-        const ara::log::LogMode ExecutionManagement::cLogMode{ara::log::LogMode::kConsole};
-        const std::string ExecutionManagement::cContextId{"Lifetime"};
-        const std::string ExecutionManagement::cContextDescription{"Application lifetime logs"};
-        const ara::log::LogLevel ExecutionManagement::cLogLevel{ara::log::LogLevel::kInfo};
-        const ara::log::LogLevel ExecutionManagement::cErrorLevel{ara::log::LogLevel::kError};
 
-        ExecutionManagement::ExecutionManagement() : mLoggingFramework{ara::log::LoggingFramework::Create(cAppId, cLogMode)},
-                                                     mLogger{mLoggingFramework->CreateLogger(cContextId, cContextDescription, cLogLevel)}
+        ExecutionManagement::ExecutionManagement() : ara::exec::helper::ModelledProcess(cAppId)
         {
         }
 
@@ -118,8 +112,6 @@ namespace application
             const std::atomic_bool *cancellationToken,
             const std::map<std::string, std::string> &arguments)
         {
-            const int cSuccessfulExitCode{0};
-            const int cUnsuccessfulExitCode{1};
             const std::string cConfigArgument{"config"};
 
             ara::log::LogStream _logStream;
@@ -147,19 +139,15 @@ namespace application
                     std::move(_initialState));
 
                 _logStream << "Execution management has been initialized.";
-                mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                Log(cLogLevel, _logStream);
 
                 mStateManagement.Initialize(arguments);
 
-                ara::exec::ActivationReturnType _activationReturn{
-                    ara::exec::ActivationReturnType::kInit};
+                bool _running{true};
 
-                while (!cancellationToken->load() &&
-                       _activationReturn != ara::exec::ActivationReturnType::kTerminate)
+                while (!cancellationToken->load() && _running)
                 {
-                    auto _activationReturnResult{mDeterministicClient.WaitForActivation()};
-                    _activationReturn = _activationReturnResult.Value();
-
+                    _running = WaitForActivation();
                     mPoller.TryPoll();
                 }
 
@@ -167,7 +155,7 @@ namespace application
 
                 _logStream.Flush();
                 _logStream << "Execution management has been terminated.";
-                mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                Log(cLogLevel, _logStream);
 
                 return _result;
             }
@@ -175,7 +163,7 @@ namespace application
             {
                 _logStream.Flush();
                 _logStream << ex.what();
-                mLoggingFramework->Log(mLogger, cErrorLevel, _logStream);
+                Log(cErrorLevel, _logStream);
 
                 return cUnsuccessfulExitCode;
             }
@@ -184,7 +172,6 @@ namespace application
         ExecutionManagement::~ExecutionManagement()
         {
             mStateManagement.Terminate();
-            delete mLoggingFramework;
         }
     }
 }

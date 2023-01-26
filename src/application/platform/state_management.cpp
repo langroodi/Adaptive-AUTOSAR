@@ -7,14 +7,8 @@ namespace application
     namespace platform
     {
         const std::string StateManagement::cAppId{"StateManagement"};
-        const ara::log::LogMode StateManagement::cLogMode{ara::log::LogMode::kConsole};
-        const std::string StateManagement::cContextId{"Lifetime"};
-        const std::string StateManagement::cContextDescription{"Application lifetime logs"};
-        const ara::log::LogLevel StateManagement::cLogLevel{ara::log::LogLevel::kInfo};
-        const ara::log::LogLevel StateManagement::cErrorLevel{ara::log::LogLevel::kError};
 
-        StateManagement::StateManagement() : mLoggingFramework{ara::log::LoggingFramework::Create(cAppId, cLogMode)},
-                                             mLogger{mLoggingFramework->CreateLogger(cContextId, cContextDescription, cLogLevel)},
+        StateManagement::StateManagement() : ara::exec::helper::ModelledProcess(cAppId),
                                              mInstanceSpecifier{ara::core::InstanceSpecifier::Create(cAppId).Value()}
         {
         }
@@ -66,7 +60,7 @@ namespace application
                 std::string _functionGroupInstance{
                     functionGroup.GetInstance().ToString()};
                 _logStream << "State: " << _shortName << " of function group: " << _functionGroupInstance << " is configured.";
-                mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                Log(cLogLevel, _logStream);
             }
         }
 
@@ -87,7 +81,7 @@ namespace application
 
                 ara::log::LogStream _logStream;
                 _logStream << "Function group: " << _shortName << " is configured.";
-                mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                Log(cLogLevel, _logStream);
 
                 std::string _nodeContent{cFunctionGroupNode.GetContent()};
                 configureStates(mFunctionGroups.back(), std::move(_nodeContent));
@@ -103,7 +97,7 @@ namespace application
                 << event.functionGroup->GetInstance().ToString()
                 << " has undefined state because of error code "
                 << event.executionError;
-            mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+            Log(cLogLevel, _logStream);
         }
 
         void StateManagement::reportExecutionState(
@@ -148,8 +142,6 @@ namespace application
             const std::atomic_bool *cancellationToken,
             const std::map<std::string, std::string> &arguments)
         {
-            const int cSuccessfulExitCode{0};
-            const int cUnsuccessfulExitCode{1};
             const std::string cConfigArgument{"config"};
 
             ara::log::LogStream _logStream;
@@ -188,17 +180,13 @@ namespace application
                     transitToStartUpState(_stateClient)};
 
                 _logStream << "State management has been initialized.";
-                mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                Log(cLogLevel, _logStream);
 
-                ara::exec::ActivationReturnType _activationReturn{
-                    ara::exec::ActivationReturnType::kInit};
+                bool _running{true};
 
-                while (!cancellationToken->load() &&
-                       _activationReturn != ara::exec::ActivationReturnType::kTerminate)
+                while (!cancellationToken->load() && _running)
                 {
-                    auto _activationReturnResult{mDeterministicClient.WaitForActivation()};
-                    _activationReturn = _activationReturnResult.Value();
-
+                    _running = WaitForActivation();
                     mPoller.TryPoll();
 
                     checkFuture(
@@ -214,7 +202,7 @@ namespace application
 
                 _logStream.Flush();
                 _logStream << "State management has been terminated.";
-                mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                Log(cLogLevel, _logStream);
 
                 return cSuccessfulExitCode;
             }
@@ -222,15 +210,10 @@ namespace application
             {
                 _logStream.Flush();
                 _logStream << ex.what();
-                mLoggingFramework->Log(mLogger, cErrorLevel, _logStream);
+                Log(cErrorLevel, _logStream);
 
                 return cUnsuccessfulExitCode;
             }
-        }
-
-        StateManagement::~StateManagement()
-        {
-            delete mLoggingFramework;
         }
     }
 }

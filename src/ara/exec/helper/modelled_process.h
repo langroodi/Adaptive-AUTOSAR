@@ -5,6 +5,8 @@
 #include <future>
 #include <map>
 #include <string>
+#include "../../log/logging_framework.h"
+#include "../deterministic_client.h"
 
 namespace ara
 {
@@ -16,11 +18,30 @@ namespace ara
             class ModelledProcess
             {
             private:
+                static const log::LogMode cLogMode;
+                static const std::string cContextId;
+                static const std::string cContextDescription;
+
+                log::LoggingFramework *mLoggingFramework;
+                log::Logger mLogger;
+                DeterministicClient mDeterministicClient;
                 std::atomic_bool mCancellationToken;
                 std::future<int> mExitCode;
 
             protected:
-                ModelledProcess() noexcept;
+                /// @brief Information severity log level
+                static const log::LogLevel cLogLevel;
+                /// @brief Error severity log level
+                static const log::LogLevel cErrorLevel;
+
+                /// @brief Successful application exit code
+                const int cSuccessfulExitCode{0};
+                /// @brief Unsuccessful application exit code
+                const int cUnsuccessfulExitCode{1};
+
+                /// @brief Constructor
+                /// @param appId Modelled process application ID for logging
+                ModelledProcess(std::string appId);
 
                 /// @brief Main running block of the process
                 /// @param arguments Initialization arguments keys and their corresponding values
@@ -30,6 +51,16 @@ namespace ara
                 virtual int Main(
                     const std::atomic_bool *cancellationToken,
                     const std::map<std::string, std::string> &arguments) = 0;
+
+                /// @brief Log a steam
+                /// @param logLevel Stream log severity level
+                /// @param logStream Stream to be logged
+                void Log(
+                    log::LogLevel logLevel, const log::LogStream &logStream);
+
+                /// @brief Wait for the next main function activation cycle
+                /// @return True if the cycle is not terminiated yet, otherwise false
+                bool WaitForActivation();
 
             public:
                 /// @brief Initialize the process model to run the main block

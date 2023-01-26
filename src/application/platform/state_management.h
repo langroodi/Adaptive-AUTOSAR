@@ -6,7 +6,6 @@
 #include "../../ara/exec/helper/modelled_process.h"
 #include "../../ara/exec/deterministic_client.h"
 #include "../../ara/exec/state_client.h"
-#include "../../ara/log/logging_framework.h"
 #include "../helper/rpc_configuration.h"
 
 namespace application
@@ -18,15 +17,7 @@ namespace application
         {
         private:
             static const std::string cAppId;
-            static const ara::log::LogMode cLogMode;
-            static const std::string cContextId;
-            static const std::string cContextDescription;
-            static const ara::log::LogLevel cLogLevel;
-            static const ara::log::LogLevel cErrorLevel;
 
-            ara::exec::DeterministicClient mDeterministicClient;
-            ara::log::LoggingFramework *mLoggingFramework;
-            ara::log::Logger mLogger;
             std::vector<ara::exec::FunctionGroup> mFunctionGroups;
             std::vector<ara::exec::FunctionGroupState> mFunctionGroupStates;
             AsyncBsdSocketLib::Poller mPoller;
@@ -67,7 +58,7 @@ namespace application
 
                             ara::log::LogStream _logStream;
                             _logStream << message;
-                            mLoggingFramework->Log(mLogger, cLogLevel, _logStream);
+                            Log(cLogLevel, _logStream);
                         }
                     }
                     catch (const ara::exec::ExecException &ex)
@@ -84,7 +75,6 @@ namespace application
 
         public:
             StateManagement();
-            ~StateManagement() override;
         };
     }
 }
