@@ -2,9 +2,8 @@
 #define EXTENDED_VEHICLE_H
 
 #include <asyncbsdsocket/poller.h>
-#include "../ara/com/someip/sd/someip_sd_server.h"
-#include "../ara/com/someip/sd/sd_network_layer.h"
 #include "../ara/exec/helper/modelled_process.h"
+#include "../ara/com/someip/sd/someip_sd_server.h"
 
 namespace application
 {
@@ -12,9 +11,11 @@ namespace application
     class ExtendedVehicle : public ara::exec::helper::ModelledProcess
     {
     private:
+        static const std::string cAppId;
+
         AsyncBsdSocketLib::Poller mPoller;
+        ara::com::helper::NetworkLayer<ara::com::someip::sd::SomeIpSdMessage> *mNetworkLayer;
         ara::com::someip::sd::SomeIpSdServer *mSdServer;
-        helper::NetworkLayer<SomeIpSdMessage> *mNetworkLayer;
 
     protected:
         int Main(
@@ -22,7 +23,7 @@ namespace application
             const std::map<std::string, std::string> &arguments) override;
 
     public:
-        ~ExtendedVehicle() override;
+        ExtendedVehicle();
     };
 }
 
