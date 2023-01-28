@@ -21,7 +21,7 @@ namespace application
 
             helper::RpcConfiguration _result;
             bool _successful{
-                helper::TryGetCRpcConfiguration(
+                helper::TryGetRpcConfiguration(
                     configFilepath, cNetworkEndpoint, cApplicationEndpoint,
                     _result)};
 

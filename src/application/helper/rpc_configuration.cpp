@@ -4,38 +4,25 @@ namespace application
 {
     namespace helper
     {
-        bool TryGetCRpcConfiguration(
+        bool TryGetRpcConfiguration(
             const std::string &configFilepath,
             std::string networkEndpoint,
             std::string applicationEndpoint,
-            RpcConfiguration &rpcConfiguration)
+            RpcConfiguration &configuration)
         {
             const arxml::ArxmlReader cArxmlReader(configFilepath);
+            const ara::com::option::Layer4ProtocolType cProtocol{
+                ara::com::option::Layer4ProtocolType::Tcp};
 
-            std::string _ipAddress;
-            if (!tryExtractDeepValue(
-                    cArxmlReader,
-                    cIpAddressShallowChildren,
-                    cIpAddressDeepChildren,
-                    networkEndpoint,
-                    _ipAddress))
-            {
-                return false;
-            }
-
-            uint16_t _portNumber;
-            if (!tryExtractDeepValue(
-                    cArxmlReader,
-                    cPortNumberShallowChildren,
-                    cPortNumberDeepChildren,
-                    applicationEndpoint,
-                    _portNumber))
-            {
-                return false;
-            }
+            TryGetNetworkConfiguration(
+                cArxmlReader,
+                networkEndpoint,
+                applicationEndpoint,
+                cProtocol,
+                configuration);
 
             uint8_t _protocolVersion;
-            if (!tryExtractDeepValue(
+            if (!TryExtractDeepValue(
                     cArxmlReader,
                     cProtocolVersionShallowChildren,
                     {},
@@ -45,9 +32,7 @@ namespace application
                 return false;
             }
 
-            rpcConfiguration.ipAddress = _ipAddress;
-            rpcConfiguration.portNumber = _portNumber;
-            rpcConfiguration.protocolVersion = _protocolVersion;
+            configuration.protocolVersion = _protocolVersion;
 
             return true;
         }
