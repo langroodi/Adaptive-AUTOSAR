@@ -96,6 +96,9 @@ var hierarchy =
       [ "application::platform::StateManagement", "classapplication_1_1platform_1_1StateManagement.html", null ]
     ] ],
     [ "ara::diag::Monitor", "classara_1_1diag_1_1Monitor.html", null ],
+    [ "application::helper::NetworkConfiguration", "structapplication_1_1helper_1_1NetworkConfiguration.html", [
+      [ "application::helper::RpcConfiguration", "structapplication_1_1helper_1_1RpcConfiguration.html", null ]
+    ] ],
     [ "ara::com::helper::NetworkLayer< T >", "classara_1_1com_1_1helper_1_1NetworkLayer.html", null ],
     [ "ara::com::helper::NetworkLayer< SomeIpSdMessage >", "classara_1_1com_1_1helper_1_1NetworkLayer.html", [
       [ "ara::com::someip::sd::SdNetworkLayer", "classara_1_1com_1_1someip_1_1sd_1_1SdNetworkLayer.html", null ]
@@ -126,7 +129,6 @@ var hierarchy =
     [ "ara::com::someip::rpc::RpcClient", "classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html", [
       [ "ara::com::someip::rpc::SocketRpcClient", "classara_1_1com_1_1someip_1_1rpc_1_1SocketRpcClient.html", null ]
     ] ],
-    [ "application::helper::RpcConfiguration", "structapplication_1_1helper_1_1RpcConfiguration.html", null ],
     [ "ara::com::someip::rpc::RpcServer", "classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html", [
       [ "ara::com::someip::rpc::SocketRpcServer", "classara_1_1com_1_1someip_1_1rpc_1_1SocketRpcServer.html", null ]
     ] ],

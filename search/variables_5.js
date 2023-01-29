@@ -4,6 +4,6 @@ var searchData=
   ['passedms_1',['passedMs',['../structara_1_1diag_1_1TimeBased.html#aecd7073ad9ce65dbc2cab97b76c31be3',1,'ara::diag::TimeBased']]],
   ['passedstepsize_2',['passedStepsize',['../structara_1_1diag_1_1CounterBased.html#a45fdd1791c770a0475f5019b68186c9d',1,'ara::diag::CounterBased']]],
   ['passedthreshold_3',['passedThreshold',['../structara_1_1diag_1_1CounterBased.html#ab19cd0e2f483531c35900dacc7a2aebd',1,'ara::diag::CounterBased']]],
-  ['portnumber_4',['portNumber',['../structapplication_1_1helper_1_1RpcConfiguration.html#a63a940c865dc87753dcf97fc7e2698b4',1,'application::helper::RpcConfiguration']]],
+  ['portnumber_4',['portNumber',['../structapplication_1_1helper_1_1NetworkConfiguration.html#a97a3d2431b90ece921f6f1ecfff96492',1,'application::helper::NetworkConfiguration']]],
   ['protocolversion_5',['protocolVersion',['../structapplication_1_1helper_1_1RpcConfiguration.html#a5264d784451e6636692de0aee659e15d',1,'application::helper::RpcConfiguration']]]
 ];

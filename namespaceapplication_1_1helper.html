@@ -113,27 +113,225 @@ $(document).ready(function(){initNavTree('namespaceapplication_1_1helper.html','
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapplication_1_1helper_1_1NetworkConfiguration.html">NetworkConfiguration</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data model for a network configuration.  <a href="structapplication_1_1helper_1_1NetworkConfiguration.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapplication_1_1helper_1_1RpcConfiguration.html">RpcConfiguration</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data model for a remote procedure call connection configuration.  <a href="structapplication_1_1helper_1_1RpcConfiguration.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a988549ce4dc30cd416a5c3cef9d6b15c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a988549ce4dc30cd416a5c3cef9d6b15c">TryGetCRpcConfiguration</a> (const std::string &amp;configFilepath, std::string networkEndpoint, std::string applicationEndpoint, <a class="el" href="structapplication_1_1helper_1_1RpcConfiguration.html">RpcConfiguration</a> &amp;rpcConfiguration)</td></tr>
-<tr class="memdesc:a988549ce4dc30cd416a5c3cef9d6b15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get a RPC configuration based on a ARXML configuration file.  <a href="namespaceapplication_1_1helper.html#a988549ce4dc30cd416a5c3cef9d6b15c">More...</a><br /></td></tr>
-<tr class="separator:a988549ce4dc30cd416a5c3cef9d6b15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a613b9d6053342d9131cd5117151a0256"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a613b9d6053342d9131cd5117151a0256">TryGetNetworkConfiguration</a> (const <a class="el" href="classarxml_1_1ArxmlReader.html">arxml::ArxmlReader</a> &amp;reader, std::string networkEndpoint, std::string applicationEndpoint, <a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">ara::com::option::Layer4ProtocolType</a> protocol, <a class="el" href="structapplication_1_1helper_1_1NetworkConfiguration.html">NetworkConfiguration</a> &amp;configuration)</td></tr>
+<tr class="memdesc:a613b9d6053342d9131cd5117151a0256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get a nework configuration based on a ARXML configuration file.  <a href="namespaceapplication_1_1helper.html#a613b9d6053342d9131cd5117151a0256">More...</a><br /></td></tr>
+<tr class="separator:a613b9d6053342d9131cd5117151a0256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a8818ea853b768ba41dbb5a6bf7349"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a90a8818ea853b768ba41dbb5a6bf7349">TryGetNetworkConfiguration</a> (const std::string &amp;configFilepath, std::string networkEndpoint, std::string applicationEndpoint, <a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">ara::com::option::Layer4ProtocolType</a> protocol, <a class="el" href="structapplication_1_1helper_1_1NetworkConfiguration.html">NetworkConfiguration</a> &amp;configuration)</td></tr>
+<tr class="memdesc:a90a8818ea853b768ba41dbb5a6bf7349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get a nework configuration based on a ARXML configuration file.  <a href="namespaceapplication_1_1helper.html#a90a8818ea853b768ba41dbb5a6bf7349">More...</a><br /></td></tr>
+<tr class="separator:a90a8818ea853b768ba41dbb5a6bf7349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32bc1466fc34fd9f55afce716d012442"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a32bc1466fc34fd9f55afce716d012442"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a32bc1466fc34fd9f55afce716d012442">TryExtractDeepValue</a> (const <a class="el" href="classarxml_1_1ArxmlReader.html">arxml::ArxmlReader</a> &amp;shallowReader, std::initializer_list&lt; std::string &gt; shallowChildren, std::initializer_list&lt; std::string &gt; deepChildren, std::string shortNameFilter, T &amp;deepValue)</td></tr>
+<tr class="memdesc:a32bc1466fc34fd9f55afce716d012442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to extract a deep value from an XML content.  <a href="namespaceapplication_1_1helper.html#a32bc1466fc34fd9f55afce716d012442">More...</a><br /></td></tr>
+<tr class="separator:a32bc1466fc34fd9f55afce716d012442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f3c3230c0e6bbd28ebffebd88216e7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a6f3c3230c0e6bbd28ebffebd88216e7b">TryGetRpcConfiguration</a> (const std::string &amp;configFilepath, std::string networkEndpoint, std::string applicationEndpoint, <a class="el" href="structapplication_1_1helper_1_1RpcConfiguration.html">RpcConfiguration</a> &amp;configuration)</td></tr>
+<tr class="memdesc:a6f3c3230c0e6bbd28ebffebd88216e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get a RPC configuration based on a ARXML configuration file.  <a href="namespaceapplication_1_1helper.html#a6f3c3230c0e6bbd28ebffebd88216e7b">More...</a><br /></td></tr>
+<tr class="separator:a6f3c3230c0e6bbd28ebffebd88216e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Namespace that contains the helper classes for the application. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a988549ce4dc30cd416a5c3cef9d6b15c" name="a988549ce4dc30cd416a5c3cef9d6b15c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a988549ce4dc30cd416a5c3cef9d6b15c">&#9670;&nbsp;</a></span>TryGetCRpcConfiguration()</h2>
+<a id="a32bc1466fc34fd9f55afce716d012442" name="a32bc1466fc34fd9f55afce716d012442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32bc1466fc34fd9f55afce716d012442">&#9670;&nbsp;</a></span>TryExtractDeepValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool application::helper::TryExtractDeepValue </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classarxml_1_1ArxmlReader.html">arxml::ArxmlReader</a> &amp;&#160;</td>
+          <td class="paramname"><em>shallowReader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>shallowChildren</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>deepChildren</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>shortNameFilter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>deepValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Try to extract a deep value from an XML content. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Deep value type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">shallowReader</td><td>XML content reader </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">shallowChildren</td><td>XML node hierarchy that may contain multiple deep values </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">deepChildren</td><td>XML node hierarchy of a deep value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">shortNameFilter</td><td>Deep value short name for filtering within multiple deep values </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">deepValue</td><td>Filled deep value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the value is extracted properly; otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a613b9d6053342d9131cd5117151a0256" name="a613b9d6053342d9131cd5117151a0256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a613b9d6053342d9131cd5117151a0256">&#9670;&nbsp;</a></span>TryGetNetworkConfiguration() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool application::helper::TryGetCRpcConfiguration </td>
+          <td class="memname">bool application::helper::TryGetNetworkConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classarxml_1_1ArxmlReader.html">arxml::ArxmlReader</a> &amp;&#160;</td>
+          <td class="paramname"><em>reader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>networkEndpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>applicationEndpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">ara::com::option::Layer4ProtocolType</a>&#160;</td>
+          <td class="paramname"><em>protocol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structapplication_1_1helper_1_1NetworkConfiguration.html">NetworkConfiguration</a> &amp;&#160;</td>
+          <td class="paramname"><em>configuration</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Try to get a nework configuration based on a ARXML configuration file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">reader</td><td>ARXML configuration reader </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">networkEndpoint</td><td>Desired network endpoint name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">applicationEndpoint</td><td>Desired application endpoint name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">protocol</td><td>Network transmission protocol </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">networkConfiguration</td><td>Filled network configuration </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the configuration is filled properly; otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a90a8818ea853b768ba41dbb5a6bf7349" name="a90a8818ea853b768ba41dbb5a6bf7349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a8818ea853b768ba41dbb5a6bf7349">&#9670;&nbsp;</a></span>TryGetNetworkConfiguration() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool application::helper::TryGetNetworkConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>configFilepath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>networkEndpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>applicationEndpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">ara::com::option::Layer4ProtocolType</a>&#160;</td>
+          <td class="paramname"><em>protocol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structapplication_1_1helper_1_1NetworkConfiguration.html">NetworkConfiguration</a> &amp;&#160;</td>
+          <td class="paramname"><em>configuration</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Try to get a nework configuration based on a ARXML configuration file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">configFilepath</td><td>ARXML configuration file path </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">networkEndpoint</td><td>Desired network endpoint name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">applicationEndpoint</td><td>Desired application endpoint name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">protocol</td><td>Network transmission protocol </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">configuration</td><td>Filled network configuration </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the configuration is filled properly; otherwise false </dd></dl>
+
+</div>
+</div>
+<a id="a6f3c3230c0e6bbd28ebffebd88216e7b" name="a6f3c3230c0e6bbd28ebffebd88216e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f3c3230c0e6bbd28ebffebd88216e7b">&#9670;&nbsp;</a></span>TryGetRpcConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool application::helper::TryGetRpcConfiguration </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>configFilepath</em>, </td>
@@ -154,7 +352,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structapplication_1_1helper_1_1RpcConfiguration.html">RpcConfiguration</a> &amp;&#160;</td>
-          <td class="paramname"><em>rpcConfiguration</em>&#160;</td>
+          <td class="paramname"><em>configuration</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -170,7 +368,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">configFilepath</td><td>ARXML configuration file path </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">networkEndpoint</td><td>Desired network endpoint name </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">applicationEndpoint</td><td>Desired application endpoint name </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">rpcConfiguration</td><td>Filled RPC configuration </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">configuration</td><td>Filled RPC configuration </td></tr>
   </table>
   </dd>
 </dl>
