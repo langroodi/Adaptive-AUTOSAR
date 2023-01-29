@@ -30,6 +30,10 @@ namespace ara
                     uint8_t octet2,
                     uint8_t octet3) noexcept;
 
+                /// @brief Constructor
+                /// @param ipAddress IPv4 address string
+                Ipv4Address(std::string ipAddress);
+
                 ~Ipv4Address() noexcept = default;
 
                 /// @brief Inject an IP address into a byte vector
