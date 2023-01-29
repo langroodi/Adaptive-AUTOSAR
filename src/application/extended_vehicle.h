@@ -4,6 +4,7 @@
 #include <asyncbsdsocket/poller.h>
 #include "../ara/exec/helper/modelled_process.h"
 #include "../ara/com/someip/sd/someip_sd_server.h"
+#include "./helper/network_configuration.h"
 
 namespace application
 {
@@ -17,6 +18,13 @@ namespace application
         ara::com::helper::NetworkLayer<ara::com::someip::sd::SomeIpSdMessage> *mNetworkLayer;
         ara::com::someip::sd::SomeIpSdServer *mSdServer;
 
+        void configureNetworkLayer(const arxml::ArxmlReader &reader);
+
+        helper::NetworkConfiguration getNetworkConfiguration(
+            const arxml::ArxmlReader &reader);
+
+        void configureSdServer(const arxml::ArxmlReader &reader);
+
     protected:
         int Main(
             const std::atomic_bool *cancellationToken,
@@ -24,6 +32,7 @@ namespace application
 
     public:
         ExtendedVehicle();
+        ~ExtendedVehicle() override;
     };
 }
 
