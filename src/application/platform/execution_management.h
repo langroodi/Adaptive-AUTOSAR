@@ -2,6 +2,8 @@
 #define EXECUTION_MANAGEMENT_H
 
 #include <set>
+#include "../../ara/exec/state_server.h"
+#include "../extended_vehicle.h"
 #include "./state_management.h"
 
 /// @brief AUTOSAR application namespace
@@ -15,9 +17,12 @@ namespace application
         {
         private:
             static const std::string cAppId;
+            const std::string cMachineFunctionGroup{"MachineFG"};
 
             StateManagement mStateManagement;
+            ExtendedVehicle mExtendedVehicle;
             AsyncBsdSocketLib::Poller mPoller;
+            ara::exec::StateServer *mStateServer;
 
             static helper::RpcConfiguration getRpcConfiguration(
                 const std::string &configFilepath);
@@ -36,6 +41,9 @@ namespace application
                 const std::string &configFilepath,
                 std::set<std::pair<std::string, std::string>> &functionGroupStates,
                 std::map<std::string, std::string> &initialStates);
+
+            void onStateChange(
+                const std::map<std::string, std::string> &arguments);
 
         protected:
             int Main(

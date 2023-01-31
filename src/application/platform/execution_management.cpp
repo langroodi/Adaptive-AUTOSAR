@@ -1,6 +1,5 @@
 #include "../../ara/com/someip/rpc/socket_rpc_server.h"
 #include "../../ara/exec/execution_server.h"
-#include "../../ara/exec/state_server.h"
 #include "./execution_management.h"
 
 namespace application
@@ -9,7 +8,8 @@ namespace application
     {
         const std::string ExecutionManagement::cAppId{"ExecutionManagement"};
 
-        ExecutionManagement::ExecutionManagement() : ara::exec::helper::ModelledProcess(cAppId)
+        ExecutionManagement::ExecutionManagement() : ara::exec::helper::ModelledProcess(cAppId),
+                                                     mStateServer{nullptr}
         {
         }
 
@@ -108,6 +108,19 @@ namespace application
             }
         }
 
+        void ExecutionManagement::onStateChange(
+            const std::map<std::string, std::string> &arguments)
+        {
+            const std::string cStartUpState{"StartUp"};
+
+            std::string _currentState;
+            if (mStateServer->TryGetState(cMachineFunctionGroup, _currentState) &&
+                _currentState == cStartUpState)
+            {
+                mExtendedVehicle.Initialize(arguments);
+            }
+        }
+
         int ExecutionManagement::Main(
             const std::atomic_bool *cancellationToken,
             const std::map<std::string, std::string> &arguments)
@@ -133,10 +146,15 @@ namespace application
                 std::set<std::pair<std::string, std::string>> _functionGroupStates;
                 std::map<std::string, std::string> _initialState;
                 fillStates(cConfigFilepath, _functionGroupStates, _initialState);
-                ara::exec::StateServer _stateServer(
-                    &_rpcServer,
-                    std::move(_functionGroupStates),
-                    std::move(_initialState));
+                mStateServer =
+                    new ara::exec::StateServer(&_rpcServer,
+                                               std::move(_functionGroupStates),
+                                               std::move(_initialState));
+                
+                auto _onStateChangeCallback{
+                    std::bind(&ExecutionManagement::onStateChange, this, arguments)};
+                mStateServer->SetNotifier(
+                    cMachineFunctionGroup, _onStateChangeCallback);
 
                 _logStream << "Execution management has been initialized.";
                 Log(cLogLevel, _logStream);
@@ -171,7 +189,11 @@ namespace application
 
         ExecutionManagement::~ExecutionManagement()
         {
+            mExtendedVehicle.Terminate();
             mStateManagement.Terminate();
+
+            if (mStateServer)
+                delete mStateServer;
         }
     }
 }
