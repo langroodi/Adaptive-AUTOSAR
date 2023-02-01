@@ -137,17 +137,14 @@ $(document).ready(function(){initNavTree('trigger_8h_source.html',''); initResiz
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classara_1_1sm_1_1Trigger.html#a13b7b5fc7e8ac7ff0fb789546c25b29d">   40</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="classara_1_1sm_1_1Trigger.html#a13b7b5fc7e8ac7ff0fb789546c25b29d">Write</a>(T state)</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <span class="keywordflow">if</span> (mState != state)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    mState = state;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    mHandler();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        };</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                mState = state;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                mHandler();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        };</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1sm_1_1Trigger_html"><div class="ttname"><a href="classara_1_1sm_1_1Trigger.html">ara::sm::Trigger</a></div><div class="ttdoc">State changing trigger wrapper.</div><div class="ttdef"><b>Definition:</b> trigger.h:17</div></div>
 <div class="ttc" id="aclassara_1_1sm_1_1Trigger_html_a0363f5b04abe9cc6bffdac0d3c3aa21f"><div class="ttname"><a href="classara_1_1sm_1_1Trigger.html#a0363f5b04abe9cc6bffdac0d3c3aa21f">ara::sm::Trigger::Trigger</a></div><div class="ttdeci">Trigger(T &amp;state, TriggerHandler handler)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> trigger.h:26</div></div>
 <div class="ttc" id="aclassara_1_1sm_1_1Trigger_html_a13b7b5fc7e8ac7ff0fb789546c25b29d"><div class="ttname"><a href="classara_1_1sm_1_1Trigger.html#a13b7b5fc7e8ac7ff0fb789546c25b29d">ara::sm::Trigger::Write</a></div><div class="ttdeci">void Write(T state)</div><div class="ttdoc">Write into the trigger.</div><div class="ttdef"><b>Definition:</b> trigger.h:40</div></div>
