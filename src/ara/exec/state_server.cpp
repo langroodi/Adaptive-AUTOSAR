@@ -131,7 +131,14 @@ namespace ara
                 return false;
             }
 
-            const std::lock_guard<std::mutex> _currentStatesLock(mMutex);
+            std::unique_lock<std::mutex> _currentStatesLock(
+                mMutex, std::defer_lock);
+            if (!_currentStatesLock.try_lock())
+            {
+                injectErrorCode(rpcResponsePayload, ExecErrc::kGeneralError);
+                return false;
+            }
+
             auto _currentStatesItr{mCurrentStates.find(_functionGroup)};
             if (_currentStatesItr == mCurrentStates.end())
             {
@@ -145,10 +152,10 @@ namespace ara
             }
             else
             {
-                // Update the newly reported state and
-                // react with an empty RPC response payload
-                notify(_functionGroup, _state);
+                // Update the newly reported state and react with an empty RPC response payload
                 mCurrentStates[_functionGroup] = _state;
+                _currentStatesLock.unlock();
+                notify(_functionGroup, _state);
                 rpcResponsePayload.clear();
                 return true;
             }
@@ -182,7 +189,14 @@ namespace ara
         bool StateServer::TryGetState(
             std::string functionGroup, std::string &state)
         {
-            const std::lock_guard<std::mutex> _currentStatesLock(mMutex);
+            std::unique_lock<std::mutex> _currentStatesLock(
+                mMutex, std::defer_lock);
+            
+            if (!_currentStatesLock.try_lock())
+            {
+                return false;
+            }
+            
             auto _itr{mCurrentStates.find(functionGroup)};
             if (_itr != mCurrentStates.end())
             {

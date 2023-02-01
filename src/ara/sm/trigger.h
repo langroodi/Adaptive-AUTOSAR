@@ -39,11 +39,8 @@ namespace ara
             /// @param state New state
             void Write(T state)
             {
-                if (mState != state)
-                {
-                    mState = state;
-                    mHandler();
-                }
+                mState = state;
+                mHandler();
             }
         };
     }
