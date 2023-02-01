@@ -1,5 +1,0 @@
-if(EXISTS "/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/arxml_unit_test[1]_tests.cmake")
-  include("/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/arxml_unit_test[1]_tests.cmake")
-else()
-  add_test(arxml_unit_test_NOT_BUILT arxml_unit_test_NOT_BUILT)
-endif()
