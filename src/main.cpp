@@ -10,9 +10,18 @@ int main(int argc, char *argv[])
     const std::string cEvConfigArgument{"evconfig"};
     const int cEvConfigArgumentIndex{2};
 
+    const std::string cDiagnosticManagerConfigFile{"../configuration/diagnostic_manager_manifest.arxml"};
+    const std::string cDmConfigArgument{"dmconfig"};
+    const int cDmConfigArgumentIndex{3};
+
     std::map<std::string, std::string> _arguments;
 
-    if (argc > cEvConfigArgumentIndex)
+    if (argc > cDmConfigArgumentIndex)
+    {
+        std::string _dmConfigFilepath{argv[cDmConfigArgumentIndex]};
+        _arguments[cDmConfigArgument] = _dmConfigFilepath;
+    }
+    else if (argc > cEvConfigArgumentIndex)
     {
         std::string _evConfigFilepath{argv[cEvConfigArgumentIndex]};
         _arguments[cEvConfigArgument] = _evConfigFilepath;
@@ -26,6 +35,7 @@ int main(int argc, char *argv[])
     {
         _arguments[cConfigArgument] = cDefaultConfigFile;
         _arguments[cEvConfigArgument] = cExtendedVehicleConfigFile;
+        _arguments[cDmConfigArgument] = cDiagnosticManagerConfigFile;
     }
 
     application::platform::ExecutionManagement _executionManagement;
