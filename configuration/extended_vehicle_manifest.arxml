@@ -45,7 +45,7 @@
                     <PROVIDED-EVENT-GROUPS>
                         <SOMEIP-PROVIDED-EVENT-GROUP>
                             <EVENT-MULTICAST-UDP-PORT>5555</EVENT-MULTICAST-UDP-PORT>
-                            <IPV-4-MULTICAST-IP-ADDRESS>239.0.0.1<IPV-4-MULTICAST-IP-ADDRESS>
+                            <IPV-4-MULTICAST-IP-ADDRESS>239.0.0.1</IPV-4-MULTICAST-IP-ADDRESS>
                         </SOMEIP-PROVIDED-EVENT-GROUP>
                     </PROVIDED-EVENT-GROUPS>
                     <SD-SERVER-CONFIG>
