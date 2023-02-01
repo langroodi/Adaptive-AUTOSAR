@@ -60,7 +60,7 @@ namespace application
                                     "ELEMENTS",
                                     "REQUIRED-SOMEIP-SERVICE-INSTANCE",
                                     "SD-CLIENT-CONFIG",
-                                    "INITIAL-OFFER-BEHAVIOR",
+                                    "INITIAL-FIND-BEHAVIOR",
                                     "INITIAL-DELAY-MIN-VALUE"})};
 
             const arxml::ArxmlNode cInitialDelayMaxNode{
@@ -70,7 +70,7 @@ namespace application
                                     "ELEMENTS",
                                     "REQUIRED-SOMEIP-SERVICE-INSTANCE",
                                     "SD-CLIENT-CONFIG",
-                                    "INITIAL-OFFER-BEHAVIOR",
+                                    "INITIAL-FIND-BEHAVIOR",
                                     "INITIAL-DELAY-MAX-VALUE"})};
 
             const auto cServiceId{cServiceIdNode.GetValue<uint16_t>()};
