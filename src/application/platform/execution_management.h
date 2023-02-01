@@ -5,6 +5,7 @@
 #include "../../ara/exec/state_server.h"
 #include "../extended_vehicle.h"
 #include "./state_management.h"
+#include "./diagnostic_manager.h"
 
 /// @brief AUTOSAR application namespace
 namespace application
@@ -21,6 +22,7 @@ namespace application
 
             StateManagement mStateManagement;
             ExtendedVehicle mExtendedVehicle;
+            DiagnosticManager mDiagnosticManager;
             AsyncBsdSocketLib::Poller mPoller;
             ara::exec::StateServer *mStateServer;
 

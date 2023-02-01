@@ -117,6 +117,7 @@ namespace application
             if (mStateServer->TryGetState(cMachineFunctionGroup, _currentState) &&
                 _currentState == cStartUpState)
             {
+                mDiagnosticManager.Initialize(arguments);
                 mExtendedVehicle.Initialize(arguments);
             }
         }
@@ -190,6 +191,7 @@ namespace application
         ExecutionManagement::~ExecutionManagement()
         {
             mExtendedVehicle.Terminate();
+            mDiagnosticManager.Terminate();
             mStateManagement.Terminate();
 
             if (mStateServer)
