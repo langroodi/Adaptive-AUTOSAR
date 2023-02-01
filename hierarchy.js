@@ -92,6 +92,7 @@ var hierarchy =
     [ "ara::diag::MetaInfo", "classara_1_1diag_1_1MetaInfo.html", null ],
     [ "ara::exec::helper::ModelledProcess", "classara_1_1exec_1_1helper_1_1ModelledProcess.html", [
       [ "application::ExtendedVehicle", "classapplication_1_1ExtendedVehicle.html", null ],
+      [ "application::platform::DiagnosticManager", "classapplication_1_1platform_1_1DiagnosticManager.html", null ],
       [ "application::platform::ExecutionManagement", "classapplication_1_1platform_1_1ExecutionManagement.html", null ],
       [ "application::platform::StateManagement", "classapplication_1_1platform_1_1StateManagement.html", null ]
     ] ],

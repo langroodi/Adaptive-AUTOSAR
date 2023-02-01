@@ -6,6 +6,7 @@ var searchData=
   ['deterministicclient_3',['DeterministicClient',['../classara_1_1exec_1_1DeterministicClient.html',1,'ara::exec']]],
   ['diagerrordomain_4',['DiagErrorDomain',['../classara_1_1diag_1_1DiagErrorDomain.html',1,'ara::diag']]],
   ['diagnostic_5',['Diagnostic',['../classDiagnostic.html',1,'']]],
-  ['downloadservice_6',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
-  ['dtcinformation_7',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
+  ['diagnosticmanager_6',['DiagnosticManager',['../classapplication_1_1platform_1_1DiagnosticManager.html',1,'application::platform']]],
+  ['downloadservice_7',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
+  ['dtcinformation_8',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
 ];
