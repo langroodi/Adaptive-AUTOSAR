@@ -436,6 +436,8 @@ add_executable(
   ${source_application_platform_dir}/state_management.cpp
   ${source_application_platform_dir}/execution_management.h
   ${source_application_platform_dir}/execution_management.cpp
+  ${source_application_platform_dir}/diagnostic_manager.h
+  ${source_application_platform_dir}/diagnostic_manager.cpp
 )
 
 target_link_libraries(
