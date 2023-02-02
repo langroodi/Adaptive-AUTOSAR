@@ -20,14 +20,10 @@ int main(int argc, char *argv[])
     {
         std::string _dmConfigFilepath{argv[cDmConfigArgumentIndex]};
         _arguments[cDmConfigArgument] = _dmConfigFilepath;
-    }
-    else if (argc > cEvConfigArgumentIndex)
-    {
+
         std::string _evConfigFilepath{argv[cEvConfigArgumentIndex]};
         _arguments[cEvConfigArgument] = _evConfigFilepath;
-    }
-    else if (argc > cConfigArgumentIndex)
-    {
+
         std::string _configFilepath{argv[cConfigArgumentIndex]};
         _arguments[cConfigArgument] = _configFilepath;
     }
