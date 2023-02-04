@@ -139,9 +139,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae1a6e0b10991ad047b88a0b296ee2f74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#ae1a6e0b10991ad047b88a0b296ee2f74">ModelledProcess</a> (std::string appId)</td></tr>
-<tr class="memdesc:ae1a6e0b10991ad047b88a0b296ee2f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#ae1a6e0b10991ad047b88a0b296ee2f74">More...</a><br /></td></tr>
-<tr class="separator:ae1a6e0b10991ad047b88a0b296ee2f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625e7efa4740cee08879c27716a19239"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#a625e7efa4740cee08879c27716a19239">ModelledProcess</a> (std::string appId, AsyncBsdSocketLib::Poller *poller)</td></tr>
+<tr class="memdesc:a625e7efa4740cee08879c27716a19239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#a625e7efa4740cee08879c27716a19239">More...</a><br /></td></tr>
+<tr class="separator:a625e7efa4740cee08879c27716a19239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94fc5653cfa9a92dafd8f94c3568db88"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#a94fc5653cfa9a92dafd8f94c3568db88">Main</a> (const std::atomic_bool *cancellationToken, const std::map&lt; std::string, std::string &gt; &amp;arguments)=0</td></tr>
 <tr class="memdesc:a94fc5653cfa9a92dafd8f94c3568db88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main running block of the process.  <a href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#a94fc5653cfa9a92dafd8f94c3568db88">More...</a><br /></td></tr>
 <tr class="separator:a94fc5653cfa9a92dafd8f94c3568db88"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,6 +162,10 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><b>cSuccessfulExitC
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>cUnsuccessfulExitCode</b> {1}</td></tr>
 <tr class="memdesc:a30e57edfb639850a5b91e777e1c80ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsuccessful application exit code. <br /></td></tr>
 <tr class="separator:a30e57edfb639850a5b91e777e1c80ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa072b23bb59b5917f8b251d3fe922935"><td class="memItemLeft" align="right" valign="top"><a id="aa072b23bb59b5917f8b251d3fe922935" name="aa072b23bb59b5917f8b251d3fe922935"></a>
+AsyncBsdSocketLib::Poller *const&#160;</td><td class="memItemRight" valign="bottom"><b>Poller</b></td></tr>
+<tr class="memdesc:aa072b23bb59b5917f8b251d3fe922935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global poller for TCP/IP network communication. <br /></td></tr>
+<tr class="separator:aa072b23bb59b5917f8b251d3fe922935"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
@@ -177,8 +181,8 @@ static const <a class="el" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d678
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class that models an instance of an Adaptive (Platform) Application executable. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae1a6e0b10991ad047b88a0b296ee2f74" name="ae1a6e0b10991ad047b88a0b296ee2f74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1a6e0b10991ad047b88a0b296ee2f74">&#9670;&nbsp;</a></span>ModelledProcess()</h2>
+<a id="a625e7efa4740cee08879c27716a19239" name="a625e7efa4740cee08879c27716a19239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625e7efa4740cee08879c27716a19239">&#9670;&nbsp;</a></span>ModelledProcess()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,8 +194,18 @@ static const <a class="el" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d678
           <td class="memname">ara::exec::helper::ModelledProcess::ModelledProcess </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>appId</em></td><td>)</td>
+          <td class="paramname"><em>appId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">AsyncBsdSocketLib::Poller *&#160;</td>
+          <td class="paramname"><em>poller</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -205,6 +219,7 @@ static const <a class="el" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d678
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">appId</td><td>Modelled process application ID for logging </td></tr>
+    <tr><td class="paramname">poller</td><td>Global poller for network communication </td></tr>
   </table>
   </dd>
 </dl>

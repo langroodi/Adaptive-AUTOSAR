@@ -146,21 +146,15 @@ $(document).ready(function(){initNavTree('network__layer_8h_source.html',''); in
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    mReceiverCallbacks[object] = receiver;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classara_1_1com_1_1helper_1_1NetworkLayer.html#ac891b0698ab66b7950122755cc3c679b">   55</a></span>                <span class="keywordtype">void</span> <a class="code hl_function" href="classara_1_1com_1_1helper_1_1NetworkLayer.html#ac891b0698ab66b7950122755cc3c679b">ResetReceiver</a>(<span class="keywordtype">void</span> *<span class="keywordtype">object</span>)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                    mReceiverCallbacks.erase(<span class="keywordtype">object</span>);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            };</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            };</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1NetworkLayer_html"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1NetworkLayer.html">ara::com::helper::NetworkLayer</a></div><div class="ttdoc">Network communication abstraction layer.</div><div class="ttdef"><b>Definition:</b> network_layer.h:18</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1NetworkLayer_html_a00a79f7c3a39574cdd477fe822311812"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1NetworkLayer.html#a00a79f7c3a39574cdd477fe822311812">ara::com::helper::NetworkLayer::FireReceiverCallbacks</a></div><div class="ttdeci">void FireReceiverCallbacks(const std::vector&lt; uint8_t &gt; &amp;payload)</div><div class="ttdoc">Fire all the set receiver callaback.</div><div class="ttdef"><b>Definition:</b> network_layer.h:25</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1NetworkLayer_html_aa18ecc3935ca13064a36d480ce94aaac"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1NetworkLayer.html#aa18ecc3935ca13064a36d480ce94aaac">ara::com::helper::NetworkLayer::Send</a></div><div class="ttdeci">virtual void Send(const T &amp;message)=0</div><div class="ttdoc">Send a message through the network.</div></div>
-<div class="ttc" id="aclassara_1_1com_1_1helper_1_1NetworkLayer_html_ac891b0698ab66b7950122755cc3c679b"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1NetworkLayer.html#ac891b0698ab66b7950122755cc3c679b">ara::com::helper::NetworkLayer::ResetReceiver</a></div><div class="ttdeci">void ResetReceiver(void *object)</div><div class="ttdoc">Remove a receiver callback.</div><div class="ttdef"><b>Definition:</b> network_layer.h:55</div></div>
 <div class="ttc" id="aclassara_1_1com_1_1helper_1_1NetworkLayer_html_ad15a7ed2e2c262ddcfb8c4b4f55aa820"><div class="ttname"><a href="classara_1_1com_1_1helper_1_1NetworkLayer.html#ad15a7ed2e2c262ddcfb8c4b4f55aa820">ara::com::helper::NetworkLayer::SetReceiver</a></div><div class="ttdeci">void SetReceiver(void *object, std::function&lt; void(T)&gt; receiver)</div><div class="ttdoc">Set a receiver callback.</div><div class="ttdef"><b>Definition:</b> network_layer.h:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
