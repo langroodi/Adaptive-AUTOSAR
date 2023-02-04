@@ -49,13 +49,6 @@ namespace ara
                 {
                     mReceiverCallbacks[object] = receiver;
                 }
-
-                /// @brief Remove a receiver callback
-                /// @param object Callback owner object
-                void ResetReceiver(void *object)
-                {
-                    mReceiverCallbacks.erase(object);
-                }
             };
         }
     }

@@ -82,7 +82,6 @@ namespace ara
                     /// @note It is safe to recall the function if the agent has been already stopped.
                     void Stop()
                     {
-                        CommunicationLayer->ResetReceiver(this);
                         StopAgent();
                     }
 
