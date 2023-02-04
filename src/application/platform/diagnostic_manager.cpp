@@ -8,9 +8,9 @@ namespace application
 
         const std::string DiagnosticManager::cAppId{"DiagnosticManager"};
 
-        DiagnosticManager::DiagnosticManager() : ara::exec::helper::ModelledProcess(cAppId),
-                                                 mNetworkLayer{nullptr},
-                                                 mSdClient{nullptr}
+        DiagnosticManager::DiagnosticManager(AsyncBsdSocketLib::Poller *poller) : ara::exec::helper::ModelledProcess(cAppId, poller),
+                                                                                  mNetworkLayer{nullptr},
+                                                                                  mSdClient{nullptr}
         {
         }
 
@@ -32,7 +32,7 @@ namespace application
             {
                 mNetworkLayer =
                     new ara::com::someip::sd::SdNetworkLayer(
-                        &mPoller, cNicIpAddress,
+                        Poller, cNicIpAddress,
                         _networkConfiguration.ipAddress,
                         _networkConfiguration.portNumber);
             }
@@ -104,12 +104,15 @@ namespace application
                 Log(cLogLevel, _logStream);
 
                 bool _running{true};
+                mSdClient->Start();
 
                 while (!cancellationToken->load() && _running)
                 {
                     _running = WaitForActivation();
-                    mPoller.TryPoll();
                 }
+
+                delete mSdClient;
+                mSdClient = nullptr;
 
                 _logStream.Flush();
                 _logStream << "Diagnostic Manager has been terminated.";

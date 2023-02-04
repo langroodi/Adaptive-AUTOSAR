@@ -23,7 +23,6 @@ namespace application
             StateManagement mStateManagement;
             ExtendedVehicle mExtendedVehicle;
             DiagnosticManager mDiagnosticManager;
-            AsyncBsdSocketLib::Poller mPoller;
             ara::exec::StateServer *mStateServer;
 
             static helper::RpcConfiguration getRpcConfiguration(
@@ -53,7 +52,10 @@ namespace application
                 const std::map<std::string, std::string> &arguments) override;
 
         public:
-            ExecutionManagement();
+            /// @brief Constructor
+            /// @param poller Global poller for network communication
+            ExecutionManagement(AsyncBsdSocketLib::Poller *poller);
+
             ~ExecutionManagement() override;
         };
     }

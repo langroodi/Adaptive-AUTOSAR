@@ -1,5 +1,21 @@
 #include "./application/platform/execution_management.h"
 
+bool running;
+AsyncBsdSocketLib::Poller poller;
+application::platform::ExecutionManagement *executionManagement;
+
+void performPolling()
+{
+    const std::chrono::milliseconds cSleepDuration{
+        ara::exec::DeterministicClient::cCycleDelayMs};
+
+    while (running)
+    {
+        poller.TryPoll();
+        std::this_thread::sleep_for(cSleepDuration);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     const std::string cDefaultConfigFile{"../configuration/execution_manifest.arxml"};
@@ -34,12 +50,18 @@ int main(int argc, char *argv[])
         _arguments[cDmConfigArgument] = cDiagnosticManagerConfigFile;
     }
 
-    application::platform::ExecutionManagement _executionManagement;
-    _executionManagement.Initialize(_arguments);
+    running = true;
+    executionManagement = new application::platform::ExecutionManagement(&poller);
+    executionManagement->Initialize(_arguments);
+
+    std::future<void> _future{std::async(std::launch::async, performPolling)};
 
     std::getchar();
 
-    int _result{_executionManagement.Terminate()};
+    int _result{executionManagement->Terminate()};
+    running = false;
+    _future.get();
+    delete executionManagement;
 
     return _result;
 }

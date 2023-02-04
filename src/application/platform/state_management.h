@@ -1,7 +1,6 @@
 #ifndef STATE_MANAGEMENT_H
 #define STATE_MANAGEMENT_H
 
-#include <asyncbsdsocket/poller.h>
 #include "../../ara/com/someip/rpc/socket_rpc_client.h"
 #include "../../ara/exec/helper/modelled_process.h"
 #include "../../ara/exec/deterministic_client.h"
@@ -20,7 +19,6 @@ namespace application
 
             std::vector<ara::exec::FunctionGroup> mFunctionGroups;
             std::vector<ara::exec::FunctionGroupState> mFunctionGroupStates;
-            AsyncBsdSocketLib::Poller mPoller;
             ara::core::InstanceSpecifier mInstanceSpecifier;
 
             static helper::RpcConfiguration getRpcConfiguration(
@@ -74,7 +72,9 @@ namespace application
                 const std::map<std::string, std::string> &arguments) override;
 
         public:
-            StateManagement();
+            /// @brief Constructor
+            /// @param poller Global poller for network communication
+            StateManagement(AsyncBsdSocketLib::Poller *poller);
         };
     }
 }

@@ -12,9 +12,11 @@ namespace ara
             const log::LogLevel ModelledProcess::cLogLevel{log::LogLevel::kInfo};
             const log::LogLevel ModelledProcess::cErrorLevel{log::LogLevel::kError};
 
-            ModelledProcess::ModelledProcess(std::string appId) : mLoggingFramework{log::LoggingFramework::Create(appId, cLogMode)},
-                                                                  mLogger{mLoggingFramework->CreateLogger(cContextId, cContextDescription, cLogLevel)},
-                                                                  mCancellationToken{false}
+            ModelledProcess::ModelledProcess(
+                std::string appId, AsyncBsdSocketLib::Poller *poller) : Poller{poller},
+                                                                        mLoggingFramework{log::LoggingFramework::Create(appId, cLogMode)},
+                                                                        mLogger{mLoggingFramework->CreateLogger(cContextId, cContextDescription, cLogLevel)},
+                                                                        mCancellationToken{false}
             {
             }
 
@@ -30,7 +32,7 @@ namespace ara
                     mDeterministicClient.WaitForActivation()};
                 const exec::ActivationReturnType cActivationReturn{
                     cActivationReturnResult.Value()};
-                
+
                 return cActivationReturn != exec::ActivationReturnType::kTerminate;
             }
 

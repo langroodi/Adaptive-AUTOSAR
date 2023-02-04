@@ -1,6 +1,7 @@
 #ifndef MODELLED_PROCESS_H
 #define MODELLED_PROCESS_H
 
+#include <asyncbsdsocket/poller.h>
 #include <atomic>
 #include <future>
 #include <map>
@@ -39,9 +40,14 @@ namespace ara
                 /// @brief Unsuccessful application exit code
                 const int cUnsuccessfulExitCode{1};
 
+                /// @brief Global poller for TCP/IP network communication
+                AsyncBsdSocketLib::Poller *const Poller;
+
                 /// @brief Constructor
                 /// @param appId Modelled process application ID for logging
-                ModelledProcess(std::string appId);
+                /// @param poller Global poller for network communication
+                ModelledProcess(
+                    std::string appId, AsyncBsdSocketLib::Poller *poller);
 
                 /// @brief Main running block of the process
                 /// @param arguments Initialization arguments keys and their corresponding values

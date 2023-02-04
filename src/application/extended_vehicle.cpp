@@ -5,9 +5,9 @@ namespace application
 {
     const std::string ExtendedVehicle::cAppId{"ExtendedVehicle"};
 
-    ExtendedVehicle::ExtendedVehicle() : ara::exec::helper::ModelledProcess(cAppId),
-                                         mNetworkLayer{nullptr},
-                                         mSdServer{nullptr}
+    ExtendedVehicle::ExtendedVehicle(AsyncBsdSocketLib::Poller *poller) : ara::exec::helper::ModelledProcess(cAppId, poller),
+                                                                          mNetworkLayer{nullptr},
+                                                                          mSdServer{nullptr}
     {
     }
 
@@ -39,7 +39,7 @@ namespace application
         const auto cSdIp{cSdIpNode.GetValue<std::string>()};
         mNetworkLayer =
             new ara::com::someip::sd::SdNetworkLayer(
-                &mPoller, cNicIpAddress, cSdIp, cSdPort);
+                Poller, cNicIpAddress, cSdIp, cSdPort);
     }
 
     helper::NetworkConfiguration ExtendedVehicle::getNetworkConfiguration(
@@ -134,7 +134,7 @@ namespace application
 
         helper::NetworkConfiguration _networkConfiguration{
             getNetworkConfiguration(reader)};
-        
+
         mSdServer =
             new ara::com::someip::sd::SomeIpSdServer(
                 mNetworkLayer,
@@ -162,17 +162,20 @@ namespace application
         {
             configureNetworkLayer(cReader);
             configureSdServer(cReader);
-            
+
             _logStream << "Extended Vehicle AA has been initialized.";
             Log(cLogLevel, _logStream);
 
             bool _running{true};
+            mSdServer->Start();
 
             while (!cancellationToken->load() && _running)
             {
                 _running = WaitForActivation();
-                mPoller.TryPoll();
             }
+
+            delete mSdServer;
+            mSdServer = nullptr;
 
             _logStream.Flush();
             _logStream << "Extended Vehicle AA has been terminated.";

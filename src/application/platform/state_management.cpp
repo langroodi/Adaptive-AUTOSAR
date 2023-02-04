@@ -8,8 +8,8 @@ namespace application
     {
         const std::string StateManagement::cAppId{"StateManagement"};
 
-        StateManagement::StateManagement() : ara::exec::helper::ModelledProcess(cAppId),
-                                             mInstanceSpecifier{ara::core::InstanceSpecifier::Create(cAppId).Value()}
+        StateManagement::StateManagement(AsyncBsdSocketLib::Poller *poller) : ara::exec::helper::ModelledProcess(cAppId, poller),
+                                                                              mInstanceSpecifier{ara::core::InstanceSpecifier::Create(cAppId).Value()}
         {
         }
 
@@ -153,7 +153,7 @@ namespace application
                 const helper::RpcConfiguration cRpcConfiguration{
                     getRpcConfiguration(cConfigFilepath)};
                 ara::com::someip::rpc::SocketRpcClient _rpcClient(
-                    &mPoller,
+                    Poller,
                     cRpcConfiguration.ipAddress,
                     cRpcConfiguration.portNumber,
                     cRpcConfiguration.protocolVersion);
@@ -187,7 +187,6 @@ namespace application
                 while (!cancellationToken->load() && _running)
                 {
                     _running = WaitForActivation();
-                    mPoller.TryPoll();
 
                     checkFuture(
                         _executionStateReport,

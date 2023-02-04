@@ -8,8 +8,11 @@ namespace application
     {
         const std::string ExecutionManagement::cAppId{"ExecutionManagement"};
 
-        ExecutionManagement::ExecutionManagement() : ara::exec::helper::ModelledProcess(cAppId),
-                                                     mStateServer{nullptr}
+        ExecutionManagement::ExecutionManagement(AsyncBsdSocketLib::Poller *poller) : mStateManagement(poller),
+                                                                                      mExtendedVehicle(poller),
+                                                                                      mDiagnosticManager(poller),
+                                                                                      ara::exec::helper::ModelledProcess(cAppId, poller),
+                                                                                      mStateServer{nullptr}
         {
         }
 
@@ -137,7 +140,7 @@ namespace application
                 const helper::RpcConfiguration cRpcConfiguration{
                     getRpcConfiguration(cConfigFilepath)};
                 ara::com::someip::rpc::SocketRpcServer _rpcServer(
-                    &mPoller,
+                    Poller,
                     cRpcConfiguration.ipAddress,
                     cRpcConfiguration.portNumber,
                     cRpcConfiguration.protocolVersion);
@@ -151,7 +154,7 @@ namespace application
                     new ara::exec::StateServer(&_rpcServer,
                                                std::move(_functionGroupStates),
                                                std::move(_initialState));
-                
+
                 auto _onStateChangeCallback{
                     std::bind(&ExecutionManagement::onStateChange, this, arguments)};
                 mStateServer->SetNotifier(
@@ -167,14 +170,18 @@ namespace application
                 while (!cancellationToken->load() && _running)
                 {
                     _running = WaitForActivation();
-                    mPoller.TryPoll();
                 }
 
-                int _result{mStateManagement.Terminate()};
+                int _evTerminationResult{mExtendedVehicle.Terminate()};
+                int _dmTerminationResult{mDiagnosticManager.Terminate()};
+                int _smTerminationResult{mStateManagement.Terminate()};
 
                 _logStream.Flush();
                 _logStream << "Execution management has been terminated.";
                 Log(cLogLevel, _logStream);
+
+                int _result{
+                    _dmTerminationResult + _evTerminationResult + _smTerminationResult};
 
                 return _result;
             }

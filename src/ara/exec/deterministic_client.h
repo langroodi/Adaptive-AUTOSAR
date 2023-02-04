@@ -31,8 +31,10 @@ namespace ara
             /// @brief Steady clock time point for deterministic cycles
             using TimeStamp = std::chrono::time_point<std::chrono::steady_clock>;
 
-        private:
+            /// @brief Theoretical cyclic delay in millisecond
             static const uint64_t cCycleDelayMs{10};
+
+        private:
             static std::atomic_uint8_t mCounter;
             static std::future<void> mFuture;
             static bool mRunning;

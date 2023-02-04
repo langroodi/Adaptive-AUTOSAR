@@ -10,6 +10,9 @@ namespace ara
         {
             class ModelledProcessTest : public ModelledProcess, public testing::Test
             {
+            private:
+                AsyncBsdSocketLib::Poller mPoller;
+
             protected:
                 const int cExitCode{0};
 
@@ -28,7 +31,7 @@ namespace ara
                 }
 
             public:
-                ModelledProcessTest() : ModelledProcess("TestApp")
+                ModelledProcessTest() : ModelledProcess("TestApp", &mPoller)
                 {
                 }
             };
