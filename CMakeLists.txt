@@ -21,7 +21,7 @@ FetchContent_Declare(
 # Fetching Async-BSD-Socket-Lib for network abstraction
 FetchContent_Declare(
   Async-BSD-Socket-Lib
-  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/5f6867809f6b3e427b34720146cffb03e75a33b6.zip
+  URL https://github.com/langroodi/Async-BSD-Socket-Lib/archive/8c84da8f4b5e7552b41a54c92acb0b4565d07024.zip
 )
 
 # Fetching  OBD-II-Emulator for OBD2 CAN bus communication
@@ -410,6 +410,7 @@ target_link_libraries(
 target_link_libraries(
   ara_exec
   ara_core
+  async_bsd_socket_lib
 )
 
 target_link_libraries(
