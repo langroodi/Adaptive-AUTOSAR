@@ -45,6 +45,19 @@
                         </INITIAL-FIND-BEHAVIOR>
                     </SD-CLIENT-CONFIG>
                 </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+                <DIAGNOSTIC-MONITOR-INTERFACE>
+                    <SHORT-NAME>TelematicControlModuleMonitor</SHORT-NAME>
+                    <DIAG-EVENT-DEBOUNCE-TIME-BASED>
+                        <TIME-PASSED-THRESHOLD>6000</TIME-PASSED-THRESHOLD>
+                        <TIME-FAILED-THRESHOLD>6000</TIME-FAILED-THRESHOLD>
+                    </DIAG-EVENT-DEBOUNCE-TIME-BASED>
+                </DIAGNOSTIC-MONITOR-INTERFACE>
+                <DIAGNOSTIC-EVENT-INTERFACE>
+                    <SHORT-NAME>TelematicControlModuleEvent</SHORT-NAME>
+                    <!-- ISO 15031-6 DTC Format:
+                    U0198 (0xC198) = Lost Communication With Telematic Control Module -->
+                    <DTC-NUMBER>49560</DTC-NUMBER>
+                </DIAGNOSTIC-EVENT-INTERFACE>
             </ELEMENTS>
         </AR-PACKAGE>
     </AR-PACKAGES>
