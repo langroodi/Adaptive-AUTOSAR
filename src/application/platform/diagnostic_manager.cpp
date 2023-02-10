@@ -10,7 +10,9 @@ namespace application
 
         DiagnosticManager::DiagnosticManager(AsyncBsdSocketLib::Poller *poller) : ara::exec::helper::ModelledProcess(cAppId, poller),
                                                                                   mNetworkLayer{nullptr},
-                                                                                  mSdClient{nullptr}
+                                                                                  mSdClient{nullptr},
+                                                                                  mEvent{nullptr},
+                                                                                  mMonitor{nullptr}
         {
         }
 
@@ -85,6 +87,99 @@ namespace application
                     cInitialDelayMax);
         }
 
+        void DiagnosticManager::configureEvent(const arxml::ArxmlReader &reader)
+        {
+            const arxml::ArxmlNode cEventNode{
+                reader.GetRootNode({"AUTOSAR",
+                                    "AR-PACKAGES",
+                                    "AR-PACKAGE",
+                                    "ELEMENTS",
+                                    "DIAGNOSTIC-EVENT-INTERFACE"})};
+
+            const arxml::ArxmlNode cDtcNode{
+                reader.GetRootNode({"AUTOSAR",
+                                    "AR-PACKAGES",
+                                    "AR-PACKAGE",
+                                    "ELEMENTS",
+                                    "DIAGNOSTIC-EVENT-INTERFACE",
+                                    "DTC-NUMBER"})};
+
+            const std::string cShortName{cEventNode.GetShortName()};
+            mEventSpecifier = new ara::core::InstanceSpecifier(cShortName);
+            mEvent = new ara::diag::Event(*mEventSpecifier);
+
+            const auto cDtcNumber{cDtcNode.GetValue<uint32_t>()};
+            mEvent->SetDTCNumber(cDtcNumber);
+        }
+
+        void DiagnosticManager::onInitMonitor(ara::diag::InitMonitorReason reason)
+        {
+            ara::log::LogStream _logStream;
+
+            switch (reason)
+            {
+            case ara::diag::InitMonitorReason::kReenabled:
+                _logStream << mMonitorSpecifier << " is offered.";
+
+                break;
+
+            case ara::diag::InitMonitorReason::kDisabled:
+                _logStream << mMonitorSpecifier << " offer is stopped.";
+                break;
+
+            default:
+                auto _reasonInt{static_cast<uint32_t>(reason)};
+                _logStream << mMonitorSpecifier << "'s reason is " << _reasonInt;
+                break;
+            }
+
+            Log(cLogLevel, _logStream);
+        }
+
+        void DiagnosticManager::configureMonitor(const arxml::ArxmlReader &reader)
+        {
+            const arxml::ArxmlNode cMonitorNode{
+                reader.GetRootNode({"AUTOSAR",
+                                    "AR-PACKAGES",
+                                    "AR-PACKAGE",
+                                    "ELEMENTS",
+                                    "DIAGNOSTIC-MONITOR-INTERFACE"})};
+
+            const arxml::ArxmlNode cTimePassedNode{
+                reader.GetRootNode({"AUTOSAR",
+                                    "AR-PACKAGES",
+                                    "AR-PACKAGE",
+                                    "ELEMENTS",
+                                    "DIAGNOSTIC-MONITOR-INTERFACE",
+                                    "DIAG-EVENT-DEBOUNCE-TIME-BASED",
+                                    "TIME-PASSED-THRESHOLD"})};
+
+            const arxml::ArxmlNode cTimeFailedNode{
+                reader.GetRootNode({"AUTOSAR",
+                                    "AR-PACKAGES",
+                                    "AR-PACKAGE",
+                                    "ELEMENTS",
+                                    "DIAGNOSTIC-MONITOR-INTERFACE",
+                                    "DIAG-EVENT-DEBOUNCE-TIME-BASED",
+                                    "TIME-FAILED-THRESHOLD"})};
+
+            const std::string cShortName{cMonitorNode.GetShortName()};
+            mMonitorSpecifier = new ara::core::InstanceSpecifier(cShortName);
+
+            ara::diag::TimeBased _timeBased;
+            _timeBased.passedMs = cTimePassedNode.GetValue<uint32_t>();
+            _timeBased.failedMs = cTimeFailedNode.GetValue<uint32_t>();
+
+            auto _initMonitor{
+                std::bind(
+                    &DiagnosticManager::onInitMonitor,
+                    this, std::placeholders::_1)};
+
+            mMonitor =
+                new ara::diag::Monitor(
+                    *mMonitorSpecifier, _initMonitor, _timeBased);
+        }
+
         int DiagnosticManager::Main(
             const std::atomic_bool *cancellationToken,
             const std::map<std::string, std::string> &arguments)
@@ -99,6 +194,8 @@ namespace application
             {
                 configureNetworkLayer(cReader);
                 configureSdClient(cReader);
+                configureEvent(cReader);
+                configureMonitor(cReader);
 
                 _logStream << "Diagnostic Manager has been initialized.";
                 Log(cLogLevel, _logStream);
@@ -132,6 +229,18 @@ namespace application
 
         DiagnosticManager::~DiagnosticManager()
         {
+            if (mMonitor)
+            {
+                delete mMonitorSpecifier;
+                delete mMonitor;
+            }
+
+            if (mEvent)
+            {
+                delete mEventSpecifier;
+                delete mEvent;
+            }
+
             if (mSdClient)
                 delete mSdClient;
 

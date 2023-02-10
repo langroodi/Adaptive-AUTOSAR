@@ -446,6 +446,7 @@ target_link_libraries(
   arxml
   ara_exec
   ara_log
+  ara_diag
 )
 
 if(build_tests)
