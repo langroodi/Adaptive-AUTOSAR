@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <functional>
+#include <map>
 #include "../core/instance_specifier.h"
 #include "../core/result.h"
 
@@ -70,12 +71,11 @@ namespace ara
             /// @return Current event status
             ara::core::Result<EventStatusByte> GetEventStatus();
 
-            /// @brief Set a bit of the event status
-            /// @param bit Event status bit to be set
-            /// @param status Request bit status
-            /// @throws std::out_of_range Throws if the bit argument is out of range
+            /// @brief Set the bits of the event status
+            /// @param statusBits A dictionary of event status bits and their corresponding values
+            /// @throws std::out_of_range Throws if a bit is out of range
             /// @note The function is not ARA compatible.
-            void SetEventStatusBit(EventStatusBit bit, bool status);
+            void SetEventStatusBits(std::map<EventStatusBit, bool> statusBits);
 
             /// @brief Set a notifier on the event status changed
             /// @param notifier Callback to be invoked when the event status is changed

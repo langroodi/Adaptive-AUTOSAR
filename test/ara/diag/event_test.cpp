@@ -44,7 +44,7 @@ namespace ara
                     &EventTest::OnEventStatusChanged, this, std::placeholders::_1)};
 
             _event.SetEventStatusChangedNotifier(_notifier);
-            _event.SetEventStatusBit(EventStatusBit::kTestFailed, 1);
+            _event.SetEventStatusBits({{EventStatusBit::kTestFailed, true}});
             auto _eventStatus{_event.GetEventStatus()};
 
             EXPECT_EQ(cExpectedResult, NotifiedEventStatus);

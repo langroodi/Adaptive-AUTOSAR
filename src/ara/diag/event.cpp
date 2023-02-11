@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <limits>
+#include <bitset>
 #include "./event.h"
 
 namespace ara
@@ -20,44 +21,49 @@ namespace ara
             return _result;
         }
 
-        void Event::SetEventStatusBit(EventStatusBit bit, bool status)
+        void Event::SetEventStatusBits(std::map<EventStatusBit, bool> statusBits)
         {
-            const uint8_t cMask{0x01};
+            constexpr size_t cEventStatusByteSize{sizeof(uint8_t) * 8};
 
-            uint8_t _index;
-
-            switch (bit)
+            if (statusBits.empty())
             {
-            case EventStatusBit::kTestFailed:
-                _index = 7;
-                break;
-            case EventStatusBit::kTestFailedThisOperationCycle:
-                _index = 6;
-                break;
-            case EventStatusBit::kTestNotCompletedThisOperationCycle:
-                _index = 1;
-                break;
-
-            default:
-                throw std::out_of_range("The requested bit is out of range.");
+                return;
             }
 
-            auto _currentBitStatus{
-                static_cast<uint8_t>(mEventStatus.encodedBits >> _index)};
-            
-            _currentBitStatus = static_cast<uint8_t>(_currentBitStatus & cMask);
-            auto _currentBitStatusBool{static_cast<bool>(_currentBitStatus)};
+            std::bitset<cEventStatusByteSize> _eventStatusBitSet(
+                mEventStatus.encodedBits);
+
+            for (auto statusBit : statusBits)
+            {
+                size_t _position;
+
+                switch (statusBit.first)
+                {
+                case EventStatusBit::kTestFailed:
+                    _position = 7;
+                    break;
+                case EventStatusBit::kTestFailedThisOperationCycle:
+                    _position = 6;
+                    break;
+                case EventStatusBit::kTestNotCompletedThisOperationCycle:
+                    _position = 1;
+                    break;
+
+                default:
+                    throw std::out_of_range("The requested bit is out of range.");
+                }
+
+                _eventStatusBitSet.set(_position, statusBit.second);
+            }
+
+            const auto cNewEncodedBits{
+                static_cast<uint8_t>(_eventStatusBitSet.to_ulong())};
 
             // Update the status and invoke the notifier (if exists) if
-            // the current bit status is different with the new one
-            if (_currentBitStatusBool != status)
+            // the current event status is different with the new one
+            if (cNewEncodedBits != mEventStatus.encodedBits)
             {
-                uint8_t _newBitStatus{
-                    status ? static_cast<uint8_t>(0x01) : static_cast<uint8_t>(0x00)};
-                // Move the bit to the correct index in the status byte
-                _newBitStatus = static_cast<uint8_t>(_newBitStatus << _index);
-
-                mEventStatus.encodedBits |= _newBitStatus;
+                mEventStatus.encodedBits = cNewEncodedBits;
 
                 if (mNotifier)
                 {

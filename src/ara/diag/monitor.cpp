@@ -18,12 +18,14 @@ namespace ara
         {
             const int8_t cFailedFdc{127};
             const int8_t cPassedFdc{-128};
+            const bool cTestNotCompleted{false};
 
             if (mEvent)
             {
                 mEvent->SetFaultDetectionCounter(passed ? cPassedFdc : cFailedFdc);
-                mEvent->SetEventStatusBit(EventStatusBit::kTestFailed, !passed);
-                mEvent->SetEventStatusBit(EventStatusBit::kTestNotCompletedThisOperationCycle, false);
+                mEvent->SetEventStatusBits(
+                    {{EventStatusBit::kTestFailed, !passed},
+                     {EventStatusBit::kTestNotCompletedThisOperationCycle, cTestNotCompleted}});
             }
         }
 
@@ -86,7 +88,7 @@ namespace ara
                 case MonitorAction::kResetTestFailed:
                     if (mEvent)
                     {
-                        mEvent->SetEventStatusBit(EventStatusBit::kTestFailed, false);
+                        mEvent->SetEventStatusBits({{EventStatusBit::kTestFailed, false}});
                     }
                     break;
 
