@@ -121,9 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac38247435e6427e51ee619280ede3e07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; <a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#ac38247435e6427e51ee619280ede3e07">GetEventStatus</a> ()</td></tr>
 <tr class="memdesc:ac38247435e6427e51ee619280ede3e07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the event status.  <a href="classara_1_1diag_1_1Event.html#ac38247435e6427e51ee619280ede3e07">More...</a><br /></td></tr>
 <tr class="separator:ac38247435e6427e51ee619280ede3e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05c8f0472d3be5af50fe157ce731fed7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a05c8f0472d3be5af50fe157ce731fed7">SetEventStatusBit</a> (<a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">EventStatusBit</a> bit, bool status)</td></tr>
-<tr class="memdesc:a05c8f0472d3be5af50fe157ce731fed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a bit of the event status.  <a href="classara_1_1diag_1_1Event.html#a05c8f0472d3be5af50fe157ce731fed7">More...</a><br /></td></tr>
-<tr class="separator:a05c8f0472d3be5af50fe157ce731fed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf282fd65632b97d723915f7171bac9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#abf282fd65632b97d723915f7171bac9f">SetEventStatusBits</a> (std::map&lt; <a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">EventStatusBit</a>, bool &gt; statusBits)</td></tr>
+<tr class="memdesc:abf282fd65632b97d723915f7171bac9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the bits of the event status.  <a href="classara_1_1diag_1_1Event.html#abf282fd65632b97d723915f7171bac9f">More...</a><br /></td></tr>
+<tr class="separator:abf282fd65632b97d723915f7171bac9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2831a052b3ec9978518167fbfe903b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classara_1_1core_1_1Result.html">ara::core::Result</a>&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1Event.html#a2831a052b3ec9978518167fbfe903b9b">SetEventStatusChangedNotifier</a> (std::function&lt; void(<a class="el" href="structara_1_1diag_1_1EventStatusByte.html">EventStatusByte</a>)&gt; notifier)</td></tr>
 <tr class="memdesc:a2831a052b3ec9978518167fbfe903b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a notifier on the event status changed.  <a href="classara_1_1diag_1_1Event.html#a2831a052b3ec9978518167fbfe903b9b">More...</a><br /></td></tr>
 <tr class="separator:a2831a052b3ec9978518167fbfe903b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -355,43 +355,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a05c8f0472d3be5af50fe157ce731fed7" name="a05c8f0472d3be5af50fe157ce731fed7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05c8f0472d3be5af50fe157ce731fed7">&#9670;&nbsp;</a></span>SetEventStatusBit()</h2>
+<a id="abf282fd65632b97d723915f7171bac9f" name="abf282fd65632b97d723915f7171bac9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf282fd65632b97d723915f7171bac9f">&#9670;&nbsp;</a></span>SetEventStatusBits()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ara::diag::Event::SetEventStatusBit </td>
+          <td class="memname">void ara::diag::Event::SetEventStatusBits </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">EventStatusBit</a>&#160;</td>
-          <td class="paramname"><em>bit</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">std::map&lt; <a class="el" href="namespaceara_1_1diag.html#ab2a1d7a09f73acdd58b75089e9a5d52e">EventStatusBit</a>, bool &gt;&#160;</td>
+          <td class="paramname"><em>statusBits</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>status</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set a bit of the event status. </p>
+<p>Set the bits of the event status. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bit</td><td><a class="el" href="classara_1_1diag_1_1Event.html" title="Diagnostic event class that represents a fault path of a system.">Event</a> status bit to be set </td></tr>
-    <tr><td class="paramname">status</td><td>Request bit status </td></tr>
+    <tr><td class="paramname">statusBits</td><td>A dictionary of event status bits and their corresponding values </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::out_of_range</td><td>Throws if the bit argument is out of range </td></tr>
+    <tr><td class="paramname">std::out_of_range</td><td>Throws if a bit is out of range </td></tr>
   </table>
   </dd>
 </dl>

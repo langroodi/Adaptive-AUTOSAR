@@ -22,7 +22,7 @@ var searchData=
   ['setdtcnumber_19',['SetDTCNumber',['../classara_1_1diag_1_1Event.html#addb9a1f46e2551594f8c2af0bfd794c1',1,'ara::diag::Event']]],
   ['setdtcstatuschangednotifier_20',['SetDTCStatusChangedNotifier',['../classara_1_1diag_1_1DTCInformation.html#a4942e98172cf98940aee81c423d61201',1,'ara::diag::DTCInformation']]],
   ['seteventstatus_21',['SetEventStatus',['../classara_1_1diag_1_1debouncing_1_1Debouncer.html#a02a9f113d7521cc17f5bcaccb12b9864',1,'ara::diag::debouncing::Debouncer']]],
-  ['seteventstatusbit_22',['SetEventStatusBit',['../classara_1_1diag_1_1Event.html#a05c8f0472d3be5af50fe157ce731fed7',1,'ara::diag::Event']]],
+  ['seteventstatusbits_22',['SetEventStatusBits',['../classara_1_1diag_1_1Event.html#abf282fd65632b97d723915f7171bac9f',1,'ara::diag::Event']]],
   ['seteventstatuschangednotifier_23',['SetEventStatusChangedNotifier',['../classara_1_1diag_1_1Event.html#a2831a052b3ec9978518167fbfe903b9b',1,'ara::diag::Event']]],
   ['setfaultdetectioncounter_24',['SetFaultDetectionCounter',['../classara_1_1diag_1_1Event.html#a149bb55b0030803de64f8ba353c39056',1,'ara::diag::Event']]],
   ['sethandler_25',['SetHandler',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcClient.html#a8afe7bfd5de717336d7dbfacbc926c0c',1,'ara::com::someip::rpc::RpcClient::SetHandler()'],['../classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a5e9f870a34582fcd8c60ad751616b9b3',1,'ara::com::someip::rpc::RpcServer::SetHandler()']]],

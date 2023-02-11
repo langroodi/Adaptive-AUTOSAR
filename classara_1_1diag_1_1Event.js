@@ -8,7 +8,7 @@ var classara_1_1diag_1_1Event =
     [ "GetLatchedWIRStatus", "classara_1_1diag_1_1Event.html#aeee03e79834257ca85562092afb76f2d", null ],
     [ "GetTestComplete", "classara_1_1diag_1_1Event.html#afe70ef940174c50d0534087fd92c6f3b", null ],
     [ "SetDTCNumber", "classara_1_1diag_1_1Event.html#addb9a1f46e2551594f8c2af0bfd794c1", null ],
-    [ "SetEventStatusBit", "classara_1_1diag_1_1Event.html#a05c8f0472d3be5af50fe157ce731fed7", null ],
+    [ "SetEventStatusBits", "classara_1_1diag_1_1Event.html#abf282fd65632b97d723915f7171bac9f", null ],
     [ "SetEventStatusChangedNotifier", "classara_1_1diag_1_1Event.html#a2831a052b3ec9978518167fbfe903b9b", null ],
     [ "SetFaultDetectionCounter", "classara_1_1diag_1_1Event.html#a149bb55b0030803de64f8ba353c39056", null ],
     [ "SetLatchedWIRStatus", "classara_1_1diag_1_1Event.html#ad57e550a593da60041bf172aafd0fcf8", null ]
