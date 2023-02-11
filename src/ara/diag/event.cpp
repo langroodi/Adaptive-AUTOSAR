@@ -22,7 +22,7 @@ namespace ara
 
         void Event::SetEventStatusBit(EventStatusBit bit, bool status)
         {
-            const uint8_t cDefaultMask{0x01};
+            const uint8_t cMask{0x01};
 
             uint8_t _index;
 
@@ -45,9 +45,8 @@ namespace ara
             auto _currentBitStatus{
                 static_cast<uint8_t>(mEventStatus.encodedBits >> _index)};
             
-            auto _mask{static_cast<uint8_t>(cDefaultMask >> _index)};
-            _currentBitStatus = static_cast<uint8_t>(_currentBitStatus & _mask);
-            auto _currentBitStatusBool{static_cast<uint8_t>(_currentBitStatus)};
+            _currentBitStatus = static_cast<uint8_t>(_currentBitStatus & cMask);
+            auto _currentBitStatusBool{static_cast<bool>(_currentBitStatus)};
 
             // Update the status and invoke the notifier (if exists) if
             // the current bit status is different with the new one
