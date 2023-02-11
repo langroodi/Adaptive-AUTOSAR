@@ -27,11 +27,15 @@ namespace application
 
             void configureSdClient(const arxml::ArxmlReader &reader);
 
+            void onEventStatusChanged(ara::diag::EventStatusByte eventStatus);
+
             void configureEvent(const arxml::ArxmlReader &reader);
 
             void onInitMonitor(ara::diag::InitMonitorReason reason);
 
             void configureMonitor(const arxml::ArxmlReader &reader);
+
+            void checkServiceDiscovery();
 
         protected:
             int Main(

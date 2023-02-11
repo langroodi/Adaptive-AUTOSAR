@@ -87,6 +87,39 @@ namespace application
                     cInitialDelayMax);
         }
 
+        void DiagnosticManager::onEventStatusChanged(
+            ara::diag::EventStatusByte eventStatus)
+        {
+            const auto cDebouncingStatusResult{mEvent->GetDebouncingStatus()};
+
+            if (cDebouncingStatusResult.HasValue())
+            {
+                const ara::diag::DebouncingState cDebouncingStatus{
+                    cDebouncingStatusResult.Value()};
+
+                if (cDebouncingStatus ==
+                    ara::diag::DebouncingState::kFinallyHealed)
+                {
+                    ara::log::LogStream _logStream;
+                    _logStream << "Telematic Control Module (Extended Vehicle AA) is discovered.";
+                    Log(cLogLevel, _logStream);
+                }
+                else if (cDebouncingStatus ==
+                         ara::diag::DebouncingState::kFinallyDefective)
+                {
+                    const ara::diag::DTCFormatType cDtcFormat{
+                        ara::diag::DTCFormatType::kDTCFormatUDS};
+                    const auto cDtcNumberResult{mEvent->GetDTCNumber(cDtcFormat)};
+
+                    ara::log::LogStream _logStream;
+                    _logStream << mEventSpecifier->ToString()
+                               << " is failed with DTC "
+                               << cDtcNumberResult.Value();
+                    Log(cErrorLevel, _logStream);
+                }
+            }
+        }
+
         void DiagnosticManager::configureEvent(const arxml::ArxmlReader &reader)
         {
             const arxml::ArxmlNode cEventNode{
@@ -110,6 +143,13 @@ namespace application
 
             const auto cDtcNumber{cDtcNode.GetValue<uint32_t>()};
             mEvent->SetDTCNumber(cDtcNumber);
+
+            auto _onEventStatusChanged{
+                std::bind(
+                    &DiagnosticManager::onEventStatusChanged,
+                    this,
+                    std::placeholders::_1)};
+            mEvent->SetEventStatusChangedNotifier(_onEventStatusChanged);
         }
 
         void DiagnosticManager::onInitMonitor(ara::diag::InitMonitorReason reason)
@@ -119,17 +159,17 @@ namespace application
             switch (reason)
             {
             case ara::diag::InitMonitorReason::kReenabled:
-                _logStream << mMonitorSpecifier << " is offered.";
+                _logStream << mMonitorSpecifier->ToString() << " is offered.";
 
                 break;
 
             case ara::diag::InitMonitorReason::kDisabled:
-                _logStream << mMonitorSpecifier << " offer is stopped.";
+                _logStream << mMonitorSpecifier->ToString() << " offer is stopped.";
                 break;
 
             default:
                 auto _reasonInt{static_cast<uint32_t>(reason)};
-                _logStream << mMonitorSpecifier << "'s reason is " << _reasonInt;
+                _logStream << mMonitorSpecifier->ToString() << "'s reason is " << _reasonInt;
                 break;
             }
 
@@ -178,6 +218,27 @@ namespace application
             mMonitor =
                 new ara::diag::Monitor(
                     *mMonitorSpecifier, _initMonitor, _timeBased);
+            mMonitor->AttachEvent(mEvent);
+            mMonitor->Offer();
+        }
+
+        void DiagnosticManager::checkServiceDiscovery()
+        {
+            const ara::com::helper::SdClientState cState{
+                mSdClient->GetState()};
+
+            if (cState == ara::com::helper::SdClientState::ServiceReady ||
+                cState == ara::com::helper::SdClientState::ServiceSeen)
+            {
+                mMonitor->ReportMonitorAction(
+                    ara::diag::MonitorAction::kPrepassed);
+            }
+            else if (cState == ara::com::helper::SdClientState::Stopped ||
+                     cState == ara::com::helper::SdClientState::ServiceNotSeen)
+            {
+                mMonitor->ReportMonitorAction(
+                    ara::diag::MonitorAction::kPrefailed);
+            }
         }
 
         int DiagnosticManager::Main(
@@ -206,6 +267,7 @@ namespace application
                 while (!cancellationToken->load() && _running)
                 {
                     _running = WaitForActivation();
+                    checkServiceDiscovery();
                 }
 
                 delete mSdClient;
@@ -231,6 +293,7 @@ namespace application
         {
             if (mMonitor)
             {
+                mMonitor->StopOffer();
                 delete mMonitorSpecifier;
                 delete mMonitor;
             }
