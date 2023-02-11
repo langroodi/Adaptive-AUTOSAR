@@ -16,9 +16,14 @@ namespace ara
 
         void Monitor::onEventStatusChanged(bool passed)
         {
+            const int8_t cFailedFdc{127};
+            const int8_t cPassedFdc{-128};
+
             if (mEvent)
             {
+                mEvent->SetFaultDetectionCounter(passed ? cPassedFdc : cFailedFdc);
                 mEvent->SetEventStatusBit(EventStatusBit::kTestFailed, !passed);
+                mEvent->SetEventStatusBit(EventStatusBit::kTestNotCompletedThisOperationCycle, false);
             }
         }
 
