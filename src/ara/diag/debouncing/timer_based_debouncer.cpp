@@ -54,7 +54,11 @@ namespace ara
                 std::chrono::milliseconds _duration(threshold - mElapsedMs);
                 if (!mLock.owns_lock() && _duration.count() > 0)
                 {
-
+                    if (mThread.joinable())
+                    {
+                        mThread.join();
+                    }
+                    
                     mThread =
                         std::thread(
                             &TimerBasedDebouncer::tick, this, _duration, mIsPassing);
