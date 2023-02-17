@@ -18,6 +18,12 @@ FetchContent_Declare(
   URL https://github.com/google/googletest/archive/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip
 )
 
+# Fetching libcurl 7.88.0 for REST API
+FetchContent_Declare(
+  libcurl
+  URL https://github.com/curl/curl/archive/3027611ca6d4cc5510d2d0fccc3e5a074e09a2fb.zip
+)
+
 # Fetching Async-BSD-Socket-Lib for network abstraction
 FetchContent_Declare(
   Async-BSD-Socket-Lib
@@ -38,6 +44,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(
   googletest
+  libcurl
   Async-BSD-Socket-Lib
   OBD-II-Emulator
   Doip-Lib
