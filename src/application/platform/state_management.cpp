@@ -1,5 +1,6 @@
 #include <utility>
 #include "../../ara/exec/execution_client.h"
+#include "../helper/argument_configuration.h"
 #include "./state_management.h"
 
 namespace application
@@ -142,7 +143,7 @@ namespace application
             const std::atomic_bool *cancellationToken,
             const std::map<std::string, std::string> &arguments)
         {
-            const std::string cConfigArgument{"config"};
+            const std::string cConfigArgument{helper::ArgumentConfiguration::cConfigArgument};
 
             ara::log::LogStream _logStream;
 

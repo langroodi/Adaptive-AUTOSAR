@@ -1,3 +1,4 @@
+#include "./application/helper/argument_configuration.h"
 #include "./application/platform/execution_management.h"
 
 bool running;
@@ -18,44 +19,31 @@ void performPolling()
 
 int main(int argc, char *argv[])
 {
-    const std::string cDefaultConfigFile{"../configuration/execution_manifest.arxml"};
-    const std::string cConfigArgument{"config"};
-    const int cConfigArgumentIndex{1};
+    application::helper::ArgumentConfiguration _argumentConfiguration(argc, argv);
 
-    const std::string cExtendedVehicleConfigFile{"../configuration/extended_vehicle_manifest.arxml"};
-    const std::string cEvConfigArgument{"evconfig"};
-    const int cEvConfigArgumentIndex{2};
-
-    const std::string cDiagnosticManagerConfigFile{"../configuration/diagnostic_manager_manifest.arxml"};
-    const std::string cDmConfigArgument{"dmconfig"};
-    const int cDmConfigArgumentIndex{3};
-
-    std::map<std::string, std::string> _arguments;
-
-    if (argc > cDmConfigArgumentIndex)
+    bool _successful{_argumentConfiguration.TryAskingVccApiKey()};
+    if (!_successful)
     {
-        std::string _dmConfigFilepath{argv[cDmConfigArgumentIndex]};
-        _arguments[cDmConfigArgument] = _dmConfigFilepath;
-
-        std::string _evConfigFilepath{argv[cEvConfigArgumentIndex]};
-        _arguments[cEvConfigArgument] = _evConfigFilepath;
-
-        std::string _configFilepath{argv[cConfigArgumentIndex]};
-        _arguments[cConfigArgument] = _configFilepath;
+        std::cout << "Asking for the VCC API key is faile!";
+        return -1;
     }
-    else
+
+    std::system("clear");
+    _successful = _argumentConfiguration.TryAskingBearToken();
+    if (!_successful)
     {
-        _arguments[cConfigArgument] = cDefaultConfigFile;
-        _arguments[cEvConfigArgument] = cExtendedVehicleConfigFile;
-        _arguments[cDmConfigArgument] = cDiagnosticManagerConfigFile;
+        std::cout << "Asking for the OAuth 2.0 bear key is failed!";
+        return -1;
     }
 
     running = true;
     executionManagement = new application::platform::ExecutionManagement(&poller);
-    executionManagement->Initialize(_arguments);
+    executionManagement->Initialize(_argumentConfiguration.GetArguments());
 
     std::future<void> _future{std::async(std::launch::async, performPolling)};
 
+    std::getchar();
+    std::system("clear");
     std::getchar();
 
     int _result{executionManagement->Terminate()};

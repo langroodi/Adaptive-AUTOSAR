@@ -1,4 +1,5 @@
 #include "../ara/com/someip/sd/sd_network_layer.h"
+#include "../application/helper/argument_configuration.h"
 #include "./extended_vehicle.h"
 
 namespace application
@@ -152,7 +153,7 @@ namespace application
         const std::atomic_bool *cancellationToken,
         const std::map<std::string, std::string> &arguments)
     {
-        const std::string cEvConfigArgument{"evconfig"};
+        const std::string cEvConfigArgument{helper::ArgumentConfiguration::cEvConfigArgument};
         const std::string cEvConfigFilepath{arguments.at(cEvConfigArgument)};
         const arxml::ArxmlReader cReader(cEvConfigFilepath);
 
