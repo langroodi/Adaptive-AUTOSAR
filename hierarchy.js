@@ -4,6 +4,7 @@ var hierarchy =
       [ "ara::com::helper::FiniteStateMachine< T >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ]
     ] ],
     [ "ara::log::Argument< T >", "classara_1_1log_1_1Argument.html", null ],
+    [ "application::helper::ArgumentConfiguration", "classapplication_1_1helper_1_1ArgumentConfiguration.html", null ],
     [ "arxml::ArxmlNode", "classarxml_1_1ArxmlNode.html", null ],
     [ "arxml::ArxmlNodeIterator", "classarxml_1_1ArxmlNodeIterator.html", null ],
     [ "arxml::ArxmlNodeRange", "classarxml_1_1ArxmlNodeRange.html", null ],
