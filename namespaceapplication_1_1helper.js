@@ -1,6 +1,7 @@
 var namespaceapplication_1_1helper =
 [
     [ "ArgumentConfiguration", "classapplication_1_1helper_1_1ArgumentConfiguration.html", "classapplication_1_1helper_1_1ArgumentConfiguration" ],
+    [ "CurlWrapper", "classapplication_1_1helper_1_1CurlWrapper.html", "classapplication_1_1helper_1_1CurlWrapper" ],
     [ "NetworkConfiguration", "structapplication_1_1helper_1_1NetworkConfiguration.html", "structapplication_1_1helper_1_1NetworkConfiguration" ],
     [ "RpcConfiguration", "structapplication_1_1helper_1_1RpcConfiguration.html", "structapplication_1_1helper_1_1RpcConfiguration" ],
     [ "TryExtractDeepValue", "namespaceapplication_1_1helper.html#a32bc1466fc34fd9f55afce716d012442", null ],

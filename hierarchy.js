@@ -18,6 +18,7 @@ var hierarchy =
     [ "ara::diag::Conversation", "classara_1_1diag_1_1Conversation.html", null ],
     [ "ara::diag::ConversationIdentifierType", "structara_1_1diag_1_1ConversationIdentifierType.html", null ],
     [ "ara::diag::CounterBased", "structara_1_1diag_1_1CounterBased.html", null ],
+    [ "application::helper::CurlWrapper", "classapplication_1_1helper_1_1CurlWrapper.html", null ],
     [ "ara::diag::DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", null ],
     [ "ara::diag::debouncing::Debouncer", "classara_1_1diag_1_1debouncing_1_1Debouncer.html", [
       [ "ara::diag::debouncing::CounterBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html", null ],

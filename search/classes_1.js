@@ -12,5 +12,6 @@ var searchData=
   ['conversation_9',['Conversation',['../classara_1_1diag_1_1Conversation.html',1,'ara::diag']]],
   ['conversationidentifiertype_10',['ConversationIdentifierType',['../structara_1_1diag_1_1ConversationIdentifierType.html',1,'ara::diag']]],
   ['counterbased_11',['CounterBased',['../structara_1_1diag_1_1CounterBased.html',1,'ara::diag']]],
-  ['counterbaseddebouncer_12',['CounterBasedDebouncer',['../classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html',1,'ara::diag::debouncing']]]
+  ['counterbaseddebouncer_12',['CounterBasedDebouncer',['../classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html',1,'ara::diag::debouncing']]],
+  ['curlwrapper_13',['CurlWrapper',['../classapplication_1_1helper_1_1CurlWrapper.html',1,'application::helper']]]
 ];
