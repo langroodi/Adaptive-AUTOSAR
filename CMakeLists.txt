@@ -438,6 +438,8 @@ add_executable(
   ${source_application_dir}/extended_vehicle.cpp
   ${source_application_helper_dir}/argument_configuration.h
   ${source_application_helper_dir}/argument_configuration.cpp
+  ${source_application_helper_dir}/curl_wrapper.h
+  ${source_application_helper_dir}/curl_wrapper.cpp
   ${source_application_helper_dir}/network_configuration.h
   ${source_application_helper_dir}/network_configuration.cpp
   ${source_application_helper_dir}/rpc_configuration.h
@@ -452,6 +454,7 @@ add_executable(
 
 target_link_libraries(
   adaptive_autosar
+  libcurl
   arxml
   ara_exec
   ara_log
