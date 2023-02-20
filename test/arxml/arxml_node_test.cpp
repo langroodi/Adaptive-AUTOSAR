@@ -3,7 +3,7 @@
 
 namespace arxml
 {
-    TEST(ArmxlNodeTest, GetShortNameMethod)
+    TEST(ArxmlNodeTest, GetShortNameMethod)
     {
         const std::string cExpectedResult{"pkg"};
         const std::string cContent =
@@ -21,7 +21,7 @@ namespace arxml
         EXPECT_EQ(cExpectedResult, _actualResult);
     }
 
-    TEST(ArmxlNodeTest, GetByteValueMethod)
+    TEST(ArxmlNodeTest, GetByteValueMethod)
     {
         const uint8_t cExpectedResult{1};
         const std::string cContent =
@@ -40,7 +40,7 @@ namespace arxml
         EXPECT_EQ(cExpectedResult, _actualResult);
     }
 
-    TEST(ArmxlNodeTest, GetStringValueMethod)
+    TEST(ArxmlNodeTest, GetStringValueMethod)
     {
         const std::string cExpectedResult{"127.0.0.1"};
         const std::string cContent =
@@ -59,7 +59,7 @@ namespace arxml
         EXPECT_EQ(cExpectedResult, _actualResult);
     }
 
-    TEST(ArmxlNodeTest, ValidReferenceNodeTest)
+    TEST(ArxmlNodeTest, ValidReferenceNodeTest)
     {
         const std::string cExpectedResult{"Signal1"};
         const std::string cSourceNode{"SYSTEM-SIGNAL-REF"};
@@ -81,7 +81,7 @@ namespace arxml
         EXPECT_EQ(cExpectedResult, _actualResult);
     }
 
-    TEST(ArmxlNodeTest, InvalidReferenceNodeTest)
+    TEST(ArxmlNodeTest, InvalidReferenceNodeTest)
     {
         const std::string cSourceNode{"SYSTEM-SIGNAL-REF"};
         const std::string cDestinationType{"MODE-DECLARATION"};
@@ -100,7 +100,7 @@ namespace arxml
         EXPECT_FALSE(_node.TryGetReference(cSourceNode, cDestinationType, _actualResult));
     }
 
-    TEST(ArmxlNodeTest, GetContentMethod)
+    TEST(ArxmlNodeTest, GetContentMethod)
     {
         const std::string cExpectedResult{
             "<AR-PACKAGE>\n\t<SHORT-NAME>pkg</SHORT-NAME>\n</AR-PACKAGE>\n"};

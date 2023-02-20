@@ -6,7 +6,7 @@
 
 namespace arxml
 {
-    TEST(ArmxlReaderTest, ValidConstruction)
+    TEST(ArxmlReaderTest, ValidConstruction)
     {
         const std::string cContent =
             "<AR-PACKAGES><AR-PACKAGE><SHORT-NAME>pkg</SHORT-NAME></AR-PACKAGE></AR-PACKAGES>";
@@ -14,7 +14,7 @@ namespace arxml
         EXPECT_NO_THROW(ArxmlReader _reader(cContent.c_str(), cContent.length()));
     }
 
-    TEST(ArmxlReaderTest, ValidVersionConstruction)
+    TEST(ArxmlReaderTest, ValidVersionConstruction)
     {
         const std::string cContent =
             "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
@@ -23,7 +23,7 @@ namespace arxml
         EXPECT_NO_THROW(ArxmlReader _reader(cContent.c_str(), cContent.length()));
     }
 
-    TEST(ArmxlReaderTest, InvalidVersionConstruction)
+    TEST(ArxmlReaderTest, InvalidVersionConstruction)
     {
         const std::string cContent =
             "<?xml version=\"1.1\" encoding=\"UTF-8\"?>"
@@ -32,7 +32,7 @@ namespace arxml
         EXPECT_THROW(ArxmlReader _reader(cContent.c_str(), cContent.length()), std::invalid_argument);
     }
 
-    TEST(ArmxlReaderTest, GetNodesMethod)
+    TEST(ArxmlReaderTest, GetNodesMethod)
     {
         const std::string cPackage1{"pkg1"};
         const std::string cPackage2{"pkg2"};
