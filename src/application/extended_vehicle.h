@@ -4,6 +4,7 @@
 #include "../ara/exec/helper/modelled_process.h"
 #include "../ara/com/someip/sd/someip_sd_server.h"
 #include "./helper/network_configuration.h"
+#include "./helper/curl_wrapper.h"
 
 namespace application
 {
@@ -15,8 +16,12 @@ namespace application
 
         ara::com::helper::NetworkLayer<ara::com::someip::sd::SomeIpSdMessage> *mNetworkLayer;
         ara::com::someip::sd::SomeIpSdServer *mSdServer;
+        helper::CurlWrapper *mCurl;
+        std::string mVin;
 
         void configureNetworkLayer(const arxml::ArxmlReader &reader);
+        void configureRestCommunication(
+            std::string apiKey, std::string bearerToken);
 
         helper::NetworkConfiguration getNetworkConfiguration(
             const arxml::ArxmlReader &reader);

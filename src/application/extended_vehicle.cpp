@@ -1,5 +1,6 @@
 #include "../ara/com/someip/sd/sd_network_layer.h"
 #include "../application/helper/argument_configuration.h"
+#include "../application/helper/json.hpp"
 #include "./extended_vehicle.h"
 
 namespace application
@@ -8,7 +9,8 @@ namespace application
 
     ExtendedVehicle::ExtendedVehicle(AsyncBsdSocketLib::Poller *poller) : ara::exec::helper::ModelledProcess(cAppId, poller),
                                                                           mNetworkLayer{nullptr},
-                                                                          mSdServer{nullptr}
+                                                                          mSdServer{nullptr},
+                                                                          mCurl{nullptr}
     {
     }
 
@@ -149,6 +151,31 @@ namespace application
                 cInitialDelayMax);
     }
 
+    void ExtendedVehicle::configureRestCommunication(
+        std::string apiKey, std::string bearerToken)
+    {
+        const std::string cRequestUrl{
+            "https://api.volvocars.com/extended-vehicle/v1/vehicles"};
+
+        mCurl = new helper::CurlWrapper(apiKey, bearerToken);
+
+        std::string _response;
+        bool _successful{mCurl->TryExecute(cRequestUrl, &_response)};
+
+        if (_successful)
+        {
+            const nlohmann::json cDeserializedResponse{
+                nlohmann::json::parse(_response)};
+            const nlohmann::json cVinJson{
+                cDeserializedResponse[0]["vehicles"][0]["id"]};
+            cVinJson[0].get_to(mVin);
+
+            ara::log::LogStream _logStream;
+            _logStream << "VIN is set " << mVin;
+            Log(cLogLevel, _logStream);
+        }
+    }
+
     int ExtendedVehicle::Main(
         const std::atomic_bool *cancellationToken,
         const std::map<std::string, std::string> &arguments)
@@ -169,6 +196,10 @@ namespace application
 
             bool _running{true};
             mSdServer->Start();
+
+            configureRestCommunication(
+                arguments.at(helper::ArgumentConfiguration::cApiKeyArgument),
+                arguments.at(helper::ArgumentConfiguration::cBearerTokenArgument));
 
             while (!cancellationToken->load() && _running)
             {
@@ -196,6 +227,9 @@ namespace application
 
     ExtendedVehicle::~ExtendedVehicle()
     {
+        if (mCurl)
+            delete mCurl;
+
         if (mSdServer)
             delete mSdServer;
 
