@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Adaptive AUTOSAR", "index.html", [
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -44,7 +45,9 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ]
+        [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ]
   ] ]
@@ -58,7 +61,10 @@ var NAVTREEINDEX =
 "classara_1_1diag_1_1EcuResetRequest.html",
 "classara_1_1exec_1_1ExecErrorDomain.html#ab1d41355abfe56a8d9fbebd6cbea705b",
 "classarxml_1_1ArxmlReader.html#ab1867204e198bf7f68c9ffeefef7a2da",
-"namespaceara_1_1sm.html"
+"classdetail_1_1iteration__proxy.html",
+"functions_k.html",
+"namespacedetail.html#a6fd295e53b1dd4f46e235e6afee26d5e",
+"structdetail_1_1is__constructible__object__type__impl.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

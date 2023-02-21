@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['codetype_0',['CodeType',['../classara_1_1core_1_1ErrorDomain.html#a858bd680c1af572fa31fcfb6cf5f4752',1,'ara::core::ErrorDomain']]]
+  ['allocator_5ftype_0',['allocator_type',['../classbasic__json.html#a485873eed243b6ca7e30c96130a5ec2d',1,'basic_json']]],
+  ['array_5ft_1',['array_t',['../classbasic__json.html#a7cf28eb944e7c06aa47f0bc3a9d6f454',1,'basic_json']]]
 ];

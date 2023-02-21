@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['error_5ftype_0',['error_type',['../classara_1_1core_1_1Result.html#ae4075b56a0084b81172b1a1d00a2f4f9',1,'ara::core::Result::error_type()'],['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#a16810845d1e2c4029812478a98c97e42',1,'ara::core::Result&lt; void, E &gt;::error_type()']]],
-  ['executionerror_1',['ExecutionError',['../namespaceara_1_1exec.html#afc5c14bda0d256f751c3350c2a13e8d3',1,'ara::exec']]]
+  ['base_5fiterator_0',['base_iterator',['../classdetail_1_1json__reverse__iterator.html#ab306723c375c396a5ccd90e2d31ad651',1,'detail::json_reverse_iterator']]],
+  ['binary_5ft_1',['binary_t',['../classbasic__json.html#aabedd827d4943302a4cf0413956341db',1,'basic_json']]],
+  ['boolean_5ft_2',['boolean_t',['../classbasic__json.html#af396ac808d774d4ea0db4c7da11ce569',1,'basic_json']]]
 ];
