@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['finding_0',['Finding',['../namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171ead60fa52f375e62bd2309f7040bc53665',1,'ara::com::entry']]]
+  ['loadbalancing_0',['LoadBalancing',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a5fb96ac8b4e030b4e88bd71b95460d02',1,'ara::com::option']]]
 ];
