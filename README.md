@@ -48,6 +48,14 @@ To run the Adaptive AUTOSAR simulation, launch the following executable by passi
 ```bash
 ./build/adaptive_autosar ./configuration/execution_manifest.arxml ./configuration/extended_vehicle_manifest.arxml ./configuration/diagnostic_manager_manifest.arxml
 ```
+Then the executable will ask for:
+
+1. First, the VCC API key;
+2. And then the test access OAuth 2.0 token;
+
+in order to connect to the [Volvo Extended Vehicle](https://developer.volvocars.com/apis/extended-vehicle/overview/) RESTful API. To create the API key and the access token, you can follow [this tutorial](https://developer.volvocars.com/apis/docs/getting-started/).
+
+> ⚠️ Due to security reasons, the terminal echo is temporarily disabled while typing the key and the token.
 
 ## Documentation
 
