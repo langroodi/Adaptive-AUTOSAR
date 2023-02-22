@@ -154,6 +154,8 @@ namespace application
     void ExtendedVehicle::configureRestCommunication(
         std::string apiKey, std::string bearerToken)
     {
+        const std::string cVehiclesKey{"vehicles"};
+        const std::string cErrorKey{"error"};
         const std::string cRequestUrl{
             "https://api.volvocars.com/extended-vehicle/v1/vehicles"};
 
@@ -164,15 +166,35 @@ namespace application
 
         if (_successful)
         {
+            ara::log::LogStream _logStream;
             const nlohmann::json cDeserializedResponse{
                 nlohmann::json::parse(_response)};
-            const nlohmann::json cVinJson{
-                cDeserializedResponse[0]["vehicles"][0]["id"]};
-            cVinJson[0].get_to(mVin);
 
-            ara::log::LogStream _logStream;
-            _logStream << "VIN is set " << mVin;
-            Log(cLogLevel, _logStream);
+            if (cDeserializedResponse[0].contains(cVehiclesKey))
+            {
+                const nlohmann::json cVinJson{
+                    cDeserializedResponse[0][cVehiclesKey][0]["id"]};
+                cVinJson[0].get_to(mVin);
+
+                _logStream << "The VIN is set to " << mVin;
+                Log(cLogLevel, _logStream);
+            }
+            else if (cDeserializedResponse[0].contains(cErrorKey))
+            {
+                const nlohmann::json cMessageJson{
+                    cDeserializedResponse[0][cErrorKey]["message"]};
+
+                std::string _message;
+                cMessageJson[0].get_to(_message);
+
+                _logStream << "Setting the VIN failed. " << _message;
+                Log(cErrorLevel, _logStream);
+            }
+            else
+            {
+                _logStream << "Setting the VIN failed due to unexpected RESTful response format.";
+                Log(cErrorLevel, _logStream);
+            }
         }
     }
 
