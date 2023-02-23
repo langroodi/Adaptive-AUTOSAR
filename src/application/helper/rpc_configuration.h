@@ -9,7 +9,7 @@ namespace application
     /// @brief Namespace that contains the helper classes for the application
     namespace helper
     {
-        static const std::initializer_list<std::string> cProtocolVersionShallowChildren(
+        static const std::array<std::string, 6> cProtocolVersionShallowChildren(
             {"AUTOSAR",
              "AR-PACKAGES",
              "AR-PACKAGE",

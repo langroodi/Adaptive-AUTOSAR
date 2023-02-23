@@ -25,7 +25,7 @@ namespace application
             if (!TryExtractDeepValue(
                     cArxmlReader,
                     cProtocolVersionShallowChildren,
-                    {},
+                    std::array<std::string, 0>{},
                     "",
                     _protocolVersion))
             {

@@ -10,7 +10,7 @@ namespace application
 {
     namespace helper
     {
-        static const std::initializer_list<std::string> cIpAddressShallowChildren(
+        static const std::array<std::string, 7> cIpAddressShallowChildren(
             {"AUTOSAR",
              "AR-PACKAGES",
              "AR-PACKAGE",
@@ -19,13 +19,13 @@ namespace application
              "ETHERNET-PHYSICAL-CHANNEL",
              "NETWORK-ENDPOINTS"});
 
-        static const std::initializer_list<std::string> cIpAddressDeepChildren(
+        static const std::array<std::string, 4> cIpAddressDeepChildren(
             {"NETWORK-ENDPOINT",
              "NETWORK-ENDPOINT-ADDRESSES",
              "IPV-4-CONFIGURATION",
              "IPV-4-ADDRESS"});
 
-        static const std::initializer_list<std::string> cPortNumberShallowChildren(
+        static const std::array<std::string, 6> cPortNumberShallowChildren(
             {"AUTOSAR",
              "AR-PACKAGES",
              "AR-PACKAGE",
@@ -33,14 +33,14 @@ namespace application
              "ETHERNET-COMMUNICATION-CONNECTOR",
              "AP-APPLICATION-ENDPOINTS"});
 
-        static const std::initializer_list<std::string> cTcpPortNumberDeepChildren(
+        static const std::array<std::string, 5> cTcpPortNumberDeepChildren(
             {"AP-APPLICATION-ENDPOINT",
              "TP-CONFIGURATION",
              "TCP-TP",
              "TCP-TP-PORT",
              "PORT-NUMBER"});
 
-        static const std::initializer_list<std::string> cUdpPortNumberDeepChildren(
+        static const std::array<std::string, 5> cUdpPortNumberDeepChildren(
             {"AP-APPLICATION-ENDPOINT",
              "TP-CONFIGURATION",
              "UDP-TP",
@@ -59,17 +59,19 @@ namespace application
 
         /// @brief Try to extract a deep value from an XML content
         /// @tparam T Deep value type
+        /// @tparam M Shallow children depth level
+        /// @tparam N Deep children depth level
         /// @param[in] shallowReader XML content reader
         /// @param[in] shallowChildren XML node hierarchy that may contain multiple deep values
         /// @param[in] deepChildren XML node hierarchy of a deep value
         /// @param[in] shortNameFilter Deep value short name for filtering within multiple deep values
         /// @param[out] deepValue Filled deep value
         /// @return True if the value is extracted properly; otherwise false
-        template <typename T>
+        template <typename T, size_t M, size_t N>
         bool TryExtractDeepValue(
             const arxml::ArxmlReader &shallowReader,
-            std::initializer_list<std::string> shallowChildren,
-            std::initializer_list<std::string> deepChildren,
+            const std::array<std::string, M> &shallowChildren,
+            const std::array<std::string, N> &deepChildren,
             std::string shortNameFilter,
             T &deepValue)
         {
@@ -107,7 +109,7 @@ namespace application
         /// @param[out] networkConfiguration Filled network configuration
         /// @return True if the configuration is filled properly; otherwise false
         bool TryGetNetworkConfiguration(
-            const arxml::ArxmlReader& reader,
+            const arxml::ArxmlReader &reader,
             std::string networkEndpoint,
             std::string applicationEndpoint,
             ara::com::option::Layer4ProtocolType protocol,
