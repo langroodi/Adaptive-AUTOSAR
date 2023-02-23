@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -Wl,--export-dynamic -rdynamic CMakeFiles/arxml_unit_test.dir/test/arxml/arxml_node_test.cpp.o CMakeFiles/arxml_unit_test.dir/test/arxml/arxml_reader_test.cpp.o -o arxml_unit_test  -Wl,-rpath,/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build lib/libgtest_main.a libarxml.so lib/libgtest.a 

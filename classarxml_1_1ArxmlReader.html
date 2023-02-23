@@ -124,9 +124,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb1b82f4a8827cff9ae260207253e28e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classarxml_1_1ArxmlNode.html">ArxmlNode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlReader.html#abb1b82f4a8827cff9ae260207253e28e">GetRootNode</a> (std::initializer_list&lt; std::string &gt; children) const</td></tr>
 <tr class="memdesc:abb1b82f4a8827cff9ae260207253e28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get (relative) ARXML root node.  <a href="classarxml_1_1ArxmlReader.html#abb1b82f4a8827cff9ae260207253e28e">More...</a><br /></td></tr>
 <tr class="separator:abb1b82f4a8827cff9ae260207253e28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0dfabbff6dc7cb8f16f2d6d2df9ca3c"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:af0dfabbff6dc7cb8f16f2d6d2df9ca3c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classarxml_1_1ArxmlNode.html">ArxmlNode</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlReader.html#af0dfabbff6dc7cb8f16f2d6d2df9ca3c">GetRootNode</a> (const std::array&lt; std::string, N &gt; &amp;children) const</td></tr>
+<tr class="memdesc:af0dfabbff6dc7cb8f16f2d6d2df9ca3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get (relative) ARXML root node.  <a href="classarxml_1_1ArxmlReader.html#af0dfabbff6dc7cb8f16f2d6d2df9ca3c">More...</a><br /></td></tr>
+<tr class="separator:af0dfabbff6dc7cb8f16f2d6d2df9ca3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9742f33255b5661021fa77b5114af349"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classarxml_1_1ArxmlNodeRange.html">ArxmlNodeRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlReader.html#a9742f33255b5661021fa77b5114af349">GetNodes</a> (std::initializer_list&lt; std::string &gt; children) const</td></tr>
 <tr class="memdesc:a9742f33255b5661021fa77b5114af349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a range of ARXML nodes deep down the ARXML content.  <a href="classarxml_1_1ArxmlReader.html#a9742f33255b5661021fa77b5114af349">More...</a><br /></td></tr>
 <tr class="separator:a9742f33255b5661021fa77b5114af349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa14bdc85f8969b6fd2b00c009ad5f1"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a5fa14bdc85f8969b6fd2b00c009ad5f1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classarxml_1_1ArxmlNodeRange.html">ArxmlNodeRange</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classarxml_1_1ArxmlReader.html#a5fa14bdc85f8969b6fd2b00c009ad5f1">GetNodes</a> (const std::array&lt; std::string, N &gt; &amp;children) const</td></tr>
+<tr class="memdesc:a5fa14bdc85f8969b6fd2b00c009ad5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a range of ARXML nodes deep down the ARXML content.  <a href="classarxml_1_1ArxmlReader.html#a5fa14bdc85f8969b6fd2b00c009ad5f1">More...</a><br /></td></tr>
+<tr class="separator:a5fa14bdc85f8969b6fd2b00c009ad5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class to read ARXML configuration files. </p>
@@ -209,8 +217,51 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5fa14bdc85f8969b6fd2b00c009ad5f1" name="a5fa14bdc85f8969b6fd2b00c009ad5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa14bdc85f8969b6fd2b00c009ad5f1">&#9670;&nbsp;</a></span>GetNodes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classarxml_1_1ArxmlNodeRange.html">ArxmlNodeRange</a> arxml::ArxmlReader::GetNodes </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; std::string, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a range of ARXML nodes deep down the ARXML content. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>Children hierarchy depth level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">children</td><td>Hierarchical children node array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Read-only range of ARXML nodes </dd></dl>
+
+</div>
+</div>
 <a id="a9742f33255b5661021fa77b5114af349" name="a9742f33255b5661021fa77b5114af349"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9742f33255b5661021fa77b5114af349">&#9670;&nbsp;</a></span>GetNodes()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9742f33255b5661021fa77b5114af349">&#9670;&nbsp;</a></span>GetNodes() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -236,8 +287,51 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af0dfabbff6dc7cb8f16f2d6d2df9ca3c" name="af0dfabbff6dc7cb8f16f2d6d2df9ca3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0dfabbff6dc7cb8f16f2d6d2df9ca3c">&#9670;&nbsp;</a></span>GetRootNode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classarxml_1_1ArxmlNode.html">ArxmlNode</a> arxml::ArxmlReader::GetRootNode </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; std::string, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get (relative) ARXML root node. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>Children hierarchy depth level </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">children</td><td>Hierarchical children node array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ARXML root node relative to the children nodes (if there is any) </dd></dl>
+
+</div>
+</div>
 <a id="abb1b82f4a8827cff9ae260207253e28e" name="abb1b82f4a8827cff9ae260207253e28e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb1b82f4a8827cff9ae260207253e28e">&#9670;&nbsp;</a></span>GetRootNode()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1b82f4a8827cff9ae260207253e28e">&#9670;&nbsp;</a></span>GetRootNode() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

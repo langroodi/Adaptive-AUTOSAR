@@ -134,10 +134,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a90a8818ea853b768ba41dbb5a6bf7349"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a90a8818ea853b768ba41dbb5a6bf7349">TryGetNetworkConfiguration</a> (const std::string &amp;configFilepath, std::string networkEndpoint, std::string applicationEndpoint, <a class="el" href="namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c">ara::com::option::Layer4ProtocolType</a> protocol, <a class="el" href="structapplication_1_1helper_1_1NetworkConfiguration.html">NetworkConfiguration</a> &amp;configuration)</td></tr>
 <tr class="memdesc:a90a8818ea853b768ba41dbb5a6bf7349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get a nework configuration based on a ARXML configuration file.  <a href="namespaceapplication_1_1helper.html#a90a8818ea853b768ba41dbb5a6bf7349">More...</a><br /></td></tr>
 <tr class="separator:a90a8818ea853b768ba41dbb5a6bf7349"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32bc1466fc34fd9f55afce716d012442"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a32bc1466fc34fd9f55afce716d012442"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a32bc1466fc34fd9f55afce716d012442">TryExtractDeepValue</a> (const <a class="el" href="classarxml_1_1ArxmlReader.html">arxml::ArxmlReader</a> &amp;shallowReader, std::initializer_list&lt; std::string &gt; shallowChildren, std::initializer_list&lt; std::string &gt; deepChildren, std::string shortNameFilter, T &amp;deepValue)</td></tr>
-<tr class="memdesc:a32bc1466fc34fd9f55afce716d012442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to extract a deep value from an XML content.  <a href="namespaceapplication_1_1helper.html#a32bc1466fc34fd9f55afce716d012442">More...</a><br /></td></tr>
-<tr class="separator:a32bc1466fc34fd9f55afce716d012442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f524864bd002b2d058eadab60c2b5b6"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t M, size_t N&gt; </td></tr>
+<tr class="memitem:a9f524864bd002b2d058eadab60c2b5b6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a9f524864bd002b2d058eadab60c2b5b6">TryExtractDeepValue</a> (const <a class="el" href="classarxml_1_1ArxmlReader.html">arxml::ArxmlReader</a> &amp;shallowReader, const std::array&lt; std::string, M &gt; &amp;shallowChildren, const std::array&lt; std::string, N &gt; &amp;deepChildren, std::string shortNameFilter, T &amp;deepValue)</td></tr>
+<tr class="memdesc:a9f524864bd002b2d058eadab60c2b5b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to extract a deep value from an XML content.  <a href="namespaceapplication_1_1helper.html#a9f524864bd002b2d058eadab60c2b5b6">More...</a><br /></td></tr>
+<tr class="separator:a9f524864bd002b2d058eadab60c2b5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f3c3230c0e6bbd28ebffebd88216e7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceapplication_1_1helper.html#a6f3c3230c0e6bbd28ebffebd88216e7b">TryGetRpcConfiguration</a> (const std::string &amp;configFilepath, std::string networkEndpoint, std::string applicationEndpoint, <a class="el" href="structapplication_1_1helper_1_1RpcConfiguration.html">RpcConfiguration</a> &amp;configuration)</td></tr>
 <tr class="memdesc:a6f3c3230c0e6bbd28ebffebd88216e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get a RPC configuration based on a ARXML configuration file.  <a href="namespaceapplication_1_1helper.html#a6f3c3230c0e6bbd28ebffebd88216e7b">More...</a><br /></td></tr>
 <tr class="separator:a6f3c3230c0e6bbd28ebffebd88216e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,13 +145,13 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Namespace that contains the helper classes for the application. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a32bc1466fc34fd9f55afce716d012442" name="a32bc1466fc34fd9f55afce716d012442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32bc1466fc34fd9f55afce716d012442">&#9670;&nbsp;</a></span>TryExtractDeepValue()</h2>
+<a id="a9f524864bd002b2d058eadab60c2b5b6" name="a9f524864bd002b2d058eadab60c2b5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f524864bd002b2d058eadab60c2b5b6">&#9670;&nbsp;</a></span>TryExtractDeepValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T , size_t M, size_t N&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool application::helper::TryExtractDeepValue </td>
@@ -162,13 +162,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::initializer_list&lt; std::string &gt;&#160;</td>
+          <td class="paramtype">const std::array&lt; std::string, M &gt; &amp;&#160;</td>
           <td class="paramname"><em>shallowChildren</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::initializer_list&lt; std::string &gt;&#160;</td>
+          <td class="paramtype">const std::array&lt; std::string, N &gt; &amp;&#160;</td>
           <td class="paramname"><em>deepChildren</em>, </td>
         </tr>
         <tr>
@@ -195,6 +195,8 @@ template&lt;typename T &gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Deep value type </td></tr>
+    <tr><td class="paramname">M</td><td>Shallow children depth level </td></tr>
+    <tr><td class="paramname">N</td><td>Deep children depth level </td></tr>
   </table>
   </dd>
 </dl>
