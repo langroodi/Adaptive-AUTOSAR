@@ -1,6 +1,6 @@
+#include <json/json.h>
 #include "../ara/com/someip/sd/sd_network_layer.h"
 #include "../application/helper/argument_configuration.h"
-#include "../application/helper/json.hpp"
 #include "./extended_vehicle.h"
 
 namespace application
@@ -154,6 +154,7 @@ namespace application
     void ExtendedVehicle::configureRestCommunication(
         std::string apiKey, std::string bearerToken)
     {
+        const bool cCollectJsonComments{false};
         const std::string cVehiclesKey{"vehicles"};
         const std::string cErrorKey{"error"};
         const std::string cRequestUrl{
@@ -164,37 +165,40 @@ namespace application
         std::string _response;
         bool _successful{mCurl->TryExecute(cRequestUrl, &_response)};
 
-        if (_successful)
+        if (!_successful)
         {
-            ara::log::LogStream _logStream;
-            const nlohmann::json cDeserializedResponse{
-                nlohmann::json::parse(_response)};
+            return;
+        }
 
-            if (cDeserializedResponse[0].contains(cVehiclesKey))
-            {
-                const nlohmann::json cVinJson{
-                    cDeserializedResponse[0][cVehiclesKey][0]["id"]};
-                cVinJson[0].get_to(mVin);
+        Json::Value _jsonResponse;
+        Json::Reader _jsonReader;
 
-                _logStream << "The VIN is set to " << mVin;
-                Log(cLogLevel, _logStream);
-            }
-            else if (cDeserializedResponse[0].contains(cErrorKey))
-            {
-                const nlohmann::json cMessageJson{
-                    cDeserializedResponse[0][cErrorKey]["message"]};
+        _successful =
+            _jsonReader.parse(_response, _jsonResponse, cCollectJsonComments);
 
-                std::string _message;
-                cMessageJson[0].get_to(_message);
+        if (!_successful)
+        {
+            return;
+        }
 
-                _logStream << "Setting the VIN failed. " << _message;
-                Log(cErrorLevel, _logStream);
-            }
-            else
-            {
-                _logStream << "Setting the VIN failed due to unexpected RESTful response format.";
-                Log(cErrorLevel, _logStream);
-            }
+        ara::log::LogStream _logStream;
+
+        if (_jsonResponse.isMember(cVehiclesKey))
+        {
+            mVin = _jsonResponse[cVehiclesKey][0]["id"].asString();
+            _logStream << "The VIN is set to " << mVin;
+            Log(cLogLevel, _logStream);
+        }
+        else if (_jsonResponse.isMember(cErrorKey))
+        {
+            std::string _message = _jsonResponse[cErrorKey]["message"].asString();
+            _logStream << "Setting the VIN failed. " << _message;
+            Log(cErrorLevel, _logStream);
+        }
+        else
+        {
+            _logStream << "Setting the VIN failed due to unexpected RESTful response format.";
+            Log(cErrorLevel, _logStream);
         }
     }
 

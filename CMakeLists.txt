@@ -24,6 +24,12 @@ FetchContent_Declare(
   URL https://github.com/curl/curl/archive/3027611ca6d4cc5510d2d0fccc3e5a074e09a2fb.zip
 )
 
+# Fetching JsonCpp 1.9.5 for JSON parsing
+FetchContent_Declare(
+  jsoncpp_lib
+  URL https://github.com/open-source-parsers/jsoncpp/archive/5defb4ed1a4293b8e2bf641e16b156fb9de498cc.zip
+)
+
 # Fetching Async-BSD-Socket-Lib for network abstraction
 FetchContent_Declare(
   Async-BSD-Socket-Lib
@@ -45,6 +51,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(
   googletest
   libcurl
+  jsoncpp_lib
   Async-BSD-Socket-Lib
   OBD-II-Emulator
   Doip-Lib
@@ -455,6 +462,7 @@ add_executable(
 target_link_libraries(
   adaptive_autosar
   libcurl
+  jsoncpp_lib
   arxml
   ara_exec
   ara_log

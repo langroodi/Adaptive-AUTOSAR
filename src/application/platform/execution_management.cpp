@@ -130,13 +130,12 @@ namespace application
             const std::atomic_bool *cancellationToken,
             const std::map<std::string, std::string> &arguments)
         {
-            const std::string cConfigArgument{helper::ArgumentConfiguration::cConfigArgument};
-
             ara::log::LogStream _logStream;
 
             try
             {
-                const std::string cConfigFilepath{arguments.at(cConfigArgument)};
+                const std::string cConfigFilepath{
+                    arguments.at(helper::ArgumentConfiguration::cConfigArgument)};
 
                 const helper::RpcConfiguration cRpcConfiguration{
                     getRpcConfiguration(cConfigFilepath)};

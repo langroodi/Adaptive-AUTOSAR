@@ -38,9 +38,9 @@ namespace application
             ArgumentConfiguration(
                 int argc,
                 char *argv[],
-                std::string defaultConfigFile = "../configuration/execution_manifest.arxml",
-                std::string extendedVehicleConfigFile = "../configuration/extended_vehicle_manifest.arxml",
-                std::string diagnosticManagerConfigFile = "../configuration/diagnostic_manager_manifest.arxml");
+                std::string defaultConfigFile = "../../configuration/execution_manifest.arxml",
+                std::string extendedVehicleConfigFile = "../../configuration/extended_vehicle_manifest.arxml",
+                std::string diagnosticManagerConfigFile = "../../configuration/diagnostic_manager_manifest.arxml");
             ArgumentConfiguration() = delete;
 
             /// @brief Arguments property getter
