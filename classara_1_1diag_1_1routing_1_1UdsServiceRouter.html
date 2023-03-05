@@ -118,6 +118,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac3dc37de8796e4a1bda34527e93f12bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#ac3dc37de8796e4a1bda34527e93f12bc">UdsServiceRouter</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier)</td></tr>
 <tr class="memdesc:ac3dc37de8796e4a1bda34527e93f12bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#ac3dc37de8796e4a1bda34527e93f12bc">More...</a><br /></td></tr>
 <tr class="separator:ac3dc37de8796e4a1bda34527e93f12bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbb511c923329f875e261e9d909d6223"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#abbb511c923329f875e261e9d909d6223">AddService</a> (<a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">RoutableUdsService</a> *service)</td></tr>
+<tr class="memdesc:abbb511c923329f875e261e9d909d6223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a service to the router.  <a href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#abbb511c923329f875e261e9d909d6223">More...</a><br /></td></tr>
+<tr class="separator:abbb511c923329f875e261e9d909d6223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d31470792963e3a8fc409688f30e155"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#a4d31470792963e3a8fc409688f30e155">RemoveService</a> (uint8_t sid)</td></tr>
+<tr class="memdesc:a4d31470792963e3a8fc409688f30e155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a service from the router.  <a href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#a4d31470792963e3a8fc409688f30e155">More...</a><br /></td></tr>
+<tr class="separator:a4d31470792963e3a8fc409688f30e155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dd92742815760194f5703f3a11a085a"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#a6dd92742815760194f5703f3a11a085a">Route</a> (std::uint8_t sid, const std::vector&lt; std::uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">CancellationHandler</a> &amp;&amp;cancellationHandler)</td></tr>
 <tr class="memdesc:a6dd92742815760194f5703f3a11a085a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Route an UDS request message to a service.  <a href="classara_1_1diag_1_1routing_1_1UdsServiceRouter.html#a6dd92742815760194f5703f3a11a085a">More...</a><br /></td></tr>
 <tr class="separator:a6dd92742815760194f5703f3a11a085a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +166,60 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abbb511c923329f875e261e9d909d6223" name="abbb511c923329f875e261e9d909d6223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbb511c923329f875e261e9d909d6223">&#9670;&nbsp;</a></span>AddService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::routing::UdsServiceRouter::AddService </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classara_1_1diag_1_1routing_1_1RoutableUdsService.html">RoutableUdsService</a> *&#160;</td>
+          <td class="paramname"><em>service</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a service to the router. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">service</td><td>Service to be added </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the service has been added already, the method will replace it. </dd></dl>
+
+</div>
+</div>
+<a id="a4d31470792963e3a8fc409688f30e155" name="a4d31470792963e3a8fc409688f30e155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d31470792963e3a8fc409688f30e155">&#9670;&nbsp;</a></span>RemoveService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ara::diag::routing::UdsServiceRouter::RemoveService </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>sid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove a service from the router. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sid</td><td>SID of the service to be removed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the service has not been added already, the method won't do anything. </dd></dl>
+
+</div>
+</div>
 <a id="a6dd92742815760194f5703f3a11a085a" name="a6dd92742815760194f5703f3a11a085a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6dd92742815760194f5703f3a11a085a">&#9670;&nbsp;</a></span>Route()</h2>
 
