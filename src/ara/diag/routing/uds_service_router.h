@@ -24,6 +24,16 @@ namespace ara
                 /// @param specifier Owner instance specifier
                 explicit UdsServiceRouter(const ara::core::InstanceSpecifier &specifier);
 
+                /// @brief Add a service to the router
+                /// @param service Service to be added
+                /// @remarks If the service has been added already, the method will replace it.
+                void AddService(RoutableUdsService *service);
+
+                /// @brief Remove a service from the router
+                /// @param sid SID of the service to be removed
+                /// @remarks If the service has not been added already, the method won't do anything.
+                void RemoveService(uint8_t sid);
+
                 /// @brief Route an UDS request message to a service
                 /// @param sid UDS service ID
                 /// @param requestData Request message byte array

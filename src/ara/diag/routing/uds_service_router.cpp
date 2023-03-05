@@ -10,6 +10,21 @@ namespace ara
             {
             }
 
+            void UdsServiceRouter::AddService(RoutableUdsService *service)
+            {
+                mServices[service->GetSid()] = service;
+            }
+
+            void UdsServiceRouter::RemoveService(uint8_t sid)
+            {
+                auto _serviceItr{mServices.find(sid)};
+
+                if (_serviceItr != mServices.end())
+                {
+                    mServices.erase(_serviceItr);
+                }
+            }
+
             std::future<OperationOutput> UdsServiceRouter::Route(
                 std::uint8_t sid,
                 const std::vector<std::uint8_t> &requestData,

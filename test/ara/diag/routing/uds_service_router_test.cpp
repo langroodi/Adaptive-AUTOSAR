@@ -31,6 +31,16 @@ namespace ara
 
                 EXPECT_EQ(cExpectedResult, _actualResult);
             }
+
+            TEST(UdsServiceRouterTest, RemoveServiceMethod)
+            {
+                const uint8_t cSid{0x21};
+
+                ara::core::InstanceSpecifier _specifier("Instance0");
+                UdsServiceRouter _router(_specifier);
+
+                EXPECT_NO_THROW(_router.RemoveService(cSid));
+            }
         }
     }
 }
