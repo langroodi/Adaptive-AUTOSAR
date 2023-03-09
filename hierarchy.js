@@ -118,6 +118,7 @@ var hierarchy =
     [ "ara::core::Result< T, E >", "classara_1_1core_1_1Result.html", null ],
     [ "ara::core::Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", null ],
     [ "ara::diag::routing::RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", [
+      [ "application::helper::ReadDataByIdentifier", "classapplication_1_1helper_1_1ReadDataByIdentifier.html", null ],
       [ "ara::diag::EcuResetRequest", "classara_1_1diag_1_1EcuResetRequest.html", null ],
       [ "ara::diag::GenericRoutine", "classara_1_1diag_1_1GenericRoutine.html", null ],
       [ "ara::diag::GenericUDSService", "classara_1_1diag_1_1GenericUDSService.html", null ],

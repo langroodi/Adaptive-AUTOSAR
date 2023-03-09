@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"classarxml_1_1ArxmlNodeRange.html#af175ac30b19ac8c5b948f396f6397fed":[1,0,2,2,0],
+"classarxml_1_1ArxmlNodeRange.html#af175ac30b19ac8c5b948f396f6397fed":[2,0,2,2,0],
+"classarxml_1_1ArxmlReader.html":[1,0,2,3],
+"classarxml_1_1ArxmlReader.html":[2,0,2,3],
 "classarxml_1_1ArxmlReader.html#a0677c7538ca92f0fbe2c8f5692d08b5e":[1,0,2,3,1],
 "classarxml_1_1ArxmlReader.html#a0677c7538ca92f0fbe2c8f5692d08b5e":[2,0,2,3,1],
 "classarxml_1_1ArxmlReader.html#a5fa14bdc85f8969b6fd2b00c009ad5f1":[1,0,2,3,2],
@@ -63,10 +67,10 @@ var NAVTREEINDEX5 =
 "index.html":[],
 "namespaceapplication.html":[1,0,0],
 "namespaceapplication_1_1helper.html":[1,0,0,0],
-"namespaceapplication_1_1helper.html#a613b9d6053342d9131cd5117151a0256":[1,0,0,0,5],
-"namespaceapplication_1_1helper.html#a6f3c3230c0e6bbd28ebffebd88216e7b":[1,0,0,0,7],
-"namespaceapplication_1_1helper.html#a90a8818ea853b768ba41dbb5a6bf7349":[1,0,0,0,6],
-"namespaceapplication_1_1helper.html#a9f524864bd002b2d058eadab60c2b5b6":[1,0,0,0,4],
+"namespaceapplication_1_1helper.html#a613b9d6053342d9131cd5117151a0256":[1,0,0,0,6],
+"namespaceapplication_1_1helper.html#a6f3c3230c0e6bbd28ebffebd88216e7b":[1,0,0,0,8],
+"namespaceapplication_1_1helper.html#a90a8818ea853b768ba41dbb5a6bf7349":[1,0,0,0,7],
+"namespaceapplication_1_1helper.html#a9f524864bd002b2d058eadab60c2b5b6":[1,0,0,0,5],
 "namespaceapplication_1_1platform.html":[1,0,0,1],
 "namespaceara_1_1com_1_1entry.html":[1,0,1,0,1],
 "namespaceara_1_1com_1_1entry.html#ad5d32e1b5c942c709c00b72327a3171e":[1,0,1,0,1,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f":[1,0,1,4,6],
 "namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fa176a473e63c17ccdac91640c67f149bf":[1,0,1,4,6,4],
 "namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fa61a920eb4a24199ec6a36dd90f2a30b7":[1,0,1,4,6,3],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fabb53ce21b7c0b7c8a8f7860a41901d29":[1,0,1,4,6,5],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388facc9ab5e60ac2a9a675ba64bf4bb49dc8":[1,0,1,4,6,0],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fade33f57578d3fe4d260d9280360c1dd9":[1,0,1,4,6,6],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fae3587c730cc1aa530fa4ddc9c4204e97":[1,0,1,4,6,2],
-"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fae66f945a3c2423ef09406cf09fa9de26":[1,0,1,4,6,1]
+"namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388fabb53ce21b7c0b7c8a8f7860a41901d29":[1,0,1,4,6,5]
 };
