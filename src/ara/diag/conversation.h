@@ -80,6 +80,9 @@ namespace ara
             /// @returns Active or inactive status
             ara::core::Result<ActivityStatusType> GetActivityStatus();
 
+            /// @brief Set the conversation activity status to 'inactive'
+            void Deactivate();
+
             /// @brief Register an activity status change callback
             /// @param notifier Callback to be invoked when the activity status changed
             /// @returns No error will be returned

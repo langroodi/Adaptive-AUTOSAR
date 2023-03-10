@@ -28,7 +28,7 @@ namespace ara
         TEST_F(ConversationTest, Factory)
         {
             const ActivityStatusType cExpectedActivityStatus{
-                ActivityStatusType::kInactive};
+                ActivityStatusType::kActive};
             ActivityStatusType _actualActivityStatus{
                 ConversationReference.get().GetActivityStatus().Value()};
             EXPECT_EQ(cExpectedActivityStatus, _actualActivityStatus);
@@ -58,8 +58,12 @@ namespace ara
 
         TEST_F(ConversationTest, GetCurrentActiveConversationsMethod)
         {
-            auto _activeConverstation{Conversation::GetCurrentActiveConversations()};
-            EXPECT_TRUE(_activeConverstation.empty());
+            auto _activeConverstations{Conversation::GetCurrentActiveConversations()};
+
+            const size_t cExpectedResult{1};
+            size_t _actualResult{_activeConverstations.size()};
+
+            EXPECT_EQ(cExpectedResult, _actualResult);
         }
 
         TEST_F(ConversationTest, DiagnosticSessionScenario)
@@ -80,6 +84,30 @@ namespace ara
 
             ConversationReference.get().ResetToDefaultSession();
             EXPECT_EQ(cDefaultSession, ActiveSession);
+        }
+
+        TEST_F(ConversationTest, DeactivateMethod)
+        {
+            const ActivityStatusType cExpectedResult{
+                ActivityStatusType::kInactive};
+
+            ActivityStatusType _actualResult;
+
+            auto _callback = [&](ActivityStatusType status)
+            {
+                _actualResult = status;
+            };
+
+            ConversationReference.get().SetActivityNotifier(_callback);
+
+            ConversationReference.get().Deactivate();
+            EXPECT_EQ(cExpectedResult, _actualResult);
+
+            _actualResult = ConversationReference.get().GetActivityStatus().Value();
+            EXPECT_EQ(cExpectedResult, _actualResult);
+
+            auto _activeConverstations{Conversation::GetCurrentActiveConversations()};
+            EXPECT_TRUE(_activeConverstations.empty());
         }
     }
 }

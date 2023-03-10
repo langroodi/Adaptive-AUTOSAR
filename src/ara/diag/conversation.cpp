@@ -8,7 +8,7 @@ namespace ara
         std::vector<Conversation> Conversation::mConversations;
 
         Conversation::Conversation(const MetaInfo &metaInfo) : mMetaInfo{metaInfo},
-                                                               mActivityStatus{ActivityStatusType::kInactive},
+                                                               mActivityStatus{ActivityStatusType::kActive},
                                                                mDiagnosticSession{SessionControlType::kDefaultSession},
                                                                mDiagnosticSecurityLevel{SecurityLevelType::kLocked}
         {
@@ -52,6 +52,19 @@ namespace ara
         {
             ara::core::Result<ActivityStatusType> _result(mActivityStatus);
             return _result;
+        }
+
+        void Conversation::Deactivate()
+        {
+            if (mActivityStatus != ActivityStatusType::kInactive)
+            {
+                mActivityStatus = ActivityStatusType::kInactive;
+
+                if (mActivityNotifier)
+                {
+                    mActivityNotifier(mActivityStatus);
+                }
+            }
         }
 
         ara::core::Result<void> Conversation::SetActivityNotifier(
