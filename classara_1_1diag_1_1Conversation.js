@@ -1,5 +1,6 @@
 var classara_1_1diag_1_1Conversation =
 [
+    [ "Deactivate", "classara_1_1diag_1_1Conversation.html#ae0b9c387ca383c488cb3512aeae135fc", null ],
     [ "GetActivityStatus", "classara_1_1diag_1_1Conversation.html#a07aaafc268ee6bbb8e038b784307287a", null ],
     [ "GetConversationIdentifier", "classara_1_1diag_1_1Conversation.html#a4f3875646cf9483d38d275f81afa038e", null ],
     [ "GetDiagnosticSecurityLevel", "classara_1_1diag_1_1Conversation.html#a3128d39dd1e92603b19a98f6b32dffa5", null ],
