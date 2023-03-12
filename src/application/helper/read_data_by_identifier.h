@@ -1,7 +1,9 @@
 #ifndef READ_DATA_BY_IDENTIFIER_H
 #define READ_DATA_BY_IDENTIFIER_H
 
+#include <json/json.h>
 #include "../../ara/diag/routing/uds_service_router.h"
+#include "./curl_wrapper.h"
 
 namespace application
 {
@@ -12,10 +14,43 @@ namespace application
         {
         private:
             static const uint8_t cSid{0x22};
+            static const uint16_t cAverageSpeedDid{0xf50d};
+            static const uint16_t cFuelAmountDid{0xf52f};
+            static const uint16_t cExternalTemperatureDid{0xf546};
+            static const uint16_t cAverageFuelConsumptionDid{0xf55e};
+            static const uint16_t cEngineCoolantTemperatureDid{0xf505};
+            static const uint16_t cOdometerValueDid{0xf5a6};
+
+            const uint8_t cConditionsNotCorrectNrc{0x22};
+            const uint8_t cRequestOutOfRangeNrc{0x31};
+            const bool cCollectJsonComments{false};
+
+            const std::string cResourcesUrl;
+            CurlWrapper *mCurl;
+            Json::Reader mJsonReader;
+
+            static uint16_t getDid(const std::vector<uint8_t> &requestData);
+            static void setDid(
+                uint16_t did,
+                ara::diag::OperationOutput &response);
+
+            bool tryGetResourceValue(std::string resourceKey, Json::Value &jsonValue);
+            void getAverageSpeed(ara::diag::OperationOutput &response);
+            void getFuelAmount(ara::diag::OperationOutput &response);
+            void getExternalTemperature(ara::diag::OperationOutput &response);
+            void getAverageFuelConsumption(ara::diag::OperationOutput &response);
+            void getEngineCoolantTemperature(ara::diag::OperationOutput &response);
+            void getOdometerValue(ara::diag::OperationOutput &response);
 
         public:
+            /// @brief Constructor
+            /// @param specifier Owner instance specifier
+            /// @param curl Configured CURL instance for RESTful communication
+            /// @param resourcesUrl Connected vehicle resources access RESTful URL
             ReadDataByIdentifier(
-                const ara::core::InstanceSpecifier &specifier) noexcept;
+                const ara::core::InstanceSpecifier &specifier,
+                CurlWrapper *curl,
+                std::string resourcesUrl);
 
             std::future<ara::diag::OperationOutput> HandleMessage(
                 const std::vector<uint8_t> &requestData,

@@ -451,6 +451,8 @@ add_executable(
   ${source_application_helper_dir}/network_configuration.cpp
   ${source_application_helper_dir}/rpc_configuration.h
   ${source_application_helper_dir}/rpc_configuration.cpp
+  ${source_application_helper_dir}/read_data_by_identifier.h
+  ${source_application_helper_dir}/read_data_by_identifier.cpp
   ${source_application_platform_dir}/state_management.h
   ${source_application_platform_dir}/state_management.cpp
   ${source_application_platform_dir}/execution_management.h
