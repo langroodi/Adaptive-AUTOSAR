@@ -124,9 +124,9 @@ Inheritance diagram for application::helper::ReadDataByIdentifier:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a977e9ae9f4998b7fece7bd63d1c8c21f"><td class="memItemLeft" align="right" valign="top"><a id="a977e9ae9f4998b7fece7bd63d1c8c21f" name="a977e9ae9f4998b7fece7bd63d1c8c21f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ReadDataByIdentifier</b> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier) noexcept</td></tr>
-<tr class="separator:a977e9ae9f4998b7fece7bd63d1c8c21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e3855a79c59531b5f67f107b19eaae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1helper_1_1ReadDataByIdentifier.html#a04e3855a79c59531b5f67f107b19eaae">ReadDataByIdentifier</a> (const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;specifier, <a class="el" href="classapplication_1_1helper_1_1CurlWrapper.html">CurlWrapper</a> *curl, std::string resourcesUrl)</td></tr>
+<tr class="memdesc:a04e3855a79c59531b5f67f107b19eaae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1helper_1_1ReadDataByIdentifier.html#a04e3855a79c59531b5f67f107b19eaae">More...</a><br /></td></tr>
+<tr class="separator:a04e3855a79c59531b5f67f107b19eaae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cb54ea2e5a14565db147331ecf42d29"><td class="memItemLeft" align="right" valign="top">std::future&lt; <a class="el" href="structara_1_1diag_1_1OperationOutput.html">ara::diag::OperationOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1helper_1_1ReadDataByIdentifier.html#a0cb54ea2e5a14565db147331ecf42d29">HandleMessage</a> (const std::vector&lt; uint8_t &gt; &amp;requestData, <a class="el" href="classara_1_1diag_1_1MetaInfo.html">ara::diag::MetaInfo</a> &amp;metaInfo, <a class="el" href="classara_1_1diag_1_1CancellationHandler.html">ara::diag::CancellationHandler</a> &amp;&amp;cancellationHandler) override</td></tr>
 <tr class="memdesc:a0cb54ea2e5a14565db147331ecf42d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an UDS request message.  <a href="classapplication_1_1helper_1_1ReadDataByIdentifier.html#a0cb54ea2e5a14565db147331ecf42d29">More...</a><br /></td></tr>
 <tr class="separator:a0cb54ea2e5a14565db147331ecf42d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,7 +178,52 @@ const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cRequestSequ
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >UDS to read data at the diagnostic server by passing the data ID (DID) </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a04e3855a79c59531b5f67f107b19eaae" name="a04e3855a79c59531b5f67f107b19eaae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e3855a79c59531b5f67f107b19eaae">&#9670;&nbsp;</a></span>ReadDataByIdentifier()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">application::helper::ReadDataByIdentifier::ReadDataByIdentifier </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classara_1_1core_1_1InstanceSpecifier.html">ara::core::InstanceSpecifier</a> &amp;&#160;</td>
+          <td class="paramname"><em>specifier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classapplication_1_1helper_1_1CurlWrapper.html">CurlWrapper</a> *&#160;</td>
+          <td class="paramname"><em>curl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>resourcesUrl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">specifier</td><td>Owner instance specifier </td></tr>
+    <tr><td class="paramname">curl</td><td>Configured CURL instance for RESTful communication </td></tr>
+    <tr><td class="paramname">resourcesUrl</td><td>Connected vehicle resources access RESTful URL </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0cb54ea2e5a14565db147331ecf42d29" name="a0cb54ea2e5a14565db147331ecf42d29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0cb54ea2e5a14565db147331ecf42d29">&#9670;&nbsp;</a></span>HandleMessage()</h2>
 
