@@ -94,14 +94,19 @@ namespace application
         void ReadDataByIdentifier::getFuelAmount(
             ara::diag::OperationOutput &response)
         {
+            const double cConversionGain{2.55};
             const std::string cResourceKey{"fuelAmount"};
             Json::Value _jsonResponse;
 
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cAverageSpeedDid, response);
-                /// @todo Parse the response
+                setDid(cFuelAmountDid, response);
+                const std::string cFuelAmountStr{_jsonResponse.asString()};
+                const unsigned long cFuelAmountUL{std::stoul(cFuelAmountStr)};
+                const auto cFuelAmount{
+                    static_cast<uint8_t>(cConversionGain * cFuelAmountUL)};
+                response.responseData.push_back(cFuelAmount);
             }
             else
             {
@@ -112,14 +117,22 @@ namespace application
         void ReadDataByIdentifier::getExternalTemperature(
             ara::diag::OperationOutput &response)
         {
+            const uint8_t cCompensationValue{40};
             const std::string cResourceKey{"externalTemp"};
             Json::Value _jsonResponse;
 
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cAverageSpeedDid, response);
-                /// @todo Parse the response
+                setDid(cExternalTemperatureDid, response);
+                const std::string cExternalTemperatureStr{
+                    _jsonResponse.asString()};
+                const unsigned long cExternalTemperatureUL{
+                    std::stoul(cExternalTemperatureStr)};
+                const auto cExternalTemperature{
+                    static_cast<uint8_t>(
+                        cExternalTemperatureUL + cCompensationValue)};
+                response.responseData.push_back(cExternalTemperature);
             }
             else
             {
@@ -130,14 +143,32 @@ namespace application
         void ReadDataByIdentifier::getAverageFuelConsumption(
             ara::diag::OperationOutput &response)
         {
+            const uint16_t cConversionGain{20};
+            const uint16_t cConversionBase{256};
             const std::string cResourceKey{"averageFuelConsumption"};
             Json::Value _jsonResponse;
 
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cAverageSpeedDid, response);
-                /// @todo Parse the response
+                setDid(cAverageFuelConsumptionDid, response);
+                const std::string cAverageFuelConsumptionStr{
+                    _jsonResponse.asString()};
+                const double cAverageFuelConsumption{
+                    std::stod(cAverageFuelConsumptionStr)};
+                const auto cAverageFuelConsumptionInt{
+                    static_cast<uint16_t>(
+                        cConversionGain * cAverageFuelConsumption)};
+
+                const auto cAverageFuelConsumptionMsb{
+                    static_cast<uint8_t>(
+                        cAverageFuelConsumptionInt / cConversionBase)};
+                response.responseData.push_back(cAverageFuelConsumptionMsb);
+
+                const auto cAverageFuelConsumptionLsb{
+                    static_cast<uint8_t>(
+                        cAverageFuelConsumptionInt % cConversionBase)};
+                response.responseData.push_back(cAverageFuelConsumptionLsb);
             }
             else
             {
@@ -148,14 +179,22 @@ namespace application
         void ReadDataByIdentifier::getEngineCoolantTemperature(
             ara::diag::OperationOutput &response)
         {
+            const uint8_t cCompensationValue{40};
             const std::string cResourceKey{"engineCoolantTemp"};
             Json::Value _jsonResponse;
 
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cAverageSpeedDid, response);
-                /// @todo Parse the response
+                setDid(cEngineCoolantTemperatureDid, response);
+                const std::string cEngineCoolantTemperatureStr{
+                    _jsonResponse.asString()};
+                const unsigned long cEngineCoolantTemperatureUL{
+                    std::stoul(cEngineCoolantTemperatureStr)};
+                const auto cEngineCoolantTemperature{
+                    static_cast<uint8_t>(
+                        cEngineCoolantTemperatureUL + cCompensationValue)};
+                response.responseData.push_back(cEngineCoolantTemperature);
             }
             else
             {
@@ -166,14 +205,34 @@ namespace application
         void ReadDataByIdentifier::getOdometerValue(
             ara::diag::OperationOutput &response)
         {
+            constexpr size_t cCount{3};
+            const uint32_t cConversionGain{10};
+            const uint32_t cConversionBases[cCount]{16777216, 65536, 256};
             const std::string cResourceKey{"odometer"};
             Json::Value _jsonResponse;
 
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cAverageSpeedDid, response);
-                /// @todo Parse the response
+                setDid(cOdometerValueDid, response);
+                const std::string cOdometerValueStr{_jsonResponse.asString()};
+                const double cOdometerValue{std::stod(cOdometerValueStr)};
+                auto _odometerValueInt{
+                    static_cast<uint32_t>(cConversionGain * cOdometerValue)};
+
+                for (size_t i = 0; i < cCount; ++i)
+                {
+                    const auto cOdometerValueMsb{
+                        static_cast<uint8_t>(
+                            _odometerValueInt / cConversionBases[i])};
+
+                    response.responseData.push_back(cOdometerValueMsb);
+                    _odometerValueInt %=  cConversionBases[i];
+                }
+
+                const auto cOdometerValueLsb{
+                    static_cast<uint8_t>(_odometerValueInt)};
+                response.responseData.push_back(cOdometerValueLsb);
             }
             else
             {
