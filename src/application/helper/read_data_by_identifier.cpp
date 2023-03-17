@@ -12,11 +12,11 @@ namespace application
         const uint16_t ReadDataByIdentifier::cAverageFuelConsumptionDid;
         const uint16_t ReadDataByIdentifier::cEngineCoolantTemperatureDid;
         const uint16_t ReadDataByIdentifier::cOdometerValueDid;
+        const ara::core::InstanceSpecifier ReadDataByIdentifier::cSpecifer("ReadDataByIdentifier");
 
         ReadDataByIdentifier::ReadDataByIdentifier(
-            const ara::core::InstanceSpecifier &specifier,
             CurlWrapper *curl,
-            std::string resourcesUrl) : ara::diag::routing::RoutableUdsService(specifier, cSid),
+            std::string resourcesUrl) : ara::diag::routing::RoutableUdsService(cSpecifer, cSid),
                                         mCurl{curl},
                                         cResourcesUrl{resourcesUrl}
         {
@@ -227,7 +227,7 @@ namespace application
                             _odometerValueInt / cConversionBases[i])};
 
                     response.responseData.push_back(cOdometerValueMsb);
-                    _odometerValueInt %=  cConversionBases[i];
+                    _odometerValueInt %= cConversionBases[i];
                 }
 
                 const auto cOdometerValueLsb{

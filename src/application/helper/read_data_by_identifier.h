@@ -20,6 +20,7 @@ namespace application
             static const uint16_t cAverageFuelConsumptionDid{0xf55e};
             static const uint16_t cEngineCoolantTemperatureDid{0xf505};
             static const uint16_t cOdometerValueDid{0xf5a6};
+            static const ara::core::InstanceSpecifier cSpecifer;
 
             const uint8_t cConditionsNotCorrectNrc{0x22};
             const uint8_t cRequestOutOfRangeNrc{0x31};
@@ -44,11 +45,9 @@ namespace application
 
         public:
             /// @brief Constructor
-            /// @param specifier Owner instance specifier
             /// @param curl Configured CURL instance for RESTful communication
             /// @param resourcesUrl Connected vehicle resources access RESTful URL
             ReadDataByIdentifier(
-                const ara::core::InstanceSpecifier &specifier,
                 CurlWrapper *curl,
                 std::string resourcesUrl);
 
