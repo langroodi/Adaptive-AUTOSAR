@@ -17,12 +17,9 @@ namespace ara
                 const uint8_t cServiceNotSupportedNrc{0x11};
 
                 std::map<uint8_t, RoutableUdsService *> mServices;
-                const ara::core::InstanceSpecifier &mSpecifier;
 
             public:
-                /// @brief Constructor
-                /// @param specifier Owner instance specifier
-                explicit UdsServiceRouter(const ara::core::InstanceSpecifier &specifier);
+                UdsServiceRouter() = default;
 
                 /// @brief Add a service to the router
                 /// @param service Service to be added

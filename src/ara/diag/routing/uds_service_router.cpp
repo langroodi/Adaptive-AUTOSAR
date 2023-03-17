@@ -6,10 +6,6 @@ namespace ara
     {
         namespace routing
         {
-            UdsServiceRouter::UdsServiceRouter(const ara::core::InstanceSpecifier &specifier) : mSpecifier{specifier}
-            {
-            }
-
             void UdsServiceRouter::AddService(RoutableUdsService *service)
             {
                 mServices[service->GetSid()] = service;

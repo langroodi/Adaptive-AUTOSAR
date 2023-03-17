@@ -12,8 +12,7 @@ namespace ara
                 const uint8_t cExpectedResult{0x21};
                 const size_t cSidIndex{1};
 
-                ara::core::InstanceSpecifier _specifier("Instance0");
-                UdsServiceRouter _router(_specifier);
+                UdsServiceRouter _router;
                 std::vector<uint8_t> _requestData;
                 MetaInfo _metaInfo(Context::kDoIP);
                 CancellationHandler _cancellationHandler(false);
@@ -35,9 +34,7 @@ namespace ara
             TEST(UdsServiceRouterTest, RemoveServiceMethod)
             {
                 const uint8_t cSid{0x21};
-
-                ara::core::InstanceSpecifier _specifier("Instance0");
-                UdsServiceRouter _router(_specifier);
+                UdsServiceRouter _router;
 
                 EXPECT_NO_THROW(_router.RemoveService(cSid));
             }
