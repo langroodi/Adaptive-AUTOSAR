@@ -32,16 +32,14 @@ namespace ara
                 void RemoveService(uint8_t sid);
 
                 /// @brief Route an UDS request message to a service
-                /// @param sid UDS service ID
                 /// @param requestData Request message byte array
                 /// @param metaInfo Request message metainfo
                 /// @param cancellationHandler Callack to be invoked when the current conversation is cancelled
-                /// @returns Response byte array
+                /// @returns Response byte array or exception in case of invalid request data
                 std::future<OperationOutput> Route(
-                    std::uint8_t sid,
                     const std::vector<std::uint8_t> &requestData,
                     MetaInfo &metaInfo,
-                    CancellationHandler &&cancellationHandler);
+                    CancellationHandler &&cancellationHandler) const;
 
                 ~UdsServiceRouter() = default;
             };
