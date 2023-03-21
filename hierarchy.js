@@ -91,6 +91,9 @@ var hierarchy =
       ] ],
       [ "ara::com::someip::sd::fsm::NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", null ]
     ] ],
+    [ "DoipLib::MessageHandler", null, [
+      [ "application::doip::DoipMessageHandler", "classapplication_1_1doip_1_1DoipMessageHandler.html", null ]
+    ] ],
     [ "ara::diag::MetaInfo", "classara_1_1diag_1_1MetaInfo.html", null ],
     [ "ara::exec::helper::ModelledProcess", "classara_1_1exec_1_1helper_1_1ModelledProcess.html", [
       [ "application::ExtendedVehicle", "classapplication_1_1ExtendedVehicle.html", null ],

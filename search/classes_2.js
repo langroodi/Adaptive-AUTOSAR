@@ -7,6 +7,7 @@ var searchData=
   ['diagerrordomain_4',['DiagErrorDomain',['../classara_1_1diag_1_1DiagErrorDomain.html',1,'ara::diag']]],
   ['diagnostic_5',['Diagnostic',['../classDiagnostic.html',1,'']]],
   ['diagnosticmanager_6',['DiagnosticManager',['../classapplication_1_1platform_1_1DiagnosticManager.html',1,'application::platform']]],
-  ['downloadservice_7',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
-  ['dtcinformation_8',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
+  ['doipmessagehandler_7',['DoipMessageHandler',['../classapplication_1_1doip_1_1DoipMessageHandler.html',1,'application::doip']]],
+  ['downloadservice_8',['DownloadService',['../classara_1_1diag_1_1DownloadService.html',1,'ara::diag']]],
+  ['dtcinformation_9',['DTCInformation',['../classara_1_1diag_1_1DTCInformation.html',1,'ara::diag']]]
 ];
