@@ -45,7 +45,7 @@ FetchContent_Declare(
 # Fetching  Doip-Lib for DoIP communication
 FetchContent_Declare(
   Doip-Lib
-  URL https://github.com/langroodi/Doip-Lib/archive/269510a6c43b3754466ed93486fd7cc2c9deee2e.zip
+  URL https://github.com/langroodi/Doip-Lib/archive/d6358adf86ed3bb9ec9989a5ac321b25e2cf8673.zip
 )
 
 FetchContent_MakeAvailable(
@@ -130,11 +130,14 @@ set(source_ara_diag_routing_dir
 set(source_ara_diag_debouncing_dir
   "${CMAKE_SOURCE_DIR}/src/ara/diag/debouncing")
 
-set(source_application_helper_dir
-  "${CMAKE_SOURCE_DIR}/src/application/helper")
-
 set(source_application_dir
   "${CMAKE_SOURCE_DIR}/src/application")
+
+set(source_application_doip_dir
+  "${CMAKE_SOURCE_DIR}/src/application/doip")
+
+set(source_application_helper_dir
+  "${CMAKE_SOURCE_DIR}/src/application/helper")
 
 set(source_application_platform_dir
   "${CMAKE_SOURCE_DIR}/src/application/platform")
@@ -453,6 +456,10 @@ add_executable(
   ${source_application_helper_dir}/rpc_configuration.cpp
   ${source_application_helper_dir}/read_data_by_identifier.h
   ${source_application_helper_dir}/read_data_by_identifier.cpp
+  ${source_application_doip_dir}/doip_message_handler.h
+  ${source_application_doip_dir}/doip_message_handler.cpp
+  ${source_application_doip_dir}/doip_server.h
+  ${source_application_doip_dir}/doip_server.cpp
   ${source_application_platform_dir}/state_management.h
   ${source_application_platform_dir}/state_management.cpp
   ${source_application_platform_dir}/execution_management.h
@@ -465,6 +472,7 @@ target_link_libraries(
   adaptive_autosar
   libcurl
   jsoncpp_lib
+  doip_lib
   arxml
   ara_exec
   ara_log
