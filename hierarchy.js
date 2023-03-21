@@ -27,6 +27,7 @@ var hierarchy =
     [ "ara::diag::routing::DelayTimer", "classara_1_1diag_1_1routing_1_1DelayTimer.html", null ],
     [ "ara::exec::DeterministicClient", "classara_1_1exec_1_1DeterministicClient.html", null ],
     [ "Diagnostic", "classDiagnostic.html", null ],
+    [ "application::doip::DoipServer", "classapplication_1_1doip_1_1DoipServer.html", null ],
     [ "ara::diag::DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
     [ "ara::com::entry::Entry", "classara_1_1com_1_1entry_1_1Entry.html", [
       [ "ara::com::entry::EventgroupEntry", "classara_1_1com_1_1entry_1_1EventgroupEntry.html", null ],
