@@ -4,6 +4,18 @@
         <AR-PACKAGE>
             <SHORT-NAME>ExtendedVehicleManifest</SHORT-NAME>
             <ELEMENTS>
+                <DO-IP-INSTANTIATION>
+                    <EID>1</EID>
+                    <GID>1</GID>
+                    <LOGICAL-ADDRESS>1</LOGICAL-ADDRESS>
+                    <NETWORK-INTERFACES>
+                        <DO-IP-NETWORK-CONFIGURATION>
+                            <MAX-INITIAL-VEHICLE-ANNOUNCEMENT-TIME>0</MAX-INITIAL-VEHICLE-ANNOUNCEMENT-TIME>
+                            <VEHICLE-ANNOUNCEMENT-COUNT>3</VEHICLE-ANNOUNCEMENT-COUNT>
+                            <VEHICLE-ANNOUNCEMENT-INTERVAL>1</VEHICLE-ANNOUNCEMENT-INTERVAL>
+                        </DO-IP-NETWORK-CONFIGURATION>
+                    </NETWORK-INTERFACES>
+                </DO-IP-INSTANTIATION>
                 <COMMUNICATION-CLUSTER>
                     <ETHERNET-PHYSICAL-CHANNEL>
                         <SHORT-NAME>Localhost</SHORT-NAME>
