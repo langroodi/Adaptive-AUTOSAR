@@ -151,8 +151,8 @@ namespace application
                 cInitialDelayMax);
     }
 
-    void ExtendedVehicle::configureRestCommunication(
-        std::string apiKey, std::string bearerToken)
+    bool ExtendedVehicle::tryConfigureRestCommunication(
+        std::string apiKey, std::string bearerToken, std::string &vin)
     {
         const bool cCollectJsonComments{false};
         const std::string cVehiclesKey{"vehicles"};
@@ -167,7 +167,7 @@ namespace application
 
         if (!_successful)
         {
-            return;
+            return false;
         }
 
         Json::Value _jsonResponse;
@@ -178,28 +178,137 @@ namespace application
 
         if (!_successful)
         {
-            return;
+            return false;
         }
 
         ara::log::LogStream _logStream;
 
         if (_jsonResponse.isMember(cVehiclesKey))
         {
-            mVin = _jsonResponse[cVehiclesKey][0]["id"].asString();
-            _logStream << "The VIN is set to " << mVin;
+            vin = _jsonResponse[cVehiclesKey][0]["id"].asString();
+            mResourcesUrl = cRequestUrl + "/" + vin + "/resources";
+            _logStream << "The VIN is set to " << vin;
             Log(cLogLevel, _logStream);
+
+            return true;
         }
         else if (_jsonResponse.isMember(cErrorKey))
         {
             std::string _message = _jsonResponse[cErrorKey]["message"].asString();
             _logStream << "Setting the VIN failed. " << _message;
             Log(cErrorLevel, _logStream);
+
+            return false;
         }
         else
         {
             _logStream << "Setting the VIN failed due to unexpected RESTful response format.";
             Log(cErrorLevel, _logStream);
+
+            return false;
         }
+    }
+
+    DoipLib::ControllerConfig ExtendedVehicle::getDoipConfiguration(
+        const arxml::ArxmlReader &reader)
+    {
+        const arxml::ArxmlNode cAnnouncementTimeNode{
+            reader.GetRootNode({"AUTOSAR",
+                                "AR-PACKAGES",
+                                "AR-PACKAGE",
+                                "ELEMENTS",
+                                "DO-IP-INSTANTIATION",
+                                "NETWORK-INTERFACES",
+                                "DO-IP-NETWORK-CONFIGURATION",
+                                "MAX-INITIAL-VEHICLE-ANNOUNCEMENT-TIME"})};
+
+        const arxml::ArxmlNode cAnnouncementCountNode{
+            reader.GetRootNode({"AUTOSAR",
+                                "AR-PACKAGES",
+                                "AR-PACKAGE",
+                                "ELEMENTS",
+                                "DO-IP-INSTANTIATION",
+                                "NETWORK-INTERFACES",
+                                "DO-IP-NETWORK-CONFIGURATION",
+                                "VEHICLE-ANNOUNCEMENT-COUNT"})};
+
+        const arxml::ArxmlNode cAnnouncementIntervalNode{
+            reader.GetRootNode({"AUTOSAR",
+                                "AR-PACKAGES",
+                                "AR-PACKAGE",
+                                "ELEMENTS",
+                                "DO-IP-INSTANTIATION",
+                                "NETWORK-INTERFACES",
+                                "DO-IP-NETWORK-CONFIGURATION",
+                                "VEHICLE-ANNOUNCEMENT-INTERVAL"})};
+
+        DoipLib::ControllerConfig _result;
+
+        const auto cAnnouncementTime{cAnnouncementTimeNode.GetValue<int>()};
+        _result.doIPInitialVehicleAnnouncementTime =
+            std::chrono::seconds(cAnnouncementTime);
+
+        const auto cAnnouncementCount{cAnnouncementCountNode.GetValue<uint8_t>()};
+        _result.doIPVehicleAnnouncementCount = cAnnouncementCount;
+
+        const auto cAnnouncementInterval{cAnnouncementIntervalNode.GetValue<int>()};
+        _result.doIPVehicleAnnouncementInterval =
+            std::chrono::seconds(cAnnouncementInterval);
+
+        const uint8_t cProtocolVersion{2};
+        _result.protocolVersion = cProtocolVersion;
+
+        return _result;
+    }
+
+    void ExtendedVehicle::configureDoipServer(
+        const arxml::ArxmlReader &reader, std::string &&vin)
+    {
+        const arxml::ArxmlNode cLogicalAddressNode{
+            reader.GetRootNode({"AUTOSAR",
+                                "AR-PACKAGES",
+                                "AR-PACKAGE",
+                                "ELEMENTS",
+                                "DO-IP-INSTANTIATION",
+                                "LOGICAL-ADDRESS"})};
+
+        const arxml::ArxmlNode cEidNode{
+            reader.GetRootNode({"AUTOSAR",
+                                "AR-PACKAGES",
+                                "AR-PACKAGE",
+                                "ELEMENTS",
+                                "DO-IP-INSTANTIATION",
+                                "EID"})};
+
+        const arxml::ArxmlNode cGidNode{
+            reader.GetRootNode({"AUTOSAR",
+                                "AR-PACKAGES",
+                                "AR-PACKAGE",
+                                "ELEMENTS",
+                                "DO-IP-INSTANTIATION",
+                                "GID"})};
+
+        const auto cLogicalAddress{cLogicalAddressNode.GetValue<uint16_t>()};
+        const auto cEid{cEidNode.GetValue<uint64_t>()};
+        const auto cGid{cGidNode.GetValue<uint64_t>()};
+
+        helper::NetworkConfiguration _networkConfiguration{
+            getNetworkConfiguration(reader)};
+
+        DoipLib::ControllerConfig _controllConfig{getDoipConfiguration(reader)};
+
+        mDoipServer =
+            new doip::DoipServer(
+                Poller,
+                mCurl,
+                mResourcesUrl,
+                _networkConfiguration.ipAddress,
+                _networkConfiguration.portNumber,
+                std::move(_controllConfig),
+                std::move(vin),
+                cLogicalAddress,
+                cEid,
+                cGid);
     }
 
     int ExtendedVehicle::Main(
@@ -223,9 +332,16 @@ namespace application
             bool _running{true};
             mSdServer->Start();
 
-            configureRestCommunication(
+            std::string _vin;
+            bool cConfigured{tryConfigureRestCommunication(
                 arguments.at(helper::ArgumentConfiguration::cApiKeyArgument),
-                arguments.at(helper::ArgumentConfiguration::cBearerTokenArgument));
+                arguments.at(helper::ArgumentConfiguration::cBearerTokenArgument),
+                _vin)};
+
+            if (cConfigured)
+            {
+                configureDoipServer(cReader, std::move(_vin));
+            }
 
             while (!cancellationToken->load() && _running)
             {
@@ -253,6 +369,9 @@ namespace application
 
     ExtendedVehicle::~ExtendedVehicle()
     {
+        if (mDoipServer)
+            delete mDoipServer;
+
         if (mCurl)
             delete mCurl;
 

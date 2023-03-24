@@ -5,6 +5,7 @@
 #include "../ara/com/someip/sd/someip_sd_server.h"
 #include "./helper/network_configuration.h"
 #include "./helper/curl_wrapper.h"
+#include "./doip/doip_server.h"
 
 namespace application
 {
@@ -17,16 +18,24 @@ namespace application
         ara::com::helper::NetworkLayer<ara::com::someip::sd::SomeIpSdMessage> *mNetworkLayer;
         ara::com::someip::sd::SomeIpSdServer *mSdServer;
         helper::CurlWrapper *mCurl;
-        std::string mVin;
+        doip::DoipServer *mDoipServer;
+
+        std::string mResourcesUrl;
 
         void configureNetworkLayer(const arxml::ArxmlReader &reader);
-        void configureRestCommunication(
-            std::string apiKey, std::string bearerToken);
+        bool tryConfigureRestCommunication(
+            std::string apiKey, std::string bearerToken, std::string &vin);
 
-        helper::NetworkConfiguration getNetworkConfiguration(
+        static helper::NetworkConfiguration getNetworkConfiguration(
             const arxml::ArxmlReader &reader);
 
         void configureSdServer(const arxml::ArxmlReader &reader);
+
+        static DoipLib::ControllerConfig getDoipConfiguration(
+            const arxml::ArxmlReader &reader);
+
+        void configureDoipServer(
+            const arxml::ArxmlReader &reader, std::string &&vin);
 
     protected:
         int Main(
