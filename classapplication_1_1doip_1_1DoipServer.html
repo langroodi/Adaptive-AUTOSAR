@@ -115,15 +115,15 @@ $(document).ready(function(){initNavTree('classapplication_1_1doip_1_1DoipServer
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a292847d279bcc350d5b4bdce84fcf1da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1doip_1_1DoipServer.html#a292847d279bcc350d5b4bdce84fcf1da">DoipServer</a> (AsyncBsdSocketLib::Poller *poller, <a class="el" href="classapplication_1_1helper_1_1CurlWrapper.html">helper::CurlWrapper</a> *curl, std::string resourcesUrl, std::string ipAddress, uint16_t port, DoipLib::ControllerConfig &amp;&amp;config)</td></tr>
-<tr class="memdesc:a292847d279bcc350d5b4bdce84fcf1da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1doip_1_1DoipServer.html#a292847d279bcc350d5b4bdce84fcf1da">More...</a><br /></td></tr>
-<tr class="separator:a292847d279bcc350d5b4bdce84fcf1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cfb8576292465927c39257580e3a35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1doip_1_1DoipServer.html#a94cfb8576292465927c39257580e3a35">DoipServer</a> (AsyncBsdSocketLib::Poller *poller, <a class="el" href="classapplication_1_1helper_1_1CurlWrapper.html">helper::CurlWrapper</a> *curl, std::string resourcesUrl, std::string ipAddress, uint16_t port, DoipLib::ControllerConfig &amp;&amp;config, std::string &amp;&amp;vin, uint16_t logicalAddress, uint64_t eid, uint64_t gid)</td></tr>
+<tr class="memdesc:a94cfb8576292465927c39257580e3a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1doip_1_1DoipServer.html#a94cfb8576292465927c39257580e3a35">More...</a><br /></td></tr>
+<tr class="separator:a94cfb8576292465927c39257580e3a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class to handle DoIP requests. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a292847d279bcc350d5b4bdce84fcf1da" name="a292847d279bcc350d5b4bdce84fcf1da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a292847d279bcc350d5b4bdce84fcf1da">&#9670;&nbsp;</a></span>DoipServer()</h2>
+<a id="a94cfb8576292465927c39257580e3a35" name="a94cfb8576292465927c39257580e3a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cfb8576292465927c39257580e3a35">&#9670;&nbsp;</a></span>DoipServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,7 +162,31 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">DoipLib::ControllerConfig &amp;&amp;&#160;</td>
-          <td class="paramname"><em>config</em>&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&amp;&#160;</td>
+          <td class="paramname"><em>vin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>logicalAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>eid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>gid</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -176,11 +200,15 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">poller</td><td>Global poller for network communication </td></tr>
+    <tr><td class="paramname">curl</td><td>Configured CURL instance for RESTful communication </td></tr>
+    <tr><td class="paramname">resourcesUrl</td><td>Connected vehicle resources access RESTful URL </td></tr>
     <tr><td class="paramname">ipAddress</td><td>DoIP server listening IPv4 address </td></tr>
     <tr><td class="paramname">port</td><td>DoIP server TCP listening port number </td></tr>
     <tr><td class="paramname">config</td><td>DoIP controller configuration </td></tr>
-    <tr><td class="paramname">curl</td><td>Configured CURL instance for RESTful communication </td></tr>
-    <tr><td class="paramname">resourcesUrl</td><td>Connected vehicle resources access RESTful URL </td></tr>
+    <tr><td class="paramname">vin</td><td>Vehicle Identification Number </td></tr>
+    <tr><td class="paramname">logicalAddress</td><td>Vehicle logical address for DoIP communication </td></tr>
+    <tr><td class="paramname">eid</td><td>DoIP communication entity ID </td></tr>
+    <tr><td class="paramname">gid</td><td>DoIP communication group ID </td></tr>
   </table>
   </dd>
 </dl>
