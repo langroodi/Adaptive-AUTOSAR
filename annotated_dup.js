@@ -3,7 +3,8 @@ var annotated_dup =
     [ "application", "namespaceapplication.html", [
       [ "doip", "namespaceapplication_1_1doip.html", [
         [ "DoipMessageHandler", "classapplication_1_1doip_1_1DoipMessageHandler.html", "classapplication_1_1doip_1_1DoipMessageHandler" ],
-        [ "DoipServer", "classapplication_1_1doip_1_1DoipServer.html", "classapplication_1_1doip_1_1DoipServer" ]
+        [ "DoipServer", "classapplication_1_1doip_1_1DoipServer.html", "classapplication_1_1doip_1_1DoipServer" ],
+        [ "VehicleIdRequestHandler", "classapplication_1_1doip_1_1VehicleIdRequestHandler.html", "classapplication_1_1doip_1_1VehicleIdRequestHandler" ]
       ] ],
       [ "helper", "namespaceapplication_1_1helper.html", [
         [ "ArgumentConfiguration", "classapplication_1_1helper_1_1ArgumentConfiguration.html", "classapplication_1_1helper_1_1ArgumentConfiguration" ],
