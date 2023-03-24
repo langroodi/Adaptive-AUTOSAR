@@ -456,6 +456,8 @@ add_executable(
   ${source_application_helper_dir}/rpc_configuration.cpp
   ${source_application_helper_dir}/read_data_by_identifier.h
   ${source_application_helper_dir}/read_data_by_identifier.cpp
+  ${source_application_doip_dir}/vehicle_id_request_handler.h
+  ${source_application_doip_dir}/vehicle_id_request_handler.cpp
   ${source_application_doip_dir}/doip_message_handler.h
   ${source_application_doip_dir}/doip_message_handler.cpp
   ${source_application_doip_dir}/doip_server.h
@@ -472,6 +474,7 @@ target_link_libraries(
   adaptive_autosar
   libcurl
   jsoncpp_lib
+  obd_ii_emulator
   doip_lib
   arxml
   ara_exec

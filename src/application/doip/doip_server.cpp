@@ -6,9 +6,7 @@ namespace application
 {
     namespace doip
     {
-        constexpr size_t DoipServer::cMacAddressSize;
         constexpr size_t DoipServer::cDoipPacketSize;
-        const uint8_t DoipServer::cFurtherAction;
 
         DoipServer::DoipServer(
             AsyncBsdSocketLib::Poller *poller,
@@ -21,9 +19,9 @@ namespace application
             uint16_t logicalAddress,
             uint64_t eid,
             uint64_t gid) : mPoller{poller},
-                            mMessageHandler(curl, resourcesUrl, config.protocolVersion),
+                            mVehicleIdRequestHandler(config.protocolVersion, std::move(vin), logicalAddress, eid, gid),
+                            mDiagMessageHandler(curl, resourcesUrl, config.protocolVersion),
                             mListener(ipAddress, port),
-                            mAnnouncement(config.protocolVersion, std::move(vin), logicalAddress, convertToMacAddress(eid), convertToMacAddress(gid), cFurtherAction),
                             mController(std::move(config))
         {
             bool _successful{mListener.TrySetup()};
@@ -35,10 +33,15 @@ namespace application
 
                 if (_successful)
                 {
-                    const DoipLib::PayloadType cPayloadType{
-                        DoipLib::PayloadType::DiagMessage};
+                    const DoipLib::PayloadType cVehicleIdRequestPayload{
+                        DoipLib::PayloadType::VehicleIdRequest};
+                    mController.Register(
+                        cVehicleIdRequestPayload, &mVehicleIdRequestHandler);
 
-                    mController.Register(cPayloadType, &mMessageHandler);
+                    const DoipLib::PayloadType cDiagMessagePayload{
+                        DoipLib::PayloadType::DiagMessage};
+                    mController.Register(
+                        cDiagMessagePayload, &mDiagMessageHandler);
                 }
                 else
                 {
@@ -51,22 +54,6 @@ namespace application
                 throw std::runtime_error(
                     "DoIP server failed to listen on the given IP and port.");
             }
-        }
-
-        std::array<uint8_t, DoipServer::cMacAddressSize> DoipServer::convertToMacAddress(
-            uint64_t id)
-        {
-            uint64_t _mask{0xff};
-            std::array<uint8_t, cMacAddressSize> _result;
-
-            for (size_t i = 0; i < cMacAddressSize; ++i)
-            {
-                const uint64_t cOctet{id & _mask};
-                _result[i] = static_cast<uint8_t>(cOctet >> (i * 8));
-                _mask <<= i * 8;
-            }
-
-            return _result;
         }
 
         void DoipServer::onAccept()

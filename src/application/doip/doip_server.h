@@ -3,9 +3,9 @@
 
 #include <asyncbsdsocket/poller.h>
 #include <asyncbsdsocket/tcp_listener.h>
-#include <doiplib/vehicle_id_response.h>
 #include <doiplib/doip_controller.h>
 #include "../../ara/com/helper/concurrent_queue.h"
+#include "./vehicle_id_request_handler.h"
 #include "./doip_message_handler.h"
 
 namespace application
@@ -16,20 +16,14 @@ namespace application
         class DoipServer
         {
         private:
-            static constexpr size_t cMacAddressSize{6};
             static constexpr size_t cDoipPacketSize{64};
-            /// @note Due to no DoIP routing activation, the 'further action' is 0x00.
-            static const uint8_t cFurtherAction{0x00};
 
             AsyncBsdSocketLib::Poller *const mPoller;
-            DoipMessageHandler mMessageHandler;
+            VehicleIdRequestHandler mVehicleIdRequestHandler;
+            DoipMessageHandler mDiagMessageHandler;
             AsyncBsdSocketLib::TcpListener mListener;
-            DoipLib::VehicleIdResponse mAnnouncement;
             DoipLib::DoipController mController;
             ara::com::helper::ConcurrentQueue<std::vector<uint8_t>> mSendQueue;
-
-            static std::array<uint8_t, cMacAddressSize> convertToMacAddress(
-                uint64_t id);
 
             void onAccept();
             void onReceive();
