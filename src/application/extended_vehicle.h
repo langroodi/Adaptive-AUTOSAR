@@ -43,7 +43,7 @@ namespace application
             const std::map<std::string, std::string> &arguments) override;
 
     public:
-        /// @brief Construcotr
+        /// @brief Constructor
         /// @param poller Global poller for network communication
         ExtendedVehicle(AsyncBsdSocketLib::Poller *poller);
 

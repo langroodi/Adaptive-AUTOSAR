@@ -323,14 +323,13 @@ namespace application
 
         try
         {
+            bool _running{true};
+
             configureNetworkLayer(cReader);
             configureSdServer(cReader);
 
             _logStream << "Extended Vehicle AA has been initialized.";
             Log(cLogLevel, _logStream);
-
-            bool _running{true};
-            mSdServer->Start();
 
             std::string _vin;
             bool cConfigured{tryConfigureRestCommunication(
@@ -341,6 +340,7 @@ namespace application
             if (cConfigured)
             {
                 configureDoipServer(cReader, std::move(_vin));
+                mSdServer->Start();
             }
 
             while (!cancellationToken->load() && _running)
