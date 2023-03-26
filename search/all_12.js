@@ -39,10 +39,11 @@ var searchData=
   ['tryparserequest_36',['TryParseRequest',['../classara_1_1diag_1_1routing_1_1RequestTransfer.html#aeb4fe803037d022994371f4b800fc4a6',1,'ara::diag::routing::RequestTransfer']]],
   ['tryrequesttransfer_37',['TryRequestTransfer',['../classara_1_1diag_1_1routing_1_1RequestTransfer.html#acc4dec1b34a5ac8f1b5af0f2dda9eea7',1,'ara::diag::routing::RequestTransfer']]],
   ['tryresettransferconfiguration_38',['TryResetTransferConfiguration',['../classara_1_1diag_1_1routing_1_1TransferData.html#ad678fbc936878757814c0788cffe77ad',1,'ara::diag::routing::TransferData']]],
-  ['trysettransferconfiguration_39',['TrySetTransferConfiguration',['../classara_1_1diag_1_1routing_1_1TransferData.html#aa636dfcddd29d5f1927d42c989691956',1,'ara::diag::routing::TransferData']]],
-  ['trywaituntiserviceoffered_40',['TryWaitUntiServiceOffered',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abdb7c4021aa5984f1c2ad6009a011679',1,'ara::com::someip::sd::SomeIpSdClient']]],
-  ['trywaituntiserviceofferstopped_41',['TryWaitUntiServiceOfferStopped',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a851ea1298705ef8e8e3a272915aa78b8',1,'ara::com::someip::sd::SomeIpSdClient']]],
-  ['ttl_42',['TTL',['../classara_1_1com_1_1entry_1_1Entry.html#a075705f87c458a532adf96d644290c27',1,'ara::com::entry::Entry']]],
-  ['ttltimer_43',['TtlTimer',['../classara_1_1com_1_1helper_1_1TtlTimer.html',1,'ara::com::helper']]],
-  ['type_44',['Type',['../classara_1_1com_1_1option_1_1Option.html#ada63a14a0609072da952abc4e75cd0e4',1,'ara::com::option::Option::Type()'],['../classara_1_1com_1_1entry_1_1Entry.html#a04cbc058f079ae37e873db0e8aeee376',1,'ara::com::entry::Entry::Type()']]]
+  ['trysenddiagmessage_39',['TrySendDiagMessage',['../classapplication_1_1doip_1_1DoipClient.html#a91dbb6444d093eb723b6cce888ea987f',1,'application::doip::DoipClient']]],
+  ['trysettransferconfiguration_40',['TrySetTransferConfiguration',['../classara_1_1diag_1_1routing_1_1TransferData.html#aa636dfcddd29d5f1927d42c989691956',1,'ara::diag::routing::TransferData']]],
+  ['trywaituntiserviceoffered_41',['TryWaitUntiServiceOffered',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abdb7c4021aa5984f1c2ad6009a011679',1,'ara::com::someip::sd::SomeIpSdClient']]],
+  ['trywaituntiserviceofferstopped_42',['TryWaitUntiServiceOfferStopped',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a851ea1298705ef8e8e3a272915aa78b8',1,'ara::com::someip::sd::SomeIpSdClient']]],
+  ['ttl_43',['TTL',['../classara_1_1com_1_1entry_1_1Entry.html#a075705f87c458a532adf96d644290c27',1,'ara::com::entry::Entry']]],
+  ['ttltimer_44',['TtlTimer',['../classara_1_1com_1_1helper_1_1TtlTimer.html',1,'ara::com::helper']]],
+  ['type_45',['Type',['../classara_1_1com_1_1option_1_1Option.html#ada63a14a0609072da952abc4e75cd0e4',1,'ara::com::option::Option::Type()'],['../classara_1_1com_1_1entry_1_1Entry.html#a04cbc058f079ae37e873db0e8aeee376',1,'ara::com::entry::Entry::Type()']]]
 ];
