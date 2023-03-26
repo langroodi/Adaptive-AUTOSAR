@@ -462,6 +462,8 @@ add_executable(
   ${source_application_doip_dir}/doip_message_handler.cpp
   ${source_application_doip_dir}/doip_server.h
   ${source_application_doip_dir}/doip_server.cpp
+  ${source_application_doip_dir}/doip_client.h
+  ${source_application_doip_dir}/doip_client.cpp
   ${source_application_platform_dir}/state_management.h
   ${source_application_platform_dir}/state_management.cpp
   ${source_application_platform_dir}/execution_management.h
