@@ -134,6 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a851ea1298705ef8e8e3a272915aa78b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a851ea1298705ef8e8e3a272915aa78b8">TryWaitUntiServiceOfferStopped</a> (int duration)</td></tr>
 <tr class="memdesc:a851ea1298705ef8e8e3a272915aa78b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to wait unitl the server stops offering the service.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a851ea1298705ef8e8e3a272915aa78b8">More...</a><br /></td></tr>
 <tr class="separator:a851ea1298705ef8e8e3a272915aa78b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3001cb868413902ad197d1bcf674a25"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#ac3001cb868413902ad197d1bcf674a25">TryGetOfferedEndpoint</a> (std::string &amp;ipAddress, uint16_t &amp;port)</td></tr>
+<tr class="memdesc:ac3001cb868413902ad197d1bcf674a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to the offered unicast endpoint from the SD server.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#ac3001cb868413902ad197d1bcf674a25">More...</a><br /></td></tr>
+<tr class="separator:ac3001cb868413902ad197d1bcf674a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html">ara::com::someip::sd::SomeIpSdAgent&lt; helper::SdClientState &gt;</a></td></tr>
 <tr class="memitem:a6f172934743f9ef1d6419ff8dadac68b inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a6f172934743f9ef1d6419ff8dadac68b">SomeIpSdAgent</a> (<a class="el" href="classara_1_1com_1_1helper_1_1NetworkLayer.html">helper::NetworkLayer</a>&lt; <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html">SomeIpSdMessage</a> &gt; *networkLayer)</td></tr>
 <tr class="memdesc:a6f172934743f9ef1d6419ff8dadac68b inherit pub_methods_classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#a6f172934743f9ef1d6419ff8dadac68b">More...</a><br /></td></tr>
@@ -315,6 +318,46 @@ std::future&lt; void &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>
 </dl>
 
 <p>Implements <a class="el" href="classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdAgent.html#af246e0b4ac0c54e69a66b54888b20ec8">ara::com::someip::sd::SomeIpSdAgent&lt; helper::SdClientState &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ac3001cb868413902ad197d1bcf674a25" name="ac3001cb868413902ad197d1bcf674a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3001cb868413902ad197d1bcf674a25">&#9670;&nbsp;</a></span>TryGetOfferedEndpoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ara::com::someip::sd::SomeIpSdClient::TryGetOfferedEndpoint </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>ipAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t &amp;&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Try to the offered unicast endpoint from the SD server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">ipAddress</td><td>Offered unicast IPv4 address </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">port</td><td>Offered TCP port number </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the SD server has already offered the endpoint; otherwise false </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The arguments won't be touched while returning 'false'. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The endpoint WON'T be invalidated after receiving the stop offer. </dd></dl>
 
 </div>
 </div>

@@ -1,3 +1,0 @@
-/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/jsoncpp_lib-subbuild/CMakeFiles/jsoncpp_lib-populate.dir
-/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/jsoncpp_lib-subbuild/CMakeFiles/edit_cache.dir
-/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/jsoncpp_lib-subbuild/CMakeFiles/rebuild_cache.dir

@@ -3,6 +3,7 @@ var classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient =
     [ "SomeIpSdClient", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a7ef9224b7b071413a75c67e06307f45e", null ],
     [ "StartAgent", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a98bcdedb44d36c717059d47c25926899", null ],
     [ "StopAgent", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a494b48018e4042cf53c62d166f622e69", null ],
+    [ "TryGetOfferedEndpoint", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#ac3001cb868413902ad197d1bcf674a25", null ],
     [ "TryWaitUntiServiceOffered", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#abdb7c4021aa5984f1c2ad6009a011679", null ],
     [ "TryWaitUntiServiceOfferStopped", "classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a851ea1298705ef8e8e3a272915aa78b8", null ]
 ];
