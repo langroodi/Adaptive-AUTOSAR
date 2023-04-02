@@ -39,7 +39,7 @@ FetchContent_Declare(
 # Fetching  OBD-II-Emulator for OBD2 CAN bus communication
 FetchContent_Declare(
   OBD-II-Emulator
-  URL https://github.com/langroodi/OBD-II-Emulator/archive/26537a1ad495e69353e16b3e32683f5e5fe8bcc1.zip
+  URL https://github.com/langroodi/OBD-II-Emulator/archive/27e3806b7891a290b8044836caa88d50bf83bac3.zip
 )
 
 # Fetching  Doip-Lib for DoIP communication
@@ -464,6 +464,8 @@ add_executable(
   ${source_application_doip_dir}/doip_server.cpp
   ${source_application_doip_dir}/doip_client.h
   ${source_application_doip_dir}/doip_client.cpp
+  ${source_application_doip_dir}/obd_to_doip_converter.h
+  ${source_application_doip_dir}/obd_to_doip_converter.cpp
   ${source_application_platform_dir}/state_management.h
   ${source_application_platform_dir}/state_management.cpp
   ${source_application_platform_dir}/execution_management.h
