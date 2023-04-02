@@ -113,6 +113,9 @@ var hierarchy =
       [ "ara::com::someip::sd::SdNetworkLayer", "classara_1_1com_1_1someip_1_1sd_1_1SdNetworkLayer.html", null ]
     ] ],
     [ "ara::sm::Notifier< T >", "classara_1_1sm_1_1Notifier.html", null ],
+    [ "ObdEmulator::ObdService", null, [
+      [ "application::doip::ObdToDoipConverter", "classapplication_1_1doip_1_1ObdToDoipConverter.html", null ]
+    ] ],
     [ "ara::diag::OperationCycle", "classara_1_1diag_1_1OperationCycle.html", null ],
     [ "ara::diag::OperationOutput", "structara_1_1diag_1_1OperationOutput.html", null ],
     [ "ara::com::option::Option", "classara_1_1com_1_1option_1_1Option.html", [
