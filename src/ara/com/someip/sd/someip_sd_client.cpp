@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include "../../option/ipv4_endpoint_option.h"
 #include "./someip_sd_client.h"
 
 namespace ara
@@ -33,7 +34,8 @@ namespace ara
                                               mServiceReadyState(&mTtlTimer, &mOfferingConditionVariable),
                                               mOfferingLock(mOfferingMutex, std::defer_lock),
                                               mStopOfferingLock(mStopOfferingMutex, std::defer_lock),
-                                              mServiceId{serviceId}
+                                              mServiceId{serviceId},
+                                              mEndpointLock(mEndpointMutex, std::defer_lock)
                 {
                     this->StateMachine.Initialize(
                         {&mServiceNotseenState,
@@ -87,6 +89,40 @@ namespace ara
                     return false;
                 }
 
+                bool SomeIpSdClient::tryExtractOfferedEndpoint(
+                    const SomeIpSdMessage &message,
+                    std::string &ipAddress, uint16_t &port) const
+                {
+                    for (size_t i = 0; i < message.Entries().size(); ++i)
+                    {
+                        auto entry = message.Entries().at(i).get();
+
+                        // Endpoints are end-up in the first options
+                        for (size_t j = 0; entry->FirstOptions().size(); ++j)
+                        {
+                            auto option = entry->FirstOptions().at(j).get();
+
+                            if (option->Type() == option::OptionType::IPv4Endpoint)
+                            {
+                                auto cEndpoint{
+                                    dynamic_cast<const option::Ipv4EndpointOption *>(
+                                        option)};
+
+                                if (cEndpoint &&
+                                    cEndpoint->L4Proto() == option::Layer4ProtocolType::Tcp)
+                                {
+                                    ipAddress = cEndpoint->IpAddress().ToString();
+                                    port = cEndpoint->Port();
+
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+
+                    return false;
+                }
+
                 void SomeIpSdClient::onOfferChanged(uint32_t ttl)
                 {
                     mTtlTimer.SetOffered(ttl);
@@ -98,10 +134,24 @@ namespace ara
                     if (mValidState)
                     {
                         uint32_t _ttl;
-                        bool _matches = matchRequestedService(message, _ttl);
-                        if (_matches)
+                        bool _successful = matchRequestedService(message, _ttl);
+                        if (_successful)
                         {
                             onOfferChanged(_ttl);
+
+                            mEndpointLock.lock();
+                            std::string _ipAddress;
+                            uint16_t _port;
+                            _successful =
+                                tryExtractOfferedEndpoint(
+                                    message, _ipAddress, _port);
+
+                            if (_successful)
+                            {
+                                mOfferedIpAddress = _ipAddress;
+                                mOfferedPort = _port;
+                            }
+                            mEndpointLock.unlock();
                         }
                     }
                 }
@@ -211,6 +261,24 @@ namespace ara
                     }
 
                     return _result;
+                }
+
+                bool SomeIpSdClient::TryGetOfferedEndpoint(
+                    std::string &ipAddress, uint16_t &port)
+                {
+                    mEndpointLock.lock();
+                    if (mOfferedIpAddress && mOfferedPort)
+                    {
+                        ipAddress = mOfferedIpAddress.Value();
+                        port = mOfferedPort.Value();
+                        mEndpointLock.unlock();
+                        return true;
+                    }
+                    else
+                    {
+                        mEndpointLock.unlock();
+                        return false;
+                    }
                 }
 
                 SomeIpSdClient::~SomeIpSdClient()

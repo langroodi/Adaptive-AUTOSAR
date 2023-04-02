@@ -18,7 +18,6 @@ namespace ara
                     static const uint16_t cInstanceId = 1;
                     static const uint8_t cMajorVersion = 1;
                     static const uint32_t cMinorVersion = 0;
-                    static const uint16_t cPort = 8080;
                     static const int cInitialDelayMin = 100;
                     static const int cInitialDelayMax = 200;
                     static const int cRepetitionBaseDelay = 200;
@@ -29,12 +28,15 @@ namespace ara
                     helper::Ipv4Address mLocalhost;
 
                 protected:
+                    static const std::string cIpAddress;
+                    static const uint16_t cPort;
+
                     const int WaitDuration;
 
                     SomeIpSdServer Server;
                     SomeIpSdClient Client;
 
-                    SomeIpSdTest() : mLocalhost(127, 0, 0, 1),
+                    SomeIpSdTest() : mLocalhost(cIpAddress),
                                      Server(
                                          &mNetworkLayer,
                                          cServiceId,
@@ -68,6 +70,9 @@ namespace ara
                     }
                 };
 
+                const std::string SomeIpSdTest::cIpAddress{"127.0.0.1"};
+                const uint16_t SomeIpSdTest::cPort{8080};
+
                 TEST_F(SomeIpSdTest, ServerStart)
                 {
                     const helper::SdServerState cNotReadyState =
@@ -86,6 +91,10 @@ namespace ara
                     EXPECT_EQ(Client.GetState(), cServiceNotSeenState);
                     EXPECT_NO_THROW(Client.Start());
                     EXPECT_THROW(Client.Start(), std::logic_error);
+
+                    std::string _ipAddress;
+                    uint16_t _port;
+                    EXPECT_FALSE(Client.TryGetOfferedEndpoint(_ipAddress, _port));
                 }
 
                 TEST_F(SomeIpSdTest, StartScenario)
@@ -98,6 +107,12 @@ namespace ara
                     Client.TryWaitUntiServiceOffered(WaitDuration);
 
                     EXPECT_EQ(Client.GetState(), cServiceReadyState);
+
+                    std::string _ipAddress;
+                    uint16_t _port;
+                    EXPECT_TRUE(Client.TryGetOfferedEndpoint(_ipAddress, _port));
+                    EXPECT_EQ(cIpAddress, _ipAddress);
+                    EXPECT_EQ(cPort, _port);
                 }
 
                 TEST_F(SomeIpSdTest, ClientStopScenario)

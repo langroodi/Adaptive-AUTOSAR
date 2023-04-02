@@ -1,6 +1,7 @@
 #ifndef SOMEIP_SD_CLIENT
 #define SOMEIP_SD_CLIENT
 
+#include "../../../core/optional.h"
 #include "../../helper/ipv4_address.h"
 #include "../../helper/ttl_timer.h"
 #include "../../entry/service_entry.h"
@@ -40,10 +41,17 @@ namespace ara
                     fsm::ServiceReadyState mServiceReadyState;
                     SomeIpSdMessage mFindServieMessage;
                     const uint16_t mServiceId;
+                    std::mutex mEndpointMutex;
+                    std::unique_lock<std::mutex> mEndpointLock;
+                    core::Optional<std::string> mOfferedIpAddress;
+                    core::Optional<uint16_t> mOfferedPort;
 
                     void sendFind();
                     bool matchRequestedService(
                         const SomeIpSdMessage &message, uint32_t &ttl) const;
+                    bool tryExtractOfferedEndpoint(
+                        const SomeIpSdMessage &message,
+                        std::string &ipAddress, uint16_t &port) const;
                     void onOfferChanged(uint32_t ttl);
                     void receiveSdMessage(SomeIpSdMessage &&message);
 
@@ -80,6 +88,15 @@ namespace ara
                     /// @returns True, if the service offering is stopped before the timeout; otherwise false
                     /// @note Zero duration means wait until the service offering stops.
                     bool TryWaitUntiServiceOfferStopped(int duration);
+
+                    /// @brief Try to the offered unicast endpoint from the SD server
+                    /// @param[out] ipAddress Offered unicast IPv4 address
+                    /// @param[out] port Offered TCP port number
+                    /// @return True if the SD server has already offered the endpoint; otherwise false
+                    /// @remark The arguments won't be touched while returning 'false'.
+                    /// @note The endpoint WON'T be invalidated after receiving the stop offer.
+                    bool TryGetOfferedEndpoint(
+                        std::string &ipAddress, uint16_t &port);
 
                     ~SomeIpSdClient() override;
                 };
