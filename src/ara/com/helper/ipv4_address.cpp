@@ -35,6 +35,17 @@ namespace ara
                 Octets = std::array<uint8_t, 4>{cOctet0, cOctet1, cOctet2, cOctet3};
             }
 
+            std::string Ipv4Address::ToString() const
+            {
+                const std::string cResult{
+                    std::to_string(Octets[0]) + "." +
+                    std::to_string(Octets[1]) + "." +
+                    std::to_string(Octets[2]) + "." +
+                    std::to_string(Octets[3])};
+
+                return cResult;
+            }
+
             void Ipv4Address::Inject(
                 std::vector<uint8_t> &vector,
                 Ipv4Address ipAddress)

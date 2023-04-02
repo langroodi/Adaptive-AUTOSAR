@@ -37,6 +37,15 @@ namespace ara
                 EXPECT_EQ(_ipAddress.Octets[2], cThirdOctet);
                 EXPECT_EQ(_ipAddress.Octets[3], cForthOctet);
             }
+
+            TEST(Ipv4AddressTest, ToStringMethod)
+            {
+                const std::string cExpectedResult{"192.168.1.255"};
+                const Ipv4Address cIpAddress(cExpectedResult);
+                const std::string cActualResult{cIpAddress.ToString()};
+
+                EXPECT_EQ(cExpectedResult, cActualResult);
+            }
         }
     }
 }

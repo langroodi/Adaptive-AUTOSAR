@@ -34,6 +34,10 @@ namespace ara
                 /// @param ipAddress IPv4 address string
                 Ipv4Address(std::string ipAddress);
 
+                /// @brief Convert the IP address to string
+                /// @return IP address in string format
+                std::string ToString() const;
+
                 ~Ipv4Address() noexcept = default;
 
                 /// @brief Inject an IP address into a byte vector
