@@ -16,6 +16,7 @@ namespace application
             // Show current data mode
             static const uint8_t cService{0x01};
             static const uint8_t cSid{0x22};
+            static const uint8_t cProtocolVersion{2};
 
             DoipClient mClient;
             std::function<void(std::vector<uint8_t> &&)> mCallback;
@@ -34,13 +35,11 @@ namespace application
             /// @param poller Global poller for network communication
             /// @param ipAddress DoIP server IPv4 address
             /// @param port DoIP server TCP listening port number
-            /// @param protocolVersion DoIP protocol version
             /// @throws std::runtime_error Throws when the DoIP client initialization failed
             ObdToDoipConverter(
                 AsyncBsdSocketLib::Poller *poller,
                 std::string ipAddress,
-                uint16_t port,
-                uint8_t protocolVersion);
+                uint16_t port);
 
             bool TryGetResponse(
                 const std::vector<uint8_t> &pid,

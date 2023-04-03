@@ -6,18 +6,18 @@ namespace application
     {
         const uint8_t ObdToDoipConverter::cService;
         const uint8_t ObdToDoipConverter::cSid;
+        const uint8_t ObdToDoipConverter::cProtocolVersion;
 
         ObdToDoipConverter::ObdToDoipConverter(
             AsyncBsdSocketLib::Poller *poller,
             std::string ipAddress,
-            uint16_t port,
-            uint8_t protocolVersion) : ObdService(cService),
-                                       mClient(
-                                           poller,
-                                           ipAddress,
-                                           port,
-                                           protocolVersion,
-                                           std::bind(&ObdToDoipConverter::onUdsDataReceived, this, std::placeholders::_1))
+            uint16_t port) : ObdService(cService),
+                             mClient(
+                                 poller,
+                                 ipAddress,
+                                 port,
+                                 cProtocolVersion,
+                                 std::bind(&ObdToDoipConverter::onUdsDataReceived, this, std::placeholders::_1))
         {
         }
 
