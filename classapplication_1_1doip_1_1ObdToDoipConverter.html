@@ -121,9 +121,9 @@ Inheritance diagram for application::doip::ObdToDoipConverter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad5f4c418922e64015c5ac327b3a70056"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1doip_1_1ObdToDoipConverter.html#ad5f4c418922e64015c5ac327b3a70056">ObdToDoipConverter</a> (AsyncBsdSocketLib::Poller *poller, std::string ipAddress, uint16_t port, uint8_t protocolVersion)</td></tr>
-<tr class="memdesc:ad5f4c418922e64015c5ac327b3a70056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1doip_1_1ObdToDoipConverter.html#ad5f4c418922e64015c5ac327b3a70056">More...</a><br /></td></tr>
-<tr class="separator:ad5f4c418922e64015c5ac327b3a70056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada85698736b0e23034503e19d563e20c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1doip_1_1ObdToDoipConverter.html#ada85698736b0e23034503e19d563e20c">ObdToDoipConverter</a> (AsyncBsdSocketLib::Poller *poller, std::string ipAddress, uint16_t port)</td></tr>
+<tr class="memdesc:ada85698736b0e23034503e19d563e20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1doip_1_1ObdToDoipConverter.html#ada85698736b0e23034503e19d563e20c">More...</a><br /></td></tr>
+<tr class="separator:ada85698736b0e23034503e19d563e20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a706e16f7a507af0377c07767551eae32"><td class="memItemLeft" align="right" valign="top"><a id="a706e16f7a507af0377c07767551eae32" name="a706e16f7a507af0377c07767551eae32"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>TryGetResponse</b> (const std::vector&lt; uint8_t &gt; &amp;pid, std::vector&lt; uint8_t &gt; &amp;response) const override</td></tr>
 <tr class="separator:a706e16f7a507af0377c07767551eae32"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,8 +135,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>TryGetResponseAsync</
 <div class="textblock"><p >A OBD service class to handle OBD queries asynchronously. </p>
 <p >The class based on the queried PID may convert the query to a UDS message and send it via DoIP to a UDS server. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad5f4c418922e64015c5ac327b3a70056" name="ad5f4c418922e64015c5ac327b3a70056"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5f4c418922e64015c5ac327b3a70056">&#9670;&nbsp;</a></span>ObdToDoipConverter()</h2>
+<a id="ada85698736b0e23034503e19d563e20c" name="ada85698736b0e23034503e19d563e20c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada85698736b0e23034503e19d563e20c">&#9670;&nbsp;</a></span>ObdToDoipConverter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,13 +157,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>TryGetResponseAsync</
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>port</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>protocolVersion</em>&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -179,7 +173,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>TryGetResponseAsync</
     <tr><td class="paramname">poller</td><td>Global poller for network communication </td></tr>
     <tr><td class="paramname">ipAddress</td><td>DoIP server IPv4 address </td></tr>
     <tr><td class="paramname">port</td><td>DoIP server TCP listening port number </td></tr>
-    <tr><td class="paramname">protocolVersion</td><td>DoIP protocol version </td></tr>
   </table>
   </dd>
 </dl>
