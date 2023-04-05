@@ -8,12 +8,20 @@ namespace application
     {
 
         const std::string DiagnosticManager::cAppId{"DiagnosticManager"};
+        const std::string DiagnosticManager::cSerialPort{"/dev/ttyUSB0"};
+        const speed_t DiagnosticManager::cBaudrate{115200};
+        const bool DiagnosticManager::cSupportExtended{false};
+        const ObdEmulator::CanBusSpeed DiagnosticManager::cSpeed{ObdEmulator::CanBusSpeed::Speed250kbps};
 
         DiagnosticManager::DiagnosticManager(AsyncBsdSocketLib::Poller *poller) : ara::exec::helper::ModelledProcess(cAppId, poller),
                                                                                   mNetworkLayer{nullptr},
                                                                                   mSdClient{nullptr},
                                                                                   mEvent{nullptr},
-                                                                                  mMonitor{nullptr}
+                                                                                  mMonitor{nullptr},
+                                                                                  mSerialCommunication(cSerialPort, cBaudrate),
+                                                                                  mCanDriver(cSpeed, cSupportExtended),
+                                                                                  mObdToDoipConverter{nullptr},
+                                                                                  mObdEmulator{nullptr}
         {
         }
 
@@ -93,31 +101,57 @@ namespace application
         {
             const auto cDebouncingStatusResult{mEvent->GetDebouncingStatus()};
 
-            if (cDebouncingStatusResult.HasValue())
+            if (!cDebouncingStatusResult.HasValue())
             {
-                const ara::diag::DebouncingState cDebouncingStatus{
-                    cDebouncingStatusResult.Value()};
+                return;
+            }
 
-                if (cDebouncingStatus ==
-                    ara::diag::DebouncingState::kFinallyHealed)
-                {
-                    ara::log::LogStream _logStream;
-                    _logStream << "Telematic Control Module (Extended Vehicle AA) is discovered.";
-                    Log(cLogLevel, _logStream);
-                }
-                else if (cDebouncingStatus ==
-                         ara::diag::DebouncingState::kFinallyDefective)
-                {
-                    const ara::diag::DTCFormatType cDtcFormat{
-                        ara::diag::DTCFormatType::kDTCFormatUDS};
-                    const auto cDtcNumberResult{mEvent->GetDTCNumber(cDtcFormat)};
+            const ara::diag::DebouncingState cDebouncingStatus{
+                cDebouncingStatusResult.Value()};
 
-                    ara::log::LogStream _logStream;
-                    _logStream << mEventSpecifier->ToString()
-                               << " is failed with DTC "
-                               << cDtcNumberResult.Value();
-                    Log(cErrorLevel, _logStream);
+            if (cDebouncingStatus ==
+                ara::diag::DebouncingState::kFinallyHealed)
+            {
+                ara::log::LogStream _logStream;
+                _logStream << "Telematic Control Module (Extended Vehicle AA) is discovered.";
+                Log(cLogLevel, _logStream);
+
+                std::string _ipAddress;
+                uint16_t _port;
+                bool _successful{
+                    mSdClient->TryGetOfferedEndpoint(_ipAddress, _port)};
+                if (!_successful)
+                {
+                    throw std::runtime_error("Fetching offered endpoint failed.");
                 }
+
+                mObdToDoipConverter =
+                    new doip::ObdToDoipConverter(Poller, _ipAddress, _port);
+
+                mObdEmulator =
+                    new ObdEmulator::ObdEmulator(
+                        &mSerialCommunication,
+                        &mCanDriver,
+                        {mObdToDoipConverter});
+
+                _successful = mObdEmulator->TryStartAsync();
+                if (!_successful)
+                {
+                    throw std::runtime_error("Starting OBD-II emulator failed.");
+                }
+            }
+            else if (cDebouncingStatus ==
+                     ara::diag::DebouncingState::kFinallyDefective)
+            {
+                const ara::diag::DTCFormatType cDtcFormat{
+                    ara::diag::DTCFormatType::kDTCFormatUDS};
+                const auto cDtcNumberResult{mEvent->GetDTCNumber(cDtcFormat)};
+
+                ara::log::LogStream _logStream;
+                _logStream << mEventSpecifier->ToString()
+                           << " is failed with DTC "
+                           << cDtcNumberResult.Value();
+                Log(cErrorLevel, _logStream);
             }
         }
 
@@ -292,6 +326,16 @@ namespace application
 
         DiagnosticManager::~DiagnosticManager()
         {
+            if (mObdEmulator)
+            {
+                delete mObdEmulator;
+            }
+
+            if (mObdToDoipConverter)
+            {
+                delete mObdToDoipConverter;
+            }
+
             if (mMonitor)
             {
                 mMonitor->StopOffer();
