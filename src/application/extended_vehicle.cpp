@@ -258,6 +258,8 @@ namespace application
         const uint8_t cProtocolVersion{2};
         _result.protocolVersion = cProtocolVersion;
 
+        _result.doipMaxRequestBytes = doip::DoipServer::cDoipPacketSize;
+
         return _result;
     }
 

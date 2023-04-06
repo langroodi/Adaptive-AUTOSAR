@@ -15,9 +15,11 @@ namespace application
         /// @brief Class to handle DoIP requests
         class DoipServer
         {
-        private:
+        public:
+            /// @brief Maximum DoIP packet size
             static constexpr size_t cDoipPacketSize{64};
 
+        private:
             AsyncBsdSocketLib::Poller *const mPoller;
             VehicleIdRequestHandler mVehicleIdRequestHandler;
             DoipMessageHandler mDiagMessageHandler;
