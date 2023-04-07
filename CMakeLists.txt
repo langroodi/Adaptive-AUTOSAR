@@ -39,7 +39,7 @@ FetchContent_Declare(
 # Fetching  OBD-II-Emulator for OBD2 CAN bus communication
 FetchContent_Declare(
   OBD-II-Emulator
-  URL https://github.com/langroodi/OBD-II-Emulator/archive/27e3806b7891a290b8044836caa88d50bf83bac3.zip
+  URL https://github.com/langroodi/OBD-II-Emulator/archive/b77dadf5e5f73f785bc4a78238a1bbc6becb76dd.zip
 )
 
 # Fetching  Doip-Lib for DoIP communication

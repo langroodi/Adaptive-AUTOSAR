@@ -19,10 +19,10 @@ namespace application
             static const uint8_t cProtocolVersion{2};
 
             DoipClient mClient;
-            std::function<void(std::vector<uint8_t> &&)> mCallback;
 
             static bool tryParseUdsData(
                 std::vector<uint8_t> &&udsResponse,
+                uint8_t &pid,
                 std::vector<uint8_t> &obdData);
 
             void onUdsDataReceived(
@@ -45,9 +45,7 @@ namespace application
                 const std::vector<uint8_t> &pid,
                 std::vector<uint8_t> &response) const override;
 
-            bool TryGetResponseAsync(
-                const std::vector<uint8_t> &pid,
-                std::function<void(std::vector<uint8_t> &&)> &&callback) override;
+            bool TryGetResponseAsync(const std::vector<uint8_t> &pid) override;
         };
     }
 }
