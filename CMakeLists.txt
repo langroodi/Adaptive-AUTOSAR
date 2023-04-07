@@ -45,7 +45,7 @@ FetchContent_Declare(
 # Fetching  Doip-Lib for DoIP communication
 FetchContent_Declare(
   Doip-Lib
-  URL https://github.com/langroodi/Doip-Lib/archive/d6358adf86ed3bb9ec9989a5ac321b25e2cf8673.zip
+  URL https://github.com/langroodi/Doip-Lib/archive/5acfd483eb3dc90429a98dbe4b70de8b1db68af6.zip
 )
 
 FetchContent_MakeAvailable(
