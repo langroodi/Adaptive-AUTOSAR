@@ -41,7 +41,7 @@ namespace application
                 throw std::runtime_error("Send delegate register to the poller failed.");
             }
 
-            auto _onReceive{std::bind(&DoipClient::onSend, this)};
+            auto _onReceive{std::bind(&DoipClient::onReceive, this)};
             _successful = mPoller->TryAddReceiver(&mClient, _onReceive);
             if (!_successful)
             {
