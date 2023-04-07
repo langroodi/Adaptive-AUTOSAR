@@ -1,0 +1,339 @@
+Performing Curl Test HAVE_FSETXATTR_6 failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_42f18/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_42f18.dir/build.make CMakeFiles/cmTC_42f18.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_42f18.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_42f18_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_FSETXATTR_6  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_42f18.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:422:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  422 | main() {
+      | ^~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:423:3: error: too many arguments to function ‘fsetxattr’
+  423 |   fsetxattr(0, 0, 0, 0, 0, 0);
+      |   ^~~~~~~~~
+In file included from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:420:
+/usr/include/x86_64-linux-gnu/sys/xattr.h:54:12: note: declared here
+   54 | extern int fsetxattr (int __fd, const char *__name, const void *__value,
+      |            ^~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_42f18.dir/build.make:78: CMakeFiles/cmTC_42f18.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_42f18/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_aafc7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_aafc7.dir/build.make CMakeFiles/cmTC_aafc7.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_aafc7.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_aafc7_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_aafc7.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:216:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  216 | main ()
+      | ^~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:221:24: warning: implicit declaration of function ‘ioctlsocket’ [-Wimplicit-function-declaration]
+  221 |  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+      |                        ^~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:221:24: warning: nested extern declaration of ‘ioctlsocket’ [-Wnested-externs]
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:221:44: error: ‘FIONBIO’ undeclared (first use in this function)
+  221 |  unsigned long flags = ioctlsocket(socket, FIONBIO, &flags);
+      |                                            ^~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:221:44: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_aafc7.dir/build.make:78: CMakeFiles/cmTC_aafc7.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_aafc7/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0aac2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_0aac2.dir/build.make CMakeFiles/cmTC_0aac2.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0aac2.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_0aac2_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_0aac2.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:241:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  241 | main ()
+      | ^~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:245:13: warning: implicit declaration of function ‘IoctlSocket’ [-Wimplicit-function-declaration]
+  245 |     if(0 != IoctlSocket(0, 0, 0))
+      |             ^~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:245:13: warning: nested extern declaration of ‘IoctlSocket’ [-Wnested-externs]
+Linking C executable cmTC_0aac2
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0aac2.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET_CAMEL  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -Wl,--export-dynamic -rdynamic CMakeFiles/cmTC_0aac2.dir/CurlTests.c.o -o cmTC_0aac2  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+/usr/bin/ld: CMakeFiles/cmTC_0aac2.dir/CurlTests.c.o: in function `main':
+CurlTests.c:(.text+0x1d): undefined reference to `IoctlSocket'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_0aac2.dir/build.make:101: cmTC_0aac2] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_0aac2/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_CAMEL_FIONBIO failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1baac/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1baac.dir/build.make CMakeFiles/cmTC_1baac.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1baac.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_1baac_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET_CAMEL_FIONBIO  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_1baac.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:264:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  264 | main ()
+      | ^~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:269:17: warning: implicit declaration of function ‘IoctlSocket’ [-Wimplicit-function-declaration]
+  269 |         if(0 != IoctlSocket(0, FIONBIO, &flags))
+      |                 ^~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:269:17: warning: nested extern declaration of ‘IoctlSocket’ [-Wnested-externs]
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:269:32: error: ‘FIONBIO’ undeclared (first use in this function)
+  269 |         if(0 != IoctlSocket(0, FIONBIO, &flags))
+      |                                ^~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:269:32: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_1baac.dir/build.make:78: CMakeFiles/cmTC_1baac.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_1baac/fast] Error 2
+
+
+Performing Curl Test HAVE_IOCTLSOCKET_FIONBIO failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cf9be/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_cf9be.dir/build.make CMakeFiles/cmTC_cf9be.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cf9be.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_cf9be_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_IOCTLSOCKET_FIONBIO  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_cf9be.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:288:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  288 | main ()
+      | ^~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:292:17: warning: implicit declaration of function ‘ioctlsocket’ [-Wimplicit-function-declaration]
+  292 |         if(0 != ioctlsocket(0, FIONBIO, &flags))
+      |                 ^~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:292:17: warning: nested extern declaration of ‘ioctlsocket’ [-Wnested-externs]
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:292:32: error: ‘FIONBIO’ undeclared (first use in this function)
+  292 |         if(0 != ioctlsocket(0, FIONBIO, &flags))
+      |                                ^~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:292:32: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_cf9be.dir/build.make:78: CMakeFiles/cmTC_cf9be.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_cf9be/fast] Error 2
+
+
+Performing Curl Test HAVE_SETSOCKOPT_SO_NONBLOCK failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6f454/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_6f454.dir/build.make CMakeFiles/cmTC_6f454.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6f454.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_6f454_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_SETSOCKOPT_SO_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_6f454.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:382:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  382 | main ()
+      | ^~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:384:43: error: ‘SO_NONBLOCK’ undeclared (first use in this function); did you mean ‘SOCK_NONBLOCK’?
+  384 |         if(0 != setsockopt(0, SOL_SOCKET, SO_NONBLOCK, 0, 0))
+      |                                           ^~~~~~~~~~~
+      |                                           SOCK_NONBLOCK
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:384:43: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_6f454.dir/build.make:78: CMakeFiles/cmTC_6f454.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_6f454/fast] Error 2
+
+
+Performing Curl Test HAVE_O_NONBLOCK failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_18e2c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_18e2c.dir/build.make CMakeFiles/cmTC_18e2c.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_18e2c.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_18e2c_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_O_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_18e2c.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:533: warning: ISO C forbids an empty translation unit [-Wpedantic]
+Linking C executable cmTC_18e2c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18e2c.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_O_NONBLOCK  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -Wl,--export-dynamic -rdynamic CMakeFiles/cmTC_18e2c.dir/CurlTests.c.o -o cmTC_18e2c  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_18e2c.dir/build.make:101: cmTC_18e2c] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_18e2c/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3 failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_323bc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_323bc.dir/build.make CMakeFiles/cmTC_323bc.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_323bc.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_323bc_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GETHOSTBYNAME_R_3  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_323bc.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:92:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   92 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:99:23: error: storage size of ‘hdata’ isn’t known
+   99 |   struct hostent_data hdata;
+      |                       ^~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:111:8: error: too few arguments to function ‘gethostbyname_r’
+  111 |   rc = gethostbyname_r(address, &h, &hdata);
+      |        ^~~~~~~~~~~~~~~
+In file included from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:89:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:99:23: warning: unused variable ‘hdata’ [-Wunused-variable]
+   99 |   struct hostent_data hdata;
+      |                       ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_323bc.dir/build.make:78: CMakeFiles/cmTC_323bc.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_323bc/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5 failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d1bb3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d1bb3.dir/build.make CMakeFiles/cmTC_d1bb3.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d1bb3.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_d1bb3_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GETHOSTBYNAME_R_5  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_d1bb3.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:92:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   92 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:114:51: warning: passing argument 5 of ‘gethostbyname_r’ from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |                                                   ^~~~~~~~~
+      |                                                   |
+      |                                                   int *
+In file included from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:89:
+/usr/include/netdb.h:180:57: note: expected ‘struct hostent ** restrict’ but argument is of type ‘int *’
+  180 |                             struct hostent **__restrict __result,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:114:8: error: too few arguments to function ‘gethostbyname_r’
+  114 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |        ^~~~~~~~~~~~~~~
+In file included from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:89:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_d1bb3.dir/build.make:78: CMakeFiles/cmTC_d1bb3.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_d1bb3/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_3_REENTRANT failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_98156/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_98156.dir/build.make CMakeFiles/cmTC_98156.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_98156.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_98156_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GETHOSTBYNAME_R_3_REENTRANT  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_98156.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:92:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   92 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:99:23: error: storage size of ‘hdata’ isn’t known
+   99 |   struct hostent_data hdata;
+      |                       ^~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:111:8: error: too few arguments to function ‘gethostbyname_r’
+  111 |   rc = gethostbyname_r(address, &h, &hdata);
+      |        ^~~~~~~~~~~~~~~
+In file included from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:89:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:99:23: warning: unused variable ‘hdata’ [-Wunused-variable]
+   99 |   struct hostent_data hdata;
+      |                       ^~~~~
+gmake[1]: *** [CMakeFiles/cmTC_98156.dir/build.make:78: CMakeFiles/cmTC_98156.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_98156/fast] Error 2
+
+
+Performing Curl Test HAVE_GETHOSTBYNAME_R_5_REENTRANT failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_052ab/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_052ab.dir/build.make CMakeFiles/cmTC_052ab.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_052ab.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_052ab_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GETHOSTBYNAME_R_5_REENTRANT  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_052ab.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:92:19: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+   92 |   char *address = "example.com";
+      |                   ^~~~~~~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:114:51: warning: passing argument 5 of ‘gethostbyname_r’ from incompatible pointer type [-Wincompatible-pointer-types]
+  114 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |                                                   ^~~~~~~~~
+      |                                                   |
+      |                                                   int *
+In file included from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:89:
+/usr/include/netdb.h:180:57: note: expected ‘struct hostent ** restrict’ but argument is of type ‘int *’
+  180 |                             struct hostent **__restrict __result,
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:114:8: error: too few arguments to function ‘gethostbyname_r’
+  114 |   rc = gethostbyname_r(address, &h, buffer, 8192, &h_errnop);
+      |        ^~~~~~~~~~~~~~~
+In file included from /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:89:
+/usr/include/netdb.h:177:12: note: declared here
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+gmake[1]: *** [CMakeFiles/cmTC_052ab.dir/build.make:78: CMakeFiles/cmTC_052ab.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_052ab/fast] Error 2
+
+
+Performing Curl Test HAVE_GLIBC_STRERROR_R failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c5585/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c5585.dir/build.make CMakeFiles/cmTC_c5585.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c5585.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_c5585_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_GLIBC_STRERROR_R  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_c5585.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:394:6: warning: no previous prototype for ‘check’ [-Wmissing-prototypes]
+  394 | void check(char c) {}
+      |      ^~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘check’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:394:17: warning: unused parameter ‘c’ [-Wunused-parameter]
+  394 | void check(char c) {}
+      |            ~~~~~^
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: At top level:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:397:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  397 | main () {
+      | ^~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:400:51: error: subscripted value is neither array nor pointer nor vector
+  400 |   check(strerror_r(EACCES, buffer, sizeof(buffer))[0]);
+      |                                                   ^
+gmake[1]: *** [CMakeFiles/cmTC_c5585.dir/build.make:78: CMakeFiles/cmTC_c5585.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_c5585/fast] Error 2
+
+
+Performing Curl Test HAVE_BUILTIN_AVAILABLE failed with the following output:
+Change Dir: /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_64a18/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_64a18.dir/build.make CMakeFiles/cmTC_64a18.dir/build
+gmake[1]: Entering directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64a18.dir/CurlTests.c.o
+/usr/bin/cc -DcmTC_64a18_EXPORTS  -pedantic -Wall -W -Wpointer-arith -Wwrite-strings -Wunused -Wshadow -Winline -Wnested-externs -Wmissing-declarations -Wmissing-prototypes -Wfloat-equal -Wsign-compare -Wundef -Wendif-labels -Wstrict-prototypes -Wdeclaration-after-statement -Wstrict-aliasing=3 -Wcast-align -Wtype-limits -Wold-style-declaration -Wmissing-parameter-type -Wempty-body -Wclobbered -Wignored-qualifiers -Wconversion -Wvla -Wdouble-promotion -Wenum-conversion -Warith-conversion -Wno-long-long -Wno-multichar -Wno-format-nonliteral -Wno-sign-conversion -Wno-system-headers -DHAVE_BUILTIN_AVAILABLE  -DHAVE_INTTYPES_H -DHAVE_SYS_IOCTL_H -DHAVE_SYS_PARAM_H -DHAVE_SYS_POLL_H -DHAVE_SYS_RESOURCE_H -DHAVE_SYS_SELECT_H -DHAVE_SYS_SOCKET_H -DHAVE_SYS_STAT_H -DHAVE_SYS_TIME_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_UN_H -DHAVE_SYS_XATTR_H -DHAVE_ARPA_INET_H -DHAVE_ARPA_TFTP_H -DHAVE_FCNTL_H -DHAVE_IFADDRS_H -DHAVE_LIBGEN_H -DHAVE_LOCALE_H -DHAVE_NET_IF_H -DHAVE_NETDB_H -DHAVE_NETINET_IN_H -DHAVE_NETINET_TCP_H -DHAVE_POLL_H -DHAVE_PWD_H -DHAVE_SETJMP_H -DHAVE_SIGNAL_H -DHAVE_STDATOMIC_H -DHAVE_STDBOOL_H -DHAVE_STDINT_H -DHAVE_STDLIB_H -DHAVE_STRING_H -DHAVE_STRINGS_H -DHAVE_TERMIO_H -DHAVE_TERMIOS_H -DHAVE_TIME_H -DHAVE_UNISTD_H -DHAVE_UTIME_H -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_UTSNAME_H -o CMakeFiles/cmTC_64a18.dir/CurlTests.c.o -c /home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:446:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+  446 | main() {
+      | ^~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c: In function ‘main’:
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:447:6: warning: implicit declaration of function ‘__builtin_available’; did you mean ‘__builtin_scalbl’? [-Wimplicit-function-declaration]
+  447 |   if(__builtin_available(macOS 10.12, *)) {}
+      |      ^~~~~~~~~~~~~~~~~~~
+      |      __builtin_scalbl
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:447:6: warning: nested extern declaration of ‘__builtin_available’ [-Wnested-externs]
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:447:26: error: ‘macOS’ undeclared (first use in this function)
+  447 |   if(__builtin_available(macOS 10.12, *)) {}
+      |                          ^~~~~
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:447:26: note: each undeclared identifier is reported only once for each function it appears in
+/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/_deps/libcurl-src/CMake/CurlTests.c:447:31: error: expected ‘)’ before numeric constant
+  447 |   if(__builtin_available(macOS 10.12, *)) {}
+      |                         ~     ^~~~~~
+      |                               )
+gmake[1]: *** [CMakeFiles/cmTC_64a18.dir/build.make:78: CMakeFiles/cmTC_64a18.dir/CurlTests.c.o] Error 1
+gmake[1]: Leaving directory '/home/runner/work/Adaptive-AUTOSAR/Adaptive-AUTOSAR/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_64a18/fast] Error 2
+
+
