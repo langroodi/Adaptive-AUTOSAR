@@ -12,6 +12,7 @@ namespace application
                                        cProtocolVersion{protocolVersion}
         {
             mRouter.AddService(&mService);
+            mService.Offer();
         }
 
         DoipLib::Message *DoipMessageHandler::GetMessage()
