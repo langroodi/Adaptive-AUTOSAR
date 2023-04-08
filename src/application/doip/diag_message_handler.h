@@ -1,5 +1,5 @@
-#ifndef DOIP_MESSAGE_HANDLER_H
-#define DOIP_MESSAGE_HANDLER_H
+#ifndef DIAG_MESSAGE_HANDLER_H
+#define DIAG_MESSAGE_HANDLER_H
 
 #include <doiplib/message_handler.h>
 #include <doiplib/diag_message.h>
@@ -12,7 +12,7 @@ namespace application
     namespace doip
     {
         /// @brief A class to handle UDS messages via DoIP
-        class DoipMessageHandler : public DoipLib::MessageHandler
+        class DiagMessageHandler : public DoipLib::MessageHandler
         {
         private:
             DoipLib::DiagMessage mRequest;
@@ -25,7 +25,7 @@ namespace application
             /// @param curl Configured CURL instance for RESTful communication
             /// @param resourcesUrl Connected vehicle resources access RESTful URL
             /// @param protocolVersion DoIP protocol version
-            DoipMessageHandler(
+            DiagMessageHandler(
                 helper::CurlWrapper *curl,
                 std::string resourcesUrl,
                 uint8_t protocolVersion);

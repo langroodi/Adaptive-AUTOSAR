@@ -1,11 +1,11 @@
 #include <doiplib/diag_message_ack.h>
-#include "./doip_message_handler.h"
+#include "./diag_message_handler.h"
 
 namespace application
 {
     namespace doip
     {
-        DoipMessageHandler::DoipMessageHandler(
+        DiagMessageHandler::DiagMessageHandler(
             helper::CurlWrapper *curl,
             std::string resourcesUrl,
             uint8_t protocolVersion) : mService(curl, resourcesUrl),
@@ -15,12 +15,12 @@ namespace application
             mService.Offer();
         }
 
-        DoipLib::Message *DoipMessageHandler::GetMessage()
+        DoipLib::Message *DiagMessageHandler::GetMessage()
         {
             return static_cast<DoipLib::Message *>(&mRequest);
         }
 
-        bool DoipMessageHandler::TryHandle(
+        bool DiagMessageHandler::TryHandle(
             const DoipLib::Message *request,
             std::vector<uint8_t> &response) const
         {

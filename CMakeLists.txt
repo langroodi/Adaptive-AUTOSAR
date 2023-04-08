@@ -458,8 +458,8 @@ add_executable(
   ${source_application_helper_dir}/read_data_by_identifier.cpp
   ${source_application_doip_dir}/vehicle_id_request_handler.h
   ${source_application_doip_dir}/vehicle_id_request_handler.cpp
-  ${source_application_doip_dir}/doip_message_handler.h
-  ${source_application_doip_dir}/doip_message_handler.cpp
+  ${source_application_doip_dir}/diag_message_handler.h
+  ${source_application_doip_dir}/diag_message_handler.cpp
   ${source_application_doip_dir}/doip_server.h
   ${source_application_doip_dir}/doip_server.cpp
   ${source_application_doip_dir}/doip_client.h

@@ -6,7 +6,7 @@
 #include <doiplib/doip_controller.h>
 #include "../../ara/com/helper/concurrent_queue.h"
 #include "./vehicle_id_request_handler.h"
-#include "./doip_message_handler.h"
+#include "./diag_message_handler.h"
 
 namespace application
 {
@@ -22,7 +22,7 @@ namespace application
         private:
             AsyncBsdSocketLib::Poller *const mPoller;
             VehicleIdRequestHandler mVehicleIdRequestHandler;
-            DoipMessageHandler mDiagMessageHandler;
+            DiagMessageHandler mDiagMessageHandler;
             AsyncBsdSocketLib::TcpListener mListener;
             DoipLib::DoipController mController;
             ara::com::helper::ConcurrentQueue<std::vector<uint8_t>> mSendQueue;
