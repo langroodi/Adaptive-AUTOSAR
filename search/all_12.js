@@ -34,7 +34,7 @@ var searchData=
   ['trygetreference_31',['TryGetReference',['../classarxml_1_1ArxmlNode.html#a6d18595d5093514f260ac27335bcb9d4',1,'arxml::ArxmlNode']]],
   ['trygetrpcconfiguration_32',['TryGetRpcConfiguration',['../namespaceapplication_1_1helper.html#a6f3c3230c0e6bbd28ebffebd88216e7b',1,'application::helper']]],
   ['trygetstate_33',['TryGetState',['../classara_1_1exec_1_1StateServer.html#ae4c656b583aa0e2bb35c097f9168bef2',1,'ara::exec::StateServer']]],
-  ['tryhandle_34',['TryHandle',['../classapplication_1_1doip_1_1DoipMessageHandler.html#a326121e37816575061123b9b18314fff',1,'application::doip::DoipMessageHandler']]],
+  ['tryhandle_34',['TryHandle',['../classapplication_1_1doip_1_1DiagMessageHandler.html#a628976c8a909a7549cabf44de73daee6',1,'application::doip::DiagMessageHandler']]],
   ['tryinvokehandler_35',['TryInvokeHandler',['../classara_1_1com_1_1someip_1_1rpc_1_1RpcServer.html#a0bdcc9258d5bfb63506fd43dcc44c29d',1,'ara::com::someip::rpc::RpcServer']]],
   ['tryparselengthformat_36',['TryParseLengthFormat',['../classara_1_1diag_1_1routing_1_1RequestTransfer.html#a3ba42d03e769a903b6df7ebc70a349fe',1,'ara::diag::routing::RequestTransfer']]],
   ['tryparserequest_37',['TryParseRequest',['../classara_1_1diag_1_1routing_1_1RequestTransfer.html#aeb4fe803037d022994371f4b800fc4a6',1,'ara::diag::routing::RequestTransfer']]],

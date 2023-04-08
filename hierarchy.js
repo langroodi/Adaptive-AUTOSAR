@@ -94,7 +94,7 @@ var hierarchy =
       [ "ara::com::someip::sd::fsm::NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", null ]
     ] ],
     [ "DoipLib::MessageHandler", null, [
-      [ "application::doip::DoipMessageHandler", "classapplication_1_1doip_1_1DoipMessageHandler.html", null ],
+      [ "application::doip::DiagMessageHandler", "classapplication_1_1doip_1_1DiagMessageHandler.html", null ],
       [ "application::doip::VehicleIdRequestHandler", "classapplication_1_1doip_1_1VehicleIdRequestHandler.html", null ]
     ] ],
     [ "ara::diag::MetaInfo", "classara_1_1diag_1_1MetaInfo.html", null ],
