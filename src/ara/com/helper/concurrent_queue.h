@@ -20,11 +20,9 @@ namespace ara
                 std::mutex mMutex;
                 std::queue<T> mQueue;
                 std::atomic_size_t mSize;
-                std::unique_lock<std::mutex> mLock;
 
             public:
-                ConcurrentQueue() : mSize{0},
-                                    mLock{mMutex, std::defer_lock}
+                ConcurrentQueue() : mSize{0}
                 {
                 }
 
@@ -43,11 +41,12 @@ namespace ara
                 /// @note The insertion is based on move constructor emplacement rather than pushing.
                 bool TryEnqueue(T &&element)
                 {
-                    if (mLock.try_lock())
+                    std::unique_lock<std::mutex> _lock(mMutex, std::defer_lock);
+                    if (_lock.try_lock())
                     {
                         mQueue.emplace(std::move(element));
                         ++mSize;
-                        mLock.unlock();
+                        _lock.unlock();
                         return true;
                     }
                     else
@@ -62,11 +61,12 @@ namespace ara
                 /// @note The insertion is based on move constructor emplacement rather than pushing.
                 bool TryEnqueue(const T &element)
                 {
-                    if (mLock.try_lock())
+                    std::unique_lock<std::mutex> _lock(mMutex, std::defer_lock);
+                    if (_lock.try_lock())
                     {
                         mQueue.emplace(element);
                         ++mSize;
-                        mLock.unlock();
+                        _lock.unlock();
                         return true;
                     }
                     else
@@ -80,12 +80,13 @@ namespace ara
                 /// @returns True if the element is dequeued successfully, otherwise false
                 bool TryDequeue(T &element)
                 {
-                    if (mLock.try_lock())
+                    std::unique_lock<std::mutex> _lock(mMutex, std::defer_lock);
+                    if (_lock.try_lock())
                     {
                         element = std::move(mQueue.front());
                         mQueue.pop();
                         --mSize;
-                        mLock.unlock();
+                        _lock.unlock();
                         return true;
                     }
                     else
