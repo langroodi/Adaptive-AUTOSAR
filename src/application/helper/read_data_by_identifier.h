@@ -4,6 +4,7 @@
 #include <json/json.h>
 #include "../../ara/diag/routing/uds_service_router.h"
 #include "./curl_wrapper.h"
+#include "./memory_cache.h"
 
 namespace application
 {
@@ -29,6 +30,7 @@ namespace application
             const std::string cResourcesUrl;
             CurlWrapper *mCurl;
             Json::Reader mJsonReader;
+            MemoryCache<uint16_t, ara::diag::OperationOutput> mCache;
 
             static uint16_t getDid(const std::vector<uint8_t> &requestData);
             static void generateResponse(

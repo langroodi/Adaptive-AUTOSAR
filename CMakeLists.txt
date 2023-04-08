@@ -456,6 +456,7 @@ add_executable(
   ${source_application_helper_dir}/rpc_configuration.cpp
   ${source_application_helper_dir}/read_data_by_identifier.h
   ${source_application_helper_dir}/read_data_by_identifier.cpp
+  ${source_application_helper_dir}/memory_cache.h
   ${source_application_doip_dir}/vehicle_id_request_handler.h
   ${source_application_doip_dir}/vehicle_id_request_handler.cpp
   ${source_application_doip_dir}/diag_message_handler.h

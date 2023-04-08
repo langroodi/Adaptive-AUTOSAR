@@ -18,7 +18,8 @@ namespace application
             CurlWrapper *curl,
             std::string resourcesUrl) : ara::diag::routing::RoutableUdsService(cSpecifer, cSid),
                                         mCurl{curl},
-                                        cResourcesUrl{resourcesUrl}
+                                        cResourcesUrl{resourcesUrl},
+                                        mCache(std::chrono::seconds{60})
         {
         }
 
@@ -87,6 +88,7 @@ namespace application
                 const auto cAverageSpeed{
                     static_cast<uint8_t>(std::stoul(cAverageSpeedStr))};
                 response.responseData.push_back(cAverageSpeed);
+                mCache.Add(cAverageSpeedDid, response);
             }
             else
             {
@@ -110,6 +112,7 @@ namespace application
                 const auto cFuelAmount{
                     static_cast<uint8_t>(cConversionGain * cFuelAmountUL)};
                 response.responseData.push_back(cFuelAmount);
+                mCache.Add(cFuelAmountDid, response);
             }
             else
             {
@@ -136,6 +139,7 @@ namespace application
                     static_cast<uint8_t>(
                         cExternalTemperatureUL + cCompensationValue)};
                 response.responseData.push_back(cExternalTemperature);
+                mCache.Add(cExternalTemperatureDid, response);
             }
             else
             {
@@ -172,6 +176,7 @@ namespace application
                     static_cast<uint8_t>(
                         cAverageFuelConsumptionInt % cConversionBase)};
                 response.responseData.push_back(cAverageFuelConsumptionLsb);
+                mCache.Add(cAverageFuelConsumptionDid, response);
             }
             else
             {
@@ -198,6 +203,7 @@ namespace application
                     static_cast<uint8_t>(
                         cEngineCoolantTemperatureUL + cCompensationValue)};
                 response.responseData.push_back(cEngineCoolantTemperature);
+                mCache.Add(cEngineCoolantTemperatureDid, response);
             }
             else
             {
@@ -236,6 +242,7 @@ namespace application
                 const auto cOdometerValueLsb{
                     static_cast<uint8_t>(_odometerValueInt)};
                 response.responseData.push_back(cOdometerValueLsb);
+                mCache.Add(cOdometerValueDid, response);
             }
             else
             {
@@ -252,28 +259,31 @@ namespace application
             ara::diag::OperationOutput _response;
             std::promise<ara::diag::OperationOutput> _resultPromise;
 
-            switch (cDid)
+            if (!mCache.TryGet(cDid, _response))
             {
-            case cAverageSpeedDid:
-                getAverageSpeed(_response);
-                break;
-            case cFuelAmountDid:
-                getFuelAmount(_response);
-                break;
-            case cExternalTemperatureDid:
-                getExternalTemperature(_response);
-                break;
-            case cAverageFuelConsumptionDid:
-                getAverageFuelConsumption(_response);
-                break;
-            case cEngineCoolantTemperatureDid:
-                getEngineCoolantTemperature(_response);
-                break;
-            case cOdometerValueDid:
-                getOdometerValue(_response);
-                break;
-            default:
-                GenerateNegativeResponse(_response, cRequestOutOfRangeNrc);
+                switch (cDid)
+                {
+                case cAverageSpeedDid:
+                    getAverageSpeed(_response);
+                    break;
+                case cFuelAmountDid:
+                    getFuelAmount(_response);
+                    break;
+                case cExternalTemperatureDid:
+                    getExternalTemperature(_response);
+                    break;
+                case cAverageFuelConsumptionDid:
+                    getAverageFuelConsumption(_response);
+                    break;
+                case cEngineCoolantTemperatureDid:
+                    getEngineCoolantTemperature(_response);
+                    break;
+                case cOdometerValueDid:
+                    getOdometerValue(_response);
+                    break;
+                default:
+                    GenerateNegativeResponse(_response, cRequestOutOfRangeNrc);
+                }
             }
 
             _resultPromise.set_value(_response);
