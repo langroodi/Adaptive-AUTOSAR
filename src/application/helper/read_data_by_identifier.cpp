@@ -12,6 +12,7 @@ namespace application
         const uint16_t ReadDataByIdentifier::cAverageFuelConsumptionDid;
         const uint16_t ReadDataByIdentifier::cEngineCoolantTemperatureDid;
         const uint16_t ReadDataByIdentifier::cOdometerValueDid;
+        const std::chrono::seconds ReadDataByIdentifier::cCacheLifetime{60};
         const ara::core::InstanceSpecifier ReadDataByIdentifier::cSpecifer("ReadDataByIdentifier");
 
         ReadDataByIdentifier::ReadDataByIdentifier(
@@ -19,7 +20,7 @@ namespace application
             std::string resourcesUrl) : ara::diag::routing::RoutableUdsService(cSpecifer, cSid),
                                         mCurl{curl},
                                         cResourcesUrl{resourcesUrl},
-                                        mCache(std::chrono::seconds{60})
+                                        mCache(cCacheLifetime)
         {
         }
 

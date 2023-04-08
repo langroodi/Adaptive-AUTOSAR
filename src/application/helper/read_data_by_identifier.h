@@ -21,6 +21,7 @@ namespace application
             static const uint16_t cAverageFuelConsumptionDid{0xf55e};
             static const uint16_t cEngineCoolantTemperatureDid{0xf505};
             static const uint16_t cOdometerValueDid{0xf5a6};
+            static const std::chrono::seconds cCacheLifetime;
             static const ara::core::InstanceSpecifier cSpecifer;
 
             const uint8_t cConditionsNotCorrectNrc{0x22};

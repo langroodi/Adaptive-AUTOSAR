@@ -6,7 +6,6 @@ namespace application
 {
     namespace platform
     {
-
         const std::string DiagnosticManager::cAppId{"DiagnosticManager"};
         const std::string DiagnosticManager::cSerialPort{"/dev/ttyUSB0"};
         const speed_t DiagnosticManager::cBaudrate{115200};
