@@ -7,6 +7,8 @@ namespace ara
     {
         namespace routing
         {
+            const uint8_t RoutableUdsService::cPositiveResponseSidIncrement;
+            
             RoutableUdsService::RoutableUdsService(
                 const ara::core::InstanceSpecifier &specifier,
                 uint8_t sid) noexcept : mSpecifier{specifier},

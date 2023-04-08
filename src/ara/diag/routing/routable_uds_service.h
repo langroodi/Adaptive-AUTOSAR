@@ -35,7 +35,7 @@ namespace ara
 
             protected:
                 /// @brief SID increment for a positive response
-                const uint8_t cPositiveResponseSidIncrement{0x40};
+                static const uint8_t cPositiveResponseSidIncrement{0x40};
                 /// @brief Unsupported sub-function NRC
                 const uint8_t cSubFunctionNotSupported{0x12};
                 /// @brief Incorrect message length NRC

@@ -24,8 +24,8 @@ namespace application
 
         uint16_t ReadDataByIdentifier::getDid(const std::vector<uint8_t> &requestData)
         {
-            const size_t cDidMsbIndex{0};
-            const size_t cDidLsbIndex{1};
+            const size_t cDidMsbIndex{1};
+            const size_t cDidLsbIndex{2};
 
             auto _result{static_cast<uint16_t>(requestData.at(cDidMsbIndex) << 8)};
             _result |= requestData.at(cDidLsbIndex);
@@ -33,10 +33,14 @@ namespace application
             return _result;
         }
 
-        void ReadDataByIdentifier::setDid(
+        void ReadDataByIdentifier::generateResponse(
             uint16_t did,
             ara::diag::OperationOutput &response)
         {
+            const auto cResponseSid{
+                static_cast<uint8_t>(cSid + cPositiveResponseSidIncrement)};
+            response.responseData.push_back(cResponseSid);
+
             const auto cDidMsb{static_cast<uint8_t>(did >> 8)};
             response.responseData.push_back(cDidMsb);
 
@@ -56,7 +60,6 @@ namespace application
 
             if (_result)
             {
-                std::cout << _restfulResponse << std::endl;
                 _result =
                     mJsonReader.parse(
                         _restfulResponse, jsonValue, cCollectJsonComments);
@@ -79,7 +82,7 @@ namespace application
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cAverageSpeedDid, response);
+                generateResponse(cAverageSpeedDid, response);
                 const std::string cAverageSpeedStr{_jsonResponse.asString()};
                 const auto cAverageSpeed{
                     static_cast<uint8_t>(std::stoul(cAverageSpeedStr))};
@@ -101,7 +104,7 @@ namespace application
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cFuelAmountDid, response);
+                generateResponse(cFuelAmountDid, response);
                 const std::string cFuelAmountStr{_jsonResponse.asString()};
                 const unsigned long cFuelAmountUL{std::stoul(cFuelAmountStr)};
                 const auto cFuelAmount{
@@ -124,7 +127,7 @@ namespace application
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cExternalTemperatureDid, response);
+                generateResponse(cExternalTemperatureDid, response);
                 const std::string cExternalTemperatureStr{
                     _jsonResponse.asString()};
                 const unsigned long cExternalTemperatureUL{
@@ -151,7 +154,7 @@ namespace application
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cAverageFuelConsumptionDid, response);
+                generateResponse(cAverageFuelConsumptionDid, response);
                 const std::string cAverageFuelConsumptionStr{
                     _jsonResponse.asString()};
                 const double cAverageFuelConsumption{
@@ -186,7 +189,7 @@ namespace application
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cEngineCoolantTemperatureDid, response);
+                generateResponse(cEngineCoolantTemperatureDid, response);
                 const std::string cEngineCoolantTemperatureStr{
                     _jsonResponse.asString()};
                 const unsigned long cEngineCoolantTemperatureUL{
@@ -214,7 +217,7 @@ namespace application
             bool _successful{tryGetResourceValue(cResourceKey, _jsonResponse)};
             if (_successful)
             {
-                setDid(cOdometerValueDid, response);
+                generateResponse(cOdometerValueDid, response);
                 const std::string cOdometerValueStr{_jsonResponse.asString()};
                 const double cOdometerValue{std::stod(cOdometerValueStr)};
                 auto _odometerValueInt{

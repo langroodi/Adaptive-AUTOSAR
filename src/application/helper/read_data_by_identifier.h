@@ -31,7 +31,7 @@ namespace application
             Json::Reader mJsonReader;
 
             static uint16_t getDid(const std::vector<uint8_t> &requestData);
-            static void setDid(
+            static void generateResponse(
                 uint16_t did,
                 ara::diag::OperationOutput &response);
 
