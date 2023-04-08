@@ -1,4 +1,5 @@
 #include "./obd_to_doip_converter.h"
+#include "../../ara/diag/routing/routable_uds_service.h"
 
 namespace application
 {
@@ -23,7 +24,7 @@ namespace application
 
         bool ObdToDoipConverter::tryParseUdsData(
             std::vector<uint8_t> &&udsResponse,
-            uint8_t& pid,
+            uint8_t &pid,
             std::vector<uint8_t> &obdData)
         {
             const size_t cSidIndex{0};
@@ -36,7 +37,8 @@ namespace application
             }
 
             const uint8_t cReceivedSid{udsResponse.at(cSidIndex)};
-            if (cReceivedSid == cSid)
+            if (cReceivedSid ==
+                ara::diag::routing::RoutableUdsService::cNegativeResponseCodeSid)
             {
                 // This is a NACK
                 return false;

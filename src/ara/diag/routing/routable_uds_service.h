@@ -27,8 +27,6 @@ namespace ara
             class RoutableUdsService
             {
             private:
-                const uint8_t cNegativeResponseCodeSid{0x7f};
-
                 const uint8_t mSid;
                 bool mOffered;
                 const ara::core::InstanceSpecifier &mSpecifier;
@@ -82,6 +80,9 @@ namespace ara
                 }
 
             public:
+                /// @brief Negative response code service ID
+                static const uint8_t cNegativeResponseCodeSid{0x7f};
+
                 /// @brief Get SID
                 /// @returns Service identification
                 uint8_t GetSid() const noexcept;
