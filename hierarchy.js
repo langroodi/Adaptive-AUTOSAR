@@ -93,6 +93,7 @@ var hierarchy =
       ] ],
       [ "ara::com::someip::sd::fsm::NotReadyState", "classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1NotReadyState.html", null ]
     ] ],
+    [ "application::helper::MemoryCache< K, T >", "classapplication_1_1helper_1_1MemoryCache.html", null ],
     [ "DoipLib::MessageHandler", null, [
       [ "application::doip::DiagMessageHandler", "classapplication_1_1doip_1_1DiagMessageHandler.html", null ],
       [ "application::doip::VehicleIdRequestHandler", "classapplication_1_1doip_1_1VehicleIdRequestHandler.html", null ]

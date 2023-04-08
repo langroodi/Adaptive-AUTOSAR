@@ -11,6 +11,7 @@ var annotated_dup =
       [ "helper", "namespaceapplication_1_1helper.html", [
         [ "ArgumentConfiguration", "classapplication_1_1helper_1_1ArgumentConfiguration.html", "classapplication_1_1helper_1_1ArgumentConfiguration" ],
         [ "CurlWrapper", "classapplication_1_1helper_1_1CurlWrapper.html", "classapplication_1_1helper_1_1CurlWrapper" ],
+        [ "MemoryCache", "classapplication_1_1helper_1_1MemoryCache.html", "classapplication_1_1helper_1_1MemoryCache" ],
         [ "NetworkConfiguration", "structapplication_1_1helper_1_1NetworkConfiguration.html", "structapplication_1_1helper_1_1NetworkConfiguration" ],
         [ "ReadDataByIdentifier", "classapplication_1_1helper_1_1ReadDataByIdentifier.html", "classapplication_1_1helper_1_1ReadDataByIdentifier" ],
         [ "RpcConfiguration", "structapplication_1_1helper_1_1RpcConfiguration.html", "structapplication_1_1helper_1_1RpcConfiguration" ]
