@@ -1,5 +1,6 @@
 #include <json/json.h>
 #include "../ara/com/someip/sd/sd_network_layer.h"
+#include "../ara/diag/conversation.h"
 #include "../application/helper/argument_configuration.h"
 #include "./extended_vehicle.h"
 
@@ -349,6 +350,18 @@ namespace application
             {
                 _running = WaitForActivation();
             }
+
+            _logStream.Flush();
+            if (ara::diag::Conversation::GetCurrentActiveConversations().size() == 0)
+            {
+                _logStream << "There was no active diagnostic conversation at the termination.";
+            }
+            else
+            {
+                _logStream << "There were still some active diagnostic conversations at the termination.";
+            }
+
+            Log(cLogLevel, _logStream);
 
             delete mSdServer;
             mSdServer = nullptr;

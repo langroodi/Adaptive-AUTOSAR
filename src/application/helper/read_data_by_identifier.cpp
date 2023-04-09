@@ -1,3 +1,4 @@
+#include "../../ara/diag/conversation.h"
 #include "./read_data_by_identifier.h"
 #include <iostream>
 
@@ -262,6 +263,10 @@ namespace application
 
             if (!mCache.TryGet(cDid, _response))
             {
+                ara::diag::MetaInfo _metaInfo(ara::diag::Context::kDoIP);
+                auto _conversation{
+                    ara::diag::Conversation::GetConversation(_metaInfo)};
+
                 switch (cDid)
                 {
                 case cAverageSpeedDid:
@@ -284,6 +289,11 @@ namespace application
                     break;
                 default:
                     GenerateNegativeResponse(_response, cRequestOutOfRangeNrc);
+                }
+
+                if (_conversation.HasValue())
+                {
+                    _conversation.Value().get().Deactivate();
                 }
             }
 
