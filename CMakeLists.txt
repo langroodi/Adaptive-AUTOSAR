@@ -130,6 +130,9 @@ set(source_ara_diag_routing_dir
 set(source_ara_diag_debouncing_dir
   "${CMAKE_SOURCE_DIR}/src/ara/diag/debouncing")
 
+set(source_ara_phm_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/phm")
+
 set(source_application_dir
   "${CMAKE_SOURCE_DIR}/src/application")
 
@@ -417,6 +420,12 @@ add_library(
   ${source_ara_diag_debouncing_dir}/counter_based_debouncer.cpp
   ${source_ara_diag_debouncing_dir}/timer_based_debouncer.h
   ${source_ara_diag_debouncing_dir}/timer_based_debouncer.cpp
+)
+
+add_library(
+  ara_phm
+  ${source_ara_phm_dir}/checkpoint_communicator.h
+  ${source_ara_phm_dir}/checkpoint_communicator.cpp
 )
 
 target_link_libraries(
