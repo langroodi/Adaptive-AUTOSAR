@@ -29,6 +29,9 @@ var namespaces_dup =
       [ "diag", "namespaceara_1_1diag.html", "namespaceara_1_1diag" ],
       [ "exec", "namespaceara_1_1exec.html", "namespaceara_1_1exec" ],
       [ "log", "namespaceara_1_1log.html", "namespaceara_1_1log" ],
+      [ "phm", null, [
+        [ "CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", "classara_1_1phm_1_1CheckpointCommunicator" ]
+      ] ],
       [ "sm", "namespaceara_1_1sm.html", "namespaceara_1_1sm" ]
     ] ],
     [ "arxml", "namespacearxml.html", "namespacearxml" ]

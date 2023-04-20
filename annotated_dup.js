@@ -167,6 +167,9 @@ var annotated_dup =
         [ "LoggingFramework", "classara_1_1log_1_1LoggingFramework.html", "classara_1_1log_1_1LoggingFramework" ],
         [ "LogStream", "classara_1_1log_1_1LogStream.html", "classara_1_1log_1_1LogStream" ]
       ] ],
+      [ "phm", null, [
+        [ "CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", "classara_1_1phm_1_1CheckpointCommunicator" ]
+      ] ],
       [ "sm", "namespaceara_1_1sm.html", [
         [ "Notifier", "classara_1_1sm_1_1Notifier.html", "classara_1_1sm_1_1Notifier" ],
         [ "Trigger", "classara_1_1sm_1_1Trigger.html", "classara_1_1sm_1_1Trigger" ],
