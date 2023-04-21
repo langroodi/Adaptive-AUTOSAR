@@ -163,6 +163,7 @@ var hierarchy =
     ] ],
     [ "ara::exec::StateClient", "classara_1_1exec_1_1StateClient.html", null ],
     [ "ara::exec::StateServer", "classara_1_1exec_1_1StateServer.html", null ],
+    [ "ara::phm::SupervisedEntity", "classara_1_1phm_1_1SupervisedEntity.html", null ],
     [ "ara::diag::TimeBased", "structara_1_1diag_1_1TimeBased.html", null ],
     [ "ara::sm::Trigger< T >", "classara_1_1sm_1_1Trigger.html", null ],
     [ "ara::sm::TriggerIn< T >", "classara_1_1sm_1_1TriggerIn.html", null ],
