@@ -426,6 +426,8 @@ add_library(
   ara_phm
   ${source_ara_phm_dir}/checkpoint_communicator.h
   ${source_ara_phm_dir}/checkpoint_communicator.cpp
+  ${source_ara_phm_dir}/supervised_entity.h
+  ${source_ara_phm_dir}/supervised_entity.cpp
 )
 
 target_link_libraries(
@@ -447,6 +449,11 @@ target_link_libraries(
 
 target_link_libraries(
   ara_diag
+  ara_core
+)
+
+target_link_libraries(
+  ara_phm
   ara_core
 )
 

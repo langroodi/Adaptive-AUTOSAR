@@ -6,9 +6,11 @@
 
 namespace ara
 {
+    /// @brief Platform Health Monitoring functional cluster namespace
     namespace phm
     {
         /// @brief An abstract class to communicate a checkpoint between an application and the PHM cluster
+        /// @note The class is not part of the ARA standard.
         class CheckpointCommunicator
         {
         public:
