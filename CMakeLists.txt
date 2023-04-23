@@ -198,6 +198,9 @@ set(test_ara_diag_routing_dir
 set(test_ara_diag_debouncing_dir
   "${CMAKE_SOURCE_DIR}/test/ara/diag/debouncing")
 
+set(test_ara_phm_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/phm")
+
 ########################################################################
 
 add_library(
@@ -428,6 +431,8 @@ add_library(
   ${source_ara_phm_dir}/checkpoint_communicator.cpp
   ${source_ara_phm_dir}/supervised_entity.h
   ${source_ara_phm_dir}/supervised_entity.cpp
+  ${source_ara_phm_dir}/recovery_action.h
+  ${source_ara_phm_dir}/recovery_action.cpp
 )
 
 target_link_libraries(
@@ -454,7 +459,7 @@ target_link_libraries(
 
 target_link_libraries(
   ara_phm
-  ara_core
+  ara_exec
 )
 
 add_executable(
@@ -583,6 +588,7 @@ if(build_tests)
     ${test_ara_diag_routing_dir}/request_transfer_test.cpp
     ${test_ara_diag_debouncing_dir}/counter_based_debouncer_test.cpp
     ${test_ara_diag_debouncing_dir}/timer_based_debouncer_test.cpp
+    ${test_ara_phm_dir}/recovery_action_test.cpp
   )
 
   target_link_libraries(
@@ -598,7 +604,7 @@ if(build_tests)
     doip_lib
     ara_log
     ara_sm
-    ara_exec
+    ara_phm
     ara_diag
   )
 
