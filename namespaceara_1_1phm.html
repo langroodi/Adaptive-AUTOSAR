@@ -102,7 +102,8 @@ $(document).ready(function(){initNavTree('namespaceara_1_1phm.html',''); initRes
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">ara::phm Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -113,15 +114,57 @@ $(document).ready(function(){initNavTree('namespaceara_1_1phm.html',''); initRes
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1CheckpointCommunicator.html">CheckpointCommunicator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An abstract class to communicate a checkpoint between an application and the PHM cluster.  <a href="classara_1_1phm_1_1CheckpointCommunicator.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAn.html">An</a> abstract class to communicate a checkpoint between an application and the PHM cluster.  <a href="classara_1_1phm_1_1CheckpointCommunicator.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1RecoveryAction.html">RecoveryAction</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1SupervisedEntity.html">SupervisedEntity</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class that collects and reports supervision checkpoints.  <a href="classara_1_1phm_1_1SupervisedEntity.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac2b3516e41548fe4c5c8b31f11b9904c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1phm.html#ac2b3516e41548fe4c5c8b31f11b9904c">TypeOfSupervision</a> : uint32_t { <b>AliveSupervision</b> = 0
+, <a class="el" href="namespaceara_1_1phm.html#ac2b3516e41548fe4c5c8b31f11b9904ca508d8be152053ba7d17edc8cd7d87b72">DeadlineSupervision</a> = 1
+, <a class="el" href="namespaceara_1_1phm.html#ac2b3516e41548fe4c5c8b31f11b9904caa3b523c2d937883e824ecd3f4343276d">LogicalSupervision</a> = 2
+ }</td></tr>
+<tr class="memdesc:ac2b3516e41548fe4c5c8b31f11b9904c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supervision algorithm type.  <a href="namespaceara_1_1phm.html#ac2b3516e41548fe4c5c8b31f11b9904c">More...</a><br /></td></tr>
+<tr class="separator:ac2b3516e41548fe4c5c8b31f11b9904c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Platform Health Monitoring functional cluster namespace. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ac2b3516e41548fe4c5c8b31f11b9904c" name="ac2b3516e41548fe4c5c8b31f11b9904c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2b3516e41548fe4c5c8b31f11b9904c">&#9670;&nbsp;</a></span>TypeOfSupervision</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1phm.html#ac2b3516e41548fe4c5c8b31f11b9904c">ara::phm::TypeOfSupervision</a> : uint32_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Supervision algorithm type. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2b3516e41548fe4c5c8b31f11b9904ca508d8be152053ba7d17edc8cd7d87b72" name="ac2b3516e41548fe4c5c8b31f11b9904ca508d8be152053ba7d17edc8cd7d87b72"></a>DeadlineSupervision&#160;</td><td class="fielddoc"><p >!&lt; Supervision by measuring the time interval of a single checkpoint </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac2b3516e41548fe4c5c8b31f11b9904caa3b523c2d937883e824ecd3f4343276d" name="ac2b3516e41548fe4c5c8b31f11b9904caa3b523c2d937883e824ecd3f4343276d"></a>LogicalSupervision&#160;</td><td class="fielddoc"><p >!&lt; Supervision by measuring the time difference between two checkpoints </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

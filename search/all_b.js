@@ -12,11 +12,12 @@ var searchData=
   ['logfatal_9',['LogFatal',['../classara_1_1log_1_1Logger.html#a739cfb7b5651cbc9acf1adb05f35fe9e',1,'ara::log::Logger']]],
   ['logger_10',['Logger',['../classara_1_1log_1_1Logger.html',1,'ara::log']]],
   ['loggingframework_11',['LoggingFramework',['../classara_1_1log_1_1LoggingFramework.html',1,'ara::log']]],
-  ['loginfo_12',['LogInfo',['../classara_1_1log_1_1Logger.html#afeab65f8cf3faa42c04e6d9ab6afe292',1,'ara::log::Logger']]],
-  ['loglevel_13',['LogLevel',['../namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f',1,'ara::log']]],
-  ['logmode_14',['LogMode',['../namespaceara_1_1log.html#ad9c8298b018a7974eae31e7589be288d',1,'ara::log']]],
-  ['logsink_15',['LogSink',['../classara_1_1log_1_1sink_1_1LogSink.html',1,'ara::log::sink::LogSink'],['../classara_1_1log_1_1sink_1_1LogSink.html#a2d4da28bdef843613c63ba492b442275',1,'ara::log::sink::LogSink::LogSink()']]],
-  ['logstream_16',['LogStream',['../classara_1_1log_1_1LogStream.html',1,'ara::log']]],
-  ['logverbose_17',['LogVerbose',['../classara_1_1log_1_1Logger.html#abbd76ffa2b2a42228a4eabaca13f4b52',1,'ara::log::Logger']]],
-  ['logwarn_18',['LogWarn',['../classara_1_1log_1_1Logger.html#a041ef11cb2377a589e024ff4c755a371',1,'ara::log::Logger']]]
+  ['logicalsupervision_12',['LogicalSupervision',['../namespaceara_1_1phm.html#ac2b3516e41548fe4c5c8b31f11b9904caa3b523c2d937883e824ecd3f4343276d',1,'ara::phm']]],
+  ['loginfo_13',['LogInfo',['../classara_1_1log_1_1Logger.html#afeab65f8cf3faa42c04e6d9ab6afe292',1,'ara::log::Logger']]],
+  ['loglevel_14',['LogLevel',['../namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f',1,'ara::log']]],
+  ['logmode_15',['LogMode',['../namespaceara_1_1log.html#ad9c8298b018a7974eae31e7589be288d',1,'ara::log']]],
+  ['logsink_16',['LogSink',['../classara_1_1log_1_1sink_1_1LogSink.html',1,'ara::log::sink::LogSink'],['../classara_1_1log_1_1sink_1_1LogSink.html#a2d4da28bdef843613c63ba492b442275',1,'ara::log::sink::LogSink::LogSink()']]],
+  ['logstream_17',['LogStream',['../classara_1_1log_1_1LogStream.html',1,'ara::log']]],
+  ['logverbose_18',['LogVerbose',['../classara_1_1log_1_1Logger.html#abbd76ffa2b2a42228a4eabaca13f4b52',1,'ara::log::Logger']]],
+  ['logwarn_19',['LogWarn',['../classara_1_1log_1_1Logger.html#a041ef11cb2377a589e024ff4c755a371',1,'ara::log::Logger']]]
 ];

@@ -31,5 +31,5 @@ var searchData=
   ['isactive_28',['IsActive',['../classara_1_1diag_1_1routing_1_1DelayTimer.html#a2ad8123828b61b5c2a9ba7c523e8854c',1,'ara::diag::routing::DelayTimer']]],
   ['iscanceled_29',['IsCanceled',['../classara_1_1diag_1_1CancellationHandler.html#add02f58ead4cbd4aaaeddb3b1f598b70',1,'ara::diag::CancellationHandler']]],
   ['isenabled_30',['IsEnabled',['../classara_1_1log_1_1Logger.html#a559648e34ef2aafd57811394ffce2e6d',1,'ara::log::Logger']]],
-  ['isoffered_31',['IsOffered',['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3',1,'ara::diag::routing::RoutableUdsService']]]
+  ['isoffered_31',['IsOffered',['../classara_1_1phm_1_1RecoveryAction.html#a8a50419067c217eada0dc926d5c4bcd8',1,'ara::phm::RecoveryAction::IsOffered()'],['../classara_1_1diag_1_1routing_1_1RoutableUdsService.html#ac8b63da584774099509246fa53eb9ad3',1,'ara::diag::routing::RoutableUdsService::IsOffered()']]]
 ];

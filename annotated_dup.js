@@ -169,6 +169,7 @@ var annotated_dup =
       ] ],
       [ "phm", "namespaceara_1_1phm.html", [
         [ "CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", "classara_1_1phm_1_1CheckpointCommunicator" ],
+        [ "RecoveryAction", "classara_1_1phm_1_1RecoveryAction.html", "classara_1_1phm_1_1RecoveryAction" ],
         [ "SupervisedEntity", "classara_1_1phm_1_1SupervisedEntity.html", "classara_1_1phm_1_1SupervisedEntity" ]
       ] ],
       [ "sm", "namespaceara_1_1sm.html", [
@@ -185,5 +186,6 @@ var annotated_dup =
       [ "ArxmlNodeRange", "classarxml_1_1ArxmlNodeRange.html", "classarxml_1_1ArxmlNodeRange" ],
       [ "ArxmlReader", "classarxml_1_1ArxmlReader.html", "classarxml_1_1ArxmlReader" ]
     ] ],
+    [ "An", "classAn.html", null ],
     [ "Diagnostic", "classDiagnostic.html", null ]
 ];

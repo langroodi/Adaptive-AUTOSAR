@@ -48,5 +48,6 @@ var searchData=
   ['trywaituntiserviceofferstopped_45',['TryWaitUntiServiceOfferStopped',['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdClient.html#a851ea1298705ef8e8e3a272915aa78b8',1,'ara::com::someip::sd::SomeIpSdClient']]],
   ['ttl_46',['TTL',['../classara_1_1com_1_1entry_1_1Entry.html#a075705f87c458a532adf96d644290c27',1,'ara::com::entry::Entry']]],
   ['ttltimer_47',['TtlTimer',['../classara_1_1com_1_1helper_1_1TtlTimer.html',1,'ara::com::helper']]],
-  ['type_48',['Type',['../classara_1_1com_1_1option_1_1Option.html#ada63a14a0609072da952abc4e75cd0e4',1,'ara::com::option::Option::Type()'],['../classara_1_1com_1_1entry_1_1Entry.html#a04cbc058f079ae37e873db0e8aeee376',1,'ara::com::entry::Entry::Type()']]]
+  ['type_48',['Type',['../classara_1_1com_1_1option_1_1Option.html#ada63a14a0609072da952abc4e75cd0e4',1,'ara::com::option::Option::Type()'],['../classara_1_1com_1_1entry_1_1Entry.html#a04cbc058f079ae37e873db0e8aeee376',1,'ara::com::entry::Entry::Type()']]],
+  ['typeofsupervision_49',['TypeOfSupervision',['../namespaceara_1_1phm.html#ac2b3516e41548fe4c5c8b31f11b9904c',1,'ara::phm']]]
 ];
