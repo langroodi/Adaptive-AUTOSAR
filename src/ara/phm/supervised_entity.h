@@ -15,14 +15,14 @@ namespace ara
         class SupervisedEntity
         {
         private:
-            const ara::core::InstanceSpecifier &mInstance;
+            const core::InstanceSpecifier &mInstance;
             CheckpointCommunicator *const mCommunicator;
 
         public:
             /// @brief Constructor
             /// @param instance Adaptive application instance that owns the entity
             /// @param communicator A communication medium for reporting the checkpoints
-            SupervisedEntity(const ara::core::InstanceSpecifier &instance,
+            SupervisedEntity(const core::InstanceSpecifier &instance,
                              CheckpointCommunicator *communicator);
 
             SupervisedEntity(SupervisedEntity &&se) noexcept;
@@ -33,7 +33,7 @@ namespace ara
 
             /// @brief Report a checkpoint to the PHM functional cluster
             /// @tparam EnumT Type of the checkpoint
-            /// @param chckpointId ID of the checkpoint to be reported
+            /// @param checkpointId ID of the checkpoint to be reported
             template <typename EnumT>
             void ReportCheckpoint(EnumT checkpointId)
             {

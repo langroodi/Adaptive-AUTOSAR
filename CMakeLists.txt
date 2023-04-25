@@ -589,6 +589,8 @@ if(build_tests)
     ${test_ara_diag_debouncing_dir}/counter_based_debouncer_test.cpp
     ${test_ara_diag_debouncing_dir}/timer_based_debouncer_test.cpp
     ${test_ara_phm_dir}/recovery_action_test.cpp
+    ${test_ara_phm_dir}/mocked_checkpoint_communicator.h
+    ${test_ara_phm_dir}/supervised_entity_test.cpp
   )
 
   target_link_libraries(

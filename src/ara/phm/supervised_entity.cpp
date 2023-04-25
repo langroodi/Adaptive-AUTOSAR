@@ -7,7 +7,7 @@ namespace ara
     namespace phm
     {
         SupervisedEntity::SupervisedEntity(
-            const ara::core::InstanceSpecifier &instance,
+            const core::InstanceSpecifier &instance,
             CheckpointCommunicator *communicator) : mInstance{instance},
                                                     mCommunicator{communicator}
         {
