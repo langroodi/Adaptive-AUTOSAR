@@ -17,5 +17,6 @@ var searchData=
   ['routing_14',['routing',['../namespaceara_1_1diag_1_1routing.html',1,'ara::diag']]],
   ['rpc_15',['rpc',['../namespaceara_1_1com_1_1someip_1_1rpc.html',1,'ara::com::someip']]],
   ['sd_16',['sd',['../namespaceara_1_1com_1_1someip_1_1sd.html',1,'ara::com::someip']]],
-  ['sm_17',['sm',['../namespaceara_1_1sm.html',1,'ara']]]
+  ['sm_17',['sm',['../namespaceara_1_1sm.html',1,'ara']]],
+  ['supervisors_18',['supervisors',['../namespaceara_1_1phm_1_1supervisors.html',1,'ara::phm']]]
 ];

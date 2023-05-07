@@ -1,5 +1,6 @@
 var namespaceara_1_1phm =
 [
+    [ "supervisors", "namespaceara_1_1phm_1_1supervisors.html", "namespaceara_1_1phm_1_1supervisors" ],
     [ "CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", "classara_1_1phm_1_1CheckpointCommunicator" ],
     [ "RecoveryAction", "classara_1_1phm_1_1RecoveryAction.html", "classara_1_1phm_1_1RecoveryAction" ],
     [ "SupervisedEntity", "classara_1_1phm_1_1SupervisedEntity.html", "classara_1_1phm_1_1SupervisedEntity" ],

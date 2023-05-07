@@ -3,6 +3,7 @@ var hierarchy =
     [ "ara::com::helper::AbstractStateMachine< T >", "classara_1_1com_1_1helper_1_1AbstractStateMachine.html", [
       [ "ara::com::helper::FiniteStateMachine< T >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ]
     ] ],
+    [ "ara::phm::supervisors::AliveSupervision", "classara_1_1phm_1_1supervisors_1_1AliveSupervision.html", null ],
     [ "An", "classAn.html", null ],
     [ "ara::log::Argument< T >", "classara_1_1log_1_1Argument.html", null ],
     [ "application::helper::ArgumentConfiguration", "classapplication_1_1helper_1_1ArgumentConfiguration.html", null ],

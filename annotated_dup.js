@@ -168,6 +168,9 @@ var annotated_dup =
         [ "LogStream", "classara_1_1log_1_1LogStream.html", "classara_1_1log_1_1LogStream" ]
       ] ],
       [ "phm", "namespaceara_1_1phm.html", [
+        [ "supervisors", "namespaceara_1_1phm_1_1supervisors.html", [
+          [ "AliveSupervision", "classara_1_1phm_1_1supervisors_1_1AliveSupervision.html", "classara_1_1phm_1_1supervisors_1_1AliveSupervision" ]
+        ] ],
         [ "CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", "classara_1_1phm_1_1CheckpointCommunicator" ],
         [ "RecoveryAction", "classara_1_1phm_1_1RecoveryAction.html", "classara_1_1phm_1_1RecoveryAction" ],
         [ "SupervisedEntity", "classara_1_1phm_1_1SupervisedEntity.html", "classara_1_1phm_1_1SupervisedEntity" ]
