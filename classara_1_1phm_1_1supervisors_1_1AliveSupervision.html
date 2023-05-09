@@ -179,18 +179,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ReportAliveness</b> (
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">expectedAliveIndications</td><td>Expected number of checkpoint report within a certain period </td></tr>
-    <tr><td class="paramname">minMargin</td><td>Negative deviation from the expected checkpoint report </td></tr>
-    <tr><td class="paramname">maxMargin</td><td>Positive deviation from the expected checkpoint report </td></tr>
+    <tr><td class="paramname">expectedAliveIndications</td><td>Expected number of checkpoint reports within a certain period </td></tr>
+    <tr><td class="paramname">minMargin</td><td>Negative deviation from the expected checkpoint report number </td></tr>
+    <tr><td class="paramname">maxMargin</td><td>Positive deviation from the expected checkpoint report number </td></tr>
     <tr><td class="paramname">aliveReferenceCycle</td><td>Time window to check the number of reported checkpoints </td></tr>
-    <tr><td class="paramname">failedReferenceCyclesTolerance</td><td>Maximum allowed number of failure </td></tr>
-    <tr><td class="paramname">onFailedCallback</td><td>Callback to be invoked if the number of failure exceeds the tolerance </td></tr>
+    <tr><td class="paramname">failedReferenceCyclesTolerance</td><td>Maximum allowed number of failures </td></tr>
+    <tr><td class="paramname">onFailedCallback</td><td>Callback to be invoked if the number of failures exceeds the tolerance </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>Thrown if the negative and/or positive deviations are invalid </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>Thrown if the alive supervision configuration is invalid </td></tr>
   </table>
   </dd>
 </dl>
