@@ -3,6 +3,7 @@
 
 #include <atomic>
 #include <chrono>
+#include <future>
 #include <functional>
 
 namespace ara
@@ -25,18 +26,19 @@ namespace ara
                 uint8_t mAliveCounter;
                 std::atomic_bool mRunning;
                 std::atomic_uint16_t mAliveIndications;
+                std::future<void> mFuture;
 
                 void supervise(std::chrono::milliseconds aliveReferenceCycle);
 
             public:
                 /// @brief Constructor
-                /// @param expectedAliveIndications Expected number of checkpoint report within a certain period
-                /// @param minMargin Negative deviation from the expected checkpoint report
-                /// @param maxMargin Positive deviation from the expected checkpoint report
+                /// @param expectedAliveIndications Expected number of checkpoint reports within a certain period
+                /// @param minMargin Negative deviation from the expected checkpoint report number
+                /// @param maxMargin Positive deviation from the expected checkpoint report number
                 /// @param aliveReferenceCycle Time window to check the number of reported checkpoints
-                /// @param failedReferenceCyclesTolerance Maximum allowed number of failure
-                /// @param onFailedCallback Callback to be invoked if the number of failure exceeds the tolerance
-                /// @throws std::invalid_argument Thrown if the negative and/or positive deviations are invalid
+                /// @param failedReferenceCyclesTolerance Maximum allowed number of failures
+                /// @param onFailedCallback Callback to be invoked if the number of failures exceeds the tolerance
+                /// @throws std::invalid_argument Thrown if the alive supervision configuration is invalid
                 AliveSupervision(
                     uint16_t expectedAliveIndications,
                     uint16_t minMargin,

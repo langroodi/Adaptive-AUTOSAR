@@ -133,6 +133,9 @@ set(source_ara_diag_debouncing_dir
 set(source_ara_phm_dir
   "${CMAKE_SOURCE_DIR}/src/ara/phm")
 
+set(source_ara_phm_supervisors_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/phm/supervisors")
+
 set(source_application_dir
   "${CMAKE_SOURCE_DIR}/src/application")
 
@@ -433,6 +436,8 @@ add_library(
   ${source_ara_phm_dir}/supervised_entity.cpp
   ${source_ara_phm_dir}/recovery_action.h
   ${source_ara_phm_dir}/recovery_action.cpp
+  ${source_ara_phm_supervisors_dir}/alive_supervision.h
+  ${source_ara_phm_supervisors_dir}/alive_supervision.cpp
 )
 
 target_link_libraries(
