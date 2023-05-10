@@ -204,6 +204,9 @@ set(test_ara_diag_debouncing_dir
 set(test_ara_phm_dir
   "${CMAKE_SOURCE_DIR}/test/ara/phm")
 
+set(test_ara_phm_supervisors_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/phm/supervisors")
+
 ########################################################################
 
 add_library(
@@ -596,6 +599,7 @@ if(build_tests)
     ${test_ara_phm_dir}/recovery_action_test.cpp
     ${test_ara_phm_dir}/mocked_checkpoint_communicator.h
     ${test_ara_phm_dir}/supervised_entity_test.cpp
+    ${test_ara_phm_supervisors_dir}/alive_supervision_test.cpp
   )
 
   target_link_libraries(
