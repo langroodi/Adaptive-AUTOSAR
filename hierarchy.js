@@ -23,6 +23,7 @@ var hierarchy =
     [ "ara::diag::CounterBased", "structara_1_1diag_1_1CounterBased.html", null ],
     [ "application::helper::CurlWrapper", "classapplication_1_1helper_1_1CurlWrapper.html", null ],
     [ "ara::diag::DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", null ],
+    [ "ara::phm::supervisors::DeadlineSupervision", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html", null ],
     [ "ara::diag::debouncing::Debouncer", "classara_1_1diag_1_1debouncing_1_1Debouncer.html", [
       [ "ara::diag::debouncing::CounterBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html", null ],
       [ "ara::diag::debouncing::TimerBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html", null ]

@@ -169,7 +169,8 @@ var annotated_dup =
       ] ],
       [ "phm", "namespaceara_1_1phm.html", [
         [ "supervisors", "namespaceara_1_1phm_1_1supervisors.html", [
-          [ "AliveSupervision", "classara_1_1phm_1_1supervisors_1_1AliveSupervision.html", "classara_1_1phm_1_1supervisors_1_1AliveSupervision" ]
+          [ "AliveSupervision", "classara_1_1phm_1_1supervisors_1_1AliveSupervision.html", "classara_1_1phm_1_1supervisors_1_1AliveSupervision" ],
+          [ "DeadlineSupervision", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision" ]
         ] ],
         [ "CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", "classara_1_1phm_1_1CheckpointCommunicator" ],
         [ "RecoveryAction", "classara_1_1phm_1_1RecoveryAction.html", "classara_1_1phm_1_1RecoveryAction" ],
