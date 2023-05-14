@@ -441,6 +441,8 @@ add_library(
   ${source_ara_phm_dir}/recovery_action.cpp
   ${source_ara_phm_supervisors_dir}/alive_supervision.h
   ${source_ara_phm_supervisors_dir}/alive_supervision.cpp
+  ${source_ara_phm_supervisors_dir}/deadline_supervision.h
+  ${source_ara_phm_supervisors_dir}/deadline_supervision.cpp
 )
 
 target_link_libraries(
