@@ -75,10 +75,6 @@ namespace ara
             {
                 if (mDeadlineThread.joinable())
                 {
-                    // Reset the callback first to avoid the invokation
-                    mCallback = nullptr;
-                    // Interrupt the worker
-                    mDeadlineCv.notify_one();
                     // Wait for the worker thread to be gracefully finished
                     mDeadlineThread.join();
                 }
