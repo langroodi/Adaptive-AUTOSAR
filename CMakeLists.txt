@@ -439,6 +439,8 @@ add_library(
   ${source_ara_phm_dir}/supervised_entity.cpp
   ${source_ara_phm_dir}/recovery_action.h
   ${source_ara_phm_dir}/recovery_action.cpp
+  ${source_ara_phm_supervisors_dir}/elementary_supervision.h
+  ${source_ara_phm_supervisors_dir}/elementary_supervision.cpp
   ${source_ara_phm_supervisors_dir}/alive_supervision.h
   ${source_ara_phm_supervisors_dir}/alive_supervision.cpp
   ${source_ara_phm_supervisors_dir}/deadline_supervision.h
@@ -601,6 +603,8 @@ if(build_tests)
     ${test_ara_phm_dir}/recovery_action_test.cpp
     ${test_ara_phm_dir}/mocked_checkpoint_communicator.h
     ${test_ara_phm_dir}/supervised_entity_test.cpp
+    ${test_ara_phm_supervisors_dir}/dummy_supervision.h
+    ${test_ara_phm_supervisors_dir}/elementary_supervision_test.cpp
     ${test_ara_phm_supervisors_dir}/alive_supervision_test.cpp
     ${test_ara_phm_supervisors_dir}/deadline_supervision_test.cpp
   )
