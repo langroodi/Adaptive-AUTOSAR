@@ -8,10 +8,8 @@ namespace ara
         {
             DeadlineSupervision::DeadlineSupervision(
                 std::chrono::milliseconds minDeadline,
-                std::chrono::milliseconds maxDeadline,
-                std::function<void()> &&callback) : cMinDeadline{minDeadline < maxDeadline ? minDeadline : throw std::invalid_argument("Maximum deadline should be greater than the minimum deadline.")},
-                                                    cMaxDeadline{maxDeadline.count() > 0 ? maxDeadline : throw std::invalid_argument("Maximum deadline should be greater than zero.")},
-                                                    mCallback{std::move(callback)}
+                std::chrono::milliseconds maxDeadline) : cMinDeadline{minDeadline < maxDeadline ? minDeadline : throw std::invalid_argument("Maximum deadline should be greater than the minimum deadline.")},
+                                                         cMaxDeadline{maxDeadline.count() > 0 ? maxDeadline : throw std::invalid_argument("Maximum deadline should be greater than zero.")}
             {
             }
 
@@ -26,7 +24,7 @@ namespace ara
                     // or the worker is interrupted by the source checkpoint occurrence,
                     // then the supervision is failed
 
-                    mCallback();
+                    Report(SupervisionStatus::kExpired);
                 }
                 else
                 {
@@ -41,7 +39,11 @@ namespace ara
 
                     if (cTimeDelta < cMinDeadline)
                     {
-                        mCallback();
+                        Report(SupervisionStatus::kExpired);
+                    }
+                    else
+                    {
+                        Report(SupervisionStatus::kOk);
                     }
                 }
             }

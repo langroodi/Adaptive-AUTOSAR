@@ -4,7 +4,7 @@
 #include <atomic>
 #include <chrono>
 #include <future>
-#include <functional>
+#include "./elementary_supervision.h"
 
 namespace ara
 {
@@ -15,13 +15,12 @@ namespace ara
         namespace supervisors
         {
             /// @brief Supervision method to check an entity aliveness periodically
-            class AliveSupervision
+            class AliveSupervision : public ElementarySupervision
             {
             private:
                 const uint16_t mExpectedAliveIndicationsMin;
                 const uint16_t mExpectedAliveIndicationsMax;
                 const uint8_t mFailedReferenceCyclesTolerance;
-                const std::function<void(void)> mOnFailedCallback;
 
                 uint8_t mAliveCounter;
                 std::atomic_bool mRunning;
@@ -37,15 +36,13 @@ namespace ara
                 /// @param maxMargin Positive deviation from the expected checkpoint report number
                 /// @param aliveReferenceCycle Time window to check the number of reported checkpoints
                 /// @param failedReferenceCyclesTolerance Maximum allowed number of failures
-                /// @param onFailedCallback Callback to be invoked if the number of failures exceeds the tolerance
                 /// @throws std::invalid_argument Thrown if the alive supervision configuration is invalid
                 AliveSupervision(
                     uint16_t expectedAliveIndications,
                     uint16_t minMargin,
                     uint16_t maxMargin,
                     std::chrono::milliseconds aliveReferenceCycle,
-                    uint8_t failedReferenceCyclesTolerance,
-                    std::function<void(void)> &&onFailedCallback);
+                    uint8_t failedReferenceCyclesTolerance);
 
                 AliveSupervision() = delete;
                 ~AliveSupervision();

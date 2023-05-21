@@ -13,14 +13,12 @@ namespace ara
                 uint16_t minMargin,
                 uint16_t maxMargin,
                 std::chrono::milliseconds aliveReferenceCycle,
-                uint8_t failedReferenceCyclesTolerance,
-                std::function<void(void)> &&onFailedCallback) : mExpectedAliveIndicationsMin{minMargin > 0 && expectedAliveIndications > minMargin ? static_cast<uint16_t>(expectedAliveIndications - minMargin) : throw std::invalid_argument("The minimum margin should be greater than zero and smaller than the expected alive indications.")},
-                                                                mExpectedAliveIndicationsMax{maxMargin > 0 ? static_cast<uint16_t>(expectedAliveIndications + maxMargin) : throw std::invalid_argument("The maximum margin should be greater than zero.")},
-                                                                mFailedReferenceCyclesTolerance{failedReferenceCyclesTolerance > 0 ? failedReferenceCyclesTolerance : throw std::invalid_argument("The failed reference cycles tolerance should be greater than zero.")},
-                                                                mOnFailedCallback{std::move(onFailedCallback)},
-                                                                mAliveCounter{0},
-                                                                mRunning{true},
-                                                                mAliveIndications{0}
+                uint8_t failedReferenceCyclesTolerance) : mExpectedAliveIndicationsMin{minMargin > 0 && expectedAliveIndications > minMargin ? static_cast<uint16_t>(expectedAliveIndications - minMargin) : throw std::invalid_argument("The minimum margin should be greater than zero and smaller than the expected alive indications.")},
+                                                          mExpectedAliveIndicationsMax{maxMargin > 0 ? static_cast<uint16_t>(expectedAliveIndications + maxMargin) : throw std::invalid_argument("The maximum margin should be greater than zero.")},
+                                                          mFailedReferenceCyclesTolerance{failedReferenceCyclesTolerance > 0 ? failedReferenceCyclesTolerance : throw std::invalid_argument("The failed reference cycles tolerance should be greater than zero.")},
+                                                          mAliveCounter{0},
+                                                          mRunning{true},
+                                                          mAliveIndications{0}
             {
                 if (aliveReferenceCycle.count() > 0)
                 {
@@ -50,10 +48,12 @@ namespace ara
                         {
                             --mAliveCounter;
                         }
+                        Report(SupervisionStatus::kOk);
                     }
                     else
                     {
                         ++mAliveCounter;
+                        Report(SupervisionStatus::kFailed);
                     }
 
                     if (mAliveCounter >= mFailedReferenceCyclesTolerance)
@@ -61,7 +61,7 @@ namespace ara
                         // Reset the failure condition before invoking the callback
                         mAliveCounter = 0;
                         mAliveIndications = 0;
-                        mOnFailedCallback();
+                        Report(SupervisionStatus::kExpired);
                     }
 
                     std::this_thread::sleep_for(aliveReferenceCycle);

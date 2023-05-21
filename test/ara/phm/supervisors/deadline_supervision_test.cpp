@@ -15,10 +15,7 @@ namespace ara
                 const std::chrono::milliseconds cMaxDeadline{2};
 
                 EXPECT_THROW(
-                    DeadlineSupervision _supervision(
-                        cMinDeadline,
-                        cMaxDeadline,
-                        []() {}),
+                    DeadlineSupervision _supervision(cMinDeadline, cMaxDeadline),
                     std::invalid_argument);
             }
 
@@ -28,10 +25,7 @@ namespace ara
                 const std::chrono::milliseconds cMaxDeadline{0};
 
                 EXPECT_THROW(
-                    DeadlineSupervision _supervision(
-                        cMinDeadline,
-                        cMaxDeadline,
-                        []() {}),
+                    DeadlineSupervision _supervision(cMinDeadline, cMaxDeadline),
                     std::invalid_argument);
             }
 
@@ -43,12 +37,10 @@ namespace ara
 
                 bool _failed{false};
 
-                DeadlineSupervision _supervision(
-                    cMinDeadline,
-                    cMaxDeadline,
-                    [&]()
-                    { _failed = true; });
+                DeadlineSupervision _supervision(cMinDeadline, cMaxDeadline);
 
+                _supervision.SetCallback([&](SupervisionStatus status)
+                                         { _failed = status == SupervisionStatus::kExpired; });
                 _supervision.ReportSourceCheckpoint();
                 std::this_thread::sleep_for(cTargetReportTime);
                 _supervision.ReportTargetCheckpoint();
@@ -64,12 +56,10 @@ namespace ara
 
                 bool _failed{false};
 
-                DeadlineSupervision _supervision(
-                    cMinDeadline,
-                    cMaxDeadline,
-                    [&]()
-                    { _failed = true; });
+                DeadlineSupervision _supervision(cMinDeadline, cMaxDeadline);
 
+                _supervision.SetCallback([&](SupervisionStatus status)
+                                         { _failed = status == SupervisionStatus::kExpired; });
                 _supervision.ReportTargetCheckpoint();
 
                 EXPECT_FALSE(_failed);
@@ -83,12 +73,10 @@ namespace ara
 
                 bool _failed{false};
 
-                DeadlineSupervision _supervision(
-                    cMinDeadline,
-                    cMaxDeadline,
-                    [&]()
-                    { _failed = true; });
+                DeadlineSupervision _supervision(cMinDeadline, cMaxDeadline);
 
+                _supervision.SetCallback([&](SupervisionStatus status)
+                                         { _failed = status == SupervisionStatus::kExpired; });
                 _supervision.ReportSourceCheckpoint();
                 std::this_thread::sleep_for(cTargetReportTime);
                 _supervision.ReportSourceCheckpoint();
@@ -104,12 +92,10 @@ namespace ara
 
                 bool _failed{false};
 
-                DeadlineSupervision _supervision(
-                    cMinDeadline,
-                    cMaxDeadline,
-                    [&]()
-                    { _failed = true; });
+                DeadlineSupervision _supervision(cMinDeadline, cMaxDeadline);
 
+                _supervision.SetCallback([&](SupervisionStatus status)
+                                         { _failed = status == SupervisionStatus::kExpired; });
                 _supervision.ReportSourceCheckpoint();
                 _supervision.ReportTargetCheckpoint();
 
@@ -125,19 +111,16 @@ namespace ara
 
                 bool _failed{false};
 
-                DeadlineSupervision _supervision(
-                    cMinDeadline,
-                    cMaxDeadline,
-                    [&]()
-                    { _failed = true; });
+                DeadlineSupervision _supervision(cMinDeadline, cMaxDeadline);
 
+                _supervision.SetCallback([&](SupervisionStatus status)
+                                         { _failed = status == SupervisionStatus::kExpired; });
                 _supervision.ReportSourceCheckpoint();
                 std::this_thread::sleep_for(cMaxDeadline * cNyquistMargin);
                 _supervision.ReportTargetCheckpoint();
 
                 EXPECT_TRUE(_failed);
             }
-
         }
     }
 }

@@ -21,8 +21,7 @@ namespace ara
                         cMinMargin,
                         cMaxMargin,
                         cAliveReferenceCycle,
-                        cFailedReferenceCyclesTolerance,
-                        []() {}),
+                        cFailedReferenceCyclesTolerance),
                     std::invalid_argument);
             }
 
@@ -40,8 +39,7 @@ namespace ara
                         cMinMargin,
                         cMaxMargin,
                         cAliveReferenceCycle,
-                        cFailedReferenceCyclesTolerance,
-                        []() {}),
+                        cFailedReferenceCyclesTolerance),
                     std::invalid_argument);
             }
 
@@ -59,8 +57,7 @@ namespace ara
                         cMinMargin,
                         cMaxMargin,
                         cAliveReferenceCycle,
-                        cFailedReferenceCyclesTolerance,
-                        []() {}),
+                        cFailedReferenceCyclesTolerance),
                     std::invalid_argument);
             }
 
@@ -78,8 +75,7 @@ namespace ara
                         cMinMargin,
                         cMaxMargin,
                         cAliveReferenceCycle,
-                        cFailedReferenceCyclesTolerance,
-                        []() {}),
+                        cFailedReferenceCyclesTolerance),
                     std::invalid_argument);
             }
 
@@ -97,8 +93,7 @@ namespace ara
                         cMinMargin,
                         cMaxMargin,
                         cAliveReferenceCycle,
-                        cFailedReferenceCyclesTolerance,
-                        []() {}),
+                        cFailedReferenceCyclesTolerance),
                     std::invalid_argument);
             }
         }
