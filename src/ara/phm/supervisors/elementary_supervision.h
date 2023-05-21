@@ -23,26 +23,27 @@ namespace ara
             class ElementarySupervision
             {
             private:
-                const std::function<void(SupervisionStatus)> mOnStatusChanged;
                 SupervisionStatus mStatus;
+                std::function<void(SupervisionStatus)> mOnStatusChanged;
 
             protected:
-                /// @brief Constructor
-                /// @param callback Callback to be invoked on the supervision status change
-                ElementarySupervision(
-                    std::function<void(SupervisionStatus)> &&callback);
+                ElementarySupervision() noexcept;
 
                 /// @brief Report the new supervision status
                 /// @param status New status of the supervision method
                 void Report(SupervisionStatus status);
 
             public:
-                ElementarySupervision() = delete;
                 virtual ~ElementarySupervision() noexcept = default;
 
                 /// @brief Get the supervision status
                 /// @returns Current elementary supervision status
                 SupervisionStatus GetStatus() const noexcept;
+
+                /// @brief Set a callback to be invoked on the supervision status change
+                /// @param callback On supervision status changed callback
+                void SetCallback(
+                    std::function<void(SupervisionStatus)> &&callback);
             };
         }
     }

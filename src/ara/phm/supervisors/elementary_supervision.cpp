@@ -7,9 +7,8 @@ namespace ara
     {
         namespace supervisors
         {
-            ElementarySupervision::ElementarySupervision(
-                std::function<void(SupervisionStatus)> &&callback) : mOnStatusChanged{std::move(callback)},
-                                                                     mStatus{SupervisionStatus::kDeactivated}
+            ElementarySupervision::ElementarySupervision() noexcept : mStatus{SupervisionStatus::kDeactivated},
+                                                                      mOnStatusChanged{nullptr}
             {
             }
 
@@ -22,7 +21,10 @@ namespace ara
                     case SupervisionStatus::kDeactivated:
                     case SupervisionStatus::kExpired:
                         mStatus = status;
-                        mOnStatusChanged(mStatus);
+                        if (mOnStatusChanged)
+                        {
+                            mOnStatusChanged(mStatus);
+                        }
                         break;
 
                     case SupervisionStatus::kOk:
@@ -31,7 +33,10 @@ namespace ara
                         if (mStatus != SupervisionStatus::kExpired)
                         {
                             mStatus = status;
-                            mOnStatusChanged(mStatus);
+                            if (mOnStatusChanged)
+                            {
+                                mOnStatusChanged(mStatus);
+                            }
                         }
 
                         break;
@@ -45,6 +50,12 @@ namespace ara
             SupervisionStatus ElementarySupervision::GetStatus() const noexcept
             {
                 return mStatus;
+            }
+
+            void ElementarySupervision::SetCallback(
+                std::function<void(SupervisionStatus)> &&callback)
+            {
+                mOnStatusChanged = std::move(callback);
             }
         }
     }

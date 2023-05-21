@@ -13,9 +13,7 @@ namespace ara
             class DummySupervision : public ElementarySupervision
             {
             public:
-                DummySupervision() : ElementarySupervision([](SupervisionStatus status) {})
-                {
-                }
+                DummySupervision() noexcept = default;
 
                 inline void ReportStatus(SupervisionStatus status)
                 {
