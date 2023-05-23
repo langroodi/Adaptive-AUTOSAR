@@ -1,6 +1,7 @@
 #ifndef ELEMENTARY_SUPERVISION_H
 #define ELEMENTARY_SUPERVISION_H
 
+#include <cstdint>
 #include <functional>
 
 namespace ara
@@ -11,12 +12,12 @@ namespace ara
         namespace supervisors
         {
             /// @brief Supervision finite state machine status
-            enum class SupervisionStatus
+            enum class SupervisionStatus : uint8_t
             {
-                kDeactivated, ///!< Supervision has not been started or has been terminated
-                kOk,          ///!< Supervision is correct
-                kFailed,      ///!< Supervision is incorrect but does not exceed the tolerance
-                kExpired      ///!< Supervision is incorrect and also exceeding the tolerance
+                kDeactivated = 0, ///!< Supervision has not been started or has been terminated
+                kOk = 1,          ///!< Supervision is correct
+                kFailed = 2,      ///!< Supervision is incorrect but does not exceed the tolerance
+                kExpired =3       ///!< Supervision is incorrect and also exceeding the tolerance
             };
 
             /// @brief An abstract class the enables a supervision method to report its elementary supervion status

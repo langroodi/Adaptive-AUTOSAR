@@ -445,6 +445,8 @@ add_library(
   ${source_ara_phm_supervisors_dir}/alive_supervision.cpp
   ${source_ara_phm_supervisors_dir}/deadline_supervision.h
   ${source_ara_phm_supervisors_dir}/deadline_supervision.cpp
+  ${source_ara_phm_supervisors_dir}/global_supervision.h
+  ${source_ara_phm_supervisors_dir}/global_supervision.cpp
 )
 
 target_link_libraries(
@@ -607,6 +609,7 @@ if(build_tests)
     ${test_ara_phm_supervisors_dir}/elementary_supervision_test.cpp
     ${test_ara_phm_supervisors_dir}/alive_supervision_test.cpp
     ${test_ara_phm_supervisors_dir}/deadline_supervision_test.cpp
+    ${test_ara_phm_supervisors_dir}/global_supervision_test.cpp
   )
 
   target_link_libraries(
