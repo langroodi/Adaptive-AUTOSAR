@@ -21,6 +21,8 @@ namespace ara
             /// @brief Callback to be invoked at a checkpoint reception
             CheckpointReception Callback;
 
+            CheckpointCommunicator() noexcept = default;
+
         public:
             /// @brief Try to send a checkpoint occurrence
             /// @param checkpoint Occurred checkpoint
