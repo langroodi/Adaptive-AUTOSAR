@@ -3,7 +3,6 @@ var hierarchy =
     [ "ara::com::helper::AbstractStateMachine< T >", "classara_1_1com_1_1helper_1_1AbstractStateMachine.html", [
       [ "ara::com::helper::FiniteStateMachine< T >", "classara_1_1com_1_1helper_1_1FiniteStateMachine.html", null ]
     ] ],
-    [ "ara::phm::supervisors::AliveSupervision", "classara_1_1phm_1_1supervisors_1_1AliveSupervision.html", null ],
     [ "An", "classAn.html", null ],
     [ "ara::log::Argument< T >", "classara_1_1log_1_1Argument.html", null ],
     [ "application::helper::ArgumentConfiguration", "classapplication_1_1helper_1_1ArgumentConfiguration.html", null ],
@@ -23,7 +22,6 @@ var hierarchy =
     [ "ara::diag::CounterBased", "structara_1_1diag_1_1CounterBased.html", null ],
     [ "application::helper::CurlWrapper", "classapplication_1_1helper_1_1CurlWrapper.html", null ],
     [ "ara::diag::DataIdentifierReentrancyType", "structara_1_1diag_1_1DataIdentifierReentrancyType.html", null ],
-    [ "ara::phm::supervisors::DeadlineSupervision", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html", null ],
     [ "ara::diag::debouncing::Debouncer", "classara_1_1diag_1_1debouncing_1_1Debouncer.html", [
       [ "ara::diag::debouncing::CounterBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1CounterBasedDebouncer.html", null ],
       [ "ara::diag::debouncing::TimerBasedDebouncer", "classara_1_1diag_1_1debouncing_1_1TimerBasedDebouncer.html", null ]
@@ -34,6 +32,11 @@ var hierarchy =
     [ "application::doip::DoipClient", "classapplication_1_1doip_1_1DoipClient.html", null ],
     [ "application::doip::DoipServer", "classapplication_1_1doip_1_1DoipServer.html", null ],
     [ "ara::diag::DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
+    [ "ara::phm::supervisors::ElementarySupervision", "classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html", [
+      [ "ara::phm::supervisors::AliveSupervision", "classara_1_1phm_1_1supervisors_1_1AliveSupervision.html", null ],
+      [ "ara::phm::supervisors::DeadlineSupervision", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html", null ],
+      [ "ara::phm::supervisors::GlobalSupervision", "classara_1_1phm_1_1supervisors_1_1GlobalSupervision.html", null ]
+    ] ],
     [ "ara::com::entry::Entry", "classara_1_1com_1_1entry_1_1Entry.html", [
       [ "ara::com::entry::EventgroupEntry", "classara_1_1com_1_1entry_1_1EventgroupEntry.html", null ],
       [ "ara::com::entry::ServiceEntry", "classara_1_1com_1_1entry_1_1ServiceEntry.html", null ]
@@ -129,7 +132,9 @@ var hierarchy =
     ] ],
     [ "ara::core::Optional< T >", "classara_1_1core_1_1Optional.html", null ],
     [ "ara::com::option::OptionDeserializer", "classara_1_1com_1_1option_1_1OptionDeserializer.html", null ],
-    [ "ara::phm::RecoveryAction", "classara_1_1phm_1_1RecoveryAction.html", null ],
+    [ "ara::phm::RecoveryAction", "classara_1_1phm_1_1RecoveryAction.html", [
+      [ "application::helper::LogRecoveryAction", "classapplication_1_1helper_1_1LogRecoveryAction.html", null ]
+    ] ],
     [ "ara::core::Result< T, E >", "classara_1_1core_1_1Result.html", null ],
     [ "ara::core::Result< void, E >", "classara_1_1core_1_1Result_3_01void_00_01E_01_4.html", null ],
     [ "ara::diag::routing::RoutableUdsService", "classara_1_1diag_1_1routing_1_1RoutableUdsService.html", [

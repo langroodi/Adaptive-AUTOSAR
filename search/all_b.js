@@ -2,7 +2,7 @@ var searchData=
 [
   ['l4proto_0',['L4Proto',['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#a86998c4a04019f452b6c9dad4cffbf51',1,'ara::com::option::Ipv4EndpointOption']]],
   ['layer4protocoltype_1',['Layer4ProtocolType',['../namespaceara_1_1com_1_1option.html#ae83206036c4827f3ec907906d2d5a34c',1,'ara::com::option']]],
-  ['length_2',['Length',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a35c130a140ce2e4ebc3e50f708c2c578',1,'ara::com::someip::SomeIpMessage::Length()'],['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#aac24fdd37ccb8bcfc7070f88d59349fc',1,'ara::com::option::Ipv4EndpointOption::Length()'],['../classara_1_1com_1_1option_1_1LoadBalancingOption.html#aa57d91844d15b32c3db55c3fd051face',1,'ara::com::option::LoadBalancingOption::Length()'],['../classara_1_1com_1_1option_1_1Option.html#ae1ececbff397547574ecf1e60cca8c4d',1,'ara::com::option::Option::Length()'],['../classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#a0ee9e195460f732e8e5bf56f072d1ca3',1,'ara::com::someip::rpc::SomeIpRpcMessage::Length()'],['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a2fecb7707047c120d7e074c9de8e47b1',1,'ara::com::someip::sd::SomeIpSdMessage::Length()']]],
+  ['length_2',['Length',['../classara_1_1com_1_1someip_1_1SomeIpMessage.html#a35c130a140ce2e4ebc3e50f708c2c578',1,'ara::com::someip::SomeIpMessage::Length()'],['../classara_1_1com_1_1someip_1_1sd_1_1SomeIpSdMessage.html#a2fecb7707047c120d7e074c9de8e47b1',1,'ara::com::someip::sd::SomeIpSdMessage::Length()'],['../classara_1_1com_1_1option_1_1Ipv4EndpointOption.html#aac24fdd37ccb8bcfc7070f88d59349fc',1,'ara::com::option::Ipv4EndpointOption::Length()'],['../classara_1_1com_1_1option_1_1LoadBalancingOption.html#aa57d91844d15b32c3db55c3fd051face',1,'ara::com::option::LoadBalancingOption::Length()'],['../classara_1_1com_1_1option_1_1Option.html#ae1ececbff397547574ecf1e60cca8c4d',1,'ara::com::option::Option::Length()'],['../classara_1_1com_1_1someip_1_1rpc_1_1SomeIpRpcMessage.html#a0ee9e195460f732e8e5bf56f072d1ca3',1,'ara::com::someip::rpc::SomeIpRpcMessage::Length()']]],
   ['listclients_3',['ListClients',['../classara_1_1com_1_1cg_1_1CommunicationGroupServer.html#a59b33dd12420250198828b11c38834cf',1,'ara::com::cg::CommunicationGroupServer']]],
   ['loadbalancing_4',['LoadBalancing',['../namespaceara_1_1com_1_1option.html#abf2588649535b6e3f9ecd7513f2ae5d0a5fb96ac8b4e030b4e88bd71b95460d02',1,'ara::com::option']]],
   ['loadbalancingoption_5',['LoadBalancingOption',['../classara_1_1com_1_1option_1_1LoadBalancingOption.html',1,'ara::com::option::LoadBalancingOption'],['../classara_1_1com_1_1option_1_1LoadBalancingOption.html#a89a055418496ba45dc6379db02d3b55c',1,'ara::com::option::LoadBalancingOption::LoadBalancingOption()']]],
@@ -16,8 +16,9 @@ var searchData=
   ['loginfo_13',['LogInfo',['../classara_1_1log_1_1Logger.html#afeab65f8cf3faa42c04e6d9ab6afe292',1,'ara::log::Logger']]],
   ['loglevel_14',['LogLevel',['../namespaceara_1_1log.html#a376ca4c2e74c74e42d6783982ab0388f',1,'ara::log']]],
   ['logmode_15',['LogMode',['../namespaceara_1_1log.html#ad9c8298b018a7974eae31e7589be288d',1,'ara::log']]],
-  ['logsink_16',['LogSink',['../classara_1_1log_1_1sink_1_1LogSink.html',1,'ara::log::sink::LogSink'],['../classara_1_1log_1_1sink_1_1LogSink.html#a2d4da28bdef843613c63ba492b442275',1,'ara::log::sink::LogSink::LogSink()']]],
-  ['logstream_17',['LogStream',['../classara_1_1log_1_1LogStream.html',1,'ara::log']]],
-  ['logverbose_18',['LogVerbose',['../classara_1_1log_1_1Logger.html#abbd76ffa2b2a42228a4eabaca13f4b52',1,'ara::log::Logger']]],
-  ['logwarn_19',['LogWarn',['../classara_1_1log_1_1Logger.html#a041ef11cb2377a589e024ff4c755a371',1,'ara::log::Logger']]]
+  ['logrecoveryaction_16',['LogRecoveryAction',['../classapplication_1_1helper_1_1LogRecoveryAction.html',1,'application::helper']]],
+  ['logsink_17',['LogSink',['../classara_1_1log_1_1sink_1_1LogSink.html',1,'ara::log::sink::LogSink'],['../classara_1_1log_1_1sink_1_1LogSink.html#a2d4da28bdef843613c63ba492b442275',1,'ara::log::sink::LogSink::LogSink()']]],
+  ['logstream_18',['LogStream',['../classara_1_1log_1_1LogStream.html',1,'ara::log']]],
+  ['logverbose_19',['LogVerbose',['../classara_1_1log_1_1Logger.html#abbd76ffa2b2a42228a4eabaca13f4b52',1,'ara::log::Logger']]],
+  ['logwarn_20',['LogWarn',['../classara_1_1log_1_1Logger.html#a041ef11cb2377a589e024ff4c755a371',1,'ara::log::Logger']]]
 ];

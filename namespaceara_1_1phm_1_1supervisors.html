@@ -102,7 +102,8 @@ $(document).ready(function(){initNavTree('namespaceara_1_1phm_1_1supervisors.htm
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">ara::phm::supervisors Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -118,11 +119,60 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html">DeadlineSupervision</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supervision method to check an entity aliveness via the source and target checkpoints.  <a href="classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html">ElementarySupervision</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classAn.html">An</a> abstract class the enables a supervision method to report its elementary supervion status.  <a href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1supervisors_1_1GlobalSupervision.html">GlobalSupervision</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class to report the global supervision status based on several elementary supervisions.  <a href="classara_1_1phm_1_1supervisors_1_1GlobalSupervision.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a45cbf8e566ee231a6e1a172a1475eec3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3">SupervisionStatus</a> : uint8_t { <b>kDeactivated</b> = 0
+, <a class="el" href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3ae69fa9a656f76dd8a4d89f21992b2d3a">kOk</a> = 1
+, <a class="el" href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3ab62fa3c9492b6dae76c23d6dfa466611">kFailed</a> = 2
+, <a class="el" href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3aca38a67db420177deb69ca9d34016dba">kExpired</a> =3
+ }</td></tr>
+<tr class="memdesc:a45cbf8e566ee231a6e1a172a1475eec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supervision finite state machine status.  <a href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3">More...</a><br /></td></tr>
+<tr class="separator:a45cbf8e566ee231a6e1a172a1475eec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Namepsace that contains different supervision configurations and algorithms. </p>
 <dl class="section note"><dt>Note</dt><dd>The namespace is not part of the ARA standard. </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a45cbf8e566ee231a6e1a172a1475eec3" name="a45cbf8e566ee231a6e1a172a1475eec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45cbf8e566ee231a6e1a172a1475eec3">&#9670;&nbsp;</a></span>SupervisionStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3">ara::phm::supervisors::SupervisionStatus</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Supervision finite state machine status. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a45cbf8e566ee231a6e1a172a1475eec3ae69fa9a656f76dd8a4d89f21992b2d3a" name="a45cbf8e566ee231a6e1a172a1475eec3ae69fa9a656f76dd8a4d89f21992b2d3a"></a>kOk&#160;</td><td class="fielddoc"><p >!&lt; Supervision has not been started or has been terminated </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a45cbf8e566ee231a6e1a172a1475eec3ab62fa3c9492b6dae76c23d6dfa466611" name="a45cbf8e566ee231a6e1a172a1475eec3ab62fa3c9492b6dae76c23d6dfa466611"></a>kFailed&#160;</td><td class="fielddoc"><p >!&lt; Supervision is correct </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a45cbf8e566ee231a6e1a172a1475eec3aca38a67db420177deb69ca9d34016dba" name="a45cbf8e566ee231a6e1a172a1475eec3aca38a67db420177deb69ca9d34016dba"></a>kExpired&#160;</td><td class="fielddoc"><p >!&lt; Supervision is incorrect but does not exceed the tolerance </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

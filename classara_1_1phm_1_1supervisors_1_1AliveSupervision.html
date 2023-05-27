@@ -112,22 +112,45 @@ $(document).ready(function(){initNavTree('classara_1_1phm_1_1supervisors_1_1Aliv
  <a href="classara_1_1phm_1_1supervisors_1_1AliveSupervision.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="alive__supervision_8h_source.html">alive_supervision.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ara::phm::supervisors::AliveSupervision:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classara_1_1phm_1_1supervisors_1_1AliveSupervision.png" usemap="#ara::phm::supervisors::AliveSupervision_map" alt=""/>
+  <map id="ara::phm::supervisors::AliveSupervision_map" name="ara::phm::supervisors::AliveSupervision_map">
+<area href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html" title="An abstract class the enables a supervision method to report its elementary supervion status." alt="ara::phm::supervisors::ElementarySupervision" shape="rect" coords="0,0,268,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab85aa91c6e3f65fdfa5b36213c530f67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1supervisors_1_1AliveSupervision.html#ab85aa91c6e3f65fdfa5b36213c530f67">AliveSupervision</a> (uint16_t expectedAliveIndications, uint16_t minMargin, uint16_t maxMargin, std::chrono::milliseconds aliveReferenceCycle, uint8_t failedReferenceCyclesTolerance, std::function&lt; void(void)&gt; &amp;&amp;onFailedCallback)</td></tr>
-<tr class="memdesc:ab85aa91c6e3f65fdfa5b36213c530f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1phm_1_1supervisors_1_1AliveSupervision.html#ab85aa91c6e3f65fdfa5b36213c530f67">More...</a><br /></td></tr>
-<tr class="separator:ab85aa91c6e3f65fdfa5b36213c530f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab941da5dd6fc9ea16f70a94417e6d4d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1supervisors_1_1AliveSupervision.html#ab941da5dd6fc9ea16f70a94417e6d4d2">AliveSupervision</a> (uint16_t expectedAliveIndications, uint16_t minMargin, uint16_t maxMargin, std::chrono::milliseconds aliveReferenceCycle, uint8_t failedReferenceCyclesTolerance)</td></tr>
+<tr class="memdesc:ab941da5dd6fc9ea16f70a94417e6d4d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classara_1_1phm_1_1supervisors_1_1AliveSupervision.html#ab941da5dd6fc9ea16f70a94417e6d4d2">More...</a><br /></td></tr>
+<tr class="separator:ab941da5dd6fc9ea16f70a94417e6d4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c090124304d9276a79773980fe49402"><td class="memItemLeft" align="right" valign="top"><a id="a0c090124304d9276a79773980fe49402" name="a0c090124304d9276a79773980fe49402"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ReportAliveness</b> () noexcept</td></tr>
 <tr class="memdesc:a0c090124304d9276a79773980fe49402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the expected checkpoint. <br /></td></tr>
 <tr class="separator:a0c090124304d9276a79773980fe49402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html">ara::phm::supervisors::ElementarySupervision</a></td></tr>
+<tr class="memitem:a0397898aa018d16e3749cdf46e90c5db inherit pub_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3">SupervisionStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#a0397898aa018d16e3749cdf46e90c5db">GetStatus</a> () const noexcept</td></tr>
+<tr class="memdesc:a0397898aa018d16e3749cdf46e90c5db inherit pub_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the supervision status.  <a href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#a0397898aa018d16e3749cdf46e90c5db">More...</a><br /></td></tr>
+<tr class="separator:a0397898aa018d16e3749cdf46e90c5db inherit pub_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c42acdaed4149a96bb0dd19371a2107 inherit pub_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#a4c42acdaed4149a96bb0dd19371a2107">SetCallback</a> (std::function&lt; void(<a class="el" href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3">SupervisionStatus</a>)&gt; &amp;&amp;callback)</td></tr>
+<tr class="memdesc:a4c42acdaed4149a96bb0dd19371a2107 inherit pub_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a callback to be invoked on the supervision status change.  <a href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#a4c42acdaed4149a96bb0dd19371a2107">More...</a><br /></td></tr>
+<tr class="separator:a4c42acdaed4149a96bb0dd19371a2107 inherit pub_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html">ara::phm::supervisors::ElementarySupervision</a></td></tr>
+<tr class="memitem:a90262b0856045db3456d8418bdb3be23 inherit pro_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#a90262b0856045db3456d8418bdb3be23">Report</a> (<a class="el" href="namespaceara_1_1phm_1_1supervisors.html#a45cbf8e566ee231a6e1a172a1475eec3">SupervisionStatus</a> status)</td></tr>
+<tr class="memdesc:a90262b0856045db3456d8418bdb3be23 inherit pro_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report the new supervision status.  <a href="classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#a90262b0856045db3456d8418bdb3be23">More...</a><br /></td></tr>
+<tr class="separator:a90262b0856045db3456d8418bdb3be23 inherit pro_methods_classara_1_1phm_1_1supervisors_1_1ElementarySupervision"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Supervision method to check an entity aliveness periodically. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab85aa91c6e3f65fdfa5b36213c530f67" name="ab85aa91c6e3f65fdfa5b36213c530f67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab85aa91c6e3f65fdfa5b36213c530f67">&#9670;&nbsp;</a></span>AliveSupervision()</h2>
+<a id="ab941da5dd6fc9ea16f70a94417e6d4d2" name="ab941da5dd6fc9ea16f70a94417e6d4d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab941da5dd6fc9ea16f70a94417e6d4d2">&#9670;&nbsp;</a></span>AliveSupervision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,13 +183,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ReportAliveness</b> (
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>failedReferenceCyclesTolerance</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::function&lt; void(void)&gt; &amp;&amp;&#160;</td>
-          <td class="paramname"><em>onFailedCallback</em>&#160;</td>
+          <td class="paramname"><em>failedReferenceCyclesTolerance</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -184,7 +201,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ReportAliveness</b> (
     <tr><td class="paramname">maxMargin</td><td>Positive deviation from the expected checkpoint report number </td></tr>
     <tr><td class="paramname">aliveReferenceCycle</td><td>Time window to check the number of reported checkpoints </td></tr>
     <tr><td class="paramname">failedReferenceCyclesTolerance</td><td>Maximum allowed number of failures </td></tr>
-    <tr><td class="paramname">onFailedCallback</td><td>Callback to be invoked if the number of failures exceeds the tolerance </td></tr>
   </table>
   </dd>
 </dl>

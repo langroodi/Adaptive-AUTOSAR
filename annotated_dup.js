@@ -11,6 +11,7 @@ var annotated_dup =
       [ "helper", "namespaceapplication_1_1helper.html", [
         [ "ArgumentConfiguration", "classapplication_1_1helper_1_1ArgumentConfiguration.html", "classapplication_1_1helper_1_1ArgumentConfiguration" ],
         [ "CurlWrapper", "classapplication_1_1helper_1_1CurlWrapper.html", "classapplication_1_1helper_1_1CurlWrapper" ],
+        [ "LogRecoveryAction", "classapplication_1_1helper_1_1LogRecoveryAction.html", "classapplication_1_1helper_1_1LogRecoveryAction" ],
         [ "MemoryCache", "classapplication_1_1helper_1_1MemoryCache.html", "classapplication_1_1helper_1_1MemoryCache" ],
         [ "NetworkConfiguration", "structapplication_1_1helper_1_1NetworkConfiguration.html", "structapplication_1_1helper_1_1NetworkConfiguration" ],
         [ "ReadDataByIdentifier", "classapplication_1_1helper_1_1ReadDataByIdentifier.html", "classapplication_1_1helper_1_1ReadDataByIdentifier" ],
@@ -170,7 +171,9 @@ var annotated_dup =
       [ "phm", "namespaceara_1_1phm.html", [
         [ "supervisors", "namespaceara_1_1phm_1_1supervisors.html", [
           [ "AliveSupervision", "classara_1_1phm_1_1supervisors_1_1AliveSupervision.html", "classara_1_1phm_1_1supervisors_1_1AliveSupervision" ],
-          [ "DeadlineSupervision", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision" ]
+          [ "DeadlineSupervision", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision" ],
+          [ "ElementarySupervision", "classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html", "classara_1_1phm_1_1supervisors_1_1ElementarySupervision" ],
+          [ "GlobalSupervision", "classara_1_1phm_1_1supervisors_1_1GlobalSupervision.html", "classara_1_1phm_1_1supervisors_1_1GlobalSupervision" ]
         ] ],
         [ "CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", "classara_1_1phm_1_1CheckpointCommunicator" ],
         [ "RecoveryAction", "classara_1_1phm_1_1RecoveryAction.html", "classara_1_1phm_1_1RecoveryAction" ],
