@@ -26,7 +26,7 @@ namespace ara
             public:
                 /// @brief Constructor
                 /// @param supervisors A list of elementary supervision pointers
-                GlobalSupervision(
+                explicit GlobalSupervision(
                     std::initializer_list<ElementarySupervision *> supervisors);
                 ~GlobalSupervision() noexcept = default;
 
