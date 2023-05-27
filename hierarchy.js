@@ -12,7 +12,9 @@ var hierarchy =
     [ "arxml::ArxmlReader", "classarxml_1_1ArxmlReader.html", null ],
     [ "ara::exec::helper::AtomicOptional< T >", "classara_1_1exec_1_1helper_1_1AtomicOptional.html", null ],
     [ "ara::diag::CancellationHandler", "classara_1_1diag_1_1CancellationHandler.html", null ],
-    [ "ara::phm::CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", null ],
+    [ "ara::phm::CheckpointCommunicator", "classara_1_1phm_1_1CheckpointCommunicator.html", [
+      [ "application::helper::FifoCheckpointCommunicator", "classapplication_1_1helper_1_1FifoCheckpointCommunicator.html", null ]
+    ] ],
     [ "ara::com::cg::CommunicationGroupClient< T, R >", "classara_1_1com_1_1cg_1_1CommunicationGroupClient.html", null ],
     [ "ara::com::cg::CommunicationGroupServer< T, R >", "classara_1_1com_1_1cg_1_1CommunicationGroupServer.html", null ],
     [ "ara::com::helper::ConcurrentQueue< T >", "classara_1_1com_1_1helper_1_1ConcurrentQueue.html", null ],
