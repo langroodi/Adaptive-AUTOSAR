@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 autosar_00050.xsd">
+    <AR-PACKAGES>
+        <AR-PACKAGE>
+            <SHORT-NAME>PlatformHealthManagementManifest</SHORT-NAME>
+            <ELEMENTS>
+                <GLOBAL-SUPERVISION>
+                    <CHECKPOINTS>
+                        <SUPERVISION-CHECKPOINT>
+                            <SHORT-NAME>AliveSupervision</SHORT-NAME>
+                            <CHECKPOINT-ID>0</CHECKPOINT-ID>
+                        </SUPERVISION-CHECKPOINT>
+                        <SUPERVISION-CHECKPOINT>
+                            <SHORT-NAME>DeadlineSupervisionSource</SHORT-NAME>
+                            <CHECKPOINT-ID>1</CHECKPOINT-ID>
+                        </SUPERVISION-CHECKPOINT>
+                        <SUPERVISION-CHECKPOINT>
+                            <SHORT-NAME>DeadlineSupervisionTarget</SHORT-NAME>
+                            <CHECKPOINT-ID>2</CHECKPOINT-ID>
+                        </SUPERVISION-CHECKPOINT>
+                    </CHECKPOINTS>
+                    <ALIVE-SUPERVISION>
+                        <ALIVE-REFERENCE-CYCLE>100</ALIVE-REFERENCE-CYCLE>
+                        <CHECKPOINT-REF DEST="SUPERVISION-CHECKPOINT">0</CHECKPOINT-REF>
+                        <EXPECTED-ALIVE-INDICATIONS>10</EXPECTED-ALIVE-INDICATIONS>
+                        <FAILED-REFERENCE-CYCLES-TOLERANCE>150</FAILED-REFERENCE-CYCLES-TOLERANCE>
+                        <MAX-MARGIN>5</MAX-MARGIN>
+                        <MIN-MARGIN>5</MIN-MARGIN>
+                    </ALIVE-SUPERVISION>
+                    <DEADLINE-SUPERVISION>
+                        <MAX-DEADLINE>5</MAX-DEADLINE>
+                        <MAX-DEADLINE>15</MAX-DEADLINE>
+                        <TRANSITION>
+                            <CHECKPOINT-TRANSITION>
+                                <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">1</<SOURCE-REF>
+                                <TARGET-REF DEST="SUPERVISION-CHECKPOINT">2</<TARGET-REF>
+                            </CHECKPOINT-TRANSITION>
+                        </TRANSITION>
+                    </DEADLINE-SUPERVISION>
+                </GLOBAL-SUPERVISION>
+            </ELEMENTS>
+        </AR-PACKAGE>
+    </AR-PACKAGES>
+</AUTOSAR>
