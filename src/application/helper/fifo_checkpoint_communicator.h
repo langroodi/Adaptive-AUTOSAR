@@ -31,7 +31,8 @@ namespace application
             /// @brief Constructor
             /// @param poller Master poller
             /// @throws std::runtime_error Thrown when the FIFO communication setup failed
-            FifoCheckpointCommunicator(AsyncBsdSocketLib::Poller *poller);
+            explicit FifoCheckpointCommunicator(
+                AsyncBsdSocketLib::Poller *poller);
 
             ~FifoCheckpointCommunicator() override;
 
