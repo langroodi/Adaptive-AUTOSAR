@@ -9,7 +9,7 @@ namespace ara
 {
     namespace diag
     {
-        /// @class Diagnostic Management interal error type
+        /// @brief Diagnostic Management interal error type
         enum class DiagErrc : ara::core::ErrorDomain::CodeType
         {
             kAlreadyOffered = 101,                      ///!< Already offered service
@@ -29,7 +29,7 @@ namespace ara
             kRequestFailed = 115                        ///!< Failed diagnostic request process
         };
 
-        /// @class Diagnostic Management error domain
+        /// @brief Diagnostic Management error domain
         /// @note The class is not fully aligned with ARA standard.
         class DiagErrorDomain final : public ara::core::ErrorDomain
         {

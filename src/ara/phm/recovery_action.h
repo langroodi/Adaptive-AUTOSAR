@@ -17,7 +17,7 @@ namespace ara
             LogicalSupervision = 2   ///!< Supervision by controlling the occurrence sequence of several checkpoints
         };
 
-        /// @class An abstract class to wrap the action for recovering a supervised entity
+        /// @brief An abstract class to wrap the action for recovering a supervised entity
         /// @note The class is not fully aligned with the ARA standard.
         /// @see SupervisedEntity
         class RecoveryAction

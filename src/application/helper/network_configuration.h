@@ -106,7 +106,7 @@ namespace application
         /// @param[in] networkEndpoint Desired network endpoint name
         /// @param[in] applicationEndpoint Desired application endpoint name
         /// @param[in] protocol Network transmission protocol
-        /// @param[out] networkConfiguration Filled network configuration
+        /// @param[out] configuration Filled network configuration
         /// @return True if the configuration is filled properly; otherwise false
         bool TryGetNetworkConfiguration(
             const arxml::ArxmlReader &reader,
