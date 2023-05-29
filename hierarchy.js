@@ -34,8 +34,7 @@ var hierarchy =
     [ "ara::diag::DTCInformation", "classara_1_1diag_1_1DTCInformation.html", null ],
     [ "ara::phm::supervisors::ElementarySupervision", "classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html", [
       [ "ara::phm::supervisors::AliveSupervision", "classara_1_1phm_1_1supervisors_1_1AliveSupervision.html", null ],
-      [ "ara::phm::supervisors::DeadlineSupervision", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html", null ],
-      [ "ara::phm::supervisors::GlobalSupervision", "classara_1_1phm_1_1supervisors_1_1GlobalSupervision.html", null ]
+      [ "ara::phm::supervisors::DeadlineSupervision", "classara_1_1phm_1_1supervisors_1_1DeadlineSupervision.html", null ]
     ] ],
     [ "ara::com::entry::Entry", "classara_1_1com_1_1entry_1_1Entry.html", [
       [ "ara::com::entry::EventgroupEntry", "classara_1_1com_1_1entry_1_1EventgroupEntry.html", null ],
@@ -58,6 +57,7 @@ var hierarchy =
     [ "ara::exec::ExecutionServer", "classara_1_1exec_1_1ExecutionServer.html", null ],
     [ "ara::exec::FunctionGroup", "classara_1_1exec_1_1FunctionGroup.html", null ],
     [ "ara::exec::FunctionGroupState", "classara_1_1exec_1_1FunctionGroupState.html", null ],
+    [ "ara::phm::supervisors::GlobalSupervision", "classara_1_1phm_1_1supervisors_1_1GlobalSupervision.html", null ],
     [ "ara::core::InstanceSpecifier", "classara_1_1core_1_1InstanceSpecifier.html", null ],
     [ "ara::com::helper::Ipv4Address", "structara_1_1com_1_1helper_1_1Ipv4Address.html", null ],
     [ "ara::log::Logger", "classara_1_1log_1_1Logger.html", null ],
@@ -173,6 +173,7 @@ var hierarchy =
     [ "ara::exec::StateClient", "classara_1_1exec_1_1StateClient.html", null ],
     [ "ara::exec::StateServer", "classara_1_1exec_1_1StateServer.html", null ],
     [ "ara::phm::SupervisedEntity", "classara_1_1phm_1_1SupervisedEntity.html", null ],
+    [ "ara::phm::supervisors::SupervisionUpdate", "structara_1_1phm_1_1supervisors_1_1SupervisionUpdate.html", null ],
     [ "ara::diag::TimeBased", "structara_1_1diag_1_1TimeBased.html", null ],
     [ "ara::sm::Trigger< T >", "classara_1_1sm_1_1Trigger.html", null ],
     [ "ara::sm::TriggerIn< T >", "classara_1_1sm_1_1TriggerIn.html", null ],

@@ -25,5 +25,6 @@ var searchData=
   ['stateserver_22',['StateServer',['../classara_1_1exec_1_1StateServer.html',1,'ara::exec']]],
   ['stoppedstate_23',['StoppedState',['../classara_1_1com_1_1someip_1_1sd_1_1fsm_1_1StoppedState.html',1,'ara::com::someip::sd::fsm']]],
   ['subscribedstate_24',['SubscribedState',['../classara_1_1com_1_1someip_1_1pubsub_1_1fsm_1_1SubscribedState.html',1,'ara::com::someip::pubsub::fsm']]],
-  ['supervisedentity_25',['SupervisedEntity',['../classara_1_1phm_1_1SupervisedEntity.html',1,'ara::phm']]]
+  ['supervisedentity_25',['SupervisedEntity',['../classara_1_1phm_1_1SupervisedEntity.html',1,'ara::phm']]],
+  ['supervisionupdate_26',['SupervisionUpdate',['../structara_1_1phm_1_1supervisors_1_1SupervisionUpdate.html',1,'ara::phm::supervisors']]]
 ];

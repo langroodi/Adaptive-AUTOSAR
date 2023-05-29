@@ -1,7 +1,7 @@
 var searchData=
 [
   ['ecuresetrequest_0',['EcuResetRequest',['../classara_1_1diag_1_1EcuResetRequest.html',1,'ara::diag::EcuResetRequest'],['../classara_1_1diag_1_1EcuResetRequest.html#adf37e7561d83e37ba3b1b340018f430a',1,'ara::diag::EcuResetRequest::EcuResetRequest()']]],
-  ['elementarysupervision_1',['ElementarySupervision',['../classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html',1,'ara::phm::supervisors']]],
+  ['elementarysupervision_1',['ElementarySupervision',['../classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html',1,'ara::phm::supervisors::ElementarySupervision'],['../classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#aa3b9a1189fc6ea39d78f8732279f9afb',1,'ara::phm::supervisors::ElementarySupervision::ElementarySupervision()']]],
   ['emplace_2',['Emplace',['../classara_1_1core_1_1Optional.html#a9ff171daf7911b3e9c96d0de3aaf8dd7',1,'ara::core::Optional']]],
   ['emplaceerror_3',['EmplaceError',['../classara_1_1core_1_1Result_3_01void_00_01E_01_4.html#ac312d86cbbfb1196a39c03898d33e687',1,'ara::core::Result&lt; void, E &gt;::EmplaceError()'],['../classara_1_1core_1_1Result.html#a36d40985b89bafca5abd3153c1990889',1,'ara::core::Result::EmplaceError(Args &amp;&amp;...args)']]],
   ['emplacevalue_4',['EmplaceValue',['../classara_1_1core_1_1Result.html#a901ddab5a89431aef552a8ff2cb5366f',1,'ara::core::Result']]],

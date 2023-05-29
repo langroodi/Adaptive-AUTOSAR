@@ -50,6 +50,7 @@ var searchData=
   ['gettestcomplete_47',['GetTestComplete',['../classara_1_1diag_1_1Event.html#afe70ef940174c50d0534087fd92c6f3b',1,'ara::diag::Event']]],
   ['gettimestamp_48',['GetTimestamp',['../classara_1_1log_1_1sink_1_1LogSink.html#a8b7aced88e5cef48d8403ffdb308989a',1,'ara::log::sink::LogSink']]],
   ['gettrigger_49',['GetTrigger',['../classara_1_1sm_1_1TriggerIn.html#abf42f1da349ef8b50d8f9469caf8be06',1,'ara::sm::TriggerIn::GetTrigger()'],['../classara_1_1sm_1_1TriggerInOut.html#a26f09fc24e10efffb5dba1740d60dec8',1,'ara::sm::TriggerInOut::GetTrigger()']]],
-  ['getvalue_50',['GetValue',['../classara_1_1diag_1_1MetaInfo.html#a57fc19a42c52c33ae0778dfd47380401',1,'ara::diag::MetaInfo::GetValue()'],['../classarxml_1_1ArxmlNode.html#a81cf39be0a479a838626e63449ce67e3',1,'arxml::ArxmlNode::GetValue()']]],
-  ['globalsupervision_51',['GlobalSupervision',['../classara_1_1phm_1_1supervisors_1_1GlobalSupervision.html#a2e0ddcbdf150ecf3d87c78facc89c519',1,'ara::phm::supervisors::GlobalSupervision']]]
+  ['gettype_50',['GetType',['../classara_1_1phm_1_1supervisors_1_1ElementarySupervision.html#ac79e87fa37221821fea802c52d495375',1,'ara::phm::supervisors::ElementarySupervision']]],
+  ['getvalue_51',['GetValue',['../classara_1_1diag_1_1MetaInfo.html#a57fc19a42c52c33ae0778dfd47380401',1,'ara::diag::MetaInfo::GetValue()'],['../classarxml_1_1ArxmlNode.html#a81cf39be0a479a838626e63449ce67e3',1,'arxml::ArxmlNode::GetValue()']]],
+  ['globalsupervision_52',['GlobalSupervision',['../classara_1_1phm_1_1supervisors_1_1GlobalSupervision.html#a2e0ddcbdf150ecf3d87c78facc89c519',1,'ara::phm::supervisors::GlobalSupervision']]]
 ];
