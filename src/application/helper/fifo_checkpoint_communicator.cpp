@@ -6,13 +6,13 @@ namespace application
 {
     namespace helper
     {
-        const std::string FifoCheckpointCommunicator::cFifoPath{"/tmp/checkpoint_communicator"};
         const std::size_t FifoCheckpointCommunicator::cBufferSize{sizeof(uint32_t)};
 
         FifoCheckpointCommunicator::FifoCheckpointCommunicator(
-            AsyncBsdSocketLib::Poller *poller) : mPoller{poller},
-                                                 mClient(cFifoPath),
-                                                 mServer(cFifoPath)
+            AsyncBsdSocketLib::Poller *poller,
+            std::string fifoPath) : mPoller{poller},
+                                    mClient(fifoPath),
+                                    mServer(fifoPath)
         {
             bool _succeed = mServer.TrySetup();
             if (!_succeed)

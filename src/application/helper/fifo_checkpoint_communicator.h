@@ -16,7 +16,6 @@ namespace application
         class FifoCheckpointCommunicator : public ara::phm::CheckpointCommunicator
         {
         private:
-            static const std::string cFifoPath;
             static const std::size_t cBufferSize;
 
             AsyncBsdSocketLib::Poller *mPoller;
@@ -30,9 +29,11 @@ namespace application
         public:
             /// @brief Constructor
             /// @param poller Master poller
+            /// @param fifoPath FIFO file path
             /// @throws std::runtime_error Thrown when the FIFO communication setup failed
-            explicit FifoCheckpointCommunicator(
-                AsyncBsdSocketLib::Poller *poller);
+            FifoCheckpointCommunicator(
+                AsyncBsdSocketLib::Poller *poller,
+                std::string fifoPath);
 
             ~FifoCheckpointCommunicator() override;
 
