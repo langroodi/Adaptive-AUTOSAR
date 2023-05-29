@@ -193,7 +193,5 @@ var annotated_dup =
       [ "ArxmlNodeIterator", "classarxml_1_1ArxmlNodeIterator.html", "classarxml_1_1ArxmlNodeIterator" ],
       [ "ArxmlNodeRange", "classarxml_1_1ArxmlNodeRange.html", "classarxml_1_1ArxmlNodeRange" ],
       [ "ArxmlReader", "classarxml_1_1ArxmlReader.html", "classarxml_1_1ArxmlReader" ]
-    ] ],
-    [ "An", "classAn.html", null ],
-    [ "Diagnostic", "classDiagnostic.html", null ]
+    ] ]
 ];
