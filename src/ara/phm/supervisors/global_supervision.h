@@ -12,7 +12,7 @@ namespace ara
         {
             /// @brief A class to report the global supervision status based on several elementary supervisions
             /// @see ElementarySupervision
-            class GlobalSupervision : public ElementarySupervision
+            class GlobalSupervision
             {
             private:
                 const std::vector<ElementarySupervision *> mSupervisors;
