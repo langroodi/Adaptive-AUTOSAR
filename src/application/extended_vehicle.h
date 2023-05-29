@@ -2,6 +2,7 @@
 #define EXTENDED_VEHICLE_H
 
 #include "../ara/exec/helper/modelled_process.h"
+#include "../ara/phm/supervised_entity.h"
 #include "../ara/com/someip/sd/someip_sd_server.h"
 #include "./helper/network_configuration.h"
 #include "./helper/curl_wrapper.h"
@@ -9,12 +10,22 @@
 
 namespace application
 {
+    /// @brief Platform health management checkpoint types
+    enum class PhmCheckpointType : uint32_t
+    {
+        AliveCheckpoint = 0,            ///!< Alive supervision checkpoint
+        DeadlineSourceCheckpoint = 1,   ///!< Deadline supervision source checkpoint
+        DeadlineTargetCheckpoint = 2    ///!< Deadline supervision target checkpoint
+    };
+
     /// @brief Volvo extended vehicle adaptive application
     class ExtendedVehicle : public ara::exec::helper::ModelledProcess
     {
     private:
         static const std::string cAppId;
+        static const ara::core::InstanceSpecifier cSeInstance;
 
+        ara::phm::SupervisedEntity mSupervisedEntity;
         ara::com::helper::NetworkLayer<ara::com::someip::sd::SomeIpSdMessage> *mNetworkLayer;
         ara::com::someip::sd::SomeIpSdServer *mSdServer;
         helper::CurlWrapper *mCurl;
@@ -45,7 +56,10 @@ namespace application
     public:
         /// @brief Constructor
         /// @param poller Global poller for network communication
-        ExtendedVehicle(AsyncBsdSocketLib::Poller *poller);
+        /// @param checkpointCommunicator Medium to communicate the supervision checkpoints
+        ExtendedVehicle(
+            AsyncBsdSocketLib::Poller *poller,
+            ara::phm::CheckpointCommunicator *checkpointCommunicator);
 
         ~ExtendedVehicle() override;
     };

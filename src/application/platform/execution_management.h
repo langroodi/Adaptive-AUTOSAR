@@ -3,6 +3,7 @@
 
 #include <set>
 #include "../../ara/exec/state_server.h"
+#include "../helper/fifo_checkpoint_communicator.h"
 #include "../extended_vehicle.h"
 #include "./state_management.h"
 #include "./diagnostic_manager.h"
@@ -18,8 +19,10 @@ namespace application
         {
         private:
             static const std::string cAppId;
+            static const std::string cFifoPath;
             const std::string cMachineFunctionGroup{"MachineFG"};
 
+            helper::FifoCheckpointCommunicator mCommunicator;
             StateManagement mStateManagement;
             ExtendedVehicle mExtendedVehicle;
             DiagnosticManager mDiagnosticManager;
@@ -54,7 +57,7 @@ namespace application
         public:
             /// @brief Constructor
             /// @param poller Global poller for network communication
-            ExecutionManagement(AsyncBsdSocketLib::Poller *poller);
+            explicit ExecutionManagement(AsyncBsdSocketLib::Poller *poller);
 
             ~ExecutionManagement() override;
         };

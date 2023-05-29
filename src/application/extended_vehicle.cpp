@@ -7,11 +7,15 @@
 namespace application
 {
     const std::string ExtendedVehicle::cAppId{"ExtendedVehicle"};
+    const ara::core::InstanceSpecifier ExtendedVehicle::cSeInstance{"ExtendedVehicleSE"};
 
-    ExtendedVehicle::ExtendedVehicle(AsyncBsdSocketLib::Poller *poller) : ara::exec::helper::ModelledProcess(cAppId, poller),
-                                                                          mNetworkLayer{nullptr},
-                                                                          mSdServer{nullptr},
-                                                                          mCurl{nullptr}
+    ExtendedVehicle::ExtendedVehicle(
+        AsyncBsdSocketLib::Poller *poller,
+        ara::phm::CheckpointCommunicator *checkpointCommunicator) : ara::exec::helper::ModelledProcess(cAppId, poller),
+                                                                    mSupervisedEntity{cSeInstance, checkpointCommunicator},
+                                                                    mNetworkLayer{nullptr},
+                                                                    mSdServer{nullptr},
+                                                                    mCurl{nullptr}
     {
     }
 
@@ -348,7 +352,15 @@ namespace application
 
             while (!cancellationToken->load() && _running)
             {
+                mSupervisedEntity.ReportCheckpoint(
+                    PhmCheckpointType::AliveCheckpoint);
+                mSupervisedEntity.ReportCheckpoint(
+                    PhmCheckpointType::DeadlineSourceCheckpoint);
+
                 _running = WaitForActivation();
+
+                mSupervisedEntity.ReportCheckpoint(
+                    PhmCheckpointType::DeadlineTargetCheckpoint);
             }
 
             _logStream.Flush();

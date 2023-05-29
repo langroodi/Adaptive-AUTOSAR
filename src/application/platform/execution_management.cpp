@@ -8,9 +8,11 @@ namespace application
     namespace platform
     {
         const std::string ExecutionManagement::cAppId{"ExecutionManagement"};
+        const std::string ExecutionManagement::cFifoPath{"/tmp/fifo_communicator"};
 
-        ExecutionManagement::ExecutionManagement(AsyncBsdSocketLib::Poller *poller) : mStateManagement(poller),
-                                                                                      mExtendedVehicle(poller),
+        ExecutionManagement::ExecutionManagement(AsyncBsdSocketLib::Poller *poller) : mCommunicator(poller, cFifoPath),
+                                                                                      mStateManagement(poller),
+                                                                                      mExtendedVehicle(poller, &mCommunicator),
                                                                                       mDiagnosticManager(poller),
                                                                                       ara::exec::helper::ModelledProcess(cAppId, poller),
                                                                                       mStateServer{nullptr}
