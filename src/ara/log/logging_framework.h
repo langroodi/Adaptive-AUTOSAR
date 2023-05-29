@@ -1,3 +1,6 @@
+#ifndef LOGGING_FRAMEWORK_H
+#define LOGGING_FRAMEWORK_H
+
 #include <stdexcept>
 
 #include "./logger.h"
@@ -81,3 +84,5 @@ namespace ara
         };
     }
 }
+
+#endif
