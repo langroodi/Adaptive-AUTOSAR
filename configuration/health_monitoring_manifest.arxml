@@ -32,8 +32,8 @@
                         <MAX-DEADLINE>15</MAX-DEADLINE>
                         <TRANSITION>
                             <CHECKPOINT-TRANSITION>
-                                <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">1</<SOURCE-REF>
-                                <TARGET-REF DEST="SUPERVISION-CHECKPOINT">2</<TARGET-REF>
+                                <SOURCE-REF DEST="SUPERVISION-CHECKPOINT">1</SOURCE-REF>
+                                <TARGET-REF DEST="SUPERVISION-CHECKPOINT">2</TARGET-REF>
                             </CHECKPOINT-TRANSITION>
                         </TRANSITION>
                     </DEADLINE-SUPERVISION>
