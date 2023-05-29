@@ -7,8 +7,10 @@ namespace ara
     {
         namespace supervisors
         {
-            ElementarySupervision::ElementarySupervision() noexcept : mStatus{SupervisionStatus::kDeactivated},
-                                                                      mOnStatusChanged{nullptr}
+            ElementarySupervision::ElementarySupervision(
+                TypeOfSupervision supervisionType) noexcept : cSupervisionType{supervisionType},
+                                                              mStatus{SupervisionStatus::kDeactivated},
+                                                              mOnStatusChanged{nullptr}
             {
             }
 
@@ -50,6 +52,11 @@ namespace ara
             SupervisionStatus ElementarySupervision::GetStatus() const noexcept
             {
                 return mStatus;
+            }
+
+            TypeOfSupervision ElementarySupervision::GetType() const noexcept
+            {
+                return cSupervisionType;
             }
 
             void ElementarySupervision::SetCallback(

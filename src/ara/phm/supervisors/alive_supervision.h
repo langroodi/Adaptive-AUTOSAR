@@ -18,6 +18,8 @@ namespace ara
             class AliveSupervision : public ElementarySupervision
             {
             private:
+                static const TypeOfSupervision cSupervisionType;
+                
                 const uint16_t mExpectedAliveIndicationsMin;
                 const uint16_t mExpectedAliveIndicationsMax;
                 const uint8_t mFailedReferenceCyclesTolerance;

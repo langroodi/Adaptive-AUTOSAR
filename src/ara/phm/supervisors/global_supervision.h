@@ -10,6 +10,16 @@ namespace ara
     {
         namespace supervisors
         {
+            /// @brief Supervision update on global status
+            struct SupervisionUpdate
+            {
+                /// @brief Updated supervision status
+                SupervisionStatus status;
+
+                /// @brief Dominant supervision method that determined the global status
+                TypeOfSupervision type;
+            };
+
             /// @brief A class to report the global supervision status based on several elementary supervisions
             /// @see ElementarySupervision
             class GlobalSupervision
@@ -18,9 +28,9 @@ namespace ara
                 const std::vector<ElementarySupervision *> mSupervisors;
 
                 SupervisionStatus mStatus;
-                std::function<void(SupervisionStatus)> mOnGlobalStatusChanged;
+                std::function<void(SupervisionUpdate)> mOnGlobalStatusChanged;
 
-                SupervisionStatus getGlobalStatus() const;
+                SupervisionUpdate getGlobalUpdate() const;
                 void onElementaryStatusChanged(SupervisionStatus status);
 
             public:
@@ -37,7 +47,7 @@ namespace ara
                 /// @brief Set a callback to be invoked on the global supervision status change
                 /// @param callback On supervision status changed callback
                 void SetCallback(
-                    std::function<void(SupervisionStatus)> &&callback);
+                    std::function<void(SupervisionUpdate)> &&callback);
             };
         }
     }

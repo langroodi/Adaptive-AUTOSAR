@@ -17,6 +17,8 @@ namespace ara
             class DeadlineSupervision : public ElementarySupervision
             {
             private:
+                static const TypeOfSupervision cSupervisionType;
+
                 const std::chrono::milliseconds cMinDeadline;
                 const std::chrono::milliseconds cMaxDeadline;
 

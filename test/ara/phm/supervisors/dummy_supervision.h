@@ -13,7 +13,9 @@ namespace ara
             class DummySupervision : public ElementarySupervision
             {
             public:
-                DummySupervision() noexcept = default;
+                DummySupervision() noexcept : ElementarySupervision(TypeOfSupervision::LogicalSupervision)
+                {
+                }
 
                 inline void ReportStatus(SupervisionStatus status)
                 {

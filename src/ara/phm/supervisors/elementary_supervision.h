@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <functional>
+#include "../recovery_action.h"
 
 namespace ara
 {
@@ -24,11 +25,16 @@ namespace ara
             class ElementarySupervision
             {
             private:
+                const TypeOfSupervision cSupervisionType;
+
                 SupervisionStatus mStatus;
                 std::function<void(SupervisionStatus)> mOnStatusChanged;
 
             protected:
-                ElementarySupervision() noexcept;
+                /// @brief Constructor
+                /// @param supervisionType Type of supervision method
+                ElementarySupervision(
+                    TypeOfSupervision supervisionType) noexcept;
 
                 /// @brief Report the new supervision status
                 /// @param status New status of the supervision method
@@ -40,6 +46,10 @@ namespace ara
                 /// @brief Get the supervision status
                 /// @returns Current elementary supervision status
                 SupervisionStatus GetStatus() const noexcept;
+
+                /// @brief Get the type of supervision
+                /// @return Supervision method type
+                TypeOfSupervision GetType() const noexcept;
 
                 /// @brief Set a callback to be invoked on the supervision status change
                 /// @param callback On supervision status changed callback

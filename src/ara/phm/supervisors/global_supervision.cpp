@@ -11,7 +11,7 @@ namespace ara
                                                                               mOnGlobalStatusChanged{nullptr}
             {
                 mStatus =
-                    mSupervisors.size() > 0 ? getGlobalStatus() : SupervisionStatus::kDeactivated;
+                    mSupervisors.size() > 0 ? getGlobalUpdate().status : SupervisionStatus::kDeactivated;
 
                 for (auto supervisor : mSupervisors)
                 {
@@ -23,16 +23,20 @@ namespace ara
                 }
             }
 
-            SupervisionStatus GlobalSupervision::getGlobalStatus() const
+            SupervisionUpdate GlobalSupervision::getGlobalUpdate() const
             {
-                SupervisionStatus _result{mSupervisors[0]->GetStatus()};
+                SupervisionUpdate _result;
+                _result.status = mSupervisors[0]->GetStatus();
+                _result.type = mSupervisors[0]->GetType();
 
                 for (auto itr = mSupervisors.cbegin() + 1; itr != mSupervisors.cend(); ++itr)
                 {
-                    SupervisionStatus cNewStatus{(*itr)->GetStatus()};
-                    if (cNewStatus > _result)
+                    const ElementarySupervision* cElementarySupervision{*itr};
+                    SupervisionStatus cNewStatus{cElementarySupervision->GetStatus()};
+                    if (cNewStatus > _result.status)
                     {
-                        _result = cNewStatus;
+                        _result.status = cNewStatus;
+                        _result.type = cElementarySupervision->GetType();
                     }
                 }
 
@@ -41,15 +45,15 @@ namespace ara
 
             void GlobalSupervision::onElementaryStatusChanged(SupervisionStatus status)
             {
-                const SupervisionStatus cStatus{getGlobalStatus()};
+                const SupervisionUpdate cUpdate{getGlobalUpdate()};
 
-                if (cStatus != mStatus)
+                if (cUpdate.status != mStatus)
                 {
-                    mStatus = cStatus;
+                    mStatus = cUpdate.status;
 
                     if (mOnGlobalStatusChanged)
                     {
-                        mOnGlobalStatusChanged(mStatus);
+                        mOnGlobalStatusChanged(cUpdate);
                     }
                 }
             }
@@ -60,7 +64,7 @@ namespace ara
             }
 
             void GlobalSupervision::SetCallback(
-                std::function<void(SupervisionStatus)> &&callback)
+                std::function<void(SupervisionUpdate)> &&callback)
             {
                 mOnGlobalStatusChanged = std::move(callback);
             }

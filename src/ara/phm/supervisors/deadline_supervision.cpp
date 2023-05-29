@@ -6,9 +6,13 @@ namespace ara
     {
         namespace supervisors
         {
+            const TypeOfSupervision DeadlineSupervision::cSupervisionType{
+                TypeOfSupervision::DeadlineSupervision};
+
             DeadlineSupervision::DeadlineSupervision(
                 std::chrono::milliseconds minDeadline,
-                std::chrono::milliseconds maxDeadline) : cMinDeadline{minDeadline < maxDeadline ? minDeadline : throw std::invalid_argument("Maximum deadline should be greater than the minimum deadline.")},
+                std::chrono::milliseconds maxDeadline) : ElementarySupervision(cSupervisionType),
+                                                         cMinDeadline{minDeadline < maxDeadline ? minDeadline : throw std::invalid_argument("Maximum deadline should be greater than the minimum deadline.")},
                                                          cMaxDeadline{maxDeadline.count() > 0 ? maxDeadline : throw std::invalid_argument("Maximum deadline should be greater than zero.")}
             {
             }

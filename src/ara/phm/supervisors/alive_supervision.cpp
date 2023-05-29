@@ -8,12 +8,16 @@ namespace ara
     {
         namespace supervisors
         {
+            const TypeOfSupervision AliveSupervision::cSupervisionType{
+                TypeOfSupervision::AliveSupervision};
+
             AliveSupervision::AliveSupervision(
                 uint16_t expectedAliveIndications,
                 uint16_t minMargin,
                 uint16_t maxMargin,
                 std::chrono::milliseconds aliveReferenceCycle,
-                uint8_t failedReferenceCyclesTolerance) : mExpectedAliveIndicationsMin{minMargin > 0 && expectedAliveIndications > minMargin ? static_cast<uint16_t>(expectedAliveIndications - minMargin) : throw std::invalid_argument("The minimum margin should be greater than zero and smaller than the expected alive indications.")},
+                uint8_t failedReferenceCyclesTolerance) : ElementarySupervision(cSupervisionType),
+                                                          mExpectedAliveIndicationsMin{minMargin > 0 && expectedAliveIndications > minMargin ? static_cast<uint16_t>(expectedAliveIndications - minMargin) : throw std::invalid_argument("The minimum margin should be greater than zero and smaller than the expected alive indications.")},
                                                           mExpectedAliveIndicationsMax{maxMargin > 0 ? static_cast<uint16_t>(expectedAliveIndications + maxMargin) : throw std::invalid_argument("The maximum margin should be greater than zero.")},
                                                           mFailedReferenceCyclesTolerance{failedReferenceCyclesTolerance > 0 ? failedReferenceCyclesTolerance : throw std::invalid_argument("The failed reference cycles tolerance should be greater than zero.")},
                                                           mAliveCounter{0},
