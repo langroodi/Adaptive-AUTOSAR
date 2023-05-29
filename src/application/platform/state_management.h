@@ -74,7 +74,7 @@ namespace application
         public:
             /// @brief Constructor
             /// @param poller Global poller for network communication
-            StateManagement(AsyncBsdSocketLib::Poller *poller);
+            explicit StateManagement(AsyncBsdSocketLib::Poller *poller);
         };
     }
 }

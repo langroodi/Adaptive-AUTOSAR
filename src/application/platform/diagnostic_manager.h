@@ -56,7 +56,7 @@ namespace application
         public:
             /// @brief Constructor
             /// @param poller Global poller for network communication
-            DiagnosticManager(AsyncBsdSocketLib::Poller *poller);
+            explicit DiagnosticManager(AsyncBsdSocketLib::Poller *poller);
 
             ~DiagnosticManager() override;
         };
