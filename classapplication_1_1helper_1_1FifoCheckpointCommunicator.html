@@ -124,9 +124,9 @@ Inheritance diagram for application::helper::FifoCheckpointCommunicator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aecea073ccb84a14ac65bae202080b6cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1helper_1_1FifoCheckpointCommunicator.html#aecea073ccb84a14ac65bae202080b6cb">FifoCheckpointCommunicator</a> (AsyncBsdSocketLib::Poller *poller)</td></tr>
-<tr class="memdesc:aecea073ccb84a14ac65bae202080b6cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1helper_1_1FifoCheckpointCommunicator.html#aecea073ccb84a14ac65bae202080b6cb">More...</a><br /></td></tr>
-<tr class="separator:aecea073ccb84a14ac65bae202080b6cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7e275ecc493442c54ff7c6e9b0be0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1helper_1_1FifoCheckpointCommunicator.html#acb7e275ecc493442c54ff7c6e9b0be0f">FifoCheckpointCommunicator</a> (AsyncBsdSocketLib::Poller *poller, std::string fifoPath)</td></tr>
+<tr class="memdesc:acb7e275ecc493442c54ff7c6e9b0be0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1helper_1_1FifoCheckpointCommunicator.html#acb7e275ecc493442c54ff7c6e9b0be0f">More...</a><br /></td></tr>
+<tr class="separator:acb7e275ecc493442c54ff7c6e9b0be0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a880402a27d24d93c991861fc3d16f387"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1helper_1_1FifoCheckpointCommunicator.html#a880402a27d24d93c991861fc3d16f387">TrySend</a> (uint32_t checkpoint) override</td></tr>
 <tr class="memdesc:a880402a27d24d93c991861fc3d16f387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to send a checkpoint occurrence.  <a href="classapplication_1_1helper_1_1FifoCheckpointCommunicator.html#a880402a27d24d93c991861fc3d16f387">More...</a><br /></td></tr>
 <tr class="separator:a880402a27d24d93c991861fc3d16f387"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,34 +155,37 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>CheckpointReception<
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Supervision checkpoint communicator over the FIFO medium. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aecea073ccb84a14ac65bae202080b6cb" name="aecea073ccb84a14ac65bae202080b6cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecea073ccb84a14ac65bae202080b6cb">&#9670;&nbsp;</a></span>FifoCheckpointCommunicator()</h2>
+<a id="acb7e275ecc493442c54ff7c6e9b0be0f" name="acb7e275ecc493442c54ff7c6e9b0be0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb7e275ecc493442c54ff7c6e9b0be0f">&#9670;&nbsp;</a></span>FifoCheckpointCommunicator()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">application::helper::FifoCheckpointCommunicator::FifoCheckpointCommunicator </td>
           <td>(</td>
           <td class="paramtype">AsyncBsdSocketLib::Poller *&#160;</td>
-          <td class="paramname"><em>poller</em></td><td>)</td>
+          <td class="paramname"><em>poller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fifoPath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">poller</td><td>Master poller </td></tr>
+    <tr><td class="paramname">fifoPath</td><td>FIFO file path </td></tr>
   </table>
   </dd>
 </dl>
