@@ -10,6 +10,7 @@ namespace application
         const std::string ArgumentConfiguration::cConfigArgument{"config"};
         const std::string ArgumentConfiguration::cEvConfigArgument{"evconfig"};
         const std::string ArgumentConfiguration::cDmConfigArgument{"dmconfig"};
+        const std::string ArgumentConfiguration::cPhmConfigArgument{"phmconfig"};
         const std::string ArgumentConfiguration::cApiKeyArgument{"vccapikey"};
         const std::string ArgumentConfiguration::cBearerTokenArgument{"bearertoken"};
 
@@ -18,13 +19,15 @@ namespace application
             char *argv[],
             std::string defaultConfigFile,
             std::string extendedVehicleConfigFile,
-            std::string diagnosticManagerConfigFile)
+            std::string diagnosticManagerConfigFile,
+            std::string healthMonitoringConfigFile)
         {
             const int cConfigArgumentIndex{1};
             const int cEvConfigArgumentIndex{2};
             const int cDmConfigArgumentIndex{3};
+            const int cPhmConfigArgumentIndex{4};
 
-            if (argc > cDmConfigArgumentIndex)
+            if (argc > cPhmConfigArgumentIndex)
             {
                 std::string _configFilepath{argv[cConfigArgumentIndex]};
                 mArguments[cConfigArgument] = _configFilepath;
@@ -34,12 +37,16 @@ namespace application
 
                 std::string _dmConfigFilepath{argv[cDmConfigArgumentIndex]};
                 mArguments[cDmConfigArgument] = _dmConfigFilepath;
+
+                std::string _phmConfigFilepath{argv[cPhmConfigArgumentIndex]};
+                mArguments[cPhmConfigArgument] = _phmConfigFilepath;
             }
             else
             {
                 mArguments[cConfigArgument] = defaultConfigFile;
                 mArguments[cEvConfigArgument] = extendedVehicleConfigFile;
                 mArguments[cDmConfigArgument] = diagnosticManagerConfigFile;
+                mArguments[cPhmConfigArgument] = healthMonitoringConfigFile;
             }
         }
 

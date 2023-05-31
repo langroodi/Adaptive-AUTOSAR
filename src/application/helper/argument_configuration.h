@@ -24,6 +24,8 @@ namespace application
             static const std::string cEvConfigArgument;
             /// @brief Diagnostic Manager manifest filename argument key
             static const std::string cDmConfigArgument;
+            /// @brief Platform Health Management manifest filename argument key
+            static const std::string cPhmConfigArgument;
             /// @brief VCC API key argument key
             static const std::string cApiKeyArgument;
             /// @brief OAuth 2.0 bearer token argument key
@@ -35,12 +37,14 @@ namespace application
             /// @param defaultConfigFile Default execution manifest file path
             /// @param extendedVehicleConfigFile Default Extended Vehicle AA manifest file path
             /// @param diagnosticManagerConfigFile Default DM manifest file path
+            /// @param healthMonitoringConfigFile Default PHM manifest file path
             ArgumentConfiguration(
                 int argc,
                 char *argv[],
                 std::string defaultConfigFile = "../../configuration/execution_manifest.arxml",
                 std::string extendedVehicleConfigFile = "../../configuration/extended_vehicle_manifest.arxml",
-                std::string diagnosticManagerConfigFile = "../../configuration/diagnostic_manager_manifest.arxml");
+                std::string diagnosticManagerConfigFile = "../../configuration/diagnostic_manager_manifest.arxml",
+                std::string healthMonitoringConfigFile = "../../configuration/health_monitoring_manifest.arxml");
             ArgumentConfiguration() = delete;
 
             /// @brief Arguments property getter
