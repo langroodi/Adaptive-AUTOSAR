@@ -512,6 +512,8 @@ add_executable(
   ${source_application_platform_dir}/execution_management.cpp
   ${source_application_platform_dir}/diagnostic_manager.h
   ${source_application_platform_dir}/diagnostic_manager.cpp
+  ${source_application_platform_dir}/platform_health_management.h
+  ${source_application_platform_dir}/platform_health_management.cpp
 )
 
 target_link_libraries(
