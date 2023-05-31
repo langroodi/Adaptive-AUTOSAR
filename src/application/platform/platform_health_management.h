@@ -19,7 +19,7 @@ namespace application
         {
         private:
             static const std::string cAppId;
-            const ara::exec::FunctionGroup *const cFunctionGroup;
+            const ara::exec::FunctionGroup cFunctionGroup;
 
             ara::phm::CheckpointCommunicator *const mCheckpointCommunicator;
             ara::phm::supervisors::AliveSupervision *mAliveSupervision;
@@ -56,10 +56,11 @@ namespace application
             /// @brief Constructor
             /// @param poller Global poller for network communication
             /// @param checkpointCommunicator Medium to communicate the supervision checkpoints
+            /// @param functionGroup Function group name monitored by the PHM
             PlatformHealthManagement(
                 AsyncBsdSocketLib::Poller *poller,
                 ara::phm::CheckpointCommunicator *checkpointCommunicator,
-                const ara::exec::FunctionGroup *functionGroup);
+                std::string functionGroup);
 
             ~PlatformHealthManagement() override;
         };

@@ -11,12 +11,12 @@ namespace application
         PlatformHealthManagement::PlatformHealthManagement(
             AsyncBsdSocketLib::Poller *poller,
             ara::phm::CheckpointCommunicator *checkpointCommunicator,
-            const ara::exec::FunctionGroup *functionGroup) : ara::exec::helper::ModelledProcess(cAppId, poller),
-                                                             mCheckpointCommunicator{checkpointCommunicator},
-                                                             cFunctionGroup{functionGroup},
-                                                             mAliveSupervision{nullptr},
-                                                             mDeadlineSupervision{nullptr},
-                                                             mGlobalSupervision{nullptr}
+            std::string functionGroup) : ara::exec::helper::ModelledProcess(cAppId, poller),
+                                         mCheckpointCommunicator{checkpointCommunicator},
+                                         cFunctionGroup{ara::exec::FunctionGroup::Create(functionGroup).Value()},
+                                         mAliveSupervision{nullptr},
+                                         mDeadlineSupervision{nullptr},
+                                         mGlobalSupervision{nullptr}
         {
             auto _onReportCheckpoint{
                 std::bind(
@@ -280,7 +280,7 @@ namespace application
                 const ara::exec::ExecutionError cSupervisionExpired{0};
 
                 ara::exec::ExecutionErrorEvent _errorEvent;
-                _errorEvent.functionGroup = cFunctionGroup;
+                _errorEvent.functionGroup = &cFunctionGroup;
                 _errorEvent.executionError = cSupervisionExpired;
 
                 mRecoveryAction.RecoveryHandler(_errorEvent, update.type);
@@ -292,7 +292,7 @@ namespace application
             const std::map<std::string, std::string> &arguments)
         {
             const std::string cConfigArgument{
-                helper::ArgumentConfiguration::cConfigArgument};
+                helper::ArgumentConfiguration::cPhmConfigArgument};
 
             ara::log::LogStream _logStream;
 
