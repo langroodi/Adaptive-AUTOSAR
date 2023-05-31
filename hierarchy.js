@@ -110,6 +110,7 @@ var hierarchy =
       [ "application::ExtendedVehicle", "classapplication_1_1ExtendedVehicle.html", null ],
       [ "application::platform::DiagnosticManager", "classapplication_1_1platform_1_1DiagnosticManager.html", null ],
       [ "application::platform::ExecutionManagement", "classapplication_1_1platform_1_1ExecutionManagement.html", null ],
+      [ "application::platform::PlatformHealthManagement", "classapplication_1_1platform_1_1PlatformHealthManagement.html", null ],
       [ "application::platform::StateManagement", "classapplication_1_1platform_1_1StateManagement.html", null ]
     ] ],
     [ "ara::diag::Monitor", "classara_1_1diag_1_1Monitor.html", null ],
