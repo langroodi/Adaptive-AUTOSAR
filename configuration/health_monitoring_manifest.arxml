@@ -28,7 +28,7 @@
                         <MIN-MARGIN>5</MIN-MARGIN>
                     </ALIVE-SUPERVISION>
                     <DEADLINE-SUPERVISION>
-                        <MAX-DEADLINE>5</MAX-DEADLINE>
+                        <MIN-DEADLINE>5</MIN-DEADLINE>
                         <MAX-DEADLINE>15</MAX-DEADLINE>
                         <TRANSITION>
                             <CHECKPOINT-TRANSITION>
