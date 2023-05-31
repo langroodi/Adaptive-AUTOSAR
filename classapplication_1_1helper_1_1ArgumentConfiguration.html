@@ -116,9 +116,9 @@ $(document).ready(function(){initNavTree('classapplication_1_1helper_1_1Argument
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac10a18d477cdb84cecb639e59f760d5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1helper_1_1ArgumentConfiguration.html#ac10a18d477cdb84cecb639e59f760d5e">ArgumentConfiguration</a> (int argc, char *argv[], std::string defaultConfigFile=&quot;../../configuration/execution_manifest.arxml&quot;, std::string extendedVehicleConfigFile=&quot;../../configuration/extended_vehicle_manifest.arxml&quot;, std::string diagnosticManagerConfigFile=&quot;../../configuration/diagnostic_manager_manifest.arxml&quot;)</td></tr>
-<tr class="memdesc:ac10a18d477cdb84cecb639e59f760d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1helper_1_1ArgumentConfiguration.html#ac10a18d477cdb84cecb639e59f760d5e">More...</a><br /></td></tr>
-<tr class="separator:ac10a18d477cdb84cecb639e59f760d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e7e78be619dc7c4ad17fc420a350da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1helper_1_1ArgumentConfiguration.html#a63e7e78be619dc7c4ad17fc420a350da">ArgumentConfiguration</a> (int argc, char *argv[], std::string defaultConfigFile=&quot;../../configuration/execution_manifest.arxml&quot;, std::string extendedVehicleConfigFile=&quot;../../configuration/extended_vehicle_manifest.arxml&quot;, std::string diagnosticManagerConfigFile=&quot;../../configuration/diagnostic_manager_manifest.arxml&quot;, std::string healthMonitoringConfigFile=&quot;../../configuration/health_monitoring_manifest.arxml&quot;)</td></tr>
+<tr class="memdesc:a63e7e78be619dc7c4ad17fc420a350da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1helper_1_1ArgumentConfiguration.html#a63e7e78be619dc7c4ad17fc420a350da">More...</a><br /></td></tr>
+<tr class="separator:a63e7e78be619dc7c4ad17fc420a350da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09780dfe715a8bfc8d354e349d82ff72"><td class="memItemLeft" align="right" valign="top">const std::map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1helper_1_1ArgumentConfiguration.html#a09780dfe715a8bfc8d354e349d82ff72">GetArguments</a> () const noexcept</td></tr>
 <tr class="memdesc:a09780dfe715a8bfc8d354e349d82ff72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments property getter.  <a href="classapplication_1_1helper_1_1ArgumentConfiguration.html#a09780dfe715a8bfc8d354e349d82ff72">More...</a><br /></td></tr>
 <tr class="separator:a09780dfe715a8bfc8d354e349d82ff72"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +143,10 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>c
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>cDmConfigArgument</b> {&quot;dmconfig&quot;}</td></tr>
 <tr class="memdesc:a0848b122c26b7bf8ca983ec5530fb021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic Manager manifest filename argument key. <br /></td></tr>
 <tr class="separator:a0848b122c26b7bf8ca983ec5530fb021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0edd1095ce1ef75e98fc1f2741c88a7b"><td class="memItemLeft" align="right" valign="top"><a id="a0edd1095ce1ef75e98fc1f2741c88a7b" name="a0edd1095ce1ef75e98fc1f2741c88a7b"></a>
+static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>cPhmConfigArgument</b> {&quot;phmconfig&quot;}</td></tr>
+<tr class="memdesc:a0edd1095ce1ef75e98fc1f2741c88a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Platform Health Management manifest filename argument key. <br /></td></tr>
+<tr class="separator:a0edd1095ce1ef75e98fc1f2741c88a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25fba1713bc8d95d4c94a87907743955"><td class="memItemLeft" align="right" valign="top"><a id="a25fba1713bc8d95d4c94a87907743955" name="a25fba1713bc8d95d4c94a87907743955"></a>
 static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>cApiKeyArgument</b> {&quot;vccapikey&quot;}</td></tr>
 <tr class="memdesc:a25fba1713bc8d95d4c94a87907743955"><td class="mdescLeft">&#160;</td><td class="mdescRight">VCC API key argument key. <br /></td></tr>
@@ -155,8 +159,8 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>c
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A helper class to manage the arguments passed to the main application. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac10a18d477cdb84cecb639e59f760d5e" name="ac10a18d477cdb84cecb639e59f760d5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac10a18d477cdb84cecb639e59f760d5e">&#9670;&nbsp;</a></span>ArgumentConfiguration()</h2>
+<a id="a63e7e78be619dc7c4ad17fc420a350da" name="a63e7e78be619dc7c4ad17fc420a350da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e7e78be619dc7c4ad17fc420a350da">&#9670;&nbsp;</a></span>ArgumentConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +193,13 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>c
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>diagnosticManagerConfigFile</em> = <code>&quot;../../configuration/diagnostic_manager_manifest.arxml&quot;</code>&#160;</td>
+          <td class="paramname"><em>diagnosticManagerConfigFile</em> = <code>&quot;../../configuration/diagnostic_manager_manifest.arxml&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>healthMonitoringConfigFile</em> = <code>&quot;../../configuration/health_monitoring_manifest.arxml&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -207,6 +217,7 @@ static const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>c
     <tr><td class="paramname">defaultConfigFile</td><td>Default execution manifest file path </td></tr>
     <tr><td class="paramname">extendedVehicleConfigFile</td><td>Default Extended Vehicle AA manifest file path </td></tr>
     <tr><td class="paramname">diagnosticManagerConfigFile</td><td>Default DM manifest file path </td></tr>
+    <tr><td class="paramname">healthMonitoringConfigFile</td><td>Default PHM manifest file path </td></tr>
   </table>
   </dd>
 </dl>

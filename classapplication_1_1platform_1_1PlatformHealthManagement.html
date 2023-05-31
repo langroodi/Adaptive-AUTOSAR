@@ -125,9 +125,9 @@ Inheritance diagram for application::platform::PlatformHealthManagement:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a12cdc4ed17d6f67268fdb8aef05d25eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1platform_1_1PlatformHealthManagement.html#a12cdc4ed17d6f67268fdb8aef05d25eb">PlatformHealthManagement</a> (AsyncBsdSocketLib::Poller *poller, <a class="el" href="classara_1_1phm_1_1CheckpointCommunicator.html">ara::phm::CheckpointCommunicator</a> *checkpointCommunicator, const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">ara::exec::FunctionGroup</a> *functionGroup)</td></tr>
-<tr class="memdesc:a12cdc4ed17d6f67268fdb8aef05d25eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1platform_1_1PlatformHealthManagement.html#a12cdc4ed17d6f67268fdb8aef05d25eb">More...</a><br /></td></tr>
-<tr class="separator:a12cdc4ed17d6f67268fdb8aef05d25eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a064580891f4465bd35b4021591990fc2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classapplication_1_1platform_1_1PlatformHealthManagement.html#a064580891f4465bd35b4021591990fc2">PlatformHealthManagement</a> (AsyncBsdSocketLib::Poller *poller, <a class="el" href="classara_1_1phm_1_1CheckpointCommunicator.html">ara::phm::CheckpointCommunicator</a> *checkpointCommunicator, std::string functionGroup)</td></tr>
+<tr class="memdesc:a064580891f4465bd35b4021591990fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classapplication_1_1platform_1_1PlatformHealthManagement.html#a064580891f4465bd35b4021591990fc2">More...</a><br /></td></tr>
+<tr class="separator:a064580891f4465bd35b4021591990fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classara_1_1exec_1_1helper_1_1ModelledProcess"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classara_1_1exec_1_1helper_1_1ModelledProcess')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html">ara::exec::helper::ModelledProcess</a></td></tr>
 <tr class="memitem:af1a61f503b5ef33d12dbb7d4d087c6da inherit pub_methods_classara_1_1exec_1_1helper_1_1ModelledProcess"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#af1a61f503b5ef33d12dbb7d4d087c6da">Initialize</a> (const std::map&lt; std::string, std::string &gt; &amp;arguments)</td></tr>
 <tr class="memdesc:af1a61f503b5ef33d12dbb7d4d087c6da inherit pub_methods_classara_1_1exec_1_1helper_1_1ModelledProcess"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the process model to run the main block.  <a href="classara_1_1exec_1_1helper_1_1ModelledProcess.html#af1a61f503b5ef33d12dbb7d4d087c6da">More...</a><br /></td></tr>
@@ -180,8 +180,8 @@ static const <a class="el" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d678
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Platform health managment modelled process. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a12cdc4ed17d6f67268fdb8aef05d25eb" name="a12cdc4ed17d6f67268fdb8aef05d25eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12cdc4ed17d6f67268fdb8aef05d25eb">&#9670;&nbsp;</a></span>PlatformHealthManagement()</h2>
+<a id="a064580891f4465bd35b4021591990fc2" name="a064580891f4465bd35b4021591990fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a064580891f4465bd35b4021591990fc2">&#9670;&nbsp;</a></span>PlatformHealthManagement()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +201,7 @@ static const <a class="el" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d678
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classara_1_1exec_1_1FunctionGroup.html">ara::exec::FunctionGroup</a> *&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>functionGroup</em>&#160;</td>
         </tr>
         <tr>
@@ -217,6 +217,7 @@ static const <a class="el" href="namespaceara_1_1log.html#a376ca4c2e74c74e42d678
   <table class="params">
     <tr><td class="paramname">poller</td><td>Global poller for network communication </td></tr>
     <tr><td class="paramname">checkpointCommunicator</td><td>Medium to communicate the supervision checkpoints </td></tr>
+    <tr><td class="paramname">functionGroup</td><td>Function group name monitored by the PHM </td></tr>
   </table>
   </dd>
 </dl>
