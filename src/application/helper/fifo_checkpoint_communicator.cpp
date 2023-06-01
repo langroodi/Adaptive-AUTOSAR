@@ -78,7 +78,7 @@ namespace application
                 const std::vector<uint8_t> cPayload(
                     _buffer.cbegin(), _buffer.cend());
 
-                std::size_t _offset;
+                std::size_t _offset = 0;
                 const uint32_t cCheckpoint{
                     ara::com::helper::ExtractInteger(cPayload, _offset)};
 

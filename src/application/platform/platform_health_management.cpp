@@ -1,4 +1,3 @@
-
 #include "../helper/argument_configuration.h"
 #include "./platform_health_management.h"
 
@@ -41,7 +40,8 @@ namespace application
                 content.c_str(), content.length());
 
             const arxml::ArxmlNode cCheckpointIdNode{
-                cCheckpointReader.GetRootNode({"CHECKPOINT-ID"})};
+                cCheckpointReader.GetRootNode(
+                    {"SUPERVISION-CHECKPOINT", "CHECKPOINT-ID"})};
 
             const auto cResult{cCheckpointIdNode.GetValue<uint32_t>()};
             return cResult;
@@ -111,29 +111,29 @@ namespace application
 
             const auto cExpectedAliveIndications{
                 cAliveSupervisionReader.GetRootNode(
-                                           {"EXPECTED-ALIVE-INDICATIONS"})
+                                           {"ALIVE-SUPERVISION", "EXPECTED-ALIVE-INDICATIONS"})
                     .GetValue<uint16_t>()};
 
             const auto cMinMargin{
                 cAliveSupervisionReader.GetRootNode(
-                                           {"MIN-MARGIN"})
+                                           {"ALIVE-SUPERVISION", "MIN-MARGIN"})
                     .GetValue<uint16_t>()};
 
             const auto cMaxMargin{
                 cAliveSupervisionReader.GetRootNode(
-                                           {"MAX-MARGIN"})
+                                           {"ALIVE-SUPERVISION", "MAX-MARGIN"})
                     .GetValue<uint16_t>()};
 
             const auto cAliveReferenceCycleUInt{
                 cAliveSupervisionReader.GetRootNode(
-                                           {"ALIVE-REFERENCE-CYCLE"})
+                                           {"ALIVE-SUPERVISION", "ALIVE-REFERENCE-CYCLE"})
                     .GetValue<uint32_t>()};
             const std::chrono::milliseconds cAliveReferenceCycle(
                 cAliveReferenceCycleUInt);
 
             const auto cFailedReferenceCyclesTolerance{
                 cAliveSupervisionReader.GetRootNode(
-                                           {"FAILED-REFERENCE-CYCLES-TOLERANCE"})
+                                           {"ALIVE-SUPERVISION", "FAILED-REFERENCE-CYCLES-TOLERANCE"})
                     .GetValue<uint8_t>()};
 
             mAliveSupervision =
@@ -195,13 +195,13 @@ namespace application
 
             const auto cMinDeadlineUInt{
                 cDeadlineSupervisionReader.GetRootNode(
-                                              {"MIN-DEADLINE"})
+                                              {"DEADLINE-SUPERVISION", "MIN-DEADLINE"})
                     .GetValue<uint32_t>()};
             const std::chrono::milliseconds cMinDeadline(cMinDeadlineUInt);
 
             const auto cMaxDeadlineUInt{
                 cDeadlineSupervisionReader.GetRootNode(
-                                              {"MAX-DEADLINE"})
+                                              {"DEADLINE-SUPERVISION", "MAX-DEADLINE"})
                     .GetValue<uint32_t>()};
             const std::chrono::milliseconds cMaxDeadline(cMaxDeadlineUInt);
 
@@ -211,7 +211,7 @@ namespace application
 
             const arxml::ArxmlNode cCheckpointTransition{
                 cDeadlineSupervisionReader.GetRootNode(
-                    {"TRANSITION", "CHECKPOINT-TRANSITION"})};
+                    {"DEADLINE-SUPERVISION", "TRANSITION", "CHECKPOINT-TRANSITION"})};
 
             std::string _sourceCheckpointIdStr;
             bool _successful{
@@ -307,6 +307,7 @@ namespace application
                 configureAliveSupervision(cArxmlReader, _checkpoints);
                 configureDeadlineSupervision(cArxmlReader, _checkpoints);
 
+                mRecoveryAction.Offer();
                 mGlobalSupervision =
                     new ara::phm::supervisors::GlobalSupervision(
                         {mAliveSupervision, mDeadlineSupervision});

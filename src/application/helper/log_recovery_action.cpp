@@ -42,7 +42,7 @@ namespace application
                     return;
                 }
 
-                _logStream << " of is expired on "
+                _logStream << " is expired on "
                            << executionError.functionGroup->GetInstance().ToString();
                 
                 mLoggingFramework->Log(mLogger, cErrorLevel, _logStream);
