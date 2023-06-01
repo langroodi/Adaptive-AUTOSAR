@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g -shared -Wl,-soname,libarxml.so -o lib/libarxml.so CMakeFiles/arxml.dir/src/arxml/pugixml.cpp.o CMakeFiles/arxml.dir/src/arxml/arxml_node.cpp.o CMakeFiles/arxml.dir/src/arxml/arxml_reader.cpp.o 
