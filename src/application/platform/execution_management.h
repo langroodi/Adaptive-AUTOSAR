@@ -6,6 +6,7 @@
 #include "../helper/fifo_checkpoint_communicator.h"
 #include "../extended_vehicle.h"
 #include "./state_management.h"
+#include "./platform_health_management.h"
 #include "./diagnostic_manager.h"
 
 /// @brief AUTOSAR application namespace
@@ -24,6 +25,7 @@ namespace application
 
             helper::FifoCheckpointCommunicator mCommunicator;
             StateManagement mStateManagement;
+            PlatformHealthManagement mPlatformHealthManager;
             ExtendedVehicle mExtendedVehicle;
             DiagnosticManager mDiagnosticManager;
             ara::exec::StateServer *mStateServer;

@@ -10,11 +10,12 @@ namespace application
         const std::string ExecutionManagement::cAppId{"ExecutionManagement"};
         const std::string ExecutionManagement::cFifoPath{"/tmp/fifo_communicator"};
 
-        ExecutionManagement::ExecutionManagement(AsyncBsdSocketLib::Poller *poller) : mCommunicator(poller, cFifoPath),
+        ExecutionManagement::ExecutionManagement(AsyncBsdSocketLib::Poller *poller) : ara::exec::helper::ModelledProcess(cAppId, poller),
+                                                                                      mCommunicator(poller, cFifoPath),
                                                                                       mStateManagement(poller),
+                                                                                      mPlatformHealthManager(poller, &mCommunicator, cMachineFunctionGroup),
                                                                                       mExtendedVehicle(poller, &mCommunicator),
                                                                                       mDiagnosticManager(poller),
-                                                                                      ara::exec::helper::ModelledProcess(cAppId, poller),
                                                                                       mStateServer{nullptr}
         {
         }
@@ -123,6 +124,7 @@ namespace application
             if (mStateServer->TryGetState(cMachineFunctionGroup, _currentState) &&
                 _currentState == cStartUpState)
             {
+                mPlatformHealthManager.Initialize(arguments);
                 mDiagnosticManager.Initialize(arguments);
                 mExtendedVehicle.Initialize(arguments);
             }
@@ -176,6 +178,7 @@ namespace application
 
                 int _evTerminationResult{mExtendedVehicle.Terminate()};
                 int _dmTerminationResult{mDiagnosticManager.Terminate()};
+                int _phmTerminationResult{mPlatformHealthManager.Terminate()};
                 int _smTerminationResult{mStateManagement.Terminate()};
 
                 _logStream.Flush();
@@ -183,7 +186,10 @@ namespace application
                 Log(cLogLevel, _logStream);
 
                 int _result{
-                    _dmTerminationResult + _evTerminationResult + _smTerminationResult};
+                    _dmTerminationResult +
+                    _evTerminationResult +
+                    _phmTerminationResult +
+                    _smTerminationResult};
 
                 return _result;
             }
@@ -201,6 +207,7 @@ namespace application
         {
             mExtendedVehicle.Terminate();
             mDiagnosticManager.Terminate();
+            mPlatformHealthManager.Terminate();
             mStateManagement.Terminate();
 
             if (mStateServer)
