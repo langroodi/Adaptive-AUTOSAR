@@ -47,25 +47,31 @@ namespace ara
                     if (mAliveIndications >= mExpectedAliveIndicationsMin &&
                         mAliveIndications <= mExpectedAliveIndicationsMax)
                     {
+                        mAliveIndications = 0;
+
                         // Avoid wrapping
                         if (mAliveCounter > 0)
                         {
                             --mAliveCounter;
                         }
+
                         Report(SupervisionStatus::kOk);
                     }
                     else
                     {
-                        ++mAliveCounter;
-                        Report(SupervisionStatus::kFailed);
-                    }
-
-                    if (mAliveCounter >= mFailedReferenceCyclesTolerance)
-                    {
-                        // Reset the failure condition before invoking the callback
-                        mAliveCounter = 0;
                         mAliveIndications = 0;
-                        Report(SupervisionStatus::kExpired);
+                        ++mAliveCounter;
+
+                        if (mAliveCounter < mFailedReferenceCyclesTolerance)
+                        {
+                            Report(SupervisionStatus::kFailed);
+                        }
+                        else
+                        {
+                            // If the supervision expired, it should be restarted.
+                            mRunning = false;
+                            Report(SupervisionStatus::kExpired);
+                        }
                     }
 
                     std::this_thread::sleep_for(aliveReferenceCycle);
