@@ -32,6 +32,10 @@ var annotated_dup =
           [ "CommunicationGroupClient", "classara_1_1com_1_1cg_1_1CommunicationGroupClient.html", "classara_1_1com_1_1cg_1_1CommunicationGroupClient" ],
           [ "CommunicationGroupServer", "classara_1_1com_1_1cg_1_1CommunicationGroupServer.html", "classara_1_1com_1_1cg_1_1CommunicationGroupServer" ]
         ] ],
+        [ "e2e", "namespaceara_1_1com_1_1e2e.html", [
+          [ "Profile", "classara_1_1com_1_1e2e_1_1Profile.html", "classara_1_1com_1_1e2e_1_1Profile" ],
+          [ "Profile11", "classara_1_1com_1_1e2e_1_1Profile11.html", "classara_1_1com_1_1e2e_1_1Profile11" ]
+        ] ],
         [ "entry", "namespaceara_1_1com_1_1entry.html", [
           [ "Entry", "classara_1_1com_1_1entry_1_1Entry.html", "classara_1_1com_1_1entry_1_1Entry" ],
           [ "EntryDeserializer", "classara_1_1com_1_1entry_1_1EntryDeserializer.html", null ],

@@ -133,6 +133,9 @@ var hierarchy =
     ] ],
     [ "ara::core::Optional< T >", "classara_1_1core_1_1Optional.html", null ],
     [ "ara::com::option::OptionDeserializer", "classara_1_1com_1_1option_1_1OptionDeserializer.html", null ],
+    [ "ara::com::e2e::Profile", "classara_1_1com_1_1e2e_1_1Profile.html", [
+      [ "ara::com::e2e::Profile11", "classara_1_1com_1_1e2e_1_1Profile11.html", null ]
+    ] ],
     [ "ara::phm::RecoveryAction", "classara_1_1phm_1_1RecoveryAction.html", [
       [ "application::helper::LogRecoveryAction", "classapplication_1_1helper_1_1LogRecoveryAction.html", null ]
     ] ],

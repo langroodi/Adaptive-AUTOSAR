@@ -7,6 +7,7 @@ var namespaces_dup =
           [ "CommunicationGroupClient", "classara_1_1com_1_1cg_1_1CommunicationGroupClient.html", "classara_1_1com_1_1cg_1_1CommunicationGroupClient" ],
           [ "CommunicationGroupServer", "classara_1_1com_1_1cg_1_1CommunicationGroupServer.html", "classara_1_1com_1_1cg_1_1CommunicationGroupServer" ]
         ] ],
+        [ "e2e", "namespaceara_1_1com_1_1e2e.html", "namespaceara_1_1com_1_1e2e" ],
         [ "entry", "namespaceara_1_1com_1_1entry.html", "namespaceara_1_1com_1_1entry" ],
         [ "helper", "namespaceara_1_1com_1_1helper.html", "namespaceara_1_1com_1_1helper" ],
         [ "option", "namespaceara_1_1com_1_1option.html", "namespaceara_1_1com_1_1option" ],
