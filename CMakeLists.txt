@@ -88,6 +88,9 @@ set(source_ara_sm_dir
 set(source_ara_com_cg_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/cg")
 
+set(source_ara_com_e2e_dir
+  "${CMAKE_SOURCE_DIR}/src/ara/com/e2e")
+
 set(source_ara_com_helper_dir
   "${CMAKE_SOURCE_DIR}/src/ara/com/helper")
 
@@ -161,6 +164,9 @@ set(test_ara_log_dir
 
 set(test_ara_sm_dir
   "${CMAKE_SOURCE_DIR}/test/ara/sm")
+
+set(test_ara_com_e2e_dir
+  "${CMAKE_SOURCE_DIR}/test/ara/com/e2e")
 
 set(test_ara_com_entry_dir
   "${CMAKE_SOURCE_DIR}/test/ara/com/entry")
@@ -254,6 +260,8 @@ add_library(
   ara_com
   ${source_ara_com_cg_dir}/communication_group_client.h
   ${source_ara_com_cg_dir}/communication_group_server.h
+  ${source_ara_com_e2e_dir}/profile11.h
+  ${source_ara_com_e2e_dir}/profile11.cpp
   ${source_ara_com_helper_dir}/payload_helper.h
   ${source_ara_com_helper_dir}/payload_helper.cpp
   ${source_ara_com_helper_dir}/ipv4_address.h
@@ -548,6 +556,7 @@ if(build_tests)
     ${test_ara_sm_dir}/trigger_out_test.cpp
     ${test_ara_sm_dir}/trigger_inout_test.cpp
     ${test_ara_sm_dir}/power_mode_test.cpp
+    ${test_ara_com_e2e_dir}/profile11_test.cpp
     ${test_ara_com_entry_dir}/eventgroup_entry_test.cpp
     ${test_ara_com_entry_dir}/service_entry_test.cpp
     ${test_ara_com_helper_dir}/ipv4_address_test.cpp
