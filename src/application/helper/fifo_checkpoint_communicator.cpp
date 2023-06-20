@@ -1,12 +1,16 @@
 #include <algorithm>
 #include <thread>
+#include "../../ara/com/helper/payload_helper.h"
 #include "./fifo_checkpoint_communicator.h"
 
 namespace application
 {
     namespace helper
     {
-        const std::size_t FifoCheckpointCommunicator::cBufferSize{sizeof(uint32_t)};
+        // 1 byte CRC + 1 byte E2E profile counter
+        const std::size_t FifoCheckpointCommunicator::cE2eHeaderSize{2};
+        const std::size_t FifoCheckpointCommunicator::cBufferSize{
+            cE2eHeaderSize + sizeof(uint32_t)};
 
         FifoCheckpointCommunicator::FifoCheckpointCommunicator(
             AsyncBsdSocketLib::Poller *poller,
@@ -78,21 +82,35 @@ namespace application
                 const std::vector<uint8_t> cPayload(
                     _buffer.cbegin(), _buffer.cend());
 
-                std::size_t _offset = 0;
-                const uint32_t cCheckpoint{
-                    ara::com::helper::ExtractInteger(cPayload, _offset)};
+                const ara::com::e2e::CheckStatusType cCheckStatus{
+                    mProfile11.Check(cPayload)};
 
-                Callback(cCheckpoint);
+                if (cCheckStatus == ara::com::e2e::CheckStatusType::kOk)
+                {
+                    std::size_t _offset = cE2eHeaderSize;
+                    const uint32_t cCheckpoint{
+                        ara::com::helper::ExtractInteger(cPayload, _offset)};
+
+                    Callback(cCheckpoint);
+                }
             }
         }
 
         bool FifoCheckpointCommunicator::TrySend(uint32_t checkpoint)
         {
-            std::vector<uint8_t> _payload;
-            ara::com::helper::Inject(_payload, checkpoint);
-            const bool cResult{mSendQueue.TryEnqueue(std::move(_payload))};
+            std::vector<uint8_t> _unprotectedPayload;
+            ara::com::helper::Inject(_unprotectedPayload, checkpoint);
 
-            return cResult;
+            std::vector<uint8_t> _protectedPayload;
+            bool _result{
+                mProfile11.TryProtect(_unprotectedPayload, _protectedPayload)};
+
+            if (_result)
+            {
+                _result = mSendQueue.TryEnqueue(std::move(_protectedPayload));
+            }
+
+            return _result;
         }
 
         FifoCheckpointCommunicator::~FifoCheckpointCommunicator()
