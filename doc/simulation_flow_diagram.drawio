@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" modified="2023-06-20T18:35:59.615Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0" etag="09yhJH9P6jbtcaXz7J3p" version="21.5.0" type="device">
+  <diagram id="kQKxdcxADLu6lJJljzCQ" name="Page-1">
+    <mxGraphModel dx="989" dy="506" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fnb7HpRWoYOZRrm6ozNc-4" value="" style="shape=mxgraph.signs.tech.usb;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;rotation=90;" parent="1" vertex="1">
+          <mxGeometry x="430" y="110" width="24.22" height="55.21" as="geometry" />
+        </mxCell>
+        <mxCell id="fnb7HpRWoYOZRrm6ozNc-6" value="TCP/IP" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=none;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-cloud-outline-128.png;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="760" y="100.41999999999999" width="64.79" height="64.79" as="geometry" />
+        </mxCell>
+        <mxCell id="fnb7HpRWoYOZRrm6ozNc-7" value="&lt;div&gt;Volvo Cars&lt;/div&gt;&lt;div&gt;Extended Vehicle API&lt;br&gt;&lt;/div&gt;" style="shape=mxgraph.signs.transportation.car_1;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontStyle=1;fontColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="850" y="132.5" width="61.88" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="mazSm6kdUGKL8lBRYu3c-7" value="&amp;nbsp;CAN High&amp;nbsp; " style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1.027;exitY=0.289;exitDx=0;exitDy=0;exitPerimeter=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#CC0066;endArrow=none;endFill=0;fontColor=#000000;strokeWidth=2;labelBackgroundColor=none;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;" edge="1" parent="1" source="fnb7HpRWoYOZRrm6ozNc-8">
+          <mxGeometry x="0.0014" relative="1" as="geometry">
+            <mxPoint x="270" y="152" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mazSm6kdUGKL8lBRYu3c-8" value="&amp;nbsp;CAN Low&amp;nbsp; " style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.945;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.015;entryY=0.656;entryDx=0;entryDy=0;endArrow=none;endFill=0;strokeColor=#007FFF;sketch=1;curveFitting=1;jiggle=2;fontColor=#000000;strokeWidth=2;entryPerimeter=0;labelBackgroundColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;" edge="1" parent="1" source="fnb7HpRWoYOZRrm6ozNc-8" target="fnb7HpRWoYOZRrm6ozNc-9">
+          <mxGeometry x="-0.0009" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="165" />
+              <mxPoint x="270" y="168" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fnb7HpRWoYOZRrm6ozNc-8" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;OBD-II&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;Diagnostic Device&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#000000;shape=mxgraph.azure.health_monitoring;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="60" y="135" width="71.43" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mazSm6kdUGKL8lBRYu3c-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;endArrow=none;endFill=0;strokeWidth=2;sketch=1;curveFitting=1;jiggle=2;" edge="1" parent="1" source="fnb7HpRWoYOZRrm6ozNc-9" target="mazSm6kdUGKL8lBRYu3c-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fnb7HpRWoYOZRrm6ozNc-9" value="&lt;div&gt;CAN to USB&lt;/div&gt;&lt;div&gt;Adapter&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=3;fontStyle=1;fontColor=#000000;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
+          <mxGeometry x="270" y="135" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="mazSm6kdUGKL8lBRYu3c-5" value="" style="group;fontColor=#000000;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="510" y="10" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="fnb7HpRWoYOZRrm6ozNc-3" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/font-awesome/1792/linux-128.png;" parent="mazSm6kdUGKL8lBRYu3c-5" vertex="1">
+          <mxGeometry x="60" y="10" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mazSm6kdUGKL8lBRYu3c-4" value="" style="group;fontColor=#000000;" vertex="1" connectable="0" parent="mazSm6kdUGKL8lBRYu3c-5">
+          <mxGeometry y="100" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mazSm6kdUGKL8lBRYu3c-3" value="Linux Machine" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;fontStyle=1;fontColor=#000000;sketch=1;curveFitting=1;jiggle=2;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;dashed=1;" vertex="1" parent="mazSm6kdUGKL8lBRYu3c-4">
+          <mxGeometry width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mazSm6kdUGKL8lBRYu3c-1" value="&lt;div&gt;Adaptive AUTOSAR&lt;/div&gt;&lt;div&gt;Simulator&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=3;fontStyle=1;fontColor=#000000;sketch=1;curveFitting=1;jiggle=2;" vertex="1" parent="mazSm6kdUGKL8lBRYu3c-4">
+          <mxGeometry x="40" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mazSm6kdUGKL8lBRYu3c-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.01;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;endArrow=none;endFill=0;strokeColor=#000000;sketch=1;curveFitting=1;jiggle=2;" edge="1" parent="1" source="mazSm6kdUGKL8lBRYu3c-3" target="fnb7HpRWoYOZRrm6ozNc-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
