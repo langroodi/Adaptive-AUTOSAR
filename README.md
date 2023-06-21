@@ -3,6 +3,8 @@
 
 Adaptive AUTOSAR is a simulated _Adaptive Platform_ enviroment over Linux defined by [AUTOSAR](https://www.autosar.org/standards/adaptive-platform/). The goal of this project is to implement the interfaces defined by the standard for educational purposes. For more information, please refer to [the project Wiki](https://github.com/langroodi/Adaptive-AUTOSAR/wiki).
 
+![Simulation flow diagram](https://github.com/langroodi/Adaptive-AUTOSAR/blob/master/doc/simulation_flow_diagram.png)
+
 ## Dependecies
 
 It will be tried to use minimum number of dependencies as much as possible. The current dependencies are as follows:
