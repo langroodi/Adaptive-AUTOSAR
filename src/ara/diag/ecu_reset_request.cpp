@@ -167,7 +167,7 @@ namespace ara
         {
             if (mResetTypeFuture.valid())
             {
-                /// @todo Reset the ECU based on the requested reset type
+                throw std::logic_error("ECU reset is not supported.");
             }
             else
             {

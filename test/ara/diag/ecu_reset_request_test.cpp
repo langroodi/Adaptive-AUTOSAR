@@ -129,8 +129,6 @@ namespace ara
                     GeneralMetaInfo,
                     std::move(_cancellationHander))};
             EXPECT_TRUE(_succeedFuture.valid());
-
-            EXPECT_NO_THROW(Service.ExecuteReset(GeneralMetaInfo));
         }
 
         TEST_F(EcuResetRequestTest, EnableRapidShutdownMethod)

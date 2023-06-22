@@ -59,7 +59,6 @@ namespace ara
             MetaInfo &metaInfo,
             CancellationHandler &&cancellationHandler)
         {
-            /// @todo Consider the cancellation handler
             uint8_t _nrc;
             OperationOutput _response;
             std::promise<OperationOutput> _resultPromise;
@@ -98,6 +97,10 @@ namespace ara
                         std::move(cancellationHandler),
                         _suppressPositiveResponse);
                 }
+            }
+            else if (cancellationHandler.IsCanceled())
+            {
+                GenerateNegativeResponse(_response, cGeneralReject);
             }
             else
             {

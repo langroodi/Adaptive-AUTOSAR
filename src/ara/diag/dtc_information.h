@@ -44,7 +44,7 @@ namespace ara
         class DTCInformation
         {
         private:
-            const ara::core::InstanceSpecifier &mSpecifier;
+            const core::InstanceSpecifier &mSpecifier;
             std::map<uint32_t, UdsDtcStatusByteType> mStatuses;
             std::function<void(uint32_t, UdsDtcStatusByteType, UdsDtcStatusByteType)> mDtcStatusChangedNotifier;
             std::function<void(uint32_t)> mNumberOfStoredEntriesNotifier;
@@ -54,14 +54,14 @@ namespace ara
         public:
             /// @brief Constructor
             /// @param specifier Instance specifier that owns the DTC information
-            explicit DTCInformation(const ara::core::InstanceSpecifier &specifier);
+            explicit DTCInformation(const core::InstanceSpecifier &specifier);
 
             ~DTCInformation() noexcept = default;
 
             /// @brief Get UDS DTC status byte of a certain DTC
             /// @param dtc DTC ID of interest
             /// @returns Requested USD DTC status byte if the DTC ID exists, otherwise an error
-            ara::core::Result<UdsDtcStatusByteType> GetCurrentStatus(uint32_t dtc);
+            core::Result<UdsDtcStatusByteType> GetCurrentStatus(uint32_t dtc);
 
             /// @brief Set UDS DTC status byte of a certain DTC
             /// @param dtc DTC ID of interest
@@ -74,37 +74,37 @@ namespace ara
             /// @brief Set a notifer on any DTC status change
             /// @param notifier Callback to be invoked if the status of any DTC is changed
             /// @returns Error in case of invalid callback pointer
-            ara::core::Result<void> SetDTCStatusChangedNotifier(
+            core::Result<void> SetDTCStatusChangedNotifier(
                 std::function<void(uint32_t, UdsDtcStatusByteType, UdsDtcStatusByteType)> notifier);
 
             /// @brief Get the number of stored DTC
             /// @returns Number of currently stored DTC in the primary fault memory
-            ara::core::Result<uint32_t> GetNumberOfStoredEntries();
+            core::Result<uint32_t> GetNumberOfStoredEntries();
 
             /// @brief Set a notifer on the number of stored DTC change
             /// @param notifier Callback to be invoked if the number of stored DTC is changed
             /// @returns Error in case of invalid callback pointer
-            ara::core::Result<void> SetNumberOfStoredEntriesNotifier(
+            core::Result<void> SetNumberOfStoredEntriesNotifier(
                 std::function<void(uint32_t)> notifier);
 
             /// @brief Clear a DTC
             /// @param dtc ID of the DTC that should be removed
             /// @returns Error if the requested DTC ID does not exist
-            ara::core::Result<void> Clear(uint32_t dtc);
+            core::Result<void> Clear(uint32_t dtc);
 
             /// @brief Indicate whether the UDS DTC byte update is enabled or not
             /// @returns Control UDS status relates to the UDS service 0x85
-            ara::core::Result<ControlDtcStatusType> GetControlDTCStatus();
+            core::Result<ControlDtcStatusType> GetControlDTCStatus();
 
             /// @brief Set a notifer on the control DTC status change
             /// @param notifier Callback to be invoked if the control DTC status is changed
             /// @returns Error in case of invalid callback pointer
-            ara::core::Result<void> SetControlDtcStatusNotifier(
+            core::Result<void> SetControlDtcStatusNotifier(
                 std::function<void(ControlDtcStatusType)> notifier);
 
             /// @brief Enforce enabling the USD DTC status byte update
             /// @returns No error
-            ara::core::Result<void> EnableControlDtc();
+            core::Result<void> EnableControlDtc();
         };
     }
 }

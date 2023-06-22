@@ -57,9 +57,8 @@ namespace ara
         {
             std::unique_lock<std::mutex> _lock(mCycleMutex);
             mCycleConditionVariable.wait(_lock);
-
-            /// @todo Return proper value based on the client current lifecycle
             core::Result<ActivationReturnType> _result{ActivationReturnType::kRun};
+            
             return _result;
         }
 

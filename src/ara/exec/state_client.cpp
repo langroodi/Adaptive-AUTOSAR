@@ -156,7 +156,6 @@ namespace ara
         core::Result<ExecutionErrorEvent> StateClient::GetExecutionError(
             const FunctionGroup &functionGroup) noexcept
         {
-            /// @todo Implement set state tracking
             const ExecErrc cExecErrc{ExecErrc::kFailed};
             auto _errorValue{static_cast<core::ErrorDomain::CodeType>(cExecErrc)};
             core::ErrorCode _errorCode{_errorValue, cErrorDomain};

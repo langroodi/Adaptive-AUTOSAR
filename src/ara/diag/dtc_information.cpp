@@ -1,21 +1,33 @@
 #include "./dtc_information.h"
+#include "./diag_error_domain.h"
 
 namespace ara
 {
     namespace diag
     {
-        DTCInformation::DTCInformation(const ara::core::InstanceSpecifier &specifier) : mSpecifier{specifier},
-                                                                                        mControlDtcStatus{ControlDtcStatusType::kDTCSettingOff}
+        DTCInformation::DTCInformation(const core::InstanceSpecifier &specifier) : mSpecifier{specifier},
+                                                                                   mControlDtcStatus{ControlDtcStatusType::kDTCSettingOff}
         {
         }
 
-        ara::core::Result<UdsDtcStatusByteType> DTCInformation::GetCurrentStatus(uint32_t dtc)
+        core::Result<UdsDtcStatusByteType> DTCInformation::GetCurrentStatus(uint32_t dtc)
         {
-            /// @todo In case of out_of_range exception return kNoSuchDtc (108) error code
-            UdsDtcStatusByteType _status{mStatuses.at(dtc)};
-            ara::core::Result<UdsDtcStatusByteType> _result{_status};
+            try
+            {
+                UdsDtcStatusByteType _status{mStatuses.at(dtc)};
+                core::Result<UdsDtcStatusByteType> _result{_status};
 
-            return _result;
+                return _result;
+            }
+            catch (std::out_of_range)
+            {
+                core::ErrorDomain *_errorDomain{DiagErrorDomain::GetDiagDomain()};
+                auto _diagErrorDomain{static_cast<DiagErrorDomain *>(_errorDomain)};
+                core::ErrorCode _errorCode{_diagErrorDomain->MakeErrorCode(DiagErrc::kNoSuchDTC)};
+                auto _result{core::Result<UdsDtcStatusByteType>::FromError(_errorCode)};
+
+                return _result;
+            }
         }
 
         void DTCInformation::SetCurrentStatus(
@@ -65,37 +77,37 @@ namespace ara
             }
         }
 
-        ara::core::Result<void> DTCInformation::SetDTCStatusChangedNotifier(
+        core::Result<void> DTCInformation::SetDTCStatusChangedNotifier(
             std::function<void(uint32_t, UdsDtcStatusByteType, UdsDtcStatusByteType)> notifier)
         {
             // In contrast with the ARA standard, no evaluation is perfomed to validate the notifier pointer.
             mDtcStatusChangedNotifier = notifier;
-            ara::core::Result<void> _result;
+            core::Result<void> _result;
 
             return _result;
         }
 
-        ara::core::Result<uint32_t> DTCInformation::GetNumberOfStoredEntries()
+        core::Result<uint32_t> DTCInformation::GetNumberOfStoredEntries()
         {
             auto _size{static_cast<uint32_t>(mStatuses.size())};
-            ara::core::Result<uint32_t> _result{_size};
+            core::Result<uint32_t> _result{_size};
 
             return _result;
         }
 
-        ara::core::Result<void> DTCInformation::SetNumberOfStoredEntriesNotifier(
+        core::Result<void> DTCInformation::SetNumberOfStoredEntriesNotifier(
             std::function<void(uint32_t)> notifier)
         {
             // In contrast with the ARA standard, no evaluation is perfomed to validate the notifier pointer.
             mNumberOfStoredEntriesNotifier = notifier;
-            ara::core::Result<void> _result;
+            core::Result<void> _result;
 
             return _result;
         }
 
-        ara::core::Result<void> DTCInformation::Clear(uint32_t dtc)
+        core::Result<void> DTCInformation::Clear(uint32_t dtc)
         {
-            ara::core::Result<void> _result;
+
             auto _iterator{mStatuses.find(dtc)};
 
             if (_iterator != mStatuses.end())
@@ -105,34 +117,40 @@ namespace ara
                 {
                     mNumberOfStoredEntriesNotifier(mStatuses.size());
                 }
+
+                core::Result<void> _result;
+                return _result;
             }
             else
             {
-                /// @todo Return kWrong error code
+                core::ErrorDomain *_errorDomain{DiagErrorDomain::GetDiagDomain()};
+                auto _diagErrorDomain{static_cast<DiagErrorDomain *>(_errorDomain)};
+                core::ErrorCode _errorCode{_diagErrorDomain->MakeErrorCode(DiagErrc::kWrongDtc)};
+                auto _result{core::Result<void>::FromError(_errorCode)};
+
+                return _result;
             }
-
-            return _result;
         }
 
-        ara::core::Result<ControlDtcStatusType> DTCInformation::GetControlDTCStatus()
+        core::Result<ControlDtcStatusType> DTCInformation::GetControlDTCStatus()
         {
-            ara::core::Result<ControlDtcStatusType> _result{mControlDtcStatus};
+            core::Result<ControlDtcStatusType> _result{mControlDtcStatus};
             return _result;
         }
 
-        ara::core::Result<void> DTCInformation::SetControlDtcStatusNotifier(
+        core::Result<void> DTCInformation::SetControlDtcStatusNotifier(
             std::function<void(ControlDtcStatusType)> notifier)
         {
             // In contrast with the ARA standard, no evaluation is perfomed to validate the notifier pointer.
             mControlDtcStatusNotifier = notifier;
-            ara::core::Result<void> _result;
+            core::Result<void> _result;
 
             return _result;
         }
 
-        ara::core::Result<void> DTCInformation::EnableControlDtc()
+        core::Result<void> DTCInformation::EnableControlDtc()
         {
-            ara::core::Result<void> _result;
+            core::Result<void> _result;
 
             if (mControlDtcStatus != ControlDtcStatusType::kDTCSettingOn)
             {
