@@ -38,7 +38,7 @@ Firstly, thanks for showing interest in contributing to this project. Following 
 1. **Keep smiling with it:**
 
 > If you still don't know what you hate the most in this world, it means you never write a C++ code.
-Develop this project in C++ can be a pain, but it is also fun (it depends on how you look at it).
+Developing this project in C++ can be a pain, but it is also fun (it depends on how you look at it).
 When you get frustrated while contributing, give yourself a break and come back to your code with a fresh mind.
 And always keep smiling while coding (Trust me! It will help you to generate good-quality codes).
 
@@ -95,7 +95,7 @@ If the majority of the community agrees with that, you can create a new issue ou
 
 If you are interested in the project while you don't know how to contribute, then the first place you can check is [the Issues board](https://github.com/langroodi/Adaptive-AUTOSAR/issues).
 If you didn't find anything suitable for you, then you can start a new [discussion](https://github.com/langroodi/Adaptive-AUTOSAR/discussions/new). So, the community will try to find a suitable task for you.
-Please do not contribute to the project by fixing the code formatting, typos, and/or adding comments to the code. PRs relate to these types of contribution will be rejected.
+Please do not contribute to the project by fixing the code formatting, typos, and/or adding comments to the code. PRs related to these types of contribution will be rejected.
 
 ## Code conventions (C++)
 
